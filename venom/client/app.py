@@ -503,7 +503,7 @@ class App:
             draw.ellipse(self.screen, (20, 55, 64), (bx-40, by+38, 80, 18))
             surface = self.assets.sprite(entry['id'], (96, 105))
             if surface: self.screen.blit(surface, surface.get_rect(midbottom=(bx, by+48)))
-        text(self.screen, self.assets, 'NATIVE WINDOWS CLIENT  /  ALPHA 0.2.0', (left.x, left.bottom-32), 13, MUTED)
+        text(self.screen, self.assets, 'NATIVE WINDOWS CLIENT  /  ALPHA 0.3.0', (left.x, left.bottom-32), 13, MUTED)
         self.ui.button((left.x, left.bottom+5, 142, 34), 'Settings  F10', self.toggle_settings, small=True)
         text(self.screen, self.assets, 'F11  /  FULLSCREEN', (left.x+160, left.bottom+16), 11, CYAN)
         card = pygame.Rect(w-540, 58, 490, h-116)

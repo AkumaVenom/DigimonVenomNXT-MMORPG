@@ -24,7 +24,7 @@ from venom.common.paths import root_path
 from venom.server.database import Database, DatabaseError, validate_credentials
 
 LOG = logging.getLogger("venom.server")
-VERSION = "0.2.0"
+VERSION = "0.3.0"
 MOVE_SPEED = 180.0
 MAX_MESSAGE = 65_536
 GAME_OPS = {"encounter", "battle", "digilab", "materialize", "evolve", "party", "shop", "item", "travel"}
@@ -458,7 +458,7 @@ def read_config(path, dev=False):
     elif dev:
         config = {}
     else:
-        raise ValueError("Server is not configured. Run 02_SETUP_MYSQL.bat and 03_SETUP_PUBLIC_HOST.bat first.")
+        raise ValueError("Server is not configured. Run 01_SETUP_SERVER.bat first.")
     if not isinstance(config, dict):
         raise ValueError("Server configuration must be a JSON object.")
     if dev:

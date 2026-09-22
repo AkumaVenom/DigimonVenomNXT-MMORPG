@@ -1,12 +1,8 @@
 @echo off
 setlocal DisableDelayedExpansion
 cd /d "%~dp0"
-title Digimon Venom NXT - Database Setup
-set "SETUP_COMMAND=wizard --stage database"
-if "%~1"=="" goto launch
-if /I "%~1"=="--wizard" goto launch
-set "SETUP_COMMAND=mysql"
-:launch
+title Digimon Venom NXT - Server Setup Wizard
+set "SETUP_COMMAND=wizard"
 if exist "admin\VenomSetup.exe" goto compiled
 if exist ".venv-build\Scripts\python.exe" goto source
 echo Run BUILD_ALL.bat first, or use this file inside Windows_Server_x64.

@@ -84,7 +84,9 @@ class Database:
                     host=self.config.get("host", "127.0.0.1"),
                     port=int(self.config.get("port", 3306)),
                     user=self.config.get("user", "venom"),
-                    password=self.config.get("password", ""),
+                    # PyMySQL encodes str passwords as latin1. Our setup and JSON
+                    # use UTF-8, including passwords containing non-ASCII text.
+                    password=self.config.get("password", "").encode("utf-8"),
                     database=self.config.get("name", "digimon_venom_nxt"),
                     charset="utf8mb4", autocommit=False,
                     connect_timeout=10, read_timeout=15, write_timeout=15,

@@ -87,9 +87,9 @@ class MySQLSetupTests(unittest.TestCase):
             root = Path(temporary)
             connection = MagicMock()
             cursor = connection.cursor.return_value.__enter__.return_value
-            with patch("pymysql.connect", return_value=connection) as connect, patch("venom.server.database.initialize_database") as initialize, redirect_stdout(io.StringIO()):
+            with patch("pymysql.connect", return_value=connection) as connect, patch("tools.setup._probe_game_login", side_effect=[False, True]), patch("venom.server.database.initialize_database") as initialize, redirect_stdout(io.StringIO()):
                 mysql_setup(root, {"admin_password": "CurrentXamppPassword", "password": "DedicatedGamePassword"}, interactive=False)
-            self.assertEqual("CurrentXamppPassword", connect.call_args.kwargs["password"])
+            self.assertEqual(b"CurrentXamppPassword", connect.call_args.kwargs["password"])
             saved = (root / "config/server.json").read_text()
             self.assertNotIn("CurrentXamppPassword", saved)
             config = json.loads(saved)
@@ -99,7 +99,7 @@ class MySQLSetupTests(unittest.TestCase):
             self.assertFalse(any("ALTER USER" in statement or "SET PASSWORD" in statement for statement in statements))
             grants = [statement for statement in statements if statement.startswith("GRANT")]
             self.assertEqual(1, len(grants))
-            self.assertIn(" ON `digimon_venom_nxt`.* ", grants[0])
+            self.assertIn(r" ON `digimon\_venom\_nxt`.* ", grants[0])
             self.assertIn("REFERENCES", grants[0])
             self.assertNotIn("ALL PRIVILEGES", grants[0])
             self.assertNotIn("GRANT OPTION", grants[0])
@@ -113,7 +113,7 @@ class MySQLSetupTests(unittest.TestCase):
             before = '{"port": 9999, "database": {"password": "ExistingGamePassword"}}'
             config.write_text(before)
             connection = MagicMock()
-            with patch("pymysql.connect", return_value=connection), patch("venom.server.database.initialize_database", side_effect=RuntimeError("schema validation failed")), redirect_stdout(io.StringIO()):
+            with patch("pymysql.connect", return_value=connection), patch("tools.setup._probe_game_login", side_effect=[False, True]), patch("venom.server.database.initialize_database", side_effect=RuntimeError("schema validation failed")), redirect_stdout(io.StringIO()):
                 with self.assertRaisesRegex(RuntimeError, "schema validation failed"):
                     mysql_setup(root, {"password": "ReplacementPassword"}, interactive=False)
             self.assertEqual(before, config.read_text())

@@ -1,0 +1,3 @@
+# Setup repair only; no game assets or game runtime dependencies are rebuilt.
+PyMySQL==1.1.1
+cryptography==46.0.0

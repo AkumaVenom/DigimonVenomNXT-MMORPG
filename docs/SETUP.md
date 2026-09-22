@@ -1,67 +1,180 @@
-# Windows x64 build and hosting
+# Windows x64 build and setup — v0.3.0
 
-This source produces a native SDL2 Windows client and a separate console dedicated server. The build uses Python 3.11+ for Windows x64 and PyInstaller. An Internet connection is needed for the first dependency installation. MySQL 8 or MariaDB 10.4+ (including XAMPP) must already be installed and running on the administrator's machine or database host.
+Use **01_SETUP_SERVER.bat** for the complete setup. The wizard keeps database,
+hosting and readiness checks in one window. You can correct a field and retry
+without restarting a chain of password prompts.
 
-## 1. Build once
+## 1. Build the complete source
 
-Extract the full source ZIP to a short local path such as `C:\Games\DigimonVenomNXT`. Install **64-bit Python 3.11 or newer** from Python.org and enable **Add Python to PATH**. Double-click `BUILD_ALL.bat`.
+1. Extract the full source ZIP into a new writable folder, such as
+   `C:\Games\DigimonVenomNXT`. Open the inner folder containing `BUILD_ALL.bat`.
+   Do not run files from inside the ZIP.
+2. Install **Python 3.11 or newer, Windows x64**, with the Python launcher,
+   **Add Python to PATH** and Tcl/Tk support. Internet access is needed for the
+   first dependency download.
+3. Run **BUILD_ALL.bat**. It verifies the hashes and sizes of the included assets
+   and catalog, creates an isolated `.venv-build`, downloads the dependencies,
+   checks them, and builds the native client, dedicated server and setup utility.
+4. After it finishes, extract `dist/Windows_Server_x64.zip` into a permanent
+   private server folder and `dist/Windows_Client_x64.zip` into a separate client
+   folder. Keep working installations outside `dist`: rebuilding replaces it.
 
-The builder checks Python and architecture, verifies SHA-256 and sizes for every asset and the catalog, creates `.venv-build`, downloads runtime and build dependencies, runs `pip check`, compiles Python sources, freezes the native applications and creates:
+The source contains all imported runtime artwork, maps and audio. Original upload
+archives are not required. A missing or changed asset stops the build rather than
+being silently replaced. `python tools/build.py --verify-only` verifies the assets
+on any supported OS. `BUILD_ALL.bat --offline` reuses a populated build environment.
+Windows executables must be built on Windows x64; players running the resulting
+client do not need Python.
 
-- `dist/Windows_Client_x64.zip` — client EXE, all sprites, maps, audio and data.
-- `dist/Windows_Server_x64.zip` — console server EXE, setup application, server data and the numbered setup / launch BAT files.
+MySQL 8 or MariaDB 10.4+ must already be installed and running. XAMPP provides a
+compatible database service. The setup does not install or restart XAMPP.
 
-Players need no Python installation. The server administrator also needs no Python when using the built server ZIP. A native Windows executable cannot be produced by running PyInstaller on Linux; build on your Windows x64 computer. The build artifacts replace prior folders in `dist`, so extract your live server elsewhere before configuring it.
+## 2. Open the setup wizard
 
-The complete imported assets ship with source. The original uploaded ROM and archives are not needed to build the included snapshot. If an asset is missing or corrupted, restore it from the source ZIP or re-run the documented asset importer. The builder refuses to silently substitute artwork. `python tools/build.py --verify-only` verifies integrity on any platform. A second build can use `--offline` if `.venv-build` already contains every dependency.
+Start MySQL in XAMPP. In the permanent server folder, run **01_SETUP_SERVER.bat**.
+The title/version should show **0.3.0**. On a fresh installation, there is no old
+configuration to copy and no existing game account to supply.
 
-## 2. Set up MySQL
+For an existing server, first stop the world server and back up its database and
+complete private `config` folder. Copy that entire `config` folder into the new
+server folder before opening setup. Keep the saved database name to retain your
+characters. Existing credentials, hosting settings and certificate authority are
+loaded for reuse. Do not merge executable files from different releases.
 
-Extract `Windows_Server_x64.zip` to a permanent private server directory. Start MySQL in XAMPP, then double-click `02_SETUP_MYSQL.bat` there. Enter:
+### Check the database connection
 
-- MySQL address and port; local XAMPP is usually `127.0.0.1:3306`.
-- Game database name; default `digimon_venom_nxt`.
-- Existing administrator account and its **current** password; a blank XAMPP password is accepted.
-- Separate game account; default `venom`. Press Enter at its password prompt to generate a strong password, or preserve the saved game password when re-running setup.
-- The allowed game account host; keep `localhost` for a database and game server on the same computer. For a remote database, enter the actual game server's database-visible address.
+Enter the database host, port, administrator name and the password that already
+works with XAMPP. Local defaults are `127.0.0.1`, **3306**, and `root`. A genuinely
+blank XAMPP administrator password is supported. Password fields allow typing,
+pasting and checking the entered value.
 
-Setup creates the database and a limited game account, initializes the schema through the server's database implementation, validates the dedicated login and writes `config/server.json`. It **never changes the XAMPP administrator password** and does not save it. The dedicated password must have at least 12 characters. Existing dedicated accounts keep their passwords; supply their actual password or choose a new game account. An administrator able to create databases, users and grants is required for provisioning.
+Run the connection check before creating the game database. This verifies the
+service and administrator login. A connection error remains visible with its
+exact stage and error code; it does not repeatedly ask for an unrelated password.
+The database port is separate from the game's listening port, usually **8765**.
 
-Back up the database regularly. Keep the server directory, `config/server.json` and the private TLS keys private. Only the client distribution and the explicitly generated public connection kit are player downloads.
+### Create the game's database login
 
-## 3. Configure public hosting
+Keep the default game database name `digimon_venom_nxt` for a fresh install, or the
+saved name when repairing an existing installation. The game uses its own limited
+database login. Automatic password generation avoids a second password to invent
+or remember. If choosing a game database password yourself, MySQL's password
+policy applies.
 
-Double-click `03_SETUP_PUBLIC_HOSTING.bat` in the server directory. Enter the exact public DNS hostname or IP address players will use, without `https://`, a path or a port. Set the game port (default TCP 8765). The bind address defaults to `0.0.0.0` so the game server listens on network interfaces; this is different from the public hostname.
+No existing game database account is required. Setup creates and verifies the
+login and initializes the schema before saving the database configuration. If a
+requested username is already occupied by an account with a different password,
+setup can allocate a separate NXT login for the same game database. Existing
+characters and tables remain in that database. Setup does not change root's
+password or passwords belonging to other MMOs, and does not save the administrator
+password. The game's database credentials are stored in the private server config.
 
-This creates a private certificate authority, a signed server certificate with the correct DNS/IP SAN, and `Public_Player_Connection_Kit.zip`. The kit contains exactly:
+For a database on the same computer, use `localhost` as the game account's allowed
+host. For a remote database, use the database-visible address of the world server.
+The administrator must have permission to create databases, users and grants.
+
+## 3. Choose local or public hosting
+
+**Local on this PC:** choose local hosting. The connection uses `localhost` and
+TLS, with the configured MySQL database. No router forwarding is needed for a
+client on the same computer. This is distinct from the optional SQLite development
+mode described below.
+
+**Public or LAN:** enter the DNS name or IP address that the clients will use.
+Do not include `https://`, a path, or `:port` in the hostname field. Choose an
+available game TCP port, default **8765**. Use a different port if another MMO
+already uses it. The server bind address is a local listening address; it is
+separate from the hostname players connect to. Public hosting normally binds
+`0.0.0.0`.
+
+The wizard creates or reuses the certificate authority, issues a matching server
+certificate, and creates `Public_Player_Connection_Kit.zip`. This kit contains:
 
 ```text
 config/client.json
 config/server-ca.pem
 ```
 
-Extract the kit **inside the Windows client folder**, merging the `config` directory and replacing the client settings. Zip and share that configured client folder with players, or distribute the client ZIP and connection kit separately with the same extraction instructions. The native client loads this bundled public CA certificate and checks the server hostname automatically. Players do not install a certificate in Windows and must not disable certificate verification.
+Extract the kit **inside the Windows client folder**, merging `config`. The client
+checks the bundled CA and hostname automatically. Players do not install a
+certificate into Windows. Only the configured client and public kit are player
+downloads; never share the server folder or certificate private keys.
 
-The CA private key stays in `config/authority/server-ca-key.pem`. The game server private key stays in `config/server-key.pem`. Neither private key is copied to the player kit. Distribute the kit through a trusted download location; it defines which server the client trusts.
+For Internet hosting, allow the selected TCP game port through Windows Firewall
+and forward it to the server's LAN address on your router. DNS must resolve to
+your reachable public address. Setup cannot configure the router, DNS or ISP, and
+local readiness does not prove reachability through an external network. Test
+from another connection after configuring forwarding. For LAN play, use the
+server's LAN hostname or address and generate a kit for that address.
 
-Allow inbound TCP traffic on the chosen game port in Windows Firewall. If your server is behind a router, forward that TCP port to the server's LAN address. A public IP, correctly pointed DNS and reachable port are necessary; this setup does not alter a router, bypass carrier NAT or purchase hosting. For local testing, use `localhost` as the hosting name and install the resulting kit in the local client.
+## 4. Check readiness and play
 
-Run `START_WORLD_SERVER_CONSOLE.bat`. The dedicated world server opens a persistent console with startup errors and connection logs. Run `PLAY_DIGIMON_VENOM_NXT.bat` from the configured client to join.
+Complete the wizard's readiness checks. If a check fails, keep the window open,
+read its stage and error code, correct the indicated field and retry. Setup writes
+`logs/setup-latest.json` with diagnostic information and omits password values.
+Use the wizard's copy function or attach that report if asking for help.
 
-## Renewal and configuration
+Run **START_WORLD_SERVER_CONSOLE.bat** in the server folder and wait for startup,
+including the initial rival population, to finish. Run
+**PLAY_DIGIMON_VENOM_NXT.bat** in the configured client folder. Use **Register** to
+create your player/tamer account. That account is separate from both the XAMPP
+administrator and the game's internal database login.
 
-Server certificates last 397 days. Re-run public hosting setup before expiry; it preserves the CA so existing clients continue to trust the renewed server certificate. Restart the world server after renewal. If the public hostname or IP changes, re-run hosting setup and distribute the new `client.json` through a new kit. If the CA private key is lost, restore the backup; replacing the CA requires every player to receive a new kit.
+Back up the game database and the entire private `config` folder regularly.
 
-Source commands (after installing `requirements.txt`):
+## Errors and retries
+
+| Error | Meaning and next action |
+|---|---|
+| 1043 | MySQL/MariaDB rejected the connection handshake. Confirm that the host and port belong to MySQL, check the server/version details and retry. This code alone does not mean the password is wrong. |
+| 1045 | Database authentication was rejected. Check the username, password and account host for the stage shown in the report. |
+| 2003 / connection refused | Start the database service and check its host, configured port and firewall. |
+| Password policy rejection | Choose a game database password accepted by the database policy, or use automatic generation. This is not a request for an existing game account. |
+| Game port already occupied | Stop the other instance of this game or choose a different unused game port; update the client with the new kit. |
+
+The reported user failure has not been confirmed as 1043. Diagnostics retain the
+actual code so a handshake failure and a password failure can be distinguished.
+Do not send passwords or `config/server.json` when requesting help; send the
+sanitized diagnostic report instead.
+
+## Reopening one page and advanced console mode
+
+- **01_SETUP_SERVER.bat** opens the complete wizard.
+- **02_SETUP_MYSQL.bat** opens its database stage.
+- **03_SETUP_PUBLIC_HOSTING.bat** opens its hosting stage.
+- Adding **--console** to 02 or 03 runs the legacy console workflow.
+- Existing **--answers** and **--console-passwords** arguments on 02 remain
+  supported and select the legacy workflow. The old optional `setup_fix` repair
+  payload never takes priority over the new full-release setup utility.
+
+Source commands, after installing `requirements.txt`:
 
 ```powershell
-python -m tools.setup --help
-python -m tools.setup mysql --help
-python -m tools.setup hosting --help
-python -m tools.setup --root C:\VenomServer mysql
-python -m tools.setup --root C:\VenomServer hosting
+python -m tools.setup --root C:\VenomServer wizard
+python -m tools.setup --root C:\VenomServer wizard --stage database
+python -m tools.setup --root C:\VenomServer wizard --stage hosting
+python -m tools.setup --root C:\VenomServer mysql --console
+python -m tools.setup --root C:\VenomServer hosting --console
 ```
 
-For automation, `mysql --answers path.json` accepts keys `host`, `port`, `name`, `admin_user`, `admin_password`, `user`, `password`, `account_host`. `hosting --answers path.json` accepts `host`, `port`, `bind`. Pass `--root` before the subcommand. Use `hosting --output path.zip` to choose a connection-kit destination. Answers files may contain credentials: keep them outside source and client packages, then remove them when no longer needed.
+Pass `--root` before the subcommand. Legacy `mysql --answers path.json` accepts
+`host`, `port`, `name`, `admin_user`, `admin_password`, `user`, `password` and
+`account_host`. Legacy `hosting --answers path.json` accepts `host`, `port` and
+`bind`; `--output path.zip` chooses its connection-kit destination. Answers files
+may contain credentials: keep them private and outside player distributions.
 
-For local development only, double-click `START_LOCAL_DEV.bat`, wait for the server to start, then open `PLAY_LOCAL_DEV.bat`. The first launch creates a separate `.venv-dev` and downloads runtime dependencies; subsequent launches reuse it. You can also run the source server and client with `--dev` in separate terminals. This uses local SQLite and unencrypted loopback networking; it is deliberately separate from public TLS / MySQL hosting. No XAMPP configuration is needed for this mode. Public configuration files are not modified.
+## Certificate renewal and optional development mode
+
+Server certificates last 397 days. Reopen hosting setup before expiry and retain
+the existing CA; clients continue to trust a renewed certificate from that CA.
+Restart the world server after renewal. A changed hostname or port requires a new
+client connection kit. Loss or replacement of the CA requires a newly trusted kit
+for every player; preserve the full private config backup.
+
+For source development without XAMPP, run **START_LOCAL_DEV.bat**, then
+**PLAY_LOCAL_DEV.bat**. The first launch installs dependencies into `.venv-dev`.
+This mode uses a separate SQLite development save and unencrypted loopback
+networking; it does not change the normal MySQL/TLS configuration.
+
+See `VALIDATION.md` for the checks actually run. Native Windows executables and
+acceptance on the target XAMPP computer require testing on that Windows host.

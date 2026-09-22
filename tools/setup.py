@@ -3,7 +3,7 @@ from __future__ import annotations
 
 import argparse
 from datetime import datetime, timedelta, timezone
-import getpass
+import hashlib
 import ipaddress
 import json
 import os
@@ -14,8 +14,14 @@ import sys
 import zipfile
 
 ROOT = Path(sys.executable).resolve().parent if getattr(sys, "frozen", False) else Path(__file__).resolve().parents[1]
+if getattr(sys, "frozen", False) and ROOT.name.lower() == "admin" and (ROOT.parent / "VenomWorldServer.exe").is_file():
+    ROOT = ROOT.parent
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
+
+from tools.password_prompt import PasswordCancelled, read_password
+
+SETUP_VERSION = "0.3.0"
 
 
 def read_json(path: Path, default=None):
@@ -30,8 +36,8 @@ def private_write(path: Path, value: bytes):
     try:
         with os.fdopen(fd, "wb") as out:
             out.write(value)
+        temporary.chmod(0o600)
         temporary.replace(path)
-        path.chmod(0o600)
     except BaseException:
         temporary.unlink(missing_ok=True)
         raise
@@ -41,7 +47,7 @@ def save_json(path: Path, value):
     private_write(path, (json.dumps(value, indent=2) + "\n").encode("utf-8"))
 
 
-def choice(answers, key, label, default=None, secret=False, interactive=True):
+def choice(answers, key, label, default=None, secret=False, interactive=True, password_mode="auto"):
     if key in answers:
         return answers[key]
     if not interactive:
@@ -49,7 +55,7 @@ def choice(answers, key, label, default=None, secret=False, interactive=True):
             return default
         raise ValueError(f"Missing required setting {key!r} in the answers JSON.")
     prompt = label + (f" [{default}]" if default is not None and not secret else "") + ": "
-    value = getpass.getpass(prompt) if secret else input(prompt)
+    value = read_password(label, mode=password_mode) if secret else input(prompt)
     return value if value else default
 
 
@@ -66,59 +72,192 @@ def validated_port(value):
     return port
 
 
-def mysql_setup(root: Path, answers: dict, interactive=True):
+def _probe_game_login(db):
+    """Verify the exact account selected by MySQL, without requiring DB grants."""
+    import pymysql
+    try:
+        connection = pymysql.connect(
+            host=db["host"], port=db["port"], user=db["user"],
+            password=db["password"].encode("utf-8"), charset="utf8mb4",
+            connect_timeout=10, read_timeout=15, write_timeout=15, autocommit=True)
+    except pymysql.MySQLError as exc:
+        if exc.args and exc.args[0] in (1045, 1698):
+            return False
+        raise
+    try:
+        with connection.cursor() as cursor:
+            cursor.execute("SELECT CURRENT_USER()")
+            row = cursor.fetchone()
+        return bool(row and row[0] == f'{db["user"]}@{db["account_host"]}')
+    finally:
+        connection.close()
+
+
+def _grant_database(cursor, name, user, account_host):
+    # In default MySQL/MariaDB, underscores in database grants are wildcards,
+    # even inside backticks. MySQL partial_revokes=ON instead uses literal names.
+    cursor.execute("SHOW VARIABLES LIKE 'partial_revokes'")
+    row = cursor.fetchone()
+    literal_names = bool(row and str(row[1]).upper() in ("ON", "1"))
+    grant_name = name if literal_names else name.replace("_", "\\_")
+    cursor.execute(
+        f"GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, ALTER, INDEX, REFERENCES ON `{grant_name}`.* TO %s@%s",
+        (user, account_host))
+
+
+def _cleanup_created_accounts(admin, accounts):
+    """Only remove identities whose CREATE USER succeeded in this invocation."""
+    for user, account_host in accounts:
+        try:
+            with admin.cursor() as cursor:
+                cursor.execute("DROP USER IF EXISTS %s@%s", (user, account_host))
+        except Exception:
+            print("An unused setup login could not be removed. A later setup run can recover automatically.", file=sys.stderr)
+    accounts.clear()
+
+
+def _configure_game_account(admin, db, created_accounts):
+    import pymysql
+    if _probe_game_login(db):
+        print(f'Using the working game database login: {db["user"]}.')
+        return
+    requested_user = db["user"]
+    database_tag = hashlib.sha256(db["name"].encode("utf-8")).hexdigest()[:8]
+    for attempt in range(6):
+        user = requested_user if attempt == 0 else f"venom_nxt_{database_tag}_{secrets.token_hex(3)}"
+        try:
+            with admin.cursor() as cursor:
+                cursor.execute("CREATE USER %s@%s IDENTIFIED BY %s", (user, db["account_host"], db["password"]))
+        except pymysql.MySQLError as exc:
+            if not exc.args or exc.args[0] != 1396:
+                raise
+            if attempt == 0:
+                print("That database username is already occupied. Creating a separate NXT login with your chosen password.")
+            continue
+        created_accounts.append((user, db["account_host"]))
+        db["user"] = user
+        if not _probe_game_login(db):
+            raise ValueError("MySQL created the game login but rejected its connection. Check the MySQL account-host setting: use localhost when MySQL and the game server are on the same computer. No existing account password was changed.")
+        print(f"Created and verified game database login: {user}.")
+        return
+    raise ValueError("MySQL could not reserve a game login after several name conflicts. Run setup again; the existing database and account passwords are unchanged.")
+
+
+def _game_password(answers, default, interactive, password_mode, label):
+    value = choice(answers, "password", label, default, secret=True,
+                   interactive=interactive, password_mode=password_mode)
+    if value == "":
+        value = default
+    if not isinstance(value, str) or not value:
+        raise ValueError("The game database password must be text. Leave the field blank to generate or retain a password.")
+    try:
+        value.encode("utf-8")
+    except UnicodeEncodeError:
+        raise ValueError("The game database password contains an incomplete Unicode character. Clear the field and paste the complete password.") from None
+    return value
+
+
+def _generated_game_password():
+    # Retain 256 random bits and satisfy common character-class policies.
+    return "Aa9!" + secrets.token_urlsafe(32)
+
+
+def mysql_setup(root: Path, answers: dict, interactive=True, password_mode="auto", stage_callback=None):
     import pymysql
     from venom.server.database import initialize_database
 
+    def stage(name, status="started"):
+        if stage_callback is not None:
+            stage_callback(name, status)
+
+    stage("validate")
     config_path = root / "config/server.json"
     config = read_json(config_path)
     old = config.get("database", {})
-    print("\nDigimon Venom NXT - MySQL / XAMPP setup\nStart MySQL or MariaDB before continuing. The existing administrator password will not be changed.\n")
-    host = str(choice(answers, "host", "MySQL host", old.get("host", "127.0.0.1"), interactive=interactive))
+    print(f"\nDigimon Venom NXT {SETUP_VERSION} - MySQL / XAMPP setup\nStart MySQL or MariaDB before continuing. Setup creates the game database login with the password you choose. Player accounts are registered inside the game.\n")
+    host = hostname(choice(answers, "host", "MySQL host", old.get("host", "127.0.0.1"), interactive=interactive))
     port = validated_port(choice(answers, "port", "MySQL port", old.get("port", 3306), interactive=interactive))
     name = validated_identifier(choice(answers, "name", "Game database name", old.get("name", "digimon_venom_nxt"), interactive=interactive), "Database name")
-    admin_user = str(choice(answers, "admin_user", "MySQL administrator username", "root", interactive=interactive))
-    admin_password = choice(answers, "admin_password", "Existing XAMPP / administrator password (Enter for blank)", "", secret=True, interactive=interactive)
-    app_user = validated_identifier(choice(answers, "user", "Dedicated game database username", old.get("user", "venom"), interactive=interactive), "Database username", 32)
-    if app_user.lower() in {"root", "mysql", "mariadb", admin_user.lower()}:
-        raise ValueError("Use a separate game database account, not the administrator account.")
-    default_password = old.get("password") or secrets.token_urlsafe(32)
-    app_password = choice(answers, "password", "Game database password (Enter to preserve / securely generate)", default_password, secret=True, interactive=interactive)
-    if not isinstance(app_password, str) or len(app_password) < 12:
-        raise ValueError("The dedicated game database password must contain at least 12 characters.")
-    account_host = str(choice(answers, "account_host", "MySQL account host (localhost for a local game server)", old.get("account_host", "localhost"), interactive=interactive))
-    if not account_host or any(c in account_host for c in ("'", '"', ";", "\x00", "\n")):
-        raise ValueError("Invalid MySQL account host.")
-    db = {"driver": "mysql", "host": host, "port": port, "user": app_user, "password": app_password, "name": name, "account_host": account_host}
-    admin = pymysql.connect(host=host, port=port, user=admin_user, password=admin_password or "", charset="utf8mb4", connect_timeout=10, autocommit=True)
-    created = False
+    admin_user = str(choice(answers, "admin_user", "MySQL administrator username", "root", interactive=interactive)).strip()
+    if not admin_user or any(ord(c) < 32 for c in admin_user):
+        raise ValueError("Enter the MySQL administrator username.")
+    admin_password = choice(answers, "admin_password", "Existing XAMPP / administrator password (leave blank only if XAMPP has no password)", "", secret=True, interactive=interactive, password_mode=password_mode)
+    if not isinstance(admin_password, str):
+        raise ValueError("Enter the XAMPP administrator password as text, or leave it blank.")
+    stage("administrator")
     try:
+        admin = pymysql.connect(host=host, port=port, user=admin_user,
+                                password=admin_password.encode("utf-8"), charset="utf8mb4",
+                                connect_timeout=10, read_timeout=15, write_timeout=15, autocommit=True)
+    except pymysql.MySQLError as exc:
+        code = exc.args[0] if exc.args else "unknown"
+        if code in (1045, 1698):
+            raise ValueError("XAMPP administrator login was rejected. Enter the EXISTING XAMPP administrator password. Game-account creation has not started and no configuration was changed.") from exc
+        raise ValueError(f"Could not connect to MySQL (error {code}). Check that XAMPP MySQL is running and its host/port are correct. No configuration was changed.") from exc
+    stage("administrator", "passed")
+    print("XAMPP administrator connection verified. Now choose the game's database login.")
+    created_accounts = []
+    try:
+        stage("validate")
+        app_user = validated_identifier(choice(answers, "user", "Game database username to create or reuse", old.get("user", "venom_nxt"), interactive=interactive), "Database username", 32)
+        if app_user.lower() in {"root", "mysql", "mariadb", admin_user.lower()}:
+            raise ValueError("Choose a separate game database username, such as venom_nxt, instead of the administrator username.")
+        keep_saved = old.get("user") == app_user and old.get("host") == host and int(old.get("port", 3306)) == port
+        default_password = (old.get("password") if keep_saved else None) or _generated_game_password()
+        hint = "leave blank to keep the saved setting" if keep_saved and old.get("password") else "leave blank to generate one automatically"
+        app_password = _game_password(answers, default_password, interactive, password_mode,
+                                      f"Choose the GAME database password ({hint}). Setup creates this login for you.")
+        account_host = str(choice(answers, "account_host", "MySQL account host (localhost when MySQL and the game server share this computer)", old.get("account_host", "localhost"), interactive=interactive)).strip().lower()
+        if not account_host or any(c in account_host for c in ("'", '\"', ";", "\x00", "\n", "\r")):
+            raise ValueError("Invalid MySQL account host.")
+        stage("create_database")
         with admin.cursor() as cursor:
             cursor.execute(f"CREATE DATABASE IF NOT EXISTS `{name}` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci")
+        stage("create_database", "passed")
+        while True:
+            db = {"driver": "mysql", "host": host, "port": port, "user": app_user,
+                  "password": app_password, "name": name, "account_host": account_host}
             try:
-                cursor.execute("CREATE USER %s@%s IDENTIFIED BY %s", (app_user, account_host, app_password))
-                created = True
-            except pymysql.err.OperationalError as exc:
-                if exc.args[0] != 1396:
-                    raise
-                print("Reusing the existing dedicated account; its password has not been changed.")
-            cursor.execute(f"GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, ALTER, INDEX, REFERENCES ON `{name}`.* TO %s@%s", (app_user, account_host))
-        # Validate the dedicated credentials and initialize the actual server schema.
-        initialize_database(db)
-    except pymysql.MySQLError:
-        if not created:
-            print("If the dedicated account already exists, supply its existing password or choose a new username.", file=sys.stderr)
+                stage("game_account")
+                _configure_game_account(admin, db, created_accounts)
+                stage("game_account", "passed")
+                stage("grants")
+                with admin.cursor() as cursor:
+                    _grant_database(cursor, name, db["user"], account_host)
+                stage("grants", "passed")
+                stage("schema")
+                initialize_database(db)
+                stage("schema", "passed")
+                break
+            except pymysql.MySQLError as exc:
+                if exc.args and exc.args[0] == 1819 and interactive and "password" not in answers:
+                    _cleanup_created_accounts(admin, created_accounts)
+                    print("MySQL's own password policy rejected that game password. Choose another password below; the XAMPP connection is still open.")
+                    app_password = _game_password({}, _generated_game_password(), True, password_mode,
+                        "Choose another GAME database password to satisfy MySQL's password policy, or leave blank to generate one.")
+                    continue
+                raise
+        config.setdefault("host", "0.0.0.0")
+        config.setdefault("port", 8765)
+        config.setdefault("tls_cert", "config/server-cert.pem")
+        config.setdefault("tls_key", "config/server-key.pem")
+        config.setdefault("allow_registration", True)
+        config["database"] = db
+        stage("save_config")
+        save_json(config_path, config)
+        stage("save_config", "passed")
+    except pymysql.MySQLError as exc:
+        _cleanup_created_accounts(admin, created_accounts)
+        code = exc.args[0] if exc.args else "unknown"
+        if code == 1819:
+            raise ValueError("MySQL's password policy rejected the chosen GAME database password. Choose a password that satisfies your MySQL policy, or leave it blank to generate one. Saved configuration was not changed.") from exc
+        raise ValueError(f"Game database setup failed (MySQL error {code}). The XAMPP login succeeded; check the administrator's CREATE USER and database permissions, account host, and MySQL availability. Saved server configuration was not changed.") from exc
+    except BaseException:
+        _cleanup_created_accounts(admin, created_accounts)
         raise
     finally:
         admin.close()
-    config.setdefault("host", "0.0.0.0")
-    config.setdefault("port", 8765)
-    config.setdefault("tls_cert", "config/server-cert.pem")
-    config.setdefault("tls_key", "config/server-key.pem")
-    config.setdefault("allow_registration", True)
-    config["database"] = db
-    save_json(config_path, config)
-    print(f"\nDatabase schema is ready. Dedicated credentials saved in {config_path}.\nNext run 03_SETUP_PUBLIC_HOSTING.bat. Administrator credentials were not saved.")
+    print(f"\nDatabase schema and game login are ready. Settings saved in {config_path}.\nNext run 03_SETUP_PUBLIC_HOSTING.bat. Administrator credentials were not saved.")
     return db
 
 
@@ -220,29 +359,59 @@ def hosting_setup(root: Path, answers: dict, interactive=True, output: Path | No
 
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--version", action="version", version=f"Digimon Venom NXT setup {SETUP_VERSION}")
     parser.add_argument("--root", type=Path, default=ROOT, help="Source or server distribution directory.")
-    sub = parser.add_subparsers(dest="command", required=True)
+    sub = parser.add_subparsers(dest="command")
+    wizard = sub.add_parser("wizard", help="Open the guided desktop setup window.")
+    wizard.add_argument("--stage", choices=("database", "hosting"), default="database")
+    wizard.add_argument("--wizard", action="store_true", help=argparse.SUPPRESS)
     for name, description in (("mysql", "Provision a dedicated MySQL account and initialize the schema."), ("hosting", "Create / renew a hostname-verified TLS certificate and public player kit.")):
         child = sub.add_parser(name, help=description, description=description)
         child.add_argument("--answers", type=Path, help="Read settings from a JSON file without prompting. This file may contain secrets; do not distribute it.")
+        if name == "mysql":
+            child.add_argument("--console-passwords", "--console", action="store_true", help="Use masked Windows console input instead of password windows.")
         if name == "hosting":
             child.add_argument("--output", type=Path, help="Path of the two-file public connection ZIP.")
+            child.add_argument("--console", action="store_true", help="Use the console hosting setup.")
     args = parser.parse_args(argv)
+    report = None
+    current_stage = "validate"
     try:
         root = args.root.resolve()
         root.mkdir(parents=True, exist_ok=True)
+        if args.command in (None, "wizard"):
+            from tools.setup_wizard import run
+            return run(root, initial_stage=getattr(args, "stage", "database"))
+        from tools.setup_diagnostics import DiagnosticReport
+        report = DiagnosticReport(root)
+
+        def progress(stage, status="started"):
+            nonlocal current_stage
+            current_stage = stage
+            report.record(stage, "success" if status == "passed" else status)
+
+        progress("validate")
         answers = read_json(args.answers) if args.answers else {}
         if args.answers and not args.answers.is_file():
             raise ValueError("The requested answers JSON does not exist.")
         if not isinstance(answers, dict):
             raise ValueError("The answers JSON must contain an object.")
         if args.command == "mysql":
-            mysql_setup(root, answers, interactive=args.answers is None)
+            mysql_setup(root, answers, interactive=args.answers is None, password_mode="console" if args.console_passwords else "auto", stage_callback=progress)
         else:
+            progress("hosting")
             hosting_setup(root, answers, interactive=args.answers is None, output=args.output)
-    except (Exception, KeyboardInterrupt) as exc:
-        # Database drivers redact password values in errors; never dump the answers/config dict.
-        print(f"\nSETUP FAILED: {exc}", file=sys.stderr)
+            progress("hosting", "passed")
+    except (PasswordCancelled, KeyboardInterrupt):
+        print("\nSETUP CANCELLED. No password was submitted for the cancelled field.", file=sys.stderr)
+        return 130
+    except Exception as exc:
+        if report is not None:
+            failure = report.failure(current_stage, exc)
+            print(f"\nSETUP FAILED: {failure}\nDiagnostic report: {report.path}", file=sys.stderr)
+        else:
+            # Window initialization failures cannot contain database credentials.
+            print("\nSETUP WINDOW COULD NOT OPEN. Install Python with Tcl/Tk enabled, rebuild, or run 02_SETUP_MYSQL.bat --console. Your configuration has not been changed.", file=sys.stderr)
         return 1
     return 0
 

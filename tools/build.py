@@ -15,7 +15,7 @@ import venv
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
-BUILD_VERSION = "0.2.0-alpha"
+BUILD_VERSION = "0.3.0-alpha"
 
 
 def safe_asset(root: Path, name: str) -> Path:
@@ -143,6 +143,13 @@ def build(args) -> None:
         if name == "DigimonVenomNXT":
             command[-1:-1] = ["--manifest", str(ROOT / "tools/windows_client.manifest"),
                               "--icon", str(ROOT / "tools/windows_client.ico")]
+        if name == "VenomSetup":
+            command[-1:-1] = ["--collect-all", "tkinter", "--hidden-import", "tkinter.ttk",
+                              "--hidden-import", "tools.setup_wizard",
+                              "--hidden-import", "tools.setup_service",
+                              "--hidden-import", "tools.setup_diagnostics",
+                              "--copy-metadata", "PyMySQL",
+                              "--manifest", str(ROOT / "tools/windows_client.manifest")]
         run(command)
     client = output / "Windows_Client_x64"
     server = output / "Windows_Server_x64"
@@ -154,9 +161,10 @@ def build(args) -> None:
         copy_tree(ROOT / "data", destination / "data")
         (destination / "config").mkdir(exist_ok=True)
         (destination / "docs").mkdir(exist_ok=True)
+        shutil.copy2(ROOT / "PASSWORD_SETUP_FIX.txt", destination / "PASSWORD_SETUP_FIX.txt")
         for name in ("SETUP.md", "RIVALS_UPGRADE.md", "RIVALS_AND_RANKED.md",
                      "REARISE_RULES_RESEARCH.md", "RELEASE_STATUS.md", "VALIDATION.md",
-                     "RIVALS_BENCHMARK.md", "RIVALS_BENCHMARK.json"):
+                     "RIVALS_BENCHMARK.md", "RIVALS_BENCHMARK.json", "PASSWORD_SETUP_FIX.md"):
             shutil.copy2(ROOT / "docs" / name, destination / "docs" / name)
     for name in ("CONTROLS.md", "DISPLAY_UPGRADE.md"):
         if (ROOT / "docs" / name).is_file():
@@ -172,15 +180,15 @@ def build(args) -> None:
             shutil.copy2(safe_asset(ROOT, name), destination)
     # Keep setup's own _internal directory isolated from the world server bundle.
     copy_tree(frozen / "VenomSetup", server / "admin")
-    for name in ("02_SETUP_MYSQL.bat", "03_SETUP_PUBLIC_HOSTING.bat", "START_WORLD_SERVER_CONSOLE.bat"):
+    for name in ("01_SETUP_SERVER.bat", "02_SETUP_MYSQL.bat", "03_SETUP_PUBLIC_HOSTING.bat", "START_WORLD_SERVER_CONSOLE.bat"):
         shutil.copy2(ROOT / name, server / name)
     shutil.copy2(ROOT / "PLAY_DIGIMON_VENOM_NXT.bat", client / "PLAY_DIGIMON_VENOM_NXT.bat")
     client_config = {"host": "localhost", "port": 8765, "ca_file": "config/server-ca.pem", "server_name": "localhost", "tls": True}
     (client / "config/client.json").write_text(json.dumps(client_config, indent=2) + "\n", encoding="utf-8")
     (client / "READ_ME_FIRST.txt").write_text(
-        "DIGIMON VENOM NXT 0.2.0 - CLIENT\n\n"
+        "DIGIMON VENOM NXT 0.3.0 - CLIENT\n\n"
         "Start the game: PLAY_DIGIMON_VENOM_NXT.bat\n"
-        "This release needs the updated 0.2.0 server for rivals and ranked battles.\n"
+        "Use the dedicated server from this release for matching game and setup behavior.\n"
         "Existing installation: copy your existing client config folder into this complete new client folder.\n"
         "Keep its client.json and trusted server-ca.pem. Your saved display preferences remain in Local AppData.\n"
         "New installation: extract the host's Public_Player_Connection_Kit.zip INTO this folder, merging config.\n"
@@ -190,7 +198,7 @@ def build(args) -> None:
         "Upgrade steps: docs/RIVALS_UPGRADE.md. Game rules: docs/RIVALS_AND_RANKED.md.\n",
         encoding="utf-8")
     (server / "READ_ME_FIRST.txt").write_text(
-        "DIGIMON VENOM NXT 0.2.0 - DEDICATED SERVER\n\n"
+        "DIGIMON VENOM NXT 0.3.0 - DEDICATED SERVER\n\n"
         "START THE SERVER: START_WORLD_SERVER_CONSOLE.bat\n\n"
         "UPGRADE FROM A WORKING SERVER\n"
         "1. Stop the old world server and back up its database and entire private config folder.\n"
@@ -198,12 +206,17 @@ def build(args) -> None:
         "3. Start MySQL/MariaDB in XAMPP, then run START_WORLD_SERVER_CONSOLE.bat.\n"
         "4. Wait for the rival population to finish starting, then use the updated client.\n"
         "The new tables are created automatically; accounts and passwords are retained.\n"
-        "Do not rerun 02/03 setup just for this upgrade. See docs/RIVALS_UPGRADE.md.\n\n"
+        "Use 01_SETUP_SERVER.bat to check or repair your saved configuration when needed.\n"
+        "Keep the existing database name and CA. See docs/RIVALS_UPGRADE.md.\n\n"
         "FRESH INSTALLATION\n"
         "1. Start MySQL/MariaDB in XAMPP.\n"
-        "2. Run 02_SETUP_MYSQL.bat and enter the existing XAMPP administrator password.\n"
-        "3. Run 03_SETUP_PUBLIC_HOSTING.bat; apply its public connection kit to the client.\n"
-        "4. Run START_WORLD_SERVER_CONSOLE.bat. Forward the selected TCP port for Internet hosting.\n\n"
+        "2. Run 01_SETUP_SERVER.bat for the complete 0.3.0 setup wizard.\n"
+        "3. Test the XAMPP connection using its existing administrator password (blank is allowed).\n"
+        "4. Create the game login automatically, choose local/public hosting, then review readiness.\n"
+        "5. Apply the generated Public_Player_Connection_Kit.zip inside the client folder.\n"
+        "6. Run START_WORLD_SERVER_CONSOLE.bat. Forward the selected TCP port for Internet hosting.\n"
+        "02_SETUP_MYSQL.bat and 03_SETUP_PUBLIC_HOSTING.bat reopen the corresponding wizard page.\n"
+        "If a check fails, retain the on-screen error code or logs/setup-latest.json; never send passwords.\n\n"
         "Default population: 5,000 rivals. Configure rivals.count / rivals.enabled in config/server.json.\n"
         "Keep the whole server folder private: it contains database credentials and certificate private keys.\n"
         "Only share the configured client and public player connection kit.\n",
@@ -213,7 +226,7 @@ def build(args) -> None:
         (directory / "build-info.json").write_text(json.dumps(metadata, indent=2) + "\n", encoding="utf-8")
     for directory in (client, server):
         archive(directory, output / f"{directory.name}.zip")
-    print("\nBuild complete. Independent packages:\n  dist/Windows_Client_x64.zip\n  dist/Windows_Server_x64.zip\nNew host: run 02/03 setup in the server folder. Existing host: follow docs/RIVALS_UPGRADE.md and preserve your config.\nStart the server with START_WORLD_SERVER_CONSOLE.bat; this release updates BOTH server and client.", flush=True)
+    print("\nBuild complete. Independent packages:\n  dist/Windows_Client_x64.zip\n  dist/Windows_Server_x64.zip\nNew host: run 01_SETUP_SERVER.bat in the server folder. Existing host: follow docs/RIVALS_UPGRADE.md and preserve your config.\nStart the server with START_WORLD_SERVER_CONSOLE.bat; this release updates BOTH server and client.", flush=True)
 
 
 def main(argv=None):

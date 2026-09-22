@@ -6,7 +6,7 @@ import zipfile
 
 ROOT=Path(__file__).resolve().parents[1]
 DIRECTORIES=('venom','tools','tests','data','assets','docs')
-ROOT_NAMES={'README.md','pytest.ini','.gitignore'}
+ROOT_NAMES={'README.md','PASSWORD_SETUP_FIX.txt','pytest.ini','.gitignore'}
 
 
 def package(output:Path):

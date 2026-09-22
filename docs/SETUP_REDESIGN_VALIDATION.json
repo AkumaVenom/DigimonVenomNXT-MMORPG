@@ -1,0 +1,90 @@
+{
+  "release": "0.3.0-alpha",
+  "environment": {
+    "python": "3.12.14",
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+    "database": "MariaDB 10.11.14, isolated portable Linux server",
+    "ui": "Actual Tk 9.0.4 on authenticated Xvfb, scalable DejaVu Sans; Windows target font Segoe UI"
+  },
+  "full_suite": {
+    "tests": "267",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0",
+    "time": "27.549",
+    "timestamp": "2026-09-23T07:00:27.386967+10:00"
+  },
+  "real_database_cases": 23,
+  "wizard_checks": 11,
+  "display_checks": [
+    {
+      "pixels": [
+        1920,
+        1080
+      ],
+      "dpi": 96,
+      "result": "11 passed"
+    },
+    {
+      "pixels": [
+        3840,
+        2160
+      ],
+      "dpi": 192,
+      "result": "11 passed"
+    }
+  ],
+  "live_case_names": [
+    "test_fresh_chosen_password_creates_usable_database",
+    "test_fresh_chosen_password_creates_usable_database",
+    "test_fresh_chosen_password_creates_usable_database",
+    "test_fresh_chosen_password_creates_usable_database",
+    "test_fresh_folder_collision_is_recovered_without_changing_existing_account",
+    "test_fresh_folder_collision_is_recovered_without_changing_existing_account",
+    "test_existing_correct_password_and_rebuild_preserve_configuration_and_data",
+    "test_database_grant_matches_underscores_literally",
+    "test_wrong_administrator_password_keeps_existing_configuration",
+    "test_schema_failure_preserves_data_config_and_removes_only_new_account",
+    "test_saved_account_runs_player_and_rival_schema",
+    "test_real_password_policy_retries_game_password_without_restarting_setup",
+    "test_real_password_policy_retries_game_password_without_restarting_setup",
+    "test_connection_test_is_read_only_and_reports_actual_server",
+    "test_connection_failure_can_be_edited_and_retried_in_same_service",
+    "test_wrong_administrator_is_named_and_correctable_without_game_creation",
+    "test_chosen_game_password_runs_runtime_and_preserves_unrelated_settings",
+    "test_chosen_game_password_runs_runtime_and_preserves_unrelated_settings",
+    "test_blank_game_password_satisfies_real_mariadb_policy",
+    "test_occupied_username_preserves_other_mmo_password_grants_and_data",
+    "test_restricted_administrator_reports_actual_failing_stage_and_can_retry",
+    "test_restricted_administrator_reports_actual_failing_stage_and_can_retry",
+    "test_complete_database_hosting_and_verification_flow"
+  ],
+  "asset_records_verified": 21149,
+  "asset_mib": 485.8,
+  "retained_bot_benchmark_hashes_match": true,
+  "tests_requirements": {
+    "live_database": "Set VENOM_TEST_MARIADB_ROOT to an extracted compatible Linux MariaDB usr directory; fixtures start and stop disposable instances.",
+    "gui": "Use a graphical Windows desktop or DISPLAY for Tk tests.",
+    "all": "python -m pytest -q"
+  },
+  "limits": [
+    "Original user error code remains uncertain. 1043 is tested by deliberate packet/error injection, not claimed as the reproduced user failure.",
+    "No Windows EXE, CMD execution or Windows XAMPP install was tested. Builder execution is simulated for packaging checks.",
+    "No public reachability, DNS, router forwarding or Windows Firewall test.",
+    "No new 5000-bot performance claim; gameplay code and retained benchmark hashes are unchanged."
+  ],
+  "source_sha256": {
+    "tools/setup.py": "8adc3ab4f2bb9262da8e0f740b034f90755f85d4ec4f373aee3394a7645b2938",
+    "tools/setup_service.py": "c634ed14acc0d96b536506e94fcbd25f6c2e43d2f477403eb188880a73fd276e",
+    "tools/setup_diagnostics.py": "38998ea562ce18835e1330924a9f7d58420a898a89a61f8dc57b37f1e40e7717",
+    "tools/setup_wizard.py": "e9bfc708da819e12ac9f00e233730a1da7f95fa3b50d5845209338bf6ff807b2",
+    "tools/build.py": "4d8fcdfa1c898a54badab1f70a52ad103762ce59c9e6f01e3f4573f4915db254",
+    "venom/server/database.py": "6ab7293857be9573554d81e174ddf2006649f4451402c351fcb05d07234cc872",
+    "tests/test_setup_service.py": "89f1d353665874e7f89ea663ee228fe2d309e0d2fa7e783d16e2735678dd5a78",
+    "tests/test_setup_service_live.py": "81216eb47ed5eb32fe7c490ca55fffd4ccf144065e8fb7807b9456278d11121c",
+    "tests/test_setup_mysql_live.py": "a1e5f5ab426716cefda9b5e47285a3002f3504eac1fa115e2c0243625e3bb36e",
+    "tests/test_setup_diagnostics.py": "d15307c4d1d8996a3319ce570af471e7f1b244003a662a1d983b77d6982816b8",
+    "tests/test_setup_wizard.py": "24fac5d2b07c88cc59ed4ebafe40151aad76f66d3f50158094ee255a11108049",
+    "tests/test_setup_launchers.py": "22907bcc24768a4aeb4e8ac1afa40f178e1d80eda7bd2c233753480fb08846b6"
+  }
+}

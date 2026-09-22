@@ -1,6 +1,17 @@
 # Digimon Venom NXT
 
-**v0.2.0 alpha — native Windows x64 client and dedicated world server**
+**v0.3.0 alpha — native Windows x64 client and dedicated world server**
+
+**One setup window from database connection to hosting.** Build the complete
+source, then run **`01_SETUP_SERVER.bat`** from the new server folder. The wizard
+checks your XAMPP connection before creating the game database login, offers
+local or public hosting, and reports readiness with actionable error details.
+It can generate the game database password for you; no existing game or player
+account is required. Errors stay visible and diagnostic reports omit passwords.
+The database service's existing password remains unchanged.
+
+Read `docs/SETUP.md` or `PASSWORD_SETUP_FIX.txt` for the full procedure. This is the
+complete source release, including the artwork, maps, audio and rival systems.
 
 A playable multiplayer foundation built around the supplied Digimon v7 / Paradox artwork and x2 Dawn maps. The desktop client uses pygame-ce / SDL; the authoritative Python world server owns movement, combat, scanning, inventory and persistent character saves. There are no browser pages or page-refresh movement.
 
@@ -12,7 +23,7 @@ The dedicated server now runs a default population of **5,000 persistent AI tame
 
 Battle Park adds automatic weekly seasons, current and career records, top-100 ladders and season archives, promotion battles, and DigiRuby rewards. Its points, rewards, stamina and three-active-partner battles are published NXT rules. The mode adapts documented ReArise features; it is not an exact recreation of every ReArise rule. See `docs/RIVALS_AND_RANKED.md` for the complete rules and `docs/REARISE_RULES_RESEARCH.md` for the recovered official references.
 
-**Already playing v0.1.0 or v0.1.1? Update both server and client.** Follow `docs/RIVALS_UPGRADE.md`. Preserve the working database, server/client `config` folders and private TLS keys. The new server creates its additional tables automatically; the normal upgrade does not need either setup wizard or a password change. Build in a separate folder because `BUILD_ALL.bat` recreates its `dist` outputs.
+**Upgrading an existing installation? Update both server and client.** Follow `docs/RIVALS_UPGRADE.md`. Preserve the working database, server/client `config` folders and private TLS keys. The new server creates its additional tables automatically; the normal upgrade does not need either setup wizard or a password change. Build in a separate folder because `BUILD_ALL.bat` recreates its `dist` outputs.
 
 ## High-DPI display and camera
 
@@ -26,12 +37,12 @@ Use Windows 10/11 x64 with **Python 3.11 or newer, 64-bit**, installed with the 
 
 1. Extract this entire archive to a writable folder, for example `C:\Games\DigimonVenomNXT`. Do not run a BAT from inside the ZIP.
 2. Double-click **`BUILD_ALL.bat`**. It verifies the shipped content hashes, creates an isolated Python environment, downloads the declared dependencies, and builds the client, console server and setup utility.
-3. Open `dist\Windows_Server_x64`. Run **`02_SETUP_MYSQL.bat`**. Enter your existing XAMPP administrator password, including a blank password if that is your setup. The wizard creates a separate game database account; it does not change your XAMPP administrator password.
-4. Run **`03_SETUP_PUBLIC_HOSTING.bat`**. Enter the DNS name or IP address players will use and the TCP port. It creates a server certificate and `Public_Player_Connection_Kit.zip`.
-5. Extract that connection kit **into `dist\Windows_Client_x64`**, merging its `config` directory. Give players this configured client folder or ZIP. The client verifies the bundled CA and hostname without asking players to manually trust a Windows certificate.
-6. Run **`START_WORLD_SERVER_CONSOLE.bat`** in the server folder. Allow initial rival creation to finish. Run **`PLAY_DIGIMON_VENOM_NXT.bat`** in the client folder. Register a tamer and choose a regular Rookie partner.
+3. Extract `dist\Windows_Server_x64.zip` to a permanent private server folder outside the build's `dist` directory. Start MySQL in XAMPP and run **`01_SETUP_SERVER.bat`** in that server folder. Check that the wizard shows **0.3.0**.
+4. Test the database connection using the existing XAMPP administrator login. Blank is allowed if that account has no password. Create the game's own database login, then choose local or public hosting and finish the readiness checks. No existing game database account or player account is needed.
+5. Extract the generated `Public_Player_Connection_Kit.zip` **into the Windows client folder**, merging `config`. The client verifies the bundled CA and hostname without asking players to manually trust a Windows certificate.
+6. Run **`START_WORLD_SERVER_CONSOLE.bat`** in the server folder. Allow initial rival creation to finish. Run **`PLAY_DIGIMON_VENOM_NXT.bat`** in the configured client folder. Register a tamer and choose a regular Rookie partner.
 
-The builder also produces independent `dist\Windows_Client_x64.zip` and `dist\Windows_Server_x64.zip`. The initial client ZIP must receive your connection kit before public play. Keep the configured server folder private: it holds the database password and private certificate keys.
+The builder also produces independent `dist\Windows_Client_x64.zip` and `dist\Windows_Server_x64.zip`. The initial client ZIP must receive your connection kit before connecting to the configured server. Keep the configured server folder private: it holds the database password and private certificate keys.
 
 For internet hosting, allow and forward the chosen TCP port to your server. The certificate wizard cannot configure your router, ISP or DNS. A DNS hostname is useful when your public IP can change.
 
@@ -65,7 +76,7 @@ Public play uses TLS and MySQL. The public server refuses the development databa
 - Ranked auto battles against saved defender teams, weekly UTC seasons, season and career wins/losses, top-100 current/career/archive ladders, earned-grade and placement rewards in a persistent DigiRuby wallet.
 - Nearby friendly rival invitations, an accept/decline hub, head-to-head history, and a bot activity screen with cumulative counters and the latest 100 population events.
 - Original-ROM sequence/sample audio rendered into 46 music tracks and 183 sound effects. The renderer approximates some NDS synthesis behavior; it is not a hardware-perfect emulator.
-- Windows build, MySQL setup, TLS/connection-kit setup, an obvious console server launcher, content verification and automated tests.
+- Windows build, a complete native setup wizard, MySQL connection diagnostics, local/public TLS connection kits, a console server launcher, content verification and automated tests.
 
 ## Source layout
 

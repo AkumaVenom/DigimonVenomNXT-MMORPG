@@ -1,4 +1,19 @@
-# Release status — 0.2.0 alpha
+# Release status — 0.3.0 alpha
+
+Version 0.3.0 replaces the default numbered console setup with a coherent native
+wizard opened by **01_SETUP_SERVER.bat**. It checks the XAMPP connection, creates
+or reuses the game database login, configures local/public hosting, and displays
+readiness and diagnostic details. A failed step remains visible and can be
+retried; sanitized diagnostics are stored in `logs/setup-latest.json`. The user
+reported an uncertain error code, so this release does not claim that the precise
+failure on their Windows computer has been reproduced. Error 1043 (handshake
+rejected) is distinguished from 1045 (authentication rejected).
+
+The rebuilt setup keeps existing database configuration, game data and certificate
+authorities. It can create a game login automatically, without an existing game
+account, and does not reset XAMPP or other MMO passwords. Stage launchers reopen
+the same wizard; advanced console and answers-file workflows remain available.
+All assets and existing gameplay systems are included in the complete source.
 
 This is a playable source release for a native desktop multiplayer RPG, with a Windows build pipeline. It is not a claim that every requested system has reached finished-MMO quality or exact Cyber Sleuth parity.
 
@@ -13,7 +28,7 @@ Version 0.2.0 adds persistent roaming rivals, ranked seasons and community scree
 | Population performance | Worker-driven scheduler, bounded work batches, map-local snapshots and shared navigation data; rivals do not open 5,000 player sockets | A configured population size is not a certified capacity for 5,000 human connections. Hardware, network and database performance must be measured on the target Windows host; see validation evidence for tests actually run |
 | Battle Park | Asynchronous automatic battles using restored party snapshots, three active partners plus up to three reserves, weekly seasons, points, promotion battles, career rating, top-100 current/career/archive ladders and automatic DigiRuby rewards | ReArise-inspired structure with documented NXT numerical rules and SP combat, not verified exact ReArise parity. DigiRubies accumulate in a wallet; no DigiRuby shop is included. No real-time human-versus-human command exchange |
 | Rivals Hub/activity | Nearby invitations, accept/decline, friendly challenges, head-to-head totals, bot directory, cumulative activity counters, latest 100 events and sector distribution | Global event detail is deliberately bounded to 100 recent events; cumulative totals remain. Head-to-head data persists, with the 100 most recent opponents exposed by the hub. Bots are explicitly identified as AI |
-| Persistence | MySQL/MariaDB schema and configurable setup; parameterized queries, password hashing, session leases, revisions | Actual database-daemon provisioning was not exercised here; local integration uses the separate SQLite development backend |
+| Persistence | Native database/hosting wizard with connection diagnostics; MySQL/MariaDB schema and configurable setup; verified game-login creation/reuse, exact-database grants, parameterized queries, password hashing, session leases and revisions | See `VALIDATION.md` for database provisioning checks actually run; Windows XAMPP acceptance and production database performance remain target-host checks |
 | Public hosting | CA-signed SAN server certificate, bundled client CA trust, hostname validation, private-key exclusion from public kit | Administrator supplies a reachable hostname/IP and network forwarding; hosting setup does not alter ISP/router/DNS |
 | Maps | All 351 supplied PNG layers, composed into 254 playable map destinations at supplied x2 resolution; original per-pixel collision | Sector numbers are source IDs, not a restored named story world; travel menu replaces authored story/portal progression |
 | Tamers | 64 original human appearances, eight directions, four movement frames per direction with ROM timing/flip metadata | Some appearances use descriptive/source-index labels; no complete story NPC behavior |

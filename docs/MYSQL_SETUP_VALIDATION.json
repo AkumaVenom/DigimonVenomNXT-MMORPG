@@ -1,0 +1,104 @@
+{
+  "database": "MariaDB 10.11.14-MariaDB-0ubuntu0.24.04.1",
+  "platform": "Linux x64; portable binaries; independent temporary data directory; TCP loopback only",
+  "tests": 13,
+  "result": "195 passed in 25.32s, including 13 live MariaDB cases",
+  "command": "VENOM_TEST_MARIADB_ROOT=/path/to/extracted/usr python -m pytest -q --junitxml=qa/setup_release_0.2.2_results.xml",
+  "baseline_reproduced": [
+    "Fresh short game password rejected by old 12-character minimum",
+    "Fresh valid password first attempt succeeds",
+    "Fresh-folder same-username different-password retry fails with misleading existing-game-password message"
+  ],
+  "checks": [
+    "Fresh short selected passwords without an application-imposed minimum length",
+    "SQL punctuation, spaces and Unicode passwords",
+    "Existing unused-account collision recovery",
+    "Shared-MMO account collision recovery and unchanged original credentials/grants/data",
+    "Rebuild preserves saved config and existing rows",
+    "Literal database grant rejects similarly named database",
+    "Wrong administrator credentials leave saved configuration unchanged",
+    "Incompatible schema keeps rows/config and removes only newly created account",
+    "Saved Unicode credentials work through actual player registration/authentication/load",
+    "Actual community/rival schema startup with 8 bots",
+    "Real MariaDB simple_password_check rejection followed by successful chosen-password and automatically-generated-password retries"
+  ],
+  "limits": [
+    "Windows frozen executable and XAMPP distribution itself not run",
+    "Oracle MySQL-specific partial_revokes mode not available in MariaDB"
+  ],
+  "sources": {
+    "tools/setup.py": "328a9274766914839a93e58add6a91fb5e13175cf5b55eda943b13e242069193",
+    "venom/server/database.py": "6ab7293857be9573554d81e174ddf2006649f4451402c351fcb05d07234cc872",
+    "tests/test_setup_mysql_live.py": "a1e5f5ab426716cefda9b5e47285a3002f3504eac1fa115e2c0243625e3bb36e",
+    "tests/test_mysql_provision.py": "91715daa09f17f74c29ab99b26ee4c687d0d3073332aaca993bea2bae861c077"
+  },
+  "release": "0.2.2-alpha",
+  "python": "3.12.14",
+  "full_suite": {
+    "tests": "195",
+    "errors": "0",
+    "failures": "0",
+    "skipped": "0",
+    "time": "25.319",
+    "timestamp": "2026-09-23T05:17:18.867159+10:00"
+  },
+  "live_test_cases": [
+    {
+      "name": "test_fresh_chosen_password_creates_usable_database",
+      "seconds": 1.18
+    },
+    {
+      "name": "test_fresh_chosen_password_creates_usable_database",
+      "seconds": 0.04
+    },
+    {
+      "name": "test_fresh_chosen_password_creates_usable_database",
+      "seconds": 0.045
+    },
+    {
+      "name": "test_fresh_chosen_password_creates_usable_database",
+      "seconds": 0.043
+    },
+    {
+      "name": "test_fresh_folder_collision_is_recovered_without_changing_existing_account",
+      "seconds": 0.043
+    },
+    {
+      "name": "test_fresh_folder_collision_is_recovered_without_changing_existing_account",
+      "seconds": 0.045
+    },
+    {
+      "name": "test_existing_correct_password_and_rebuild_preserve_configuration_and_data",
+      "seconds": 0.1
+    },
+    {
+      "name": "test_database_grant_matches_underscores_literally",
+      "seconds": 0.047
+    },
+    {
+      "name": "test_wrong_administrator_password_keeps_existing_configuration",
+      "seconds": 0.001
+    },
+    {
+      "name": "test_schema_failure_preserves_data_config_and_removes_only_new_account",
+      "seconds": 0.043
+    },
+    {
+      "name": "test_saved_account_runs_player_and_rival_schema",
+      "seconds": 0.402
+    },
+    {
+      "name": "test_real_password_policy_retries_game_password_without_restarting_setup",
+      "seconds": 0.043
+    },
+    {
+      "name": "test_real_password_policy_retries_game_password_without_restarting_setup",
+      "seconds": 0.365
+    }
+  ],
+  "assets": {
+    "verified_records": 21149,
+    "verified_mib": 485.8
+  },
+  "retained_benchmark_source_hashes_match": true
+}
