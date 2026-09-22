@@ -1,0 +1,23 @@
+{
+  "variant_id": "paradox_numemon",
+  "display_name": "Paradox Numemon",
+  "base_species": "Numemon",
+  "stage": "4 Champion",
+  "status": "ready",
+  "materializable": true,
+  "boss_eligible": true,
+  "primary_sprite": "4 Champion/Numemon/Paradox/Numemon_Paradox_Primary.png",
+  "source_primary": "4 Champion/Numemon/Numemon_Primary.png",
+  "source_sprite_count": 23,
+  "paradox_sprite_count": 23,
+  "style_profile": "Cyber Paradox Corruption v1",
+  "style_features": [
+    "violet/black data infection",
+    "cyan/magenta chromatic ghosts",
+    "digital displacement",
+    "angular data-void fractures",
+    "circuit cracks",
+    "transparent neon aura"
+  ],
+  "animation_alignment": "exact source canvas dimensions preserved"
+}

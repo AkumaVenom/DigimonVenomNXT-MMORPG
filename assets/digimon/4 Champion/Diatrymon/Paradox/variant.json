@@ -1,0 +1,23 @@
+{
+  "variant_id": "paradox_diatrymon",
+  "display_name": "Paradox Diatrymon",
+  "base_species": "Diatrymon",
+  "stage": "4 Champion",
+  "status": "ready",
+  "materializable": true,
+  "boss_eligible": true,
+  "primary_sprite": "4 Champion/Diatrymon/Paradox/Diatrymon_Paradox_Primary.png",
+  "source_primary": "4 Champion/Diatrymon/Diatrymon_Primary.png",
+  "source_sprite_count": 20,
+  "paradox_sprite_count": 20,
+  "style_profile": "Cyber Paradox Corruption v1",
+  "style_features": [
+    "violet/black data infection",
+    "cyan/magenta chromatic ghosts",
+    "digital displacement",
+    "angular data-void fractures",
+    "circuit cracks",
+    "transparent neon aura"
+  ],
+  "animation_alignment": "exact source canvas dimensions preserved"
+}

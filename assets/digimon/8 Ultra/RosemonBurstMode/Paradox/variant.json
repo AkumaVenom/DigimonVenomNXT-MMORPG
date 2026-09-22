@@ -1,0 +1,23 @@
+{
+  "variant_id": "paradox_rosemonburstmode",
+  "display_name": "Paradox RosemonBurstMode",
+  "base_species": "RosemonBurstMode",
+  "stage": "8 Ultra",
+  "status": "ready",
+  "materializable": true,
+  "boss_eligible": true,
+  "primary_sprite": "8 Ultra/RosemonBurstMode/Paradox/RosemonBurstMode_Paradox_Primary.png",
+  "source_primary": "8 Ultra/RosemonBurstMode/RosemonBurstMode_Primary.png",
+  "source_sprite_count": 23,
+  "paradox_sprite_count": 23,
+  "style_profile": "Cyber Paradox Corruption v1",
+  "style_features": [
+    "violet/black data infection",
+    "cyan/magenta chromatic ghosts",
+    "digital displacement",
+    "angular data-void fractures",
+    "circuit cracks",
+    "transparent neon aura"
+  ],
+  "animation_alignment": "exact source canvas dimensions preserved"
+}

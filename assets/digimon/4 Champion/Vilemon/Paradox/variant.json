@@ -1,0 +1,23 @@
+{
+  "variant_id": "paradox_vilemon",
+  "display_name": "Paradox Vilemon",
+  "base_species": "Vilemon",
+  "stage": "4 Champion",
+  "status": "ready",
+  "materializable": true,
+  "boss_eligible": true,
+  "primary_sprite": "4 Champion/Vilemon/Paradox/Vilemon_Paradox_Primary.png",
+  "source_primary": "4 Champion/Vilemon/Vilemon_Primary.png",
+  "source_sprite_count": 20,
+  "paradox_sprite_count": 20,
+  "style_profile": "Cyber Paradox Corruption v1",
+  "style_features": [
+    "violet/black data infection",
+    "cyan/magenta chromatic ghosts",
+    "digital displacement",
+    "angular data-void fractures",
+    "circuit cracks",
+    "transparent neon aura"
+  ],
+  "animation_alignment": "exact source canvas dimensions preserved"
+}

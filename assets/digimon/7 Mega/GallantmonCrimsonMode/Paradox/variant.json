@@ -1,0 +1,23 @@
+{
+  "variant_id": "paradox_gallantmoncrimsonmode",
+  "display_name": "Paradox GallantmonCrimsonMode",
+  "base_species": "GallantmonCrimsonMode",
+  "stage": "7 Mega",
+  "status": "ready",
+  "materializable": true,
+  "boss_eligible": true,
+  "primary_sprite": "7 Mega/GallantmonCrimsonMode/Paradox/GallantmonCrimsonMode_Paradox_Primary.png",
+  "source_primary": "7 Mega/GallantmonCrimsonMode/GallantmonCrimsonMode_Primary.png",
+  "source_sprite_count": 24,
+  "paradox_sprite_count": 24,
+  "style_profile": "Cyber Paradox Corruption v1",
+  "style_features": [
+    "violet/black data infection",
+    "cyan/magenta chromatic ghosts",
+    "digital displacement",
+    "angular data-void fractures",
+    "circuit cracks",
+    "transparent neon aura"
+  ],
+  "animation_alignment": "exact source canvas dimensions preserved"
+}

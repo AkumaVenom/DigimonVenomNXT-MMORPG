@@ -1,0 +1,20 @@
+[
+  {
+    "kind": "sprites",
+    "filename": "2D Digimon Assets v7 With Paradox Variants(1).zip",
+    "size": 318784258,
+    "sha256": "b0754f393d47bca5ee655fd8d3c52f0af2fdfc571ad27013b200839c1594176f"
+  },
+  {
+    "kind": "maps",
+    "filename": "DigimonDawnAllLevelMaps(1).7z",
+    "size": 115749263,
+    "sha256": "8626aeb2b5a76c2877a902117fd36870d338d9cf37379d910e764ce78ad1ceb2"
+  },
+  {
+    "kind": "rom",
+    "filename": "Digimon World - Dawn (USA)(4).nds",
+    "size": 67108864,
+    "sha256": "b8fbc2272ec2a7b3c85674a43ffce0a7dde208319e331b349218e1238ce83005"
+  }
+]

@@ -1,0 +1,23 @@
+{
+  "variant_id": "paradox_dotmiragegaogamon",
+  "display_name": "Paradox DotMirageGaogamon",
+  "base_species": "DotMirageGaogamon",
+  "stage": "7 Mega",
+  "status": "ready",
+  "materializable": true,
+  "boss_eligible": true,
+  "primary_sprite": "7 Mega/DotMirageGaogamon/Paradox/DotMirageGaogamon_Paradox_Primary.png",
+  "source_primary": "7 Mega/DotMirageGaogamon/DotMirageGaogamon_Primary.png",
+  "source_sprite_count": 17,
+  "paradox_sprite_count": 17,
+  "style_profile": "Cyber Paradox Corruption v1",
+  "style_features": [
+    "violet/black data infection",
+    "cyan/magenta chromatic ghosts",
+    "digital displacement",
+    "angular data-void fractures",
+    "circuit cracks",
+    "transparent neon aura"
+  ],
+  "animation_alignment": "exact source canvas dimensions preserved"
+}

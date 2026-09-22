@@ -1,0 +1,23 @@
+{
+  "variant_id": "paradox_demiveemon",
+  "display_name": "Paradox DemiVeemon",
+  "base_species": "DemiVeemon",
+  "stage": "2 In Training",
+  "status": "ready",
+  "materializable": true,
+  "boss_eligible": true,
+  "primary_sprite": "2 In Training/DemiVeemon/Paradox/DemiVeemon_Paradox_Primary.png",
+  "source_primary": "2 In Training/DemiVeemon/DemiVeemon_Idle.png",
+  "source_sprite_count": 3,
+  "paradox_sprite_count": 4,
+  "style_profile": "Cyber Paradox Corruption v1",
+  "style_features": [
+    "violet/black data infection",
+    "cyan/magenta chromatic ghosts",
+    "digital displacement",
+    "angular data-void fractures",
+    "circuit cracks",
+    "transparent neon aura"
+  ],
+  "animation_alignment": "exact source canvas dimensions preserved"
+}

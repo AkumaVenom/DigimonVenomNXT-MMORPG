@@ -1,0 +1,2088 @@
+{
+  "source": "Digimon World Dawn (USA), dat/snd/sound_data.sdat",
+  "sdat_sha256": "0bff292ab7e3766dea15fe87770a141b4d17f73d3465cdd1debf38f7c85d5b9c",
+  "rendering": "Original sequence notes, instrument mapping and decoded PCM/ADPCM samples; portable ADSR and modulation approximation, not cycle-accurate DS emulation.",
+  "music": [
+    {
+      "id": "bgm00",
+      "path": "assets/audio/music/bgm00.ogg",
+      "duration": 68.248,
+      "notes": 2165,
+      "missing_notes": 2,
+      "looped": true,
+      "peak_before_normalization": 0.6819
+    },
+    {
+      "id": "bgm01",
+      "path": "assets/audio/music/bgm01.ogg",
+      "duration": 74.066,
+      "notes": 1593,
+      "missing_notes": 0,
+      "looped": true,
+      "peak_before_normalization": 0.7002
+    },
+    {
+      "id": "bgm02",
+      "path": "assets/audio/music/bgm02.ogg",
+      "duration": 61.759,
+      "notes": 2736,
+      "missing_notes": 0,
+      "looped": true,
+      "peak_before_normalization": 0.6447
+    },
+    {
+      "id": "bgm03",
+      "path": "assets/audio/music/bgm03.ogg",
+      "duration": 87.317,
+      "notes": 1383,
+      "missing_notes": 0,
+      "looped": true,
+      "peak_before_normalization": 0.6136
+    },
+    {
+      "id": "bgm04",
+      "path": "assets/audio/music/bgm04.ogg",
+      "duration": 65.49,
+      "notes": 2096,
+      "missing_notes": 0,
+      "looped": true,
+      "peak_before_normalization": 0.7578
+    },
+    {
+      "id": "bgm10",
+      "path": "assets/audio/music/bgm10.ogg",
+      "duration": 68.22,
+      "notes": 1642,
+      "missing_notes": 0,
+      "looped": true,
+      "peak_before_normalization": 0.385
+    },
+    {
+      "id": "bgm11",
+      "path": "assets/audio/music/bgm11.ogg",
+      "duration": 73.391,
+      "notes": 1731,
+      "missing_notes": 0,
+      "looped": true,
+      "peak_before_normalization": 0.5346
+    },
+    {
+      "id": "bgm12",
+      "path": "assets/audio/music/bgm12.ogg",
+      "duration": 60.98,
+      "notes": 1619,
+      "missing_notes": 0,
+      "looped": true,
+      "peak_before_normalization": 0.5608
+    },
+    {
+      "id": "bgm13",
+      "path": "assets/audio/music/bgm13.ogg",
+      "duration": 58.887,
+      "notes": 2215,
+      "missing_notes": 0,
+      "looped": true,
+      "peak_before_normalization": 0.603
+    },
+    {
+      "id": "bgm14",
+      "path": "assets/audio/music/bgm14.ogg",
+      "duration": 78.22,
+      "notes": 1083,
+      "missing_notes": 0,
+      "looped": true,
+      "peak_before_normalization": 0.4269
+    },
+    {
+      "id": "bgm15",
+      "path": "assets/audio/music/bgm15.ogg",
+      "duration": 57.169,
+      "notes": 1325,
+      "missing_notes": 0,
+      "looped": true,
+      "peak_before_normalization": 0.6458
+    },
+    {
+      "id": "bgm16",
+      "path": "assets/audio/music/bgm16.ogg",
+      "duration": 41.853,
+      "notes": 1139,
+      "missing_notes": 0,
+      "looped": true,
+      "peak_before_normalization": 0.5602
+    },
+    {
+      "id": "bgm17",
+      "path": "assets/audio/music/bgm17.ogg",
+      "duration": 41.363,
+      "notes": 1569,
+      "missing_notes": 0,
+      "looped": true,
+      "peak_before_normalization": 0.5728
+    },
+    {
+      "id": "bgm18",
+      "path": "assets/audio/music/bgm18.ogg",
+      "duration": 65.041,
+      "notes": 1170,
+      "missing_notes": 0,
+      "looped": true,
+      "peak_before_normalization": 0.6969
+    },
+    {
+      "id": "bgm19",
+      "path": "assets/audio/music/bgm19.ogg",
+      "duration": 60.943,
+      "notes": 1448,
+      "missing_notes": 0,
+      "looped": true,
+      "peak_before_normalization": 0.6157
+    },
+    {
+      "id": "bgm20",
+      "path": "assets/audio/music/bgm20.ogg",
+      "duration": 71.206,
+      "notes": 3154,
+      "missing_notes": 0,
+      "looped": true,
+      "peak_before_normalization": 0.755
+    },
+    {
+      "id": "bgm30",
+      "path": "assets/audio/music/bgm30.ogg",
+      "duration": 62.686,
+      "notes": 2680,
+      "missing_notes": 0,
+      "looped": true,
+      "peak_before_normalization": 0.7668
+    },
+    {
+      "id": "bgm31",
+      "path": "assets/audio/music/bgm31.ogg",
+      "duration": 58.682,
+      "notes": 3052,
+      "missing_notes": 0,
+      "looped": true,
+      "peak_before_normalization": 0.7169
+    },
+    {
+      "id": "bgm32",
+      "path": "assets/audio/music/bgm32.ogg",
+      "duration": 60.664,
+      "notes": 2077,
+      "missing_notes": 0,
+      "looped": true,
+      "peak_before_normalization": 0.8333
+    },
+    {
+      "id": "bgm33",
+      "path": "assets/audio/music/bgm33.ogg",
+      "duration": 60.22,
+      "notes": 1764,
+      "missing_notes": 0,
+      "looped": true,
+      "peak_before_normalization": 0.6414
+    },
+    {
+      "id": "bgm34",
+      "path": "assets/audio/music/bgm34.ogg",
+      "duration": 55.42,
+      "notes": 1579,
+      "missing_notes": 0,
+      "looped": true,
+      "peak_before_normalization": 0.7708
+    },
+    {
+      "id": "bgm35",
+      "path": "assets/audio/music/bgm35.ogg",
+      "duration": 58.655,
+      "notes": 2902,
+      "missing_notes": 0,
+      "looped": true,
+      "peak_before_normalization": 0.7093
+    },
+    {
+      "id": "bgm40",
+      "path": "assets/audio/music/bgm40.ogg",
+      "duration": 50.156,
+      "notes": 2993,
+      "missing_notes": 0,
+      "looped": true,
+      "peak_before_normalization": 0.7223
+    },
+    {
+      "id": "bgm41",
+      "path": "assets/audio/music/bgm41.ogg",
+      "duration": 52.22,
+      "notes": 770,
+      "missing_notes": 0,
+      "looped": true,
+      "peak_before_normalization": 0.3938
+    },
+    {
+      "id": "bgm42",
+      "path": "assets/audio/music/bgm42.ogg",
+      "duration": 56.755,
+      "notes": 1389,
+      "missing_notes": 0,
+      "looped": true,
+      "peak_before_normalization": 0.5395
+    },
+    {
+      "id": "bgm43",
+      "path": "assets/audio/music/bgm43.ogg",
+      "duration": 83.811,
+      "notes": 869,
+      "missing_notes": 0,
+      "looped": true,
+      "peak_before_normalization": 0.4253
+    },
+    {
+      "id": "bgm44",
+      "path": "assets/audio/music/bgm44.ogg",
+      "duration": 67.42,
+      "notes": 1547,
+      "missing_notes": 0,
+      "looped": true,
+      "peak_before_normalization": 0.6031
+    },
+    {
+      "id": "bgm45",
+      "path": "assets/audio/music/bgm45.ogg",
+      "duration": 132.778,
+      "notes": 2168,
+      "missing_notes": 0,
+      "looped": true,
+      "peak_before_normalization": 0.5909
+    },
+    {
+      "id": "bgm50",
+      "path": "assets/audio/music/bgm50.ogg",
+      "duration": 60.22,
+      "notes": 2367,
+      "missing_notes": 0,
+      "looped": true,
+      "peak_before_normalization": 0.7211
+    },
+    {
+      "id": "bgm51",
+      "path": "assets/audio/music/bgm51.ogg",
+      "duration": 55.709,
+      "notes": 2096,
+      "missing_notes": 0,
+      "looped": true,
+      "peak_before_normalization": 0.9045
+    },
+    {
+      "id": "bgm52",
+      "path": "assets/audio/music/bgm52.ogg",
+      "duration": 50.066,
+      "notes": 1684,
+      "missing_notes": 0,
+      "looped": true,
+      "peak_before_normalization": 0.8911
+    },
+    {
+      "id": "bgm53",
+      "path": "assets/audio/music/bgm53.ogg",
+      "duration": 41.675,
+      "notes": 1213,
+      "missing_notes": 0,
+      "looped": true,
+      "peak_before_normalization": 0.7518
+    },
+    {
+      "id": "bgm54",
+      "path": "assets/audio/music/bgm54.ogg",
+      "duration": 4.374,
+      "notes": 109,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.5604
+    },
+    {
+      "id": "bgm55",
+      "path": "assets/audio/music/bgm55.ogg",
+      "duration": 40.752,
+      "notes": 1679,
+      "missing_notes": 0,
+      "looped": true,
+      "peak_before_normalization": 0.8797
+    },
+    {
+      "id": "bgm56",
+      "path": "assets/audio/music/bgm56.ogg",
+      "duration": 41.959,
+      "notes": 443,
+      "missing_notes": 0,
+      "looped": true,
+      "peak_before_normalization": 0.6393
+    },
+    {
+      "id": "bgm57",
+      "path": "assets/audio/music/bgm57.ogg",
+      "duration": 48.22,
+      "notes": 1787,
+      "missing_notes": 0,
+      "looped": true,
+      "peak_before_normalization": 0.857
+    },
+    {
+      "id": "bgm60",
+      "path": "assets/audio/music/bgm60.ogg",
+      "duration": 66.356,
+      "notes": 975,
+      "missing_notes": 0,
+      "looped": true,
+      "peak_before_normalization": 0.8574
+    },
+    {
+      "id": "bgm61",
+      "path": "assets/audio/music/bgm61.ogg",
+      "duration": 62.47,
+      "notes": 1033,
+      "missing_notes": 0,
+      "looped": true,
+      "peak_before_normalization": 0.6359
+    },
+    {
+      "id": "bgm62",
+      "path": "assets/audio/music/bgm62.ogg",
+      "duration": 69.595,
+      "notes": 1580,
+      "missing_notes": 0,
+      "looped": true,
+      "peak_before_normalization": 0.444
+    },
+    {
+      "id": "bgm63",
+      "path": "assets/audio/music/bgm63.ogg",
+      "duration": 85.22,
+      "notes": 1509,
+      "missing_notes": 0,
+      "looped": true,
+      "peak_before_normalization": 0.6173
+    },
+    {
+      "id": "bgm64",
+      "path": "assets/audio/music/bgm64.ogg",
+      "duration": 97.496,
+      "notes": 2009,
+      "missing_notes": 0,
+      "looped": true,
+      "peak_before_normalization": 0.5289
+    },
+    {
+      "id": "bgm65",
+      "path": "assets/audio/music/bgm65.ogg",
+      "duration": 71.887,
+      "notes": 1737,
+      "missing_notes": 0,
+      "looped": true,
+      "peak_before_normalization": 0.4882
+    },
+    {
+      "id": "bgm66",
+      "path": "assets/audio/music/bgm66.ogg",
+      "duration": 74.703,
+      "notes": 1622,
+      "missing_notes": 0,
+      "looped": true,
+      "peak_before_normalization": 0.5233
+    },
+    {
+      "id": "bgm67",
+      "path": "assets/audio/music/bgm67.ogg",
+      "duration": 91.129,
+      "notes": 1871,
+      "missing_notes": 0,
+      "looped": true,
+      "peak_before_normalization": 0.5323
+    },
+    {
+      "id": "bgm68",
+      "path": "assets/audio/music/bgm68.ogg",
+      "duration": 56.824,
+      "notes": 603,
+      "missing_notes": 0,
+      "looped": true,
+      "peak_before_normalization": 0.5338
+    },
+    {
+      "id": "bgm69",
+      "path": "assets/audio/music/bgm69.ogg",
+      "duration": 37.461,
+      "notes": 1122,
+      "missing_notes": 0,
+      "looped": true,
+      "peak_before_normalization": 0.8022
+    }
+  ],
+  "effects": [
+    {
+      "id": "se000",
+      "path": "assets/audio/effects/se000.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.2193
+    },
+    {
+      "id": "se001",
+      "path": "assets/audio/effects/se001.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.1757
+    },
+    {
+      "id": "se002",
+      "path": "assets/audio/effects/se002.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.2322
+    },
+    {
+      "id": "se003",
+      "path": "assets/audio/effects/se003.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.1378
+    },
+    {
+      "id": "se004",
+      "path": "assets/audio/effects/se004.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.123
+    },
+    {
+      "id": "se005",
+      "path": "assets/audio/effects/se005.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.2224
+    },
+    {
+      "id": "se006",
+      "path": "assets/audio/effects/se006.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.0042
+    },
+    {
+      "id": "se007",
+      "path": "assets/audio/effects/se007.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.2322
+    },
+    {
+      "id": "se008",
+      "path": "assets/audio/effects/se008.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.2322
+    },
+    {
+      "id": "se009",
+      "path": "assets/audio/effects/se009.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.1765
+    },
+    {
+      "id": "se010",
+      "path": "assets/audio/effects/se010.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.0249
+    },
+    {
+      "id": "se011",
+      "path": "assets/audio/effects/se011.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.2322
+    },
+    {
+      "id": "se012",
+      "path": "assets/audio/effects/se012.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.2322
+    },
+    {
+      "id": "se013",
+      "path": "assets/audio/effects/se013.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.2129
+    },
+    {
+      "id": "se014",
+      "path": "assets/audio/effects/se014.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.2022
+    },
+    {
+      "id": "se015",
+      "path": "assets/audio/effects/se015.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.2786
+    },
+    {
+      "id": "se016",
+      "path": "assets/audio/effects/se016.wav",
+      "duration": 1.23,
+      "notes": 2,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.302
+    },
+    {
+      "id": "se017",
+      "path": "assets/audio/effects/se017.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.1712
+    },
+    {
+      "id": "se018",
+      "path": "assets/audio/effects/se018.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.0588
+    },
+    {
+      "id": "se019",
+      "path": "assets/audio/effects/se019.wav",
+      "duration": 4.22,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.2295
+    },
+    {
+      "id": "se020",
+      "path": "assets/audio/effects/se020.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.2322
+    },
+    {
+      "id": "se021",
+      "path": "assets/audio/effects/se021.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.0496
+    },
+    {
+      "id": "se022",
+      "path": "assets/audio/effects/se022.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.0024
+    },
+    {
+      "id": "se023",
+      "path": "assets/audio/effects/se023.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.0146
+    },
+    {
+      "id": "se024",
+      "path": "assets/audio/effects/se024.wav",
+      "duration": 0.23,
+      "notes": 2,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.1824
+    },
+    {
+      "id": "se025",
+      "path": "assets/audio/effects/se025.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.1554
+    },
+    {
+      "id": "se026",
+      "path": "assets/audio/effects/se026.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.0205
+    },
+    {
+      "id": "se027",
+      "path": "assets/audio/effects/se027.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.0383
+    },
+    {
+      "id": "se028",
+      "path": "assets/audio/effects/se028.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.0695
+    },
+    {
+      "id": "se029",
+      "path": "assets/audio/effects/se029.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.0302
+    },
+    {
+      "id": "se030",
+      "path": "assets/audio/effects/se030.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.2322
+    },
+    {
+      "id": "se031",
+      "path": "assets/audio/effects/se031.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.0568
+    },
+    {
+      "id": "se032",
+      "path": "assets/audio/effects/se032.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.2322
+    },
+    {
+      "id": "se033",
+      "path": "assets/audio/effects/se033.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.0976
+    },
+    {
+      "id": "se034",
+      "path": "assets/audio/effects/se034.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.0765
+    },
+    {
+      "id": "se035",
+      "path": "assets/audio/effects/se035.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.0824
+    },
+    {
+      "id": "se036",
+      "path": "assets/audio/effects/se036.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.0904
+    },
+    {
+      "id": "se037",
+      "path": "assets/audio/effects/se037.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.2322
+    },
+    {
+      "id": "se038",
+      "path": "assets/audio/effects/se038.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.1222
+    },
+    {
+      "id": "se039",
+      "path": "assets/audio/effects/se039.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.0694
+    },
+    {
+      "id": "se040",
+      "path": "assets/audio/effects/se040.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.2322
+    },
+    {
+      "id": "se041",
+      "path": "assets/audio/effects/se041.wav",
+      "duration": 2.22,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.2025
+    },
+    {
+      "id": "se042",
+      "path": "assets/audio/effects/se042.wav",
+      "duration": 0.397,
+      "notes": 9,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.1092
+    },
+    {
+      "id": "se043",
+      "path": "assets/audio/effects/se043.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.2322
+    },
+    {
+      "id": "se044",
+      "path": "assets/audio/effects/se044.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.0963
+    },
+    {
+      "id": "se045",
+      "path": "assets/audio/effects/se045.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.0783
+    },
+    {
+      "id": "se046",
+      "path": "assets/audio/effects/se046.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.05
+    },
+    {
+      "id": "se047",
+      "path": "assets/audio/effects/se047.wav",
+      "duration": 0.924,
+      "notes": 4,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.0261
+    },
+    {
+      "id": "se048",
+      "path": "assets/audio/effects/se048.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.2322
+    },
+    {
+      "id": "se049",
+      "path": "assets/audio/effects/se049.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.2322
+    },
+    {
+      "id": "se050",
+      "path": "assets/audio/effects/se050.wav",
+      "duration": 4.22,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.1434
+    },
+    {
+      "id": "se051",
+      "path": "assets/audio/effects/se051.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.0727
+    },
+    {
+      "id": "se052",
+      "path": "assets/audio/effects/se052.wav",
+      "duration": 0.97,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.026
+    },
+    {
+      "id": "se053",
+      "path": "assets/audio/effects/se053.wav",
+      "duration": 0.262,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.0303
+    },
+    {
+      "id": "se054",
+      "path": "assets/audio/effects/se054.wav",
+      "duration": 0.387,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.0265
+    },
+    {
+      "id": "se055",
+      "path": "assets/audio/effects/se055.wav",
+      "duration": 0.47,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.0302
+    },
+    {
+      "id": "se056",
+      "path": "assets/audio/effects/se056.wav",
+      "duration": 0.751,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.0193
+    },
+    {
+      "id": "se057",
+      "path": "assets/audio/effects/se057.wav",
+      "duration": 1.116,
+      "notes": 4,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.2515
+    },
+    {
+      "id": "se058",
+      "path": "assets/audio/effects/se058.wav",
+      "duration": 0.689,
+      "notes": 2,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.0887
+    },
+    {
+      "id": "se059",
+      "path": "assets/audio/effects/se059.wav",
+      "duration": 0.595,
+      "notes": 2,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.0265
+    },
+    {
+      "id": "se060",
+      "path": "assets/audio/effects/se060.wav",
+      "duration": 0.876,
+      "notes": 2,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.2436
+    },
+    {
+      "id": "se061",
+      "path": "assets/audio/effects/se061.wav",
+      "duration": 2.97,
+      "notes": 6,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.0364
+    },
+    {
+      "id": "se062",
+      "path": "assets/audio/effects/se062.wav",
+      "duration": 0.533,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.0222
+    },
+    {
+      "id": "se063",
+      "path": "assets/audio/effects/se063.wav",
+      "duration": 0.626,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.0222
+    },
+    {
+      "id": "se064",
+      "path": "assets/audio/effects/se064.wav",
+      "duration": 0.564,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.0171
+    },
+    {
+      "id": "se065",
+      "path": "assets/audio/effects/se065.wav",
+      "duration": 1.038,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.0222
+    },
+    {
+      "id": "se066",
+      "path": "assets/audio/effects/se066.wav",
+      "duration": 0.533,
+      "notes": 4,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.0605
+    },
+    {
+      "id": "se067",
+      "path": "assets/audio/effects/se067.wav",
+      "duration": 0.324,
+      "notes": 2,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.0238
+    },
+    {
+      "id": "se068",
+      "path": "assets/audio/effects/se068.wav",
+      "duration": 0.97,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.026
+    },
+    {
+      "id": "se069",
+      "path": "assets/audio/effects/se069.wav",
+      "duration": 1.038,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.0166
+    },
+    {
+      "id": "se070",
+      "path": "assets/audio/effects/se070.wav",
+      "duration": 0.689,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.0205
+    },
+    {
+      "id": "se071",
+      "path": "assets/audio/effects/se071.wav",
+      "duration": 0.845,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.1978
+    },
+    {
+      "id": "se072",
+      "path": "assets/audio/effects/se072.wav",
+      "duration": 1.186,
+      "notes": 2,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.1151
+    },
+    {
+      "id": "se073",
+      "path": "assets/audio/effects/se073.wav",
+      "duration": 0.97,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.2001
+    },
+    {
+      "id": "se074",
+      "path": "assets/audio/effects/se074.wav",
+      "duration": 0.71,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.034
+    },
+    {
+      "id": "se075",
+      "path": "assets/audio/effects/se075.wav",
+      "duration": 1.1,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.3025
+    },
+    {
+      "id": "se076",
+      "path": "assets/audio/effects/se076.wav",
+      "duration": 0.564,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.0169
+    },
+    {
+      "id": "se077",
+      "path": "assets/audio/effects/se077.wav",
+      "duration": 0.689,
+      "notes": 2,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.025
+    },
+    {
+      "id": "se078",
+      "path": "assets/audio/effects/se078.wav",
+      "duration": 0.387,
+      "notes": 2,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.1468
+    },
+    {
+      "id": "se079",
+      "path": "assets/audio/effects/se079.wav",
+      "duration": 0.97,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.0303
+    },
+    {
+      "id": "se080",
+      "path": "assets/audio/effects/se080.wav",
+      "duration": 0.97,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.0302
+    },
+    {
+      "id": "se081",
+      "path": "assets/audio/effects/se081.wav",
+      "duration": 1.46,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.0142
+    },
+    {
+      "id": "se082",
+      "path": "assets/audio/effects/se082.wav",
+      "duration": 1.637,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.2988
+    },
+    {
+      "id": "se083",
+      "path": "assets/audio/effects/se083.wav",
+      "duration": 2.022,
+      "notes": 2,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.5036
+    },
+    {
+      "id": "se084",
+      "path": "assets/audio/effects/se084.wav",
+      "duration": 0.626,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.0166
+    },
+    {
+      "id": "se085",
+      "path": "assets/audio/effects/se085.wav",
+      "duration": 1.163,
+      "notes": 37,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.3051
+    },
+    {
+      "id": "se086",
+      "path": "assets/audio/effects/se086.wav",
+      "duration": 0.65,
+      "notes": 2,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.022
+    },
+    {
+      "id": "se087",
+      "path": "assets/audio/effects/se087.wav",
+      "duration": 1.001,
+      "notes": 2,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.0272
+    },
+    {
+      "id": "se088",
+      "path": "assets/audio/effects/se088.wav",
+      "duration": 1.1,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.3202
+    },
+    {
+      "id": "se089",
+      "path": "assets/audio/effects/se089.wav",
+      "duration": 0.97,
+      "notes": 2,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.2955
+    },
+    {
+      "id": "se090",
+      "path": "assets/audio/effects/se090.wav",
+      "duration": 1.251,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.3025
+    },
+    {
+      "id": "se091",
+      "path": "assets/audio/effects/se091.wav",
+      "duration": 0.97,
+      "notes": 2,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.2308
+    },
+    {
+      "id": "se092",
+      "path": "assets/audio/effects/se092.wav",
+      "duration": 1.251,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.2772
+    },
+    {
+      "id": "se093",
+      "path": "assets/audio/effects/se093.wav",
+      "duration": 1.189,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.0292
+    },
+    {
+      "id": "se094",
+      "path": "assets/audio/effects/se094.wav",
+      "duration": 0.939,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.0249
+    },
+    {
+      "id": "se095",
+      "path": "assets/audio/effects/se095.wav",
+      "duration": 1.251,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.2773
+    },
+    {
+      "id": "se096",
+      "path": "assets/audio/effects/se096.wav",
+      "duration": 1.189,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.3025
+    },
+    {
+      "id": "se097",
+      "path": "assets/audio/effects/se097.wav",
+      "duration": 1.345,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.0292
+    },
+    {
+      "id": "se098",
+      "path": "assets/audio/effects/se098.wav",
+      "duration": 1.189,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.2269
+    },
+    {
+      "id": "se099",
+      "path": "assets/audio/effects/se099.wav",
+      "duration": 1.189,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.2269
+    },
+    {
+      "id": "se100",
+      "path": "assets/audio/effects/se100.wav",
+      "duration": 1.189,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.2773
+    },
+    {
+      "id": "se101",
+      "path": "assets/audio/effects/se101.wav",
+      "duration": 0.939,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.3025
+    },
+    {
+      "id": "se102",
+      "path": "assets/audio/effects/se102.wav",
+      "duration": 0.845,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.1446
+    },
+    {
+      "id": "se103",
+      "path": "assets/audio/effects/se103.wav",
+      "duration": 0.845,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.1446
+    },
+    {
+      "id": "se104",
+      "path": "assets/audio/effects/se104.wav",
+      "duration": 0.689,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.1471
+    },
+    {
+      "id": "se105",
+      "path": "assets/audio/effects/se105.wav",
+      "duration": 0.978,
+      "notes": 16,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.0311
+    },
+    {
+      "id": "se106",
+      "path": "assets/audio/effects/se106.wav",
+      "duration": 0.97,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.0325
+    },
+    {
+      "id": "se107",
+      "path": "assets/audio/effects/se107.wav",
+      "duration": 1.678,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.3202
+    },
+    {
+      "id": "se108",
+      "path": "assets/audio/effects/se108.wav",
+      "duration": 0.845,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.2997
+    },
+    {
+      "id": "se109",
+      "path": "assets/audio/effects/se109.wav",
+      "duration": 1.21,
+      "notes": 32,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.2165
+    },
+    {
+      "id": "se110",
+      "path": "assets/audio/effects/se110.wav",
+      "duration": 1.444,
+      "notes": 2,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.2279
+    },
+    {
+      "id": "se111",
+      "path": "assets/audio/effects/se111.wav",
+      "duration": 2.178,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.1873
+    },
+    {
+      "id": "se112",
+      "path": "assets/audio/effects/se112.wav",
+      "duration": 0.465,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.158
+    },
+    {
+      "id": "se113",
+      "path": "assets/audio/effects/se113.wav",
+      "duration": 1.194,
+      "notes": 2,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.2521
+    },
+    {
+      "id": "se114",
+      "path": "assets/audio/effects/se114.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.2322
+    },
+    {
+      "id": "se115",
+      "path": "assets/audio/effects/se115.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.1844
+    },
+    {
+      "id": "se116",
+      "path": "assets/audio/effects/se116.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.0206
+    },
+    {
+      "id": "se117",
+      "path": "assets/audio/effects/se117.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.1168
+    },
+    {
+      "id": "se118",
+      "path": "assets/audio/effects/se118.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.0353
+    },
+    {
+      "id": "se119",
+      "path": "assets/audio/effects/se119.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.0265
+    },
+    {
+      "id": "se120",
+      "path": "assets/audio/effects/se120.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.1093
+    },
+    {
+      "id": "se121",
+      "path": "assets/audio/effects/se121.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.0519
+    },
+    {
+      "id": "se122",
+      "path": "assets/audio/effects/se122.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.1807
+    },
+    {
+      "id": "se123",
+      "path": "assets/audio/effects/se123.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.0213
+    },
+    {
+      "id": "se124",
+      "path": "assets/audio/effects/se124.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.042
+    },
+    {
+      "id": "se125",
+      "path": "assets/audio/effects/se125.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.0104
+    },
+    {
+      "id": "se126",
+      "path": "assets/audio/effects/se126.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.0564
+    },
+    {
+      "id": "se127",
+      "path": "assets/audio/effects/se127.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.0336
+    },
+    {
+      "id": "se128",
+      "path": "assets/audio/effects/se128.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.1568
+    },
+    {
+      "id": "se129",
+      "path": "assets/audio/effects/se129.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.2855
+    },
+    {
+      "id": "se130",
+      "path": "assets/audio/effects/se130.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.275
+    },
+    {
+      "id": "se131",
+      "path": "assets/audio/effects/se131.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.1561
+    },
+    {
+      "id": "se132",
+      "path": "assets/audio/effects/se132.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.0333
+    },
+    {
+      "id": "se133",
+      "path": "assets/audio/effects/se133.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.1052
+    },
+    {
+      "id": "se134",
+      "path": "assets/audio/effects/se134.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.1553
+    },
+    {
+      "id": "se135",
+      "path": "assets/audio/effects/se135.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.0737
+    },
+    {
+      "id": "se136",
+      "path": "assets/audio/effects/se136.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.0336
+    },
+    {
+      "id": "se137",
+      "path": "assets/audio/effects/se137.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.0109
+    },
+    {
+      "id": "se138",
+      "path": "assets/audio/effects/se138.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.0305
+    },
+    {
+      "id": "se139",
+      "path": "assets/audio/effects/se139.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.243
+    },
+    {
+      "id": "se140",
+      "path": "assets/audio/effects/se140.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.1081
+    },
+    {
+      "id": "se141",
+      "path": "assets/audio/effects/se141.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.2145
+    },
+    {
+      "id": "se142",
+      "path": "assets/audio/effects/se142.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.2322
+    },
+    {
+      "id": "se143",
+      "path": "assets/audio/effects/se143.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.2322
+    },
+    {
+      "id": "se144",
+      "path": "assets/audio/effects/se144.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.2322
+    },
+    {
+      "id": "se145",
+      "path": "assets/audio/effects/se145.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.2322
+    },
+    {
+      "id": "se146",
+      "path": "assets/audio/effects/se146.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.2322
+    },
+    {
+      "id": "se147",
+      "path": "assets/audio/effects/se147.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.2322
+    },
+    {
+      "id": "se148",
+      "path": "assets/audio/effects/se148.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.2322
+    },
+    {
+      "id": "se149",
+      "path": "assets/audio/effects/se149.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.2322
+    },
+    {
+      "id": "se150",
+      "path": "assets/audio/effects/se150.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.0113
+    },
+    {
+      "id": "se151",
+      "path": "assets/audio/effects/se151.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.2322
+    },
+    {
+      "id": "se152",
+      "path": "assets/audio/effects/se152.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.2322
+    },
+    {
+      "id": "se153",
+      "path": "assets/audio/effects/se153.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.2322
+    },
+    {
+      "id": "se154",
+      "path": "assets/audio/effects/se154.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.2322
+    },
+    {
+      "id": "se155",
+      "path": "assets/audio/effects/se155.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.2322
+    },
+    {
+      "id": "se156",
+      "path": "assets/audio/effects/se156.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.0009
+    },
+    {
+      "id": "se157",
+      "path": "assets/audio/effects/se157.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.2322
+    },
+    {
+      "id": "se158",
+      "path": "assets/audio/effects/se158.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.1616
+    },
+    {
+      "id": "se159",
+      "path": "assets/audio/effects/se159.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.0052
+    },
+    {
+      "id": "se160",
+      "path": "assets/audio/effects/se160.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.1645
+    },
+    {
+      "id": "se161",
+      "path": "assets/audio/effects/se161.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.1957
+    },
+    {
+      "id": "se162",
+      "path": "assets/audio/effects/se162.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.0447
+    },
+    {
+      "id": "se163",
+      "path": "assets/audio/effects/se163.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.0867
+    },
+    {
+      "id": "se164",
+      "path": "assets/audio/effects/se164.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.0953
+    },
+    {
+      "id": "se165",
+      "path": "assets/audio/effects/se165.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.0115
+    },
+    {
+      "id": "se166",
+      "path": "assets/audio/effects/se166.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.0085
+    },
+    {
+      "id": "se167",
+      "path": "assets/audio/effects/se167.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.0192
+    },
+    {
+      "id": "se168",
+      "path": "assets/audio/effects/se168.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.0114
+    },
+    {
+      "id": "se169",
+      "path": "assets/audio/effects/se169.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.0495
+    },
+    {
+      "id": "se170",
+      "path": "assets/audio/effects/se170.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.0226
+    },
+    {
+      "id": "se171",
+      "path": "assets/audio/effects/se171.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.025
+    },
+    {
+      "id": "se172",
+      "path": "assets/audio/effects/se172.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.0496
+    },
+    {
+      "id": "se173",
+      "path": "assets/audio/effects/se173.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.1136
+    },
+    {
+      "id": "se174",
+      "path": "assets/audio/effects/se174.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.0158
+    },
+    {
+      "id": "se175",
+      "path": "assets/audio/effects/se175.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.0314
+    },
+    {
+      "id": "se176",
+      "path": "assets/audio/effects/se176.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.2773
+    },
+    {
+      "id": "se177",
+      "path": "assets/audio/effects/se177.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.277
+    },
+    {
+      "id": "se178",
+      "path": "assets/audio/effects/se178.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.1111
+    },
+    {
+      "id": "se179",
+      "path": "assets/audio/effects/se179.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.0213
+    },
+    {
+      "id": "se180",
+      "path": "assets/audio/effects/se180.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.0224
+    },
+    {
+      "id": "se181",
+      "path": "assets/audio/effects/se181.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.0665
+    },
+    {
+      "id": "se182",
+      "path": "assets/audio/effects/se182.wav",
+      "duration": 0.23,
+      "notes": 1,
+      "missing_notes": 0,
+      "looped": false,
+      "peak_before_normalization": 0.0407
+    }
+  ],
+  "errors": [],
+  "sample_count": 703,
+  "scene_tracks": {
+    "title": "bgm00",
+    "world": "bgm10",
+    "battle": "bgm40",
+    "digilab": "bgm11",
+    "victory": "bgm60"
+  },
+  "event_sounds": {
+    "click": "se000",
+    "confirm": "se001",
+    "cancel": "se002",
+    "hit": "se014",
+    "heal": "se011",
+    "scan": "se009",
+    "evolve": "se030"
+  }
+}

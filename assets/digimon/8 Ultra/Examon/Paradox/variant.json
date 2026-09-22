@@ -1,0 +1,23 @@
+{
+  "variant_id": "paradox_examon",
+  "display_name": "Paradox Examon",
+  "base_species": "Examon",
+  "stage": "8 Ultra",
+  "status": "ready",
+  "materializable": true,
+  "boss_eligible": true,
+  "primary_sprite": "8 Ultra/Examon/Paradox/Examon_Paradox_Primary.png",
+  "source_primary": "8 Ultra/Examon/Examon_Primary.png",
+  "source_sprite_count": 23,
+  "paradox_sprite_count": 23,
+  "style_profile": "Cyber Paradox Corruption v1",
+  "style_features": [
+    "violet/black data infection",
+    "cyan/magenta chromatic ghosts",
+    "digital displacement",
+    "angular data-void fractures",
+    "circuit cracks",
+    "transparent neon aura"
+  ],
+  "animation_alignment": "exact source canvas dimensions preserved"
+}

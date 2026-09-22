@@ -1,0 +1,6 @@
+# Runtime dependencies. These versions are used by the integration checks.
+pygame-ce==2.5.8
+websockets==16.0
+PyMySQL==1.1.1
+cryptography==46.0.0
+Pillow==12.3.0

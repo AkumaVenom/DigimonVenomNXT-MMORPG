@@ -1,0 +1,2 @@
+# PyInstaller builds Windows PE executables when run on Windows x64.
+PyInstaller>=6.11,<7

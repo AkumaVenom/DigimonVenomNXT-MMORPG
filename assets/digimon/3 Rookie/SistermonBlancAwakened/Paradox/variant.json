@@ -1,0 +1,23 @@
+{
+  "variant_id": "paradox_sistermonblancawakened",
+  "display_name": "Paradox SistermonBlancAwakened",
+  "base_species": "SistermonBlancAwakened",
+  "stage": "3 Rookie",
+  "status": "ready",
+  "materializable": true,
+  "boss_eligible": true,
+  "primary_sprite": "3 Rookie/SistermonBlancAwakened/Paradox/SistermonBlancAwakened_Paradox_Primary.png",
+  "source_primary": "3 Rookie/SistermonBlancAwakened/SistermonBlancAwakened_Idle.png",
+  "source_sprite_count": 3,
+  "paradox_sprite_count": 4,
+  "style_profile": "Cyber Paradox Corruption v1",
+  "style_features": [
+    "violet/black data infection",
+    "cyan/magenta chromatic ghosts",
+    "digital displacement",
+    "angular data-void fractures",
+    "circuit cracks",
+    "transparent neon aura"
+  ],
+  "animation_alignment": "exact source canvas dimensions preserved"
+}

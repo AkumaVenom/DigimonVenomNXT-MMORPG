@@ -1,0 +1,23 @@
+{
+  "variant_id": "paradox_machinedramon",
+  "display_name": "Paradox Machinedramon",
+  "base_species": "Machinedramon",
+  "stage": "7 Mega",
+  "status": "ready",
+  "materializable": true,
+  "boss_eligible": true,
+  "primary_sprite": "7 Mega/Machinedramon/Paradox/Machinedramon_Paradox_Primary.png",
+  "source_primary": "7 Mega/Machinedramon/Machinedramon_Primary.png",
+  "source_sprite_count": 22,
+  "paradox_sprite_count": 22,
+  "style_profile": "Cyber Paradox Corruption v1",
+  "style_features": [
+    "violet/black data infection",
+    "cyan/magenta chromatic ghosts",
+    "digital displacement",
+    "angular data-void fractures",
+    "circuit cracks",
+    "transparent neon aura"
+  ],
+  "animation_alignment": "exact source canvas dimensions preserved"
+}

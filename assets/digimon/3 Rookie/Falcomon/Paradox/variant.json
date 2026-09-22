@@ -1,0 +1,23 @@
+{
+  "variant_id": "paradox_falcomon",
+  "display_name": "Paradox Falcomon",
+  "base_species": "Falcomon",
+  "stage": "3 Rookie",
+  "status": "ready",
+  "materializable": true,
+  "boss_eligible": true,
+  "primary_sprite": "3 Rookie/Falcomon/Paradox/Falcomon_Paradox_Primary.png",
+  "source_primary": "3 Rookie/Falcomon/Falcomon_Idle.png",
+  "source_sprite_count": 6,
+  "paradox_sprite_count": 7,
+  "style_profile": "Cyber Paradox Corruption v1",
+  "style_features": [
+    "violet/black data infection",
+    "cyan/magenta chromatic ghosts",
+    "digital displacement",
+    "angular data-void fractures",
+    "circuit cracks",
+    "transparent neon aura"
+  ],
+  "animation_alignment": "exact source canvas dimensions preserved"
+}

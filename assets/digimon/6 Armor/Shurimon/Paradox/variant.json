@@ -1,0 +1,23 @@
+{
+  "variant_id": "paradox_shurimon",
+  "display_name": "Paradox Shurimon",
+  "base_species": "Shurimon",
+  "stage": "6 Armor",
+  "status": "ready",
+  "materializable": true,
+  "boss_eligible": true,
+  "primary_sprite": "6 Armor/Shurimon/Paradox/Shurimon_Paradox_Primary.png",
+  "source_primary": "6 Armor/Shurimon/Shurimon_Primary.png",
+  "source_sprite_count": 20,
+  "paradox_sprite_count": 20,
+  "style_profile": "Cyber Paradox Corruption v1",
+  "style_features": [
+    "violet/black data infection",
+    "cyan/magenta chromatic ghosts",
+    "digital displacement",
+    "angular data-void fractures",
+    "circuit cracks",
+    "transparent neon aura"
+  ],
+  "animation_alignment": "exact source canvas dimensions preserved"
+}

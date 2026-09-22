@@ -1,0 +1,23 @@
+{
+  "variant_id": "paradox_merukimon",
+  "display_name": "Paradox Merukimon",
+  "base_species": "Merukimon",
+  "stage": "7 Mega",
+  "status": "ready",
+  "materializable": true,
+  "boss_eligible": true,
+  "primary_sprite": "7 Mega/Merukimon/Paradox/Merukimon_Paradox_Primary.png",
+  "source_primary": "7 Mega/Merukimon/Merukimon_Primary.png",
+  "source_sprite_count": 19,
+  "paradox_sprite_count": 19,
+  "style_profile": "Cyber Paradox Corruption v1",
+  "style_features": [
+    "violet/black data infection",
+    "cyan/magenta chromatic ghosts",
+    "digital displacement",
+    "angular data-void fractures",
+    "circuit cracks",
+    "transparent neon aura"
+  ],
+  "animation_alignment": "exact source canvas dimensions preserved"
+}

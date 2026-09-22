@@ -1,0 +1,23 @@
+{
+  "variant_id": "paradox_sunflowmon",
+  "display_name": "Paradox Sunflowmon",
+  "base_species": "Sunflowmon",
+  "stage": "4 Champion",
+  "status": "ready",
+  "materializable": true,
+  "boss_eligible": true,
+  "primary_sprite": "4 Champion/Sunflowmon/Paradox/Sunflowmon_Paradox_Primary.png",
+  "source_primary": "4 Champion/Sunflowmon/Sunflowmon_Primary.png",
+  "source_sprite_count": 21,
+  "paradox_sprite_count": 21,
+  "style_profile": "Cyber Paradox Corruption v1",
+  "style_features": [
+    "violet/black data infection",
+    "cyan/magenta chromatic ghosts",
+    "digital displacement",
+    "angular data-void fractures",
+    "circuit cracks",
+    "transparent neon aura"
+  ],
+  "animation_alignment": "exact source canvas dimensions preserved"
+}

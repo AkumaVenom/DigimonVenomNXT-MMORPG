@@ -1,0 +1,23 @@
+{
+  "variant_id": "paradox_devimonicedevimon",
+  "display_name": "Paradox DevimonIceDevimon",
+  "base_species": "DevimonIceDevimon",
+  "stage": "4 Champion",
+  "status": "ready",
+  "materializable": true,
+  "boss_eligible": true,
+  "primary_sprite": "4 Champion/DevimonIceDevimon/Paradox/DevimonIceDevimon_Paradox_Primary.png",
+  "source_primary": "4 Champion/DevimonIceDevimon/Devimon_Idle.png",
+  "source_sprite_count": 10,
+  "paradox_sprite_count": 11,
+  "style_profile": "Cyber Paradox Corruption v1",
+  "style_features": [
+    "violet/black data infection",
+    "cyan/magenta chromatic ghosts",
+    "digital displacement",
+    "angular data-void fractures",
+    "circuit cracks",
+    "transparent neon aura"
+  ],
+  "animation_alignment": "exact source canvas dimensions preserved"
+}

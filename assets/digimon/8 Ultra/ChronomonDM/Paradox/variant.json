@@ -1,0 +1,23 @@
+{
+  "variant_id": "paradox_chronomondm",
+  "display_name": "Paradox ChronomonDM",
+  "base_species": "ChronomonDM",
+  "stage": "8 Ultra",
+  "status": "ready",
+  "materializable": true,
+  "boss_eligible": true,
+  "primary_sprite": "8 Ultra/ChronomonDM/Paradox/ChronomonDM_Paradox_Primary.png",
+  "source_primary": "8 Ultra/ChronomonDM/ChronomonDM_Primary.png",
+  "source_sprite_count": 12,
+  "paradox_sprite_count": 12,
+  "style_profile": "Cyber Paradox Corruption v1",
+  "style_features": [
+    "violet/black data infection",
+    "cyan/magenta chromatic ghosts",
+    "digital displacement",
+    "angular data-void fractures",
+    "circuit cracks",
+    "transparent neon aura"
+  ],
+  "animation_alignment": "exact source canvas dimensions preserved"
+}

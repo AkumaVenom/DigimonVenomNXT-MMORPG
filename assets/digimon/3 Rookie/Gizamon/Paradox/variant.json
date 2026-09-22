@@ -1,0 +1,23 @@
+{
+  "variant_id": "paradox_gizamon",
+  "display_name": "Paradox Gizamon",
+  "base_species": "Gizamon",
+  "stage": "3 Rookie",
+  "status": "ready",
+  "materializable": true,
+  "boss_eligible": true,
+  "primary_sprite": "3 Rookie/Gizamon/Paradox/Gizamon_Paradox_Primary.png",
+  "source_primary": "3 Rookie/Gizamon/Gizamon_Idle.png",
+  "source_sprite_count": 4,
+  "paradox_sprite_count": 5,
+  "style_profile": "Cyber Paradox Corruption v1",
+  "style_features": [
+    "violet/black data infection",
+    "cyan/magenta chromatic ghosts",
+    "digital displacement",
+    "angular data-void fractures",
+    "circuit cracks",
+    "transparent neon aura"
+  ],
+  "animation_alignment": "exact source canvas dimensions preserved"
+}

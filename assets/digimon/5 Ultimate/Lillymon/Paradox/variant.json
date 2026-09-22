@@ -1,0 +1,23 @@
+{
+  "variant_id": "paradox_lillymon",
+  "display_name": "Paradox Lillymon",
+  "base_species": "Lillymon",
+  "stage": "5 Ultimate",
+  "status": "ready",
+  "materializable": true,
+  "boss_eligible": true,
+  "primary_sprite": "5 Ultimate/Lillymon/Paradox/Lillymon_Paradox_Primary.png",
+  "source_primary": "5 Ultimate/Lillymon/Lillymon_Primary.png",
+  "source_sprite_count": 26,
+  "paradox_sprite_count": 26,
+  "style_profile": "Cyber Paradox Corruption v1",
+  "style_features": [
+    "violet/black data infection",
+    "cyan/magenta chromatic ghosts",
+    "digital displacement",
+    "angular data-void fractures",
+    "circuit cracks",
+    "transparent neon aura"
+  ],
+  "animation_alignment": "exact source canvas dimensions preserved"
+}

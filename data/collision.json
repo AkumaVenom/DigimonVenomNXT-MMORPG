@@ -1,0 +1,2038 @@
+{
+  "format": 1,
+  "maps": {
+    "map_001_a": {
+      "walkable": "assets/collision/map_001_a.png",
+      "spawn": [
+        764,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/1.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_002_a": {
+      "walkable": "assets/collision/map_002_a.png",
+      "spawn": [
+        764,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/2.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_003_a": {
+      "walkable": "assets/collision/map_003_a.png",
+      "spawn": [
+        764,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/3.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_004_a": {
+      "walkable": "assets/collision/map_004_a.png",
+      "spawn": [
+        764,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/4.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_005_a": {
+      "walkable": "assets/collision/map_005_a.png",
+      "spawn": [
+        764,
+        388
+      ],
+      "collision_provenance": "NDS dat/map/5.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_006_a": {
+      "walkable": "assets/collision/map_006_a.png",
+      "spawn": [
+        764,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/6.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_007_a": {
+      "walkable": "assets/collision/map_007_a.png",
+      "spawn": [
+        764,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/7.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_008_a": {
+      "walkable": "assets/collision/map_008_a.png",
+      "spawn": [
+        788,
+        372
+      ],
+      "collision_provenance": "NDS dat/map/8.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_009_a": {
+      "walkable": "assets/collision/map_009_a.png",
+      "spawn": [
+        788,
+        372
+      ],
+      "collision_provenance": "NDS dat/map/9.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_010_a": {
+      "walkable": "assets/collision/map_010_a.png",
+      "spawn": [
+        748,
+        428
+      ],
+      "collision_provenance": "NDS dat/map/10.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_011_a": {
+      "walkable": "assets/collision/map_011_a.png",
+      "spawn": [
+        484,
+        516
+      ],
+      "collision_provenance": "NDS dat/map/11.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_012_a": {
+      "walkable": "assets/collision/map_012_a.png",
+      "spawn": [
+        772,
+        388
+      ],
+      "collision_provenance": "NDS dat/map/12.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_013_a": {
+      "walkable": "assets/collision/map_013_a.png",
+      "spawn": [
+        772,
+        388
+      ],
+      "collision_provenance": "NDS dat/map/13.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_014_a": {
+      "walkable": "assets/collision/map_014_a.png",
+      "spawn": [
+        788,
+        340
+      ],
+      "collision_provenance": "NDS dat/map/14.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_015_a": {
+      "walkable": "assets/collision/map_015_a.png",
+      "spawn": [
+        916,
+        460
+      ],
+      "collision_provenance": "NDS dat/map/15.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_016_a": {
+      "walkable": "assets/collision/map_016_a.png",
+      "spawn": [
+        772,
+        404
+      ],
+      "collision_provenance": "NDS dat/map/16.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_017_a": {
+      "walkable": "assets/collision/map_017_a.png",
+      "spawn": [
+        764,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/17.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_018_a": {
+      "walkable": "assets/collision/map_018_a.png",
+      "spawn": [
+        764,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/18.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_019_a": {
+      "walkable": "assets/collision/map_019_a.png",
+      "spawn": [
+        708,
+        428
+      ],
+      "collision_provenance": "NDS dat/map/19.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_020_a": {
+      "walkable": "assets/collision/map_020_a.png",
+      "spawn": [
+        804,
+        316
+      ],
+      "collision_provenance": "NDS dat/map/20.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_021_a": {
+      "walkable": "assets/collision/map_021_a.png",
+      "spawn": [
+        804,
+        316
+      ],
+      "collision_provenance": "NDS dat/map/21.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_022_a": {
+      "walkable": "assets/collision/map_022_a.png",
+      "spawn": [
+        852,
+        324
+      ],
+      "collision_provenance": "NDS dat/map/22.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_023_a": {
+      "walkable": "assets/collision/map_023_a.png",
+      "spawn": [
+        764,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/23.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_024_a": {
+      "walkable": "assets/collision/map_024_a.png",
+      "spawn": [
+        764,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/24.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_025_a": {
+      "walkable": "assets/collision/map_025_a.png",
+      "spawn": [
+        764,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/25.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_026_a": {
+      "walkable": "assets/collision/map_026_a.png",
+      "spawn": [
+        764,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/26.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_027_a": {
+      "walkable": "assets/collision/map_027_a.png",
+      "spawn": [
+        764,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/27.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_028_a": {
+      "walkable": "assets/collision/map_028_a.png",
+      "spawn": [
+        764,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/28.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_029_a": {
+      "walkable": "assets/collision/map_029_a.png",
+      "spawn": [
+        764,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/29.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_030_a": {
+      "walkable": "assets/collision/map_030_a.png",
+      "spawn": [
+        788,
+        372
+      ],
+      "collision_provenance": "NDS dat/map/30.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_031_a": {
+      "walkable": "assets/collision/map_031_a.png",
+      "spawn": [
+        788,
+        372
+      ],
+      "collision_provenance": "NDS dat/map/31.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_032_a": {
+      "walkable": "assets/collision/map_032_a.png",
+      "spawn": [
+        748,
+        428
+      ],
+      "collision_provenance": "NDS dat/map/32.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_033_a": {
+      "walkable": "assets/collision/map_033_a.png",
+      "spawn": [
+        484,
+        516
+      ],
+      "collision_provenance": "NDS dat/map/33.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_034_a": {
+      "walkable": "assets/collision/map_034_a.png",
+      "spawn": [
+        772,
+        364
+      ],
+      "collision_provenance": "NDS dat/map/34.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_035_a": {
+      "walkable": "assets/collision/map_035_a.png",
+      "spawn": [
+        772,
+        364
+      ],
+      "collision_provenance": "NDS dat/map/35.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_036_a": {
+      "walkable": "assets/collision/map_036_a.png",
+      "spawn": [
+        788,
+        340
+      ],
+      "collision_provenance": "NDS dat/map/36.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_037_a": {
+      "walkable": "assets/collision/map_037_a.png",
+      "spawn": [
+        764,
+        292
+      ],
+      "collision_provenance": "NDS dat/map/37.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_038_a": {
+      "walkable": "assets/collision/map_038_a.png",
+      "spawn": [
+        772,
+        404
+      ],
+      "collision_provenance": "NDS dat/map/38.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_039_a": {
+      "walkable": "assets/collision/map_039_a.png",
+      "spawn": [
+        764,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/39.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_040_a": {
+      "walkable": "assets/collision/map_040_a.png",
+      "spawn": [
+        764,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/40.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_041_a": {
+      "walkable": "assets/collision/map_041_a.png",
+      "spawn": [
+        708,
+        428
+      ],
+      "collision_provenance": "NDS dat/map/41.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_042_a": {
+      "walkable": "assets/collision/map_042_a.png",
+      "spawn": [
+        804,
+        316
+      ],
+      "collision_provenance": "NDS dat/map/42.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_043_a": {
+      "walkable": "assets/collision/map_043_a.png",
+      "spawn": [
+        804,
+        316
+      ],
+      "collision_provenance": "NDS dat/map/43.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_044_a": {
+      "walkable": "assets/collision/map_044_a.png",
+      "spawn": [
+        852,
+        324
+      ],
+      "collision_provenance": "NDS dat/map/44.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_045_a": {
+      "walkable": "assets/collision/map_045_a.png",
+      "spawn": [
+        764,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/45.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_046_a": {
+      "walkable": "assets/collision/map_046_a.png",
+      "spawn": [
+        908,
+        516
+      ],
+      "collision_provenance": "NDS dat/map/46.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_047_a": {
+      "walkable": "assets/collision/map_047_a.png",
+      "spawn": [
+        740,
+        428
+      ],
+      "collision_provenance": "NDS dat/map/47.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_048_a": {
+      "walkable": "assets/collision/map_048_a.png",
+      "spawn": [
+        756,
+        388
+      ],
+      "collision_provenance": "NDS dat/map/48.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_049_a": {
+      "walkable": "assets/collision/map_049_a.png",
+      "spawn": [
+        764,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/49.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_050_a": {
+      "walkable": "assets/collision/map_050_a.png",
+      "spawn": [
+        764,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/50.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_051_a": {
+      "walkable": "assets/collision/map_051_a.png",
+      "spawn": [
+        668,
+        188
+      ],
+      "collision_provenance": "NDS dat/map/51.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_052_a": {
+      "walkable": "assets/collision/map_052_a.png",
+      "spawn": [
+        764,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/52.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_053_a": {
+      "walkable": "assets/collision/map_053_a.png",
+      "spawn": [
+        252,
+        188
+      ],
+      "collision_provenance": "NDS dat/map/53.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_054_a": {
+      "walkable": "assets/collision/map_054_a.png",
+      "spawn": [
+        532,
+        356
+      ],
+      "collision_provenance": "NDS dat/map/54.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_055_a": {
+      "walkable": "assets/collision/map_055_a.png",
+      "spawn": [
+        532,
+        356
+      ],
+      "collision_provenance": "NDS dat/map/55.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_056_a": {
+      "walkable": "assets/collision/map_056_a.png",
+      "spawn": [
+        532,
+        356
+      ],
+      "collision_provenance": "NDS dat/map/56.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_057_a": {
+      "walkable": "assets/collision/map_057_a.png",
+      "spawn": [
+        532,
+        356
+      ],
+      "collision_provenance": "NDS dat/map/57.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_058_a": {
+      "walkable": "assets/collision/map_058_a.png",
+      "spawn": [
+        532,
+        356
+      ],
+      "collision_provenance": "NDS dat/map/58.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_059_a": {
+      "walkable": "assets/collision/map_059_a.png",
+      "spawn": [
+        532,
+        356
+      ],
+      "collision_provenance": "NDS dat/map/59.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_060_a": {
+      "walkable": "assets/collision/map_060_a.png",
+      "spawn": [
+        532,
+        356
+      ],
+      "collision_provenance": "NDS dat/map/60.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_061_a": {
+      "walkable": "assets/collision/map_061_a.png",
+      "spawn": [
+        532,
+        356
+      ],
+      "collision_provenance": "NDS dat/map/61.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_062_a": {
+      "walkable": "assets/collision/map_062_a.png",
+      "spawn": [
+        532,
+        356
+      ],
+      "collision_provenance": "NDS dat/map/62.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_063_a": {
+      "walkable": "assets/collision/map_063_a.png",
+      "spawn": [
+        508,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/63.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_064_a": {
+      "walkable": "assets/collision/map_064_a.png",
+      "spawn": [
+        492,
+        412
+      ],
+      "collision_provenance": "NDS dat/map/64.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_065_a": {
+      "walkable": "assets/collision/map_065_a.png",
+      "spawn": [
+        532,
+        356
+      ],
+      "collision_provenance": "NDS dat/map/65.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_066_a": {
+      "walkable": "assets/collision/map_066_a.png",
+      "spawn": [
+        532,
+        356
+      ],
+      "collision_provenance": "NDS dat/map/66.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_067_a": {
+      "walkable": "assets/collision/map_067_a.png",
+      "spawn": [
+        532,
+        356
+      ],
+      "collision_provenance": "NDS dat/map/67.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_068_a": {
+      "walkable": "assets/collision/map_068_a.png",
+      "spawn": [
+        492,
+        412
+      ],
+      "collision_provenance": "NDS dat/map/68.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_069_a": {
+      "walkable": "assets/collision/map_069_a.png",
+      "spawn": [
+        532,
+        356
+      ],
+      "collision_provenance": "NDS dat/map/69.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_070_a": {
+      "walkable": "assets/collision/map_070_a.png",
+      "spawn": [
+        764,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/70.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_071_a": {
+      "walkable": "assets/collision/map_071_a.png",
+      "spawn": [
+        516,
+        580
+      ],
+      "collision_provenance": "NDS dat/map/71.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_072_a": {
+      "walkable": "assets/collision/map_072_a.png",
+      "spawn": [
+        516,
+        332
+      ],
+      "collision_provenance": "NDS dat/map/72.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_073_a": {
+      "walkable": "assets/collision/map_073_a.png",
+      "spawn": [
+        788,
+        348
+      ],
+      "collision_provenance": "NDS dat/map/73.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_074_a": {
+      "walkable": "assets/collision/map_074_a.png",
+      "spawn": [
+        764,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/74.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_075_a": {
+      "walkable": "assets/collision/map_075_a.png",
+      "spawn": [
+        740,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/75.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_076_a": {
+      "walkable": "assets/collision/map_076_a.png",
+      "spawn": [
+        804,
+        300
+      ],
+      "collision_provenance": "NDS dat/map/76.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_077_a": {
+      "walkable": "assets/collision/map_077_a.png",
+      "spawn": [
+        764,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/77.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_078_a": {
+      "walkable": "assets/collision/map_078_a.png",
+      "spawn": [
+        764,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/78.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_079_a": {
+      "walkable": "assets/collision/map_079_a.png",
+      "spawn": [
+        508,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/79.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_080_a": {
+      "walkable": "assets/collision/map_080_a.png",
+      "spawn": [
+        788,
+        436
+      ],
+      "collision_provenance": "NDS dat/map/80.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_081_a": {
+      "walkable": "assets/collision/map_081_a.png",
+      "spawn": [
+        500,
+        348
+      ],
+      "collision_provenance": "NDS dat/map/81.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_082_a": {
+      "walkable": "assets/collision/map_082_a.png",
+      "spawn": [
+        764,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/82.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_083_a": {
+      "walkable": "assets/collision/map_083_a.png",
+      "spawn": [
+        740,
+        348
+      ],
+      "collision_provenance": "NDS dat/map/83.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_084_a": {
+      "walkable": "assets/collision/map_084_a.png",
+      "spawn": [
+        764,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/84.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_085_a": {
+      "walkable": "assets/collision/map_085_a.png",
+      "spawn": [
+        724,
+        308
+      ],
+      "collision_provenance": "NDS dat/map/85.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_086_a": {
+      "walkable": "assets/collision/map_086_a.png",
+      "spawn": [
+        764,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/86.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_087_a": {
+      "walkable": "assets/collision/map_087_a.png",
+      "spawn": [
+        772,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/87.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_089_a": {
+      "walkable": "assets/collision/map_089_a.png",
+      "spawn": [
+        764,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/89.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_090_a": {
+      "walkable": "assets/collision/map_090_a.png",
+      "spawn": [
+        764,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/90.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_091_a": {
+      "walkable": "assets/collision/map_091_a.png",
+      "spawn": [
+        772,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/91.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_092_a": {
+      "walkable": "assets/collision/map_092_a.png",
+      "spawn": [
+        764,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/92.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_093_a": {
+      "walkable": "assets/collision/map_093_a.png",
+      "spawn": [
+        764,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/93.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_094_a": {
+      "walkable": "assets/collision/map_094_a.png",
+      "spawn": [
+        764,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/94.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_095_a": {
+      "walkable": "assets/collision/map_095_a.png",
+      "spawn": [
+        788,
+        356
+      ],
+      "collision_provenance": "NDS dat/map/95.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_096_a": {
+      "walkable": "assets/collision/map_096_a.png",
+      "spawn": [
+        532,
+        356
+      ],
+      "collision_provenance": "NDS dat/map/96.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_097_a": {
+      "walkable": "assets/collision/map_097_a.png",
+      "spawn": [
+        764,
+        372
+      ],
+      "collision_provenance": "NDS dat/map/97.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_098_a": {
+      "walkable": "assets/collision/map_098_a.png",
+      "spawn": [
+        764,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/98.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_099_a": {
+      "walkable": "assets/collision/map_099_a.png",
+      "spawn": [
+        748,
+        436
+      ],
+      "collision_provenance": "NDS dat/map/99.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_100_a": {
+      "walkable": "assets/collision/map_100_a.png",
+      "spawn": [
+        508,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/100.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_101_a": {
+      "walkable": "assets/collision/map_101_a.png",
+      "spawn": [
+        788,
+        340
+      ],
+      "collision_provenance": "NDS dat/map/101.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_102_a": {
+      "walkable": "assets/collision/map_102_a.png",
+      "spawn": [
+        764,
+        372
+      ],
+      "collision_provenance": "NDS dat/map/102.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_103_a": {
+      "walkable": "assets/collision/map_103_a.png",
+      "spawn": [
+        732,
+        452
+      ],
+      "collision_provenance": "NDS dat/map/103.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_104_a": {
+      "walkable": "assets/collision/map_104_a.png",
+      "spawn": [
+        772,
+        364
+      ],
+      "collision_provenance": "NDS dat/map/104.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_105_a": {
+      "walkable": "assets/collision/map_105_a.png",
+      "spawn": [
+        756,
+        348
+      ],
+      "collision_provenance": "NDS dat/map/105.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_106_a": {
+      "walkable": "assets/collision/map_106_a.png",
+      "spawn": [
+        508,
+        572
+      ],
+      "collision_provenance": "NDS dat/map/106.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_107_a": {
+      "walkable": "assets/collision/map_107_a.png",
+      "spawn": [
+        732,
+        452
+      ],
+      "collision_provenance": "NDS dat/map/107.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_108_a": {
+      "walkable": "assets/collision/map_108_a.png",
+      "spawn": [
+        764,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/108.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_109_a": {
+      "walkable": "assets/collision/map_109_a.png",
+      "spawn": [
+        508,
+        572
+      ],
+      "collision_provenance": "NDS dat/map/109.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_110_a": {
+      "walkable": "assets/collision/map_110_a.png",
+      "spawn": [
+        764,
+        372
+      ],
+      "collision_provenance": "NDS dat/map/110.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_111_a": {
+      "walkable": "assets/collision/map_111_a.png",
+      "spawn": [
+        764,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/111.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_112_a": {
+      "walkable": "assets/collision/map_112_a.png",
+      "spawn": [
+        772,
+        420
+      ],
+      "collision_provenance": "NDS dat/map/112.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_113_a": {
+      "walkable": "assets/collision/map_113_a.png",
+      "spawn": [
+        508,
+        372
+      ],
+      "collision_provenance": "NDS dat/map/113.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_114_a": {
+      "walkable": "assets/collision/map_114_a.png",
+      "spawn": [
+        740,
+        340
+      ],
+      "collision_provenance": "NDS dat/map/114.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_115_a": {
+      "walkable": "assets/collision/map_115_a.png",
+      "spawn": [
+        740,
+        340
+      ],
+      "collision_provenance": "NDS dat/map/115.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_116_a": {
+      "walkable": "assets/collision/map_116_a.png",
+      "spawn": [
+        756,
+        364
+      ],
+      "collision_provenance": "NDS dat/map/116.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_117_a": {
+      "walkable": "assets/collision/map_117_a.png",
+      "spawn": [
+        532,
+        340
+      ],
+      "collision_provenance": "NDS dat/map/117.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_118_a": {
+      "walkable": "assets/collision/map_118_a.png",
+      "spawn": [
+        788,
+        324
+      ],
+      "collision_provenance": "NDS dat/map/118.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_119_a": {
+      "walkable": "assets/collision/map_119_a.png",
+      "spawn": [
+        788,
+        412
+      ],
+      "collision_provenance": "NDS dat/map/119.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_120_a": {
+      "walkable": "assets/collision/map_120_a.png",
+      "spawn": [
+        772,
+        388
+      ],
+      "collision_provenance": "NDS dat/map/120.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_121_a": {
+      "walkable": "assets/collision/map_121_a.png",
+      "spawn": [
+        804,
+        300
+      ],
+      "collision_provenance": "NDS dat/map/121.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_122_a": {
+      "walkable": "assets/collision/map_122_a.png",
+      "spawn": [
+        764,
+        412
+      ],
+      "collision_provenance": "NDS dat/map/122.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_123_a": {
+      "walkable": "assets/collision/map_123_a.png",
+      "spawn": [
+        764,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/123.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_124_a": {
+      "walkable": "assets/collision/map_124_a.png",
+      "spawn": [
+        764,
+        404
+      ],
+      "collision_provenance": "NDS dat/map/124.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_125_a": {
+      "walkable": "assets/collision/map_125_a.png",
+      "spawn": [
+        804,
+        300
+      ],
+      "collision_provenance": "NDS dat/map/125.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_126_a": {
+      "walkable": "assets/collision/map_126_a.png",
+      "spawn": [
+        788,
+        412
+      ],
+      "collision_provenance": "NDS dat/map/126.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_127_a": {
+      "walkable": "assets/collision/map_127_a.png",
+      "spawn": [
+        764,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/127.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_128_a": {
+      "walkable": "assets/collision/map_128_a.png",
+      "spawn": [
+        836,
+        404
+      ],
+      "collision_provenance": "NDS dat/map/128.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_129_a": {
+      "walkable": "assets/collision/map_129_a.png",
+      "spawn": [
+        788,
+        412
+      ],
+      "collision_provenance": "NDS dat/map/129.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_130_a": {
+      "walkable": "assets/collision/map_130_a.png",
+      "spawn": [
+        764,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/130.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_141_a": {
+      "walkable": "assets/collision/map_141_a.png",
+      "spawn": [
+        764,
+        404
+      ],
+      "collision_provenance": "NDS dat/map/141.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_142_a": {
+      "walkable": "assets/collision/map_142_a.png",
+      "spawn": [
+        788,
+        356
+      ],
+      "collision_provenance": "NDS dat/map/142.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_143_a": {
+      "walkable": "assets/collision/map_143_a.png",
+      "spawn": [
+        740,
+        340
+      ],
+      "collision_provenance": "NDS dat/map/143.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_144_a": {
+      "walkable": "assets/collision/map_144_a.png",
+      "spawn": [
+        508,
+        572
+      ],
+      "collision_provenance": "NDS dat/map/144.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_145_a": {
+      "walkable": "assets/collision/map_145_a.png",
+      "spawn": [
+        764,
+        396
+      ],
+      "collision_provenance": "NDS dat/map/145.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_146_a": {
+      "walkable": "assets/collision/map_146_a.png",
+      "spawn": [
+        508,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/146.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_147_a": {
+      "walkable": "assets/collision/map_147_a.png",
+      "spawn": [
+        748,
+        428
+      ],
+      "collision_provenance": "NDS dat/map/147.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_148_a": {
+      "walkable": "assets/collision/map_148_a.png",
+      "spawn": [
+        772,
+        388
+      ],
+      "collision_provenance": "NDS dat/map/148.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_149_a": {
+      "walkable": "assets/collision/map_149_a.png",
+      "spawn": [
+        764,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/149.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_150_a": {
+      "walkable": "assets/collision/map_150_a.png",
+      "spawn": [
+        764,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/150.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_151_a": {
+      "walkable": "assets/collision/map_151_a.png",
+      "spawn": [
+        764,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/151.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_152_a": {
+      "walkable": "assets/collision/map_152_a.png",
+      "spawn": [
+        740,
+        332
+      ],
+      "collision_provenance": "NDS dat/map/152.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_153_a": {
+      "walkable": "assets/collision/map_153_a.png",
+      "spawn": [
+        740,
+        332
+      ],
+      "collision_provenance": "NDS dat/map/153.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_154_a": {
+      "walkable": "assets/collision/map_154_a.png",
+      "spawn": [
+        788,
+        404
+      ],
+      "collision_provenance": "NDS dat/map/154.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_155_a": {
+      "walkable": "assets/collision/map_155_a.png",
+      "spawn": [
+        788,
+        436
+      ],
+      "collision_provenance": "NDS dat/map/155.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_156_a": {
+      "walkable": "assets/collision/map_156_a.png",
+      "spawn": [
+        740,
+        332
+      ],
+      "collision_provenance": "NDS dat/map/156.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_157_a": {
+      "walkable": "assets/collision/map_157_a.png",
+      "spawn": [
+        788,
+        404
+      ],
+      "collision_provenance": "NDS dat/map/157.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_158_a": {
+      "walkable": "assets/collision/map_158_a.png",
+      "spawn": [
+        764,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/158.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_159_a": {
+      "walkable": "assets/collision/map_159_a.png",
+      "spawn": [
+        772,
+        372
+      ],
+      "collision_provenance": "NDS dat/map/159.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_160_a": {
+      "walkable": "assets/collision/map_160_a.png",
+      "spawn": [
+        788,
+        348
+      ],
+      "collision_provenance": "NDS dat/map/160.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_161_a": {
+      "walkable": "assets/collision/map_161_a.png",
+      "spawn": [
+        764,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/161.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_162_a": {
+      "walkable": "assets/collision/map_162_a.png",
+      "spawn": [
+        764,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/162.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_163_a": {
+      "walkable": "assets/collision/map_163_a.png",
+      "spawn": [
+        764,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/163.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_164_a": {
+      "walkable": "assets/collision/map_164_a.png",
+      "spawn": [
+        764,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/164.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_165_a": {
+      "walkable": "assets/collision/map_165_a.png",
+      "spawn": [
+        764,
+        404
+      ],
+      "collision_provenance": "NDS dat/map/165.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_166_a": {
+      "walkable": "assets/collision/map_166_a.png",
+      "spawn": [
+        764,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/166.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_167_a": {
+      "walkable": "assets/collision/map_167_a.png",
+      "spawn": [
+        780,
+        348
+      ],
+      "collision_provenance": "NDS dat/map/167.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_168_a": {
+      "walkable": "assets/collision/map_168_a.png",
+      "spawn": [
+        756,
+        364
+      ],
+      "collision_provenance": "NDS dat/map/168.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_169_a": {
+      "walkable": "assets/collision/map_169_a.png",
+      "spawn": [
+        732,
+        436
+      ],
+      "collision_provenance": "NDS dat/map/169.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_170_a": {
+      "walkable": "assets/collision/map_170_a.png",
+      "spawn": [
+        764,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/170.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_171_a": {
+      "walkable": "assets/collision/map_171_a.png",
+      "spawn": [
+        764,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/171.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_172_a": {
+      "walkable": "assets/collision/map_172_a.png",
+      "spawn": [
+        764,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/172.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_173_a": {
+      "walkable": "assets/collision/map_173_a.png",
+      "spawn": [
+        764,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/173.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_174_a": {
+      "walkable": "assets/collision/map_174_a.png",
+      "spawn": [
+        804,
+        300
+      ],
+      "collision_provenance": "NDS dat/map/174.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_175_a": {
+      "walkable": "assets/collision/map_175_a.png",
+      "spawn": [
+        740,
+        356
+      ],
+      "collision_provenance": "NDS dat/map/175.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_176_a": {
+      "walkable": "assets/collision/map_176_a.png",
+      "spawn": [
+        764,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/176.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_177_a": {
+      "walkable": "assets/collision/map_177_a.png",
+      "spawn": [
+        732,
+        436
+      ],
+      "collision_provenance": "NDS dat/map/177.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_178_a": {
+      "walkable": "assets/collision/map_178_a.png",
+      "spawn": [
+        764,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/178.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_179_a": {
+      "walkable": "assets/collision/map_179_a.png",
+      "spawn": [
+        772,
+        404
+      ],
+      "collision_provenance": "NDS dat/map/179.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_180_a": {
+      "walkable": "assets/collision/map_180_a.png",
+      "spawn": [
+        764,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/180.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_181_a": {
+      "walkable": "assets/collision/map_181_a.png",
+      "spawn": [
+        716,
+        444
+      ],
+      "collision_provenance": "NDS dat/map/181.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_182_a": {
+      "walkable": "assets/collision/map_182_a.png",
+      "spawn": [
+        764,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/182.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_183_a": {
+      "walkable": "assets/collision/map_183_a.png",
+      "spawn": [
+        772,
+        364
+      ],
+      "collision_provenance": "NDS dat/map/183.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_184_a": {
+      "walkable": "assets/collision/map_184_a.png",
+      "spawn": [
+        764,
+        396
+      ],
+      "collision_provenance": "NDS dat/map/184.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_185_a": {
+      "walkable": "assets/collision/map_185_a.png",
+      "spawn": [
+        764,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/185.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_186_a": {
+      "walkable": "assets/collision/map_186_a.png",
+      "spawn": [
+        772,
+        404
+      ],
+      "collision_provenance": "NDS dat/map/186.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_187_a": {
+      "walkable": "assets/collision/map_187_a.png",
+      "spawn": [
+        772,
+        388
+      ],
+      "collision_provenance": "NDS dat/map/187.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_188_a": {
+      "walkable": "assets/collision/map_188_a.png",
+      "spawn": [
+        764,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/188.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_189_a": {
+      "walkable": "assets/collision/map_189_a.png",
+      "spawn": [
+        756,
+        364
+      ],
+      "collision_provenance": "NDS dat/map/189.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_190_a": {
+      "walkable": "assets/collision/map_190_a.png",
+      "spawn": [
+        788,
+        324
+      ],
+      "collision_provenance": "NDS dat/map/190.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_191_a": {
+      "walkable": "assets/collision/map_191_a.png",
+      "spawn": [
+        748,
+        412
+      ],
+      "collision_provenance": "NDS dat/map/191.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_192_a": {
+      "walkable": "assets/collision/map_192_a.png",
+      "spawn": [
+        764,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/192.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_193_a": {
+      "walkable": "assets/collision/map_193_a.png",
+      "spawn": [
+        756,
+        348
+      ],
+      "collision_provenance": "NDS dat/map/193.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_194_a": {
+      "walkable": "assets/collision/map_194_a.png",
+      "spawn": [
+        764,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/194.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_195_a": {
+      "walkable": "assets/collision/map_195_a.png",
+      "spawn": [
+        772,
+        364
+      ],
+      "collision_provenance": "NDS dat/map/195.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_196_a": {
+      "walkable": "assets/collision/map_196_a.png",
+      "spawn": [
+        772,
+        284
+      ],
+      "collision_provenance": "NDS dat/map/196.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_197_a": {
+      "walkable": "assets/collision/map_197_a.png",
+      "spawn": [
+        756,
+        348
+      ],
+      "collision_provenance": "NDS dat/map/197.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_198_a": {
+      "walkable": "assets/collision/map_198_a.png",
+      "spawn": [
+        740,
+        340
+      ],
+      "collision_provenance": "NDS dat/map/198.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_199_a": {
+      "walkable": "assets/collision/map_199_a.png",
+      "spawn": [
+        764,
+        372
+      ],
+      "collision_provenance": "NDS dat/map/199.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_200_a": {
+      "walkable": "assets/collision/map_200_a.png",
+      "spawn": [
+        764,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/200.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_201_a": {
+      "walkable": "assets/collision/map_201_a.png",
+      "spawn": [
+        764,
+        404
+      ],
+      "collision_provenance": "NDS dat/map/201.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_202_a": {
+      "walkable": "assets/collision/map_202_a.png",
+      "spawn": [
+        788,
+        428
+      ],
+      "collision_provenance": "NDS dat/map/202.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_203_a": {
+      "walkable": "assets/collision/map_203_a.png",
+      "spawn": [
+        764,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/203.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_204_a": {
+      "walkable": "assets/collision/map_204_a.png",
+      "spawn": [
+        724,
+        308
+      ],
+      "collision_provenance": "NDS dat/map/204.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_205_a": {
+      "walkable": "assets/collision/map_205_a.png",
+      "spawn": [
+        740,
+        308
+      ],
+      "collision_provenance": "NDS dat/map/205.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_206_a": {
+      "walkable": "assets/collision/map_206_a.png",
+      "spawn": [
+        764,
+        364
+      ],
+      "collision_provenance": "NDS dat/map/206.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_207_a": {
+      "walkable": "assets/collision/map_207_a.png",
+      "spawn": [
+        788,
+        396
+      ],
+      "collision_provenance": "NDS dat/map/207.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_208_a": {
+      "walkable": "assets/collision/map_208_a.png",
+      "spawn": [
+        756,
+        364
+      ],
+      "collision_provenance": "NDS dat/map/208.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_209_a": {
+      "walkable": "assets/collision/map_209_a.png",
+      "spawn": [
+        756,
+        364
+      ],
+      "collision_provenance": "NDS dat/map/209.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_210_a": {
+      "walkable": "assets/collision/map_210_a.png",
+      "spawn": [
+        764,
+        412
+      ],
+      "collision_provenance": "NDS dat/map/210.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_211_a": {
+      "walkable": "assets/collision/map_211_a.png",
+      "spawn": [
+        740,
+        396
+      ],
+      "collision_provenance": "NDS dat/map/211.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_212_a": {
+      "walkable": "assets/collision/map_212_a.png",
+      "spawn": [
+        756,
+        364
+      ],
+      "collision_provenance": "NDS dat/map/212.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_213_a": {
+      "walkable": "assets/collision/map_213_a.png",
+      "spawn": [
+        756,
+        364
+      ],
+      "collision_provenance": "NDS dat/map/213.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_214_a": {
+      "walkable": "assets/collision/map_214_a.png",
+      "spawn": [
+        788,
+        340
+      ],
+      "collision_provenance": "NDS dat/map/214.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_215_a": {
+      "walkable": "assets/collision/map_215_a.png",
+      "spawn": [
+        764,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/215.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_216_a": {
+      "walkable": "assets/collision/map_216_a.png",
+      "spawn": [
+        764,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/216.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_217_a": {
+      "walkable": "assets/collision/map_217_a.png",
+      "spawn": [
+        724,
+        308
+      ],
+      "collision_provenance": "NDS dat/map/217.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_218_a": {
+      "walkable": "assets/collision/map_218_a.png",
+      "spawn": [
+        764,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/218.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_219_a": {
+      "walkable": "assets/collision/map_219_a.png",
+      "spawn": [
+        788,
+        428
+      ],
+      "collision_provenance": "NDS dat/map/219.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_220_a": {
+      "walkable": "assets/collision/map_220_a.png",
+      "spawn": [
+        796,
+        324
+      ],
+      "collision_provenance": "NDS dat/map/220.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_221_a": {
+      "walkable": "assets/collision/map_221_a.png",
+      "spawn": [
+        756,
+        356
+      ],
+      "collision_provenance": "NDS dat/map/221.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_222_a": {
+      "walkable": "assets/collision/map_222_a.png",
+      "spawn": [
+        764,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/222.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_223_a": {
+      "walkable": "assets/collision/map_223_a.png",
+      "spawn": [
+        764,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/223.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_224_a": {
+      "walkable": "assets/collision/map_224_a.png",
+      "spawn": [
+        508,
+        572
+      ],
+      "collision_provenance": "NDS dat/map/224.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_225_a": {
+      "walkable": "assets/collision/map_225_a.png",
+      "spawn": [
+        748,
+        412
+      ],
+      "collision_provenance": "NDS dat/map/225.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_226_a": {
+      "walkable": "assets/collision/map_226_a.png",
+      "spawn": [
+        764,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/226.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_227_a": {
+      "walkable": "assets/collision/map_227_a.png",
+      "spawn": [
+        764,
+        372
+      ],
+      "collision_provenance": "NDS dat/map/227.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_228_a": {
+      "walkable": "assets/collision/map_228_a.png",
+      "spawn": [
+        764,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/228.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_229_a": {
+      "walkable": "assets/collision/map_229_a.png",
+      "spawn": [
+        748,
+        444
+      ],
+      "collision_provenance": "NDS dat/map/229.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_230_a": {
+      "walkable": "assets/collision/map_230_a.png",
+      "spawn": [
+        724,
+        340
+      ],
+      "collision_provenance": "NDS dat/map/230.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_231_a": {
+      "walkable": "assets/collision/map_231_a.png",
+      "spawn": [
+        820,
+        372
+      ],
+      "collision_provenance": "NDS dat/map/231.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_232_a": {
+      "walkable": "assets/collision/map_232_a.png",
+      "spawn": [
+        764,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/232.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_233_a": {
+      "walkable": "assets/collision/map_233_a.png",
+      "spawn": [
+        788,
+        412
+      ],
+      "collision_provenance": "NDS dat/map/233.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_234_a": {
+      "walkable": "assets/collision/map_234_a.png",
+      "spawn": [
+        764,
+        364
+      ],
+      "collision_provenance": "NDS dat/map/234.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_235_a": {
+      "walkable": "assets/collision/map_235_a.png",
+      "spawn": [
+        756,
+        364
+      ],
+      "collision_provenance": "NDS dat/map/235.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_236_a": {
+      "walkable": "assets/collision/map_236_a.png",
+      "spawn": [
+        764,
+        388
+      ],
+      "collision_provenance": "NDS dat/map/236.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_237_a": {
+      "walkable": "assets/collision/map_237_a.png",
+      "spawn": [
+        764,
+        404
+      ],
+      "collision_provenance": "NDS dat/map/237.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_238_a": {
+      "walkable": "assets/collision/map_238_a.png",
+      "spawn": [
+        764,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/238.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_239_a": {
+      "walkable": "assets/collision/map_239_a.png",
+      "spawn": [
+        732,
+        452
+      ],
+      "collision_provenance": "NDS dat/map/239.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_240_a": {
+      "walkable": "assets/collision/map_240_a.png",
+      "spawn": [
+        764,
+        372
+      ],
+      "collision_provenance": "NDS dat/map/240.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_241_a": {
+      "walkable": "assets/collision/map_241_a.png",
+      "spawn": [
+        764,
+        404
+      ],
+      "collision_provenance": "NDS dat/map/241.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_242_a": {
+      "walkable": "assets/collision/map_242_a.png",
+      "spawn": [
+        764,
+        348
+      ],
+      "collision_provenance": "NDS dat/map/242.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_243_a": {
+      "walkable": "assets/collision/map_243_a.png",
+      "spawn": [
+        788,
+        356
+      ],
+      "collision_provenance": "NDS dat/map/243.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_244_a": {
+      "walkable": "assets/collision/map_244_a.png",
+      "spawn": [
+        764,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/244.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_245_a": {
+      "walkable": "assets/collision/map_245_a.png",
+      "spawn": [
+        764,
+        404
+      ],
+      "collision_provenance": "NDS dat/map/245.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_246_a": {
+      "walkable": "assets/collision/map_246_a.png",
+      "spawn": [
+        772,
+        364
+      ],
+      "collision_provenance": "NDS dat/map/246.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_247_a": {
+      "walkable": "assets/collision/map_247_a.png",
+      "spawn": [
+        804,
+        316
+      ],
+      "collision_provenance": "NDS dat/map/247.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_248_a": {
+      "walkable": "assets/collision/map_248_a.png",
+      "spawn": [
+        764,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/248.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_249_a": {
+      "walkable": "assets/collision/map_249_a.png",
+      "spawn": [
+        764,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/249.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_250_a": {
+      "walkable": "assets/collision/map_250_a.png",
+      "spawn": [
+        764,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/250.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_251_a": {
+      "walkable": "assets/collision/map_251_a.png",
+      "spawn": [
+        516,
+        364
+      ],
+      "collision_provenance": "NDS dat/map/251.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_252_a": {
+      "walkable": "assets/collision/map_252_a.png",
+      "spawn": [
+        772,
+        404
+      ],
+      "collision_provenance": "NDS dat/map/252.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_253_a": {
+      "walkable": "assets/collision/map_253_a.png",
+      "spawn": [
+        516,
+        580
+      ],
+      "collision_provenance": "NDS dat/map/253.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_254_a": {
+      "walkable": "assets/collision/map_254_a.png",
+      "spawn": [
+        868,
+        420
+      ],
+      "collision_provenance": "NDS dat/map/254.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_255_a": {
+      "walkable": "assets/collision/map_255_a.png",
+      "spawn": [
+        724,
+        308
+      ],
+      "collision_provenance": "NDS dat/map/255.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_256_a": {
+      "walkable": "assets/collision/map_256_a.png",
+      "spawn": [
+        764,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/256.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_257_a": {
+      "walkable": "assets/collision/map_257_a.png",
+      "spawn": [
+        756,
+        348
+      ],
+      "collision_provenance": "NDS dat/map/257.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_258_a": {
+      "walkable": "assets/collision/map_258_a.png",
+      "spawn": [
+        764,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/258.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_259_a": {
+      "walkable": "assets/collision/map_259_a.png",
+      "spawn": [
+        764,
+        404
+      ],
+      "collision_provenance": "NDS dat/map/259.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_260_a": {
+      "walkable": "assets/collision/map_260_a.png",
+      "spawn": [
+        756,
+        364
+      ],
+      "collision_provenance": "NDS dat/map/260.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_261_a": {
+      "walkable": "assets/collision/map_261_a.png",
+      "spawn": [
+        764,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/261.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_262_a": {
+      "walkable": "assets/collision/map_262_a.png",
+      "spawn": [
+        804,
+        300
+      ],
+      "collision_provenance": "NDS dat/map/262.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_263_a": {
+      "walkable": "assets/collision/map_263_a.png",
+      "spawn": [
+        764,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/263.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_264_a": {
+      "walkable": "assets/collision/map_264_a.png",
+      "spawn": [
+        764,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/264.0t; 1-bit collision scaled 2x nearest"
+    },
+    "map_088_a": {
+      "walkable": "assets/collision/map_088_a.png",
+      "spawn": [
+        748,
+        380
+      ],
+      "collision_provenance": "NDS dat/map/88.0t; native 2x, supplied image right crop 32px"
+    }
+  },
+  "missing": []
+}

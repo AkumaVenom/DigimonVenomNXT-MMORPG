@@ -1,0 +1,23 @@
+{
+  "variant_id": "paradox_dotshinegreymon",
+  "display_name": "Paradox DotShineGreymon",
+  "base_species": "DotShineGreymon",
+  "stage": "7 Mega",
+  "status": "ready",
+  "materializable": true,
+  "boss_eligible": true,
+  "primary_sprite": "7 Mega/DotShineGreymon/Paradox/DotShineGreymon_Paradox_Primary.png",
+  "source_primary": "7 Mega/DotShineGreymon/DotShineGreymon_Primary.png",
+  "source_sprite_count": 17,
+  "paradox_sprite_count": 17,
+  "style_profile": "Cyber Paradox Corruption v1",
+  "style_features": [
+    "violet/black data infection",
+    "cyan/magenta chromatic ghosts",
+    "digital displacement",
+    "angular data-void fractures",
+    "circuit cracks",
+    "transparent neon aura"
+  ],
+  "animation_alignment": "exact source canvas dimensions preserved"
+}

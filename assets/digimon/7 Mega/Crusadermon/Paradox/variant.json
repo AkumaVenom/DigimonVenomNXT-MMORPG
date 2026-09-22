@@ -1,0 +1,23 @@
+{
+  "variant_id": "paradox_crusadermon",
+  "display_name": "Paradox Crusadermon",
+  "base_species": "Crusadermon",
+  "stage": "7 Mega",
+  "status": "ready",
+  "materializable": true,
+  "boss_eligible": true,
+  "primary_sprite": "7 Mega/Crusadermon/Paradox/Crusadermon_Paradox_Primary.png",
+  "source_primary": "7 Mega/Crusadermon/Crusadermon_Primary.png",
+  "source_sprite_count": 30,
+  "paradox_sprite_count": 30,
+  "style_profile": "Cyber Paradox Corruption v1",
+  "style_features": [
+    "violet/black data infection",
+    "cyan/magenta chromatic ghosts",
+    "digital displacement",
+    "angular data-void fractures",
+    "circuit cracks",
+    "transparent neon aura"
+  ],
+  "animation_alignment": "exact source canvas dimensions preserved"
+}

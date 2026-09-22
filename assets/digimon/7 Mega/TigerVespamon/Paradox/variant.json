@@ -1,0 +1,23 @@
+{
+  "variant_id": "paradox_tigervespamon",
+  "display_name": "Paradox TigerVespamon",
+  "base_species": "TigerVespamon",
+  "stage": "7 Mega",
+  "status": "ready",
+  "materializable": true,
+  "boss_eligible": true,
+  "primary_sprite": "7 Mega/TigerVespamon/Paradox/TigerVespamon_Paradox_Primary.png",
+  "source_primary": "7 Mega/TigerVespamon/TigerVespamon_Primary.png",
+  "source_sprite_count": 20,
+  "paradox_sprite_count": 20,
+  "style_profile": "Cyber Paradox Corruption v1",
+  "style_features": [
+    "violet/black data infection",
+    "cyan/magenta chromatic ghosts",
+    "digital displacement",
+    "angular data-void fractures",
+    "circuit cracks",
+    "transparent neon aura"
+  ],
+  "animation_alignment": "exact source canvas dimensions preserved"
+}

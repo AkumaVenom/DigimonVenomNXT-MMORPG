@@ -1,0 +1,23 @@
+{
+  "variant_id": "paradox_agunimon",
+  "display_name": "Paradox Agunimon",
+  "base_species": "Agunimon",
+  "stage": "4 Champion",
+  "status": "ready",
+  "materializable": true,
+  "boss_eligible": true,
+  "primary_sprite": "4 Champion/Agunimon/Paradox/Agunimon_Paradox_Primary.png",
+  "source_primary": "4 Champion/Agunimon/Agunimon_Idle.png",
+  "source_sprite_count": 2,
+  "paradox_sprite_count": 3,
+  "style_profile": "Cyber Paradox Corruption v1",
+  "style_features": [
+    "violet/black data infection",
+    "cyan/magenta chromatic ghosts",
+    "digital displacement",
+    "angular data-void fractures",
+    "circuit cracks",
+    "transparent neon aura"
+  ],
+  "animation_alignment": "exact source canvas dimensions preserved"
+}

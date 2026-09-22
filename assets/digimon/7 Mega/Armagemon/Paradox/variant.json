@@ -1,0 +1,23 @@
+{
+  "variant_id": "paradox_armagemon",
+  "display_name": "Paradox Armagemon",
+  "base_species": "Armagemon",
+  "stage": "7 Mega",
+  "status": "ready",
+  "materializable": true,
+  "boss_eligible": true,
+  "primary_sprite": "7 Mega/Armagemon/Paradox/Armagemon_Paradox_Primary.png",
+  "source_primary": "7 Mega/Armagemon/Armagemon_Primary.png",
+  "source_sprite_count": 24,
+  "paradox_sprite_count": 24,
+  "style_profile": "Cyber Paradox Corruption v1",
+  "style_features": [
+    "violet/black data infection",
+    "cyan/magenta chromatic ghosts",
+    "digital displacement",
+    "angular data-void fractures",
+    "circuit cracks",
+    "transparent neon aura"
+  ],
+  "animation_alignment": "exact source canvas dimensions preserved"
+}

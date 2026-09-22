@@ -1,0 +1,23 @@
+{
+  "variant_id": "paradox_prairiemon",
+  "display_name": "Paradox Prairiemon",
+  "base_species": "Prairiemon",
+  "stage": "6 Armor",
+  "status": "ready",
+  "materializable": true,
+  "boss_eligible": true,
+  "primary_sprite": "6 Armor/Prairiemon/Paradox/Prairiemon_Paradox_Primary.png",
+  "source_primary": "6 Armor/Prairiemon/Prairiemon_Primary.png",
+  "source_sprite_count": 26,
+  "paradox_sprite_count": 26,
+  "style_profile": "Cyber Paradox Corruption v1",
+  "style_features": [
+    "violet/black data infection",
+    "cyan/magenta chromatic ghosts",
+    "digital displacement",
+    "angular data-void fractures",
+    "circuit cracks",
+    "transparent neon aura"
+  ],
+  "animation_alignment": "exact source canvas dimensions preserved"
+}

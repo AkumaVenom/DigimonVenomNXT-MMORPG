@@ -1,0 +1,23 @@
+{
+  "variant_id": "paradox_akatorimon",
+  "display_name": "Paradox Akatorimon",
+  "base_species": "Akatorimon",
+  "stage": "4 Champion",
+  "status": "ready",
+  "materializable": true,
+  "boss_eligible": true,
+  "primary_sprite": "4 Champion/Akatorimon/Paradox/Akatorimon_Paradox_Primary.png",
+  "source_primary": "4 Champion/Akatorimon/Akatorimon_Primary.png",
+  "source_sprite_count": 24,
+  "paradox_sprite_count": 24,
+  "style_profile": "Cyber Paradox Corruption v1",
+  "style_features": [
+    "violet/black data infection",
+    "cyan/magenta chromatic ghosts",
+    "digital displacement",
+    "angular data-void fractures",
+    "circuit cracks",
+    "transparent neon aura"
+  ],
+  "animation_alignment": "exact source canvas dimensions preserved"
+}

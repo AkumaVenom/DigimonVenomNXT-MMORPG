@@ -1,0 +1,2196 @@
+{
+  "source": "Dawn ROM dat/bgeff NCGR/NCLR/NSCR",
+  "timing": "Frame order uses numeric source sequence; client cadence approximated at 12.5 fps. Compound c+s sequences omitted until custom descriptor mapping is verified.",
+  "effects": [
+    {
+      "id": "dawn_002",
+      "frames": [
+        "assets/effects/dawn_002/000.png",
+        "assets/effects/dawn_002/001.png",
+        "assets/effects/dawn_002/002.png",
+        "assets/effects/dawn_002/003.png",
+        "assets/effects/dawn_002/004.png",
+        "assets/effects/dawn_002/005.png",
+        "assets/effects/dawn_002/006.png",
+        "assets/effects/dawn_002/007.png",
+        "assets/effects/dawn_002/008.png",
+        "assets/effects/dawn_002/009.png",
+        "assets/effects/dawn_002/010.png",
+        "assets/effects/dawn_002/011.png",
+        "assets/effects/dawn_002/012.png",
+        "assets/effects/dawn_002/013.png",
+        "assets/effects/dawn_002/014.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        88,
+        80
+      ],
+      "source_id": 2,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_004",
+      "frames": [
+        "assets/effects/dawn_004/000.png",
+        "assets/effects/dawn_004/001.png",
+        "assets/effects/dawn_004/002.png",
+        "assets/effects/dawn_004/003.png",
+        "assets/effects/dawn_004/004.png",
+        "assets/effects/dawn_004/005.png",
+        "assets/effects/dawn_004/006.png",
+        "assets/effects/dawn_004/007.png",
+        "assets/effects/dawn_004/008.png",
+        "assets/effects/dawn_004/009.png",
+        "assets/effects/dawn_004/010.png",
+        "assets/effects/dawn_004/011.png",
+        "assets/effects/dawn_004/012.png",
+        "assets/effects/dawn_004/013.png",
+        "assets/effects/dawn_004/014.png",
+        "assets/effects/dawn_004/015.png",
+        "assets/effects/dawn_004/016.png",
+        "assets/effects/dawn_004/017.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        88,
+        160
+      ],
+      "source_id": 4,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_006",
+      "frames": [
+        "assets/effects/dawn_006/000.png",
+        "assets/effects/dawn_006/001.png",
+        "assets/effects/dawn_006/002.png",
+        "assets/effects/dawn_006/003.png",
+        "assets/effects/dawn_006/004.png",
+        "assets/effects/dawn_006/005.png",
+        "assets/effects/dawn_006/006.png",
+        "assets/effects/dawn_006/007.png",
+        "assets/effects/dawn_006/008.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        57,
+        76
+      ],
+      "source_id": 6,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_012",
+      "frames": [
+        "assets/effects/dawn_012/000.png",
+        "assets/effects/dawn_012/001.png",
+        "assets/effects/dawn_012/002.png",
+        "assets/effects/dawn_012/003.png",
+        "assets/effects/dawn_012/004.png",
+        "assets/effects/dawn_012/005.png",
+        "assets/effects/dawn_012/006.png",
+        "assets/effects/dawn_012/007.png",
+        "assets/effects/dawn_012/008.png",
+        "assets/effects/dawn_012/009.png",
+        "assets/effects/dawn_012/010.png",
+        "assets/effects/dawn_012/011.png",
+        "assets/effects/dawn_012/012.png",
+        "assets/effects/dawn_012/013.png",
+        "assets/effects/dawn_012/014.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        61,
+        56
+      ],
+      "source_id": 12,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_013",
+      "frames": [
+        "assets/effects/dawn_013/000.png",
+        "assets/effects/dawn_013/001.png",
+        "assets/effects/dawn_013/002.png",
+        "assets/effects/dawn_013/003.png",
+        "assets/effects/dawn_013/004.png",
+        "assets/effects/dawn_013/005.png",
+        "assets/effects/dawn_013/006.png",
+        "assets/effects/dawn_013/007.png",
+        "assets/effects/dawn_013/008.png",
+        "assets/effects/dawn_013/009.png",
+        "assets/effects/dawn_013/010.png",
+        "assets/effects/dawn_013/011.png",
+        "assets/effects/dawn_013/012.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        45,
+        45
+      ],
+      "source_id": 13,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_014",
+      "frames": [
+        "assets/effects/dawn_014/000.png",
+        "assets/effects/dawn_014/001.png",
+        "assets/effects/dawn_014/002.png",
+        "assets/effects/dawn_014/003.png",
+        "assets/effects/dawn_014/004.png",
+        "assets/effects/dawn_014/005.png",
+        "assets/effects/dawn_014/006.png",
+        "assets/effects/dawn_014/007.png",
+        "assets/effects/dawn_014/008.png",
+        "assets/effects/dawn_014/009.png",
+        "assets/effects/dawn_014/010.png",
+        "assets/effects/dawn_014/011.png",
+        "assets/effects/dawn_014/012.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        61,
+        157
+      ],
+      "source_id": 14,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_016",
+      "frames": [
+        "assets/effects/dawn_016/000.png",
+        "assets/effects/dawn_016/001.png",
+        "assets/effects/dawn_016/002.png",
+        "assets/effects/dawn_016/003.png",
+        "assets/effects/dawn_016/004.png",
+        "assets/effects/dawn_016/005.png",
+        "assets/effects/dawn_016/006.png",
+        "assets/effects/dawn_016/007.png",
+        "assets/effects/dawn_016/008.png",
+        "assets/effects/dawn_016/009.png",
+        "assets/effects/dawn_016/010.png",
+        "assets/effects/dawn_016/011.png",
+        "assets/effects/dawn_016/012.png",
+        "assets/effects/dawn_016/013.png",
+        "assets/effects/dawn_016/014.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        48,
+        40
+      ],
+      "source_id": 16,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_023",
+      "frames": [
+        "assets/effects/dawn_023/000.png",
+        "assets/effects/dawn_023/001.png",
+        "assets/effects/dawn_023/002.png",
+        "assets/effects/dawn_023/003.png",
+        "assets/effects/dawn_023/004.png",
+        "assets/effects/dawn_023/005.png",
+        "assets/effects/dawn_023/006.png",
+        "assets/effects/dawn_023/007.png",
+        "assets/effects/dawn_023/008.png",
+        "assets/effects/dawn_023/009.png",
+        "assets/effects/dawn_023/010.png",
+        "assets/effects/dawn_023/011.png",
+        "assets/effects/dawn_023/012.png",
+        "assets/effects/dawn_023/013.png",
+        "assets/effects/dawn_023/014.png",
+        "assets/effects/dawn_023/015.png",
+        "assets/effects/dawn_023/016.png",
+        "assets/effects/dawn_023/017.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        87,
+        160
+      ],
+      "source_id": 23,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_026",
+      "frames": [
+        "assets/effects/dawn_026/000.png",
+        "assets/effects/dawn_026/001.png",
+        "assets/effects/dawn_026/002.png",
+        "assets/effects/dawn_026/003.png",
+        "assets/effects/dawn_026/004.png",
+        "assets/effects/dawn_026/005.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        136,
+        64
+      ],
+      "source_id": 26,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_028",
+      "frames": [
+        "assets/effects/dawn_028/000.png",
+        "assets/effects/dawn_028/001.png",
+        "assets/effects/dawn_028/002.png",
+        "assets/effects/dawn_028/003.png",
+        "assets/effects/dawn_028/004.png",
+        "assets/effects/dawn_028/005.png",
+        "assets/effects/dawn_028/006.png",
+        "assets/effects/dawn_028/007.png",
+        "assets/effects/dawn_028/008.png",
+        "assets/effects/dawn_028/009.png",
+        "assets/effects/dawn_028/010.png",
+        "assets/effects/dawn_028/011.png",
+        "assets/effects/dawn_028/012.png",
+        "assets/effects/dawn_028/013.png",
+        "assets/effects/dawn_028/014.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        252,
+        201
+      ],
+      "source_id": 28,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_033",
+      "frames": [
+        "assets/effects/dawn_033/000.png",
+        "assets/effects/dawn_033/001.png",
+        "assets/effects/dawn_033/002.png",
+        "assets/effects/dawn_033/003.png",
+        "assets/effects/dawn_033/004.png",
+        "assets/effects/dawn_033/005.png",
+        "assets/effects/dawn_033/006.png",
+        "assets/effects/dawn_033/007.png",
+        "assets/effects/dawn_033/008.png",
+        "assets/effects/dawn_033/009.png",
+        "assets/effects/dawn_033/010.png",
+        "assets/effects/dawn_033/011.png",
+        "assets/effects/dawn_033/012.png",
+        "assets/effects/dawn_033/013.png",
+        "assets/effects/dawn_033/014.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        61,
+        60
+      ],
+      "source_id": 33,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_035",
+      "frames": [
+        "assets/effects/dawn_035/000.png",
+        "assets/effects/dawn_035/001.png",
+        "assets/effects/dawn_035/002.png",
+        "assets/effects/dawn_035/003.png",
+        "assets/effects/dawn_035/004.png",
+        "assets/effects/dawn_035/005.png",
+        "assets/effects/dawn_035/006.png",
+        "assets/effects/dawn_035/007.png",
+        "assets/effects/dawn_035/008.png",
+        "assets/effects/dawn_035/009.png",
+        "assets/effects/dawn_035/010.png",
+        "assets/effects/dawn_035/011.png",
+        "assets/effects/dawn_035/012.png",
+        "assets/effects/dawn_035/013.png",
+        "assets/effects/dawn_035/014.png",
+        "assets/effects/dawn_035/015.png",
+        "assets/effects/dawn_035/016.png",
+        "assets/effects/dawn_035/017.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        132,
+        155
+      ],
+      "source_id": 35,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_036",
+      "frames": [
+        "assets/effects/dawn_036/000.png",
+        "assets/effects/dawn_036/001.png",
+        "assets/effects/dawn_036/002.png",
+        "assets/effects/dawn_036/003.png",
+        "assets/effects/dawn_036/004.png",
+        "assets/effects/dawn_036/005.png",
+        "assets/effects/dawn_036/006.png",
+        "assets/effects/dawn_036/007.png",
+        "assets/effects/dawn_036/008.png",
+        "assets/effects/dawn_036/009.png",
+        "assets/effects/dawn_036/010.png",
+        "assets/effects/dawn_036/011.png",
+        "assets/effects/dawn_036/012.png",
+        "assets/effects/dawn_036/013.png",
+        "assets/effects/dawn_036/014.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        64,
+        64
+      ],
+      "source_id": 36,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_037",
+      "frames": [
+        "assets/effects/dawn_037/000.png",
+        "assets/effects/dawn_037/001.png",
+        "assets/effects/dawn_037/002.png",
+        "assets/effects/dawn_037/003.png",
+        "assets/effects/dawn_037/004.png",
+        "assets/effects/dawn_037/005.png",
+        "assets/effects/dawn_037/006.png",
+        "assets/effects/dawn_037/007.png",
+        "assets/effects/dawn_037/008.png",
+        "assets/effects/dawn_037/009.png",
+        "assets/effects/dawn_037/010.png",
+        "assets/effects/dawn_037/011.png",
+        "assets/effects/dawn_037/012.png",
+        "assets/effects/dawn_037/013.png",
+        "assets/effects/dawn_037/014.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        256,
+        62
+      ],
+      "source_id": 37,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_052",
+      "frames": [
+        "assets/effects/dawn_052/000.png",
+        "assets/effects/dawn_052/001.png",
+        "assets/effects/dawn_052/002.png",
+        "assets/effects/dawn_052/003.png",
+        "assets/effects/dawn_052/004.png",
+        "assets/effects/dawn_052/005.png",
+        "assets/effects/dawn_052/006.png",
+        "assets/effects/dawn_052/007.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        32,
+        96
+      ],
+      "source_id": 52,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_056",
+      "frames": [
+        "assets/effects/dawn_056/000.png",
+        "assets/effects/dawn_056/001.png",
+        "assets/effects/dawn_056/002.png",
+        "assets/effects/dawn_056/003.png",
+        "assets/effects/dawn_056/004.png",
+        "assets/effects/dawn_056/005.png",
+        "assets/effects/dawn_056/006.png",
+        "assets/effects/dawn_056/007.png",
+        "assets/effects/dawn_056/008.png",
+        "assets/effects/dawn_056/009.png",
+        "assets/effects/dawn_056/010.png",
+        "assets/effects/dawn_056/011.png",
+        "assets/effects/dawn_056/012.png",
+        "assets/effects/dawn_056/013.png",
+        "assets/effects/dawn_056/014.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        152,
+        60
+      ],
+      "source_id": 56,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_067",
+      "frames": [
+        "assets/effects/dawn_067/000.png",
+        "assets/effects/dawn_067/001.png",
+        "assets/effects/dawn_067/002.png",
+        "assets/effects/dawn_067/003.png",
+        "assets/effects/dawn_067/004.png",
+        "assets/effects/dawn_067/005.png",
+        "assets/effects/dawn_067/006.png",
+        "assets/effects/dawn_067/007.png",
+        "assets/effects/dawn_067/008.png",
+        "assets/effects/dawn_067/009.png",
+        "assets/effects/dawn_067/010.png",
+        "assets/effects/dawn_067/011.png",
+        "assets/effects/dawn_067/012.png",
+        "assets/effects/dawn_067/013.png",
+        "assets/effects/dawn_067/014.png",
+        "assets/effects/dawn_067/015.png",
+        "assets/effects/dawn_067/016.png",
+        "assets/effects/dawn_067/017.png",
+        "assets/effects/dawn_067/018.png",
+        "assets/effects/dawn_067/019.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        68,
+        64
+      ],
+      "source_id": 67,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_072",
+      "frames": [
+        "assets/effects/dawn_072/000.png",
+        "assets/effects/dawn_072/001.png",
+        "assets/effects/dawn_072/002.png",
+        "assets/effects/dawn_072/003.png",
+        "assets/effects/dawn_072/004.png",
+        "assets/effects/dawn_072/005.png",
+        "assets/effects/dawn_072/006.png",
+        "assets/effects/dawn_072/007.png",
+        "assets/effects/dawn_072/008.png",
+        "assets/effects/dawn_072/009.png",
+        "assets/effects/dawn_072/010.png",
+        "assets/effects/dawn_072/011.png",
+        "assets/effects/dawn_072/012.png",
+        "assets/effects/dawn_072/013.png",
+        "assets/effects/dawn_072/014.png",
+        "assets/effects/dawn_072/015.png",
+        "assets/effects/dawn_072/016.png",
+        "assets/effects/dawn_072/017.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        88,
+        92
+      ],
+      "source_id": 72,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_078",
+      "frames": [
+        "assets/effects/dawn_078/000.png",
+        "assets/effects/dawn_078/001.png",
+        "assets/effects/dawn_078/002.png",
+        "assets/effects/dawn_078/003.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        64,
+        32
+      ],
+      "source_id": 78,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_079",
+      "frames": [
+        "assets/effects/dawn_079/000.png",
+        "assets/effects/dawn_079/001.png",
+        "assets/effects/dawn_079/002.png",
+        "assets/effects/dawn_079/003.png",
+        "assets/effects/dawn_079/004.png",
+        "assets/effects/dawn_079/005.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        55,
+        96
+      ],
+      "source_id": 79,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_080",
+      "frames": [
+        "assets/effects/dawn_080/000.png",
+        "assets/effects/dawn_080/001.png",
+        "assets/effects/dawn_080/002.png",
+        "assets/effects/dawn_080/003.png",
+        "assets/effects/dawn_080/004.png",
+        "assets/effects/dawn_080/005.png",
+        "assets/effects/dawn_080/006.png",
+        "assets/effects/dawn_080/007.png",
+        "assets/effects/dawn_080/008.png",
+        "assets/effects/dawn_080/009.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        88,
+        66
+      ],
+      "source_id": 80,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_081",
+      "frames": [
+        "assets/effects/dawn_081/000.png",
+        "assets/effects/dawn_081/001.png",
+        "assets/effects/dawn_081/002.png",
+        "assets/effects/dawn_081/003.png",
+        "assets/effects/dawn_081/004.png",
+        "assets/effects/dawn_081/005.png",
+        "assets/effects/dawn_081/006.png",
+        "assets/effects/dawn_081/007.png",
+        "assets/effects/dawn_081/008.png",
+        "assets/effects/dawn_081/009.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        80,
+        88
+      ],
+      "source_id": 81,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_082",
+      "frames": [
+        "assets/effects/dawn_082/000.png",
+        "assets/effects/dawn_082/001.png",
+        "assets/effects/dawn_082/002.png",
+        "assets/effects/dawn_082/003.png",
+        "assets/effects/dawn_082/004.png",
+        "assets/effects/dawn_082/005.png",
+        "assets/effects/dawn_082/006.png",
+        "assets/effects/dawn_082/007.png",
+        "assets/effects/dawn_082/008.png",
+        "assets/effects/dawn_082/009.png",
+        "assets/effects/dawn_082/010.png",
+        "assets/effects/dawn_082/011.png",
+        "assets/effects/dawn_082/012.png",
+        "assets/effects/dawn_082/013.png",
+        "assets/effects/dawn_082/014.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        76,
+        88
+      ],
+      "source_id": 82,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_084",
+      "frames": [
+        "assets/effects/dawn_084/000.png",
+        "assets/effects/dawn_084/001.png",
+        "assets/effects/dawn_084/002.png",
+        "assets/effects/dawn_084/003.png",
+        "assets/effects/dawn_084/004.png",
+        "assets/effects/dawn_084/005.png",
+        "assets/effects/dawn_084/006.png",
+        "assets/effects/dawn_084/007.png",
+        "assets/effects/dawn_084/008.png",
+        "assets/effects/dawn_084/009.png",
+        "assets/effects/dawn_084/010.png",
+        "assets/effects/dawn_084/011.png",
+        "assets/effects/dawn_084/012.png",
+        "assets/effects/dawn_084/013.png",
+        "assets/effects/dawn_084/014.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        80,
+        79
+      ],
+      "source_id": 84,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_098",
+      "frames": [
+        "assets/effects/dawn_098/000.png",
+        "assets/effects/dawn_098/001.png",
+        "assets/effects/dawn_098/002.png",
+        "assets/effects/dawn_098/003.png",
+        "assets/effects/dawn_098/004.png",
+        "assets/effects/dawn_098/005.png",
+        "assets/effects/dawn_098/006.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        48,
+        43
+      ],
+      "source_id": 98,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_106",
+      "frames": [
+        "assets/effects/dawn_106/000.png",
+        "assets/effects/dawn_106/001.png",
+        "assets/effects/dawn_106/002.png",
+        "assets/effects/dawn_106/003.png",
+        "assets/effects/dawn_106/004.png",
+        "assets/effects/dawn_106/005.png",
+        "assets/effects/dawn_106/006.png",
+        "assets/effects/dawn_106/007.png",
+        "assets/effects/dawn_106/008.png",
+        "assets/effects/dawn_106/009.png",
+        "assets/effects/dawn_106/010.png",
+        "assets/effects/dawn_106/011.png",
+        "assets/effects/dawn_106/012.png",
+        "assets/effects/dawn_106/013.png",
+        "assets/effects/dawn_106/014.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        48,
+        48
+      ],
+      "source_id": 106,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_107",
+      "frames": [
+        "assets/effects/dawn_107/000.png",
+        "assets/effects/dawn_107/001.png",
+        "assets/effects/dawn_107/002.png",
+        "assets/effects/dawn_107/003.png",
+        "assets/effects/dawn_107/004.png",
+        "assets/effects/dawn_107/005.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        36,
+        48
+      ],
+      "source_id": 107,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_114",
+      "frames": [
+        "assets/effects/dawn_114/000.png",
+        "assets/effects/dawn_114/001.png",
+        "assets/effects/dawn_114/002.png",
+        "assets/effects/dawn_114/003.png",
+        "assets/effects/dawn_114/004.png",
+        "assets/effects/dawn_114/005.png",
+        "assets/effects/dawn_114/006.png",
+        "assets/effects/dawn_114/007.png",
+        "assets/effects/dawn_114/008.png",
+        "assets/effects/dawn_114/009.png",
+        "assets/effects/dawn_114/010.png",
+        "assets/effects/dawn_114/011.png",
+        "assets/effects/dawn_114/012.png",
+        "assets/effects/dawn_114/013.png",
+        "assets/effects/dawn_114/014.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        48,
+        23
+      ],
+      "source_id": 114,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_115",
+      "frames": [
+        "assets/effects/dawn_115/000.png",
+        "assets/effects/dawn_115/001.png",
+        "assets/effects/dawn_115/002.png",
+        "assets/effects/dawn_115/003.png",
+        "assets/effects/dawn_115/004.png",
+        "assets/effects/dawn_115/005.png",
+        "assets/effects/dawn_115/006.png",
+        "assets/effects/dawn_115/007.png",
+        "assets/effects/dawn_115/008.png",
+        "assets/effects/dawn_115/009.png",
+        "assets/effects/dawn_115/010.png",
+        "assets/effects/dawn_115/011.png",
+        "assets/effects/dawn_115/012.png",
+        "assets/effects/dawn_115/013.png",
+        "assets/effects/dawn_115/014.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        48,
+        48
+      ],
+      "source_id": 115,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_118",
+      "frames": [
+        "assets/effects/dawn_118/000.png",
+        "assets/effects/dawn_118/001.png",
+        "assets/effects/dawn_118/002.png",
+        "assets/effects/dawn_118/003.png",
+        "assets/effects/dawn_118/004.png",
+        "assets/effects/dawn_118/005.png",
+        "assets/effects/dawn_118/006.png",
+        "assets/effects/dawn_118/007.png",
+        "assets/effects/dawn_118/008.png",
+        "assets/effects/dawn_118/009.png",
+        "assets/effects/dawn_118/010.png",
+        "assets/effects/dawn_118/011.png",
+        "assets/effects/dawn_118/012.png",
+        "assets/effects/dawn_118/013.png",
+        "assets/effects/dawn_118/014.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        48,
+        46
+      ],
+      "source_id": 118,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_122",
+      "frames": [
+        "assets/effects/dawn_122/000.png",
+        "assets/effects/dawn_122/001.png",
+        "assets/effects/dawn_122/002.png",
+        "assets/effects/dawn_122/003.png",
+        "assets/effects/dawn_122/004.png",
+        "assets/effects/dawn_122/005.png",
+        "assets/effects/dawn_122/006.png",
+        "assets/effects/dawn_122/007.png",
+        "assets/effects/dawn_122/008.png",
+        "assets/effects/dawn_122/009.png",
+        "assets/effects/dawn_122/010.png",
+        "assets/effects/dawn_122/011.png",
+        "assets/effects/dawn_122/012.png",
+        "assets/effects/dawn_122/013.png",
+        "assets/effects/dawn_122/014.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        96,
+        45
+      ],
+      "source_id": 122,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_123",
+      "frames": [
+        "assets/effects/dawn_123/000.png",
+        "assets/effects/dawn_123/001.png",
+        "assets/effects/dawn_123/002.png",
+        "assets/effects/dawn_123/003.png",
+        "assets/effects/dawn_123/004.png",
+        "assets/effects/dawn_123/005.png",
+        "assets/effects/dawn_123/006.png",
+        "assets/effects/dawn_123/007.png",
+        "assets/effects/dawn_123/008.png",
+        "assets/effects/dawn_123/009.png",
+        "assets/effects/dawn_123/010.png",
+        "assets/effects/dawn_123/011.png",
+        "assets/effects/dawn_123/012.png",
+        "assets/effects/dawn_123/013.png",
+        "assets/effects/dawn_123/014.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        144,
+        45
+      ],
+      "source_id": 123,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_133",
+      "frames": [
+        "assets/effects/dawn_133/000.png",
+        "assets/effects/dawn_133/001.png",
+        "assets/effects/dawn_133/002.png",
+        "assets/effects/dawn_133/003.png",
+        "assets/effects/dawn_133/004.png",
+        "assets/effects/dawn_133/005.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        48,
+        47
+      ],
+      "source_id": 133,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_138",
+      "frames": [
+        "assets/effects/dawn_138/000.png",
+        "assets/effects/dawn_138/001.png",
+        "assets/effects/dawn_138/002.png",
+        "assets/effects/dawn_138/003.png",
+        "assets/effects/dawn_138/004.png",
+        "assets/effects/dawn_138/005.png",
+        "assets/effects/dawn_138/006.png",
+        "assets/effects/dawn_138/007.png",
+        "assets/effects/dawn_138/008.png",
+        "assets/effects/dawn_138/009.png",
+        "assets/effects/dawn_138/010.png",
+        "assets/effects/dawn_138/011.png",
+        "assets/effects/dawn_138/012.png",
+        "assets/effects/dawn_138/013.png",
+        "assets/effects/dawn_138/014.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        48,
+        74
+      ],
+      "source_id": 138,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_139",
+      "frames": [
+        "assets/effects/dawn_139/000.png",
+        "assets/effects/dawn_139/001.png",
+        "assets/effects/dawn_139/002.png",
+        "assets/effects/dawn_139/003.png",
+        "assets/effects/dawn_139/004.png",
+        "assets/effects/dawn_139/005.png",
+        "assets/effects/dawn_139/006.png",
+        "assets/effects/dawn_139/007.png",
+        "assets/effects/dawn_139/008.png",
+        "assets/effects/dawn_139/009.png",
+        "assets/effects/dawn_139/010.png",
+        "assets/effects/dawn_139/011.png",
+        "assets/effects/dawn_139/012.png",
+        "assets/effects/dawn_139/013.png",
+        "assets/effects/dawn_139/014.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        48,
+        48
+      ],
+      "source_id": 139,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_140",
+      "frames": [
+        "assets/effects/dawn_140/000.png",
+        "assets/effects/dawn_140/001.png",
+        "assets/effects/dawn_140/002.png",
+        "assets/effects/dawn_140/003.png",
+        "assets/effects/dawn_140/004.png",
+        "assets/effects/dawn_140/005.png",
+        "assets/effects/dawn_140/006.png",
+        "assets/effects/dawn_140/007.png",
+        "assets/effects/dawn_140/008.png",
+        "assets/effects/dawn_140/009.png",
+        "assets/effects/dawn_140/010.png",
+        "assets/effects/dawn_140/011.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        48,
+        48
+      ],
+      "source_id": 140,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_145",
+      "frames": [
+        "assets/effects/dawn_145/000.png",
+        "assets/effects/dawn_145/001.png",
+        "assets/effects/dawn_145/002.png",
+        "assets/effects/dawn_145/003.png",
+        "assets/effects/dawn_145/004.png",
+        "assets/effects/dawn_145/005.png",
+        "assets/effects/dawn_145/006.png",
+        "assets/effects/dawn_145/007.png",
+        "assets/effects/dawn_145/008.png",
+        "assets/effects/dawn_145/009.png",
+        "assets/effects/dawn_145/010.png",
+        "assets/effects/dawn_145/011.png",
+        "assets/effects/dawn_145/012.png",
+        "assets/effects/dawn_145/013.png",
+        "assets/effects/dawn_145/014.png",
+        "assets/effects/dawn_145/015.png",
+        "assets/effects/dawn_145/016.png",
+        "assets/effects/dawn_145/017.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        48,
+        48
+      ],
+      "source_id": 145,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_151",
+      "frames": [
+        "assets/effects/dawn_151/000.png",
+        "assets/effects/dawn_151/001.png",
+        "assets/effects/dawn_151/002.png",
+        "assets/effects/dawn_151/003.png",
+        "assets/effects/dawn_151/004.png",
+        "assets/effects/dawn_151/005.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        47,
+        46
+      ],
+      "source_id": 151,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_154",
+      "frames": [
+        "assets/effects/dawn_154/000.png",
+        "assets/effects/dawn_154/001.png",
+        "assets/effects/dawn_154/002.png",
+        "assets/effects/dawn_154/003.png",
+        "assets/effects/dawn_154/004.png",
+        "assets/effects/dawn_154/005.png",
+        "assets/effects/dawn_154/006.png",
+        "assets/effects/dawn_154/007.png",
+        "assets/effects/dawn_154/008.png",
+        "assets/effects/dawn_154/009.png",
+        "assets/effects/dawn_154/010.png",
+        "assets/effects/dawn_154/011.png",
+        "assets/effects/dawn_154/012.png",
+        "assets/effects/dawn_154/013.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        224,
+        48
+      ],
+      "source_id": 154,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_155",
+      "frames": [
+        "assets/effects/dawn_155/000.png",
+        "assets/effects/dawn_155/001.png",
+        "assets/effects/dawn_155/002.png",
+        "assets/effects/dawn_155/003.png",
+        "assets/effects/dawn_155/004.png",
+        "assets/effects/dawn_155/005.png",
+        "assets/effects/dawn_155/006.png",
+        "assets/effects/dawn_155/007.png",
+        "assets/effects/dawn_155/008.png",
+        "assets/effects/dawn_155/009.png",
+        "assets/effects/dawn_155/010.png",
+        "assets/effects/dawn_155/011.png",
+        "assets/effects/dawn_155/012.png",
+        "assets/effects/dawn_155/013.png",
+        "assets/effects/dawn_155/014.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        48,
+        88
+      ],
+      "source_id": 155,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_160",
+      "frames": [
+        "assets/effects/dawn_160/000.png",
+        "assets/effects/dawn_160/001.png",
+        "assets/effects/dawn_160/002.png",
+        "assets/effects/dawn_160/003.png",
+        "assets/effects/dawn_160/004.png",
+        "assets/effects/dawn_160/005.png",
+        "assets/effects/dawn_160/006.png",
+        "assets/effects/dawn_160/007.png",
+        "assets/effects/dawn_160/008.png",
+        "assets/effects/dawn_160/009.png",
+        "assets/effects/dawn_160/010.png",
+        "assets/effects/dawn_160/011.png",
+        "assets/effects/dawn_160/012.png",
+        "assets/effects/dawn_160/013.png",
+        "assets/effects/dawn_160/014.png",
+        "assets/effects/dawn_160/015.png",
+        "assets/effects/dawn_160/016.png",
+        "assets/effects/dawn_160/017.png",
+        "assets/effects/dawn_160/018.png",
+        "assets/effects/dawn_160/019.png",
+        "assets/effects/dawn_160/020.png",
+        "assets/effects/dawn_160/021.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        112,
+        80
+      ],
+      "source_id": 160,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_162",
+      "frames": [
+        "assets/effects/dawn_162/000.png",
+        "assets/effects/dawn_162/001.png",
+        "assets/effects/dawn_162/002.png",
+        "assets/effects/dawn_162/003.png",
+        "assets/effects/dawn_162/004.png",
+        "assets/effects/dawn_162/005.png",
+        "assets/effects/dawn_162/006.png",
+        "assets/effects/dawn_162/007.png",
+        "assets/effects/dawn_162/008.png",
+        "assets/effects/dawn_162/009.png",
+        "assets/effects/dawn_162/010.png",
+        "assets/effects/dawn_162/011.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        46,
+        52
+      ],
+      "source_id": 162,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_163",
+      "frames": [
+        "assets/effects/dawn_163/000.png",
+        "assets/effects/dawn_163/001.png",
+        "assets/effects/dawn_163/002.png",
+        "assets/effects/dawn_163/003.png",
+        "assets/effects/dawn_163/004.png",
+        "assets/effects/dawn_163/005.png",
+        "assets/effects/dawn_163/006.png",
+        "assets/effects/dawn_163/007.png",
+        "assets/effects/dawn_163/008.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        41,
+        80
+      ],
+      "source_id": 163,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_164",
+      "frames": [
+        "assets/effects/dawn_164/000.png",
+        "assets/effects/dawn_164/001.png",
+        "assets/effects/dawn_164/002.png",
+        "assets/effects/dawn_164/003.png",
+        "assets/effects/dawn_164/004.png",
+        "assets/effects/dawn_164/005.png",
+        "assets/effects/dawn_164/006.png",
+        "assets/effects/dawn_164/007.png",
+        "assets/effects/dawn_164/008.png",
+        "assets/effects/dawn_164/009.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        55,
+        62
+      ],
+      "source_id": 164,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_165",
+      "frames": [
+        "assets/effects/dawn_165/000.png",
+        "assets/effects/dawn_165/001.png",
+        "assets/effects/dawn_165/002.png",
+        "assets/effects/dawn_165/003.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        48,
+        48
+      ],
+      "source_id": 165,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_166",
+      "frames": [
+        "assets/effects/dawn_166/000.png",
+        "assets/effects/dawn_166/001.png",
+        "assets/effects/dawn_166/002.png",
+        "assets/effects/dawn_166/003.png",
+        "assets/effects/dawn_166/004.png",
+        "assets/effects/dawn_166/005.png",
+        "assets/effects/dawn_166/006.png",
+        "assets/effects/dawn_166/007.png",
+        "assets/effects/dawn_166/008.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        74,
+        74
+      ],
+      "source_id": 166,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_167",
+      "frames": [
+        "assets/effects/dawn_167/000.png",
+        "assets/effects/dawn_167/001.png",
+        "assets/effects/dawn_167/002.png",
+        "assets/effects/dawn_167/003.png",
+        "assets/effects/dawn_167/004.png",
+        "assets/effects/dawn_167/005.png",
+        "assets/effects/dawn_167/006.png",
+        "assets/effects/dawn_167/007.png",
+        "assets/effects/dawn_167/008.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        256,
+        45
+      ],
+      "source_id": 167,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_168",
+      "frames": [
+        "assets/effects/dawn_168/000.png",
+        "assets/effects/dawn_168/001.png",
+        "assets/effects/dawn_168/002.png",
+        "assets/effects/dawn_168/003.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        30,
+        30
+      ],
+      "source_id": 168,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_169",
+      "frames": [
+        "assets/effects/dawn_169/000.png",
+        "assets/effects/dawn_169/001.png",
+        "assets/effects/dawn_169/002.png",
+        "assets/effects/dawn_169/003.png",
+        "assets/effects/dawn_169/004.png",
+        "assets/effects/dawn_169/005.png",
+        "assets/effects/dawn_169/006.png",
+        "assets/effects/dawn_169/007.png",
+        "assets/effects/dawn_169/008.png",
+        "assets/effects/dawn_169/009.png",
+        "assets/effects/dawn_169/010.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        78,
+        78
+      ],
+      "source_id": 169,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_170",
+      "frames": [
+        "assets/effects/dawn_170/000.png",
+        "assets/effects/dawn_170/001.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        176,
+        192
+      ],
+      "source_id": 170,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_171",
+      "frames": [
+        "assets/effects/dawn_171/000.png",
+        "assets/effects/dawn_171/001.png",
+        "assets/effects/dawn_171/002.png",
+        "assets/effects/dawn_171/003.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        56,
+        56
+      ],
+      "source_id": 171,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_172",
+      "frames": [
+        "assets/effects/dawn_172/000.png",
+        "assets/effects/dawn_172/001.png",
+        "assets/effects/dawn_172/002.png",
+        "assets/effects/dawn_172/003.png",
+        "assets/effects/dawn_172/004.png",
+        "assets/effects/dawn_172/005.png",
+        "assets/effects/dawn_172/006.png",
+        "assets/effects/dawn_172/007.png",
+        "assets/effects/dawn_172/008.png",
+        "assets/effects/dawn_172/009.png",
+        "assets/effects/dawn_172/010.png",
+        "assets/effects/dawn_172/011.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        217,
+        152
+      ],
+      "source_id": 172,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_173",
+      "frames": [
+        "assets/effects/dawn_173/000.png",
+        "assets/effects/dawn_173/001.png",
+        "assets/effects/dawn_173/002.png",
+        "assets/effects/dawn_173/003.png",
+        "assets/effects/dawn_173/004.png",
+        "assets/effects/dawn_173/005.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        46,
+        192
+      ],
+      "source_id": 173,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_174",
+      "frames": [
+        "assets/effects/dawn_174/000.png",
+        "assets/effects/dawn_174/001.png",
+        "assets/effects/dawn_174/002.png",
+        "assets/effects/dawn_174/003.png",
+        "assets/effects/dawn_174/004.png",
+        "assets/effects/dawn_174/005.png",
+        "assets/effects/dawn_174/006.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        256,
+        34
+      ],
+      "source_id": 174,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_175",
+      "frames": [
+        "assets/effects/dawn_175/000.png",
+        "assets/effects/dawn_175/001.png",
+        "assets/effects/dawn_175/002.png",
+        "assets/effects/dawn_175/003.png",
+        "assets/effects/dawn_175/004.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        76,
+        36
+      ],
+      "source_id": 175,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_176",
+      "frames": [
+        "assets/effects/dawn_176/000.png",
+        "assets/effects/dawn_176/001.png",
+        "assets/effects/dawn_176/002.png",
+        "assets/effects/dawn_176/003.png",
+        "assets/effects/dawn_176/004.png",
+        "assets/effects/dawn_176/005.png",
+        "assets/effects/dawn_176/006.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        256,
+        96
+      ],
+      "source_id": 176,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_177",
+      "frames": [
+        "assets/effects/dawn_177/000.png",
+        "assets/effects/dawn_177/001.png",
+        "assets/effects/dawn_177/002.png",
+        "assets/effects/dawn_177/003.png",
+        "assets/effects/dawn_177/004.png",
+        "assets/effects/dawn_177/005.png",
+        "assets/effects/dawn_177/006.png",
+        "assets/effects/dawn_177/007.png",
+        "assets/effects/dawn_177/008.png",
+        "assets/effects/dawn_177/009.png",
+        "assets/effects/dawn_177/010.png",
+        "assets/effects/dawn_177/011.png",
+        "assets/effects/dawn_177/012.png",
+        "assets/effects/dawn_177/013.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        256,
+        176
+      ],
+      "source_id": 177,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_178",
+      "frames": [
+        "assets/effects/dawn_178/000.png",
+        "assets/effects/dawn_178/001.png",
+        "assets/effects/dawn_178/002.png",
+        "assets/effects/dawn_178/003.png",
+        "assets/effects/dawn_178/004.png",
+        "assets/effects/dawn_178/005.png",
+        "assets/effects/dawn_178/006.png",
+        "assets/effects/dawn_178/007.png",
+        "assets/effects/dawn_178/008.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        256,
+        192
+      ],
+      "source_id": 178,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_179",
+      "frames": [
+        "assets/effects/dawn_179/000.png",
+        "assets/effects/dawn_179/001.png",
+        "assets/effects/dawn_179/002.png",
+        "assets/effects/dawn_179/003.png",
+        "assets/effects/dawn_179/004.png",
+        "assets/effects/dawn_179/005.png",
+        "assets/effects/dawn_179/006.png",
+        "assets/effects/dawn_179/007.png",
+        "assets/effects/dawn_179/008.png",
+        "assets/effects/dawn_179/009.png",
+        "assets/effects/dawn_179/010.png",
+        "assets/effects/dawn_179/011.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        251,
+        192
+      ],
+      "source_id": 179,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_180",
+      "frames": [
+        "assets/effects/dawn_180/000.png",
+        "assets/effects/dawn_180/001.png",
+        "assets/effects/dawn_180/002.png",
+        "assets/effects/dawn_180/003.png",
+        "assets/effects/dawn_180/004.png",
+        "assets/effects/dawn_180/005.png",
+        "assets/effects/dawn_180/006.png",
+        "assets/effects/dawn_180/007.png",
+        "assets/effects/dawn_180/008.png",
+        "assets/effects/dawn_180/009.png",
+        "assets/effects/dawn_180/010.png",
+        "assets/effects/dawn_180/011.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        256,
+        96
+      ],
+      "source_id": 180,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_181",
+      "frames": [
+        "assets/effects/dawn_181/000.png",
+        "assets/effects/dawn_181/001.png",
+        "assets/effects/dawn_181/002.png",
+        "assets/effects/dawn_181/003.png",
+        "assets/effects/dawn_181/004.png",
+        "assets/effects/dawn_181/005.png",
+        "assets/effects/dawn_181/006.png",
+        "assets/effects/dawn_181/007.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        58,
+        58
+      ],
+      "source_id": 181,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_182",
+      "frames": [
+        "assets/effects/dawn_182/000.png",
+        "assets/effects/dawn_182/001.png",
+        "assets/effects/dawn_182/002.png",
+        "assets/effects/dawn_182/003.png",
+        "assets/effects/dawn_182/004.png",
+        "assets/effects/dawn_182/005.png",
+        "assets/effects/dawn_182/006.png",
+        "assets/effects/dawn_182/007.png",
+        "assets/effects/dawn_182/008.png",
+        "assets/effects/dawn_182/009.png",
+        "assets/effects/dawn_182/010.png",
+        "assets/effects/dawn_182/011.png",
+        "assets/effects/dawn_182/012.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        256,
+        190
+      ],
+      "source_id": 182,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_183",
+      "frames": [
+        "assets/effects/dawn_183/000.png",
+        "assets/effects/dawn_183/001.png",
+        "assets/effects/dawn_183/002.png",
+        "assets/effects/dawn_183/003.png",
+        "assets/effects/dawn_183/004.png",
+        "assets/effects/dawn_183/005.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        46,
+        192
+      ],
+      "source_id": 183,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_184",
+      "frames": [
+        "assets/effects/dawn_184/000.png",
+        "assets/effects/dawn_184/001.png",
+        "assets/effects/dawn_184/002.png",
+        "assets/effects/dawn_184/003.png",
+        "assets/effects/dawn_184/004.png",
+        "assets/effects/dawn_184/005.png",
+        "assets/effects/dawn_184/006.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        256,
+        34
+      ],
+      "source_id": 184,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_185",
+      "frames": [
+        "assets/effects/dawn_185/000.png",
+        "assets/effects/dawn_185/001.png",
+        "assets/effects/dawn_185/002.png",
+        "assets/effects/dawn_185/003.png",
+        "assets/effects/dawn_185/004.png",
+        "assets/effects/dawn_185/005.png",
+        "assets/effects/dawn_185/006.png",
+        "assets/effects/dawn_185/007.png",
+        "assets/effects/dawn_185/008.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        256,
+        192
+      ],
+      "source_id": 185,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_186",
+      "frames": [
+        "assets/effects/dawn_186/000.png",
+        "assets/effects/dawn_186/001.png",
+        "assets/effects/dawn_186/002.png",
+        "assets/effects/dawn_186/003.png",
+        "assets/effects/dawn_186/004.png",
+        "assets/effects/dawn_186/005.png",
+        "assets/effects/dawn_186/006.png",
+        "assets/effects/dawn_186/007.png",
+        "assets/effects/dawn_186/008.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        256,
+        192
+      ],
+      "source_id": 186,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_187",
+      "frames": [
+        "assets/effects/dawn_187/000.png",
+        "assets/effects/dawn_187/001.png",
+        "assets/effects/dawn_187/002.png",
+        "assets/effects/dawn_187/003.png",
+        "assets/effects/dawn_187/004.png",
+        "assets/effects/dawn_187/005.png",
+        "assets/effects/dawn_187/006.png",
+        "assets/effects/dawn_187/007.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        238,
+        192
+      ],
+      "source_id": 187,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_188",
+      "frames": [
+        "assets/effects/dawn_188/000.png",
+        "assets/effects/dawn_188/001.png",
+        "assets/effects/dawn_188/002.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        31,
+        31
+      ],
+      "source_id": 188,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_189",
+      "frames": [
+        "assets/effects/dawn_189/000.png",
+        "assets/effects/dawn_189/001.png",
+        "assets/effects/dawn_189/002.png",
+        "assets/effects/dawn_189/003.png",
+        "assets/effects/dawn_189/004.png",
+        "assets/effects/dawn_189/005.png",
+        "assets/effects/dawn_189/006.png",
+        "assets/effects/dawn_189/007.png",
+        "assets/effects/dawn_189/008.png",
+        "assets/effects/dawn_189/009.png",
+        "assets/effects/dawn_189/010.png",
+        "assets/effects/dawn_189/011.png",
+        "assets/effects/dawn_189/012.png",
+        "assets/effects/dawn_189/013.png",
+        "assets/effects/dawn_189/014.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        256,
+        192
+      ],
+      "source_id": 189,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_190",
+      "frames": [
+        "assets/effects/dawn_190/000.png",
+        "assets/effects/dawn_190/001.png",
+        "assets/effects/dawn_190/002.png",
+        "assets/effects/dawn_190/003.png",
+        "assets/effects/dawn_190/004.png",
+        "assets/effects/dawn_190/005.png",
+        "assets/effects/dawn_190/006.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        256,
+        192
+      ],
+      "source_id": 190,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_191",
+      "frames": [
+        "assets/effects/dawn_191/000.png",
+        "assets/effects/dawn_191/001.png",
+        "assets/effects/dawn_191/002.png",
+        "assets/effects/dawn_191/003.png",
+        "assets/effects/dawn_191/004.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        42,
+        42
+      ],
+      "source_id": 191,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_192",
+      "frames": [
+        "assets/effects/dawn_192/000.png",
+        "assets/effects/dawn_192/001.png",
+        "assets/effects/dawn_192/002.png",
+        "assets/effects/dawn_192/003.png",
+        "assets/effects/dawn_192/004.png",
+        "assets/effects/dawn_192/005.png",
+        "assets/effects/dawn_192/006.png",
+        "assets/effects/dawn_192/007.png",
+        "assets/effects/dawn_192/008.png",
+        "assets/effects/dawn_192/009.png",
+        "assets/effects/dawn_192/010.png",
+        "assets/effects/dawn_192/011.png",
+        "assets/effects/dawn_192/012.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        79,
+        80
+      ],
+      "source_id": 192,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_193",
+      "frames": [
+        "assets/effects/dawn_193/000.png",
+        "assets/effects/dawn_193/001.png",
+        "assets/effects/dawn_193/002.png",
+        "assets/effects/dawn_193/003.png",
+        "assets/effects/dawn_193/004.png",
+        "assets/effects/dawn_193/005.png",
+        "assets/effects/dawn_193/006.png",
+        "assets/effects/dawn_193/007.png",
+        "assets/effects/dawn_193/008.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        256,
+        48
+      ],
+      "source_id": 193,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_194",
+      "frames": [
+        "assets/effects/dawn_194/000.png",
+        "assets/effects/dawn_194/001.png",
+        "assets/effects/dawn_194/002.png",
+        "assets/effects/dawn_194/003.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        74,
+        74
+      ],
+      "source_id": 194,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_195",
+      "frames": [
+        "assets/effects/dawn_195/000.png",
+        "assets/effects/dawn_195/001.png",
+        "assets/effects/dawn_195/002.png",
+        "assets/effects/dawn_195/003.png",
+        "assets/effects/dawn_195/004.png",
+        "assets/effects/dawn_195/005.png",
+        "assets/effects/dawn_195/006.png",
+        "assets/effects/dawn_195/007.png",
+        "assets/effects/dawn_195/008.png",
+        "assets/effects/dawn_195/009.png",
+        "assets/effects/dawn_195/010.png",
+        "assets/effects/dawn_195/011.png",
+        "assets/effects/dawn_195/012.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        246,
+        192
+      ],
+      "source_id": 195,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_196",
+      "frames": [
+        "assets/effects/dawn_196/000.png",
+        "assets/effects/dawn_196/001.png",
+        "assets/effects/dawn_196/002.png",
+        "assets/effects/dawn_196/003.png",
+        "assets/effects/dawn_196/004.png",
+        "assets/effects/dawn_196/005.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        46,
+        192
+      ],
+      "source_id": 196,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_197",
+      "frames": [
+        "assets/effects/dawn_197/000.png",
+        "assets/effects/dawn_197/001.png",
+        "assets/effects/dawn_197/002.png",
+        "assets/effects/dawn_197/003.png",
+        "assets/effects/dawn_197/004.png",
+        "assets/effects/dawn_197/005.png",
+        "assets/effects/dawn_197/006.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        256,
+        34
+      ],
+      "source_id": 197,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_198",
+      "frames": [
+        "assets/effects/dawn_198/000.png",
+        "assets/effects/dawn_198/001.png",
+        "assets/effects/dawn_198/002.png",
+        "assets/effects/dawn_198/003.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        80,
+        80
+      ],
+      "source_id": 198,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_199",
+      "frames": [
+        "assets/effects/dawn_199/000.png",
+        "assets/effects/dawn_199/001.png",
+        "assets/effects/dawn_199/002.png",
+        "assets/effects/dawn_199/003.png",
+        "assets/effects/dawn_199/004.png",
+        "assets/effects/dawn_199/005.png",
+        "assets/effects/dawn_199/006.png",
+        "assets/effects/dawn_199/007.png",
+        "assets/effects/dawn_199/008.png",
+        "assets/effects/dawn_199/009.png",
+        "assets/effects/dawn_199/010.png",
+        "assets/effects/dawn_199/011.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        256,
+        187
+      ],
+      "source_id": 199,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_200",
+      "frames": [
+        "assets/effects/dawn_200/000.png",
+        "assets/effects/dawn_200/001.png",
+        "assets/effects/dawn_200/002.png",
+        "assets/effects/dawn_200/003.png",
+        "assets/effects/dawn_200/004.png",
+        "assets/effects/dawn_200/005.png",
+        "assets/effects/dawn_200/006.png",
+        "assets/effects/dawn_200/007.png",
+        "assets/effects/dawn_200/008.png",
+        "assets/effects/dawn_200/009.png",
+        "assets/effects/dawn_200/010.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        256,
+        91
+      ],
+      "source_id": 200,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_201",
+      "frames": [
+        "assets/effects/dawn_201/000.png",
+        "assets/effects/dawn_201/001.png",
+        "assets/effects/dawn_201/002.png",
+        "assets/effects/dawn_201/003.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        48,
+        48
+      ],
+      "source_id": 201,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_202",
+      "frames": [
+        "assets/effects/dawn_202/000.png",
+        "assets/effects/dawn_202/001.png",
+        "assets/effects/dawn_202/002.png",
+        "assets/effects/dawn_202/003.png",
+        "assets/effects/dawn_202/004.png",
+        "assets/effects/dawn_202/005.png",
+        "assets/effects/dawn_202/006.png",
+        "assets/effects/dawn_202/007.png",
+        "assets/effects/dawn_202/008.png",
+        "assets/effects/dawn_202/009.png",
+        "assets/effects/dawn_202/010.png",
+        "assets/effects/dawn_202/011.png",
+        "assets/effects/dawn_202/012.png",
+        "assets/effects/dawn_202/013.png",
+        "assets/effects/dawn_202/014.png",
+        "assets/effects/dawn_202/015.png",
+        "assets/effects/dawn_202/016.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        80,
+        80
+      ],
+      "source_id": 202,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_203",
+      "frames": [
+        "assets/effects/dawn_203/000.png",
+        "assets/effects/dawn_203/001.png",
+        "assets/effects/dawn_203/002.png",
+        "assets/effects/dawn_203/003.png",
+        "assets/effects/dawn_203/004.png",
+        "assets/effects/dawn_203/005.png",
+        "assets/effects/dawn_203/006.png",
+        "assets/effects/dawn_203/007.png",
+        "assets/effects/dawn_203/008.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        256,
+        90
+      ],
+      "source_id": 203,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_204",
+      "frames": [
+        "assets/effects/dawn_204/000.png",
+        "assets/effects/dawn_204/001.png",
+        "assets/effects/dawn_204/002.png",
+        "assets/effects/dawn_204/003.png",
+        "assets/effects/dawn_204/004.png",
+        "assets/effects/dawn_204/005.png",
+        "assets/effects/dawn_204/006.png",
+        "assets/effects/dawn_204/007.png",
+        "assets/effects/dawn_204/008.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        256,
+        256
+      ],
+      "source_id": 204,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_205",
+      "frames": [
+        "assets/effects/dawn_205/000.png",
+        "assets/effects/dawn_205/001.png",
+        "assets/effects/dawn_205/002.png",
+        "assets/effects/dawn_205/003.png",
+        "assets/effects/dawn_205/004.png",
+        "assets/effects/dawn_205/005.png",
+        "assets/effects/dawn_205/006.png",
+        "assets/effects/dawn_205/007.png",
+        "assets/effects/dawn_205/008.png",
+        "assets/effects/dawn_205/009.png",
+        "assets/effects/dawn_205/010.png",
+        "assets/effects/dawn_205/011.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        251,
+        192
+      ],
+      "source_id": 205,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_206",
+      "frames": [
+        "assets/effects/dawn_206/000.png",
+        "assets/effects/dawn_206/001.png",
+        "assets/effects/dawn_206/002.png",
+        "assets/effects/dawn_206/003.png",
+        "assets/effects/dawn_206/004.png",
+        "assets/effects/dawn_206/005.png",
+        "assets/effects/dawn_206/006.png",
+        "assets/effects/dawn_206/007.png",
+        "assets/effects/dawn_206/008.png",
+        "assets/effects/dawn_206/009.png",
+        "assets/effects/dawn_206/010.png",
+        "assets/effects/dawn_206/011.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        256,
+        96
+      ],
+      "source_id": 206,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_207",
+      "frames": [
+        "assets/effects/dawn_207/000.png",
+        "assets/effects/dawn_207/001.png",
+        "assets/effects/dawn_207/002.png",
+        "assets/effects/dawn_207/003.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        104,
+        72
+      ],
+      "source_id": 207,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_208",
+      "frames": [
+        "assets/effects/dawn_208/000.png",
+        "assets/effects/dawn_208/001.png",
+        "assets/effects/dawn_208/002.png",
+        "assets/effects/dawn_208/003.png",
+        "assets/effects/dawn_208/004.png",
+        "assets/effects/dawn_208/005.png",
+        "assets/effects/dawn_208/006.png",
+        "assets/effects/dawn_208/007.png",
+        "assets/effects/dawn_208/008.png",
+        "assets/effects/dawn_208/009.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        250,
+        136
+      ],
+      "source_id": 208,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_209",
+      "frames": [
+        "assets/effects/dawn_209/000.png",
+        "assets/effects/dawn_209/001.png",
+        "assets/effects/dawn_209/002.png",
+        "assets/effects/dawn_209/003.png",
+        "assets/effects/dawn_209/004.png",
+        "assets/effects/dawn_209/005.png",
+        "assets/effects/dawn_209/006.png",
+        "assets/effects/dawn_209/007.png",
+        "assets/effects/dawn_209/008.png",
+        "assets/effects/dawn_209/009.png",
+        "assets/effects/dawn_209/010.png",
+        "assets/effects/dawn_209/011.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        256,
+        108
+      ],
+      "source_id": 209,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_210",
+      "frames": [
+        "assets/effects/dawn_210/000.png",
+        "assets/effects/dawn_210/001.png",
+        "assets/effects/dawn_210/002.png",
+        "assets/effects/dawn_210/003.png",
+        "assets/effects/dawn_210/004.png",
+        "assets/effects/dawn_210/005.png",
+        "assets/effects/dawn_210/006.png",
+        "assets/effects/dawn_210/007.png",
+        "assets/effects/dawn_210/008.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        256,
+        192
+      ],
+      "source_id": 210,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_211",
+      "frames": [
+        "assets/effects/dawn_211/000.png",
+        "assets/effects/dawn_211/001.png",
+        "assets/effects/dawn_211/002.png",
+        "assets/effects/dawn_211/003.png",
+        "assets/effects/dawn_211/004.png",
+        "assets/effects/dawn_211/005.png",
+        "assets/effects/dawn_211/006.png",
+        "assets/effects/dawn_211/007.png",
+        "assets/effects/dawn_211/008.png",
+        "assets/effects/dawn_211/009.png",
+        "assets/effects/dawn_211/010.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        256,
+        192
+      ],
+      "source_id": 211,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_212",
+      "frames": [
+        "assets/effects/dawn_212/000.png",
+        "assets/effects/dawn_212/001.png",
+        "assets/effects/dawn_212/002.png",
+        "assets/effects/dawn_212/003.png",
+        "assets/effects/dawn_212/004.png",
+        "assets/effects/dawn_212/005.png",
+        "assets/effects/dawn_212/006.png",
+        "assets/effects/dawn_212/007.png",
+        "assets/effects/dawn_212/008.png",
+        "assets/effects/dawn_212/009.png",
+        "assets/effects/dawn_212/010.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        256,
+        38
+      ],
+      "source_id": 212,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_213",
+      "frames": [
+        "assets/effects/dawn_213/000.png",
+        "assets/effects/dawn_213/001.png",
+        "assets/effects/dawn_213/002.png",
+        "assets/effects/dawn_213/003.png",
+        "assets/effects/dawn_213/004.png",
+        "assets/effects/dawn_213/005.png",
+        "assets/effects/dawn_213/006.png",
+        "assets/effects/dawn_213/007.png",
+        "assets/effects/dawn_213/008.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        256,
+        192
+      ],
+      "source_id": 213,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_214",
+      "frames": [
+        "assets/effects/dawn_214/000.png",
+        "assets/effects/dawn_214/001.png",
+        "assets/effects/dawn_214/002.png",
+        "assets/effects/dawn_214/003.png",
+        "assets/effects/dawn_214/004.png",
+        "assets/effects/dawn_214/005.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        256,
+        192
+      ],
+      "source_id": 214,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_215",
+      "frames": [
+        "assets/effects/dawn_215/000.png",
+        "assets/effects/dawn_215/001.png",
+        "assets/effects/dawn_215/002.png",
+        "assets/effects/dawn_215/003.png",
+        "assets/effects/dawn_215/004.png",
+        "assets/effects/dawn_215/005.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        46,
+        192
+      ],
+      "source_id": 215,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    },
+    {
+      "id": "dawn_216",
+      "frames": [
+        "assets/effects/dawn_216/000.png",
+        "assets/effects/dawn_216/001.png",
+        "assets/effects/dawn_216/002.png",
+        "assets/effects/dawn_216/003.png",
+        "assets/effects/dawn_216/004.png",
+        "assets/effects/dawn_216/005.png",
+        "assets/effects/dawn_216/006.png"
+      ],
+      "frame_seconds": 0.08,
+      "size": [
+        256,
+        34
+      ],
+      "source_id": 216,
+      "provenance": "Original decoded Dawn battle-effect pixels; unambiguous single-screen or single-character-bank sequence."
+    }
+  ],
+  "errors": [],
+  "attribute_effects": {
+    "fire": "dawn_012",
+    "water": "dawn_016",
+    "electric": "dawn_052",
+    "wind": "dawn_170",
+    "plant": "dawn_081",
+    "earth": "dawn_037",
+    "light": "dawn_084",
+    "dark": "dawn_033",
+    "neutral": "dawn_023"
+  },
+  "event_effects": {
+    "heal": "dawn_155",
+    "scan": "dawn_002"
+  }
+}

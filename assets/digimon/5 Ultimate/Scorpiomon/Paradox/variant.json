@@ -1,0 +1,23 @@
+{
+  "variant_id": "paradox_scorpiomon",
+  "display_name": "Paradox Scorpiomon",
+  "base_species": "Scorpiomon",
+  "stage": "5 Ultimate",
+  "status": "ready",
+  "materializable": true,
+  "boss_eligible": true,
+  "primary_sprite": "5 Ultimate/Scorpiomon/Paradox/Scorpiomon_Paradox_Primary.png",
+  "source_primary": "5 Ultimate/Scorpiomon/Scorpiomon_Primary.png",
+  "source_sprite_count": 21,
+  "paradox_sprite_count": 21,
+  "style_profile": "Cyber Paradox Corruption v1",
+  "style_features": [
+    "violet/black data infection",
+    "cyan/magenta chromatic ghosts",
+    "digital displacement",
+    "angular data-void fractures",
+    "circuit cracks",
+    "transparent neon aura"
+  ],
+  "animation_alignment": "exact source canvas dimensions preserved"
+}

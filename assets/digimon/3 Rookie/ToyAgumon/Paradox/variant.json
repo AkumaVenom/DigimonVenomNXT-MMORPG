@@ -1,0 +1,23 @@
+{
+  "variant_id": "paradox_toyagumon",
+  "display_name": "Paradox ToyAgumon",
+  "base_species": "ToyAgumon",
+  "stage": "3 Rookie",
+  "status": "ready",
+  "materializable": true,
+  "boss_eligible": true,
+  "primary_sprite": "3 Rookie/ToyAgumon/Paradox/ToyAgumon_Paradox_Primary.png",
+  "source_primary": "3 Rookie/ToyAgumon/ToyAgumon_Idle.png",
+  "source_sprite_count": 6,
+  "paradox_sprite_count": 7,
+  "style_profile": "Cyber Paradox Corruption v1",
+  "style_features": [
+    "violet/black data infection",
+    "cyan/magenta chromatic ghosts",
+    "digital displacement",
+    "angular data-void fractures",
+    "circuit cracks",
+    "transparent neon aura"
+  ],
+  "animation_alignment": "exact source canvas dimensions preserved"
+}

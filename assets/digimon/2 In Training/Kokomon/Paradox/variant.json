@@ -1,0 +1,23 @@
+{
+  "variant_id": "paradox_kokomon",
+  "display_name": "Paradox Kokomon",
+  "base_species": "Kokomon",
+  "stage": "2 In Training",
+  "status": "ready",
+  "materializable": true,
+  "boss_eligible": true,
+  "primary_sprite": "2 In Training/Kokomon/Paradox/Kokomon_Paradox_Primary.png",
+  "source_primary": "2 In Training/Kokomon/Kokomon_Idle.png",
+  "source_sprite_count": 6,
+  "paradox_sprite_count": 7,
+  "style_profile": "Cyber Paradox Corruption v1",
+  "style_features": [
+    "violet/black data infection",
+    "cyan/magenta chromatic ghosts",
+    "digital displacement",
+    "angular data-void fractures",
+    "circuit cracks",
+    "transparent neon aura"
+  ],
+  "animation_alignment": "exact source canvas dimensions preserved"
+}

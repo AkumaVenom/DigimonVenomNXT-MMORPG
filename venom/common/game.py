@@ -1,0 +1,691 @@
+"""Authoritative, deterministic-testable gameplay. All numerical balance is server owned.
+
+Catalog art is authoritative for available species, not for Cyber Sleuth numerical data.
+See docs/MECHANICS.md for the intentionally original rules and provenance boundary.
+"""
+from __future__ import annotations
+
+import copy
+import hashlib
+import json
+import math
+import random
+import re
+import uuid
+from pathlib import Path
+from typing import Any
+
+
+class GameError(ValueError):
+    """A safe, user-readable rejection of a gameplay operation."""
+
+
+SHOP = {
+    "hp_s": {"name": "Small HP Capsule", "price": 60, "resource": "hp", "amount": 250},
+    "hp_m": {"name": "Medium HP Capsule", "price": 180, "resource": "hp", "amount": 650},
+    "hp_l": {"name": "Large HP Capsule", "price": 420, "resource": "hp", "amount": 2000},
+    "sp_s": {"name": "Small SP Capsule", "price": 90, "resource": "sp", "amount": 25},
+    "sp_m": {"name": "Medium SP Capsule", "price": 260, "resource": "sp", "amount": 65},
+    "sp_l": {"name": "Large SP Capsule", "price": 600, "resource": "sp", "amount": 200},
+}
+TYPE_ADVANTAGE = {"vaccine": "virus", "virus": "data", "data": "vaccine"}
+ATTRIBUTE_ADVANTAGE = {
+    "fire": {"plant"}, "plant": {"water"}, "water": {"fire"},
+    "electric": {"wind"}, "wind": {"earth"}, "earth": {"electric"},
+    "light": {"dark"}, "dark": {"light"},
+}
+STAGE_RANK = {"fresh": 0, "in_training": 1, "rookie": 2, "champion": 3,
+              "armor": 3, "hybrid": 3, "ultimate": 4, "mega": 5, "ultra": 6, "unknown": 2}
+STAGE_LEVEL = {0: 1, 1: 1, 2: 1, 3: 15, 4: 30, 5: 45, 6: 60}
+SKILL_NAMES = {"fire": "Flare Burst", "water": "Aqua Pulse", "plant": "Thorn Surge",
+               "electric": "Volt Arc", "wind": "Gale Cutter", "earth": "Terra Impact",
+               "light": "Radiant Lance", "dark": "Void Pulse", "neutral": "Data Burst"}
+
+
+def _key(value: str) -> str:
+    return re.sub(r"[^a-z0-9]", "", str(value).lower())
+
+
+def _integer(payload: dict, key: str, default: int = 0, minimum: int = 0,
+             maximum: int = 10**9) -> int:
+    value = payload.get(key, default)
+    if isinstance(value, bool) or not isinstance(value, int) or not minimum <= value <= maximum:
+        raise GameError(f"{key.replace('_', ' ').title()} is out of range.")
+    return value
+
+
+def type_multiplier(attacker: str, defender: str) -> float:
+    a, d = str(attacker).lower(), str(defender).lower()
+    if TYPE_ADVANTAGE.get(a) == d:
+        return 2.0
+    if TYPE_ADVANTAGE.get(d) == a:
+        return 0.5
+    return 1.0
+
+
+def attribute_multiplier(attack_attribute: str, defender_attribute: str) -> float:
+    # Cyber Sleuth's attribute triangle grants a bonus, not Pokemon-style resistance.
+    return 1.5 if str(defender_attribute).lower() in ATTRIBUTE_ADVANTAGE.get(
+        str(attack_attribute).lower(), set()) else 1.0
+
+
+def effectiveness(attacker: dict, defender: dict, attribute: str | None = None) -> float:
+    return type_multiplier(attacker.get("type", "free"), defender.get("type", "free")) * attribute_multiplier(
+        attribute if attribute is not None else attacker.get("attribute", "neutral"),
+        defender.get("attribute", "neutral"))
+
+
+def xp_required(level: int) -> int:
+    """XP needed to move from this level to the next; xp is progress within level."""
+    return 35 + int(12 * level ** 1.45)
+
+
+class GameEngine:
+    def __init__(self, root: str | Path, seed: int | None = None):
+        self.root = Path(root)
+        data_dir = self.root if (self.root / "catalog.json").exists() else self.root / "data"
+        self.catalog = json.loads((data_dir / "catalog.json").read_text(encoding="utf-8"))
+        mechanics_path = data_dir / "mechanics.json"
+        self.rules = json.loads(mechanics_path.read_text(encoding="utf-8")) if mechanics_path.exists() else {}
+        self.rng = random.Random(seed)
+        self.species = {s["id"]: s for s in self.catalog.get("species", [])}
+        self.maps = {m["id"]: m for m in self.catalog.get("maps", [])}
+        self.tamers = {t["id"]: t for t in self.catalog.get("tamers", [])}
+        if not self.species or not self.maps or not self.tamers:
+            raise GameError("Asset catalog must contain species, maps and tamers. Run asset verification.")
+        self._prepare_catalog()
+        self.starters = [s["id"] for s in self.species.values()
+                         if s.get("stage") == "rookie" and not s.get("paradox")]
+        if not self.starters:
+            raise GameError("No non-Paradox Rookie starters were imported.")
+        self._pools: dict[str, tuple[list[str], list[str]]] = {}
+        self._prepare_encounter_pools()
+
+    def _prepare_catalog(self) -> None:
+        by_name = {_key(s.get("name", s["id"])): s for s in self.species.values() if not s.get("paradox")}
+        for name, override in self.rules.get("species_overrides", {}).items():
+            species = by_name.get(_key(name))
+            if species:
+                species.update(override)
+                species["mechanics_provenance"] = "Venom NXT curated type/attribute; original balanced stats"
+        for species in self.species.values():
+            if species.get("paradox"):
+                base = self.species.get(species.get("base_id", ""))
+                if base:
+                    species["type"] = base.get("type", "free")
+                    species["attribute"] = base.get("attribute", "neutral")
+            species.setdefault("type", "free")
+            species.setdefault("attribute", "neutral")
+            species["type"] = str(species["type"]).lower()
+            species["attribute"] = str(species["attribute"]).lower()
+            species.setdefault("evolutions", [])
+        # Curated family routes, with custom balance requirements, plus a clearly
+        # labelled data-splice route for every uncharted species in the pack.
+        for chain in self.rules.get("evolution_chains", []):
+            for left, right in zip(chain, chain[1:]):
+                a, b = by_name.get(_key(left)), by_name.get(_key(right))
+                if a and b:
+                    self._add_evolution(a, b, "curated_family")
+        tiers: dict[int, list[dict]] = {}
+        for species in self.species.values():
+            if not species.get("paradox"):
+                tiers.setdefault(STAGE_RANK.get(species.get("stage"), 2), []).append(species)
+        for group in tiers.values():
+            group.sort(key=lambda s: s["id"])
+        for species in self.species.values():
+            rank = STAGE_RANK.get(species.get("stage"), 2)
+            valid = [x for x in species["evolutions"] if x.get("to") in self.species]
+            species["evolutions"] = valid
+            if not valid and rank < 6 and not species.get("paradox"):
+                candidates = tiers.get(rank + 1, [])
+                related = [c for c in candidates if c.get("attribute") == species.get("attribute")]
+                candidates = related or candidates
+                if candidates:
+                    n = int.from_bytes(hashlib.sha256(species["id"].encode()).digest()[:4], "big")
+                    self._add_evolution(species, candidates[n % len(candidates)], "original_data_splice")
+        # Paradox partners retain their variant throughout the same evolution family.
+        variants = {s.get("base_id"): s for s in self.species.values() if s.get("paradox")}
+        for base_id, variant in variants.items():
+            base = self.species.get(base_id)
+            if not base:
+                continue
+            for route in base.get("evolutions", []):
+                target = variants.get(route.get("to"))
+                if target and not any(r.get("to") == target["id"] for r in variant["evolutions"]):
+                    variant["evolutions"].append({**copy.deepcopy(route), "to": target["id"],
+                                                   "provenance": "original_paradox_route"})
+        # Reverse routes are recorded separately and preserve the monster's identity/CAM.
+        self.devolutions: dict[str, list[dict]] = {}
+        for species in self.species.values():
+            for route in species["evolutions"]:
+                self.devolutions.setdefault(route["to"], []).append({
+                    "to": species["id"], "level": 5, "abi": 0, "cam": 0,
+                    "devolve": True, "provenance": route.get("provenance", "catalog")})
+        self.catalog["shop"] = copy.deepcopy(SHOP)
+        self.catalog["rules"] = {"party_limit": 6, "active_limit": 3, "scan_cap": 200,
+                                  "paradox_encounter_chance": self.rules.get("paradox_encounter_chance", .025)}
+
+    def _add_evolution(self, source: dict, target: dict, provenance: str) -> None:
+        if any(x.get("to") == target["id"] for x in source["evolutions"]):
+            return
+        rank = STAGE_RANK.get(target.get("stage"), 2)
+        level = {0: 3, 1: 5, 2: 8, 3: 15, 4: 30, 5: 45, 6: 60}[rank]
+        abi = {0: 0, 1: 0, 2: 0, 3: 0, 4: 10, 5: 25, 6: 50}[rank]
+        # Stats are evaluated against the current form at its required level.
+        stat = "int" if target.get("attribute") in ("light", "dark", "water") else "atk"
+        projected = self.stats_for(source, level, 0)
+        source["evolutions"].append({"to": target["id"], "level": level, "abi": abi,
+                                    "cam": max(0, (rank - 2) * 10),
+                                    "stats": {stat: max(1, int(projected[stat] * .9))},
+                                    "provenance": provenance})
+
+    def _prepare_encounter_pools(self) -> None:
+        # Assign every normal species to at least one appropriate area. A compact
+        # stable local pool makes scan collection possible even with thousands of sprites.
+        maps = sorted(self.maps.values(), key=lambda m: (int(m.get("level", 1)), m["id"]))
+        pools: dict[str, list[str]] = {m["id"]: [] for m in maps}
+        for species in self.species.values():
+            if species.get("paradox"):
+                continue
+            level = STAGE_LEVEL[STAGE_RANK.get(species.get("stage"), 2)]
+            candidates = sorted(maps, key=lambda m: abs(int(m.get("level", 1)) - level))
+            band = [m for m in candidates if abs(int(m.get("level", 1)) - level) <= 12]
+            band = band or candidates[:max(1, len(maps) // 8)]
+            n = int.from_bytes(hashlib.sha256(species["id"].encode()).digest()[:4], "big")
+            pools[band[n % len(band)]["id"]].append(species["id"])
+        all_normal = [s for s in self.species.values() if not s.get("paradox")]
+        paradoxes = [s for s in self.species.values() if s.get("paradox")]
+        for area in maps:
+            normal = pools[area["id"]]
+            if not normal:
+                near = sorted(all_normal, key=lambda s: abs(STAGE_LEVEL[STAGE_RANK.get(s.get("stage"), 2)] - int(area.get("level", 1))))
+                normal = [s["id"] for s in near[:12]]
+            p = [s["id"] for s in paradoxes if s.get("base_id") in normal]
+            self._pools[area["id"]] = (normal, p)
+        # Paradox-only imported species also remain discoverable.
+        assigned = {sid for _, ps in self._pools.values() for sid in ps}
+        for species in paradoxes:
+            if species["id"] in assigned:
+                continue
+            level = STAGE_LEVEL[STAGE_RANK.get(species.get("stage"), 2)]
+            area = min(maps, key=lambda m: abs(int(m.get("level", 1)) - level))
+            self._pools[area["id"]][1].append(species["id"])
+        fallback = [s["id"] for s in paradoxes]
+        for area in maps:
+            normal, rare = self._pools[area["id"]]
+            if not rare and fallback:
+                minimum = min(abs(STAGE_LEVEL[STAGE_RANK.get(self.species[s].get("stage"), 2)] - int(area.get("level", 1))) for s in fallback)
+                self._pools[area["id"]] = normal, [s for s in fallback if abs(STAGE_LEVEL[STAGE_RANK.get(self.species[s].get("stage"), 2)] - int(area.get("level", 1))) == minimum]
+            area["encounters"] = list(normal)
+            area["paradox_encounters"] = list(self._pools[area["id"]][1])
+
+    @staticmethod
+    def stats_for(species: dict, level: int, abi: int = 0) -> dict[str, int]:
+        base = species.get("base_stats", {})
+        rank = STAGE_RANK.get(species.get("stage"), 2)
+        defaults = {"hp": 180, "sp": 35, "atk": 28, "def": 22, "int": 24, "spd": 24}
+        growth = {"hp": 18 + rank * 2, "sp": 2, "atk": 3 + rank * .3,
+                  "def": 2.5 + rank * .3, "int": 3 + rank * .3, "spd": 2 + rank * .2}
+        bonus = 1 + min(200, max(0, abi)) / 1000
+        return {k: max(1, int((int(base.get(k, defaults[k])) + (level - 1) * growth[k]) * bonus))
+                for k in defaults}
+
+    def _monster(self, species_id: str, level: int = 1, abi: int = 0, cam: int = 0) -> dict:
+        species = self.species[species_id]
+        stat = self.stats_for(species, level, abi)
+        monster = {"uid": uuid.uuid4().hex, "species_id": species_id, "name": species["name"],
+                   "stage": species.get("stage", "unknown"), "level": level, "xp": 0,
+                   "next_xp": xp_required(level), "abi": abi, "cam": cam,
+                   "type": species["type"], "attribute": species["attribute"],
+                   "paradox": bool(species.get("paradox")), "history": [],
+                   **stat, "max_hp": stat["hp"], "max_sp": stat["sp"]}
+        monster["skills"] = self._skills(monster)
+        return monster
+
+    @staticmethod
+    def _skills(monster: dict) -> list[dict]:
+        attribute = monster.get("attribute", "neutral")
+        rank = STAGE_RANK.get(monster.get("stage"), 2)
+        return [{"id": "burst", "name": SKILL_NAMES.get(attribute, "Data Burst"),
+                 "sp": 5 + rank, "power": 1.55, "attribute": attribute, "kind": "magic"},
+                {"id": "strike", "name": "Power Strike", "sp": 4 + rank,
+                 "power": 1.45, "attribute": "neutral", "kind": "physical"}]
+
+    def new_player(self, username: str, tamer: str, starter: str) -> dict:
+        if tamer not in self.tamers:
+            raise GameError("Choose one of the imported tamers.")
+        if starter not in self.starters:
+            raise GameError("Your first partner must be a regular Rookie Digimon.")
+        area = min(self.maps.values(), key=lambda m: (int(m.get("level", 1)), m["id"]))
+        x, y = area.get("spawn", [area.get("width", 1024) / 2, area.get("height", 768) / 2])
+        state = {"username": str(username), "tamer": tamer, "map_id": area["id"],
+                 "x": float(x), "y": float(y), "credits": 650,
+                 "party": [self._monster(starter, cam=10)], "storage": [], "scan": {},
+                 "inventory": {"hp_s": 5, "hp_m": 0, "hp_l": 0, "sp_s": 3, "sp_m": 0, "sp_l": 0},
+                 "in_lab": False, "battle": None, "events": [], "catalog_version": "0.1.0",
+                 "wins": 0, "losses": 0, "shop": copy.deepcopy(SHOP)}
+        self._refresh(state)
+        self._event(state, "message", text="Welcome to Venom NXT. Explore, defeat wild Digimon to scan, and materialize new partners in the DigiLab.")
+        return state
+
+    def handle(self, state: dict, op: str, payload: dict) -> dict:
+        if not isinstance(payload, dict):
+            raise GameError("Malformed gameplay request.")
+        handlers = {"encounter": self._encounter, "battle": self._battle, "digilab": self._digilab,
+                    "materialize": self._materialize, "evolve": self._evolve, "party": self._party,
+                    "shop": self._shop, "item": self._item, "travel": self._travel}
+        if op not in handlers:
+            raise GameError("Unknown gameplay operation.")
+        state["events"] = []
+        handlers[op](state, payload)
+        self._refresh(state)
+        return state
+
+    def _refresh(self, state: dict) -> None:
+        state["evolution_options"] = [self.evolution_options(m) for m in state["party"]]
+        state["shop"] = copy.deepcopy(SHOP)
+        for monster in state["party"]:
+            monster["next_xp"] = xp_required(monster["level"])
+            monster["skills"] = self._skills(monster)
+
+    def evolution_options(self, monster: dict) -> list[dict]:
+        species_id = monster["species_id"]
+        routes = self.species[species_id].get("evolutions", []) + self.devolutions.get(species_id, [])
+        seen = set()
+        result = []
+        for route in routes:
+            target = route.get("to")
+            if target not in self.species or target in seen:
+                continue
+            seen.add(target)
+            requirements = {k: int(route.get(k, 0)) for k in ("level", "abi", "cam")}
+            unmet = [f"{k.upper()} {v}" for k, v in requirements.items() if monster.get(k, 0) < v]
+            for stat, value in route.get("stats", {}).items():
+                actual = monster.get("max_" + stat, monster.get(stat, 0))
+                if actual < value:
+                    unmet.append(f"{stat.upper()} {value}")
+            result.append({**route, "name": self.species[target]["name"], "eligible": not unmet,
+                           "missing": unmet, "devolve": bool(route.get("devolve"))})
+        # Keep data-splice de-evolution UI manageable. Known previous forms always first.
+        history = monster.get("history", [])
+        result.sort(key=lambda r: (r.get("devolve", False), r["to"] not in history, r["name"]))
+        return result[:30]
+
+    @staticmethod
+    def _event(state: dict, kind: str, side: str = "player", index: int = 0,
+               amount: float = 0, effectiveness: float = 1, text: str = "", **extra: Any) -> None:
+        state.setdefault("events", []).append({"kind": kind, "side": side, "index": index,
+                                               "amount": amount, "effectiveness": effectiveness,
+                                               "text": text, **extra})
+
+    @staticmethod
+    def _peace(state: dict) -> None:
+        if state.get("battle"):
+            raise GameError("Finish or escape the current battle first.")
+
+    def _lab_only(self, state: dict) -> None:
+        self._peace(state)
+        if not state.get("in_lab"):
+            raise GameError("Return to the DigiLab for this action.")
+
+    @staticmethod
+    def _party_member(state: dict, payload: dict, key: str = "party_index") -> tuple[int, dict]:
+        index = _integer(payload, key, maximum=max(0, len(state["party"]) - 1))
+        if index >= len(state["party"]):
+            raise GameError("That party slot is empty.")
+        return index, state["party"][index]
+
+    def _encounter(self, state: dict, payload: dict) -> None:
+        self._peace(state)
+        if state.get("in_lab"):
+            raise GameError("Return to the world before searching for wild Digimon.")
+        active = [i for i, m in enumerate(state["party"][:3]) if m["hp"] > 0]
+        if not active:
+            raise GameError("Your battle team needs healing at the DigiLab.")
+        area = self.maps[state["map_id"]]
+        normal, paradox = self._pools[area["id"]]
+        count = self.rng.choices([1, 2, 3], weights=[70, 25, 5] if len(active) == 1 else [25, 40, 35])[0]
+        enemy_level = max(1, min(99, int(area.get("level", 1))))
+        enemies = [self._monster(self.rng.choice(normal), max(1, min(99, enemy_level + self.rng.randint(-2, 2)))) for _ in range(count)]
+        if paradox and self.rng.random() < self.rules.get("paradox_encounter_chance", .025):
+            slot = self.rng.randrange(count)
+            enemies[slot] = self._monster(self.rng.choice(paradox), enemies[slot]["level"])
+        # Solo players can still meet 2/3 enemies; smaller wild HP keeps the opening playable.
+        for enemy in enemies:
+            enemy["hp"] = enemy["max_hp"] = max(20, int(enemy["max_hp"] * .72))
+        state["battle"] = {"id": uuid.uuid4().hex, "enemies": enemies, "active": active,
+                           "turn": 0, "actor": active[0], "clock": 0.0, "queue": [], "scanned": []}
+        queue = state["battle"]["queue"]
+        for i in active:
+            queue.append({"side": "player", "index": i, "at": 500 / max(1, state["party"][i]["spd"])})
+        for i, enemy in enumerate(enemies):
+            queue.append({"side": "enemy", "index": i, "at": 500 / max(1, enemy["spd"]) + .001})
+        names = ", ".join(e["name"] for e in enemies)
+        self._event(state, "message", text=f"Wild encounter: {names}!")
+        self._advance(state)
+
+    def _battle(self, state: dict, payload: dict) -> None:
+        battle = state.get("battle")
+        if not battle:
+            raise GameError("There is no battle in progress.")
+        action = payload.get("action", "attack")
+        if action not in {"attack", "skill", "struggle", "item", "flee", "guard", "swap"}:
+            raise GameError("Unknown battle action.")
+        actor_index = battle["actor"]
+        actor = state["party"][actor_index]
+        if action == "flee":
+            state["battle"] = None
+            self._event(state, "flee", text="You withdrew safely. Defeated enemies' scan data is retained.")
+            return
+        if action == "item":
+            self._use_item(state, payload)
+        elif action == "guard":
+            actor["guard"] = True
+            self._event(state, "message", index=actor_index, text=f"{actor['name']} braces for incoming damage.")
+        elif action == "swap":
+            reserve_index = _integer(payload, "party_index", maximum=len(state["party"]) - 1)
+            if reserve_index in battle["active"] or state["party"][reserve_index]["hp"] <= 0:
+                raise GameError("Choose a healthy reserve partner.")
+            pos = battle["active"].index(actor_index)
+            battle["active"][pos] = reserve_index
+            battle["queue"] = [q for q in battle["queue"] if not (q["side"] == "player" and q["index"] == actor_index)]
+            self._queue(battle, "player", reserve_index, state["party"][reserve_index])
+            self._event(state, "message", text=f"{state['party'][reserve_index]['name']} joins the battle.")
+            self._advance(state)
+            return
+        else:
+            target_index = _integer(payload, "target", maximum=len(battle["enemies"]) - 1)
+            target = battle["enemies"][target_index]
+            if target["hp"] <= 0:
+                raise GameError("That enemy has already been defeated.")
+            skill = None
+            if action == "skill":
+                skills = actor.get("skills") or self._skills(actor)
+                skill_index = _integer(payload, "skill_index", maximum=len(skills) - 1)
+                skill = skills[skill_index]
+                if actor["sp"] < skill["sp"]:
+                    raise GameError("Not enough SP. Use Attack, Struggle, or an SP Capsule.")
+                actor["sp"] -= skill["sp"]
+            actor.pop("guard", None)
+            self._strike(state, actor, target, "player", actor_index, target_index, action, skill)
+            if target["hp"] <= 0:
+                self._scan_defeat(state, target_index)
+        if self._check_end(state):
+            return
+        self._queue(battle, "player", actor_index, actor)
+        self._advance(state)
+
+    def _queue(self, battle: dict, side: str, index: int, monster: dict) -> None:
+        battle["queue"].append({"side": side, "index": index,
+                                "at": battle["clock"] + 1000 / max(1, monster["spd"])})
+
+    def _advance(self, state: dict) -> None:
+        # Process enemy turns until the next living player decision. Queue survives reconnect.
+        for _ in range(100):
+            if self._check_end(state):
+                return
+            battle = state["battle"]
+            battle["queue"].sort(key=lambda q: (q["at"], q["side"] == "enemy", q["index"]))
+            if not battle["queue"]:
+                raise GameError("Battle timeline is empty. Please reconnect.")
+            node = battle["queue"].pop(0)
+            side, index = node["side"], node["index"]
+            roster = state["party"] if side == "player" else battle["enemies"]
+            actor = roster[index]
+            if actor["hp"] <= 0 or (side == "player" and index not in battle["active"]):
+                continue
+            battle["clock"] = node["at"]
+            battle["turn"] += 1
+            if side == "player":
+                battle["actor"] = index
+                # Guard lasts until this partner's next action opportunity.
+                actor.pop("guard", None)
+                return
+            living = [i for i in battle["active"] if state["party"][i]["hp"] > 0]
+            target_index = self.rng.choice(living)
+            target = state["party"][target_index]
+            skill = actor["skills"][0]
+            use_skill = actor["sp"] >= skill["sp"] and self.rng.random() < .45
+            if use_skill:
+                actor["sp"] -= skill["sp"]
+            self._strike(state, actor, target, "enemy", index, target_index,
+                         "skill" if use_skill else "attack", skill if use_skill else None)
+            self._queue(battle, "enemy", index, actor)
+        raise GameError("Battle timeline exceeded its safety limit.")
+
+    def _strike(self, state: dict, attacker: dict, defender: dict, side: str,
+                attacker_index: int, target_index: int, action: str, skill: dict | None = None) -> None:
+        magic = skill is not None and skill.get("kind") == "magic"
+        power = skill["power"] if skill else (.7 if action == "struggle" else 1.0)
+        attack = attacker["int"] if magic else attacker["atk"]
+        defense = defender["int"] if magic else defender["def"]
+        attribute = skill["attribute"] if skill else "neutral"
+        multiplier = effectiveness(attacker, defender, attribute)
+        damage = max(1, int((8 + attack * .72 - defense * .28) * power * multiplier * self.rng.uniform(.92, 1.08)))
+        if side == "enemy":
+            damage = max(1, int(damage * .72))
+        combo = False
+        if side == "player" and attacker.get("cam", 0) >= 20:
+            allies = [state["party"][i] for i in state["battle"]["active"]
+                      if i != attacker_index and state["party"][i]["hp"] > 0]
+            if allies and self.rng.random() < attacker["cam"] / 500:
+                damage = int(damage * 1.25)
+                combo = True
+        if defender.get("guard"):
+            damage = max(1, damage // 2)
+        actual = min(defender["hp"], damage)
+        defender["hp"] -= actual
+        target_side = "enemy" if side == "player" else "player"
+        move = skill["name"] if skill else ("Struggle" if action == "struggle" else "Attack")
+        label = "Super effective!" if multiplier > 1 else "Not very effective." if multiplier < 1 else ""
+        text = f"{attacker['name']} uses {move}: {actual} damage. {label}"
+        if combo:
+            text += " CAM Cross Combo!"
+        self._event(state, "damage", target_side, target_index, actual, multiplier, text.strip(),
+                    attacker_side=side, attacker_index=attacker_index, attribute=attribute,
+                    move=move, combo=combo, defeated=defender["hp"] <= 0)
+
+    def _scan_defeat(self, state: dict, enemy_index: int) -> None:
+        battle = state["battle"]
+        if enemy_index in battle["scanned"]:
+            return
+        battle["scanned"].append(enemy_index)
+        enemy = battle["enemies"][enemy_index]
+        gain = self.rules.get("paradox_scan_gain", 5) if enemy.get("paradox") else self.rules.get("normal_scan_gain", 20)
+        sid = enemy["species_id"]
+        old = state["scan"].get(sid, 0)
+        state["scan"][sid] = min(200, old + gain)
+        self._event(state, "scan", "enemy", enemy_index, state["scan"][sid] - old,
+                    text=f"{enemy['name']}: {state['scan'][sid]}% scan data (+{state['scan'][sid] - old}%).",
+                    species_id=sid, total=state["scan"][sid])
+
+    def _check_end(self, state: dict) -> bool:
+        battle = state.get("battle")
+        if not battle:
+            return True
+        if not any(e["hp"] > 0 for e in battle["enemies"]):
+            enemies = battle["enemies"]
+            xp = sum(24 + e["level"] * 12 + STAGE_RANK.get(e.get("stage"), 2) * 8 for e in enemies)
+            credits = sum(25 + e["level"] * 7 for e in enemies)
+            state["credits"] += credits
+            state["wins"] = state.get("wins", 0) + 1
+            for index, monster in enumerate(state["party"]):
+                monster["cam"] = min(100, monster["cam"] + (2 if index in battle["active"] else 1))
+                self._add_xp(state, monster, xp if index in battle["active"] else max(1, xp // 2), index)
+                monster.pop("guard", None)
+            state["battle"] = None
+            self._event(state, "win", amount=credits, text=f"Victory! +{credits} credits and {xp} XP. Scan data secured.", xp=xp)
+            return True
+        if not any(state["party"][i]["hp"] > 0 for i in battle["active"]):
+            state["losses"] = state.get("losses", 0) + 1
+            state["battle"] = None
+            self._enter_lab(state)
+            self._event(state, "lose", text="Your battle team was defeated. DigiLab emergency recovery restored all partners; no credits or scan data lost.")
+            return True
+        return False
+
+    def _add_xp(self, state: dict, monster: dict, amount: int, index: int) -> None:
+        monster["xp"] += amount
+        original_level = monster["level"]
+        while monster["level"] < 99 and monster["xp"] >= xp_required(monster["level"]):
+            monster["xp"] -= xp_required(monster["level"])
+            monster["level"] += 1
+        if monster["level"] == 99:
+            monster["xp"] = 0
+        if monster["level"] > original_level:
+            old_hp, old_sp = monster["max_hp"], monster["max_sp"]
+            stats = self.stats_for(self.species[monster["species_id"]], monster["level"], monster["abi"])
+            for stat in ("atk", "def", "int", "spd"):
+                monster[stat] = stats[stat]
+            monster["max_hp"], monster["max_sp"] = stats["hp"], stats["sp"]
+            # Level-up restores the increase only; a defeated partner remains defeated.
+            if monster["hp"] > 0:
+                monster["hp"] += stats["hp"] - old_hp
+            monster["sp"] += stats["sp"] - old_sp
+            self._event(state, "message", index=index, text=f"{monster['name']} reached level {monster['level']}!")
+
+    def _enter_lab(self, state: dict) -> None:
+        if not state.get("in_lab"):
+            state["return_location"] = {"map_id": state["map_id"], "x": state["x"], "y": state["y"]}
+        state["in_lab"] = True
+        for monster in state["party"]:
+            monster["hp"], monster["sp"] = monster["max_hp"], monster["max_sp"]
+            monster.pop("guard", None)
+
+    def _digilab(self, state: dict, payload: dict) -> None:
+        self._peace(state)
+        action = payload.get("action", "enter")
+        if action == "enter":
+            self._enter_lab(state)
+            self._event(state, "heal", text="DigiLab recovery complete. Your entire party's HP and SP are restored.")
+        elif action == "heal":
+            self._lab_only(state)
+            self._enter_lab(state)
+            self._event(state, "heal", text="All party HP and SP restored.")
+        elif action == "return":
+            self._lab_only(state)
+            location = state.get("return_location")
+            if location and location.get("map_id") in self.maps:
+                state.update(location)
+            state["in_lab"] = False
+            self._event(state, "message", text="Returned to the exact point where you left the world.")
+        else:
+            raise GameError("Unknown DigiLab action.")
+
+    def _materialize(self, state: dict, payload: dict) -> None:
+        self._lab_only(state)
+        sid = payload.get("species_id")
+        if sid not in self.species:
+            raise GameError("Unknown Digimon species.")
+        scan = state["scan"].get(sid, 0)
+        if scan < 100:
+            raise GameError("Materialization needs at least 100% scan data. Defeat more of this species.")
+        if len(state["storage"]) >= 2000 and len(state["party"]) >= 6:
+            raise GameError("DigiBank is full (2,000 partners).")
+        # Consume the entire accumulated scan, rewarding 200% with ABI 5.
+        monster = self._monster(sid, abi=min(5, int((scan - 100) / 20)))
+        state["scan"][sid] = 0
+        dest = state["party"] if len(state["party"]) < 6 else state["storage"]
+        dest.append(monster)
+        where = "party" if dest is state["party"] else "DigiBank"
+        self._event(state, "message", text=f"{monster['name']} materialized into your {where} with ABI {monster['abi']}.")
+
+    def _evolve(self, state: dict, payload: dict) -> None:
+        self._lab_only(state)
+        index, monster = self._party_member(state, payload)
+        target = payload.get("to")
+        route = next((r for r in self.evolution_options(monster) if r["to"] == target), None)
+        if not route:
+            raise GameError("That evolution route is not available for this partner.")
+        if not route["eligible"]:
+            raise GameError("Evolution needs " + ", ".join(route["missing"]) + ".")
+        old_name = monster["name"]
+        down = route.get("devolve", False)
+        gain = (5 + monster["level"] // 5) if down else (2 + monster["level"] // 10)
+        abi = min(200, monster["abi"] + gain)
+        evolved = self._monster(target, abi=abi, cam=monster["cam"])
+        evolved["uid"] = monster["uid"]
+        evolved["history"] = list(dict.fromkeys(monster.get("history", []) + [monster["species_id"]]))[-50:]
+        state["party"][index] = evolved
+        verb = "de-digivolved" if down else "digivolved"
+        self._event(state, "message", index=index, text=f"{old_name} {verb} into {evolved['name']}! Level reset to 1; ABI is now {abi}, CAM retained.")
+
+    def _party(self, state: dict, payload: dict) -> None:
+        self._peace(state)
+        action = payload.get("action")
+        if action in ("lead", "deposit"):
+            index, monster = self._party_member(state, payload, "index")
+            if action == "lead":
+                state["party"].insert(0, state["party"].pop(index))
+                self._event(state, "message", text=f"{monster['name']} is your lead partner and will follow you.")
+            else:
+                self._lab_only(state)
+                if len(state["party"]) <= 1:
+                    raise GameError("Keep at least one partner in your party.")
+                if len(state["storage"]) >= 2000:
+                    raise GameError("DigiBank is full.")
+                state["storage"].append(state["party"].pop(index))
+                self._event(state, "message", text=f"{monster['name']} moved to the DigiBank.")
+        elif action == "withdraw":
+            self._lab_only(state)
+            index = _integer(payload, "index", maximum=max(0, len(state["storage"]) - 1))
+            if index >= len(state["storage"]):
+                raise GameError("That DigiBank slot is empty.")
+            if len(state["party"]) >= 6:
+                raise GameError("Your party already has six members.")
+            monster = state["storage"].pop(index)
+            monster["hp"], monster["sp"] = monster["max_hp"], monster["max_sp"]
+            state["party"].append(monster)
+            self._event(state, "message", text=f"{monster['name']} joined your party.")
+        else:
+            raise GameError("Unknown party action.")
+
+    def _shop(self, state: dict, payload: dict) -> None:
+        self._lab_only(state)
+        item_id = payload.get("item")
+        if item_id not in SHOP:
+            raise GameError("That item is not sold here.")
+        quantity = _integer(payload, "quantity", 1, 1, 99)
+        cost = SHOP[item_id]["price"] * quantity
+        if state["credits"] < cost:
+            raise GameError("Not enough credits for this purchase.")
+        if state["inventory"].get(item_id, 0) + quantity > 999:
+            raise GameError("You can carry at most 999 of each capsule.")
+        state["credits"] -= cost
+        state["inventory"][item_id] = state["inventory"].get(item_id, 0) + quantity
+        self._event(state, "message", text=f"Purchased {quantity} x {SHOP[item_id]['name']} for {cost} credits.")
+
+    def _item(self, state: dict, payload: dict) -> None:
+        self._peace(state)
+        self._use_item(state, payload)
+
+    def _use_item(self, state: dict, payload: dict) -> None:
+        item_id = payload.get("item")
+        if item_id not in SHOP:
+            raise GameError("Unknown recovery capsule.")
+        if state["inventory"].get(item_id, 0) <= 0:
+            raise GameError("You do not have that capsule.")
+        index, monster = self._party_member(state, payload)
+        if monster["hp"] <= 0:
+            raise GameError("Capsules cannot revive a defeated partner. Use free DigiLab recovery.")
+        item = SHOP[item_id]
+        key = item["resource"]
+        amount = min(item["amount"], monster["max_" + key] - monster[key])
+        if amount <= 0:
+            raise GameError(f"{monster['name']} already has full {key.upper()}.")
+        monster[key] += amount
+        state["inventory"][item_id] -= 1
+        self._event(state, "heal", index=index, amount=amount,
+                    text=f"{monster['name']} recovered {amount} {key.upper()}.", resource=key)
+
+    def _travel(self, state: dict, payload: dict) -> None:
+        self._peace(state)
+        if state.get("in_lab"):
+            raise GameError("Return to the world before traveling.")
+        map_id = payload.get("map_id")
+        if map_id not in self.maps:
+            raise GameError("Unknown world area.")
+        area = self.maps[map_id]
+        x, y = area.get("spawn", [area.get("width", 1024) / 2, area.get("height", 768) / 2])
+        state.update(map_id=map_id, x=float(x), y=float(y))
+        self._event(state, "message", text=f"Arrived at {area['name']}. Wild level {area.get('level', 1)}.")

@@ -1,0 +1,97 @@
+# Display upgrade — v0.1.1 alpha
+
+This update changes the native Windows client's rendering, window controls, camera and display preferences. Text and interface shapes render at the window's actual pixel resolution. The game no longer relies on enlarging a fixed-size interface to fill a high-resolution display. Windows DPI awareness prevents Windows from applying its own blurry bitmap enlargement.
+
+The supplied sprite and x2 map artwork remains pixel art. Nearest-neighbor sampling keeps its colors and edges crisp; zooming does not invent extra artwork detail. A whole-level fit can use a fractional scale, so some source pixels occupy different numbers of screen pixels. Exact, uniform source-pixel replication occurs at integer enlargement factors. The game preserves map proportions rather than stretching a map to fill a widescreen window.
+
+## Upgrade an existing working installation
+
+If you downloaded the small **Display Upgrade Patch** instead of the complete source archive, first make a separate copy of your v0.1.0 **source** folder (the folder containing `BUILD_ALL.bat`, `venom`, `tools`, `data` and `assets`). Extract the patch and copy the contents of its `DigimonVenomNXT` folder into that source copy, merging folders and replacing the supplied files. The patch reuses your existing verified assets. Then follow steps 3–6 below. Do not apply source files directly over a compiled client, and do not rebuild over a live server's `dist` folder.
+
+1. Close the old client. Keep its complete working folder as a backup, especially its `config` folder containing `client.json` and `server-ca.pem`.
+2. Extract the new complete source archive into a separate folder. Use Windows 10/11 x64 and Python 3.11 or newer, 64-bit, as for the original build.
+3. Run `BUILD_ALL.bat` in the new source folder and wait for it to finish. It verifies source assets, installs build dependencies and creates `dist\Windows_Client_x64` and `dist\Windows_Server_x64`.
+4. Copy the complete new `dist\Windows_Client_x64` folder to your intended play location. Keep its new executable, `_internal`, `assets`, `data` and launcher together. Replacing only the EXE is insufficient because Python modules and dependencies also live in `_internal`.
+5. Copy your old client's `config` folder into the new client folder, replacing the initial placeholder configuration. Alternatively, extract your existing administrator-issued `Public_Player_Connection_Kit.zip` into the new client folder and merge its `config` directory.
+6. Start the new client's `PLAY_DIGIMON_VENOM_NXT.bat`. Sign in using your existing account, then open **Settings** or press **F10**.
+
+Your existing server, MySQL database, accounts, characters and certificates remain compatible. This display upgrade does not require database migration or repeating `02_SETUP_MYSQL.bat` or `03_SETUP_PUBLIC_HOSTING.bat`. Keep running the existing working server. A newly built server folder is provided by the common builder but is unnecessary for this client update.
+
+**Back up before rebuilding if you currently play or host directly from a `dist` folder.** `BUILD_ALL.bat` recreates its output folders; a fresh build must not be used as a substitute for backing up a configured live server. Building in a separate extracted source folder avoids replacing those files.
+
+For local development play, keep your existing local server running. Open a terminal in the newly built client folder and run:
+
+```bat
+PLAY_DIGIMON_VENOM_NXT.bat --dev
+```
+
+This connects the new native client to the existing localhost development server and its existing save. It does not require a new local server or a connection certificate. The configured client port still applies; the default is 8765. If you later move the development server to a different source folder, stop it first and preserve its `runtime\development.sqlite3` database and configuration before starting it from the new location. See `SETUP.md` for the original local and public setup procedures.
+
+## Set up a sharp 1080p or 4K display
+
+1. In Windows display settings, select the screen's intended resolution. For a 4K screen, use **3840 × 2160** when supported.
+2. Start the game and press **F11** or **Alt + Enter**. Fullscreen is borderless desktop fullscreen: it uses the current Windows desktop resolution. It does not change a 1920 × 1080 desktop into 4K automatically.
+3. Open **Settings** with **F10**. Leave **Interface size** on **Auto** initially. Auto uses 125% at a 1920 × 1080 drawable and 250% at 3840 × 2160. Controls and text render at the resulting native pixel sizes.
+4. Choose a different interface size if you prefer larger controls or more space. The effective scale is limited to keep the minimum 1180 × 800 logical layout visible. The bottom of Settings shows the actual drawable resolution and effective interface scale.
+5. Choose a **Frame limit** of 60, 120, 144, 165 or 240 FPS. The default is 120. A higher limit permits smoother rendering when your computer and display can keep up; it does not guarantee that frame rate or increase the monitor's refresh rate. Enable the **FPS counter** to inspect the actual result.
+
+Windowed mode remains resizable and provides presets for 1280 × 800, 1920 × 1080, 2560 × 1440 and 3840 × 2160. Interactive presets fit within the current monitor's usable area, so a 4K preset on a smaller desktop cannot strand the controls offscreen. The minimum physical window size is 960 × 600; the interface scales down to fit. Returning from fullscreen restores the previous window size. First launch opens at approximately 80% of the desktop; later launches use your saved size.
+
+## Explore with world zoom
+
+**1× means fit the entire current level into the field viewport.** Empty borders are intentional where map and viewport proportions differ. It does not mean one source pixel per screen pixel.
+
+Use the field's **−** and **+** buttons to move toward a wider or closer view, up to **8× relative to that fitted view**. The camera follows your tamer when zoomed in and stops at the map edges. The **Fit level** button or **0** key restores 1×.
+
+You can also use **+ / −** on the keyboard or roll the mouse wheel while the pointer is over the playable field. The wheel continues to scroll lists when browsing menus. Camera zoom affects the level and actors together; interface size affects menus and text independently. Battle layouts retain their own composition.
+
+## Display and sound settings
+
+| Control | Result |
+|---|---|
+| Settings / F10 | Open or close display and audio preferences |
+| F11 / Alt + Enter | Toggle borderless fullscreen |
+| Escape | Close settings or the current menu; open settings from an otherwise clear screen |
+| Interface size | Change interface scale, independently of field zoom |
+| Frame limit / FPS counter | Choose the render cap and inspect measured FPS |
+| World zoom / Fit level | Adjust the camera from whole-level 1× through close-up 8× |
+| Music volume / Effects volume | Adjust each sound category with 5% steps |
+| Music-note button | Mute or restore audio while retaining the chosen volume values |
+
+Settings changes apply immediately. Preferences are saved for the current Windows user at:
+
+```text
+%LOCALAPPDATA%\DigimonVenomNXT\display.json
+```
+
+This file contains window size, fullscreen mode, UI scale, FPS options, map zoom and audio volume. It contains no account password, MySQL password or certificate private key. Client connection details still come from the client folder's separate `config\client.json` and trusted CA file.
+
+To reset display preferences, close the game and rename `display.json` to `display-backup.json`, then start the game again. The client recreates safe defaults. If a settings file is unreadable, the game falls back to defaults and shows a settings warning. Preferences cannot be saved when their location is not writable; current settings still apply for that session.
+
+## Optional launch arguments
+
+Run these from the compiled client folder, or use the same arguments after `python -m venom.client.main` in a prepared source environment:
+
+```bat
+DigimonVenomNXT.exe --fullscreen --ui-scale auto --fps 120
+DigimonVenomNXT.exe --size 1920x1080 --ui-scale 1.25 --zoom 2
+DigimonVenomNXT.exe --settings "C:\Games\NXT\my-display.json"
+```
+
+`--size WIDTHxHEIGHT` selects the windowed size; it does not override the desktop resolution in fullscreen. `--ui-scale` accepts `auto`, a factor from `0.75` to `3`, or a percentage such as `150%`. The effective scale still fits the available window. `--zoom` accepts values from `1` to `8`. `--fps` accepts `60`, `120`, `144`, `165` or `240`. `--settings PATH` selects a separate preferences file; it is different from `--config`, which selects server connection configuration.
+
+Ordinary launches load saved preferences, then apply any supplied overrides. Offline `--demo` previews and automated `--frames` runs use reproducible defaults and do not read or write your usual preferences, unless an explicit `--settings` path is supplied.
+
+For an offline 4K rendering check from a prepared source environment:
+
+```bat
+python -m venom.client.main --demo --size 3840x2160 --ui-scale auto --zoom 2 --frames 60 --screenshot preview-4k.png
+```
+
+This is a visual preview, not a connection to the dedicated server and not saved gameplay.
+
+## Verification boundary
+
+The source includes automated checks for rendering, camera transforms, display preferences and existing gameplay/network behavior. Development verification uses Linux and headless SDL where appropriate. No precompiled or hardware-tested Windows executable is supplied by this source archive. The included Windows builder produces the executable on your Windows machine. Screenshots at 3840 × 2160 demonstrate rendering dimensions; they do not establish real monitor refresh behavior, Windows DPI transitions or a guaranteed performance level.
+
+The original alpha's gameplay and content limitations remain documented in `RELEASE_STATUS.md` and `MECHANICS.md`.

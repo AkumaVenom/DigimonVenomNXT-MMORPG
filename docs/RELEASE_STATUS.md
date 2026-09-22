@@ -1,0 +1,28 @@
+# Release status — 0.1.1 alpha
+
+This is a playable source release for a native desktop multiplayer RPG, with a Windows build pipeline. It is not a claim that every requested system has reached finished-MMO quality or exact Cyber Sleuth parity.
+
+Version 0.1.1 upgrades the client display and camera while preserving the v0.1.0 server protocol, database and gameplay content. Existing configured servers and accounts remain compatible. See `DISPLAY_UPGRADE.md` for upgrade and display setup instructions.
+
+| Area | Delivered | Boundary |
+|---|---|---|
+| Native client | Native-resolution SDL desktop rendering, Windows DPI awareness, borderless fullscreen, saved UI/frame/audio preferences, continuous movement/camera, animated tamers and follower, account/party/collection/shop/world/lab/battle screens | Windows binaries must be generated with the supplied builder on Windows; no precompiled or hardware-tested Windows EXE is supplied in this source archive |
+| Display/camera | Native-size text and shapes; nearest-neighbor artwork; whole-level 1× through close-up 8×; independent UI scale, fullscreen restoration and selectable frame caps | Fullscreen uses the current desktop resolution. Original artwork detail is unchanged. Fractional map-fit scales can sample source pixels unevenly; uniform pixel replication requires integer enlargement. No guaranteed hardware frame rate or Windows DPI acceptance result is claimed |
+| Dedicated server | Authoritative WebSocket world, accounts, collision, battles and durable actions; shared players and chat | A single world process; no proven large-population capacity, clustering or operator dashboard |
+| Persistence | MySQL/MariaDB schema and configurable setup; parameterized queries, password hashing, session leases, revisions | Actual database-daemon provisioning was not exercised here; local integration uses the separate SQLite development backend |
+| Public hosting | CA-signed SAN server certificate, bundled client CA trust, hostname validation, private-key exclusion from public kit | Administrator supplies a reachable hostname/IP and network forwarding; hosting setup does not alter ISP/router/DNS |
+| Maps | All 351 supplied PNG layers, composed into 254 playable map destinations at supplied x2 resolution; original per-pixel collision | Sector numbers are source IDs, not a restored named story world; travel menu replaces authored story/portal progression |
+| Tamers | 64 original human appearances, eight directions, four movement frames per direction with ROM timing/flip metadata | Some appearances use descriptive/source-index labels; no complete story NPC behavior |
+| Digimon artwork | All 16,028 supplied PNGs preserved; 1,004 normal/Paradox playable records | Automatic selection of battle poses is not hand-authored animation metadata for every form; sparse forms reuse supplied idle art |
+| Battle visuals | Attack motion, hit reactions, fading damage and effectiveness, procedural particles and 96 decoded original effect sequences | 121 ambiguous compound ROM effect groups require further decoding; authentic exported pixels use approximate timing |
+| Sound | All 46 music sequences and 183 effect sequences rendered from the actual ROM samples, with 703 sample exports | Envelopes/modulation are approximations, music loops have render/fade boundaries, and two undefined drum-note references in bgm00 are reported |
+| Combat/collection | Speed turns, up to three active partners vs one to three enemies, six-member party, storage, scan/materialize, original move costs, free attacks, type/attribute modifiers, levels/ABI/CAM, evolution/devolution | Stats, growth, generic move lists and many routes are original balance, not a verified complete Cyber Sleuth dataset |
+| Paradox | Separate artwork/scan records; 2.5% chance per encounter to contain a variant; 5% scan per defeat | Custom variants have custom balance; collecting them is deliberately substantially slower |
+| Recovery/shop | One-button lab entry/heal, exact-position return, six HP/SP capsule sizes | Lab is unavailable during an active battle; Flee then enter |
+| Other systems | Shared-world multiplayer foundation | Full Cyber Sleuth story, DigiFarm, personalities, all statuses/support/moves, exact canonical evolution requirements and other advanced content remain unfinished; tamer bots were intentionally deferred as requested |
+
+## Validation interpretation
+
+Automated gameplay, catalog, persistence, networking, setup/TLS, extraction and native rendering checks are shipped. Real local WSS tests use the actual imported catalog and two accounts. They verify the connection-kit trust path, wrong-certificate/hostname rejection, movement, collisions, scan rewards, lab/shop flow and saved relogin. They are not a substitute for a Windows acceptance test, live XAMPP test or population load test.
+
+The content verifier checks SHA-256 and size for every runtime asset and gameplay metadata file, and checks catalog references before building. It detects corruption; it cannot certify that every source artwork component or provisional balance value matches the original games' intended semantics.

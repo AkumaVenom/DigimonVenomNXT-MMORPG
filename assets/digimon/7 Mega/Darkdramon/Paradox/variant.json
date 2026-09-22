@@ -1,0 +1,23 @@
+{
+  "variant_id": "paradox_darkdramon",
+  "display_name": "Paradox Darkdramon",
+  "base_species": "Darkdramon",
+  "stage": "7 Mega",
+  "status": "ready",
+  "materializable": true,
+  "boss_eligible": true,
+  "primary_sprite": "7 Mega/Darkdramon/Paradox/Darkdramon_Paradox_Primary.png",
+  "source_primary": "7 Mega/Darkdramon/Darkdramon_Primary.png",
+  "source_sprite_count": 26,
+  "paradox_sprite_count": 26,
+  "style_profile": "Cyber Paradox Corruption v1",
+  "style_features": [
+    "violet/black data infection",
+    "cyan/magenta chromatic ghosts",
+    "digital displacement",
+    "angular data-void fractures",
+    "circuit cracks",
+    "transparent neon aura"
+  ],
+  "animation_alignment": "exact source canvas dimensions preserved"
+}

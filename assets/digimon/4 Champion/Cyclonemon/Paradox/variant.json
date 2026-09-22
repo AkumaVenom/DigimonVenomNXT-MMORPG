@@ -1,0 +1,23 @@
+{
+  "variant_id": "paradox_cyclonemon",
+  "display_name": "Paradox Cyclonemon",
+  "base_species": "Cyclonemon",
+  "stage": "4 Champion",
+  "status": "ready",
+  "materializable": true,
+  "boss_eligible": true,
+  "primary_sprite": "4 Champion/Cyclonemon/Paradox/Cyclonemon_Paradox_Primary.png",
+  "source_primary": "4 Champion/Cyclonemon/Cyclonemon_Idle.png",
+  "source_sprite_count": 2,
+  "paradox_sprite_count": 3,
+  "style_profile": "Cyber Paradox Corruption v1",
+  "style_features": [
+    "violet/black data infection",
+    "cyan/magenta chromatic ghosts",
+    "digital displacement",
+    "angular data-void fractures",
+    "circuit cracks",
+    "transparent neon aura"
+  ],
+  "animation_alignment": "exact source canvas dimensions preserved"
+}

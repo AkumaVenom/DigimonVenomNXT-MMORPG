@@ -1,0 +1,23 @@
+{
+  "variant_id": "paradox_snimon",
+  "display_name": "Paradox Snimon",
+  "base_species": "Snimon",
+  "stage": "4 Champion",
+  "status": "ready",
+  "materializable": true,
+  "boss_eligible": true,
+  "primary_sprite": "4 Champion/Snimon/Paradox/Snimon_Paradox_Primary.png",
+  "source_primary": "4 Champion/Snimon/Snimon_Primary.png",
+  "source_sprite_count": 22,
+  "paradox_sprite_count": 22,
+  "style_profile": "Cyber Paradox Corruption v1",
+  "style_features": [
+    "violet/black data infection",
+    "cyan/magenta chromatic ghosts",
+    "digital displacement",
+    "angular data-void fractures",
+    "circuit cracks",
+    "transparent neon aura"
+  ],
+  "animation_alignment": "exact source canvas dimensions preserved"
+}

@@ -1,0 +1,23 @@
+{
+  "variant_id": "paradox_pipismon",
+  "display_name": "Paradox Pipismon",
+  "base_species": "Pipismon",
+  "stage": "6 Armor",
+  "status": "ready",
+  "materializable": true,
+  "boss_eligible": true,
+  "primary_sprite": "6 Armor/Pipismon/Paradox/Pipismon_Paradox_Primary.png",
+  "source_primary": "6 Armor/Pipismon/Pipismon_Primary.png",
+  "source_sprite_count": 21,
+  "paradox_sprite_count": 21,
+  "style_profile": "Cyber Paradox Corruption v1",
+  "style_features": [
+    "violet/black data infection",
+    "cyan/magenta chromatic ghosts",
+    "digital displacement",
+    "angular data-void fractures",
+    "circuit cracks",
+    "transparent neon aura"
+  ],
+  "animation_alignment": "exact source canvas dimensions preserved"
+}

@@ -1,0 +1,23 @@
+{
+  "variant_id": "paradox_karatenmon",
+  "display_name": "Paradox Karatenmon",
+  "base_species": "Karatenmon",
+  "stage": "5 Ultimate",
+  "status": "ready",
+  "materializable": true,
+  "boss_eligible": true,
+  "primary_sprite": "5 Ultimate/Karatenmon/Paradox/Karatenmon_Paradox_Primary.png",
+  "source_primary": "5 Ultimate/Karatenmon/Karatenmon_Primary.png",
+  "source_sprite_count": 21,
+  "paradox_sprite_count": 21,
+  "style_profile": "Cyber Paradox Corruption v1",
+  "style_features": [
+    "violet/black data infection",
+    "cyan/magenta chromatic ghosts",
+    "digital displacement",
+    "angular data-void fractures",
+    "circuit cracks",
+    "transparent neon aura"
+  ],
+  "animation_alignment": "exact source canvas dimensions preserved"
+}

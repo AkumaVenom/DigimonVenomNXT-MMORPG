@@ -1,0 +1,23 @@
+{
+  "variant_id": "paradox_diaboromon",
+  "display_name": "Paradox Diaboromon",
+  "base_species": "Diaboromon",
+  "stage": "7 Mega",
+  "status": "ready",
+  "materializable": true,
+  "boss_eligible": true,
+  "primary_sprite": "7 Mega/Diaboromon/Paradox/Diaboromon_Paradox_Primary.png",
+  "source_primary": "7 Mega/Diaboromon/Diaboromon_Primary.png",
+  "source_sprite_count": 21,
+  "paradox_sprite_count": 21,
+  "style_profile": "Cyber Paradox Corruption v1",
+  "style_features": [
+    "violet/black data infection",
+    "cyan/magenta chromatic ghosts",
+    "digital displacement",
+    "angular data-void fractures",
+    "circuit cracks",
+    "transparent neon aura"
+  ],
+  "animation_alignment": "exact source canvas dimensions preserved"
+}

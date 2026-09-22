@@ -1,0 +1,23 @@
+{
+  "variant_id": "paradox_shinegreymonburstmode",
+  "display_name": "Paradox ShineGreymonBurstMode",
+  "base_species": "ShineGreymonBurstMode",
+  "stage": "8 Ultra",
+  "status": "ready",
+  "materializable": true,
+  "boss_eligible": true,
+  "primary_sprite": "8 Ultra/ShineGreymonBurstMode/Paradox/ShineGreymonBurstMode_Paradox_Primary.png",
+  "source_primary": "8 Ultra/ShineGreymonBurstMode/ShineGreymonBurstMode_Primary.png",
+  "source_sprite_count": 22,
+  "paradox_sprite_count": 22,
+  "style_profile": "Cyber Paradox Corruption v1",
+  "style_features": [
+    "violet/black data infection",
+    "cyan/magenta chromatic ghosts",
+    "digital displacement",
+    "angular data-void fractures",
+    "circuit cracks",
+    "transparent neon aura"
+  ],
+  "animation_alignment": "exact source canvas dimensions preserved"
+}

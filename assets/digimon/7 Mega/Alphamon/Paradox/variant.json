@@ -1,0 +1,23 @@
+{
+  "variant_id": "paradox_alphamon",
+  "display_name": "Paradox Alphamon",
+  "base_species": "Alphamon",
+  "stage": "7 Mega",
+  "status": "ready",
+  "materializable": true,
+  "boss_eligible": true,
+  "primary_sprite": "7 Mega/Alphamon/Paradox/Alphamon_Paradox_Primary.png",
+  "source_primary": "7 Mega/Alphamon/Alphamon_Primary.png",
+  "source_sprite_count": 22,
+  "paradox_sprite_count": 22,
+  "style_profile": "Cyber Paradox Corruption v1",
+  "style_features": [
+    "violet/black data infection",
+    "cyan/magenta chromatic ghosts",
+    "digital displacement",
+    "angular data-void fractures",
+    "circuit cracks",
+    "transparent neon aura"
+  ],
+  "animation_alignment": "exact source canvas dimensions preserved"
+}

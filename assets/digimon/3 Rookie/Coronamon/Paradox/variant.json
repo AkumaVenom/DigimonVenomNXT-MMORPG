@@ -1,0 +1,23 @@
+{
+  "variant_id": "paradox_coronamon",
+  "display_name": "Paradox Coronamon",
+  "base_species": "Coronamon",
+  "stage": "3 Rookie",
+  "status": "ready",
+  "materializable": true,
+  "boss_eligible": true,
+  "primary_sprite": "3 Rookie/Coronamon/Paradox/Coronamon_Paradox_Primary.png",
+  "source_primary": "3 Rookie/Coronamon/Coronamon_Idle.png",
+  "source_sprite_count": 6,
+  "paradox_sprite_count": 7,
+  "style_profile": "Cyber Paradox Corruption v1",
+  "style_features": [
+    "violet/black data infection",
+    "cyan/magenta chromatic ghosts",
+    "digital displacement",
+    "angular data-void fractures",
+    "circuit cracks",
+    "transparent neon aura"
+  ],
+  "animation_alignment": "exact source canvas dimensions preserved"
+}

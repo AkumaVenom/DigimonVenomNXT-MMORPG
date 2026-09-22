@@ -1,0 +1,23 @@
+{
+  "variant_id": "paradox_garbagemon",
+  "display_name": "Paradox Garbagemon",
+  "base_species": "Garbagemon",
+  "stage": "5 Ultimate",
+  "status": "ready",
+  "materializable": true,
+  "boss_eligible": true,
+  "primary_sprite": "5 Ultimate/Garbagemon/Paradox/Garbagemon_Paradox_Primary.png",
+  "source_primary": "5 Ultimate/Garbagemon/Garbagemon_Primary.png",
+  "source_sprite_count": 21,
+  "paradox_sprite_count": 21,
+  "style_profile": "Cyber Paradox Corruption v1",
+  "style_features": [
+    "violet/black data infection",
+    "cyan/magenta chromatic ghosts",
+    "digital displacement",
+    "angular data-void fractures",
+    "circuit cracks",
+    "transparent neon aura"
+  ],
+  "animation_alignment": "exact source canvas dimensions preserved"
+}

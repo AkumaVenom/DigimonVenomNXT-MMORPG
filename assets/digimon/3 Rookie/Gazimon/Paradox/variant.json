@@ -1,0 +1,23 @@
+{
+  "variant_id": "paradox_gazimon",
+  "display_name": "Paradox Gazimon",
+  "base_species": "Gazimon",
+  "stage": "3 Rookie",
+  "status": "ready",
+  "materializable": true,
+  "boss_eligible": true,
+  "primary_sprite": "3 Rookie/Gazimon/Paradox/Gazimon_Paradox_Primary.png",
+  "source_primary": "3 Rookie/Gazimon/Gazimon_Idle.png",
+  "source_sprite_count": 3,
+  "paradox_sprite_count": 4,
+  "style_profile": "Cyber Paradox Corruption v1",
+  "style_features": [
+    "violet/black data infection",
+    "cyan/magenta chromatic ghosts",
+    "digital displacement",
+    "angular data-void fractures",
+    "circuit cracks",
+    "transparent neon aura"
+  ],
+  "animation_alignment": "exact source canvas dimensions preserved"
+}

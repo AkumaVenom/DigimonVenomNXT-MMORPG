@@ -1,0 +1,23 @@
+{
+  "variant_id": "paradox_weedmon",
+  "display_name": "Paradox Weedmon",
+  "base_species": "Weedmon",
+  "stage": "4 Champion",
+  "status": "ready",
+  "materializable": true,
+  "boss_eligible": true,
+  "primary_sprite": "4 Champion/Weedmon/Paradox/Weedmon_Paradox_Primary.png",
+  "source_primary": "4 Champion/Weedmon/Weedmon_Primary.png",
+  "source_sprite_count": 21,
+  "paradox_sprite_count": 21,
+  "style_profile": "Cyber Paradox Corruption v1",
+  "style_features": [
+    "violet/black data infection",
+    "cyan/magenta chromatic ghosts",
+    "digital displacement",
+    "angular data-void fractures",
+    "circuit cracks",
+    "transparent neon aura"
+  ],
+  "animation_alignment": "exact source canvas dimensions preserved"
+}

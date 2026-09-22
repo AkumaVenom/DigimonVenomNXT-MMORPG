@@ -1,0 +1,23 @@
+{
+  "variant_id": "paradox_tekkamon",
+  "display_name": "Paradox Tekkamon",
+  "base_species": "Tekkamon",
+  "stage": "5 Ultimate",
+  "status": "ready",
+  "materializable": true,
+  "boss_eligible": true,
+  "primary_sprite": "5 Ultimate/Tekkamon/Paradox/Tekkamon_Paradox_Primary.png",
+  "source_primary": "5 Ultimate/Tekkamon/Tekkamon_Primary.png",
+  "source_sprite_count": 26,
+  "paradox_sprite_count": 26,
+  "style_profile": "Cyber Paradox Corruption v1",
+  "style_features": [
+    "violet/black data infection",
+    "cyan/magenta chromatic ghosts",
+    "digital displacement",
+    "angular data-void fractures",
+    "circuit cracks",
+    "transparent neon aura"
+  ],
+  "animation_alignment": "exact source canvas dimensions preserved"
+}

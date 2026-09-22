@@ -1,0 +1,23 @@
+{
+  "variant_id": "paradox_ponchomon",
+  "display_name": "Paradox Ponchomon",
+  "base_species": "Ponchomon",
+  "stage": "6 Armor",
+  "status": "ready",
+  "materializable": true,
+  "boss_eligible": true,
+  "primary_sprite": "6 Armor/Ponchomon/Paradox/Ponchomon_Paradox_Primary.png",
+  "source_primary": "6 Armor/Ponchomon/Ponchomon_Primary.png",
+  "source_sprite_count": 21,
+  "paradox_sprite_count": 21,
+  "style_profile": "Cyber Paradox Corruption v1",
+  "style_features": [
+    "violet/black data infection",
+    "cyan/magenta chromatic ghosts",
+    "digital displacement",
+    "angular data-void fractures",
+    "circuit cracks",
+    "transparent neon aura"
+  ],
+  "animation_alignment": "exact source canvas dimensions preserved"
+}

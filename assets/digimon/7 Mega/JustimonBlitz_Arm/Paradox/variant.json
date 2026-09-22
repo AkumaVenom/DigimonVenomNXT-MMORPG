@@ -1,0 +1,23 @@
+{
+  "variant_id": "paradox_justimonblitz_arm",
+  "display_name": "Paradox JustimonBlitz_Arm",
+  "base_species": "JustimonBlitz_Arm",
+  "stage": "7 Mega",
+  "status": "ready",
+  "materializable": true,
+  "boss_eligible": true,
+  "primary_sprite": "7 Mega/JustimonBlitz_Arm/Paradox/JustimonBlitz_Arm_Paradox_Primary.png",
+  "source_primary": "7 Mega/JustimonBlitz_Arm/JustimonBlitz_Arm_Primary.png",
+  "source_sprite_count": 23,
+  "paradox_sprite_count": 23,
+  "style_profile": "Cyber Paradox Corruption v1",
+  "style_features": [
+    "violet/black data infection",
+    "cyan/magenta chromatic ghosts",
+    "digital displacement",
+    "angular data-void fractures",
+    "circuit cracks",
+    "transparent neon aura"
+  ],
+  "animation_alignment": "exact source canvas dimensions preserved"
+}
