@@ -15,6 +15,7 @@ from .display import DisplayManager
 from .world import WorldRenderer
 from .settings_panel import SettingsPanel
 from .icon import get_icon
+from .community import CommunityPanel
 
 
 class App:
@@ -70,6 +71,7 @@ class App:
         self.camera = pygame.Vector2()
         self.last_snapshot = 0.
         self.world = WorldRenderer(self)
+        self.community = CommunityPanel(self)
         if args.demo:
             self.make_demo()
         else:
@@ -143,7 +145,7 @@ class App:
         # Movement does not require a pending state; authoritative updates arrive asynchronously.
         if op in ('login', 'register'):
             self.auth_pending = True
-        elif op != 'move' and op != 'ping':
+        elif op not in ('move', 'ping', 'community'):
             self.action_pending = True
         return rid
 
@@ -176,6 +178,7 @@ class App:
                 self.status = message.get('error', 'Connection error')
                 self.auth_pending = self.action_pending = False
                 self._motion.reset()
+                self.community.disconnected()
                 self.toast(self.status, RED)
             elif op == 'chat':
                 self.log(f"{message.get('username', 'World')}: {message.get('text', '')}", CYAN)
@@ -190,13 +193,17 @@ class App:
                     self._motion.transition_pending = None
                 if request in ('register', 'login'):
                     self.auth_pending = False
-                elif request != 'move':
+                elif request not in ('move', 'community'):
                     self.action_pending = False
                 if not message.get('ok', False):
+                    if request == 'community':
+                        self.community.failed(rid, str(message.get('error', 'Request could not be completed.')))
                     self._motion.pending.pop(rid, None)
                     self.status = str(message.get('error', 'Request could not be completed.'))
                     self.toast(self.status, RED)
                     continue
+                if message.get('community'):
+                    self.community.receive(message['community'], rid)
                 position = message.get('position')
                 if position and self.state:
                     self.state.update({k:position[k] for k in ('map_id','x','y') if k in position})
@@ -276,6 +283,7 @@ class App:
         self.state = None
         self.players.clear()
         self.menu = None
+        self.community.reset()
         self.ui.values['password'] = ''
         self.connect()
 
@@ -301,12 +309,14 @@ class App:
             self._motion = MovementPredictor()
         self.now = pygame.time.get_ticks()/1000
         self.poll()
+        self.community.update(dt)
         self.toasts = [t for t in self.toasts if t[2] > self.now]
         self.animations = [a for a in self.animations if a['start']+a['duration'] > self.now]
         if not self.state:
             self.audio.music()
             return
-        self.audio.music(bool(self.state.get('battle')), self.state.get('map_id'), self.state.get('in_lab', False))
+        self.audio.music(bool(self.state.get('battle') or self.community.visible and self.community.replay),
+                         self.state.get('map_id'), self.state.get('in_lab', False))
         map_id = self.state.get('map_id')
         if self.last_map != map_id:
             self.last_map = map_id
@@ -431,6 +441,9 @@ class App:
             elif event.key == pygame.K_m: self.set_menu('maps')
             elif event.key in (pygame.K_TAB, pygame.K_j): self.set_menu('dex')
             elif event.key == pygame.K_p: self.set_menu('party')
+            elif event.key == pygame.K_r: self.community.open('ranked')
+            elif event.key == pygame.K_v: self.community.open('rivals')
+            elif event.key == pygame.K_o: self.community.open('activity')
             elif event.key == pygame.K_e and not self.menu and not self.state.get('battle'): self.send('encounter')
             elif event.key == pygame.K_SPACE and self.state.get('battle'): self.battle_action('attack')
             elif event.key in (pygame.K_PLUS, pygame.K_EQUALS, pygame.K_KP_PLUS) and self.field_visible(): self.change_zoom(.5)
@@ -490,7 +503,7 @@ class App:
             draw.ellipse(self.screen, (20, 55, 64), (bx-40, by+38, 80, 18))
             surface = self.assets.sprite(entry['id'], (96, 105))
             if surface: self.screen.blit(surface, surface.get_rect(midbottom=(bx, by+48)))
-        text(self.screen, self.assets, 'NATIVE WINDOWS CLIENT  /  ALPHA 0.1.1', (left.x, left.bottom-32), 13, MUTED)
+        text(self.screen, self.assets, 'NATIVE WINDOWS CLIENT  /  ALPHA 0.2.0', (left.x, left.bottom-32), 13, MUTED)
         self.ui.button((left.x, left.bottom+5, 142, 34), 'Settings  F10', self.toggle_settings, small=True)
         text(self.screen, self.assets, 'F11  /  FULLSCREEN', (left.x+160, left.bottom+16), 11, CYAN)
         card = pygame.Rect(w-540, 58, 490, h-116)
@@ -577,7 +590,15 @@ class App:
         text(self.screen, self.assets, self.state.get('username', ''), (w-263, 43), 12, MUTED, max_width=120)
         self.ui.button((w-128, 17, 42, 40), '♪' if self.audio.enabled else '♫', self.audio.toggle)
         self.ui.button((w-77, 17, 55, 40), 'Exit', self.logout, small=True)
+        for index, (name, label) in enumerate((('ranked', 'Ranked Arena  R'), ('rivals', 'Rivals Hub  V'), ('activity', 'Bot Activity  O'))):
+            self.ui.button((22+index*148, 66, 138, 23), label,
+                           lambda tab=name: self.community.open(tab), small=True,
+                           selected=self.menu == 'community' and self.community.tab == name,
+                           disabled=bool(self.state.get('battle')))
         self.viewport = pygame.Rect(20, 94, w-352, h-262)
+        if self.menu == 'community':
+            self.community.draw(pygame.Rect(20, 98, w-40, h-118))
+            return
         if self.state.get('battle') or self.battle_old and self.now < self.battle_until:
             self.draw_battle()
         elif self.state.get('in_lab'):

@@ -29,6 +29,10 @@ The client reads `config/client.json` and trusts only the bundled `config/server
 | P / Partners | Inspect stats, choose a leader, manage storage and evolution |
 | B / Shop | Buy and use HP/SP capsules |
 | M / Worlds | Search and transfer to an imported world map |
+| R / Ranked Arena | Open ranked opponents, season/career ladders and rewards |
+| V / Rivals Hub | View nearby rivals, invitations, rival directory and head-to-head history |
+| O / Bot Activity | View population activity, totals and the latest 100 events |
+| Click a rival tamer | Inspect that rival's party, progress, location and record |
 | Enter | Focus the world chat field; Enter again sends your message |
 | Escape | Close the current menu/settings; open settings from a clear screen |
 | Settings / F10 | Open or close display and audio preferences |
@@ -38,7 +42,17 @@ The client reads `config/client.json` and trusts only the bundled `config/server
 | Mouse wheel | Zoom over the playable field; scroll lists and appearance selectors elsewhere |
 | Music note | Mute or restore audio |
 
-Walking also triggers encounters after sufficient travel. Map collision is enforced on the dedicated server and predicted locally. The lead partner follows your tamer; other players in the same zone appear in real time. Typing, menus, battles and lab visits suspend field movement.
+Walking also triggers encounters after sufficient travel. Map collision is enforced on the dedicated server and predicted locally. The lead partner follows your tamer; other players and AI rivals in the same zone use shared server positions. AI tamers are identified as rivals rather than presented as human players. Typing, menus, battles and lab visits suspend field movement.
+
+## Ranked battles and tamer rivals
+
+**Ranked Arena / R** opens the Battle Park system and displays your DigiRuby balance, season points, earned grade, season/career wins and losses, recovering battle energy, and opponents. Ranked matches automatically resolve against saved defender teams using the actual partners' stats, SP, skills and type/attribute matchups. The first three partners start; up to three reserves replace defeated partners. Both teams use restored copies, so an arena battle does not spend your field HP/SP or consume inventory. You prepare the team before entering; arena turns are automatic. During the replay, **1× playback** toggles 2× speed; **Show result** skips the remaining replay. **Return to hub** leaves the result screen.
+
+The default season changes on **Monday at 00:00 UTC**. Start and complete at least one ranked attack that season to qualify for automatic DigiRuby rewards; passive defenses alone do not qualify. Use **My arena**, **Top 100** and **Season history** to browse your competition. The ladder offers **Current season**, **Overall career** and **Past seasons**. A points threshold opens a promotion opportunity; a subsequent attacking win earns the next grade. The complete points, energy and reward tables are in `RIVALS_AND_RANKED.md`.
+
+**Rivals Hub / V** offers **Challenges**, **Rival directory** and **Battle history**. Accept or decline a bot invitation, or inspect a nearby map rival and choose **Challenge rival**. **Find rival** searches the directory; **Prev / Next** browse pages of 50. The server checks availability and location when a challenge starts, so a rival who has moved away or entered another activity may ask you to try again. Friendly challenges do not consume ranked energy or change ranked points, ranked records or rewards; they do update head-to-head history.
+
+**Bot Activity / O** offers **Live activity** and **Map population**. It shows population, activity phases, map distribution and cumulative counters, including wild/ranked wins and losses, scan data, materializations, earned levels, evolution, recovery, purchases and travel. Use **More counters** for additional totals and **All / Wild / Ranked / Progress / Travel** to filter the latest 100 events. Fresh bots start with one Rookie at a sector-appropriate seed level; this initial level is shown separately from levels actually earned through training. Walking positions and activity come from the server, so different clients see the same population. **Escape** or **Field** closes a community screen.
 
 ## Battles
 

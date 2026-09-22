@@ -15,6 +15,7 @@ import venv
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
+BUILD_VERSION = "0.2.0-alpha"
 
 
 def safe_asset(root: Path, name: str) -> Path:
@@ -153,7 +154,10 @@ def build(args) -> None:
         copy_tree(ROOT / "data", destination / "data")
         (destination / "config").mkdir(exist_ok=True)
         (destination / "docs").mkdir(exist_ok=True)
-        shutil.copy2(ROOT / "docs/SETUP.md", destination / "docs/SETUP.md")
+        for name in ("SETUP.md", "RIVALS_UPGRADE.md", "RIVALS_AND_RANKED.md",
+                     "REARISE_RULES_RESEARCH.md", "RELEASE_STATUS.md", "VALIDATION.md",
+                     "RIVALS_BENCHMARK.md", "RIVALS_BENCHMARK.json"):
+            shutil.copy2(ROOT / "docs" / name, destination / "docs" / name)
     for name in ("CONTROLS.md", "DISPLAY_UPGRADE.md"):
         if (ROOT / "docs" / name).is_file():
             shutil.copy2(ROOT / "docs" / name, client / "docs" / name)
@@ -173,14 +177,43 @@ def build(args) -> None:
     shutil.copy2(ROOT / "PLAY_DIGIMON_VENOM_NXT.bat", client / "PLAY_DIGIMON_VENOM_NXT.bat")
     client_config = {"host": "localhost", "port": 8765, "ca_file": "config/server-ca.pem", "server_name": "localhost", "tls": True}
     (client / "config/client.json").write_text(json.dumps(client_config, indent=2) + "\n", encoding="utf-8")
-    (client / "READ_ME_FIRST.txt").write_text("For a new server, the host runs 02_SETUP_MYSQL.bat and 03_SETUP_PUBLIC_HOSTING.bat first.\nExtract Public_Player_Connection_Kit.zip INTO this client folder, merging its config folder and replacing client.json.\nThen run PLAY_DIGIMON_VENOM_NXT.bat. No Python installation or manual certificate trust is needed for this built client.\nExisting server: reuse the current public connection kit/config; no database or certificate setup is needed for this client update.\nF10: display, sound and performance settings. F11: fullscreen/windowed.\n", encoding="utf-8")
-    (server / "READ_ME_FIRST.txt").write_text("1. Start MySQL/MariaDB in XAMPP.\n2. Run 02_SETUP_MYSQL.bat. Existing XAMPP root passwords are preserved.\n3. Run 03_SETUP_PUBLIC_HOSTING.bat. Share only the generated public player connection kit plus the client.\n4. Run START_WORLD_SERVER_CONSOLE.bat. Forward the selected TCP port to this machine if hosting over the Internet.\nNever share the server folder: it contains database credentials and private certificate keys.\n", encoding="utf-8")
-    metadata = {"version": "0.1.1-alpha", "platform": "Windows-x64", "python": platform.python_version(), "assets": verified}
+    (client / "READ_ME_FIRST.txt").write_text(
+        "DIGIMON VENOM NXT 0.2.0 - CLIENT\n\n"
+        "Start the game: PLAY_DIGIMON_VENOM_NXT.bat\n"
+        "This release needs the updated 0.2.0 server for rivals and ranked battles.\n"
+        "Existing installation: copy your existing client config folder into this complete new client folder.\n"
+        "Keep its client.json and trusted server-ca.pem. Your saved display preferences remain in Local AppData.\n"
+        "New installation: extract the host's Public_Player_Connection_Kit.zip INTO this folder, merging config.\n"
+        "Built clients need no Python installation or manual Windows certificate trust.\n"
+        "R: Ranked Arena. V: Rivals Hub. O: Bot Activity. Click a map rival to inspect them.\n"
+        "F10: display/audio settings. F11: fullscreen/windowed.\n"
+        "Upgrade steps: docs/RIVALS_UPGRADE.md. Game rules: docs/RIVALS_AND_RANKED.md.\n",
+        encoding="utf-8")
+    (server / "READ_ME_FIRST.txt").write_text(
+        "DIGIMON VENOM NXT 0.2.0 - DEDICATED SERVER\n\n"
+        "START THE SERVER: START_WORLD_SERVER_CONSOLE.bat\n\n"
+        "UPGRADE FROM A WORKING SERVER\n"
+        "1. Stop the old world server and back up its database and entire private config folder.\n"
+        "2. Copy that config folder into this complete new server folder, preserving credentials and all TLS keys.\n"
+        "3. Start MySQL/MariaDB in XAMPP, then run START_WORLD_SERVER_CONSOLE.bat.\n"
+        "4. Wait for the rival population to finish starting, then use the updated client.\n"
+        "The new tables are created automatically; accounts and passwords are retained.\n"
+        "Do not rerun 02/03 setup just for this upgrade. See docs/RIVALS_UPGRADE.md.\n\n"
+        "FRESH INSTALLATION\n"
+        "1. Start MySQL/MariaDB in XAMPP.\n"
+        "2. Run 02_SETUP_MYSQL.bat and enter the existing XAMPP administrator password.\n"
+        "3. Run 03_SETUP_PUBLIC_HOSTING.bat; apply its public connection kit to the client.\n"
+        "4. Run START_WORLD_SERVER_CONSOLE.bat. Forward the selected TCP port for Internet hosting.\n\n"
+        "Default population: 5,000 rivals. Configure rivals.count / rivals.enabled in config/server.json.\n"
+        "Keep the whole server folder private: it contains database credentials and certificate private keys.\n"
+        "Only share the configured client and public player connection kit.\n",
+        encoding="utf-8")
+    metadata = {"version": BUILD_VERSION, "platform": "Windows-x64", "python": platform.python_version(), "assets": verified}
     for directory in (client, server):
         (directory / "build-info.json").write_text(json.dumps(metadata, indent=2) + "\n", encoding="utf-8")
     for directory in (client, server):
         archive(directory, output / f"{directory.name}.zip")
-    print("\nBuild complete. Independent packages:\n  dist/Windows_Client_x64.zip\n  dist/Windows_Server_x64.zip\nRun the numbered setup files inside the server distribution before starting the server.", flush=True)
+    print("\nBuild complete. Independent packages:\n  dist/Windows_Client_x64.zip\n  dist/Windows_Server_x64.zip\nNew host: run 02/03 setup in the server folder. Existing host: follow docs/RIVALS_UPGRADE.md and preserve your config.\nStart the server with START_WORLD_SERVER_CONSOLE.bat; this release updates BOTH server and client.", flush=True)
 
 
 def main(argv=None):

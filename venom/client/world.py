@@ -109,6 +109,7 @@ class WorldRenderer:
         self._sprite_bytes = 0
         self._mini_key = None
         self._mini_surface = None
+        self._facings = {}
 
     @property
     def zoom(self):
@@ -185,7 +186,7 @@ class WorldRenderer:
                 self._sprite_bytes -= old[2]
         return scaled
 
-    def _draw_actor(self, kind, world_pos, ident, moving, direction, label):
+    def _draw_actor(self, kind, world_pos, ident, moving, direction, label, bot_id=None):
         app, scale = self.app, self.camera.scale
         pos = self.camera.world_to_screen(world_pos)
         if not self.camera.viewport.inflate(round(180 * scale), round(180 * scale)).collidepoint(pos):
@@ -196,6 +197,7 @@ class WorldRenderer:
         source = (app.assets.tamer(ident, direction, moving, app.now, (64, 80)) if kind == 'tamer'
                   else app.assets.sprite(ident, (58, 64), 'walk' if moving else 'idle', app.now))
         top = pos.y - 64 * scale
+        destination = pygame.Rect(round(pos.x-16*scale), round(top), max(8, round(32*scale)), max(8, round(64*scale)))
         if source:
             sprite = self._scale_sprite(source)
             appearance = app.assets.tamers.get(ident, {}) if kind == 'tamer' else {}
@@ -210,6 +212,20 @@ class WorldRenderer:
                 destination = sprite.get_rect(midbottom=(round(pos.x), round(pos.y)))
             self._surface.blit(sprite, destination)
             top = destination.top
+        if bot_id is not None and hasattr(app, 'community'):
+            # Hit areas use the same interpolated foot anchor and camera transform
+            # as the rendered sprite, including at fractional DPI and map zoom.
+            target = app.screen.to_logical_rect(destination).inflate(10, 8)
+            target = target.clip(app.screen.to_logical_rect(self.camera.viewport))
+            if target.width and target.height:
+                app.ui.actions.append((target, lambda ident=bot_id: app.community.open_profile(ident)))
+            hover = target.collidepoint(app.ui.mouse)
+            if self.zoom < 2 and not hover:
+                # At full-map zoom dozens of always-on nameplates hide the map.
+                # A small cyan AI marker remains visible; hover reveals the name.
+                logical = self._logical_point((pos.x, top-3))
+                text(app.screen, app.assets, 'AI', logical, 9, CYAN, True, center=True)
+                label = ''
         if label:
             # Names are UI text: crisp and readable independently of map magnification.
             label_position = self._logical_point((pos.x, top))
@@ -217,15 +233,19 @@ class WorldRenderer:
             label_rect = pygame.Rect(0, 0, width + 12, height + 6)
             label_rect.midbottom = (round(label_position[0]), round(label_position[1] - 6))
             panel(app.screen, label_rect, BG, None, 4)
-            text(app.screen, app.assets, label, label_rect.center, 11, WHITE, True, center=True)
+            text(app.screen, app.assets, label, label_rect.center, 11, CYAN if bot_id else WHITE, True, center=True)
+            if bot_id is not None and hasattr(app, 'community'):
+                app.ui.actions.append((label_rect.clip(app.screen.to_logical_rect(self.camera.viewport)),
+                                       lambda ident=bot_id: app.community.open_profile(ident)))
 
     def _actors(self):
         app, actors = self.app, []
+        self._facings = {name: direction for name, direction in self._facings.items() if name in app.players}
         party = app.state.get('party', [])
         if party:
-            actors.append((app.follower.y, 'digimon', app.follower, party[0]['species_id'], app.moving, app.direction, ''))
+            actors.append((app.follower.y, 'digimon', app.follower, party[0]['species_id'], app.moving, app.direction, '', None))
         actors.append((app.position.y, 'tamer', app.position, app.state.get('tamer', app.tamer),
-                       app.moving, app.direction, app.state.get('username', '')))
+                       app.moving, app.direction, app.state.get('username', ''), None))
         for name, player in app.players.items():
             if name == app.state.get('username') or player.get('map_id') != app.state.get('map_id'):
                 continue
@@ -233,11 +253,17 @@ class WorldRenderer:
             dx, dy = player.get('dx', 0), player.get('dy', 0)
             vertical = 'down' if dy > 0 else 'up' if dy < 0 else ''
             horizontal = 'right' if dx > 0 else 'left' if dx < 0 else ''
-            direction = f'{vertical}_{horizontal}' if vertical and horizontal else vertical or horizontal or 'down'
-            actors.append((pos.y, 'tamer', pos, player.get('tamer'), bool(dx or dy), direction, name))
+            direction = f'{vertical}_{horizontal}' if vertical and horizontal else vertical or horizontal
+            supplied = player.get('direction')
+            if not direction:
+                direction = supplied if supplied in ('up', 'down', 'left', 'right', 'up_left', 'up_right', 'down_left', 'down_right') else self._facings.get(name, 'down')
+            self._facings[name] = direction
+            bot_id = player.get('id') if player.get('is_bot') else None
+            label = ('AI RIVAL · ' if bot_id is not None else '')+str(player.get('name') or name)
+            actors.append((pos.y, 'tamer', pos, player.get('tamer'), bool(dx or dy), direction, label, bot_id))
             if player.get('lead'):
                 follower = pos + pygame.Vector2(-24, 28)
-                actors.append((follower.y, 'digimon', follower, player['lead'], bool(dx or dy), direction, ''))
+                actors.append((follower.y, 'digimon', follower, player['lead'], bool(dx or dy), direction, '', None))
         return sorted(actors, key=lambda actor: actor[0])
 
     def draw(self, view):
@@ -258,8 +284,8 @@ class WorldRenderer:
             self._surface.set_clip(physical_view.clip(old_clip))
             try:
                 self._draw_layer(surface, 'background')
-                for _, kind, position, ident, moving, direction, label in self._actors():
-                    self._draw_actor(kind, position, ident, moving, direction, label)
+                for _, kind, position, ident, moving, direction, label, bot_id in self._actors():
+                    self._draw_actor(kind, position, ident, moving, direction, label, bot_id)
                 foreground = app.assets.image(entry.get('foreground'))
                 if foreground:
                     self._draw_layer(foreground, 'foreground')

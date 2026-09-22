@@ -24,7 +24,7 @@ from venom.common.paths import root_path
 from venom.server.database import Database, DatabaseError, validate_credentials
 
 LOG = logging.getLogger("venom.server")
-VERSION = "0.1.0"
+VERSION = "0.2.0"
 MOVE_SPEED = 180.0
 MAX_MESSAGE = 65_536
 GAME_OPS = {"encounter", "battle", "digilab", "materialize", "evolve", "party", "shop", "item", "travel"}
@@ -80,6 +80,17 @@ class WorldServer:
         self.masks = {}
         self.root = Path(getattr(engine, "root", project_root()))
         self.stopping = False
+        self.community = None
+        self.stop_signal = None
+        self.community_rate = {}
+
+    async def initialize_community(self):
+        from .community import Community
+        LOG.info('Starting ranked seasons and persistent tamer rivals...')
+        service = Community(self.engine, self.database, self.config)
+        await asyncio.to_thread(service.initialize)
+        self.community = service
+        LOG.info('Tamer rivals ready. Ranked history and population progress are persistent.')
 
     async def send(self, ws, message, timeout=5):
         # Bound backpressure so an unresponsive peer can't stall shutdown or a map.
@@ -131,6 +142,8 @@ class WorldServer:
                     state, revision = await asyncio.to_thread(self.database.load, key)
                     state["events"] = []
                     session = Session(ws, key, token, state, revision)
+                    if self.community and self.community.ready:
+                        await asyncio.to_thread(self.community.register_player, copy.deepcopy(state))
                     self.sessions[key] = session
                 except Exception:
                     await asyncio.to_thread(self.database.release_session, key, token)
@@ -152,6 +165,7 @@ class WorldServer:
         try:
             await self.send(ws, {"op": "hello", "version": VERSION,
                 "game": "Digimon Venom NXT", "tick_hz": 10, "movement_speed": MOVE_SPEED,
+                "features": ["ranked", "rivals", "bot_activity"] if self.community else [],
                 "registration": self.config.get("allow_registration", True)})
             while not self.stopping:
                 try:
@@ -204,6 +218,16 @@ class WorldServer:
                         elif op == "chat":
                             await self.chat(session, message)
                             await self.result(ws, rid)
+                        elif op == "community":
+                            if not self.community:
+                                raise ValueError("This server does not have ranked rivals enabled. Start the updated server first.")
+                            bucket = self.community_rate.setdefault(session.key, TokenBucket(2, 8))
+                            if not bucket.take():
+                                raise ValueError("Please wait a moment before refreshing the community screens.")
+                            # No client can submit a battle outcome or change any bot state.
+                            payload = await asyncio.to_thread(self.community.request,
+                                copy.deepcopy(session.state), message, session.token)
+                            await self.result(ws, rid, community=payload)
                         elif op in GAME_OPS:
                             if not session.action_rate.take():
                                 raise ValueError("Please wait a moment between actions.")
@@ -252,6 +276,8 @@ class WorldServer:
                 try:
                     async with session.lock:
                         await self.save(session)
+                        if self.community and self.community.ready:
+                            await asyncio.to_thread(self.community.register_player, copy.deepcopy(session.state))
                 except Exception:
                     LOG.exception("Failed final save for %s; retaining database lease for recovery", session.key)
                 else:
@@ -260,6 +286,7 @@ class WorldServer:
                 async with self.session_lock:
                     if self.sessions.get(session.key) is session:
                         self.sessions.pop(session.key, None)
+                        self.community_rate.pop(session.key, None)
                 LOG.info("Player disconnected: %s", session.key)
 
     def _walkable(self, map_data, x, y):
@@ -362,11 +389,22 @@ class WorldServer:
                 "dx": s.dx if moving else 0, "dy": s.dy if moving else 0,
                 "lead": state["party"][0]["species_id"] if state.get("party") else None,
                 "battle": bool(state.get("battle")), "in_lab": bool(state.get("in_lab"))})
+        if self.community and self.community.ready:
+            # Each occupied field has one shared bot snapshot at the same server
+            # timestamp. No client receives the entire 5,000-rival population.
+            fields = {map_id for map_id, in_lab in groups if not in_lab}
+            rivals = await asyncio.to_thread(self.community.snapshots, fields, now)
+            for group, actors in groups.items():
+                if not group[1]:
+                    actors.extend(rivals.get(group[0], []))
         # Per-recipient async sends avoid the unbounded-buffer broadcast helper.
+        stamp = time.time()
+        encoded = {group:json.dumps({"op":"world", "players":actors, "server_time":stamp},
+                   separators=(",", ":"), allow_nan=False) for group,actors in groups.items()}
         async def deliver(s):
             try:
                 group = snapshot_places[s.key]
-                await self.send(s.websocket, {"op": "world", "players": groups[group]}, timeout=0.06)
+                await asyncio.wait_for(s.websocket.send(encoded[group]), timeout=0.06)
             except (ConnectionClosed, asyncio.TimeoutError):
                 with contextlib.suppress(Exception):
                     await s.websocket.close(1013, "Slow connection")
@@ -385,10 +423,31 @@ class WorldServer:
                 try:
                     async with session.lock:
                         await self.save(session)
+                        if self.community and self.community.ready:
+                            await asyncio.to_thread(self.community.register_player, copy.deepcopy(session.state))
                 except Exception:
                     LOG.exception("Autosave failed for %s", session.key)
                     with contextlib.suppress(Exception):
                         await session.websocket.close(1011, "Autosave unavailable")
+
+    async def community_loop(self):
+        previous = time.monotonic()
+        next_invites = previous+10
+        while not self.stopping:
+            started = time.monotonic()
+            try:
+                await asyncio.to_thread(self.community.step, started, min(1., started-previous))
+                if started >= next_invites:
+                    states = [copy.deepcopy(s.state) for s in self.sessions.values()]
+                    await asyncio.to_thread(self.community.invitations, states, started)
+                    next_invites = started+10
+            except Exception:
+                LOG.exception('Community simulation stopped to protect persistent progress.')
+                if self.stop_signal is not None:
+                    self.stop_signal.set()
+                return
+            previous = started
+            await asyncio.sleep(max(.005, .1-(time.monotonic()-started)))
 
 
 def read_config(path, dev=False):
@@ -429,10 +488,12 @@ async def run(config, dev=False, stop=None):
     try:
         engine = GameEngine(root)
         world = WorldServer(engine, db, config)
+        await world.initialize_community()
     except Exception:
         await asyncio.to_thread(db.close)
         raise
     stop = stop or asyncio.Event()
+    world.stop_signal = stop
     loop = asyncio.get_running_loop()
     for sig in (signal.SIGINT, signal.SIGTERM):
         with contextlib.suppress(NotImplementedError, RuntimeError):
@@ -443,7 +504,8 @@ async def run(config, dev=False, stop=None):
                          ssl=context, origins=[None], max_size=MAX_MESSAGE, max_queue=16,
                          compression=None, ping_interval=20, ping_timeout=20, close_timeout=5,
                          open_timeout=10, server_header=None):
-            tasks = [asyncio.create_task(world.world_loop()), asyncio.create_task(world.autosave_loop())]
+            tasks = [asyncio.create_task(world.world_loop()), asyncio.create_task(world.autosave_loop()),
+                     asyncio.create_task(world.community_loop())]
             LOG.info("Digimon Venom NXT %s | %s://%s:%s | %s", VERSION, "ws (LOCAL DEV)" if dev else "wss",
                      config.get("host"), config.get("port"), db.driver)
             LOG.info("World ready. Ctrl+C saves players and shuts down.")
@@ -454,8 +516,13 @@ async def run(config, dev=False, stop=None):
         for task in tasks:
             task.cancel()
         await asyncio.gather(*tasks, return_exceptions=True)
-        # serve's context has awaited connection finalizers and their final saves.
-        await asyncio.to_thread(db.close)
+        try:
+            if world.community:
+                await asyncio.to_thread(world.community.shutdown)
+        finally:
+            # serve's context has awaited connection finalizers and their saves.
+            # Release the connection even if the final bot checkpoint fails.
+            await asyncio.to_thread(db.close)
         LOG.info("World stopped. Player sessions closed.")
 
 

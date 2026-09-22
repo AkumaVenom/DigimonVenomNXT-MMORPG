@@ -1,6 +1,22 @@
-# Validation report — 0.1.1 alpha
+# Validation report — 0.2.0 alpha
 
-## Display upgrade verification
+## Rivals and ranked verification
+
+- **129 automated tests passed** (`python -m pytest -q`, 23.42 seconds on this Linux runtime). After the final shutdown cleanup and Battle XP label adjustment, the 15 community integration, persistence-safety and client checks passed again.
+- **21,149 asset/catalog records verified** by byte size and SHA-256 (485.8 MiB). Imported assets and the original content manifest are unchanged.
+- Source byte-compilation succeeded for `venom`, `tools` and `tests`.
+- Actual WSS integration connects two accounts to the same world and checks identical bot positions/timestamps, field scoping, movement, public profiles, authoritative ranked outcomes, invitation ownership, duplicate acceptance and friendly/ranked accounting. Client-supplied wins and rewards are ignored.
+- Every one of the 254 map navigation graphs was checked along continuous routes, including diagonal corner crossings. The population acceptance suite checks all 5,000 initial rivals and scheduler coverage.
+- Ranked tests exercise real combat, repeat-request idempotency, energy recovery, promotion, current/career/archive ordering, season rollover, frozen season rules and one-time reward settlement. Both sides' wins/losses and points settle in one database transaction.
+- Persistence safety tests cover normal shutdown, lease takeover before shutdown, stale bot/event writes, and a battle computed before takeover but submitted afterward. An expired server cannot commit those writes.
+- The new screens were rendered at the minimum supported window size and at **3840 × 2160**. Client checks cover real 6-v-6 authoritative battle replay, modal input isolation, click-to-profile, idle direction and coalesced polling. Ranked, rival and activity preview images use an isolated 128-bot demonstration world and are explicitly marked offline previews; those images are not the 5,000-bot benchmark.
+
+The reproducible full-population measurements and limitations are in
+`RIVALS_BENCHMARK.md` and `RIVALS_BENCHMARK.json`. The benchmark exercises the
+actual bot, navigation, ranked and SQLite persistence code. It advances 900 seconds
+of simulation time; it is not a long-duration live server or human concurrency test.
+
+## Previous v0.1.1 display upgrade verification
 
 - **86 automated tests passed** (`python -m pytest -q`, 11.63 seconds on this Linux runtime), including the original gameplay, server/TLS and content tests.
 - **21,149 asset/catalog records verified** again by byte size and SHA-256; original artwork, game data, server code and account schema are unchanged.
@@ -33,6 +49,6 @@ Validation performed on Linux with Python 3.12.14, pygame-ce 2.5.8 / SDL 2.32.10
 
 ## Not validated here
 
-No Windows executable was compiled or executed in this Linux environment. No live MySQL/MariaDB daemon was available. The MySQL setup path and SQL provisioning arguments have unit coverage, but that does not prove a live XAMPP install. No internet deployment, Windows firewall/router setup, production-scale population/load test, long-duration soak test or exact comparison to every Cyber Sleuth value was performed.
+No Windows executable was compiled or executed in this Linux environment. No live MySQL/MariaDB daemon was available. The MySQL setup path and SQL provisioning arguments have unit coverage, and new MySQL transactions were code-reviewed, but that does not prove a live XAMPP install. No internet deployment, Windows firewall/router setup, human concurrency load test, long-duration soak test or exact comparison to every Cyber Sleuth/ReArise value was performed. The 5,000-bot simulation establishes measured behavior on this Linux/SQLite runtime; Windows/MySQL host performance still requires verification.
 
 The ZIP is a clean source release with preimported assets. Run `BUILD_ALL.bat` on the target Windows x64 machine to create its native client, console server and setup executables, then perform the numbered setup steps.

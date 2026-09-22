@@ -1,0 +1,173 @@
+{
+  "scope": "Actual rival simulation with normal timers and temporary SQLite; no network players or render loop.",
+  "source_sha256": {
+    "venom/server/bots.py": "aa665712fbf428070eb6eade7a98c57a01a79b6441374c3636f319be89abb7b5",
+    "venom/server/navigation.py": "35bace670dee78d9364f158fd42d0f009e2c0e9984c610e6216c7c44d7eb00e0",
+    "venom/server/ranked.py": "b757949b8dd511a88ed2303925984cb5e3cb4651b7048b63d92d0ea1ead3e129",
+    "venom/server/community_store.py": "a0812350331ad4bc9ade9d5fe20ad3c879ef7cd5e6335dedd0add81aaeb6bd06"
+  },
+  "environment": {
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+    "python": "3.12.14",
+    "cpu_count": 9,
+    "database": "temporary SQLite, WAL"
+  },
+  "population": 5000,
+  "seed": 1907,
+  "simulated_seconds": 900.0,
+  "tick_hz": 10,
+  "observed_maps_per_tick": 16,
+  "initialization_seconds": 4.65,
+  "simulation_wall_seconds": 192.163,
+  "final_flush_seconds": 1.603,
+  "wall_seconds": 198.762,
+  "memory_mib": {
+    "before": {
+      "current": 14.77,
+      "peak": 14.62
+    },
+    "initialized": {
+      "current": 170.16,
+      "peak": 170.09
+    },
+    "end": {
+      "current": 188.55,
+      "peak": 188.34
+    }
+  },
+  "tick": {
+    "samples": 9000,
+    "mean_ms": 18.036,
+    "p50_ms": 20.071,
+    "p95_ms": 24.268,
+    "p99_ms": 69.873,
+    "maximum_ms": 330.876
+  },
+  "snapshot_and_json": {
+    "samples": 9000,
+    "mean_ms": 2.923,
+    "p50_ms": 2.519,
+    "p95_ms": 4.611,
+    "p99_ms": 13.35,
+    "maximum_ms": 231.071
+  },
+  "initial_occupancy_histogram": {
+    "20": 174,
+    "19": 80
+  },
+  "final_occupancy_histogram": {
+    "25": 96,
+    "26": 39,
+    "24": 11,
+    "23": 2,
+    "22": 5,
+    "21": 8,
+    "20": 5,
+    "18": 8,
+    "19": 6,
+    "17": 6,
+    "16": 3,
+    "15": 4,
+    "14": 4,
+    "12": 3,
+    "13": 1,
+    "10": 7,
+    "11": 2,
+    "8": 11,
+    "9": 1,
+    "7": 4,
+    "5": 5,
+    "6": 1,
+    "4": 14,
+    "3": 5,
+    "2": 3
+  },
+  "largest_observed_map_snapshot": {
+    "actors": 26,
+    "bytes": 7982
+  },
+  "distinct_bots_observed": 5000,
+  "coverage": {
+    "wild_started": 5000,
+    "wild_wins": 5000,
+    "wild_losses": 3967,
+    "ranked_started": 5000,
+    "materialized": 2655,
+    "party_swaps": 288,
+    "level_ups": 4573,
+    "purchases": 4319,
+    "travels": 4912,
+    "exploration_steps": 5000,
+    "evolutions": 253,
+    "completed_activity_cycle": 5000
+  },
+  "activity_counters": {
+    "wild_wins": 42306,
+    "wild_losses": 10128,
+    "wild_started": 54360,
+    "ranked_wins": 25000,
+    "ranked_losses": 25000,
+    "ranked_started": 25000,
+    "rival_wins": 0,
+    "rival_losses": 0,
+    "scans": 61987,
+    "scan_data": 1223090,
+    "materialized": 4057,
+    "paradox_materialized": 0,
+    "level_ups": 36918,
+    "xp_earned": 18538684,
+    "evolutions": 286,
+    "devolutions": 0,
+    "heals": 62203,
+    "items_used": 42081,
+    "purchases": 30910,
+    "party_swaps": 939,
+    "travels": 12424,
+    "walking_distance": 134292001.2530008,
+    "exploration_steps": 1247837,
+    "errors": 0
+  },
+  "activity_phases": {
+    "battle": 1926,
+    "lab": 1695,
+    "ranked": 313,
+    "explore": 1066
+  },
+  "scheduler": {
+    "processed": 843976,
+    "last_tick_ms": 82.782,
+    "max_lateness_seconds": 6.0,
+    "overdue_seconds": 2.6
+  },
+  "maximum_due_delay_seconds": 5.9,
+  "ranked_ledger": {
+    "matches": 25000,
+    "career_wins": 25000,
+    "career_losses": 25000,
+    "seasonal_wins": 25000,
+    "seasonal_losses": 25000,
+    "unique_ranked_attackers": 5000,
+    "season_reward_rows": 0,
+    "balanced": true
+  },
+  "motion_violations": [],
+  "collision_violations": [],
+  "snapshot_mismatches": [],
+  "checks": {
+    "exact_requested_population": true,
+    "initial_population_evenly_distributed": true,
+    "no_preseeded_battle_wins_or_losses": true,
+    "snapshots_match_at_shared_timestamp": true,
+    "observed_movement_at_or_below_human_speed": true,
+    "observed_positions_collision_safe": true,
+    "wild_counters_match_canonical_states": true,
+    "ranked_counters_match_transaction_ledger": true,
+    "recent_activity_limited_to_100": true,
+    "directory_pages_limited_to_100": true,
+    "no_gameplay_recovery_errors": true,
+    "initial_254_sector_occupancy_is_19_or_20": true,
+    "every_bot_explored_and_started_wild_battle": true,
+    "every_bot_completed_activity_cycle": true,
+    "every_bot_initiated_ranked_battle": true
+  }
+}

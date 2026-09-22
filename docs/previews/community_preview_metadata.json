@@ -1,0 +1,32 @@
+{
+  "population": 128,
+  "simulated_seconds": 600,
+  "activity": {
+    "wild_wins": 2002,
+    "wild_losses": 95,
+    "wild_started": 2124,
+    "ranked_wins": 640,
+    "ranked_losses": 643,
+    "ranked_started": 640,
+    "rival_wins": 0,
+    "rival_losses": 0,
+    "scans": 3389,
+    "scan_data": 66880,
+    "materialized": 388,
+    "paradox_materialized": 0,
+    "level_ups": 2934,
+    "xp_earned": 382300,
+    "evolutions": 129,
+    "devolutions": 0,
+    "heals": 2180,
+    "items_used": 682,
+    "purchases": 433,
+    "party_swaps": 834,
+    "travels": 201,
+    "walking_distance": 6360090.0550000025,
+    "exploration_steps": 55981,
+    "errors": 0
+  },
+  "real_ranked_match": "5aec48516c954b74b98f2952e570877c",
+  "preview": true
+}
