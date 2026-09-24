@@ -32,6 +32,7 @@ class NativeViewsTests(unittest.TestCase):
         self.app = App(root_path(),args())
         self.engine = GameEngine(root_path(),seed=8)
         self.app.state = self.engine.new_player('NativeTest',next(iter(self.engine.tamers)),self.engine.starters[0])
+        self.engine.handle(self.app.state, 'digifarm', {'action': 'return'})
         self.app.position.update(self.app.state['x'],self.app.state['y'])
 
     def tearDown(self):
@@ -104,7 +105,10 @@ class NativeTLSClientTests(unittest.IsolatedAsyncioTestCase):
         await self.until(lambda:self.app.state is not None)
         self.assertEqual(self.app.state['username'],'NativeAlice')
         self.assertEqual(len(self.app.state['party']),1)
+        self.assertTrue(self.app.state['in_farm'])
         self.app.draw()
+        self.app.send('digifarm', action='return')
+        await self.until(lambda:not self.app.state.get('in_farm'))
         saved_party=self.app.state['party']
         self.app.send('move',dx=0,dy=0,dt=.05)
         await self.until(lambda:not self.app.requests)

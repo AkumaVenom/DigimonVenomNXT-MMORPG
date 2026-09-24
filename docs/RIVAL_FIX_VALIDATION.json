@@ -1,0 +1,458 @@
+{
+  "release": "0.3.1-alpha",
+  "date": "2026-09-23",
+  "runtime": "3.12.14",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+  "automated_tests": {
+    "passed": 257,
+    "skipped": 32,
+    "failures": 0,
+    "errors": 0,
+    "seconds": 55.579,
+    "skip_reasons": [
+      "23 live MariaDB provisioning tests: disposable server unavailable",
+      "9 Tk setup tests: graphical desktop unavailable"
+    ]
+  },
+  "assets": {
+    "verified_records": 21149,
+    "verified_bytes": 509413398,
+    "all_baseline_assets_and_catalogs_unchanged": true
+  },
+  "unchanged_setup_files": [
+    "01_SETUP_SERVER.bat",
+    "02_SETUP_MYSQL.bat",
+    "03_SETUP_PUBLIC_HOSTING.bat",
+    "BUILD_ALL.bat",
+    "PLAY_DIGIMON_VENOM_NXT.bat",
+    "PLAY_LOCAL_DEV.bat",
+    "START_LOCAL_DEV.bat",
+    "START_WORLD_SERVER_CONSOLE.bat",
+    "tools/password_prompt.py",
+    "tools/repair_mysql.py",
+    "tools/repair_templates/FIX_MYSQL_SETUP.bat",
+    "tools/repair_templates/requirements.txt",
+    "tools/setup.py",
+    "tools/setup_diagnostics.py",
+    "tools/setup_service.py",
+    "tools/setup_wizard.py"
+  ],
+  "missing_baseline_files": [],
+  "changed_baseline_files": [
+    "README.md",
+    "docs/RELEASE_STATUS.md",
+    "docs/RIVALS_AND_RANKED.md",
+    "docs/RIVALS_BENCHMARK.md",
+    "docs/VALIDATION.md",
+    "tests/test_setup_launchers.py",
+    "tools/build.py",
+    "venom/client/app.py",
+    "venom/client/community.py",
+    "venom/server/bots.py",
+    "venom/server/main.py",
+    "venom/server/navigation.py"
+  ],
+  "source_sha256": {
+    "venom/server/bots.py": "956c585d8dfe85151eedfa9b4871d87758f4de5b4361d731a27efb656d8c19e2",
+    "venom/server/navigation.py": "f6cbfa525ea7207a0febd91a9a1f7ec534015ddcac04355d34f0f970617a4f24",
+    "venom/client/community.py": "2a877c04ceed0aec3d4f0f59cbc585bfc8ba743c5f7047172ffcff44f8d09dda",
+    "venom/client/app.py": "c59f36f4032f4daa01344b07b8a31a855bb2580a3c5522d08db7cdcdb0d43af1",
+    "venom/server/main.py": "be213367bb4cb6c9275b07b33630f39e922130de4ca48bd6640101765ce2801e",
+    "tools/build.py": "31ad28723e8c03f71bd7585c39a8b88ec3769698d6a6a4657979b10690cafd07",
+    "tools/benchmark_rival_cycles.py": "4ddfcb7ea14700875666245d93e227678418e3c752f546c282df94eedd31ecb4",
+    "tests/test_bot_training_cycles.py": "cd5e2f1a040d23a71e09834e8f6942f3a042c669c46dca8b97d023ce9cbf1995",
+    "tests/test_rival_motion_regression.py": "7fdd90dec5ae7f52b42b2a1c5de81436d186ba5a6b45dc5e1e6b9c52494259e0"
+  },
+  "full_population_report": "RIVAL_TRAINING_VALIDATION.json",
+  "benchmark_source_scope": "The final 5000-rival migration audit source hashes match the packaged rival, navigation, ranked and benchmark implementation. A preceding longer diagnostic exposed a runtime-only checkpoint bug; its failed restart check was fixed before this release gate.",
+  "controlled_fairness_run": {
+    "status": "observed_completed",
+    "provenance": {
+      "execution_session_id": 99296,
+      "elapsed_wall_seconds": 25.653772046000086,
+      "preservation": "Exact observed metrics transcribed from completed execution output; no rerun performed to produce this report.",
+      "date_utc": "2026-09-23"
+    },
+    "scope": {
+      "bots": 12,
+      "simulated_seconds": 5400,
+      "tick_seconds": 0.1,
+      "sample_seconds": 10,
+      "map_levels": [
+        1,
+        20,
+        50,
+        60
+      ],
+      "action_interval": 0.1,
+      "explore_seconds": 2,
+      "minimum_map_dwell_seconds": 30,
+      "maximum_map_dwell_seconds": 60,
+      "wild_combat": "Actual GameEngine battles, scanning, materialization, leveling, evolution, shopping and party operations. No XP/scan/result counters injected during simulation.",
+      "ranked": "RankedRecorder test double observes scheduling; these results do not validate ranked combat or MySQL. Full-fleet SQL benchmark is separate.",
+      "fixture": "Fresh seed-level rivals from test helper, four controlled map difficulties, restricted Agumon encounter pool, shortened activity timers.",
+      "limitations": [
+        "Sparse artificial map tiers; not a 254-map or 5000-bot load test.",
+        "Fresh monster UUIDs are generated at runtime and tie-breaks can change exact per-bot outcomes across reruns. Reproduction verifies qualitative behavior rather than identical counts.",
+        "Longest-duty values are sampled streaks at 10-second intervals, not exact continuous duty durations."
+      ]
+    },
+    "summary": {
+      "bots_with_training_rotations": 12,
+      "minimum_training_rotations": 3,
+      "maximum_training_rotations": 6,
+      "formerly_stranded_bot": "bot:00004",
+      "formerly_stranded_bot_rotations": 4,
+      "errors": 0,
+      "final_map_occupancy": {
+        "1": 9,
+        "20": 1,
+        "50": 1,
+        "60": 1
+      }
+    },
+    "comparison_to_prior_observed_policy": {
+      "execution_session_id": 19375,
+      "formerly_stranded_bot_rotations": 0,
+      "formerly_stranded_bot_cycles": 562,
+      "formerly_stranded_bot_coverage_samples": 536,
+      "total_coverage_samples": 540,
+      "final_map_occupancy": {
+        "1": 11,
+        "20": 1,
+        "50": 0,
+        "60": 0
+      },
+      "prior_source_sha256": null,
+      "note": "Prior-policy code hash was not captured; this is observed diagnostic evidence, not a reproducible archived baseline."
+    },
+    "rows": [
+      {
+        "id": "bot:00001",
+        "initial_seed": 3,
+        "started": 10.0,
+        "coverage_samples": 74,
+        "longest_duty_samples": 8,
+        "cycles": 565,
+        "round": 6,
+        "rotations": 5,
+        "map_level": 1,
+        "party": [
+          3,
+          3,
+          2,
+          2,
+          2,
+          3
+        ],
+        "stats": {
+          "wild_wins": 564,
+          "wild_losses": 1,
+          "ranked_started": 565,
+          "materialized": 53,
+          "travels": 32,
+          "errors": 0
+        }
+      },
+      {
+        "id": "bot:00002",
+        "initial_seed": 22,
+        "started": 10.0,
+        "coverage_samples": 103,
+        "longest_duty_samples": 8,
+        "cycles": 563,
+        "round": 7,
+        "rotations": 6,
+        "map_level": 1,
+        "party": [
+          12,
+          12,
+          8,
+          6,
+          6,
+          12
+        ],
+        "stats": {
+          "wild_wins": 563,
+          "wild_losses": 0,
+          "ranked_started": 563,
+          "materialized": 53,
+          "travels": 45,
+          "errors": 0
+        }
+      },
+      {
+        "id": "bot:00003",
+        "initial_seed": 52,
+        "started": 10.0,
+        "coverage_samples": 250,
+        "longest_duty_samples": 13,
+        "cycles": 552,
+        "round": 5,
+        "rotations": 4,
+        "map_level": 50,
+        "party": [
+          87
+        ],
+        "stats": {
+          "wild_wins": 544,
+          "wild_losses": 8,
+          "ranked_started": 552,
+          "materialized": 53,
+          "travels": 109,
+          "errors": 0
+        }
+      },
+      {
+        "id": "bot:00004",
+        "initial_seed": 62,
+        "started": 20.0,
+        "coverage_samples": 240,
+        "longest_duty_samples": 13,
+        "cycles": 558,
+        "round": 5,
+        "rotations": 4,
+        "map_level": 60,
+        "party": [
+          93
+        ],
+        "stats": {
+          "wild_wins": 557,
+          "wild_losses": 2,
+          "ranked_started": 558,
+          "materialized": 53,
+          "travels": 102,
+          "errors": 0
+        }
+      },
+      {
+        "id": "bot:00005",
+        "initial_seed": 3,
+        "started": 10.0,
+        "coverage_samples": 83,
+        "longest_duty_samples": 7,
+        "cycles": 565,
+        "round": 5,
+        "rotations": 4,
+        "map_level": 1,
+        "party": [
+          14,
+          14,
+          15,
+          15,
+          15,
+          14
+        ],
+        "stats": {
+          "wild_wins": 566,
+          "wild_losses": 0,
+          "ranked_started": 565,
+          "materialized": 53,
+          "travels": 34,
+          "errors": 0
+        }
+      },
+      {
+        "id": "bot:00006",
+        "initial_seed": 22,
+        "started": 20.0,
+        "coverage_samples": 0,
+        "longest_duty_samples": 0,
+        "cycles": 564,
+        "round": 7,
+        "rotations": 6,
+        "map_level": 1,
+        "party": [
+          14,
+          14,
+          14,
+          13,
+          13,
+          13
+        ],
+        "stats": {
+          "wild_wins": 565,
+          "wild_losses": 0,
+          "ranked_started": 564,
+          "materialized": 53,
+          "travels": 1,
+          "errors": 0
+        }
+      },
+      {
+        "id": "bot:00007",
+        "initial_seed": 52,
+        "started": 10.0,
+        "coverage_samples": 0,
+        "longest_duty_samples": 0,
+        "cycles": 561,
+        "round": 7,
+        "rotations": 6,
+        "map_level": 1,
+        "party": [
+          10,
+          8,
+          9,
+          9,
+          9,
+          10
+        ],
+        "stats": {
+          "wild_wins": 562,
+          "wild_losses": 0,
+          "ranked_started": 561,
+          "materialized": 53,
+          "travels": 1,
+          "errors": 0
+        }
+      },
+      {
+        "id": "bot:00008",
+        "initial_seed": 62,
+        "started": 10.0,
+        "coverage_samples": 285,
+        "longest_duty_samples": 16,
+        "cycles": 563,
+        "round": 4,
+        "rotations": 3,
+        "map_level": 1,
+        "party": [
+          7,
+          8,
+          7,
+          8,
+          7,
+          8
+        ],
+        "stats": {
+          "wild_wins": 560,
+          "wild_losses": 3,
+          "ranked_started": 563,
+          "materialized": 53,
+          "travels": 111,
+          "errors": 0
+        }
+      },
+      {
+        "id": "bot:00009",
+        "initial_seed": 3,
+        "started": 10.0,
+        "coverage_samples": 59,
+        "longest_duty_samples": 7,
+        "cycles": 564,
+        "round": 6,
+        "rotations": 5,
+        "map_level": 1,
+        "party": [
+          9,
+          9,
+          9,
+          9,
+          9,
+          8
+        ],
+        "stats": {
+          "wild_wins": 564,
+          "wild_losses": 0,
+          "ranked_started": 564,
+          "materialized": 53,
+          "travels": 30,
+          "errors": 0
+        }
+      },
+      {
+        "id": "bot:00010",
+        "initial_seed": 22,
+        "started": 10.0,
+        "coverage_samples": 0,
+        "longest_duty_samples": 0,
+        "cycles": 564,
+        "round": 7,
+        "rotations": 6,
+        "map_level": 1,
+        "party": [
+          9,
+          9,
+          8,
+          8,
+          8,
+          9
+        ],
+        "stats": {
+          "wild_wins": 564,
+          "wild_losses": 0,
+          "ranked_started": 564,
+          "materialized": 53,
+          "travels": 1,
+          "errors": 0
+        }
+      },
+      {
+        "id": "bot:00011",
+        "initial_seed": 52,
+        "started": 20.0,
+        "coverage_samples": 232,
+        "longest_duty_samples": 13,
+        "cycles": 555,
+        "round": 5,
+        "rotations": 4,
+        "map_level": 1,
+        "party": [
+          9,
+          9,
+          9,
+          9,
+          9,
+          10
+        ],
+        "stats": {
+          "wild_wins": 550,
+          "wild_losses": 6,
+          "ranked_started": 555,
+          "materialized": 53,
+          "travels": 110,
+          "errors": 0
+        }
+      },
+      {
+        "id": "bot:00012",
+        "initial_seed": 62,
+        "started": 10.0,
+        "coverage_samples": 237,
+        "longest_duty_samples": 13,
+        "cycles": 559,
+        "round": 5,
+        "rotations": 4,
+        "map_level": 20,
+        "party": [
+          92
+        ],
+        "stats": {
+          "wild_wins": 554,
+          "wild_losses": 5,
+          "ranked_started": 559,
+          "materialized": 53,
+          "travels": 106,
+          "errors": 0
+        }
+      }
+    ],
+    "source_sha256_at_preservation": {
+      "venom/server/bots.py": "5754fbf39448a5ccd17dbf18f65d9c639136f54f29ab31b9dc3cc677449facf2",
+      "venom/server/navigation.py": "f6cbfa525ea7207a0febd91a9a1f7ec534015ddcac04355d34f0f970617a4f24",
+      "tests/test_bot_training_cycles.py": "5bace1a8342b79f2514bd25686c3d68d829797733254525826f622376fe0fa1f",
+      "tools/benchmark_coverage_fairness.py": "cbcc81cf2126b97a2c02812e3d39c948a38f698f2c2ffc3efd2610f38bf53c98"
+    },
+    "reproduction": {
+      "working_directory": "/workspace/scratch/63a3cbf83ad7/DigimonVenomNXT",
+      "command": "python tools/benchmark_coverage_fairness.py",
+      "script": "tools/benchmark_coverage_fairness.py"
+    }
+  },
+  "limits": [
+    "No Windows executable built or run on this Linux host",
+    "No Windows XAMPP or live MySQL population performance run",
+    "Simulated clock with actual game/ranked/SQLite operations; not a real-time human/network load soak",
+    "Setup source retained byte-for-byte; historical live MariaDB/Tk evidence remains separately labelled"
+  ]
+}

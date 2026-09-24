@@ -15,6 +15,8 @@ import uuid
 from pathlib import Path
 from typing import Any
 
+from venom.common.farm import normalize_farm_position
+
 
 class GameError(ValueError):
     """A safe, user-readable rejection of a gameplay operation."""
@@ -28,6 +30,27 @@ SHOP = {
     "sp_m": {"name": "Medium SP Capsule", "price": 260, "resource": "sp", "amount": 65},
     "sp_l": {"name": "Large SP Capsule", "price": 600, "resource": "sp", "amount": 200},
 }
+FARM_CAPACITY = 100
+FARM_BONUS_PER_STAT = 100
+FARM_BONUS_TOTAL = 300
+FARM_STATS = ("hp", "sp", "atk", "def", "int", "spd")
+FARM_MEAT_DROP_CHANCE = .18
+SHOP["digimeat_cam"] = {
+    "name": "Friendship DigiMeat", "price": 150, "resource": "cam", "amount": 5,
+    "category": "digimeat", "rarity": "common", "icon": "assets/ui/digifarm/digimeat.png",
+    "description": "Feed a DigiFarm resident to gain 5 CAM (up to 100). An optional treat.",
+}
+for _stat, _flavor in (("hp", "Vitality"), ("sp", "Spirit"), ("atk", "Power"),
+                        ("def", "Guard"), ("int", "Wisdom"), ("spd", "Swift")):
+    for _amount in (1, 5):
+        SHOP[f"digimeat_{_stat}_{_amount}"] = {
+            "name": f"{'Rare ' if _amount == 5 else ''}{_flavor} DigiMeat +{_amount}",
+            "price": 25000 if _amount == 5 else 2500, "resource": _stat, "amount": _amount,
+            "category": "digimeat", "rarity": "rare" if _amount == 5 else "uncommon",
+            "icon": "assets/ui/digifarm/digimeat.png",
+            "description": f"Permanently adds {_amount} {_stat.upper()} to a DigiFarm resident. "
+                           "Kept through evolution. Limit: +100 per stat, +300 total.",
+        }
 TYPE_ADVANTAGE = {"vaccine": "virus", "virus": "data", "data": "vaccine"}
 ATTRIBUTE_ADVANTAGE = {
     "fire": {"plant"}, "plant": {"water"}, "water": {"fire"},
@@ -163,6 +186,10 @@ class GameEngine:
                     "devolve": True, "provenance": route.get("provenance", "catalog")})
         self.catalog["shop"] = copy.deepcopy(SHOP)
         self.catalog["rules"] = {"party_limit": 6, "active_limit": 3, "scan_cap": 200,
+                                  "farm_capacity": FARM_CAPACITY,
+                                  "farm_bonus_per_stat": FARM_BONUS_PER_STAT,
+                                  "farm_bonus_total": FARM_BONUS_TOTAL,
+                                  "farm_meat_drop_chance": FARM_MEAT_DROP_CHANCE,
                                   "paradox_encounter_chance": self.rules.get("paradox_encounter_chance", .025)}
 
     def _add_evolution(self, source: dict, target: dict, provenance: str) -> None:
@@ -220,7 +247,8 @@ class GameEngine:
             area["paradox_encounters"] = list(self._pools[area["id"]][1])
 
     @staticmethod
-    def stats_for(species: dict, level: int, abi: int = 0) -> dict[str, int]:
+    def stats_for(species: dict, level: int, abi: int = 0,
+                  bonuses: dict[str, int] | None = None) -> dict[str, int]:
         base = species.get("base_stats", {})
         rank = STAGE_RANK.get(species.get("stage"), 2)
         defaults = {"hp": 180, "sp": 35, "atk": 28, "def": 22, "int": 24, "spd": 24}
@@ -228,16 +256,19 @@ class GameEngine:
                   "def": 2.5 + rank * .3, "int": 3 + rank * .3, "spd": 2 + rank * .2}
         bonus = 1 + min(200, max(0, abi)) / 1000
         return {k: max(1, int((int(base.get(k, defaults[k])) + (level - 1) * growth[k]) * bonus))
+                   + max(0, int((bonuses or {}).get(k, 0)))
                 for k in defaults}
 
-    def _monster(self, species_id: str, level: int = 1, abi: int = 0, cam: int = 0) -> dict:
+    def _monster(self, species_id: str, level: int = 1, abi: int = 0, cam: int = 0,
+                 farm_bonuses: dict[str, int] | None = None) -> dict:
         species = self.species[species_id]
-        stat = self.stats_for(species, level, abi)
+        stat = self.stats_for(species, level, abi, farm_bonuses)
         monster = {"uid": uuid.uuid4().hex, "species_id": species_id, "name": species["name"],
                    "stage": species.get("stage", "unknown"), "level": level, "xp": 0,
                    "next_xp": xp_required(level), "abi": abi, "cam": cam,
                    "type": species["type"], "attribute": species["attribute"],
                    "paradox": bool(species.get("paradox")), "history": [],
+                   "farm_bonuses": copy.deepcopy(farm_bonuses or {}),
                    **stat, "max_hp": stat["hp"], "max_sp": stat["sp"]}
         monster["skills"] = self._skills(monster)
         return monster
@@ -261,11 +292,13 @@ class GameEngine:
         state = {"username": str(username), "tamer": tamer, "map_id": area["id"],
                  "x": float(x), "y": float(y), "credits": 650,
                  "party": [self._monster(starter, cam=10)], "storage": [], "scan": {},
-                 "inventory": {"hp_s": 5, "hp_m": 0, "hp_l": 0, "sp_s": 3, "sp_m": 0, "sp_l": 0},
-                 "in_lab": False, "battle": None, "events": [], "catalog_version": "0.1.0",
+                 "inventory": {"hp_s": 5, "hp_m": 0, "hp_l": 0, "sp_s": 3, "sp_m": 0, "sp_l": 0,
+                               "digimeat_cam": 3},
+                 "in_lab": False, "in_farm": True, "battle": None, "events": [], "catalog_version": "0.1.0",
                  "wins": 0, "losses": 0, "shop": copy.deepcopy(SHOP)}
         self._refresh(state)
-        self._event(state, "message", text="Welcome to Venom NXT. Explore, defeat wild Digimon to scan, and materialize new partners in the DigiLab.")
+        self._event(state, "message", text="Welcome home to your private DigiFarm! Explore to collect scan data, "
+                    "materialize partners, and let stored Digimon relax here. Feeding is always optional.")
         return state
 
     def handle(self, state: dict, op: str, payload: dict) -> dict:
@@ -273,7 +306,8 @@ class GameEngine:
             raise GameError("Malformed gameplay request.")
         handlers = {"encounter": self._encounter, "battle": self._battle, "digilab": self._digilab,
                     "materialize": self._materialize, "evolve": self._evolve, "party": self._party,
-                    "shop": self._shop, "item": self._item, "travel": self._travel}
+                    "shop": self._shop, "item": self._item, "travel": self._travel,
+                    "digifarm": self._digifarm}
         if op not in handlers:
             raise GameError("Unknown gameplay operation.")
         state["events"] = []
@@ -282,6 +316,19 @@ class GameEngine:
         return state
 
     def _refresh(self, state: dict) -> None:
+        # Additive save migration: never move existing players or discard old storage.
+        state.setdefault("in_farm", False)
+        normalize_farm_position(state)
+        state.setdefault("storage", [])
+        state["farm"] = {"capacity": FARM_CAPACITY,
+                         "residents": min(FARM_CAPACITY, len(state["storage"])),
+                         "legacy_overflow": max(0, len(state["storage"]) - FARM_CAPACITY),
+                         "bonus_per_stat": FARM_BONUS_PER_STAT, "bonus_total": FARM_BONUS_TOTAL,
+                         "feeding_optional": True}
+        for monster in state["party"] + state["storage"]:
+            if not monster.get("uid"):
+                monster["uid"] = uuid.uuid4().hex
+            monster.setdefault("farm_bonuses", {})
         state["evolution_options"] = [self.evolution_options(m) for m in state["party"]]
         state["shop"] = copy.deepcopy(SHOP)
         for monster in state["party"]:
@@ -328,6 +375,11 @@ class GameEngine:
         if not state.get("in_lab"):
             raise GameError("Return to the DigiLab for this action.")
 
+    def _hub_only(self, state: dict) -> None:
+        self._peace(state)
+        if not (state.get("in_lab") or state.get("in_farm")):
+            raise GameError("Return to your DigiFarm or the DigiLab for this action.")
+
     @staticmethod
     def _party_member(state: dict, payload: dict, key: str = "party_index") -> tuple[int, dict]:
         index = _integer(payload, key, maximum=max(0, len(state["party"]) - 1))
@@ -337,7 +389,7 @@ class GameEngine:
 
     def _encounter(self, state: dict, payload: dict) -> None:
         self._peace(state)
-        if state.get("in_lab"):
+        if state.get("in_lab") or state.get("in_farm"):
             raise GameError("Return to the world before searching for wild Digimon.")
         active = [i for i, m in enumerate(state["party"][:3]) if m["hp"] > 0]
         if not active:
@@ -375,6 +427,8 @@ class GameEngine:
         actor = state["party"][actor_index]
         if action == "flee":
             state["battle"] = None
+            for monster in state["party"]:
+                monster.pop("guard", None)
             self._event(state, "flee", text="You withdrew safely. Defeated enemies' scan data is retained.")
             return
         if action == "item":
@@ -515,6 +569,10 @@ class GameEngine:
                 monster.pop("guard", None)
             state["battle"] = None
             self._event(state, "win", amount=credits, text=f"Victory! +{credits} credits and {xp} XP. Scan data secured.", xp=xp)
+            if self.rng.random() < FARM_MEAT_DROP_CHANCE and state["inventory"].get("digimeat_cam", 0) < 999:
+                state["inventory"]["digimeat_cam"] = state["inventory"].get("digimeat_cam", 0) + 1
+                self._event(state, "loot", amount=1, item="digimeat_cam",
+                            text="Battle reward: Friendship DigiMeat ×1. An optional +5 CAM treat for a DigiFarm resident.")
             return True
         if not any(state["party"][i]["hp"] > 0 for i in battle["active"]):
             state["losses"] = state.get("losses", 0) + 1
@@ -534,7 +592,8 @@ class GameEngine:
             monster["xp"] = 0
         if monster["level"] > original_level:
             old_hp, old_sp = monster["max_hp"], monster["max_sp"]
-            stats = self.stats_for(self.species[monster["species_id"]], monster["level"], monster["abi"])
+            stats = self.stats_for(self.species[monster["species_id"]], monster["level"], monster["abi"],
+                                   monster.get("farm_bonuses"))
             for stat in ("atk", "def", "int", "spd"):
                 monster[stat] = stats[stat]
             monster["max_hp"], monster["max_sp"] = stats["hp"], stats["sp"]
@@ -545,9 +604,10 @@ class GameEngine:
             self._event(state, "message", index=index, text=f"{monster['name']} reached level {monster['level']}!")
 
     def _enter_lab(self, state: dict) -> None:
-        if not state.get("in_lab"):
+        if not (state.get("in_lab") or state.get("in_farm")):
             state["return_location"] = {"map_id": state["map_id"], "x": state["x"], "y": state["y"]}
         state["in_lab"] = True
+        state["in_farm"] = False
         for monster in state["party"]:
             monster["hp"], monster["sp"] = monster["max_hp"], monster["max_sp"]
             monster.pop("guard", None)
@@ -572,26 +632,97 @@ class GameEngine:
         else:
             raise GameError("Unknown DigiLab action.")
 
+    def _digifarm(self, state: dict, payload: dict) -> None:
+        action = payload.get("action", "enter")
+        if action == "enter":
+            if state.get("battle"):
+                if payload.get("forfeit") is not True:
+                    raise GameError("Confirm leaving this battle before returning home. No victory rewards will be earned.")
+                self._battle(state, {"action": "flee"})
+            if not (state.get("in_farm") or state.get("in_lab")):
+                state["return_location"] = {"map_id": state["map_id"], "x": state["x"], "y": state["y"]}
+            state.update(in_farm=True, in_lab=False)
+            self._event(state, "message", text="Welcome home. Your stored Digimon are relaxing in your private DigiFarm.")
+        elif action == "return":
+            self._peace(state)
+            if not state.get("in_farm"):
+                raise GameError("You are not at your DigiFarm.")
+            location = state.get("return_location", {})
+            if location.get("map_id") in self.maps:
+                state.update({key: location[key] for key in ("map_id", "x", "y")})
+            state.update(in_farm=False, in_lab=False)
+            self._event(state, "message", text="Returned to the field. Your DigiFarm residents are safe at home.")
+        elif action == "feed":
+            self._feed(state, payload)
+        else:
+            raise GameError("Unknown DigiFarm action.")
+
+    def _feed(self, state: dict, payload: dict) -> None:
+        self._peace(state)
+        if not state.get("in_farm"):
+            raise GameError("Feed stored Digimon at your DigiFarm.")
+        uid = payload.get("uid")
+        if not isinstance(uid, str) or not 1 <= len(uid) <= 64:
+            raise GameError("Choose a DigiFarm resident to feed.")
+        monster = next((m for m in state.get("storage", [])[:FARM_CAPACITY] if m.get("uid") == uid), None)
+        if monster is None:
+            raise GameError("That Digimon is not a resident of your DigiFarm. Store a party member here first.")
+        item_id = payload.get("item")
+        if not isinstance(item_id, str) or item_id not in SHOP or SHOP[item_id].get("category") != "digimeat":
+            raise GameError("Choose a DigiMeat treat from your inventory.")
+        quantity = _integer(payload, "quantity", 1, 1, 99)
+        if state["inventory"].get(item_id, 0) < quantity:
+            raise GameError("You do not have enough of that DigiMeat.")
+        item = SHOP[item_id]
+        resource, gain = item["resource"], item["amount"] * quantity
+        if resource == "cam":
+            missing = 100 - monster.get("cam", 0)
+            if missing <= 0:
+                raise GameError("This Digimon already has 100 CAM. No treat was consumed.")
+            if quantity > math.ceil(missing / item["amount"]):
+                raise GameError("Choose fewer treats: that quantity would waste DigiMeat at the 100 CAM limit.")
+            gain = min(gain, missing)
+            monster["cam"] = monster.get("cam", 0) + gain
+        else:
+            bonuses = monster.get("farm_bonuses", {})
+            if bonuses.get(resource, 0) + gain > FARM_BONUS_PER_STAT:
+                raise GameError(f"DigiFarm bonuses are limited to +{FARM_BONUS_PER_STAT} per stat. No treat was consumed.")
+            if sum(bonuses.get(stat, 0) for stat in FARM_STATS) + gain > FARM_BONUS_TOTAL:
+                raise GameError(f"DigiFarm bonuses are limited to +{FARM_BONUS_TOTAL} total. No treat was consumed.")
+            bonuses = dict(bonuses)
+            bonuses[resource] = bonuses.get(resource, 0) + gain
+            monster["farm_bonuses"] = bonuses
+            if resource in ("hp", "sp"):
+                monster["max_" + resource] += gain
+                if resource == "sp" or monster[resource] > 0:
+                    monster[resource] += gain
+            else:
+                monster[resource] += gain
+        state["inventory"][item_id] -= quantity
+        self._event(state, "feed", amount=gain, uid=uid, item=item_id, resource=resource, quantity=quantity,
+                    text=f"{monster['name']} enjoyed {quantity} × {item['name']}: +{gain} {resource.upper()}" +
+                    (" permanently!" if resource != "cam" else "!"))
+
     def _materialize(self, state: dict, payload: dict) -> None:
-        self._lab_only(state)
+        self._hub_only(state)
         sid = payload.get("species_id")
         if sid not in self.species:
             raise GameError("Unknown Digimon species.")
         scan = state["scan"].get(sid, 0)
         if scan < 100:
             raise GameError("Materialization needs at least 100% scan data. Defeat more of this species.")
-        if len(state["storage"]) >= 2000 and len(state["party"]) >= 6:
-            raise GameError("DigiBank is full (2,000 partners).")
+        if len(state["storage"]) >= FARM_CAPACITY and len(state["party"]) >= 6:
+            raise GameError("Your DigiFarm is full (100 residents). Make room before materializing another partner.")
         # Consume the entire accumulated scan, rewarding 200% with ABI 5.
         monster = self._monster(sid, abi=min(5, int((scan - 100) / 20)))
         state["scan"][sid] = 0
         dest = state["party"] if len(state["party"]) < 6 else state["storage"]
         dest.append(monster)
-        where = "party" if dest is state["party"] else "DigiBank"
+        where = "party" if dest is state["party"] else "DigiFarm"
         self._event(state, "message", text=f"{monster['name']} materialized into your {where} with ABI {monster['abi']}.")
 
     def _evolve(self, state: dict, payload: dict) -> None:
-        self._lab_only(state)
+        self._hub_only(state)
         index, monster = self._party_member(state, payload)
         target = payload.get("to")
         route = next((r for r in self.evolution_options(monster) if r["to"] == target), None)
@@ -603,7 +734,7 @@ class GameEngine:
         down = route.get("devolve", False)
         gain = (5 + monster["level"] // 5) if down else (2 + monster["level"] // 10)
         abi = min(200, monster["abi"] + gain)
-        evolved = self._monster(target, abi=abi, cam=monster["cam"])
+        evolved = self._monster(target, abi=abi, cam=monster["cam"], farm_bonuses=monster.get("farm_bonuses"))
         evolved["uid"] = monster["uid"]
         evolved["history"] = list(dict.fromkeys(monster.get("history", []) + [monster["species_id"]]))[-50:]
         state["party"][index] = evolved
@@ -619,29 +750,45 @@ class GameEngine:
                 state["party"].insert(0, state["party"].pop(index))
                 self._event(state, "message", text=f"{monster['name']} is your lead partner and will follow you.")
             else:
-                self._lab_only(state)
+                self._hub_only(state)
                 if len(state["party"]) <= 1:
                     raise GameError("Keep at least one partner in your party.")
-                if len(state["storage"]) >= 2000:
-                    raise GameError("DigiBank is full.")
+                if len(state["storage"]) >= FARM_CAPACITY:
+                    raise GameError("Your DigiFarm is full (100 residents). Withdraw a resident to make room.")
                 state["storage"].append(state["party"].pop(index))
-                self._event(state, "message", text=f"{monster['name']} moved to the DigiBank.")
+                self._event(state, "message", text=f"{monster['name']} moved to your DigiFarm.")
         elif action == "withdraw":
-            self._lab_only(state)
+            self._hub_only(state)
             index = _integer(payload, "index", maximum=max(0, len(state["storage"]) - 1))
             if index >= len(state["storage"]):
-                raise GameError("That DigiBank slot is empty.")
+                raise GameError("That DigiFarm slot is empty.")
             if len(state["party"]) >= 6:
                 raise GameError("Your party already has six members.")
             monster = state["storage"].pop(index)
             monster["hp"], monster["sp"] = monster["max_hp"], monster["max_sp"]
             state["party"].append(monster)
             self._event(state, "message", text=f"{monster['name']} joined your party.")
+        elif action == "exchange":
+            # A full farm (including protected legacy overflow) must never lock
+            # players out of their roster when the six party slots are occupied.
+            self._hub_only(state)
+            party_index, outgoing = self._party_member(state, payload)
+            uid = payload.get("uid")
+            if not isinstance(uid, str) or not 1 <= len(uid) <= 64:
+                raise GameError("Choose one of your stored Digimon to exchange.")
+            storage_index = next((i for i, m in enumerate(state["storage"]) if m.get("uid") == uid), None)
+            if storage_index is None:
+                raise GameError("That Digimon is not in your storage.")
+            incoming = state["storage"][storage_index]
+            incoming["hp"], incoming["sp"] = incoming["max_hp"], incoming["max_sp"]
+            state["party"][party_index], state["storage"][storage_index] = incoming, outgoing
+            self._event(state, "message", text=f"{incoming['name']} joined party slot {party_index + 1}; "
+                        f"{outgoing['name']} moved to storage. DigiFarm occupancy is unchanged.")
         else:
             raise GameError("Unknown party action.")
 
     def _shop(self, state: dict, payload: dict) -> None:
-        self._lab_only(state)
+        self._hub_only(state)
         item_id = payload.get("item")
         if item_id not in SHOP:
             raise GameError("That item is not sold here.")
@@ -650,7 +797,7 @@ class GameEngine:
         if state["credits"] < cost:
             raise GameError("Not enough credits for this purchase.")
         if state["inventory"].get(item_id, 0) + quantity > 999:
-            raise GameError("You can carry at most 999 of each capsule.")
+            raise GameError("You can carry at most 999 of each item.")
         state["credits"] -= cost
         state["inventory"][item_id] = state["inventory"].get(item_id, 0) + quantity
         self._event(state, "message", text=f"Purchased {quantity} x {SHOP[item_id]['name']} for {cost} credits.")
@@ -661,7 +808,7 @@ class GameEngine:
 
     def _use_item(self, state: dict, payload: dict) -> None:
         item_id = payload.get("item")
-        if item_id not in SHOP:
+        if item_id not in SHOP or SHOP[item_id].get("category") == "digimeat":
             raise GameError("Unknown recovery capsule.")
         if state["inventory"].get(item_id, 0) <= 0:
             raise GameError("You do not have that capsule.")
@@ -688,4 +835,5 @@ class GameEngine:
         area = self.maps[map_id]
         x, y = area.get("spawn", [area.get("width", 1024) / 2, area.get("height", 768) / 2])
         state.update(map_id=map_id, x=float(x), y=float(y))
+        state["in_farm"] = False
         self._event(state, "message", text=f"Arrived at {area['name']}. Wild level {area.get('level', 1)}.")

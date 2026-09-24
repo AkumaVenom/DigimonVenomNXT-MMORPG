@@ -18,4 +18,13 @@ def asset_path(relative: str) -> Path:
         raise ValueError('Asset path escapes game directory')
     return result
 
+
+def mysql_data_path(root=None) -> Path:
+    """The production save directory must travel with this server directory."""
+    base = Path(root or root_path()).resolve()
+    result = (base / "mysql" / "data").resolve()
+    if not result.is_relative_to(base):
+        raise ValueError("MySQL data must remain inside the Digimon Venom NXT directory.")
+    return result
+
 ROOT = root_path()

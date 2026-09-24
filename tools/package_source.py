@@ -6,12 +6,17 @@ import zipfile
 
 ROOT=Path(__file__).resolve().parents[1]
 DIRECTORIES=('venom','tools','tests','data','assets','docs')
-ROOT_NAMES={'README.md','PASSWORD_SETUP_FIX.txt','pytest.ini','.gitignore'}
+ROOT_NAMES={'README.md','PORTABLE_SERVER_README.md','pytest.ini','.gitignore'}
 
 
 def package(output:Path):
     files=[p for name in DIRECTORIES for p in (ROOT/name).rglob('*')
            if p.is_file() and '__pycache__' not in p.parts and p.suffix!='.pyc']
+    # Include only redistributable runtime files, never mysql/data or credentials.
+    files += [p for p in (ROOT/'mysql'/'runtime').rglob('*') if p.is_file()]
+    files += [p for p in (ROOT/'mysql'/'provenance').rglob('*') if p.is_file()]
+    files += [p for p in (ROOT/'mysql'/'prerequisites').glob('*') if p.is_file() and p.suffix.lower() in {'.bat', '.ps1', '.md', '.txt'}]
+    files += [p for p in (ROOT/'mysql').glob('*') if p.is_file() and p.suffix.lower() in {'.md', '.txt'}]
     files += [p for p in ROOT.iterdir() if p.is_file() and
               (p.name in ROOT_NAMES or p.suffix=='.bat' or p.name.startswith('requirements'))]
     folded=set()
@@ -29,7 +34,8 @@ def package(output:Path):
     with zipfile.ZipFile(output) as archive:
         corrupt=archive.testzip()
         if corrupt:raise RuntimeError(f'ZIP integrity error: {corrupt}')
-    digest=hashlib.sha256(output.read_bytes()).hexdigest()
+    with output.open('rb') as stream:
+        digest=hashlib.file_digest(stream, 'sha256').hexdigest()
     print(f'{output.name}: {len(files)} files, {output.stat().st_size:,} bytes\nSHA256 {digest}')
     return digest
 

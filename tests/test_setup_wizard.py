@@ -18,7 +18,7 @@ class WizardInputTests(unittest.TestCase):
         for value in ("0", "65536", "8765/http", ""):
             with self.subTest(value=value), self.assertRaises(ValueError):
                 _port(value, "Database port")
-        self.assertEqual(3306, _port("3306", "Database port"))
+        self.assertEqual(3307, _port("3307", "Database port"))
         self.assertEqual(8765, _port("8765", "Game port"))
 
     def test_password_input_keeps_unicode_and_spaces_but_rejects_controls(self):
@@ -37,8 +37,8 @@ class FakeService:
         self.candidates = []
 
     def defaults(self):
-        return {"host": "127.0.0.1", "port": 3306, "name": "venom_nxt", "user": "venom_nxt",
-                "admin_user": "root", "account_host": "localhost", "public_host": "localhost",
+        return {"host": "127.0.0.1", "port": 3307, "name": "venom_nxt", "user": "venom_nxt",
+                "admin_user": "root", "account_host": "127.0.0.1", "public_host": "localhost",
                 "game_port": 8765, "bind": "127.0.0.1", "has_database": False,
                 "password": "must never appear in the UI", "admin_password": "must never appear"}
 
@@ -51,7 +51,7 @@ class FakeService:
 
     def test_database(self, settings):
         self._call("test", settings)
-        return {"server_version": "10.11 MariaDB", "account": "root@localhost"}
+        return {"server_version": "8.4.11 MySQL", "account": "root@127.0.0.1"}
 
     def configure_database(self, settings):
         self._call("configure", settings)
@@ -70,7 +70,7 @@ class FakeService:
         return self.candidates
 
     def report_text(self):
-        return "Setup 0.3.0\nEndpoint: 127.0.0.1:3306\nPasswords omitted."
+        return "Setup 0.3.0\nEndpoint: 127.0.0.1:3307\nPasswords omitted."
 
 
 @unittest.skipUnless(tk is not None and (os.name == "nt" or os.environ.get("DISPLAY")), "Requires a graphical desktop / Xvfb")
@@ -102,14 +102,13 @@ class WizardDesktopTests(unittest.TestCase):
         self.wait_idle()
         self.assertEqual(1, self.wizard.page_index)
 
-    def test_fresh_install_keeps_both_password_fields_blank(self):
+    def test_fresh_install_needs_no_administrator_credentials(self):
         self.assertEqual("", self.wizard.values["password"].get())
-        self.assertEqual("", self.wizard.values["admin_password"].get())
-        self.assertEqual("3306", self.wizard.values["port"].get())
+        self.assertNotIn("admin_password", self.wizard.values)
+        self.assertEqual("3307", self.wizard.values["port"].get())
         self.assertEqual("8765", self.wizard.values["game_port"].get())
 
     def test_full_flow_uses_one_background_worker_and_saved_actual_username(self):
-        self.wizard.values["admin_password"].set("  Administrator!é  ")
         self.to_game_step()
         self.wizard.values["password"].set("  Game!%&漢  ")
         self.wizard._configure_database()
@@ -124,28 +123,24 @@ class WizardDesktopTests(unittest.TestCase):
         worker_threads = {call[2] for call in self.service.calls}
         self.assertEqual(1, len(worker_threads))
         self.assertNotIn(threading.get_ident(), worker_threads)
-        self.assertEqual("  Administrator!é  ", self.service.calls[0][1]["admin_password"])
+        self.assertNotIn("admin_password", self.service.calls[0][1])
         self.assertEqual("  Game!%&漢  ", self.service.calls[1][1]["password"])
         self.assertIn("client_kit", self.wizard.ready_summary.get())
 
-    def test_error_code_stays_visible_with_entries_and_retry_uses_edited_values(self):
-        self.service.error = SetupFailure("administrator", 1043, "Handshake rejected.", "Check the database port; game port 8765 is separate.")
-        self.wizard.values["admin_password"].set("original password")
+    def test_error_code_stays_visible_and_retry_keeps_game_settings(self):
+        self.service.error = SetupFailure("endpoint", "PORTABLE_MYSQL", "Port in use.", "Close the other database, then retry.")
+        self.wizard.values["password"].set("chosen game password")
         self.wizard._test_database()
         self.wait_idle()
         self.assertEqual(0, self.wizard.page_index)
-        self.assertIn("1043", self.wizard.error_title.get())
-        self.assertIn("game port 8765", self.wizard.error_text.get("1.0", "end"))
-        self.assertEqual("original password", self.wizard.values["admin_password"].get())
-        self.assertEqual(1, len(self.service.calls))
+        self.assertIn("PORTABLE_MYSQL", self.wizard.error_title.get())
+        self.assertIn("other database", self.wizard.error_text.get("1.0", "end"))
+        self.assertEqual("chosen game password", self.wizard.values["password"].get())
         self.service.error = None
-        self.wizard.values["port"].set("3307")
-        self.wizard.values["admin_password"].set("corrected password")
         self.wizard._retry()
         self.wait_idle()
         self.assertEqual(1, self.wizard.page_index)
-        self.assertEqual(3307, self.service.calls[-1][1]["port"])
-        self.assertEqual("corrected password", self.service.calls[-1][1]["admin_password"])
+        self.assertEqual(2, len(self.service.calls))
 
     def test_busy_operation_prevents_close_and_duplicate_submissions(self):
         self.service.block = threading.Event()
@@ -172,29 +167,25 @@ class WizardDesktopTests(unittest.TestCase):
     def test_actual_clipboard_paste_preserves_secrets_and_rejects_multiline(self):
         entry = next(control for control in self.wizard._controls
                      if isinstance(control, __import__("tkinter.ttk", fromlist=["Entry"]).Entry)
-                     and str(control.cget("textvariable")) == str(self.wizard.values["admin_password"]))
+                     and str(control.cget("textvariable")) == str(self.wizard.values["password"]))
         self.window.clipboard_clear()
         self.window.clipboard_append("  !%&é漢字?  ")
         self.wizard._paste(entry)
-        self.assertEqual("  !%&é漢字?  ", self.wizard.values["admin_password"].get())
+        self.assertEqual("  !%&é漢字?  ", self.wizard.values["password"].get())
         self.window.clipboard_clear()
         self.window.clipboard_append("bad\npassword")
         self.wizard._paste(entry)
-        self.assertEqual("  !%&é漢字?  ", self.wizard.values["admin_password"].get())
+        self.assertEqual("  !%&é漢字?  ", self.wizard.values["password"].get())
         self.wizard._copy_report()
         self.assertNotIn("!%&", self.window.clipboard_get())
         self.assertIn("Passwords omitted", self.window.clipboard_get())
 
-    def test_find_local_port_only_fills_an_unambiguous_candidate(self):
-        self.service.candidates = [{"host": "127.0.0.1", "port": 3308, "path": "xampp/mysql/bin/my.ini"}]
-        self.wizard._find_database()
-        self.wait_idle()
-        self.assertEqual("3308", self.wizard.values["port"].get())
-        self.service.candidates.append({"port": 3309, "path": "other/mysql/my.ini"})
-        self.wizard._find_database()
-        self.wait_idle()
-        self.assertEqual("3308", self.wizard.values["port"].get())
-        self.assertIn("Multiple", self.wizard.status.get())
+    def test_portable_database_page_has_no_external_endpoint_controls(self):
+        names = {str(control.cget("textvariable")) for control in self.wizard._controls
+                 if isinstance(control, __import__("tkinter.ttk", fromlist=["Entry"]).Entry)}
+        self.assertNotIn(str(self.wizard.values["host"]), names)
+        self.assertNotIn(str(self.wizard.values["port"]), names)
+        self.assertEqual("Prepare MySQL", self.wizard.primary.cget("text"))
 
     def test_small_window_scrolls_and_primary_controls_remain_visible(self):
         self.window.geometry("640x480")
@@ -207,11 +198,10 @@ class WizardDesktopTests(unittest.TestCase):
         self.window.update()
         self.assertLessEqual(self.wizard.primary.winfo_rootx() + self.wizard.primary.winfo_width(), self.window.winfo_rootx() + self.window.winfo_width())
 
-    def test_invalid_port_does_not_start_network_work_or_erase_fields(self):
-        self.wizard.values["port"].set("8765/incorrect")
-        self.wizard.values["admin_password"].set("keep me")
-        self.wizard._test_database()
+    def test_invalid_game_port_does_not_start_hosting_work(self):
+        self.wizard._show_page(2)
+        self.wizard.values["game_port"].set("8765/incorrect")
+        self.wizard._configure_hosting()
         self.assertFalse(self.wizard.busy)
         self.assertEqual([], self.service.calls)
-        self.assertEqual("keep me", self.wizard.values["admin_password"].get())
         self.assertIn("1 to 65535", self.wizard.error_text.get("1.0", "end"))

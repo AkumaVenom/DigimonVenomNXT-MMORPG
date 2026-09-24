@@ -2,7 +2,8 @@
 
 The camera operates in the supplied x2 map's coordinates.  UI scale is deliberately
 separate: changing Windows DPI must not change movement or collision coordinates.
-Only the visible map crop is enlarged, including at the maximum 8x view zoom.
+Only the visible map crop and a small scrolling margin are enlarged, including
+at the maximum 8x view zoom. The final display always stays at native resolution.
 """
 from __future__ import annotations
 
@@ -98,6 +99,8 @@ class WorldRenderer:
     """World view plus readable, DPI-scaled map controls."""
 
     SPRITE_CACHE_BYTES = 24 * 1024 * 1024
+    SPRITE_CACHE_ITEMS = 4096
+    LAYER_SCROLL_MARGIN = 128  # Physical pixels, independent of map zoom/DPI.
 
     def __init__(self, app):
         self.app = app
@@ -110,6 +113,7 @@ class WorldRenderer:
         self._mini_key = None
         self._mini_surface = None
         self._facings = {}
+        self._label_sizes = OrderedDict()
 
     @property
     def zoom(self):
@@ -158,38 +162,56 @@ class WorldRenderer:
         crop = self.camera.source_crop().clip(surface.get_rect())
         if not crop.width or not crop.height:
             return
-        destination = self.camera.crop_destination(crop)
-        key = (id(surface), tuple(crop), destination.size)
+        scale = self.camera.scale
+        # Keep a modest margin around the view. Walking normally translates this
+        # cached patch; it must not resample a multi-megapixel map every frame.
+        # Retaining the source also prevents id reuse after a map-cache eviction.
+        key = (surface, scale, self.camera.viewport.size)
         cached = self._layers.get(slot)
-        if cached is None or cached[0] != key:
-            # A view-sized allocation, never a full-map x8 intermediate.
-            source = surface.subsurface(crop)
+        if cached is None or cached[0] != key or not cached[1].contains(crop):
+            margin = math.ceil(self.LAYER_SCROLL_MARGIN / scale)
+            patch = crop.inflate(2 * margin, 2 * margin).clip(surface.get_rect())
+            destination = self.camera.crop_destination(patch)
+            # Bounded by the physical viewport plus the scrolling margin, never
+            # by the size of a full map enlarged to the maximum zoom.
+            source = surface.subsurface(patch)
             scaled = pygame.transform.scale(source, destination.size)
-            self._layers[slot] = (key, scaled)
-        self._surface.blit(self._layers[slot][1], destination)
+            cached = self._layers[slot] = (key, patch, scaled)
+        destination = self.camera.crop_destination(cached[1])
+        self._surface.blit(cached[2], destination)
 
-    def _scale_sprite(self, source):
-        size = (max(1, round(source.get_width() * self.camera.scale)),
-                max(1, round(source.get_height() * self.camera.scale)))
+    def _scale_sprite(self, source, scale=None):
+        scale = self.camera.scale if scale is None else scale
+        size = (max(1, round(source.get_width() * scale)),
+                max(1, round(source.get_height() * scale)))
+        if size == source.get_size():
+            return source
         key = (id(source), size)
         if key in self._sprites:
             self._sprites.move_to_end(key)
             return self._sprites[key][1]
         scaled = pygame.transform.scale(source, size)
-        size_bytes = scaled.get_pitch() * scaled.get_height()
+        size_bytes = (scaled.get_pitch() * scaled.get_height()
+                      + source.get_pitch() * source.get_height())
         # Keep a source reference: pygame can otherwise reuse its id after eviction.
         if size_bytes <= self.SPRITE_CACHE_BYTES:
             self._sprites[key] = (source, scaled, size_bytes)
             self._sprite_bytes += size_bytes
-            while self._sprite_bytes > self.SPRITE_CACHE_BYTES or len(self._sprites) > 256:
+            while self._sprite_bytes > self.SPRITE_CACHE_BYTES or len(self._sprites) > self.SPRITE_CACHE_ITEMS:
                 _, old = self._sprites.popitem(last=False)
                 self._sprite_bytes -= old[2]
         return scaled
 
-    def _draw_actor(self, kind, world_pos, ident, moving, direction, label, bot_id=None):
-        app, scale = self.app, self.camera.scale
-        pos = self.camera.world_to_screen(world_pos)
-        if not self.camera.viewport.inflate(round(180 * scale), round(180 * scale)).collidepoint(pos):
+    def _draw_actor(self, kind, world_pos, ident, moving, direction, label, bot_id=None, *, frame=None):
+        app = self.app
+        if frame is None:
+            scale, origin = self.camera.scale, self.camera.origin
+            visible = self.camera.viewport.inflate(round(180 * scale), round(180 * scale))
+        else:
+            scale, origin, visible = frame
+        position = world_pos if isinstance(world_pos, pygame.Vector2) else pygame.Vector2(world_pos)
+        pos = origin + position * scale
+        if not visible.collidepoint(pos):
             return
         shadow = pygame.Rect(round(pos.x - 15 * scale), round(pos.y - 5 * scale),
                              max(2, round(30 * scale)), max(1, round(12 * scale)))
@@ -199,7 +221,7 @@ class WorldRenderer:
         top = pos.y - 64 * scale
         destination = pygame.Rect(round(pos.x-16*scale), round(top), max(8, round(32*scale)), max(8, round(64*scale)))
         if source:
-            sprite = self._scale_sprite(source)
+            sprite = self._scale_sprite(source, scale)
             appearance = app.assets.tamers.get(ident, {}) if kind == 'tamer' else {}
             anchor = appearance.get('anchors', {}).get(direction)
             if anchor:
@@ -229,7 +251,16 @@ class WorldRenderer:
         if label:
             # Names are UI text: crisp and readable independently of map magnification.
             label_position = self._logical_point((pos.x, top))
-            width, height = app.assets.font(11, True).size(label)
+            font = app.assets.font(11, True)
+            key = (font, label)
+            dimensions = self._label_sizes.get(key)
+            if dimensions is None:
+                dimensions = self._label_sizes[key] = font.size(label)
+                if len(self._label_sizes) > 1024:
+                    self._label_sizes.popitem(last=False)
+            else:
+                self._label_sizes.move_to_end(key)
+            width, height = dimensions
             label_rect = pygame.Rect(0, 0, width + 12, height + 6)
             label_rect.midbottom = (round(label_position[0]), round(label_position[1] - 6))
             panel(app.screen, label_rect, BG, None, 4)
@@ -249,7 +280,9 @@ class WorldRenderer:
         for name, player in app.players.items():
             if name == app.state.get('username') or player.get('map_id') != app.state.get('map_id'):
                 continue
-            pos = app.player_render.get(name, pygame.Vector2(player.get('x', 0), player.get('y', 0)))
+            pos = app.player_render.get(name)
+            if pos is None:
+                pos = pygame.Vector2(player.get('x', 0), player.get('y', 0))
             dx, dy = player.get('dx', 0), player.get('dy', 0)
             vertical = 'down' if dy > 0 else 'up' if dy < 0 else ''
             horizontal = 'right' if dx > 0 else 'left' if dx < 0 else ''
@@ -284,8 +317,11 @@ class WorldRenderer:
             self._surface.set_clip(physical_view.clip(old_clip))
             try:
                 self._draw_layer(surface, 'background')
+                scale = self.camera.scale
+                frame = (scale, self.camera.origin,
+                         self.camera.viewport.inflate(round(180 * scale), round(180 * scale)))
                 for _, kind, position, ident, moving, direction, label, bot_id in self._actors():
-                    self._draw_actor(kind, position, ident, moving, direction, label, bot_id)
+                    self._draw_actor(kind, position, ident, moving, direction, label, bot_id, frame=frame)
                 foreground = app.assets.image(entry.get('foreground'))
                 if foreground:
                     self._draw_layer(foreground, 'foreground')

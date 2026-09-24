@@ -187,7 +187,8 @@ class NetworkTests(unittest.IsolatedAsyncioTestCase):
             session.state["scan"] = {f"species_{i}": 100 for i in range(1004)}
             movement = await self.request(ws, 2, "move", dx=1, dy=0, dt=0.1)
             self.assertTrue(movement["ok"])
-            self.assertEqual({"map_id", "x", "y"}, set(movement["position"]))
+            self.assertEqual({"space", "map_id", "x", "y"}, set(movement["position"]))
+            self.assertEqual("field", movement["position"]["space"])
             self.assertGreater(movement["position"]["x"], 100)
             self.assertNotIn("state", movement)
             self.assertLess(len(json.dumps(movement)), 180)

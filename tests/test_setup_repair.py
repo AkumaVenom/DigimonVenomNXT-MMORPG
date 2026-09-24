@@ -55,11 +55,11 @@ def test_repair_bootstrap_installs_only_setup_deps_then_preserves_root(tmp_path,
     monkeypatch.setattr(repair_mysql.subprocess, "call", lambda argv: calls.append((argv, {})) or 0)
 
     assert repair_mysql.bootstrap(root, requirements, script, console_passwords=console) == 0
-    assert created == [root / ".venv-setup-fix"]
-    python = str(repair_mysql.environment_python(root / ".venv-setup-fix"))
+    assert created == [root / ".venv-setup"]
+    python = str(repair_mysql.environment_python(root / ".venv-setup"))
     assert calls == [
         ([python, "-m", "pip", "install", "--disable-pip-version-check", "--requirement", str(requirements)], {"check": True}),
-        ([python, str(script), "--root", str(root), "--prepared"] + (["--console-passwords"] if console else []), {}),
+        ([python, str(script), "--root", str(root), "--prepared", "--command", "mysql"] + (["--console-passwords"] if console else []), {}),
     ]
     assert not any("password" in argument.lower() and argument != "--console-passwords"
                    for argv, _ in calls for argument in argv)
@@ -69,7 +69,7 @@ def test_repair_refuses_admin_subfolder_and_missing_root(tmp_path):
     root = server_folder(tmp_path)
     admin = root / "admin"
     admin.mkdir()
-    with pytest.raises(ValueError, match="next to VenomWorldServer"):
+    with pytest.raises(ValueError, match="complete extracted"):
         repair_mysql.validate_root(admin)
     with pytest.raises(ValueError, match="does not exist"):
         repair_mysql.validate_root(tmp_path / "missing")

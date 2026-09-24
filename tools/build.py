@@ -15,7 +15,9 @@ import venv
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
-BUILD_VERSION = "0.3.0-alpha"
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+BUILD_VERSION = "0.6.0"
 
 
 def safe_asset(root: Path, name: str) -> Path:
@@ -105,6 +107,18 @@ def archive(folder: Path, output: Path):
                 out.write(path, path.relative_to(folder))
 
 
+def check_server_build_destination(destination: Path):
+    """A release rebuild must never erase an installation used for actual play."""
+    if ((destination / "config/server.json").exists()
+            or (destination / "mysql/instance.json").exists()
+            or (destination / "mysql/game-login.json").exists()
+            or (destination / "mysql/data").exists()):
+        raise RuntimeError(
+            "dist/Windows_Server_x64 contains database or configured server state. "
+            "Stop it cleanly and move the complete installation outside dist before "
+            "building again. The builder will not delete saved progress.")
+
+
 def build(args) -> None:
     if sys.version_info < (3, 11):
         raise RuntimeError("Python 3.11 or newer is required.")
@@ -113,6 +127,9 @@ def build(args) -> None:
         return
     if sys.platform != "win32" or struct.calcsize("P") != 8 or platform.machine().lower() not in {"amd64", "x86_64"}:
         raise RuntimeError("Windows x64 executables must be built on Windows x64 using 64-bit Python. Integrity verification succeeded; cross-compiling with Linux PyInstaller is not supported.")
+    check_server_build_destination(ROOT / "dist" / "Windows_Server_x64")
+    from tools.portable_mysql import ensure_runtime
+    ensure_runtime(ROOT, offline=args.offline)
     env = ROOT / ".venv-build"
     python = env / "Scripts/python.exe"
     if not python.exists():
@@ -132,6 +149,7 @@ def build(args) -> None:
         "DigimonVenomNXT": ("venom.client.main", "--windowed"),
         "VenomWorldServer": ("venom.server.main", "--console"),
         "VenomSetup": ("tools.setup", "--console"),
+        "VenomMySQL": ("tools.portable_mysql", "--console"),
     }
     for name, (module, mode) in entries.items():
         entry = work / f"entry_{name}.py"
@@ -148,6 +166,7 @@ def build(args) -> None:
                               "--hidden-import", "tools.setup_wizard",
                               "--hidden-import", "tools.setup_service",
                               "--hidden-import", "tools.setup_diagnostics",
+                              "--hidden-import", "tools.portable_mysql",
                               "--copy-metadata", "PyMySQL",
                               "--manifest", str(ROOT / "tools/windows_client.manifest")]
         run(command)
@@ -161,12 +180,15 @@ def build(args) -> None:
         copy_tree(ROOT / "data", destination / "data")
         (destination / "config").mkdir(exist_ok=True)
         (destination / "docs").mkdir(exist_ok=True)
-        shutil.copy2(ROOT / "PASSWORD_SETUP_FIX.txt", destination / "PASSWORD_SETUP_FIX.txt")
-        for name in ("SETUP.md", "RIVALS_UPGRADE.md", "RIVALS_AND_RANKED.md",
-                     "REARISE_RULES_RESEARCH.md", "RELEASE_STATUS.md", "VALIDATION.md",
-                     "RIVALS_BENCHMARK.md", "RIVALS_BENCHMARK.json", "PASSWORD_SETUP_FIX.md"):
+        for name in ("SETUP.md", "SERVER.md", "RIVALS_UPGRADE.md", "RIVAL_MOVEMENT_UPGRADE.md",
+                     "RIVAL_MOVEMENT_UPGRADE.txt", "RIVALS_AND_RANKED.md",
+                     "REARISE_RULES_RESEARCH.md", "RELEASE_STATUS.md", "DIGIFARM_V060.md", "VALIDATION.md",
+                     "RIVALS_BENCHMARK.md", "RIVALS_BENCHMARK.json",
+                     "RIVAL_FIX_VALIDATION.json", "RIVAL_TRAINING_VALIDATION.json"):
             shutil.copy2(ROOT / "docs" / name, destination / "docs" / name)
-    for name in ("CONTROLS.md", "DISPLAY_UPGRADE.md"):
+    for name in ("CONTROLS.md", "DISPLAY_UPGRADE.md", "FPS_FIX.md", "FPS_BENCHMARK.json",
+                 "UI_UPGRADE.md", "UI_VALIDATION.json", "UI_PERFORMANCE.json",
+                 "UI2_UPGRADE.md", "UI2_VALIDATION.json", "UI2_PERFORMANCE.json"):
         if (ROOT / "docs" / name).is_file():
             shutil.copy2(ROOT / "docs" / name, client / "docs" / name)
     copy_tree(ROOT / "assets", client / "assets")
@@ -180,53 +202,79 @@ def build(args) -> None:
             shutil.copy2(safe_asset(ROOT, name), destination)
     # Keep setup's own _internal directory isolated from the world server bundle.
     copy_tree(frozen / "VenomSetup", server / "admin")
-    for name in ("01_SETUP_SERVER.bat", "02_SETUP_MYSQL.bat", "03_SETUP_PUBLIC_HOSTING.bat", "START_WORLD_SERVER_CONSOLE.bat"):
+    copy_tree(frozen / "VenomMySQL", server / "mysql" / "manager")
+    # Runtime binaries are distributable; mysql/data and private credentials are not.
+    copy_tree(ROOT / "mysql" / "runtime", server / "mysql" / "runtime")
+    if (ROOT / "mysql" / "provenance").is_dir():
+        copy_tree(ROOT / "mysql" / "provenance", server / "mysql" / "provenance")
+    for path in (ROOT / "mysql" / "prerequisites").glob("*"):
+        if path.is_file() and path.suffix.lower() in {".bat", ".ps1", ".md", ".txt"}:
+            (server / "mysql" / "prerequisites").mkdir(exist_ok=True)
+            shutil.copy2(path, server / "mysql" / "prerequisites" / path.name)
+    if (ROOT / "PORTABLE_SERVER_README.md").is_file():
+        shutil.copy2(ROOT / "PORTABLE_SERVER_README.md", server / "PORTABLE_SERVER_README.md")
+    for path in (ROOT / "mysql").iterdir():
+        if path.is_file() and path.suffix.lower() in {".md", ".txt"}:
+            shutil.copy2(path, server / "mysql" / path.name)
+    for name in ("PORTABLE_MYSQL.md", "PORTABLE_MYSQL_VALIDATION.md", "PORTABLE_MYSQL_VALIDATION.json"):
+        if (ROOT / "docs" / name).is_file():
+            shutil.copy2(ROOT / "docs" / name, server / "docs" / name)
+    for name in ("01_SETUP_SERVER.bat", "02_SETUP_MYSQL.bat", "03_SETUP_PUBLIC_HOSTING.bat", "_RUN_SETUP.bat", "_RUN_MYSQL.bat",
+                 "START_WORLD_SERVER_CONSOLE.bat", "START_MYSQL.bat", "STOP_MYSQL.bat", "MYSQL_STATUS.bat",
+                 "STOP_SERVER.bat", "START_SERVER.bat"):
         shutil.copy2(ROOT / name, server / name)
     shutil.copy2(ROOT / "PLAY_DIGIMON_VENOM_NXT.bat", client / "PLAY_DIGIMON_VENOM_NXT.bat")
     client_config = {"host": "localhost", "port": 8765, "ca_file": "config/server-ca.pem", "server_name": "localhost", "tls": True}
     (client / "config/client.json").write_text(json.dumps(client_config, indent=2) + "\n", encoding="utf-8")
     (client / "READ_ME_FIRST.txt").write_text(
-        "DIGIMON VENOM NXT 0.3.0 - CLIENT\n\n"
+        f"DIGIMON VENOM NXT {BUILD_VERSION} - CLIENT\n\n"
         "Start the game: PLAY_DIGIMON_VENOM_NXT.bat\n"
-        "Use the dedicated server from this release for matching game and setup behavior.\n"
+        "Connect to a matching v0.6.0 server. Both the client and world server must be updated.\n"
         "Existing installation: copy your existing client config folder into this complete new client folder.\n"
+        "DigiFarm v0.6.0: your private home, stored Digimon, optional DigiMeat and permanent training.\n"
+        "See docs/DIGIFARM_V060.md for safe upgrade steps; preserve existing server saves and credentials.\n"
         "Keep its client.json and trusted server-ca.pem. Your saved display preferences remain in Local AppData.\n"
         "New installation: extract the host's Public_Player_Connection_Kit.zip INTO this folder, merging config.\n"
         "Built clients need no Python installation or manual Windows certificate trust.\n"
+        "DigiFarm / F2: use the top-left home button. Click a farm Digimon to inspect and feed it.\n"
         "R: Ranked Arena. V: Rivals Hub. O: Bot Activity. Click a map rival to inspect them.\n"
         "F10: display/audio settings. F11: fullscreen/windowed.\n"
-        "Upgrade steps: docs/RIVALS_UPGRADE.md. Game rules: docs/RIVALS_AND_RANKED.md.\n",
+        "Upgrade steps: docs/DIGIFARM_V060.md. Interface history: docs/UI2_UPGRADE.md. Game rules: docs/RIVALS_AND_RANKED.md.\n",
         encoding="utf-8")
     (server / "READ_ME_FIRST.txt").write_text(
-        "DIGIMON VENOM NXT 0.3.0 - DEDICATED SERVER\n\n"
-        "START THE SERVER: START_WORLD_SERVER_CONSOLE.bat\n\n"
-        "UPGRADE FROM A WORKING SERVER\n"
-        "1. Stop the old world server and back up its database and entire private config folder.\n"
-        "2. Copy that config folder into this complete new server folder, preserving credentials and all TLS keys.\n"
-        "3. Start MySQL/MariaDB in XAMPP, then run START_WORLD_SERVER_CONSOLE.bat.\n"
-        "4. Wait for the rival population to finish starting, then use the updated client.\n"
-        "The new tables are created automatically; accounts and passwords are retained.\n"
-        "Use 01_SETUP_SERVER.bat to check or repair your saved configuration when needed.\n"
-        "Keep the existing database name and CA. See docs/RIVALS_UPGRADE.md.\n\n"
-        "FRESH INSTALLATION\n"
-        "1. Start MySQL/MariaDB in XAMPP.\n"
-        "2. Run 01_SETUP_SERVER.bat for the complete 0.3.0 setup wizard.\n"
-        "3. Test the XAMPP connection using its existing administrator password (blank is allowed).\n"
-        "4. Create the game login automatically, choose local/public hosting, then review readiness.\n"
-        "5. Apply the generated Public_Player_Connection_Kit.zip inside the client folder.\n"
-        "6. Run START_WORLD_SERVER_CONSOLE.bat. Forward the selected TCP port for Internet hosting.\n"
-        "02_SETUP_MYSQL.bat and 03_SETUP_PUBLIC_HOSTING.bat reopen the corresponding wizard page.\n"
-        "If a check fails, retain the on-screen error code or logs/setup-latest.json; never send passwords.\n\n"
-        "Default population: 5,000 rivals. Configure rivals.count / rivals.enabled in config/server.json.\n"
-        "Keep the whole server folder private: it contains database credentials and certificate private keys.\n"
-        "Only share the configured client and public player connection kit.\n",
+        f"DIGIMON VENOM NXT {BUILD_VERSION} - PORTABLE DEDICATED SERVER\n\n"
+        "UPGRADING AN EXISTING SERVER\n"
+        "Read docs/DIGIFARM_V060.md first. Stop and back up the complete existing server.\n"
+        "Update both client and server applications; preserve mysql/data, mysql credentials and config.\n"
+        "Do not run a fresh database setup or replace your saves for this upgrade.\n\n"
+        "FRESH SETUP\n"
+        "1. Extract the COMPLETE server folder into a writable directory.\n"
+        "2. Run 01_SETUP_SERVER.bat. It prepares the bundled MySQL process, creates\n"
+        "   a fresh game database and sets up local/public player connections.\n"
+        "3. Extract Public_Player_Connection_Kit.zip into each client's folder.\n"
+        "4. Run START_MYSQL.bat, then START_WORLD_SERVER_CONSOLE.bat.\n"
+        "   The world launcher also checks and starts this folder's MySQL automatically.\n\n"
+        "ALL DATABASE FILES AND PLAYER SAVES: mysql/data\n"
+        "MYSQL PROCESS: mysql/runtime/bin/mysqld.exe, loopback port 3307\n"
+        "No separately installed database or Windows database service is needed.\n\n"
+        "BACK UP / MOVE TO ANOTHER PC\n"
+        "Run STOP_SERVER.bat to stop the world and MySQL cleanly. Wait for\n"
+        "confirmation, then ZIP or copy the entire server\n"
+        "folder, including mysql and config. Extract it on the other Windows x64 PC\n"
+        "and use the same launchers. Never ZIP live database files.\n"
+        "Do not delete mysql/data, private database settings, or config when updating.\n"
+        "Keep the complete server folder private; share only the client and player kit.\n\n"
+        "Setup: 02_SETUP_MYSQL.bat / 03_SETUP_PUBLIC_HOSTING.bat\n"
+        "Database status: MYSQL_STATUS.bat. Database logs: mysql/logs.\n"
+        "For public hosting, forward only the game TCP port (default 8765).\n"
+        "Default population: 5,000 rivals; edit rivals.count / rivals.enabled in config/server.json.\n",
         encoding="utf-8")
     metadata = {"version": BUILD_VERSION, "platform": "Windows-x64", "python": platform.python_version(), "assets": verified}
     for directory in (client, server):
         (directory / "build-info.json").write_text(json.dumps(metadata, indent=2) + "\n", encoding="utf-8")
     for directory in (client, server):
         archive(directory, output / f"{directory.name}.zip")
-    print("\nBuild complete. Independent packages:\n  dist/Windows_Client_x64.zip\n  dist/Windows_Server_x64.zip\nNew host: run 01_SETUP_SERVER.bat in the server folder. Existing host: follow docs/RIVALS_UPGRADE.md and preserve your config.\nStart the server with START_WORLD_SERVER_CONSOLE.bat; this release updates BOTH server and client.", flush=True)
+    print("\nBuild complete. DigiFarm v0.6.0 packages:\n  dist/Windows_Client_x64.zip\n  dist/Windows_Server_x64.zip\nUpdate BOTH the client and world server. Preserve the existing database, credentials and config.\nUpgrade steps: docs/DIGIFARM_V060.md. For a NEW server only: follow PORTABLE_SERVER_README.md.", flush=True)
 
 
 def main(argv=None):

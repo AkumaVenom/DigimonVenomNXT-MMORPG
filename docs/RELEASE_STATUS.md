@@ -1,34 +1,95 @@
-# Release status — 0.3.0 alpha
+# Release status — DigiFarm v0.6.0
 
-Version 0.3.0 replaces the default numbered console setup with a coherent native
-wizard opened by **01_SETUP_SERVER.bat**. It checks the XAMPP connection, creates
-or reuses the game database login, configures local/public hosting, and displays
-readiness and diagnostic details. A failed step remains visible and can be
-retried; sanitized diagnostics are stored in `logs/setup-latest.json`. The user
-reported an uncertain error code, so this release does not claim that the precise
-failure on their Windows computer has been reproduced. Error 1043 (handshake
-rejected) is distinguished from 1045 (authentication rejected).
+The v0.6.0 release adds the player's private DigiFarm to the accepted UI2,
+FPS1 and portable-MySQL baseline. Each account has its own home, up to 100
+stored resident Digimon, optional feeding, a server-owned training economy,
+and a dedicated original music loop. New accounts begin at home; existing
+accounts retain their saved location and progress. See [DIGIFARM_V060.md](DIGIFARM_V060.md)
+for exact limits, item prices, battle rewards and migration instructions.
 
-The rebuilt setup keeps existing database configuration, game data and certificate
-authorities. It can create a game login automatically, without an existing game
-account, and does not reset XAMPP or other MMO passwords. Stage launchers reopen
-the same wizard; advanced console and answers-file workflows remain available.
-All assets and existing gameplay systems are included in the complete source.
+**Both client and server must be rebuilt on Windows x64 and upgraded together.**
+This is a source release; the Linux validation environment cannot build or
+execute the Windows applications. Existing portable MySQL saves and credentials
+are preserved. The new save fields are additive and require no database reset
+or schema replacement. Historical UI2 instructions to update only the client
+are superseded by the v0.6.0 guide.
+
+For a **new installation only**, follow [SETUP.md](SETUP.md). The bundled MySQL
+8.4.11 runs from `mysql/runtime`, with production saves under `mysql/data`.
+Follow [../PORTABLE_SERVER_README.md](../PORTABLE_SERVER_README.md) for startup,
+clean shutdown and complete-folder backups.
+
+## Retained rival and portable-server systems
+
+The walking interval starts when a rival's exploration job actually runs, so
+startup or database delays cannot consume the interval before its first step.
+Validated patrol paths continue looping between scheduled jobs, and snapshots
+carry the same authoritative position and direction to all players. Arrival
+spacing applies only when a rival actually changes maps; it does not teleport
+walkers around their current sector to separate them. Wild battles and other
+activities still have normal stationary periods.
+
+Rivals retain training teams across activity cycles, bank experienced partners
+through ordinary DigiLab party operations, and select eligible younger owned
+partners for later rounds. The Lab selects and stores partners before checking
+evolution, and a rival's only established partner is retained until earned scan
+data can materialize another. Materialization still requires at least 100% earned
+scan data. Evolution and de-evolution follow the existing eligibility rules and
+retain the partner's identity. This update does not award invented XP, clear
+collections or reset trained Digimon to manufacture new teams. Ranked battles,
+healing, shopping and friendly challenges continue through their existing rules.
+
+Travel considers quieter safe maps below a team's strength, rather than forcing
+mature parties into a narrow high-level band. Banked veterans can make short
+visits to underfilled higher-level sectors. Pending arrivals reserve space so
+several rivals do not all claim the same apparent gap. These visits have a
+bounded duration, followed by a protected stretch of ordinary team training;
+other capable rivals can take later assignments. Experienced teams are not
+permanently held in high-level sectors. This balances population opportunities
+across level ranges; it is not a guarantee of identical visible headcounts on
+every map at every instant. Residents can be
+in battle, the DigiLab or travelling, and smaller configured populations cannot
+occupy every map. Saved rivals adopt team selection during their normal Lab
+visits instead of being replaced at startup.
+
+## Fresh portable database setup
+
+**01_SETUP_SERVER.bat** opens the native wizard. It prepares this folder's MySQL
+process, generates private credentials, creates the fresh game database, and
+configures local or public TLS connections. A failed step remains visible and can
+be retried; sanitized diagnostics are stored in `logs/setup-latest.json`. No
+existing administrator password, game login or player account is needed.
+
+The database listens only at `127.0.0.1:3307`. Readiness checks authenticate and
+verify that its data directory belongs to this server folder. The world launcher
+starts or verifies MySQL before launching the game server. **STOP_SERVER.bat**
+requests final world saves, waits for the world process and shuts MySQL down
+cleanly. After successful shutdown, manually ZIP the complete server folder.
+Keep both processes stopped until compression finishes.
+
+The Windows MySQL engine and complete game content are included in this source
+package. Build the application executables on Windows x64 first. A built server
+needs the Microsoft Visual C++ x64 runtime, but no separate Python or MySQL
+installation. Use the prerequisite helper only if that runtime is missing.
+The engine's provenance records are in `mysql/provenance`.
 
 This is a playable source release for a native desktop multiplayer RPG, with a Windows build pipeline. It is not a claim that every requested system has reached finished-MMO quality or exact Cyber Sleuth parity.
 
-Version 0.2.0 adds persistent roaming rivals, ranked seasons and community screens while retaining the v0.1.1 high-DPI display improvements. **Both server and client must be rebuilt and updated for these features.** Existing accounts, configured credentials and certificates are retained; additional tables initialize automatically. See `RIVALS_UPGRADE.md` for the upgrade procedure.
+The v0.2.0 roaming rivals, ranked seasons and community screens remain, along
+with the v0.1.1 display improvements and later movement/training fixes. This
+release's fresh setup replaces the earlier external-database workflow; historical
+feature guides do not provide a database migration procedure for it.
 
 | Area | Delivered | Boundary |
 |---|---|---|
-| Native client | Native-resolution SDL desktop rendering, Windows DPI awareness, borderless fullscreen, saved UI/frame/audio preferences, continuous movement/camera, animated tamers and follower, account/party/collection/shop/world/lab/battle screens | Windows binaries must be generated with the supplied builder on Windows; no precompiled or hardware-tested Windows EXE is supplied in this source archive |
+| Native client | Native-resolution SDL desktop rendering, Windows DPI awareness, borderless fullscreen, saved UI/frame/audio preferences, continuous movement/camera, animated tamers and follower, account/party/collection/shop/world/lab/battle screens | Client and world-server EXEs must be generated with the supplied builder on Windows; the bundled MySQL engine alone does not make this source package a ready-to-run game server |
 | Display/camera | Native-size text and shapes; nearest-neighbor artwork; whole-level 1× through close-up 8×; independent UI scale, fullscreen restoration and selectable frame caps | Fullscreen uses the current desktop resolution. Original artwork detail is unchanged. Fractional map-fit scales can sample source pixels unevenly; uniform pixel replication requires integer enlargement. No guaranteed hardware frame rate or Windows DPI acceptance result is claimed |
 | Dedicated server | Authoritative WebSocket world, accounts, collision, battles and durable actions; shared players and chat | A single world process; no proven production human-connection capacity, clustering or operator dashboard |
-| Tamer rivals | Default population of 5,000 persistent AI tamers, even initial map distribution, timed collision-aware walking, shared positions, clickable profiles, wild combat, earned XP/scan, materialization, party care, evolution, shop use, ranked participation and travel | Fresh rivals receive a clearly identified sector-appropriate seed level. Activity follows a fair recurring cycle; collection/evolution require eligibility and ranked attacks require energy. No simulated offline training while the world server is stopped |
+| Tamer rivals | Default population of 5,000 persistent AI tamers, even initial map distribution, continuous collision-aware patrols, shared positions, spaced sector arrivals, clickable profiles, wild combat, earned XP/scan, materialization, persistent training teams, veteran storage, evolution, shop use, ranked participation and density-aware travel | Fresh rivals receive a clearly identified sector-appropriate seed level. Collection/evolution require eligibility and ranked attacks require energy. Existing partners retain their identities and earned progression; legal evolution can change levels under normal game rules. Population balancing does not promise equal visible occupancy. No simulated offline training while the world server is stopped |
 | Population performance | Worker-driven scheduler, bounded work batches, map-local snapshots and shared navigation data; rivals do not open 5,000 player sockets | A configured population size is not a certified capacity for 5,000 human connections. Hardware, network and database performance must be measured on the target Windows host; see validation evidence for tests actually run |
 | Battle Park | Asynchronous automatic battles using restored party snapshots, three active partners plus up to three reserves, weekly seasons, points, promotion battles, career rating, top-100 current/career/archive ladders and automatic DigiRuby rewards | ReArise-inspired structure with documented NXT numerical rules and SP combat, not verified exact ReArise parity. DigiRubies accumulate in a wallet; no DigiRuby shop is included. No real-time human-versus-human command exchange |
 | Rivals Hub/activity | Nearby invitations, accept/decline, friendly challenges, head-to-head totals, bot directory, cumulative activity counters, latest 100 events and sector distribution | Global event detail is deliberately bounded to 100 recent events; cumulative totals remain. Head-to-head data persists, with the 100 most recent opponents exposed by the hub. Bots are explicitly identified as AI |
-| Persistence | Native database/hosting wizard with connection diagnostics; MySQL/MariaDB schema and configurable setup; verified game-login creation/reuse, exact-database grants, parameterized queries, password hashing, session leases and revisions | See `VALIDATION.md` for database provisioning checks actually run; Windows XAMPP acceptance and production database performance remain target-host checks |
+| Persistence | Bundled folder-owned MySQL 8.4.11, fresh native setup, authenticated readiness and data-directory checks, local game login, exact-database grants, transactional saves, password hashing, session leases and revisions; coordinated world/database shutdown for manual whole-folder backups | Physical portability requires a clean shutdown, the complete folder and the same engine on a compatible Windows x64 host. Native Windows execution and production performance remain target-host checks |
 | Public hosting | CA-signed SAN server certificate, bundled client CA trust, hostname validation, private-key exclusion from public kit | Administrator supplies a reachable hostname/IP and network forwarding; hosting setup does not alter ISP/router/DNS |
 | Maps | All 351 supplied PNG layers, composed into 254 playable map destinations at supplied x2 resolution; original per-pixel collision | Sector numbers are source IDs, not a restored named story world; travel menu replaces authored story/portal progression |
 | Tamers | 64 original human appearances, eight directions, four movement frames per direction with ROM timing/flip metadata | Some appearances use descriptive/source-index labels; no complete story NPC behavior |
@@ -37,11 +98,12 @@ Version 0.2.0 adds persistent roaming rivals, ranked seasons and community scree
 | Sound | All 46 music sequences and 183 effect sequences rendered from the actual ROM samples, with 703 sample exports | Envelopes/modulation are approximations, music loops have render/fade boundaries, and two undefined drum-note references in bgm00 are reported |
 | Combat/collection | Speed turns, up to three active partners vs one to three enemies, six-member party, storage, scan/materialize, original move costs, free attacks, type/attribute modifiers, levels/ABI/CAM, evolution/devolution | Stats, growth, generic move lists and many routes are original balance, not a verified complete Cyber Sleuth dataset |
 | Paradox | Separate artwork/scan records; 2.5% chance per encounter to contain a variant; 5% scan per defeat | Custom variants have custom balance; collecting them is deliberately substantially slower |
-| Recovery/shop | One-button lab entry/heal, exact-position return, six HP/SP capsule sizes | Lab is unavailable during an active battle; Flee then enter |
-| Other systems | Shared-world multiplayer foundation with persistent rival population and ranked seasons | Full Cyber Sleuth story, DigiFarm, personalities, all statuses/support/moves, exact canonical evolution requirements and other advanced content remain unfinished |
+| Recovery/shop | Lab recovery and field return, six HP/SP capsule sizes, Friendship DigiMeat and +1 / +5 training meat for six stats | Feeding is optional and available for stored DigiFarm residents; permanent training caps are documented in DIGIFARM_V060.md |
+| DigiFarm | Private home, supplied island artwork, up to 100 stored residents, gentle wandering, click-to-manage feeding, original music, optional CAM and permanent training meat | Active party slots are separate from storage; no hunger, offline farming or automated stat gain. Legacy over-cap saves are retained; withdrawals and capacity-neutral party swaps remain available |
+| Other systems | Shared-world multiplayer foundation with persistent rival population and ranked seasons | Full Cyber Sleuth story, personalities, all statuses/support/moves, exact canonical evolution requirements and other advanced content remain unfinished |
 
 ## Validation interpretation
 
-Automated gameplay, catalog, persistence, networking, setup/TLS, extraction and native rendering checks are shipped. Real local WSS tests use the actual imported catalog and two accounts. They verify the connection-kit trust path, wrong-certificate/hostname rejection, movement, collisions, scan rewards, lab/shop flow and saved relogin. Rival/ranked checks cover real battle outcomes, scheduled progression, persistence, season changes and reward delivery. See `VALIDATION.md` for the final checks and results actually run for this release; no test count is implied by this feature table. These checks are not a substitute for Windows acceptance and live XAMPP testing.
+Automated gameplay, catalog, persistence, networking, setup/TLS, extraction and native rendering checks are shipped. Real local WSS tests use the actual imported catalog and two accounts. They verify the connection-kit trust path, wrong-certificate/hostname rejection, movement, collisions, scan rewards, lab/shop flow and saved relogin. Rival/ranked checks cover real battle outcomes, scheduled progression, persistence, season changes and reward delivery. See `VALIDATION.md` for the retained historical gameplay checks and results; no test count is implied by this feature table. See [PORTABLE_MYSQL_VALIDATION.md](PORTABLE_MYSQL_VALIDATION.md) for the new database checks actually run and [PORTABLE_MYSQL.md](PORTABLE_MYSQL.md) for its implementation boundary. Linux checks are not a substitute for a native Windows build and execution check with the bundled engine.
 
 The content verifier checks SHA-256 and size for every runtime asset and gameplay metadata file, and checks catalog references before building. It detects corruption; it cannot certify that every source artwork component or provisional balance value matches the original games' intended semantics.

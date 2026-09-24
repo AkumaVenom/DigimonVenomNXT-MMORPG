@@ -1,7 +1,7 @@
 """Cheap, deterministic, collision-checked walking for server-controlled tamers.
 
-Only a path's endpoints and start time are retained. A path is checked against
-every source collision pixel once, then all spectators sample the same line.
+Routes share cached collision-checked edges. All spectators sample the same
+server timeline, including safe closed patrols during a delayed activity tick.
 This avoids 5,000 independent physics loops or client-side random movement.
 """
 from __future__ import annotations
@@ -20,6 +20,7 @@ class Navigation:
         self.masks = {}
         self.spawn_points = {}
         self.edges = {}
+        self.arrival_points = {}
 
     def _mask(self, map_id):
         if map_id not in self.masks:
@@ -206,10 +207,70 @@ class Navigation:
         return {"from": start, "to": current, "start": now, "end": clock,
                 "segments": segments, "ends": [segment["end"] for segment in segments]}
 
+    def patrol(self, map_id, x, y, rng, now, seconds=16):
+        """Keep a safe route moving while its next activity waits in the queue.
+
+        Retracing the already checked edges closes the route without an unsafe
+        shortcut through walls. A delayed scheduler may sample further laps;
+        the next activity still stops at the exact authoritative position.
+        """
+        route = self.route(map_id, x, y, rng, now, seconds=seconds)
+        if not route:
+            return None
+        segments = [dict(segment) for segment in route.get("segments", [route])]
+        clock = route["end"]
+        for segment in reversed(tuple(segments)):
+            duration = segment["end"] - segment["start"]
+            segments.append({"from": segment["to"], "to": segment["from"],
+                             "start": clock, "end": clock + duration})
+            clock += duration
+        return {"from": route["from"], "to": route["from"], "start": now,
+                "end": clock, "loop": True, "segments": segments,
+                "ends": [segment["end"] for segment in segments]}
+
+    def arrival(self, map_id, occupied_positions, ordinal=0):
+        """Choose well-separated safe ground when appearing in a new sector.
+
+        Candidates lie on the connected, collision-checked walking graph. Edge
+        fractions provide more room than its repeated endpoints, without moving
+        existing actors or allowing a same-sector teleport to avoid a crowd.
+        """
+        self.spawn(map_id)
+        if map_id not in self.arrival_points:
+            points, edges = self.spawn_points[map_id], self.edges[map_id]
+            candidates = list(points)
+            for source, neighbors in edges.items():
+                for target in neighbors:
+                    if target <= source:
+                        continue
+                    start, end = points[source], points[target]
+                    for fraction in (.125, .25, .375, .5, .625, .75, .875):
+                        point = tuple(a + (b - a) * fraction for a, b in zip(start, end))
+                        if self.walkable(map_id, *point):
+                            candidates.append(point)
+            # Near-identical endpoints otherwise bias tie-breaking and crowd a
+            # handful of pixels. Preserve deterministic order across restarts.
+            unique = {}
+            for point in candidates:
+                unique.setdefault(tuple(round(value, 3) for value in point), point)
+            self.arrival_points[map_id] = tuple(unique.values())
+        candidates = self.arrival_points[map_id]
+        offset = int(ordinal) % len(candidates)
+        ordered = candidates[offset:] + candidates[:offset]
+        occupied = tuple(occupied_positions)
+        if not occupied:
+            return ordered[0]
+        return max(ordered, key=lambda point: min(
+            (point[0] - other[0]) ** 2 + (point[1] - other[1]) ** 2 for other in occupied))
+
     @staticmethod
     def sample(path, now):
         if not path:
             return None
+        if path.get("loop") and now >= path["start"]:
+            duration = path["end"] - path["start"]
+            if duration > 0:
+                now = path["start"] + (now - path["start"]) % duration
         if "segments" in path:
             index = min(len(path["segments"]) - 1, bisect.bisect_right(path["ends"], now))
             return Navigation.sample(path["segments"][index], now)

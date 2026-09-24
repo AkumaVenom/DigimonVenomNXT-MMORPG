@@ -1,3 +1,9 @@
+> **Historical display guide.** Its client-only installation instructions
+> describe v0.1.1 and do not apply to this fresh portable database release.
+> Use [../PORTABLE_SERVER_README.md](../PORTABLE_SERVER_README.md) and
+> [SETUP.md](SETUP.md) for current installation. The display feature descriptions
+> below remain useful.
+
 # Display upgrade — v0.1.1 alpha
 
 This update changes the native Windows client's rendering, window controls, camera and display preferences. Text and interface shapes render at the window's actual pixel resolution. The game no longer relies on enlarging a fixed-size interface to fill a high-resolution display. Windows DPI awareness prevents Windows from applying its own blurry bitmap enlargement.

@@ -1,4 +1,8 @@
-# Full-population validation — v0.2.0
+# Historical full-population validation — v0.2.0
+
+This is retained baseline evidence. The rival and navigation implementation
+changed in v0.3.1; see `RIVAL_TRAINING_VALIDATION.json` and `VALIDATION.md` for
+the current source and movement/training audit.
 
 This run used the actual rival, navigation, ranked and persistence implementation
 with **5,000 rivals** across all **254 maps**. Normal activity, map-dwell, ranked
@@ -8,7 +12,7 @@ seconds** in **198.762 seconds of wall time**, including initialization,
 final database flush and result checks.
 
 All **15 acceptance checks passed**. The four core source hashes in
-`RIVALS_BENCHMARK.json` match the packaged source. No gameplay recovery errors,
+`RIVALS_BENCHMARK.json` identify the original v0.2.0 source. No gameplay recovery errors,
 observed collision violations, excessive movement speeds or inconsistent
 same-timestamp snapshots were reported. Independent navigation tests also sample
 continuous routes across every map, including corner crossings.

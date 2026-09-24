@@ -1,0 +1,52 @@
+{
+  "release": "0.3.2-portable-fps1",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+  "python": "3.12.14",
+  "full_suite": {
+    "command": "python -m pytest -q",
+    "tests": 264,
+    "passed": 254,
+    "skipped": 10,
+    "failures": 0,
+    "errors": 0,
+    "seconds": 42.489,
+    "skip_reasons": [
+      "1 opt-in live MySQL integration check without a Linux runtime",
+      "9 setup wizard UI checks requiring a graphical desktop or Xvfb"
+    ]
+  },
+  "final_build_documentation_regression": {
+    "command": "python -m pytest -q tests/test_setup_launchers.py",
+    "passed": 3
+  },
+  "compile_check": "python -m compileall -q venom tools; python -m py_compile tools/build.py passed",
+  "asset_verification": {
+    "command": "python tools/build.py --verify-only",
+    "verified_records": 21149,
+    "result": "all sizes and SHA-256 hashes passed",
+    "manifest_sha256": "b9336954a0dc496b0ae71b1507d8a5d2ddddeb21ff7d291fb3ef5c36f33b4415"
+  },
+  "baseline_preservation": {
+    "original_file_count": 21505,
+    "missing": [],
+    "modified_original_files": [
+      "README.md",
+      "tests/test_setup_launchers.py",
+      "tools/build.py",
+      "venom/client/app.py",
+      "venom/client/assets.py",
+      "venom/client/render.py",
+      "venom/client/widgets.py",
+      "venom/client/world.py"
+    ],
+    "preserved_server_common": true,
+    "preserved_assets_data_mysql": true
+  },
+  "benchmark": "FPS_BENCHMARK.json",
+  "windows_exe_built": false,
+  "limitations": [
+    "Windows executables must be built on Windows x64; no Windows binary or PC-specific FPS measured here.",
+    "CPU benchmark uses deterministic synthetic snapshots with the real client and original art; it excludes live server/database contention.",
+    "Cold first-visit loading can still occur."
+  ]
+}

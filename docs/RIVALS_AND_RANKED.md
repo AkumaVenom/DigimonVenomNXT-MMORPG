@@ -1,9 +1,11 @@
-# Tamer rivals and Battle Park — v0.2.0
+# Tamer rivals and Battle Park — v0.3.1
 
 The updated dedicated server runs the rival population and settles every battle.
 The client displays server results, positions and records. Use **R** for Ranked
 Arena (the Battle Park system), **V** for the Rivals Hub, **O** for Bot Activity,
-or click a rival in a level.
+or click a rival in a level. For the v0.3.1 upgrade from an existing working
+installation, follow `RIVAL_MOVEMENT_UPGRADE.md`; retain the working v0.3.0 setup
+configuration and database without rerunning setup.
 
 ## The 5,000 rival population
 
@@ -21,10 +23,13 @@ Paradox scan progress remains slower and is not granted automatically.
 Every rival repeatedly walks, fights a wild encounter, visits the DigiLab for
 party care, considers a ranked attack, and returns to exploration. Wild turns
 choose affordable skills, free attacks, useful items and party replacements.
-Lab care heals, materializes when scan data reaches at least 100%, checks valid
-evolution routes, rotates partners for training and buys supplies when affordable.
-Materialization fills the six-member party and then storage. A scheduled activity
-is a decision opportunity: it cannot create a partner below the scan threshold,
+Lab care heals, materializes when scan data reaches at least 100%, selects and
+stores party members, checks valid evolution routes, and buys supplies when
+affordable. Party selection happens before evolution so experienced partners
+can be retained in storage before a younger team begins training. If a rival
+owns only one partner, that established partner is kept until a recruit has been
+earned through scanning. Materialization fills the six-member party and then
+storage. A scheduled activity is a decision opportunity: it cannot create a partner below the scan threshold,
 evolve without requirements, or buy items without credits.
 
 Ranked energy applies to bots as well as players. When it is exhausted, a rival
@@ -33,13 +38,20 @@ prevents ranked waiting from stopping wild training or walking.
 
 Rivals normally spend **5–15 minutes** in a sector before considering travel.
 Defeat can trigger an earlier move to a safer sector after recovery. Travel
-prefers less populated destinations compatible with the party's strength. It
-does not abruptly change a moving actor's position within a map: arrival in
-another map is a deliberate zone transition.
+prefers less populated destinations suitable for the active field team, including
+lower-level maps that experienced teams can safely revisit. A strong reserve
+does not force a young active team into a high-level sector. Young-team changes
+can prompt earlier relocation for safer training. Arrival spacing selects safe
+points when entering another map; it does not move actors sideways within their
+current map to separate them.
 
 Walking uses the imported tamer animation frames and validated navigation paths.
-The server samples one authoritative population for each occupied map; clients
-interpolate its snapshots for smooth display. Tamers stop while occupied with
+Exploration time starts when the scheduled job actually runs, so startup or
+storage delays cannot use up its walking window before the first step. Patrols
+loop along validated segments between scheduled tasks rather than stopping at
+the end of a short path while awaiting another job. The server samples one
+authoritative population for each occupied map; clients interpolate its snapshots
+for smooth display. Tamers stop while occupied with
 other activities. Rivals are server-side actors, not 5,000 fake network clients.
 Only the current field's actors are sent to its players.
 
@@ -53,9 +65,42 @@ Restart resumes stored rivals; it does not invent battles or training for time
 spent offline. Database ownership checks prevent an expired server process from
 overwriting the progress of its replacement.
 
+## Repeat training and veteran visits
+
+A rival keeps an identifiable training team across activity cycles, rather than
+replacing it whenever another level-one partner becomes available. Eligible
+nearby-level recruits can fill remaining party slots, and field positions rotate
+so different partners can lead. After the team's training goal or an eligible
+training stint, lower-level owned partners can begin the next round. Mature
+partners move into real storage and retain their identities and earned progress.
+They can be withdrawn again later; no collection is discarded to restart a team.
+
+Earned duplicate scans can also supply new recruits at the normal 100% threshold.
+When the bot's collection reaches its storage target, existing partners can
+continue through legal evolution or de-evolution routes. Those operations retain
+their identities and apply the game's usual level/ABI rules. No extra levels,
+scan data or victories are assigned to make a training round appear complete.
+
+For a sufficiently large population, capable owned veterans can be withdrawn
+for short visits to underfilled higher-level sectors. The server counts pending
+arrivals as well as residents when assigning those visits, preventing multiple
+rivals from all filling the same apparent vacancy. Visits end after a bounded
+battle/cycle allowance, followed by a protected period of ordinary team training.
+Other eligible rivals can then provide coverage; no rival becomes a permanent
+high-level caretaker. Small populations skip the coverage quota and cannot be
+expected to inhabit every map.
+
+During either ordinary training or a veteran visit, the rival continues wild
+battles, Lab care, shopping, ranked opportunities and normal friendly-challenge
+availability. Ranked profiles use the actual selected party. Population balancing
+is gradual and does not promise identical visible counts in all sectors: some
+residents are battling or absent in the Lab, and others are travelling.
+
 ## Rival interactions and activity
 
 Click an AI tamer to inspect its party, location, current activity and progress.
+Its profile also shows the training team, goal, banked partner count and whether
+it is making a veteran visit.
 Nearby available rivals can issue a friendly invitation. Open the Rivals Hub to
 accept or decline it, search the directory, and review prior opponents. Direct
 challenges require a nearby rival in the same sector; the server rechecks their
@@ -71,8 +116,8 @@ retains opponent totals; the hub exposes the 100 most recently fought opponents.
 Bot Activity displays current phase counts and map distribution, along with
 actual cumulative activity totals: wild and ranked wins/losses, starts, scan
 events and percentage gained, materializations, Paradox materializations, earned
-Battle XP and levels, evolution/de-evolution, party changes, healing, item use, purchases
-and travel. The global detail feed keeps the **latest 100 events**, newest first.
+Battle XP and levels, evolution/de-evolution, party changes, healing, item use,
+purchases, travel, team changes, teams trained and veteran visits. The global detail feed keeps the **latest 100 events**, newest first.
 Older event detail is pruned; aggregate counters remain. A zero counter means
 that action has not yet completed under its required conditions. Battle XP sums
 the base XP awards from wild victories; it does not multiply them by the number

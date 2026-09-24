@@ -1,4 +1,102 @@
-# Validation report — 0.3.0 alpha
+# Validation report — v0.3.1 rival movement and team training
+
+## Final automated gate
+
+**257 tests passed, 32 skipped, no failures or errors**, in
+55.58 seconds on Linux / Python 3.12.14.
+The skipped tests require a disposable MariaDB server (23) or a Tk graphical
+desktop (9), neither enabled for this run. The previously verified setup source
+and launchers remain byte-for-byte unchanged from v0.3.0; historical setup
+results below are not presented as new database or Windows runs.
+
+The final suite includes delayed startup and post-ranked dispatch, patrols that
+continue through scheduler delays, exact stopping distance, safe separated
+arrivals on all 254 maps, and actual native interpolation driving the imported
+NDS walking frames. Real encrypted two-client integration checks that both
+players receive the same authoritative map snapshot and observe movement.
+
+Training regressions exercise real victories earning full scan data, conversion
+of duplicate species only at 100%, banking veterans without changing their
+UID/XP/ABI/CAM, repeated training rounds, six-member limits, restart persistence,
+and legal devolution of terminal forms with a full bank and no prior history.
+Coverage tests require bounded veteran visits, protected training time, distinct
+reserved destinations, and reservations retained across resumed Lab maintenance.
+
+## Full-population migration audit
+
+`RIVAL_TRAINING_VALIDATION.json` contains the full reproducible audit using the
+actual wild battle, ranked and SQLite implementations. Its explicitly labelled
+legacy-save fixture starts **5,000 level-60 rivals crowded into 57
+high-level maps**, with no granted scan data, victories or subsequent progression.
+The simulation runs 900 seconds with normal action,
+exploration and travel timers, advancing the clock without real-time sleeps.
+
+All **19 acceptance checks passed**. Every rival was observed moving;
+all 254 maps were occupied by the 420-second checkpoint and remained
+occupied at the end. The final map counts ranged from
+7 to 340; low-level maps
+(level 10 or below) held 1,663 rivals. This measures
+resident assignment; rivals in the DigiLab are intentionally hidden on maps.
+
+| Observed result | Count |
+| --- | ---: |
+| Wild victories / defeats | 28,577 / 10,651 |
+| Ranked matches started | 25,000 |
+| Partners materialized from earned scan data | 1,597 |
+| Training-team rotations | 1,451 |
+| Earned level increases | 3,250 |
+| Evolutions / de-evolutions | 0 / 0 |
+| Sector transitions | 13,090 |
+| Gameplay recovery errors | 0 |
+
+The audit checks positive movement, collision/speed bounds, bounded scheduler
+and activity history, every original and earned partner identity, canonical
+progression operations, ranked ledger reconciliation, and saved partners,
+counters and training plans after reload. Conditional activities are never
+fabricated to fill counters. Smaller controlled 90-minute runs additionally
+exercise repeated team changes; the twelve-bot coverage fixture gave every bot
+3–6 team rotations and retained all four test sectors. That small fixture uses a
+ranked-call recorder; actual ranked combat is covered by the full-population
+SQLite audit and WSS tests.
+
+The full-population run took 230.20 seconds of wall time on
+this shared Linux host. Its source hashes identify the exact measured revision.
+Those hashes match the packaged implementation. A preceding longer diagnostic
+exposed a runtime-only checkpoint bug: training/phase changes were not always
+marked for saving when no gameplay operation occurred. The final suite and this
+release gate include the correction, including exhausted ranked-energy waits.
+`RIVAL_FIX_VALIDATION.json` records the final packaged hashes. Benchmark timing is not a Windows frame-rate,
+MySQL throughput or human-player capacity guarantee.
+
+## Assets, client and build packaging
+
+- All **21,149 content records (485.8 MiB)** passed the builder's size/SHA-256 and
+  catalog-reference verifier. Every baseline asset and catalog is unchanged.
+- Rival profile/activity screens show training and veteran-visit counters. They
+  were rendered and visually checked at the minimum logical layout and native
+  3840 × 2160; all eight community-client tests pass in the full suite.
+- Windows build-packaging tests cover the complete client/server layouts,
+  version metadata, wizard dependencies and launchers. PyInstaller execution is
+  simulated by those tests. Source compilation succeeds.
+- No Windows executable was compiled or run here. Public connectivity and target
+  Windows/MySQL performance remain deployment checks.
+
+Build the complete source on Windows and follow `RIVAL_MOVEMENT_UPGRADE.txt`.
+Preserve the existing database and both config folders. **Do not rerun the
+working setup or reset rivals for this upgrade.**
+
+To reproduce the population audit after installing the declared dependencies:
+
+```sh
+python tools/benchmark_rival_cycles.py --bots 5000 --seconds 900 --mature-save --output qa/rival-cycles.json
+```
+
+The command uses an isolated temporary SQLite database and does not touch an
+installed server or player saves.
+
+---
+
+# Historical validation report — 0.3.0 alpha
 
 ## Guided setup redesign
 
@@ -9,7 +107,7 @@
 - Real loopback socket fixtures cover wrong-service ports, closed/truncated greetings, silent timeouts and a server error packet carrying **1043**. The 1043 check is deliberate fault injection; the user's remembered error code and original failure have **not** been confirmed or reproduced.
 - Diagnostic tests check exact stage/code classification, nested driver errors, omitted raw driver/SQL/password text, bounded event history and preservation of an in-memory report if disk writing fails. Corrupt saved configuration and DNS errors are also reported without changing the original config.
 - Two builder smoke tests verify wizard/Tk/PyMySQL-metadata packaging, current launchers, separated server/setup dependencies and complete client asset copying. External PyInstaller execution is simulated in these tests; they do not establish a native Windows build.
-- **21,149 asset/catalog records verified** by size and SHA-256 (485.8 MiB). No imported artwork, audio, maps or gameplay catalog was replaced. The retained bot/navigation/ranked/store benchmark source hashes still match.
+- **21,149 asset/catalog records verified** by size and SHA-256 (485.8 MiB). No imported artwork, audio, maps or gameplay catalog was replaced. Those benchmark hashes identify the historical implementation; rival/navigation changes in v0.3.1 are covered separately.
 - Source byte-compilation succeeded. The setup version command reports **0.3.0**; no-argument and explicit wizard/stage CLI dispatch were checked.
 
 `SETUP_REDESIGN_VALIDATION.json` records final test totals, environment, limits and

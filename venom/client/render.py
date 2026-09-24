@@ -21,6 +21,8 @@ class NativeCanvas:
     places already native-resolution content, including rendered text.
     """
 
+    CACHE_ITEMS = 4096
+
     def __init__(self, surface, scale=1.0, cache_bytes=32 * 1024 * 1024):
         self.cache_limit = max(0, int(cache_bytes))
         self._scaled = OrderedDict()
@@ -124,7 +126,7 @@ class NativeCanvas:
             if cache and cost <= min(self.cache_limit, 1024 * 1024):
                 self._scaled[key] = scaled, cost
                 self._cache_bytes += cost
-                while self._cache_bytes > self.cache_limit or len(self._scaled) > 256:
+                while self._cache_bytes > self.cache_limit or len(self._scaled) > self.CACHE_ITEMS:
                     _, (_, old_cost) = self._scaled.popitem(last=False)
                     self._cache_bytes -= old_cost
         return self.blit_native(scaled, dest, special_flags=special_flags)

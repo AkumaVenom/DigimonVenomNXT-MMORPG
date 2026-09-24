@@ -15,10 +15,10 @@ def test_handshake_failure_is_not_a_password_rejection():
     authentication = describe_failure("administrator", pymysql.OperationalError(1045, "Access denied"))
     assert handshake.code == 1043
     assert "handshake" in handshake.message
-    assert "3306" in handshake.action and "8765" in handshake.action
+    assert "3307" in handshake.action and "8765" in handshake.action
     assert authentication.code == 1045
     assert "sign-in" in authentication.message
-    assert "password" in authentication.action
+    assert "mysql/data" in authentication.action
     assert "administrator" in str(handshake) and "1043" in str(handshake)
 
 
@@ -93,7 +93,7 @@ def test_report_ignores_driver_sql_secrets_unapproved_keys_and_arbitrary_objects
         assert secret not in raw
         assert secret not in str(failure)
     data = json.loads(raw)
-    assert data["setup_version"] == "0.3.0"
+    assert data["setup_version"] == "0.6.0"
     assert set(data["environment"]) == {"python", "platform", "pymysql"}
     assert data["events"][0]["host"] == "127.0.0.1"
     assert data["events"][1]["error_code"] == 1064
@@ -157,3 +157,12 @@ def test_unknown_exception_text_and_nested_non_scalar_codes_are_not_logged(tmp_p
     assert "CodeSecret" not in report.text()
     assert "SensitiveStatus" not in report.text()
     assert "configuration" in failure.message
+
+
+def test_portable_errors_keep_actionable_authored_text(tmp_path):
+    from tools.portable_mysql import PortableError
+    report = DiagnosticReport(tmp_path)
+    failure = report.failure("start", PortableError("Port 3307 belongs to a different database."))
+    assert failure.code == "PORTABLE_MYSQL"
+    assert "different database" in failure.message
+    assert "different database" in report.text()

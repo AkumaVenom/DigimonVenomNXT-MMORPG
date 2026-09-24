@@ -93,16 +93,15 @@ class SetupWizard:
             startup_error = error
         self.values = {key: tk.StringVar(window, value=str(self.defaults.get(key, fallback)))
                        for key, fallback in {
-                           "host": "127.0.0.1", "port": 3306, "name": "digimon_venom_nxt",
-                           "admin_user": "root", "user": "venom_nxt",
-                           "account_host": "localhost", "public_host": "localhost",
+                           "host": "127.0.0.1", "port": 3307, "name": "digimon_venom_nxt",
+                           "user": "venom_nxt",
+                           "account_host": "127.0.0.1", "public_host": "localhost",
                            "game_port": 8765, "bind": "0.0.0.0"}.items()}
         # Passwords are deliberately not populated from saved settings.
-        self.values["admin_password"] = tk.StringVar(window)
         self.values["password"] = tk.StringVar(window)
         public = self.values["public_host"].get()
         self.connection_mode = tk.StringVar(window, value="local" if public in ("", "localhost", "127.0.0.1", "::1") else "online")
-        self.status = tk.StringVar(window, value="Start XAMPP MySQL, then test its connection below.")
+        self.status = tk.StringVar(window, value="Prepare the MySQL process stored inside this server folder.")
         self.database_result = tk.StringVar(window, value="")
         self.ready_summary = tk.StringVar(window, value="")
         self._style()
@@ -268,25 +267,14 @@ class SetupWizard:
         return entry
 
     def _database_page(self):
-        page = self._section(self.pages[0], "Connect to MySQL / MariaDB", "First, check the database server. These are your XAMPP or MySQL administrator details.")
-        endpoint = ttk.Frame(page)
-        endpoint.pack(fill="x")
-        endpoint.columnconfigure(0, weight=3)
-        endpoint.columnconfigure(1, weight=2)
-        host_column, port_column = ttk.Frame(endpoint), ttk.Frame(endpoint)
-        host_column.grid(row=0, column=0, sticky="ew", padx=(0, 16))
-        port_column.grid(row=0, column=1, sticky="ew")
-        first = self._field(host_column, "Database host", "host")
-        self._field(port_column, "Database TCP port", "port")
-        self._label(page, "Local XAMPP usually uses 127.0.0.1 and port 3306. The game uses a separate port, 8765.")
-        find = ttk.Button(page, text="Find local XAMPP port", command=self._find_database)
-        find.pack(anchor="w", pady=(0, 16))
-        self._controls.append(find)
-        self._field(page, "Database administrator username", "admin_user")
-        self._field(page, "XAMPP / MySQL administrator password", "admin_password", password=True,
-                    note="Enter the password already used by your MySQL server. Leave blank if that administrator has no password.")
-        self._label(page, "Testing checks the connection before creating the game database. It does not change your XAMPP password.")
-        self._focus_targets.append(first)
+        page = self._section(self.pages[0], "Your own portable MySQL", "The database runs as a separate process from this server folder. No database service installation or administrator password is needed.")
+        self._label(page, "MySQL program: mysql/runtime", style="Section.TLabel", pad=(0, 12))
+        self._label(page, "Player saves and database files: mysql/data")
+        self._label(page, "Local database connection: 127.0.0.1:3307. The game uses its own TCP port, normally 8765.")
+        self._label(page, "Prepare MySQL starts this folder's database and checks that it is ready. First setup creates a fresh database directory and private administrator credentials automatically.")
+        self._label(page, "For a complete backup or a move to another PC, run STOP_SERVER.bat and wait for the clean shutdown confirmation, then copy or ZIP the entire server folder.")
+        self._label(page, "Keep this server folder private. It contains all saved progress, database credentials and server keys.")
+        self._focus_targets.append(None)
 
     def _account_page(self):
         page = self._section(self.pages[1], "Create the game database login", "Setup creates the account the dedicated server will use. You do not need an existing game account or password.")
@@ -294,10 +282,10 @@ class SetupWizard:
         success.pack(fill="x", pady=(0, 18))
         self._wrap_labels.append(success)
         first = self._field(page, "Game database name", "name", note="Keep this name when upgrading to preserve the same players and progress.")
-        self._field(page, "Game database username", "user", note="If this username is already occupied, setup can create a separate NXT login automatically.")
+        self._field(page, "Game database username", "user", note="This dedicated login belongs to this installation. Keep its saved name on later setup checks.")
         self._field(page, "Choose a game database password (optional)", "password", password=True,
                     note="Leave blank for automatic setup: a strong password is generated for a new login, or the saved game password is kept for an existing installation.")
-        self._field(page, "MySQL account host", "account_host", note="Usually localhost when the game server and XAMPP run on this PC.")
+        self._label(page, "The game login is restricted to this PC. Database credentials are managed within this server folder.")
         self._label(page, "The game login is saved in the server configuration. Players create their own in-game accounts separately.")
         self._focus_targets.append(first)
 
@@ -382,7 +370,7 @@ class SetupWizard:
             page.grid() if number == index else page.grid_remove()
             self.step_labels[number].configure(style="Active.Step.TLabel" if number == index else "Step.TLabel")
         self.back.configure(state="normal" if index in (1, 2) else "disabled")
-        self.primary.configure(text=("Test connection", "Create game database", "Create connection kit", "Finish")[index])
+        self.primary.configure(text=("Prepare MySQL", "Create game database", "Create connection kit", "Finish")[index])
         self.canvas.yview_moveto(0)
         focus = self._focus_targets[index] or self.primary
         self.window.after_idle(focus.focus_set)
@@ -404,13 +392,9 @@ class SetupWizard:
             (self._test_database, self._configure_database, self._configure_hosting, self._finish)[self.page_index]()
 
     def _database_settings(self):
-        result = {key: self.values[key].get() for key in ("host", "port", "name", "user", "account_host", "admin_user", "admin_password", "password")}
-        for key in ("host", "name", "user", "account_host", "admin_user"):
-            result[key] = result[key].strip()
-        result["port"] = _port(result["port"], "Database port")
-        if not result["host"] or not result["admin_user"]:
-            raise ValueError("Enter a database host and administrator username.")
-        return result
+        return {"name": self.values["name"].get().strip(),
+                "user": self.values["user"].get().strip(),
+                "password": self.values["password"].get()}
 
     def _validation(self, action):
         try:
@@ -424,12 +408,11 @@ class SetupWizard:
         if settings is None:
             return
         def success(result):
-            version = result.get("server_version", "MySQL / MariaDB")
-            account = result.get("account", settings["admin_user"])
-            self.database_result.set(f"Connected to {version}\nAdministrator: {account} | {settings['host']}:{settings['port']}")
-            self.status.set("Database connection verified. Now choose the game login setup will create.")
+            version = result.get("server_version", "MySQL")
+            self.database_result.set(f"Portable {version} is ready\nSaves: mysql/data | {result.get('host', '127.0.0.1')}:{result.get('port', 3307)}")
+            self.status.set("Portable MySQL verified. Now create the game database.")
             self._show_page(1)
-        self._submit("Testing the database connection…", lambda: self.service.test_database(settings), success, self._test_database)
+        self._submit("Preparing portable MySQL… First initialization can take a few minutes.", lambda: self.service.test_database(settings), success, self._test_database)
 
     def _configure_database(self):
         settings = self._validation(self._database_settings)
@@ -470,31 +453,13 @@ class SetupWizard:
             details.extend([f"Player address: {address}:{port}", f"Client connection kit: {kit}"])
             if result.get("tls"):
                 details.append(f"Certificate connection verified: {result['tls']}")
-            self.next_steps.set("1. Start the dedicated server using its server launcher.\n\n2. Extract the generated connection ZIP into each player's client folder. Its config folder must merge with the client's config folder.\n\n3. Launch the client and create your player account. For online play, allow and forward the game TCP port shown above.")
+            self.next_steps.set("1. Start MySQL with START_MYSQL.bat, then launch START_WORLD_SERVER_CONSOLE.bat.\n\n2. Extract the generated connection ZIP into each player's client folder. Its config folder must merge with the client's config folder.\n\n3. Launch the client and create your player account. For online play, allow and forward the game TCP port shown above.")
             if result.get("note"):
                 details.append(str(result["note"]))
             self.ready_summary.set("\n\n".join(details))
             self.status.set("Setup complete. You can close this window.")
             self._show_page(3)
         self._submit("Verifying the saved server configuration…", self.service.verify_installation, success, self._verify)
-
-    def _find_database(self):
-        finder = getattr(self.service, "find_local_database", None)
-        if finder is None:
-            self.status.set("Check MySQL's port in the XAMPP Control Panel and enter it above.")
-            return
-        def success(candidates):
-            if len(candidates) == 1:
-                item = candidates[0]
-                self.values["host"].set(item.get("host", "127.0.0.1"))
-                self.values["port"].set(str(item["port"]))
-                self.status.set(f"Found local MySQL on port {item['port']}. Enter your administrator password, then test the connection.")
-            elif not candidates:
-                self.status.set("No local XAMPP configuration was found. Start MySQL in XAMPP and enter its port above.")
-            else:
-                ports = ", ".join(str(item["port"]) for item in candidates)
-                self.status.set(f"Multiple MySQL configurations found (ports {ports}). Enter the port for the server you want to use.")
-        self._submit("Looking for local XAMPP settings…", finder, success, self._find_database)
 
     def _set_busy(self, busy):
         self.busy = busy
@@ -584,7 +549,6 @@ class SetupWizard:
             return
         self.closed = True
         # Secrets are cleared as the view closes; no clipboard operation is implicit.
-        self.values["admin_password"].set("")
         self.values["password"].set("")
         self.executor.shutdown(wait=False)
         self.window.after_cancel(self._poll_after)

@@ -1,0 +1,232 @@
+{
+  "source_filename": "Digimon World - Dawn (USA)(6).nds",
+  "source_sha256": "b8fbc2272ec2a7b3c85674a43ffce0a7dde208319e331b349218e1238ce83005",
+  "source_files": [
+    "dat/SPR_CHR.PAK",
+    "dat/SPR_PAL.PAK",
+    "dat/SPR_CEL.PAK"
+  ],
+  "method": "Nintendo RLE30 decompression, NCGR tile/NCLR palette/NCER OAM cell decoding. First cell only. Transparent margins trimmed, original palette and pixel dimensions preserved; no resampling or recoloring.",
+  "assets": [
+    {
+      "path": "assets/ui/extracted/attribute_fire.png",
+      "description": "Fire attribute icon",
+      "size": [
+        12,
+        14
+      ],
+      "sha256": "815aad3eef95ea532502dec90b9b594a923e8b42b4d21aff74a3026eb2e4792e",
+      "source_entry_index": 161,
+      "source_cell_index": 0
+    },
+    {
+      "path": "assets/ui/extracted/attribute_electric.png",
+      "description": "Electric attribute icon",
+      "size": [
+        12,
+        14
+      ],
+      "sha256": "2072732774f87c376ad2f283080c108f5016fbc09b21f10366a2f3e60a9cee2a",
+      "source_entry_index": 162,
+      "source_cell_index": 0
+    },
+    {
+      "path": "assets/ui/extracted/attribute_wind.png",
+      "description": "Wind attribute icon",
+      "size": [
+        14,
+        14
+      ],
+      "sha256": "0007134fa694426b1060623803aa87f55a96bf0e0efb20b23bb98b8a61e96d20",
+      "source_entry_index": 163,
+      "source_cell_index": 0
+    },
+    {
+      "path": "assets/ui/extracted/attribute_water.png",
+      "description": "Water attribute icon",
+      "size": [
+        10,
+        14
+      ],
+      "sha256": "44481434601566687d6150428871791b2381ab2b9a5b197e74a3827823b1ccd4",
+      "source_entry_index": 164,
+      "source_cell_index": 0
+    },
+    {
+      "path": "assets/ui/extracted/attribute_light.png",
+      "description": "Light attribute icon",
+      "size": [
+        14,
+        14
+      ],
+      "sha256": "533e7d3be5fffd2ffb6e2ec11e06bf2dafe3d673d2829d630278dfc4097a1595",
+      "source_entry_index": 166,
+      "source_cell_index": 0
+    },
+    {
+      "path": "assets/ui/extracted/attribute_dark.png",
+      "description": "Dark attribute icon",
+      "size": [
+        14,
+        14
+      ],
+      "sha256": "708a092f798058b7de36b3eb1d0e07411603f8588263baba5fcb0670913b8895",
+      "source_entry_index": 167,
+      "source_cell_index": 0
+    },
+    {
+      "path": "assets/ui/extracted/attribute_physical.png",
+      "description": "Fist/physical icon; exact original attribute assignment unverified",
+      "size": [
+        12,
+        13
+      ],
+      "sha256": "212487f127f72b1cce21e9f7caa7f17be291d3d5321e3df8d5f721876bf96a1d",
+      "source_entry_index": 168,
+      "source_cell_index": 0
+    },
+    {
+      "path": "assets/ui/extracted/blue_syringe.png",
+      "description": "Blue syringe effect sprite; original gameplay role unverified",
+      "size": [
+        64,
+        63
+      ],
+      "sha256": "034fc26b402b9593397fe688c2a5b23a2a4015985ba46ba328508941e56ebd33",
+      "source_entry_index": 207,
+      "source_cell_index": 0
+    },
+    {
+      "path": "assets/ui/extracted/hp_max_capsule.png",
+      "description": "HP MAX capsule item sprite; original text retained",
+      "size": [
+        24,
+        24
+      ],
+      "sha256": "518b3982c9bdb2d2cd6860fbb0b36e855ee4b80e3f85ad5d96c99dd74aa9a929",
+      "source_entry_index": 322,
+      "source_cell_index": 0
+    },
+    {
+      "path": "assets/ui/extracted/mp_max_capsule.png",
+      "description": "MP MAX capsule item sprite; original text retained",
+      "size": [
+        24,
+        24
+      ],
+      "sha256": "c8038964c70e5ca6129b4149c5391a4ce87b00cf210972115fdd439f2325376f",
+      "source_entry_index": 324,
+      "source_cell_index": 0
+    },
+    {
+      "path": "assets/ui/extracted/coronamon_title.png",
+      "description": "Coronamon title portrait",
+      "size": [
+        108,
+        171
+      ],
+      "sha256": "fcdce7581556774894b1b9e0cea3a3893b41464e132f39f1fa26e5ebfa7718ea",
+      "source_entry_index": 627,
+      "source_cell_index": 0
+    },
+    {
+      "path": "assets/ui/extracted/lunamon_title.png",
+      "description": "Lunamon title portrait",
+      "size": [
+        132,
+        184
+      ],
+      "sha256": "17a3a9e1d20de3f5b2f53bc36b0a941590858ccb73dadbf5354b374463966be0",
+      "source_entry_index": 628,
+      "source_cell_index": 0
+    },
+    {
+      "path": "assets/ui/extracted/lalamon_title.png",
+      "description": "Lalamon title portrait",
+      "size": [
+        64,
+        81
+      ],
+      "sha256": "645ed2932752956b80225c199346a9581912f2ffba4291c492fe348168e93cec",
+      "source_entry_index": 629,
+      "source_cell_index": 0
+    },
+    {
+      "path": "assets/ui/extracted/sunflowmon_title.png",
+      "description": "Sunflowmon title portrait",
+      "size": [
+        126,
+        115
+      ],
+      "sha256": "4e356f519db3b325f03cac075c9162b1c34fae9e4b9eefc7b6ddb6aec6eb2818",
+      "source_entry_index": 630,
+      "source_cell_index": 0
+    },
+    {
+      "path": "assets/ui/extracted/gaogamon_title.png",
+      "description": "Gaogamon title portrait",
+      "size": [
+        118,
+        138
+      ],
+      "sha256": "8938624513c7b8560315a391d62a63e43e815cf4c6138de5ad8418652fd7417a",
+      "source_entry_index": 631,
+      "source_cell_index": 0
+    },
+    {
+      "path": "assets/ui/extracted/geogreymon_title.png",
+      "description": "GeoGreymon title portrait",
+      "size": [
+        117,
+        179
+      ],
+      "sha256": "91ad4e4df51214baff519f817dac5a74f4d6afd6f6fd67b25d7410d4904cbd2a",
+      "source_entry_index": 632,
+      "source_cell_index": 0
+    },
+    {
+      "path": "assets/ui/extracted/dawn_tamer_boy.png",
+      "description": "Dawn male tamer dialogue portrait",
+      "size": [
+        98,
+        140
+      ],
+      "sha256": "b7a0d0f22dcbfa8cee4ad955200aa2f63654df201c0efc9cb6ce78524fc65abd",
+      "source_entry_index": 1621,
+      "source_cell_index": 0
+    },
+    {
+      "path": "assets/ui/extracted/dusk_tamer_boy.png",
+      "description": "Dusk male tamer dialogue portrait",
+      "size": [
+        88,
+        138
+      ],
+      "sha256": "b0d1153af277093944e632f27b0289cd29afb4d3d2ee7cc63e1f2bdf48f6bfe9",
+      "source_entry_index": 1622,
+      "source_cell_index": 0
+    },
+    {
+      "path": "assets/ui/extracted/dawn_tamer_girl.png",
+      "description": "Dawn female tamer dialogue portrait",
+      "size": [
+        90,
+        139
+      ],
+      "sha256": "e0da9d8d41c43d714891b0520c154289226d0decbaa0e203358e3ba52d6af279",
+      "source_entry_index": 1623,
+      "source_cell_index": 0
+    },
+    {
+      "path": "assets/ui/extracted/dusk_tamer_girl.png",
+      "description": "Dusk female tamer dialogue portrait",
+      "size": [
+        100,
+        139
+      ],
+      "sha256": "161378d15fc995bb18736508c7a7cfd926adb5c8a593667c8e24f02da82759b8",
+      "source_entry_index": 1624,
+      "source_cell_index": 0
+    }
+  ]
+}

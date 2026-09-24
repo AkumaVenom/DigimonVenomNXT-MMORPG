@@ -1,0 +1,101 @@
+{
+  "release": "0.3.2-portable-ui1",
+  "date_utc": "2026-09-24",
+  "runtime": {
+    "python": "3.12.14",
+    "pygame": "2.5.8",
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+    "video": "SDL dummy software display",
+    "audio": "SDL dummy mixer"
+  },
+  "suite": {
+    "command": "python -m pytest -q",
+    "passed": 292,
+    "skipped": 10,
+    "failed": 0,
+    "seconds": 44.67,
+    "skip_reasons": {
+      "opt_in_live_mysql_runtime": 1,
+      "graphical_setup_wizard_desktop": 9
+    }
+  },
+  "asset_integrity": {
+    "command": "python tools/build.py --verify-only",
+    "passed": true,
+    "records": 21348,
+    "bytes": 519746331,
+    "manifest_sha256": "410dc0e2c475686011d5d5326073549dd2dc95f128030fa9710d73de57a92eab"
+  },
+  "visual_qa": {
+    "fixture": "Synthetic server data for isolated native-App QA; no real account progress.",
+    "capture_count": 78,
+    "resolutions": [
+      [
+        1280,
+        800
+      ],
+      [
+        2048,
+        1152
+      ],
+      [
+        3840,
+        2160
+      ]
+    ],
+    "native_4k": true,
+    "views_per_resolution": 13,
+    "states": [
+      "populated",
+      "empty"
+    ],
+    "out_of_bounds_actions": 0,
+    "six_partner_capture_count": 4,
+    "six_partner_resolutions": [
+      [
+        1180,
+        800
+      ],
+      [
+        1280,
+        800
+      ]
+    ],
+    "six_partner_out_of_bounds_actions": 0,
+    "reviewed": [
+      "shop capsule/quantity controls",
+      "six-partner field and DigiLab shop",
+      "ranked overview, ladder, seasons, replay and result",
+      "rivals invitations, directory, profile and history",
+      "activity feed, map population and empty states"
+    ],
+    "preview_tool": "tools/preview_ui_screens.py"
+  },
+  "interaction_and_audio": {
+    "physical_click_contract_tests": 10,
+    "app_scene_audio_integration_tests": 7,
+    "unique_screen_loops": 8,
+    "provided_cue_files": 6,
+    "checked": [
+      "server action payloads and disabled controls",
+      "quantity and recipient selection",
+      "modal input blocking and replay immutability",
+      "battle/replay track priority",
+      "return to current world or DigiLab track",
+      "mute and volume preservation",
+      "rapid scene changes cancel stale track loads",
+      "steady-state music does not reload",
+      "specific open/back cues take precedence over generic button confirmation",
+      "cached native circuit background and glyph byte limits",
+      "downward numeric animation follows elapsed time and preserves clipping"
+    ]
+  },
+  "preservation_report": "UI_PERFORMANCE.json",
+  "historical_fps_report": "FPS_BENCHMARK.json",
+  "limitations": [
+    "No new Windows executable was built or run on this Linux host. Rebuild the supplied source on Windows x64.",
+    "Headless timings measure CPU frame preparation, not Windows display FPS, GPU presentation, network latency or live server load.",
+    "Audio files were decoded and exercised with SDL dummy playback; target-device speaker/headphone listening remains necessary.",
+    "QA records are synthetic and are not evidence of live account activity. Existing server gameplay and bot logic were preserved."
+  ]
+}

@@ -18,6 +18,9 @@ class MoveInput:
 
 def move_position(position, movement, entry, mask=None, speed=180.0):
     """Use the server's bounds, mask coordinates and per-pixel wall sliding."""
+    if entry.get('id') == 'digifarm':
+        from venom.common.farm import move_farm_position
+        return move_farm_position(position, movement.dx, movement.dy, movement.dt, speed=speed)
     x, y = float(position[0]), float(position[1])
     width, height = entry.get('width', 1536), entry.get('height', 768)
     dx, dy = movement.dx, movement.dy

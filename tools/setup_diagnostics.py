@@ -17,10 +17,10 @@ import tempfile
 import threading
 
 
-SETUP_VERSION = "0.3.0"
+SETUP_VERSION = "0.6.0"
 STAGES = frozenset({
     "validate", "endpoint", "administrator", "create_database", "game_account",
-    "grants", "schema", "save_config", "hosting", "verify",
+    "grants", "schema", "save_config", "hosting", "verify", "runtime", "initialize", "start", "connect", "provision",
 })
 SAFE_METADATA = frozenset({
     "host", "port", "database", "user", "server_version", "account",
@@ -94,6 +94,13 @@ def describe_failure(stage: str, exc: BaseException) -> SetupFailure:
     for current in chain:
         if isinstance(current, SetupFailure):
             return current
+    # PortableError is authored by the owned manager and never contains driver
+    # SQL, passwords or connection reprs. Preserve its actionable recovery text.
+    from tools.portable_mysql import PortableError
+    for current in chain:
+        if isinstance(current, PortableError):
+            return SetupFailure(stage, "PORTABLE_MYSQL", str(current),
+                                "Review mysql/logs, keep the complete server folder together, then retry.")
     stage = _stage(stage)
     code = None
     for current in chain:
@@ -105,27 +112,25 @@ def describe_failure(stage: str, exc: BaseException) -> SetupFailure:
 
     if code == 1043:
         message = "The database server rejected the connection handshake."
-        action = ("Check the MySQL host and database port shown in XAMPP. The database port is usually "
-                  "3306; game port 8765 is a separate service. Save this report if the database endpoint "
+        action = ("Run MYSQL_STATUS.bat to check the owned database. Its database port is "
+                  "3307; game port 8765 is a separate service. Save this report if the database endpoint "
                   "is correct. Re-entering a password does not resolve a protocol handshake failure.")
     elif code in (1045, 1698):
         if stage == "administrator":
             message = "MySQL rejected the administrator sign-in."
-            action = ("Check the administrator username and the password already used by this XAMPP/MySQL "
-                      "installation. Leave the password blank only if that administrator has no password, "
-                      "then test the connection again.")
+            action = ("Keep mysql/data and mysql credentials from the same server backup together. "
+                      "Run MYSQL_STATUS.bat and review mysql/logs before retrying; do not delete database files.")
         elif stage in ("game_account", "schema", "verify"):
             message = "MySQL rejected the game's database sign-in."
             action = ("Run the game database account step again so setup can create or verify its own login. "
-                      "A fresh install does not require an existing game-account password. Check the account "
-                      "host if MySQL runs on another computer.")
+                      "A fresh install does not require an existing game-account password. Keep this folder's MySQL "
+                      "credentials and mysql/data together.")
         else:
             message = "MySQL rejected the database sign-in."
             action = "Check the login used at the indicated step and test that connection again."
     elif code in (1044, 1142, 1143, 1227):
         message = "The database login does not have permission for this setup step."
-        action = ("Use a MySQL administrator permitted to create the game database and its separate login, "
-                  "then grant access to that game database. Keep the other MMOs' accounts and grants intact.")
+        action = ("Run 02_SETUP_MYSQL.bat in the same server folder to verify the private database and game login.")
     elif code == 1049:
         message = "The selected game database does not exist on this server."
         action = "Check the database name and selected MySQL endpoint, then run the database creation step."
@@ -138,15 +143,15 @@ def describe_failure(stage: str, exc: BaseException) -> SetupFailure:
         action = "Choose a game database password that satisfies your MySQL policy, or let setup generate one."
     elif code in (2002, 2003):
         message = "Setup could not reach the MySQL database service."
-        action = ("Start MySQL in XAMPP and check its host and database port. Use 127.0.0.1 when it runs on "
-                  "this computer. The database port is usually 3306; game port 8765 is separate.")
+        action = ("Run START_MYSQL.bat in this server folder. Its database uses 127.0.0.1:3307; "
+                  "game port 8765 is separate. Review mysql/logs if startup fails.")
     elif code == 2005 or any(isinstance(current, socket.gaierror) for current in chain):
         message = "The database hostname could not be resolved."
         action = "Check the MySQL hostname or use 127.0.0.1 for a database on this computer. Enter no URL or path."
     elif code in (2006, 2013):
         message = "The connection to MySQL was lost or timed out."
         action = ("Check that MySQL is still running and that the endpoint is its database service. Review "
-                  "the XAMPP MySQL log if it stopped, then retry this step.")
+                  "mysql/logs if it stopped, then retry this step.")
     elif code == 2026:
         message = "The database TLS connection could not be established."
         action = ("Check the database server's TLS configuration and trusted certificate. Game hosting "

@@ -1,0 +1,102 @@
+{
+  "release": "0.3.2-portable-ui2",
+  "date_utc": "2026-09-24",
+  "runtime": {
+    "python": "3.12.14",
+    "pygame": "2.5.8",
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+    "video": "SDL dummy software display",
+    "audio": "SDL dummy mixer"
+  },
+  "suite": {
+    "command": "python -m pytest -q",
+    "passed": 340,
+    "skipped": 10,
+    "failed": 0,
+    "seconds": 57.43,
+    "skip_reasons": {
+      "opt_in_live_mysql_runtime": 1,
+      "graphical_setup_wizard_desktop": 9
+    }
+  },
+  "asset_integrity": {
+    "command": "python tools/build.py --verify-only",
+    "passed": true,
+    "records": 21357,
+    "bytes": 526768639,
+    "manifest_sha256": "56ebceb42961d41d0c8f4ef710035cc9c7a5ac6751c6be461d814a59e35e8fcb"
+  },
+  "visual_qa": {
+    "fixture": "Synthetic server data for isolated native-App QA; no real account progress.",
+    "capture_count": 160,
+    "resolutions": [
+      [
+        1180,
+        800
+      ],
+      [
+        1280,
+        800
+      ],
+      [
+        2048,
+        1152
+      ],
+      [
+        3840,
+        2160
+      ]
+    ],
+    "native_4k": true,
+    "views_per_resolution": 20,
+    "states": [
+      "populated",
+      "empty"
+    ],
+    "out_of_bounds_actions": 0,
+    "additional_shop_captures": 3,
+    "reviewed": [
+      "DigiLab recovery bays and services",
+      "Scan and DigiDex galleries/filters",
+      "Partner roster, evolution routes, storage",
+      "World atlas and native map aspect",
+      "Battle, skill and six-recipient item commands",
+      "Sign-in, registration, tamers and starters",
+      "Settings and field HUD",
+      "Success notices and covered-control blocking",
+      "Exact supplied shopkeeper"
+    ],
+    "preview_tool": "tools/preview_ui_screens.py --suite ui2"
+  },
+  "interaction_and_audio": {
+    "screen_assignments": 15,
+    "distinct_assigned_tracks": 15,
+    "cue_assignments": 8,
+    "checked": [
+      "Server-authoritative action payloads and disabled gates",
+      "Party/storage reconstruction and stable-UID evolution acknowledgments",
+      "No successful feedback on rejected operations",
+      "Six battle item recipients and original target indices",
+      "Search/paging and storage source index mapping",
+      "Modal input isolation and native 4K physical click mapping",
+      "Context-aware menu close versus acknowledged lab return",
+      "Confirmed purchase/error feedback after fast local replies",
+      "Nonblocking single-stream music transitions and battle priority",
+      "Mute/volume preservation and steady-scene load suppression",
+      "Bounded native presentation, cyber, portrait and atlas caches",
+      "Supplied audio SHA-256 and decoder validation"
+    ]
+  },
+  "preservation_report": "UI2_PERFORMANCE.json",
+  "historical_reports": [
+    "UI_VALIDATION.json",
+    "UI_PERFORMANCE.json",
+    "FPS_BENCHMARK.json"
+  ],
+  "limitations": [
+    "No Windows executable was built or launched on this Linux host; rebuild the source on Windows x64.",
+    "Headless timings measure CPU frame preparation, not Windows display FPS, GPU presentation or live network/server load.",
+    "Audio decoding and routing used SDL dummy playback; listening on speakers/headphones remains a target-device check.",
+    "Screenshots are synthetic QA records, not live accounts."
+  ]
+}

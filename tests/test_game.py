@@ -30,6 +30,9 @@ class GameTests(unittest.TestCase):
         (path / "data/catalog.json").write_text(json.dumps(catalog))
         self.engine = GameEngine(path, seed=17)
         self.state = self.engine.new_player("test", "tamer", "alpha")
+        # These legacy rule scenarios explicitly begin in the field. New players
+        # now spawn at home; home behavior is exercised in test_digifarm.py.
+        self.engine.handle(self.state, "digifarm", {"action": "return"})
 
     def act(self, op, **payload):
         return self.engine.handle(self.state, op, payload)

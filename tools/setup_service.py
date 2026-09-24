@@ -1,14 +1,12 @@
 """Guided setup operations, separate from the native window and console UI.
 
-Only explicit configure operations change the game database or hosting files.
-Connection tests read the server greeting and authenticate without selecting or
-creating a database. Passwords are kept in memory and private server config.
+Database preparation starts only this folder's portable MySQL process.
+The game schema and hosting settings are created by the corresponding setup steps.
+Passwords are kept in the private server folder and excluded from diagnostics.
 """
 from __future__ import annotations
 
-import configparser
 import json
-import os
 from pathlib import Path
 import socket
 import ssl
@@ -38,7 +36,7 @@ def inspect_mysql_endpoint(host, port, timeout=4.0):
                 piece = connection.recv(count - len(data))
                 if not piece:
                     raise _failure("endpoint", "NO_GREETING", "The selected service closed before sending a MySQL greeting.",
-                                   "Check the MySQL port in XAMPP. The game port (normally 8765) is a separate service.")
+                                   "Run START_MYSQL.bat in this server folder. The game port (normally 8765) is separate.")
                 data.extend(piece)
             return bytes(data)
 
@@ -47,7 +45,7 @@ def inspect_mysql_endpoint(host, port, timeout=4.0):
             length = int.from_bytes(header[:3], "little")
             if header[3] != 0 or not 1 <= length <= 16384:
                 raise _failure("endpoint", "NOT_MYSQL", "This port did not send a valid MySQL/MariaDB greeting.",
-                               "Use the database service's port shown in XAMPP, usually 3306. Do not use a website or game port.")
+                               "The portable database uses 127.0.0.1:3307. Do not use a website or game port.")
             packet = receive(length)
         except (TimeoutError, socket.timeout) as exc:
             raise _failure("endpoint", "NO_GREETING", "The service did not send a MySQL greeting within four seconds.",
@@ -63,42 +61,10 @@ def inspect_mysql_endpoint(host, port, timeout=4.0):
         invalid = packet[fixed + 12] != 0 or (flags & 512 and len(packet) < fixed + 31)
     if invalid:
         raise _failure("endpoint", "NOT_MYSQL", "The selected port is not serving the supported MySQL protocol.",
-                       "Choose your MySQL/MariaDB endpoint in XAMPP; leave the game TCP port for the Hosting page.")
+                       "Run MYSQL_STATUS.bat to check this folder's database; leave the game TCP port for Hosting.")
     version = packet[1:separator].decode("ascii", "replace")
     return "".join(c for c in version if 32 <= ord(c) < 127)[:120]
 
-
-def find_xampp_configs(root, candidates=None):
-    """Read only known my.ini locations; never read passwords or scan ports."""
-    if candidates is None:
-        drive = os.environ.get("SystemDrive", "C:")
-        bases = [Path(drive + "/xampp"), Path("D:/xampp"), Path("C:/tools/xampp")]
-        location = os.environ.get("XAMPP_HOME")
-        if location:
-            bases.insert(0, Path(location))
-        bases.extend([Path(root) / "xampp", Path(root).parent / "xampp"])
-        candidates = [base / "mysql/bin/my.ini" for base in bases]
-    results = []
-    seen = set()
-    for candidate in candidates:
-        path = Path(candidate)
-        if str(path) in seen or not path.is_file():
-            continue
-        seen.add(str(path))
-        try:
-            parser = configparser.RawConfigParser(strict=False, allow_no_value=True,
-                                                 inline_comment_prefixes=("#", ";"))
-            parser.read_string(path.read_text(encoding="utf-8-sig", errors="replace"))
-            if not parser.has_section("mysqld"):
-                continue
-            raw_port = parser.get("mysqld", "port", fallback="3306")
-            if raw_port is None:
-                continue
-            port = setup.validated_port(raw_port.strip().strip('"\''))
-            results.append({"host": "127.0.0.1", "port": port, "path": str(path)})
-        except (OSError, ValueError, configparser.Error):
-            continue
-    return results
 
 
 def check_game_port(bind, port):
@@ -159,7 +125,7 @@ class SetupService:
 
     def _mark(self, stage, status="started", **metadata):
         self._stage = stage
-        self.report.record(stage, "success" if status == "passed" else status, **metadata)
+        self.report.record(stage, "success" if status in ("passed", "ok") else status, **metadata)
 
     def _read_config(self, name):
         try:
@@ -183,92 +149,33 @@ class SetupService:
         db = config.get("database") or {}
         if not isinstance(db, dict):
             raise _failure("validate", "CONFIG_INVALID", "Saved database settings are invalid.", "Restore a working config/server.json backup.")
-        return {"host": db.get("host", "127.0.0.1"), "port": db.get("port", 3306),
+        return {"host": "127.0.0.1", "port": 3307,
                 "name": db.get("name", "digimon_venom_nxt"), "user": db.get("user", "venom_nxt"),
-                "account_host": db.get("account_host", "localhost"), "admin_user": "root",
+                "account_host": "127.0.0.1", "admin_user": "root",
                 "public_host": client.get("host", "localhost"), "game_port": config.get("port", 8765),
                 "bind": config.get("host", "0.0.0.0"), "has_database": bool(db)}
 
-    def find_local_database(self):
-        return find_xampp_configs(self.root)
-
-    @staticmethod
-    def _connection_settings(settings):
-        try:
-            host = setup.hostname(settings.get("host", "127.0.0.1"))
-            port = setup.validated_port(settings.get("port", 3306))
-        except (ValueError, TypeError) as exc:
-            raise _failure("validate", "ENDPOINT_INVALID", "Enter a database hostname/IP and a separate port from 1 to 65535.",
-                           "For same-PC XAMPP, use 127.0.0.1 and the MySQL port shown in its control panel. Do not paste a URL.") from exc
-        user = settings.get("admin_user", "root")
-        password = settings.get("admin_password", "")
-        if not isinstance(user, str) or not user.strip() or any(ord(c) < 32 for c in user):
-            raise _failure("validate", "USER_INVALID", "Enter the XAMPP administrator username.", "The usual XAMPP administrator username is root.")
-        if not isinstance(password, str):
-            raise _failure("validate", "PASSWORD_INVALID", "The administrator password must be text.", "Enter the existing XAMPP password, or leave it blank if it has no password.")
-        try:
-            password.encode("utf-8")
-        except UnicodeError as exc:
-            raise _failure("validate", "PASSWORD_INVALID", "The password contains an incomplete Unicode character.", "Clear the field and paste the complete password.") from exc
-        return {"host": host, "port": port, "admin_user": user.strip(), "admin_password": password}
-
-    @staticmethod
-    def _connection_key(values):
-        return tuple(values[k] for k in ("host", "port", "admin_user", "admin_password"))
-
-    def test_database(self, settings):
-        import pymysql
+    def test_database(self, settings=None):
+        """Prepare and identify our owned process without using supplied credentials."""
+        from tools.portable_mysql import prepare
         with self._lock:
             self._tested = None
             try:
-                self._mark("validate")
-                values = self._connection_settings(settings)
-                self._mark("endpoint", host=values["host"], port=values["port"])
-                banner = inspect_mysql_endpoint(values["host"], values["port"])
-                self._mark("endpoint", "passed", server_version=banner)
-                self._mark("administrator", user=values["admin_user"])
-                connection = pymysql.connect(host=values["host"], port=values["port"],
-                    user=values["admin_user"], password=values["admin_password"].encode("utf-8"),
-                    charset="utf8mb4", autocommit=True, connect_timeout=8, read_timeout=8, write_timeout=8)
-                try:
-                    with connection.cursor() as cursor:
-                        cursor.execute("SELECT VERSION(), CURRENT_USER()")
-                        version, account = cursor.fetchone()
-                finally:
-                    connection.close()
-                result = {"server_version": str(version), "account": str(account), "host": values["host"], "port": values["port"]}
-                self._tested = self._connection_key(values)
-                self._mark("administrator", "passed", **result)
+                self._mark("endpoint")
+                result = prepare(self.root)
+                self._tested = True
+                self._mark("endpoint", "passed", **{
+                    key: result[key] for key in ("host", "port", "server_version", "account") if key in result})
                 return result
             except Exception as exc:
                 raise self.report.failure(self._stage, exc) from exc
 
-    def configure_database(self, settings):
+    def configure_database(self, settings=None):
         with self._lock:
             try:
                 self._mark("validate")
-                values = self._connection_settings(settings)
-                if self._tested != self._connection_key(values):
-                    self.test_database(values)
-                defaults = self.defaults()
-                answers = {**values, **{key: settings.get(key, defaults[key]) for key in ("name", "user", "account_host")},
-                           "password": settings.get("password", "")}
-                try:
-                    answers["name"] = setup.validated_identifier(answers["name"].strip(), "Database name")
-                    answers["user"] = setup.validated_identifier(answers["user"].strip(), "Database username", 32)
-                except (ValueError, AttributeError) as exc:
-                    raise _failure("validate", "NAME_INVALID", "Use letters, digits and underscores for the game database and username, starting with a letter.",
-                                   "Keep the suggested game database name and username for a fresh installation.") from exc
-                if answers["user"].lower() in {"root", "mysql", "mariadb", values["admin_user"].lower()}:
-                    raise _failure("validate", "USER_RESERVED", "Choose a separate username for the game's database login.", "Use the default venom_nxt; your XAMPP administrator remains separate.")
-                password = answers["password"]
-                if not isinstance(password, str) or any(ord(c) < 32 or ord(c) == 127 for c in password):
-                    raise _failure("validate", "PASSWORD_INVALID", "Use a single-line game password without control characters.", "Leave this field blank to generate a game password automatically.")
-                try:
-                    password.encode("utf-8")
-                except UnicodeError as exc:
-                    raise _failure("validate", "PASSWORD_INVALID", "The game password contains an incomplete Unicode character.", "Clear the field and paste the complete password.") from exc
-                self._mark("validate", "passed", database=answers["name"], user=answers["user"])
+                settings = settings or {}
+                answers = {key: settings[key] for key in ("name", "user", "password") if key in settings}
                 return setup.mysql_setup(self.root, answers, interactive=False, stage_callback=self._mark)
             except Exception as exc:
                 if isinstance(exc, SetupFailure):
@@ -301,12 +208,14 @@ class SetupService:
                 db = config.get("database")
                 if not db or db.get("driver") != "mysql":
                     raise _failure("verify", "DATABASE_MISSING", "The server has no configured MySQL game login.", "Complete the Database and Game Login pages before starting the server.")
-                database = Database(db)
+                from tools.portable_mysql import prepare
+                prepare(self.root)
+                database = Database(db, root=self.root)
                 try:
                     with database._connect().cursor() as cursor:
                         cursor.execute("SELECT version FROM venom_schema")
                         if cursor.fetchall() != ((SCHEMA_VERSION,),):
-                            raise _failure("verify", "SCHEMA_VERSION", "The saved database uses an unsupported game schema.", "Restore the matching server version or migrate your database before continuing.")
+                            raise _failure("verify", "SCHEMA_VERSION", "The saved database uses an unsupported game schema.", "Restore the matching complete server backup before continuing.")
                         cursor.execute("SELECT username FROM venom_accounts LIMIT 0")
                         cursor.execute("SELECT username FROM venom_players LIMIT 0")
                 finally:

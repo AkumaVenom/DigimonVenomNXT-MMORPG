@@ -25,18 +25,31 @@ def test_windows_build_includes_whole_wizard_and_current_launchers(tmp_path, mon
     (root / "assets").mkdir()
     (root / "assets" / "walk.json").write_text("[]")
     (root / "assets" / "sprite.png").write_bytes(b"example-client-asset")
+    farm_assets = ("ui/digifarm/level.png", "ui/digifarm/digimeat.png",
+                   "audio/original/digifarm_home.ogg")
+    for name in farm_assets:
+        asset = root / "assets" / name
+        asset.parent.mkdir(parents=True, exist_ok=True)
+        asset.write_bytes(b"example-farm-asset")
     (root / "data" / "catalog.json").write_text(json.dumps({"maps": [{"walkable": "assets/walk.json"}]}))
     (root / "docs").mkdir()
     for source in (SOURCE / "docs").glob("*"):
         if source.is_file():
             shutil.copy2(source, root / "docs" / source.name)
-    for name in ("PASSWORD_SETUP_FIX.txt", "01_SETUP_SERVER.bat", "02_SETUP_MYSQL.bat",
-                 "03_SETUP_PUBLIC_HOSTING.bat", "START_WORLD_SERVER_CONSOLE.bat",
-                 "PLAY_DIGIMON_VENOM_NXT.bat"):
+    for name in ("01_SETUP_SERVER.bat", "02_SETUP_MYSQL.bat", "03_SETUP_PUBLIC_HOSTING.bat",
+                 "_RUN_SETUP.bat", "_RUN_MYSQL.bat", "START_WORLD_SERVER_CONSOLE.bat", "START_MYSQL.bat", "STOP_MYSQL.bat",
+                 "MYSQL_STATUS.bat", "STOP_SERVER.bat", "START_SERVER.bat", "PLAY_DIGIMON_VENOM_NXT.bat"):
         shutil.copy2(SOURCE / name, root / name)
     for name in ("windows_client.manifest", "windows_client.ico"):
         (root / "tools" / name).touch()
 
+    (root / "mysql" / "runtime" / "bin").mkdir(parents=True)
+    (root / "mysql" / "runtime" / "bin" / "mysqld.exe").write_bytes(b"runtime")
+    (root / "mysql" / "data").mkdir()
+    (root / "mysql" / "data" / "private-save.ibd").write_bytes(b"never-package")
+    (root / "mysql" / "credentials.json").write_text("private")
+    from tools import portable_mysql
+    monkeypatch.setattr(portable_mysql, "ensure_runtime", lambda *args, **kwargs: None)
     commands = []
 
     def simulate_tool(command):
@@ -76,10 +89,27 @@ def test_windows_build_includes_whole_wizard_and_current_launchers(tmp_path, mon
     assert (server / "_internal" / "dependency.bin").read_bytes() == b"VenomWorldServer"
     for name in ("01_SETUP_SERVER.bat", "02_SETUP_MYSQL.bat", "03_SETUP_PUBLIC_HOSTING.bat"):
         assert (server / name).read_bytes() == (SOURCE / name).read_bytes()
-    assert (server / "PASSWORD_SETUP_FIX.txt").read_bytes() == (SOURCE / "PASSWORD_SETUP_FIX.txt").read_bytes()
+    assert (server / "_RUN_MYSQL.bat").is_file()
+    assert (server / "_RUN_SETUP.bat").is_file()
+    assert (server / "mysql" / "manager" / "VenomMySQL.exe").is_file()
+    assert (server / "mysql" / "runtime" / "bin" / "mysqld.exe").read_bytes() == b"runtime"
+    assert not (server / "mysql" / "data").exists()
+    assert not (server / "mysql" / "credentials.json").exists()
     assert "01_SETUP_SERVER.bat" in (server / "READ_ME_FIRST.txt").read_text()
-    assert json.loads((server / "build-info.json").read_text())["version"] == "0.3.0-alpha"
+    assert json.loads((server / "build-info.json").read_text())["version"] == "0.6.0"
+    assert json.loads((client / "build-info.json").read_text())["version"] == "0.6.0"
+    assert (client / "docs" / "FPS_FIX.md").is_file()
+    assert (client / "docs" / "UI_UPGRADE.md").is_file()
+    assert (client / "docs" / "UI2_UPGRADE.md").is_file()
+    for package in (client, server):
+        assert (package / "docs" / "DIGIFARM_V060.md").is_file()
+    assert "Both the client and world server must be updated" in (client / "READ_ME_FIRST.txt").read_text()
+    assert "Upgrade steps: docs/DIGIFARM_V060.md" in (client / "READ_ME_FIRST.txt").read_text()
+    assert "preserve mysql/data, mysql credentials and config" in (server / "READ_ME_FIRST.txt").read_text()
+    assert "Upgrade steps: docs/RIVAL_MOVEMENT_UPGRADE.md" not in (client / "READ_ME_FIRST.txt").read_text()
     assert (client / "assets" / "sprite.png").is_file()
+    for name in farm_assets:
+        assert (client / "assets" / name).read_bytes() == b"example-farm-asset"
     assert not (server / "assets" / "sprite.png").exists()
     assert (server / "assets" / "walk.json").is_file()
     with zipfile.ZipFile(root / "dist" / "Windows_Server_x64.zip") as archive:
@@ -96,3 +126,15 @@ def test_database_launcher_cannot_prefer_an_obsolete_repair_payload():
     assert 'set "SETUP_COMMAND=wizard --stage database"' in launcher
     assert 'set "SETUP_COMMAND=mysql"' in launcher
     assert '%SETUP_COMMAND% %*' in launcher
+
+
+def test_rebuild_refuses_to_erase_configured_server_or_database(tmp_path):
+    import pytest
+    for marker in ("config/server.json", "mysql/instance.json", "mysql/game-login.json", "mysql/data/player.ibd"):
+        destination = tmp_path / marker.replace("/", "_")
+        live_file = destination / marker
+        live_file.parent.mkdir(parents=True)
+        live_file.write_bytes(b"preserve every byte")
+        with pytest.raises(RuntimeError, match="will not delete saved progress"):
+            build.check_server_build_destination(destination)
+        assert live_file.read_bytes() == b"preserve every byte"

@@ -1,4 +1,4 @@
-"""Run the fixed MySQL wizard against an existing server without rebuilding it."""
+"""Bootstrap the portable database setup dependencies for source installations."""
 from __future__ import annotations
 
 import argparse
@@ -27,7 +27,7 @@ def payload_paths(script: Path) -> tuple[Path, Path]:
         return directory, directory / "requirements.txt"
     if directory.name == "tools" and (directory / "setup.py").is_file():
         return directory.parent, directory / "repair_templates" / "requirements.txt"
-    raise ValueError("The setup repair files are incomplete. Extract the entire repair ZIP again.")
+    raise ValueError("The setup files are incomplete. Extract the complete server source folder again.")
 
 
 def environment_python(environment: Path) -> Path:
@@ -40,14 +40,14 @@ def validate_root(root: Path) -> Path:
         raise ValueError("The selected server folder does not exist.")
     if not ((root / "VenomWorldServer.exe").is_file()
             or (root / "tools" / "setup.py").is_file()):
-        raise ValueError("Extract the repair ZIP next to VenomWorldServer.exe, then run FIX_MYSQL_SETUP.bat there.")
+        raise ValueError("Run 01_SETUP_SERVER.bat from the complete extracted server or source folder.")
     return root
 
 
-def bootstrap(root: Path, requirements: Path, script: Path, console_passwords=False) -> int:
+def bootstrap(root: Path, requirements: Path, script: Path, console_passwords=False, command="mysql", forwarded=()) -> int:
     if not requirements.is_file():
-        raise ValueError("The setup repair dependency list is missing. Extract the entire repair ZIP again.")
-    environment = root / ".venv-setup-fix"
+        raise ValueError("The setup dependency list is missing. Extract the complete source folder again.")
+    environment = root / ".venv-setup"
     python = environment_python(environment)
     if not python.is_file():
         print("Preparing an isolated setup environment. Your game does not need to be rebuilt.", flush=True)
@@ -57,10 +57,10 @@ def bootstrap(root: Path, requirements: Path, script: Path, console_passwords=Fa
                     "--requirement", str(requirements)], check=True)
     # No credentials are accepted here or passed through the shell, environment,
     # command line or child process arguments. Only the wizard asks for them.
-    command = [str(python), str(script), "--root", str(root), "--prepared"]
+    invocation = [str(python), str(script), "--root", str(root), "--prepared", "--command", command]
     if console_passwords:
-        command.append("--console-passwords")
-    return subprocess.call(command)
+        invocation.append("--console-passwords")
+    return subprocess.call([*invocation, *forwarded])
 
 
 def main(argv=None) -> int:
@@ -69,33 +69,32 @@ def main(argv=None) -> int:
                         help="Existing Windows_Server_x64 or source folder to configure.")
     parser.add_argument("--prepared", action="store_true", help=argparse.SUPPRESS)
     parser.add_argument("--console-passwords", action="store_true",
-                        help="Use the masked console password prompt instead of a window.")
-    args = parser.parse_args(argv)
+                        help="Use console setup; database credentials are generated automatically.")
+    parser.add_argument("--command", choices=("wizard", "mysql", "hosting"), default="mysql")
+    args, forwarded = parser.parse_known_args(argv)
     try:
         if sys.version_info < (3, 11):
-            raise ValueError("This repair needs Python 3.11 or newer. Install it with Tcl/Tk support, then run the repair again.")
+            raise ValueError("Setup needs Python 3.11 or newer. Install it with Tcl/Tk support, then run setup again.")
         root = validate_root(args.root)
         script = Path(__file__).resolve()
         import_root, requirements = payload_paths(script)
         if not dependencies_ready():
             if args.prepared:
-                raise ValueError("The isolated setup dependencies are incomplete. Run FIX_MYSQL_SETUP.bat again with internet access.")
-            return bootstrap(root, requirements, script, console_passwords=args.console_passwords)
+                raise ValueError("The isolated setup dependencies are incomplete. Run 01_SETUP_SERVER.bat again with internet access.")
+            return bootstrap(root, requirements, script, console_passwords=args.console_passwords, command=args.command, forwarded=forwarded)
         sys.path.insert(0, str(import_root))
         from tools.setup import main as setup_main
 
-        print(f"\nRepairing MySQL setup for: {root}", flush=True)
-        prompt = "masked console prompt" if args.console_passwords else "setup window"
-        print(f"Passwords will be entered in the {prompt}. No game rebuild is required.", flush=True)
-        command = ["--root", str(root), "mysql"]
+        print(f"\nPreparing portable server setup for: {root}", flush=True)
+        command = ["--root", str(root), args.command, *forwarded]
         if args.console_passwords:
             command.append("--console-passwords")
         return setup_main(command)
     except KeyboardInterrupt:
-        print("\nSetup repair cancelled.", file=sys.stderr)
+        print("\nSetup cancelled.", file=sys.stderr)
         return 1
     except (OSError, ValueError, subprocess.CalledProcessError) as exc:
-        print(f"\nSETUP REPAIR FAILED: {exc}", file=sys.stderr)
+        print(f"\nSETUP BOOTSTRAP FAILED: {exc}", file=sys.stderr)
         return 1
 
 

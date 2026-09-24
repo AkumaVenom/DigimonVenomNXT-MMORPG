@@ -8,7 +8,7 @@ The official [Cyber Sleuth Complete Edition page](https://www.bandainamcoent.com
 
 ## Starting and exploring
 
-Create a tamer from any of the imported tamer entries and choose one regular Rookie. Start at level 1 with 650 credits, five Small HP Capsules and three Small SP Capsules. The first party member is the visible overworld follower. Party capacity is six, with the first three living slots forming the initial combat team. Reserve partners earn half XP. The game server owns movement, encounter and persistence rules; the client cannot supply HP, currency, damage, scan or rewards.
+Create a tamer from any of the imported tamer entries and choose one regular Rookie. Start at your private DigiFarm at level 1 with 650 credits, five Small HP Capsules, three Small SP Capsules and three Friendship DigiMeat. The first party member is the visible overworld follower. Party capacity is six, with the first three living slots forming the initial combat team. Reserve partners earn half XP. The game server owns movement, encounter and persistence rules; the client cannot supply HP, currency, damage, scan or rewards.
 
 Every imported species has at least one assigned map encounter location. Maps expose their regular and Paradox pools in the runtime catalog. Pools are stable across restarts and matched to stage/progression: Rookie and baby stages near level 1, Champion near 15, Ultimate near 30, Mega near 45 and Ultra near 60. Map pools remain compact so repeated species can actually be scanned. All maps are available through travel; their displayed wild level warns of difficulty.
 
@@ -20,7 +20,7 @@ Scan data is awarded **on defeat**, as requested, rather than simply seeing an e
 
 The chance for an encounter to contain one Paradox is **2.5% per encounter**, not 2.5% independently per enemy slot. One slot is replaced by a variant from that area's eligible pool. Paradox species retain separate scan entries; normal scans cannot materialize them. Their evolution family retains the Paradox variant.
 
-At the DigiLab, 100% scan can materialize a level-1 partner. Materialization consumes the accumulated scan. Additional scan grants starting ABI: 120% grants 1, 140% grants 2, up to ABI 5 at 200%. A new partner joins the party if fewer than six members are present, otherwise the DigiBank. Bank capacity is 2,000 partners. Deposit and withdraw work in the lab; at least one partner must remain in the party.
+At the DigiFarm or DigiLab, 100% scan can materialize a level-1 partner. Materialization consumes the accumulated scan. Additional scan grants starting ABI: 120% grants 1, 140% grants 2, up to ABI 5 at 200%. A new partner joins the party if fewer than six members are present, otherwise DigiFarm storage. Farm capacity is 100 stored partners, separate from the six active party slots. Legacy collections above 100 are preserved without deletion; withdrawals remain available, but new deposits and materialization into full storage are blocked. A capacity-neutral party/storage exchange also works when both party and farm are full, including archived storage partners. The incoming party partner is restored; both retain their identity and progression, and counts stay unchanged. Deposit and withdraw work at the farm or lab; at least one partner must remain in the party.
 
 ## Types, attributes and damage
 
@@ -44,7 +44,7 @@ Six battle stats are implemented: HP, SP, ATK, DEF, INT and SPD. Original per-le
 
 XP needed for the next level is `35 + floor(12 × level^1.45)`. Victory awards XP from every defeated enemy: `24 + 12 × enemy level + 8 × enemy stage rank`; active partners receive full XP, reserves receive half. Level-up restores only newly gained HP/SP capacity; knocked-out partners stay knocked out. Victory also awards `25 + 7 × level` credits per enemy. CAM rises by 2 for active members and 1 for reserves, capped at 100.
 
-Evolution requires the DigiLab and checks the advertised level, ABI, CAM and stat thresholds on the server. Known family chains are curated routes with original balance requirements. Uncharted species have a stable, explicitly labelled **original data-splice route** into the next stage; these are not canon evolution claims. Paradox versions follow the corresponding Paradox target.
+Evolution requires the DigiFarm or DigiLab and checks the advertised level, ABI, CAM and stat thresholds on the server. Known family chains are curated routes with original balance requirements. Uncharted species have a stable, explicitly labelled **original data-splice route** into the next stage; these are not canon evolution claims. Paradox versions follow the corresponding Paradox target.
 
 Evolution resets level to 1, preserves the individual UID and CAM, changes species/stats and increases ABI by `2 + floor(old level / 10)`. De-digivolution to a listed previous form requires level 5, resets level to 1, preserves identity/CAM, and grants `5 + floor(old level / 5)` ABI. This makes higher ABI requirements reachable without a dead end. The UI reads the server's `evolution_options`, including all unmet requirements and whether a route goes backwards.
 
@@ -61,12 +61,29 @@ The DigiLab button outside battle instantly heals all party HP/SP and remembers 
 | Medium SP | 260 | 65 SP |
 | Large SP | 600 | 200 SP |
 
-Purchases are available in the lab. Recovery is capped at the partner's maximum; full-resource use is rejected without consuming an item. Capsules cannot revive a defeated partner; the lab can. Purchase quantities must be integers 1–99, stocks cap at 999 each, and credit availability is checked before inventory changes.
+Purchases are available at the DigiFarm or DigiLab. Recovery is capped at the partner's maximum; full-resource use is rejected without consuming an item. Capsules cannot revive a defeated partner; the lab can. Purchase quantities must be integers 1–99, stocks cap at 999 each, and credit availability is checked before inventory changes.
+
+## DigiFarm and optional feeding
+
+Each account owns a private farm. The top-left Home button / F2 returns there;
+confirming this action during a battle flees with no victory XP, credits or meat
+reward. Scan already earned from defeated enemies is retained. The farm uses the
+supplied island artwork and original music, and stored residents wander gently.
+No hunger, deterioration or required feeding is implemented.
+
+Friendship DigiMeat costs 150 credits and grants up to +5 CAM, capped at 100.
+A PvE victory has an 18% chance to award one. Six training-meat families improve
+HP, SP, ATK, DEF, INT or SPD: +1 costs 2,500 credits; rare +5 costs 25,000.
+Permanent bonuses cap at +100 per stat and +300 combined per Digimon. These flat
+bonuses are added after normal level/ABI stats, persist through level changes
+and evolution, and participate in ranked snapshots. Feeding requires a stored
+resident and an owned item and is checked on the server before consumption.
+See [DIGIFARM_V060.md](DIGIFARM_V060.md) for the complete item names and rules.
 
 ## Scope of this version
 
-Implemented: shared-world movement, multiplayer presence, account persistence, species collection, wild turn-based battles, scan/materialize, party/bank, type/attribute effectiveness, HP/SP recovery, original stats/XP, ABI/CAM, evolution/devolution, shop, map travel and lab return. Administrative infrastructure lives in the server/setup documentation.
+Implemented: shared-world movement, multiplayer presence, account persistence, species collection, wild turn-based battles, scan/materialize, party/bank, type/attribute effectiveness, HP/SP recovery, original stats/XP, ABI/CAM, evolution/devolution, shop, map travel, lab return, private DigiFarm and optional permanent training. Ranked battles, seasons and persistent AI tamers are documented in RIVALS_AND_RANKED.md. Administrative infrastructure lives in the server/setup documentation.
 
-Not implemented as Cyber Sleuth parity: original story quests, DigiFarm, complete signature/inherited move database, personality system, all statuses, support skills, DigiMemory, every canonical branch/jogress requirement, ranked PvP, trading, raids, guilds or tamer bots. These require additional gameplay/content work. The runtime's generic animations and particles should likewise not be described as a full extraction of every original DS battle effect.
+Not implemented as Cyber Sleuth parity: original story quests, complete signature/inherited move database, personality system, all statuses, support skills, DigiMemory, every canonical branch/jogress requirement, real-time command PvP, trading, raids or guilds. These require additional gameplay/content work. The runtime's generic animations and particles should likewise not be described as a full extraction of every original DS battle effect.
 
 Run `python -m unittest tests.test_game -v` for the authoritative gameplay tests, including starter restrictions, all-species encounter coverage, speed turns, scan caps, zero-SP attacks, battle/lab boundaries, inventory exploits, materialization capacity, evolution stat gates, devolution identity, exact-coordinate recovery and defeat protection.

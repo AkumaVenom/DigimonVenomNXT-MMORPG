@@ -87,7 +87,7 @@ class Community:
                     if self.store.renew_world(self.token, lease_seconds=90):
                         self.bots.flush(force=True)
                     else:
-                        LOG.error('Rival lease expired or changed owner; skipped stale shutdown checkpoint.')
+                        raise DatabaseError('Rival lease expired or changed owner; final rival checkpoint was not saved.')
                 finally:
                     self.store.release_world(self.token)
                     self.lease_owned = False
@@ -122,7 +122,7 @@ class Community:
         return profile
 
     def _nearby(self, state, now):
-        if state.get('in_lab'):
+        if state.get('in_lab') or state.get('in_farm'):
             return []
         actors = self.bots.snapshot(state['map_id'], now=now)
         point = (state['x'],state['y'])
@@ -130,6 +130,8 @@ class Community:
 
     def _challenge_bot(self, state, bot_id, require_nearby=True):
         self._peace(state)
+        if state.get('in_farm'):
+            raise ValueError('Return to the field before challenging a nearby rival.')
         profile = self._profile(bot_id)
         actors = {p.get('id'):p for p in self._nearby(state,time.monotonic())}
         actor = actors.get(bot_id)
@@ -146,7 +148,8 @@ class Community:
 
     def _offer(self, state, now):
         ident = self.player_id(state)
-        if self._pending(ident) or now<self.next_invite.get(ident,0) or state.get('battle') or state.get('in_lab'):
+        if (state.get('battle') or state.get('in_lab') or state.get('in_farm')
+                or self._pending(ident) or now<self.next_invite.get(ident,0)):
             return
         self.next_invite[ident] = now+120
         nearby = self._nearby(state,now)
@@ -201,7 +204,7 @@ class Community:
                 offset = bounded_int(message.get('offset'),0,0,5000)
                 self._offer(state,time.monotonic())
                 page = self.bots.directory(query=query,offset=offset,limit=50)
-                data = {'challenges':self._pending(player_id),
+                data = {'challenges':[] if state.get('in_farm') else self._pending(player_id),
                     'history':self.store.rival_history(player_id,limit=100),
                     'nearby':self._nearby(state,time.monotonic()),
                     'directory':page['entries'], 'total':page['total'],

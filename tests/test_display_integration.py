@@ -30,14 +30,34 @@ class NativeDisplayIntegrationTests(unittest.TestCase):
         return consumed
 
     def test_4k_settings_clicks_change_zoom_and_frame_cap_at_displayed_positions(self):
-        self.app.draw()
-        self.assertTrue(self.click((1675, 95)))  # Header settings button at 250%.
+        controls = []
+        original_button = self.app.ui.button
+
+        def capture(rect, label, callback, *args, **kwargs):
+            controls.append((str(label), pygame.Rect(rect), callback))
+            return original_button(rect, label, callback, *args, **kwargs)
+
+        def render():
+            controls.clear()
+            with patch.object(self.app.ui, 'button', side_effect=capture):
+                self.app.draw()
+
+        def click_control(label, index=0):
+            # Covered and disabled controls are excluded by the real action list.
+            active = [rect for name, rect, callback in controls if name == label
+                      and any(action is callback for _, action in self.app.ui.actions)]
+            self.assertGreater(len(active), index, f'Missing displayed control: {label}')
+            physical = self.app.screen.to_physical_point(active[index].center)
+            self.assertTrue(self.click(physical))
+
+        render()
+        click_control('Settings')
         self.assertTrue(self.app.settings_open)
-        self.app.draw()
-        self.assertTrue(self.click((1740, 1150)))  # World zoom + in the modal.
+        render()
+        click_control('+', 2)  # Music, effects, then world zoom in the modal.
         self.assertEqual(self.app.world.zoom, 1.5)
-        self.app.draw()
-        self.assertTrue(self.click((1840, 986)))  # 144 FPS in the modal.
+        render()
+        click_control('144')
         self.assertEqual(self.app.display.settings['fps'], 144)
         self.assertEqual(self.app.display.surface.get_size(), (3840, 2160))
 

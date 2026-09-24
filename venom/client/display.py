@@ -26,6 +26,7 @@ DEFAULTS = {
     'fps': 120,
     'show_fps': False,
     'zoom': 1.0,
+    'farm_zoom': 1.0,
     'music_volume': 0.35,
     'effects_volume': 0.30,
 }
@@ -120,7 +121,7 @@ def validate_settings(value) -> dict:
     fps = value.get('fps')
     if isinstance(fps, int) and not isinstance(fps, bool) and fps in FRAME_CAPS:
         result['fps'] = fps
-    for key, lower, upper in (('zoom', 1.0, 8.0), ('music_volume', 0.0, 1.0), ('effects_volume', 0.0, 1.0)):
+    for key, lower, upper in (('zoom', 1.0, 8.0), ('farm_zoom', 1.0, 8.0), ('music_volume', 0.0, 1.0), ('effects_volume', 0.0, 1.0)):
         try:
             number = float(value.get(key, result[key]))
             if math.isfinite(number):

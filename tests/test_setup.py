@@ -82,42 +82,24 @@ class HostingTests(unittest.IsolatedAsyncioTestCase):
 
 
 class MySQLSetupTests(unittest.TestCase):
-    def test_provisioning_preserves_administrator_credentials_and_scopes_privileges(self):
-        with tempfile.TemporaryDirectory() as temporary:
+    def test_provisioning_delegates_to_owned_manager(self):
+        with tempfile.TemporaryDirectory(prefix="server with spaces ") as temporary:
             root = Path(temporary)
-            connection = MagicMock()
-            cursor = connection.cursor.return_value.__enter__.return_value
-            with patch("pymysql.connect", return_value=connection) as connect, patch("tools.setup._probe_game_login", side_effect=[False, True]), patch("venom.server.database.initialize_database") as initialize, redirect_stdout(io.StringIO()):
-                mysql_setup(root, {"admin_password": "CurrentXamppPassword", "password": "DedicatedGamePassword"}, interactive=False)
-            self.assertEqual(b"CurrentXamppPassword", connect.call_args.kwargs["password"])
-            saved = (root / "config/server.json").read_text()
-            self.assertNotIn("CurrentXamppPassword", saved)
-            config = json.loads(saved)
-            self.assertEqual("DedicatedGamePassword", config["database"]["password"])
-            initialize.assert_called_once_with(config["database"])
-            statements = [call.args[0] for call in cursor.execute.call_args_list]
-            self.assertFalse(any("ALTER USER" in statement or "SET PASSWORD" in statement for statement in statements))
-            grants = [statement for statement in statements if statement.startswith("GRANT")]
-            self.assertEqual(1, len(grants))
-            self.assertIn(r" ON `digimon\_venom\_nxt`.* ", grants[0])
-            self.assertIn("REFERENCES", grants[0])
-            self.assertNotIn("ALL PRIVILEGES", grants[0])
-            self.assertNotIn("GRANT OPTION", grants[0])
-            connection.close.assert_called_once()
+            answers = {"password": "Game password!"}
+            callback = MagicMock()
+            expected = {"driver": "mysql", "portable": True, "port": 3307}
+            with patch("tools.portable_mysql.setup_database", return_value=expected) as provision:
+                result = mysql_setup(root, answers, interactive=False, stage_callback=callback)
+            self.assertEqual(expected, result)
+            provision.assert_called_once_with(root.resolve(), answers=answers, stage_callback=callback)
 
-    def test_failed_schema_setup_preserves_previous_configuration(self):
+    def test_manager_failure_does_not_write_configuration_from_wrapper(self):
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)
-            (root / "config").mkdir()
-            config = root / "config/server.json"
-            before = '{"port": 9999, "database": {"password": "ExistingGamePassword"}}'
-            config.write_text(before)
-            connection = MagicMock()
-            with patch("pymysql.connect", return_value=connection), patch("tools.setup._probe_game_login", side_effect=[False, True]), patch("venom.server.database.initialize_database", side_effect=RuntimeError("schema validation failed")), redirect_stdout(io.StringIO()):
-                with self.assertRaisesRegex(RuntimeError, "schema validation failed"):
-                    mysql_setup(root, {"password": "ReplacementPassword"}, interactive=False)
-            self.assertEqual(before, config.read_text())
-            connection.close.assert_called_once()
+            with patch("tools.portable_mysql.setup_database", side_effect=RuntimeError("owned instance unavailable")):
+                with self.assertRaisesRegex(RuntimeError, "owned instance unavailable"):
+                    mysql_setup(root, {}, interactive=False)
+            self.assertFalse((root / "config/server.json").exists())
 
 
 class DistributionTests(unittest.TestCase):

@@ -1,0 +1,1484 @@
+{
+  "schema": 1,
+  "title": "UI2 native performance and preservation audit against accepted UI1",
+  "environment": {
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+    "python": "3.12.14",
+    "pygame_ce": "2.5.8",
+    "video_driver": "dummy",
+    "audio_driver": "dummy"
+  },
+  "conclusion": "Crowded-world performance is retained: paired mean-frame statistics are 11.96 ms for UI1 and 11.69 ms for UI2, with all 160 rivals and 322 actors. The new Shop measured 7.30 ms mean versus 6.62 ms for UI1. Fifteen new screens measured 4.71 to 10.18 ms mean, with maximum p95 14.27 ms. All timed workloads had zero steady PNG loads or asset errors. All original art/audio assets, gameplay data apart from additive UI metadata, server/common code, world renderer, native DPI rendering and FPS asset-cache methods remain preserved.",
+  "limits": [
+    "Results measure Linux headless CPU frame preparation, not Windows display FPS or guaranteed performance on a particular computer.",
+    "Two paired world runs and one paired Shop run are regression checks. Small differences and isolated high percentiles may reflect shared-host scheduling; no new world-speed improvement is claimed.",
+    "New UI2 screens have standalone costs, avoiding false comparisons with UI1 routes that did not exist. Warmup excludes first-visit loading. Transient confirmation notices were visually tested separately and are not represented as steady menu benchmarks.",
+    "Cache observations are a separate untimed sequence after one frame per screen. They verify bounded component allocations at those snapshots, not total process memory or an exhaustive lifetime maximum."
+  ],
+  "methodology": [
+    "All timing processes ran sequentially while other agents paused tests, rendering, hashing and packaging.",
+    "World: identical benchmark_client_fps.py workloads using each checkout actual App code and assets; 160 rivals, 322 actors, 64 tamer appearances and 128 lead species; original Dawn Sector 004 map; native 2048x1152 pixels, UI scale 4/3 and zoom 1.5; 960 warmup frames then 360 measured frames; 10 Hz synthetic snapshots and 60 Hz fixed simulation.",
+    "Shop and UI2 screens: final preview_ui_screens.py fixtures, 240 warmup frames then 360 measured frames, native 2048x1152 pixels and UI scale 4/3. The selected project client modules load before the shared fixture; exact module paths are retained below.",
+    "Screen timing includes event pumping, App.update, WorldRenderer.update and App.draw. Fixture construction, real-rules-engine preparation, App startup and warmup are excluded. Community polling is disabled for equal preloaded records. Temporary settings isolate player preferences; audio uses SDL dummy with real music-selection paths.",
+    "World summaries are medians of two per-run statistics, not pooled frame-time percentiles. Raw runs below preserve all measurements.",
+    "Assertions passed for unchanged world actor counts/native dimensions, zero steady PNG loads, zero asset errors and all screen actions inside the display.",
+    "After source data settled, python -m tools.import_assets --manifest-only rebuilt the manifest and python -m tools.build --verify-only validated every record. The 21,339 original art/audio asset records are identical. Only existing UI metadata records data/ui_assets.json and data/ui_audio.json changed; nine new media records were added.",
+    "A separate untimed cache pass confirmed source-image, fitted-image, native-canvas, presentation, cyber and world-sprite component snapshots remained within their existing byte budgets. Native renderer/display/world code and the seven FPS asset-cache methods are unchanged from UI1."
+  ],
+  "commands": {
+    "world_baseline": "python tools/benchmark_client_fps.py --project ../baseline_ui1 --bots 160 --warmup 960 --frames 360 --size 2048x1152 --ui-scale 1.3333333333333333 --zoom 1.5 --json world_ui1.json",
+    "world_current": "python tools/benchmark_client_fps.py --project . --bots 160 --warmup 960 --frames 360 --size 2048x1152 --ui-scale 1.3333333333333333 --zoom 1.5 --json world_ui2.json",
+    "shop_baseline": "python tools/benchmark_ui_fps.py --project ../baseline_ui1 --views shop --warmup 240 --frames 360 --size 2048x1152 --ui-scale 1.3333333333333333 --json shop_ui1.json",
+    "shop_current": "python tools/benchmark_ui_fps.py --project . --views shop --warmup 240 --frames 360 --size 2048x1152 --ui-scale 1.3333333333333333 --json shop_ui2.json",
+    "new_screens": "python tools/benchmark_ui_fps.py --project . --views lab dex scan roster evolution storage maps skills battleitems signin register tamerpicker starterpicker settings battle --warmup 240 --frames 360 --size 2048x1152 --ui-scale 1.3333333333333333 --json new_screens_ui2.json",
+    "manifest": "python -m tools.import_assets --manifest-only",
+    "integrity": "python -m tools.build --verify-only",
+    "order": "World UI1/UI2 pair twice, Shop UI1/UI2 pair, then fifteen UI2 screens; no concurrent workloads."
+  },
+  "world_summary": {
+    "baseline": {
+      "mean_ms": 11.957034904177515,
+      "median_ms": 11.161489503138,
+      "p95_ms": 16.3906984962523,
+      "p99_ms": 21.504553496924927,
+      "measured_png_loads": 0.0
+    },
+    "current": {
+      "mean_ms": 11.687986069409817,
+      "median_ms": 10.950034502457129,
+      "p95_ms": 15.886655000940664,
+      "p99_ms": 20.52662650021375,
+      "measured_png_loads": 0.0
+    },
+    "baseline_version": "UI1",
+    "current_version": "UI2",
+    "bots": 160,
+    "world_actors": 322,
+    "physical_pixels": [
+      2048,
+      1152
+    ],
+    "ui_scale": 1.3333333333333333,
+    "zoom": 1.5,
+    "repeats_per_version": 2
+  },
+  "shop_summary": {
+    "baseline": {
+      "mean_ms": 6.623861788911098,
+      "median_ms": 6.274179999309126,
+      "p95_ms": 9.004503997857682,
+      "p99_ms": 12.319827001192607,
+      "measured_png_loads": 0
+    },
+    "current": {
+      "mean_ms": 7.296394053203888,
+      "median_ms": 6.3730615001986735,
+      "p95_ms": 11.113738997664768,
+      "p99_ms": 19.728197999938857,
+      "measured_png_loads": 0
+    }
+  },
+  "screen_summary": [
+    {
+      "view": "lab",
+      "mean_ms": 6.921252372073165,
+      "median_ms": 5.7980155033874325,
+      "p95_ms": 12.021152004308533,
+      "p99_ms": 18.864042998757213,
+      "measured_png_loads": 0
+    },
+    {
+      "view": "dex",
+      "mean_ms": 6.453681358470931,
+      "median_ms": 6.112989500252297,
+      "p95_ms": 8.789788997091819,
+      "p99_ms": 10.525334000703879,
+      "measured_png_loads": 0
+    },
+    {
+      "view": "scan",
+      "mean_ms": 6.5402126414078845,
+      "median_ms": 6.086697499995353,
+      "p95_ms": 9.645302998251282,
+      "p99_ms": 13.266999005281832,
+      "measured_png_loads": 0
+    },
+    {
+      "view": "roster",
+      "mean_ms": 5.644921085937919,
+      "median_ms": 5.404208997788373,
+      "p95_ms": 7.288754000910558,
+      "p99_ms": 10.508143997867592,
+      "measured_png_loads": 0
+    },
+    {
+      "view": "evolution",
+      "mean_ms": 5.735235613954298,
+      "median_ms": 5.483857999934116,
+      "p95_ms": 7.333152003411669,
+      "p99_ms": 10.415978002129123,
+      "measured_png_loads": 0
+    },
+    {
+      "view": "storage",
+      "mean_ms": 5.8030418751513935,
+      "median_ms": 5.469359999551671,
+      "p95_ms": 8.078712002316024,
+      "p99_ms": 11.317563999909908,
+      "measured_png_loads": 0
+    },
+    {
+      "view": "maps",
+      "mean_ms": 6.309571488923717,
+      "median_ms": 5.875311002455419,
+      "p95_ms": 9.268023997719865,
+      "p99_ms": 14.047552002011798,
+      "measured_png_loads": 0
+    },
+    {
+      "view": "skills",
+      "mean_ms": 7.087702341353482,
+      "median_ms": 5.750815500505269,
+      "p95_ms": 12.435311000444926,
+      "p99_ms": 21.8480300027295,
+      "measured_png_loads": 0
+    },
+    {
+      "view": "battleitems",
+      "mean_ms": 6.138394747358689,
+      "median_ms": 5.696222997357836,
+      "p95_ms": 8.167084997694474,
+      "p99_ms": 11.567499001102988,
+      "measured_png_loads": 0
+    },
+    {
+      "view": "signin",
+      "mean_ms": 4.709862480639357,
+      "median_ms": 4.490789997362299,
+      "p95_ms": 6.552521001140121,
+      "p99_ms": 9.219113999279216,
+      "measured_png_loads": 0
+    },
+    {
+      "view": "register",
+      "mean_ms": 5.10453096388422,
+      "median_ms": 4.788340997038176,
+      "p95_ms": 7.245388995215762,
+      "p99_ms": 9.012461996462662,
+      "measured_png_loads": 0
+    },
+    {
+      "view": "tamerpicker",
+      "mean_ms": 10.175054086014118,
+      "median_ms": 9.338114999991376,
+      "p95_ms": 14.265401994634885,
+      "p99_ms": 20.414851998793893,
+      "measured_png_loads": 0
+    },
+    {
+      "view": "starterpicker",
+      "mean_ms": 9.618761366760332,
+      "median_ms": 9.127600002102554,
+      "p95_ms": 12.796310998965055,
+      "p99_ms": 15.224969996779691,
+      "measured_png_loads": 0
+    },
+    {
+      "view": "settings",
+      "mean_ms": 10.11643415852935,
+      "median_ms": 9.528123002382927,
+      "p95_ms": 14.08867200370878,
+      "p99_ms": 16.405758004111703,
+      "measured_png_loads": 0
+    },
+    {
+      "view": "battle",
+      "mean_ms": 5.440220005503862,
+      "median_ms": 5.163573998288484,
+      "p95_ms": 7.342028002312873,
+      "p99_ms": 10.445658997923601,
+      "measured_png_loads": 0
+    }
+  ],
+  "world_runs": [
+    {
+      "description": "CPU frame preparation; SDL dummy, no vsync or limiter; not measured Windows FPS",
+      "profiled": false,
+      "panning": false,
+      "project": "/workspace/scratch/1a3ca4b22fc2/baseline_ui1",
+      "pygame": "2.5.8",
+      "size": [
+        2048,
+        1152
+      ],
+      "ui_scale": 1.3333333333333333,
+      "zoom": 1.5,
+      "map": "map_004_a",
+      "bots": 160,
+      "world_actors": 322,
+      "unique_tamers": 64,
+      "unique_leads": 128,
+      "frames": 360,
+      "warmup_frames": 960,
+      "simulation_hz": 60,
+      "snapshot_hz": 10,
+      "warmup_png_loads": 2434,
+      "measured_png_loads": 0,
+      "mean_ms": 12.523977647126433,
+      "median_ms": 11.59049800116918,
+      "p95_ms": 17.20866799587384,
+      "p99_ms": 23.394544994516764,
+      "max_ms": 71.19030499598011,
+      "mean_update_ms": 0.9941532668866179,
+      "mean_draw_ms": 11.529824380239814,
+      "cpu_frames_per_second": 79.84683685773308,
+      "final_frame_sha256": "445eac3b4396cce938b9ed77a9eb5cdab9000aca3eaf7afc33035c504ddcadc9",
+      "asset_errors": [],
+      "version": "ui1",
+      "repeat": 1
+    },
+    {
+      "description": "CPU frame preparation; SDL dummy, no vsync or limiter; not measured Windows FPS",
+      "profiled": false,
+      "panning": false,
+      "project": "/workspace/scratch/1a3ca4b22fc2/baseline_ui1",
+      "pygame": "2.5.8",
+      "size": [
+        2048,
+        1152
+      ],
+      "ui_scale": 1.3333333333333333,
+      "zoom": 1.5,
+      "map": "map_004_a",
+      "bots": 160,
+      "world_actors": 322,
+      "unique_tamers": 64,
+      "unique_leads": 128,
+      "frames": 360,
+      "warmup_frames": 960,
+      "simulation_hz": 60,
+      "snapshot_hz": 10,
+      "warmup_png_loads": 2434,
+      "measured_png_loads": 0,
+      "mean_ms": 11.390092161228596,
+      "median_ms": 10.73248100510682,
+      "p95_ms": 15.572728996630758,
+      "p99_ms": 19.61456199933309,
+      "max_ms": 30.486256000585854,
+      "mean_update_ms": 0.8636189277846521,
+      "mean_draw_ms": 10.526473233443944,
+      "cpu_frames_per_second": 87.79560216412987,
+      "final_frame_sha256": "445eac3b4396cce938b9ed77a9eb5cdab9000aca3eaf7afc33035c504ddcadc9",
+      "asset_errors": [],
+      "version": "ui1",
+      "repeat": 2
+    },
+    {
+      "description": "CPU frame preparation; SDL dummy, no vsync or limiter; not measured Windows FPS",
+      "profiled": false,
+      "panning": false,
+      "project": "/workspace/scratch/1a3ca4b22fc2/DigimonVenomNXT",
+      "pygame": "2.5.8",
+      "size": [
+        2048,
+        1152
+      ],
+      "ui_scale": 1.3333333333333333,
+      "zoom": 1.5,
+      "map": "map_004_a",
+      "bots": 160,
+      "world_actors": 322,
+      "unique_tamers": 64,
+      "unique_leads": 128,
+      "frames": 360,
+      "warmup_frames": 960,
+      "simulation_hz": 60,
+      "snapshot_hz": 10,
+      "warmup_png_loads": 2434,
+      "measured_png_loads": 0,
+      "mean_ms": 11.943411338870646,
+      "median_ms": 11.221397002373124,
+      "p95_ms": 16.114147001644596,
+      "p99_ms": 20.47011700051371,
+      "max_ms": 25.680869999632705,
+      "mean_update_ms": 0.8785550694988665,
+      "mean_draw_ms": 11.06485626937178,
+      "cpu_frames_per_second": 83.72817209647899,
+      "final_frame_sha256": "4d7468c5942e541a0e49719c5ba6d55ae7d929a1751cf8d59b29f77c9c3abcf6",
+      "asset_errors": [],
+      "version": "ui2",
+      "repeat": 1
+    },
+    {
+      "description": "CPU frame preparation; SDL dummy, no vsync or limiter; not measured Windows FPS",
+      "profiled": false,
+      "panning": false,
+      "project": "/workspace/scratch/1a3ca4b22fc2/DigimonVenomNXT",
+      "pygame": "2.5.8",
+      "size": [
+        2048,
+        1152
+      ],
+      "ui_scale": 1.3333333333333333,
+      "zoom": 1.5,
+      "map": "map_004_a",
+      "bots": 160,
+      "world_actors": 322,
+      "unique_tamers": 64,
+      "unique_leads": 128,
+      "frames": 360,
+      "warmup_frames": 960,
+      "simulation_hz": 60,
+      "snapshot_hz": 10,
+      "warmup_png_loads": 2434,
+      "measured_png_loads": 0,
+      "mean_ms": 11.432560799948988,
+      "median_ms": 10.678672002541134,
+      "p95_ms": 15.659163000236731,
+      "p99_ms": 20.583135999913793,
+      "max_ms": 22.82556200225372,
+      "mean_update_ms": 0.8422996442782783,
+      "mean_draw_ms": 10.59026115567071,
+      "cpu_frames_per_second": 87.46946703353304,
+      "final_frame_sha256": "4d7468c5942e541a0e49719c5ba6d55ae7d929a1751cf8d59b29f77c9c3abcf6",
+      "asset_errors": [],
+      "version": "ui2",
+      "repeat": 2
+    }
+  ],
+  "shop_runs": {
+    "ui1": {
+      "description": "Headless CPU frame preparation, unprofiled and uncapped; not measured Windows FPS.",
+      "project": "/workspace/scratch/1a3ca4b22fc2/baseline_ui1",
+      "client_module": "/workspace/scratch/1a3ca4b22fc2/baseline_ui1/venom/client/app.py",
+      "fixture": "Identical synthetic server_fixture/select_view from tools/preview_ui_screens.py",
+      "simulation_hz": 60,
+      "pygame": "2.5.8",
+      "notes": "No real server/account; fixture construction, initial App startup and warmup are excluded. Community polling is disabled for equal preloaded data.",
+      "results": [
+        {
+          "view": "shop",
+          "frames": 360,
+          "warmup_frames": 240,
+          "size": [
+            2048,
+            1152
+          ],
+          "ui_scale": 1.3333333333333333,
+          "mean_ms": 6.623861788911098,
+          "median_ms": 6.274179999309126,
+          "p95_ms": 9.004503997857682,
+          "p99_ms": 12.319827001192607,
+          "max_ms": 14.111721000517718,
+          "mean_update_ms": 0.5265005445835413,
+          "warmup_png_loads": 6,
+          "measured_png_loads": 0,
+          "actions": 36,
+          "out_of_bounds_actions": [],
+          "asset_errors": []
+        }
+      ]
+    },
+    "ui2": {
+      "description": "Headless CPU frame preparation, unprofiled and uncapped; not measured Windows FPS.",
+      "project": "/workspace/scratch/1a3ca4b22fc2/DigimonVenomNXT",
+      "client_module": "/workspace/scratch/1a3ca4b22fc2/DigimonVenomNXT/venom/client/app.py",
+      "fixture": "Identical synthetic server_fixture/select_view from tools/preview_ui_screens.py",
+      "simulation_hz": 60,
+      "pygame": "2.5.8",
+      "notes": "No real server/account; fixture construction, initial App startup and warmup are excluded. Community polling is disabled for equal preloaded data.",
+      "results": [
+        {
+          "view": "shop",
+          "frames": 360,
+          "warmup_frames": 240,
+          "size": [
+            2048,
+            1152
+          ],
+          "ui_scale": 1.3333333333333333,
+          "mean_ms": 7.296394053203888,
+          "median_ms": 6.3730615001986735,
+          "p95_ms": 11.113738997664768,
+          "p99_ms": 19.728197999938857,
+          "max_ms": 37.43476800445933,
+          "mean_update_ms": 0.5581252724166714,
+          "warmup_png_loads": 6,
+          "measured_png_loads": 0,
+          "actions": 36,
+          "out_of_bounds_actions": [],
+          "asset_errors": []
+        }
+      ]
+    }
+  },
+  "new_screen_runs": {
+    "description": "Headless CPU frame preparation, unprofiled and uncapped; not measured Windows FPS.",
+    "project": "/workspace/scratch/1a3ca4b22fc2/DigimonVenomNXT",
+    "client_module": "/workspace/scratch/1a3ca4b22fc2/DigimonVenomNXT/venom/client/app.py",
+    "fixture": "Identical synthetic server_fixture/select_view from tools/preview_ui_screens.py",
+    "simulation_hz": 60,
+    "pygame": "2.5.8",
+    "notes": "No real server/account; fixture construction, initial App startup and warmup are excluded. Community polling is disabled for equal preloaded data.",
+    "results": [
+      {
+        "view": "lab",
+        "frames": 360,
+        "warmup_frames": 240,
+        "size": [
+          2048,
+          1152
+        ],
+        "ui_scale": 1.3333333333333333,
+        "mean_ms": 6.921252372073165,
+        "median_ms": 5.7980155033874325,
+        "p95_ms": 12.021152004308533,
+        "p99_ms": 18.864042998757213,
+        "max_ms": 21.89305100182537,
+        "mean_update_ms": 0.5676306807395627,
+        "warmup_png_loads": 10,
+        "measured_png_loads": 0,
+        "actions": 24,
+        "out_of_bounds_actions": [],
+        "asset_errors": []
+      },
+      {
+        "view": "dex",
+        "frames": 360,
+        "warmup_frames": 240,
+        "size": [
+          2048,
+          1152
+        ],
+        "ui_scale": 1.3333333333333333,
+        "mean_ms": 6.453681358470931,
+        "median_ms": 6.112989500252297,
+        "p95_ms": 8.789788997091819,
+        "p99_ms": 10.525334000703879,
+        "max_ms": 15.416362002724782,
+        "mean_update_ms": 0.4926397975294903,
+        "warmup_png_loads": 9,
+        "measured_png_loads": 0,
+        "actions": 20,
+        "out_of_bounds_actions": [],
+        "asset_errors": []
+      },
+      {
+        "view": "scan",
+        "frames": 360,
+        "warmup_frames": 240,
+        "size": [
+          2048,
+          1152
+        ],
+        "ui_scale": 1.3333333333333333,
+        "mean_ms": 6.5402126414078845,
+        "median_ms": 6.086697499995353,
+        "p95_ms": 9.645302998251282,
+        "p99_ms": 13.266999005281832,
+        "max_ms": 17.521282999950927,
+        "mean_update_ms": 0.5311242944824497,
+        "warmup_png_loads": 10,
+        "measured_png_loads": 0,
+        "actions": 25,
+        "out_of_bounds_actions": [],
+        "asset_errors": []
+      },
+      {
+        "view": "roster",
+        "frames": 360,
+        "warmup_frames": 240,
+        "size": [
+          2048,
+          1152
+        ],
+        "ui_scale": 1.3333333333333333,
+        "mean_ms": 5.644921085937919,
+        "median_ms": 5.404208997788373,
+        "p95_ms": 7.288754000910558,
+        "p99_ms": 10.508143997867592,
+        "max_ms": 13.553090000641532,
+        "mean_update_ms": 0.5041522166316604,
+        "warmup_png_loads": 10,
+        "measured_png_loads": 0,
+        "actions": 22,
+        "out_of_bounds_actions": [],
+        "asset_errors": []
+      },
+      {
+        "view": "evolution",
+        "frames": 360,
+        "warmup_frames": 240,
+        "size": [
+          2048,
+          1152
+        ],
+        "ui_scale": 1.3333333333333333,
+        "mean_ms": 5.735235613954298,
+        "median_ms": 5.483857999934116,
+        "p95_ms": 7.333152003411669,
+        "p99_ms": 10.415978002129123,
+        "max_ms": 12.582034993101843,
+        "mean_update_ms": 0.5050160946363272,
+        "warmup_png_loads": 11,
+        "measured_png_loads": 0,
+        "actions": 27,
+        "out_of_bounds_actions": [],
+        "asset_errors": []
+      },
+      {
+        "view": "storage",
+        "frames": 360,
+        "warmup_frames": 240,
+        "size": [
+          2048,
+          1152
+        ],
+        "ui_scale": 1.3333333333333333,
+        "mean_ms": 5.8030418751513935,
+        "median_ms": 5.469359999551671,
+        "p95_ms": 8.078712002316024,
+        "p99_ms": 11.317563999909908,
+        "max_ms": 21.200281000346877,
+        "mean_update_ms": 0.5044422332705127,
+        "warmup_png_loads": 11,
+        "measured_png_loads": 0,
+        "actions": 17,
+        "out_of_bounds_actions": [],
+        "asset_errors": []
+      },
+      {
+        "view": "maps",
+        "frames": 360,
+        "warmup_frames": 240,
+        "size": [
+          2048,
+          1152
+        ],
+        "ui_scale": 1.3333333333333333,
+        "mean_ms": 6.309571488923717,
+        "median_ms": 5.875311002455419,
+        "p95_ms": 9.268023997719865,
+        "p99_ms": 14.047552002011798,
+        "max_ms": 19.194380998669658,
+        "mean_update_ms": 0.5022881527919607,
+        "warmup_png_loads": 11,
+        "measured_png_loads": 0,
+        "actions": 18,
+        "out_of_bounds_actions": [],
+        "asset_errors": []
+      },
+      {
+        "view": "skills",
+        "frames": 360,
+        "warmup_frames": 240,
+        "size": [
+          2048,
+          1152
+        ],
+        "ui_scale": 1.3333333333333333,
+        "mean_ms": 7.087702341353482,
+        "median_ms": 5.750815500505269,
+        "p95_ms": 12.435311000444926,
+        "p99_ms": 21.8480300027295,
+        "max_ms": 159.79603699815925,
+        "mean_update_ms": 0.5898685220422016,
+        "warmup_png_loads": 9,
+        "measured_png_loads": 0,
+        "actions": 10,
+        "out_of_bounds_actions": [],
+        "asset_errors": []
+      },
+      {
+        "view": "battleitems",
+        "frames": 360,
+        "warmup_frames": 240,
+        "size": [
+          2048,
+          1152
+        ],
+        "ui_scale": 1.3333333333333333,
+        "mean_ms": 6.138394747358689,
+        "median_ms": 5.696222997357836,
+        "p95_ms": 8.167084997694474,
+        "p99_ms": 11.567499001102988,
+        "max_ms": 20.29905599920312,
+        "mean_update_ms": 0.49052155554818455,
+        "warmup_png_loads": 9,
+        "measured_png_loads": 0,
+        "actions": 17,
+        "out_of_bounds_actions": [],
+        "asset_errors": []
+      },
+      {
+        "view": "signin",
+        "frames": 360,
+        "warmup_frames": 240,
+        "size": [
+          2048,
+          1152
+        ],
+        "ui_scale": 1.3333333333333333,
+        "mean_ms": 4.709862480639357,
+        "median_ms": 4.490789997362299,
+        "p95_ms": 6.552521001140121,
+        "p99_ms": 9.219113999279216,
+        "max_ms": 9.687862999271601,
+        "mean_update_ms": 0.4710998138762079,
+        "warmup_png_loads": 3,
+        "measured_png_loads": 0,
+        "actions": 4,
+        "out_of_bounds_actions": [],
+        "asset_errors": []
+      },
+      {
+        "view": "register",
+        "frames": 360,
+        "warmup_frames": 240,
+        "size": [
+          2048,
+          1152
+        ],
+        "ui_scale": 1.3333333333333333,
+        "mean_ms": 5.10453096388422,
+        "median_ms": 4.788340997038176,
+        "p95_ms": 7.245388995215762,
+        "p99_ms": 9.012461996462662,
+        "max_ms": 14.743994004675187,
+        "mean_update_ms": 0.4878806304986938,
+        "warmup_png_loads": 7,
+        "measured_png_loads": 0,
+        "actions": 6,
+        "out_of_bounds_actions": [],
+        "asset_errors": []
+      },
+      {
+        "view": "tamerpicker",
+        "frames": 360,
+        "warmup_frames": 240,
+        "size": [
+          2048,
+          1152
+        ],
+        "ui_scale": 1.3333333333333333,
+        "mean_ms": 10.175054086014118,
+        "median_ms": 9.338114999991376,
+        "p95_ms": 14.265401994634885,
+        "p99_ms": 20.414851998793893,
+        "max_ms": 39.7456080027041,
+        "mean_update_ms": 0.5069379998935296,
+        "warmup_png_loads": 62,
+        "measured_png_loads": 0,
+        "actions": 16,
+        "out_of_bounds_actions": [],
+        "asset_errors": []
+      },
+      {
+        "view": "starterpicker",
+        "frames": 360,
+        "warmup_frames": 240,
+        "size": [
+          2048,
+          1152
+        ],
+        "ui_scale": 1.3333333333333333,
+        "mean_ms": 9.618761366760332,
+        "median_ms": 9.127600002102554,
+        "p95_ms": 12.796310998965055,
+        "p99_ms": 15.224969996779691,
+        "max_ms": 16.721479994885158,
+        "mean_update_ms": 0.4699924086202777,
+        "warmup_png_loads": 23,
+        "measured_png_loads": 0,
+        "actions": 16,
+        "out_of_bounds_actions": [],
+        "asset_errors": []
+      },
+      {
+        "view": "settings",
+        "frames": 360,
+        "warmup_frames": 240,
+        "size": [
+          2048,
+          1152
+        ],
+        "ui_scale": 1.3333333333333333,
+        "mean_ms": 10.11643415852935,
+        "median_ms": 9.528123002382927,
+        "p95_ms": 14.08867200370878,
+        "p99_ms": 16.405758004111703,
+        "max_ms": 19.338908001373056,
+        "mean_update_ms": 0.5246723667571334,
+        "warmup_png_loads": 13,
+        "measured_png_loads": 0,
+        "actions": 28,
+        "out_of_bounds_actions": [],
+        "asset_errors": []
+      },
+      {
+        "view": "battle",
+        "frames": 360,
+        "warmup_frames": 240,
+        "size": [
+          2048,
+          1152
+        ],
+        "ui_scale": 1.3333333333333333,
+        "mean_ms": 5.440220005503862,
+        "median_ms": 5.163573998288484,
+        "p95_ms": 7.342028002312873,
+        "p99_ms": 10.445658997923601,
+        "max_ms": 11.129278995213099,
+        "mean_update_ms": 0.5184457667484013,
+        "warmup_png_loads": 8,
+        "measured_png_loads": 0,
+        "actions": 18,
+        "out_of_bounds_actions": [],
+        "asset_errors": []
+      }
+    ]
+  },
+  "cache_observations": {
+    "description": "Separate untimed cache inspection after one rendered frame per view, switching through 16 screens in one App at 2048x1152 native pixels and UI scale 4/3. Component snapshots, not process RSS or peaks during measured frames.",
+    "all_limits_ok": true,
+    "observations": [
+      {
+        "view": "shop",
+        "component_caches": {
+          "source_images": {
+            "bytes": 7763728,
+            "limit": 134217728
+          },
+          "fitted_images": {
+            "bytes": 54044,
+            "limit": 100663296
+          },
+          "native_canvas": {
+            "bytes": 150152,
+            "limit": 33554432
+          },
+          "world_sprites": {
+            "bytes": 0,
+            "limit": 25165824
+          },
+          "presentation": {
+            "bytes": 9157784,
+            "limit": 67108864
+          },
+          "cyber": {
+            "bytes": 9474816,
+            "limit": 67108864
+          }
+        }
+      },
+      {
+        "view": "lab",
+        "component_caches": {
+          "source_images": {
+            "bytes": 14776488,
+            "limit": 134217728
+          },
+          "fitted_images": {
+            "bytes": 54044,
+            "limit": 100663296
+          },
+          "native_canvas": {
+            "bytes": 150152,
+            "limit": 33554432
+          },
+          "world_sprites": {
+            "bytes": 0,
+            "limit": 25165824
+          },
+          "presentation": {
+            "bytes": 24864696,
+            "limit": 67108864
+          },
+          "cyber": {
+            "bytes": 9489600,
+            "limit": 67108864
+          }
+        }
+      },
+      {
+        "view": "dex",
+        "component_caches": {
+          "source_images": {
+            "bytes": 21919032,
+            "limit": 134217728
+          },
+          "fitted_images": {
+            "bytes": 54044,
+            "limit": 100663296
+          },
+          "native_canvas": {
+            "bytes": 150152,
+            "limit": 33554432
+          },
+          "world_sprites": {
+            "bytes": 0,
+            "limit": 25165824
+          },
+          "presentation": {
+            "bytes": 40348296,
+            "limit": 67108864
+          },
+          "cyber": {
+            "bytes": 9503040,
+            "limit": 67108864
+          }
+        }
+      },
+      {
+        "view": "scan",
+        "component_caches": {
+          "source_images": {
+            "bytes": 22090056,
+            "limit": 134217728
+          },
+          "fitted_images": {
+            "bytes": 54044,
+            "limit": 100663296
+          },
+          "native_canvas": {
+            "bytes": 150152,
+            "limit": 33554432
+          },
+          "world_sprites": {
+            "bytes": 0,
+            "limit": 25165824
+          },
+          "presentation": {
+            "bytes": 49272080,
+            "limit": 67108864
+          },
+          "cyber": {
+            "bytes": 9516480,
+            "limit": 67108864
+          }
+        }
+      },
+      {
+        "view": "roster",
+        "component_caches": {
+          "source_images": {
+            "bytes": 22144936,
+            "limit": 134217728
+          },
+          "fitted_images": {
+            "bytes": 54044,
+            "limit": 100663296
+          },
+          "native_canvas": {
+            "bytes": 150152,
+            "limit": 33554432
+          },
+          "world_sprites": {
+            "bytes": 0,
+            "limit": 25165824
+          },
+          "presentation": {
+            "bytes": 57924636,
+            "limit": 67108864
+          },
+          "cyber": {
+            "bytes": 9529920,
+            "limit": 67108864
+          }
+        }
+      },
+      {
+        "view": "evolution",
+        "component_caches": {
+          "source_images": {
+            "bytes": 23757988,
+            "limit": 134217728
+          },
+          "fitted_images": {
+            "bytes": 54044,
+            "limit": 100663296
+          },
+          "native_canvas": {
+            "bytes": 150152,
+            "limit": 33554432
+          },
+          "world_sprites": {
+            "bytes": 0,
+            "limit": 25165824
+          },
+          "presentation": {
+            "bytes": 67004952,
+            "limit": 67108864
+          },
+          "cyber": {
+            "bytes": 9543360,
+            "limit": 67108864
+          }
+        }
+      },
+      {
+        "view": "storage",
+        "component_caches": {
+          "source_images": {
+            "bytes": 29250828,
+            "limit": 134217728
+          },
+          "fitted_images": {
+            "bytes": 54044,
+            "limit": 100663296
+          },
+          "native_canvas": {
+            "bytes": 150152,
+            "limit": 33554432
+          },
+          "world_sprites": {
+            "bytes": 0,
+            "limit": 25165824
+          },
+          "presentation": {
+            "bytes": 63763516,
+            "limit": 67108864
+          },
+          "cyber": {
+            "bytes": 9556800,
+            "limit": 67108864
+          }
+        }
+      },
+      {
+        "view": "maps",
+        "component_caches": {
+          "source_images": {
+            "bytes": 58840588,
+            "limit": 134217728
+          },
+          "fitted_images": {
+            "bytes": 54044,
+            "limit": 100663296
+          },
+          "native_canvas": {
+            "bytes": 150152,
+            "limit": 33554432
+          },
+          "world_sprites": {
+            "bytes": 0,
+            "limit": 25165824
+          },
+          "presentation": {
+            "bytes": 64162564,
+            "limit": 67108864
+          },
+          "cyber": {
+            "bytes": 9570240,
+            "limit": 67108864
+          }
+        }
+      },
+      {
+        "view": "skills",
+        "component_caches": {
+          "source_images": {
+            "bytes": 59903324,
+            "limit": 134217728
+          },
+          "fitted_images": {
+            "bytes": 54044,
+            "limit": 100663296
+          },
+          "native_canvas": {
+            "bytes": 150152,
+            "limit": 33554432
+          },
+          "world_sprites": {
+            "bytes": 0,
+            "limit": 25165824
+          },
+          "presentation": {
+            "bytes": 60236876,
+            "limit": 67108864
+          },
+          "cyber": {
+            "bytes": 9585024,
+            "limit": 67108864
+          }
+        }
+      },
+      {
+        "view": "battleitems",
+        "component_caches": {
+          "source_images": {
+            "bytes": 60165468,
+            "limit": 134217728
+          },
+          "fitted_images": {
+            "bytes": 54044,
+            "limit": 100663296
+          },
+          "native_canvas": {
+            "bytes": 150152,
+            "limit": 33554432
+          },
+          "world_sprites": {
+            "bytes": 0,
+            "limit": 25165824
+          },
+          "presentation": {
+            "bytes": 59513948,
+            "limit": 67108864
+          },
+          "cyber": {
+            "bytes": 9599808,
+            "limit": 67108864
+          }
+        }
+      },
+      {
+        "view": "signin",
+        "component_caches": {
+          "source_images": {
+            "bytes": 60165468,
+            "limit": 134217728
+          },
+          "fitted_images": {
+            "bytes": 313164,
+            "limit": 100663296
+          },
+          "native_canvas": {
+            "bytes": 869980,
+            "limit": 33554432
+          },
+          "world_sprites": {
+            "bytes": 0,
+            "limit": 25165824
+          },
+          "presentation": {
+            "bytes": 59513948,
+            "limit": 67108864
+          },
+          "cyber": {
+            "bytes": 9615936,
+            "limit": 67108864
+          }
+        }
+      },
+      {
+        "view": "register",
+        "component_caches": {
+          "source_images": {
+            "bytes": 60167516,
+            "limit": 134217728
+          },
+          "fitted_images": {
+            "bytes": 313164,
+            "limit": 100663296
+          },
+          "native_canvas": {
+            "bytes": 869980,
+            "limit": 33554432
+          },
+          "world_sprites": {
+            "bytes": 0,
+            "limit": 25165824
+          },
+          "presentation": {
+            "bytes": 59551164,
+            "limit": 67108864
+          },
+          "cyber": {
+            "bytes": 9615936,
+            "limit": 67108864
+          }
+        }
+      },
+      {
+        "view": "tamerpicker",
+        "component_caches": {
+          "source_images": {
+            "bytes": 60194140,
+            "limit": 134217728
+          },
+          "fitted_images": {
+            "bytes": 313164,
+            "limit": 100663296
+          },
+          "native_canvas": {
+            "bytes": 869980,
+            "limit": 33554432
+          },
+          "world_sprites": {
+            "bytes": 0,
+            "limit": 25165824
+          },
+          "presentation": {
+            "bytes": 60161976,
+            "limit": 67108864
+          },
+          "cyber": {
+            "bytes": 9615936,
+            "limit": 67108864
+          }
+        }
+      },
+      {
+        "view": "starterpicker",
+        "component_caches": {
+          "source_images": {
+            "bytes": 68171420,
+            "limit": 134217728
+          },
+          "fitted_images": {
+            "bytes": 313164,
+            "limit": 100663296
+          },
+          "native_canvas": {
+            "bytes": 869980,
+            "limit": 33554432
+          },
+          "world_sprites": {
+            "bytes": 0,
+            "limit": 25165824
+          },
+          "presentation": {
+            "bytes": 59568336,
+            "limit": 67108864
+          },
+          "cyber": {
+            "bytes": 9615936,
+            "limit": 67108864
+          }
+        }
+      },
+      {
+        "view": "settings",
+        "component_caches": {
+          "source_images": {
+            "bytes": 68219996,
+            "limit": 134217728
+          },
+          "fitted_images": {
+            "bytes": 313164,
+            "limit": 100663296
+          },
+          "native_canvas": {
+            "bytes": 869980,
+            "limit": 33554432
+          },
+          "world_sprites": {
+            "bytes": 0,
+            "limit": 25165824
+          },
+          "presentation": {
+            "bytes": 65594532,
+            "limit": 67108864
+          },
+          "cyber": {
+            "bytes": 9633408,
+            "limit": 67108864
+          }
+        }
+      },
+      {
+        "view": "battle",
+        "component_caches": {
+          "source_images": {
+            "bytes": 68219996,
+            "limit": 134217728
+          },
+          "fitted_images": {
+            "bytes": 575360,
+            "limit": 100663296
+          },
+          "native_canvas": {
+            "bytes": 1600056,
+            "limit": 33554432
+          },
+          "world_sprites": {
+            "bytes": 0,
+            "limit": 25165824
+          },
+          "presentation": {
+            "bytes": 65594532,
+            "limit": 67108864
+          },
+          "cyber": {
+            "bytes": 9633408,
+            "limit": 67108864
+          }
+        }
+      }
+    ],
+    "max_observed_bytes": {
+      "source_images": 68219996,
+      "fitted_images": 575360,
+      "native_canvas": 1600056,
+      "world_sprites": 0,
+      "presentation": 67004952,
+      "cyber": 9633408
+    }
+  },
+  "preservation": {
+    "baseline_files": 21726,
+    "current_files_at_audit": 21749,
+    "removed_original_files": [],
+    "changed_original_files": [
+      {
+        "path": "README.md",
+        "ui1_sha256": "9092efafbe887fd29f149ee5e45e5e767d4d607e691b99aa7567c4f23e827d63",
+        "ui2_sha256": "a76c354275fad2ea36c49b6a92b153b1df347fce1f5f40f58a7fd6b546d1672f"
+      },
+      {
+        "path": "data/asset_manifest.json",
+        "ui1_sha256": "410dc0e2c475686011d5d5326073549dd2dc95f128030fa9710d73de57a92eab",
+        "ui2_sha256": "56ebceb42961d41d0c8f4ef710035cc9c7a5ac6751c6be461d814a59e35e8fcb"
+      },
+      {
+        "path": "data/ui_assets.json",
+        "ui1_sha256": "bcd8f2d36666f9534c72de1f38436cd7328699854f2b82f49f99d29373fdfb6b",
+        "ui2_sha256": "b7a07ce62851716a07e159cc2c89d8ee0cec75bc42a4d0aaf2175e235411ecb4"
+      },
+      {
+        "path": "data/ui_audio.json",
+        "ui1_sha256": "9e9009de5095aee1b6e381f042e4cdfe49905e22b136a9632c68b43380353f9c",
+        "ui2_sha256": "e8a17898e242c8301291ac532403770f8d8897c532c0d6ba7684e425208ee22d"
+      },
+      {
+        "path": "tests/test_display_integration.py",
+        "ui1_sha256": "143b16d81b4a265385d0875f47bea7ae0c0412c59789730bf88767c29753bf5f",
+        "ui2_sha256": "f99710b5287bbc26d90ba5ea85b66cbe0fb55d9a7bfe7be6f429ebb0e56b27bd"
+      },
+      {
+        "path": "tests/test_presentation.py",
+        "ui1_sha256": "332ad79e45876b2b900dc47fe20d8d714d074726048c0824fb2c6f343ea26a30",
+        "ui2_sha256": "5e637cf536f899d761264362c09dcb4ee29fbae8c8f3a63a99d255eca173a4e4"
+      },
+      {
+        "path": "tests/test_setup_launchers.py",
+        "ui1_sha256": "1f97b14c48cecbf8c94d4836046aace0b1bbfdfe0486c9d7923e2483717a0875",
+        "ui2_sha256": "0f2e3681787933ced362e00830ddbc6cb92bc042068ab93f002957f762ee4a9c"
+      },
+      {
+        "path": "tools/benchmark_ui_fps.py",
+        "ui1_sha256": "cfa7199327ed42f0b52c3b76445af254f736cbaf08383c1ef8acd05741b07ec2",
+        "ui2_sha256": "d85596eefacce75973b6cd46d940b2a34fdbf0c1c094480a827d5e1eed2ae8bd"
+      },
+      {
+        "path": "tools/build.py",
+        "ui1_sha256": "96ca1e522faa564d20a04f20c9d2c7c4c771322d66b80859a9c1a45e5e08ae53",
+        "ui2_sha256": "c3e6e3f735622768f40e5fcaff6af8b7b8cbde2a470398b42878edecde217bef"
+      },
+      {
+        "path": "tools/preview_ui_screens.py",
+        "ui1_sha256": "ec95000ca2d5709c7657255e040c49e340611b49630c69bbd85c554452551025",
+        "ui2_sha256": "61bbdd82d19c8d6c3b54efee2b1bd7e92a4547327dd54f6b0175e26eb0bfccf5"
+      },
+      {
+        "path": "venom/client/app.py",
+        "ui1_sha256": "dd2b864d11e4a33a079bc339cbaab38a5e507068ad170c02decb31b0ac77f07a",
+        "ui2_sha256": "b4d3c2a7b48c064f51ef2a414dd9a9cb05205f79c5314b3fef677bc5bda4060a"
+      },
+      {
+        "path": "venom/client/assets.py",
+        "ui1_sha256": "49ad6daf7945fabda50aaefd247c2c6a03dcdeb6b24eadd0947c1ceb872fd146",
+        "ui2_sha256": "7860845b5c4bd81cdfa62e40d503c45b5ead7804a100ba29a00b92d3049f80f8"
+      },
+      {
+        "path": "venom/client/community.py",
+        "ui1_sha256": "036e3666cdb2f052367bdf4eaa984084aa86f9249e1967f54c6b7d2c3f42ee99",
+        "ui2_sha256": "922a862dc0293d60cc2da2265dcef90468faea90ab165255c21341c2c0d87c7e"
+      },
+      {
+        "path": "venom/client/cyber.py",
+        "ui1_sha256": "543f9a334fb36d9b43651fde0dbe9a7e3fb62f13adaa57e5bb17010a9be910bc",
+        "ui2_sha256": "ac3579f2d9c37141f1bcfb6c0a5b2bbf13962bf53f8ba7849681c104b5ef27f9"
+      },
+      {
+        "path": "venom/client/presentation.py",
+        "ui1_sha256": "05618629fc0336045bad7bb5055700dc6754d8adafaa940a518d7ef9db9d28f5",
+        "ui2_sha256": "f1949da1bce8f393bb14d387b72ca8e6a440b57050f4935216e2a8a905c80ea7"
+      },
+      {
+        "path": "venom/client/settings_panel.py",
+        "ui1_sha256": "130b16f43a616c6d0993f92d87deca47c1c690d8f0074b34a58896caab5f0823",
+        "ui2_sha256": "e5166f69ab9cd585014b277fe2d0ba8199c0e79bc1f6606549fa630ae9dae28e"
+      },
+      {
+        "path": "venom/client/shop.py",
+        "ui1_sha256": "cf7d9c7482fc2f0a6a2e2089d7727925f8f757db5252802513249eda33813c07",
+        "ui2_sha256": "91672a3551b330e6b478f161bb0aa1f78fc43ee2510f85cc56e59f5f24de3e23"
+      }
+    ],
+    "added_files": [
+      "assets/audio/interface/bgm00.ogg",
+      "assets/audio/interface/bgm01.ogg",
+      "assets/audio/interface/bgm16.ogg",
+      "assets/audio/interface/bgm17.ogg",
+      "assets/audio/interface/bgm19.ogg",
+      "assets/audio/interface/bgm32.ogg",
+      "assets/audio/interface/bgm43.ogg",
+      "assets/audio/interface/se030.ogg",
+      "assets/ui/extracted/shopkeeper.png",
+      "docs/UI2_UPGRADE.md",
+      "tests/test_destinations_combat_design.py",
+      "tests/test_entry_settings_design.py",
+      "tests/test_laboratory_design.py",
+      "tests/test_partner_screens.py",
+      "tests/test_ui2_audio.py",
+      "tests/test_ui2_integration.py",
+      "tests/test_ui2_navigation.py",
+      "venom/client/combat_menu.py",
+      "venom/client/destinations.py",
+      "venom/client/entry_screen.py",
+      "venom/client/hud.py",
+      "venom/client/laboratory.py",
+      "venom/client/partners.py"
+    ],
+    "protected_original_groups": {
+      "assets": {
+        "original_files": 21339,
+        "unchanged": true
+      },
+      "venom/server": {
+        "original_files": 9,
+        "unchanged": true
+      },
+      "venom/common": {
+        "original_files": 3,
+        "unchanged": true
+      },
+      "venom/client/world.py": {
+        "unchanged": true,
+        "sha256": "8282bf9f10bd4fe09d5fa6bb5cafa79e5906a371c51155c2dc6cd9ff70e0bb9e"
+      },
+      "venom/client/render.py": {
+        "unchanged": true,
+        "sha256": "61ce29b43cdf97a44849a92f5406579a64db6fd1bd0c66e64646e60ca3008a65"
+      },
+      "venom/client/motion.py": {
+        "unchanged": true,
+        "sha256": "f765bc309b01742547a46add13014661c3e095b25393cf6bc65e6a81d433746b"
+      },
+      "venom/client/network.py": {
+        "unchanged": true,
+        "sha256": "6284281b08e4725630e9f53e452462ff67fcd5a97c1bfc05be9ad253d819b99d"
+      },
+      "venom/client/display.py": {
+        "unchanged": true,
+        "sha256": "f3716b086a3b9ee3b31c3b74bcb1c4e8302db42a018db24a3c8b2359253a4557"
+      }
+    },
+    "fps_asset_cache_methods_ast_unchanged": {
+      "_remember": true,
+      "clear_scaled": true,
+      "image": true,
+      "sprite": true,
+      "fit": true,
+      "tamer": true,
+      "map": true
+    },
+    "manifest": {
+      "ui1_records": 21348,
+      "ui2_records": 21357,
+      "removed_records": [],
+      "changed_records": [
+        "data/ui_assets.json",
+        "data/ui_audio.json"
+      ],
+      "added_records": [
+        "assets/audio/interface/bgm00.ogg",
+        "assets/audio/interface/bgm01.ogg",
+        "assets/audio/interface/bgm16.ogg",
+        "assets/audio/interface/bgm17.ogg",
+        "assets/audio/interface/bgm19.ogg",
+        "assets/audio/interface/bgm32.ogg",
+        "assets/audio/interface/bgm43.ogg",
+        "assets/audio/interface/se030.ogg",
+        "assets/ui/extracted/shopkeeper.png"
+      ],
+      "original_asset_records_unchanged": 21339,
+      "integrity_verification": "python -m tools.build --verify-only: Verified 21,357 files (502.4 MiB)."
+    },
+    "audio": {
+      "existing_assignments_cues_and_source_records_preserved": {
+        "screen_tracks": true,
+        "cues": true,
+        "source_assets": true
+      },
+      "new_tracks_and_cues": [
+        {
+          "path": "assets/audio/interface/bgm16.ogg",
+          "source": "bgm16.ogg",
+          "sha256": "b1933eb358d8392d26cf1aa1e7de8fe89cff3c69617442e9cda3bbc90cc2470b",
+          "duration": 41.661,
+          "sample_rate": 32768,
+          "channels": 2
+        },
+        {
+          "path": "assets/audio/interface/bgm19.ogg",
+          "source": "bgm19.ogg",
+          "sha256": "ea60add787f49aa9e908439b7109d74e65dbdc5af825602c3c54ad34cfd225bc",
+          "duration": 60.754,
+          "sample_rate": 32768,
+          "channels": 2
+        },
+        {
+          "path": "assets/audio/interface/bgm17.ogg",
+          "source": "bgm17.ogg",
+          "sha256": "1d10c999b170182d76f9b2fa75a6297922dd098357a9e35f2896344a2b80e665",
+          "duration": 41.171,
+          "sample_rate": 32768,
+          "channels": 2
+        },
+        {
+          "path": "assets/audio/interface/bgm32.ogg",
+          "source": "bgm32.ogg",
+          "sha256": "d051641bd98637a4cb08a4378a48ef68193d703d48efa9e349b58eea1a9e6eb4",
+          "duration": 60.477,
+          "sample_rate": 32768,
+          "channels": 2
+        },
+        {
+          "path": "assets/audio/interface/bgm00.ogg",
+          "source": "bgm00.ogg",
+          "sha256": "480767ae6fbf92f7dc402008f13c48c9a01410e8e5f43738d8b624cb6de8263b",
+          "duration": 68.062,
+          "sample_rate": 32768,
+          "channels": 2
+        },
+        {
+          "path": "assets/audio/interface/bgm43.ogg",
+          "source": "bgm43.ogg",
+          "sha256": "488c02a5cf93a0f577913ce4faf272888f2eaf3289b725d1aff333c8b6ab3f3a",
+          "duration": 83.623,
+          "sample_rate": 32768,
+          "channels": 2
+        },
+        {
+          "path": "assets/audio/interface/bgm01.ogg",
+          "source": "bgm01.ogg",
+          "sha256": "08fae64199727791698efd0f92951a936cb3a6aebff91577c0312d2c63cbbbe7",
+          "duration": 73.882,
+          "sample_rate": 32768,
+          "channels": 2
+        },
+        {
+          "path": "assets/audio/interface/se030.ogg",
+          "source": "se030.ogg",
+          "sha256": "bd5ee7a3b5c7251d28f9c04d3071839ea0e45c268ed71492c266f181bec14270",
+          "duration": 2.125,
+          "sample_rate": 32768,
+          "channels": 2
+        }
+      ],
+      "declared_sha256_matches_manifest": true
+    },
+    "shopkeepers": [
+      {
+        "path": "assets/ui/extracted/shopkeeper.png",
+        "source": "shopkeeper.png (supplied by the user)",
+        "sha256": "b541c8b2e5e99ee83d44dc03a3472efa9676e9616c115f3752867001ba0e3788",
+        "use": "Supply terminal merchant; original transparent PNG unchanged."
+      }
+    ],
+    "hash_method": "Current manifest hashes were verified against every actual file; the immutable accepted UI1 manifest establishes original asset hashes. Files outside those manifests were SHA-256-compared directly. Interpreter/test caches and .git are excluded."
+  }
+}

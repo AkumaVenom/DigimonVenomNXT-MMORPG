@@ -1,0 +1,223 @@
+{
+  "description": "Venom NXT screen music and interaction cues. Supplied OGG files copied unchanged from audio.rar; existing world, battle, and source audio is retained. Screen assignments are original interface choices, not claims about original game event assignments.",
+  "screen_tracks": {
+    "shop": "assets/audio/interface/bgm12.ogg",
+    "ranked": "assets/audio/interface/bgm30.ogg",
+    "rivals": "assets/audio/interface/bgm20.ogg",
+    "activity": "assets/audio/interface/bgm14.ogg",
+    "dex": "assets/audio/interface/bgm15.ogg",
+    "party": "assets/audio/interface/bgm13.ogg",
+    "maps": "assets/audio/interface/bgm18.ogg",
+    "digilab": "assets/audio/interface/bgm11.ogg",
+    "scan": "assets/audio/interface/bgm16.ogg",
+    "evolution": "assets/audio/interface/bgm19.ogg",
+    "storage": "assets/audio/interface/bgm17.ogg",
+    "skills": "assets/audio/interface/bgm32.ogg",
+    "auth": "assets/audio/interface/bgm00.ogg",
+    "settings": "assets/audio/interface/bgm43.ogg",
+    "authpicker": "assets/audio/interface/bgm01.ogg",
+    "farm": "assets/audio/original/digifarm_home.ogg"
+  },
+  "cues": {
+    "confirm": "assets/audio/interface/se001.ogg",
+    "back": "assets/audio/interface/se002.ogg",
+    "open": "assets/audio/interface/se003.ogg",
+    "tab": "assets/audio/interface/se000.ogg",
+    "purchase": "assets/audio/interface/se009.ogg",
+    "error": "assets/audio/interface/se004.ogg",
+    "scan_complete": "assets/audio/interface/se009.ogg",
+    "evolution_complete": "assets/audio/interface/se030.ogg"
+  },
+  "source_assets": {
+    "bgm11": {
+      "path": "assets/audio/interface/bgm11.ogg",
+      "source": "bgm11.ogg",
+      "sha256": "d65ed8261bb7a8bc3e0c71b5ee651a99cbaf39501fda0a4197a122e20573d2f1",
+      "duration": 73.204,
+      "sample_rate": 32768,
+      "channels": 2
+    },
+    "bgm12": {
+      "path": "assets/audio/interface/bgm12.ogg",
+      "source": "bgm12.ogg",
+      "sha256": "e9b3fc9d70ad772de4c008abb0589229a41c622bb165411141adaba3cbfac5ac",
+      "duration": 60.79,
+      "sample_rate": 32768,
+      "channels": 2
+    },
+    "bgm13": {
+      "path": "assets/audio/interface/bgm13.ogg",
+      "source": "bgm13.ogg",
+      "sha256": "e1f95acfa9358f994b3cdf0133dd65e3bcdf92021b2db02c8a10a124a45301c9",
+      "duration": 58.696,
+      "sample_rate": 32768,
+      "channels": 2
+    },
+    "bgm14": {
+      "path": "assets/audio/interface/bgm14.ogg",
+      "source": "bgm14.ogg",
+      "sha256": "650cd9aa6c21addfefe8df974f9446f6455e50f66a369123040b38fd343c9318",
+      "duration": 78.034,
+      "sample_rate": 32768,
+      "channels": 2
+    },
+    "bgm15": {
+      "path": "assets/audio/interface/bgm15.ogg",
+      "source": "bgm15.ogg",
+      "sha256": "6ed54eb4b7ff3face0a14b8af817dfaeb26e19c0849aca0af2b637c4a3cd6e77",
+      "duration": 56.982,
+      "sample_rate": 32768,
+      "channels": 2
+    },
+    "bgm18": {
+      "path": "assets/audio/interface/bgm18.ogg",
+      "source": "bgm18.ogg",
+      "sha256": "c3b0b9f3e98092806828491c59f0f678ed20e29ef73bc98518708dc500c6fe2c",
+      "duration": 64.853,
+      "sample_rate": 32768,
+      "channels": 2
+    },
+    "bgm20": {
+      "path": "assets/audio/interface/bgm20.ogg",
+      "source": "bgm20.ogg",
+      "sha256": "bf6355fecc8858a08cd7cc24f34b7b79083df2f5ed33ac349d4bda4ff2dec77c",
+      "duration": 71.021,
+      "sample_rate": 32768,
+      "channels": 2
+    },
+    "bgm30": {
+      "path": "assets/audio/interface/bgm30.ogg",
+      "source": "bgm30.ogg",
+      "sha256": "35bb68dadb9d68eb500314644c3fbd8ffbc830fb02a727f9d10f4064c75dc123",
+      "duration": 62.499,
+      "sample_rate": 32768,
+      "channels": 2
+    },
+    "se000": {
+      "path": "assets/audio/interface/se000.ogg",
+      "source": "se000.ogg",
+      "sha256": "a69bd7cd23ce50b0c5b245d4625490d775d757860f2c17d33229e1690b9ee31a",
+      "duration": 2.125,
+      "sample_rate": 32768,
+      "channels": 2
+    },
+    "se001": {
+      "path": "assets/audio/interface/se001.ogg",
+      "source": "se001.ogg",
+      "sha256": "8fcf48310b32aa459a3f2bb1dc635252807de08dc7d34b65ad5f3b954286ab9a",
+      "duration": 2.125,
+      "sample_rate": 32768,
+      "channels": 2
+    },
+    "se002": {
+      "path": "assets/audio/interface/se002.ogg",
+      "source": "se002.ogg",
+      "sha256": "51b3893dc459626d4618bef8748ea6eaf7816f132c387d47fcb09a17329c5101",
+      "duration": 2.125,
+      "sample_rate": 32768,
+      "channels": 2
+    },
+    "se003": {
+      "path": "assets/audio/interface/se003.ogg",
+      "source": "se003.ogg",
+      "sha256": "c2668b1382e5a775c80e5eb0cc3a49bfd4b31b97c39a4b6d3ee62190bd58ee59",
+      "duration": 2.125,
+      "sample_rate": 32768,
+      "channels": 2
+    },
+    "se004": {
+      "path": "assets/audio/interface/se004.ogg",
+      "source": "se004.ogg",
+      "sha256": "274172a505bfb8464c945f50ed44aaac55740192efbd846afe2d8d9e047513e7",
+      "duration": 2.125,
+      "sample_rate": 32768,
+      "channels": 2
+    },
+    "se009": {
+      "path": "assets/audio/interface/se009.ogg",
+      "source": "se009.ogg",
+      "sha256": "5de9494a0c8a7ed8b3591be916bb645a414e242968d2acb91176ef4d8882e368",
+      "duration": 2.125,
+      "sample_rate": 32768,
+      "channels": 2
+    },
+    "bgm16": {
+      "path": "assets/audio/interface/bgm16.ogg",
+      "source": "bgm16.ogg",
+      "sha256": "b1933eb358d8392d26cf1aa1e7de8fe89cff3c69617442e9cda3bbc90cc2470b",
+      "duration": 41.661,
+      "sample_rate": 32768,
+      "channels": 2
+    },
+    "bgm19": {
+      "path": "assets/audio/interface/bgm19.ogg",
+      "source": "bgm19.ogg",
+      "sha256": "ea60add787f49aa9e908439b7109d74e65dbdc5af825602c3c54ad34cfd225bc",
+      "duration": 60.754,
+      "sample_rate": 32768,
+      "channels": 2
+    },
+    "bgm17": {
+      "path": "assets/audio/interface/bgm17.ogg",
+      "source": "bgm17.ogg",
+      "sha256": "1d10c999b170182d76f9b2fa75a6297922dd098357a9e35f2896344a2b80e665",
+      "duration": 41.171,
+      "sample_rate": 32768,
+      "channels": 2
+    },
+    "bgm32": {
+      "path": "assets/audio/interface/bgm32.ogg",
+      "source": "bgm32.ogg",
+      "sha256": "d051641bd98637a4cb08a4378a48ef68193d703d48efa9e349b58eea1a9e6eb4",
+      "duration": 60.477,
+      "sample_rate": 32768,
+      "channels": 2
+    },
+    "bgm00": {
+      "path": "assets/audio/interface/bgm00.ogg",
+      "source": "bgm00.ogg",
+      "sha256": "480767ae6fbf92f7dc402008f13c48c9a01410e8e5f43738d8b624cb6de8263b",
+      "duration": 68.062,
+      "sample_rate": 32768,
+      "channels": 2
+    },
+    "bgm43": {
+      "path": "assets/audio/interface/bgm43.ogg",
+      "source": "bgm43.ogg",
+      "sha256": "488c02a5cf93a0f577913ce4faf272888f2eaf3289b725d1aff333c8b6ab3f3a",
+      "duration": 83.623,
+      "sample_rate": 32768,
+      "channels": 2
+    },
+    "bgm01": {
+      "path": "assets/audio/interface/bgm01.ogg",
+      "source": "bgm01.ogg",
+      "sha256": "08fae64199727791698efd0f92951a936cb3a6aebff91577c0312d2c63cbbbe7",
+      "duration": 73.882,
+      "sample_rate": 32768,
+      "channels": 2
+    },
+    "se030": {
+      "path": "assets/audio/interface/se030.ogg",
+      "source": "se030.ogg",
+      "sha256": "bd5ee7a3b5c7251d28f9c04d3071839ea0e45c268ed71492c266f181bec14270",
+      "duration": 2.125,
+      "sample_rate": 32768,
+      "channels": 2
+    }
+  },
+  "original_assets": {
+    "digifarm_home": {
+      "title": "A Place to Grow",
+      "path": "assets/audio/original/digifarm_home.ogg",
+      "source": "Original synthesized composition; tools/compose_digifarm_music.py",
+      "sha256": "3d7211424789190afe97ee6581133d2157b6d267ad19ef2f296b1273c4f6f1b2",
+      "duration": 80.0,
+      "sample_rate": 32768,
+      "channels": 2,
+      "bpm": 96,
+      "bars": 32,
+      "loop": "Full stream; circular instrument and ambience tails"
+    }
+  }
+}

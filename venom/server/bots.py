@@ -27,6 +27,7 @@ STAT_KEYS = (
     "materialized", "paradox_materialized", "level_ups", "xp_earned",
     "evolutions", "devolutions", "heals", "items_used", "purchases",
     "party_swaps", "travels", "walking_distance", "exploration_steps", "errors",
+    "training_rotations", "teams_trained", "coverage_visits",
 )
 PHASE_NAMES = {"explore": "Exploring", "battle": "Wild battle", "lab": "DigiLab",
                "ranked": "Ranked battle", "recover": "Recovering"}
@@ -55,6 +56,7 @@ class BotManager:
         self.navigation = Navigation(engine.root, engine.maps)
         self.bots = {}
         self.by_map = {key: set() for key in engine.maps}
+        self.coverage_reservations = {key: set() for key in engine.maps}
         self.heap = []
         self.serial = 0
         self.dirty = set()
@@ -151,7 +153,7 @@ class BotManager:
         runtime.update(phase=phase, path=None, leave_at=now + remaining,
                        phase_until=now + self.walk_seconds * self.rng.uniform(.7, 1.5),
                        phase_step=0, next_at=now, visited_at=now,
-                       recovery_until=0.0, last_ranked=0.0)
+                       recovery_until=0.0, last_ranked=0.0, walk_pending=True)
         runtime.setdefault("cycle", 0)
         runtime.setdefault("seed_level", state["party"][0]["level"])
         runtime.setdefault("relocate", False)
@@ -161,6 +163,8 @@ class BotManager:
                "ordinal": ordinal, "rng": random.Random(self.seed + ordinal * 7919)}
         self.bots[bot["id"]] = bot
         self.by_map[state["map_id"]].add(bot["id"])
+        if runtime.get("coverage_target") in self.coverage_reservations:
+            self.coverage_reservations[runtime["coverage_target"]].add(bot["id"])
         self.counters.update(bot["stats"])
         # Stagger the complete fleet over five seconds, without favouring low IDs.
         delay = ((ordinal * 3571) % max(1, self.count)) / max(1, self.count) * 5
@@ -170,6 +174,10 @@ class BotManager:
         self.serial += 1
         bot["runtime"]["next_at"] = float(when)
         bot["runtime"]["ticket"] = self.serial
+        # Runtime-only transitions matter too (for example ranked energy waits,
+        # completed training visits and resumed exploration). They must survive
+        # a checkpoint even when no inventory or battle operation dirtied state.
+        self.dirty.add(bot["id"])
         heapq.heappush(self.heap, (float(when), self.serial, bot["id"]))
 
     def _increment(self, bot, key, value=1):
@@ -282,7 +290,7 @@ class BotManager:
             x, y, _, _ = self.navigation.sample(path, now)
             # Routes have multiple corners: distance is travelled time * speed,
             # not displacement between their first and final coordinates.
-            distance = self.navigation.SPEED * max(0, min(now, path["end"]) - path["start"])
+            distance = self.navigation.SPEED * max(0, (now if path.get("loop") else min(now, path["end"])) - path["start"])
             self._increment(bot, "walking_distance", round(distance, 3))
             state["x"], state["y"] = x, y
             runtime["path"] = None
@@ -294,18 +302,21 @@ class BotManager:
             self._execute(bot, "digilab", {"action": "return"})
         if runtime.get("relocate") or now >= runtime["leave_at"]:
             self._relocate(bot, now, easier=runtime.get("relocate", False))
+        if runtime.pop("walk_pending", False):
+            # Start the walking window on dispatch, not before SQL/startup work.
+            runtime["phase_until"] = now + self.walk_seconds * rng.uniform(.7, 1.5)
         if now >= runtime["phase_until"]:
             self._execute(bot, "encounter", {})
             self._increment(bot, "wild_started")
             runtime["phase"] = "battle"
             self._schedule(bot, now + self.event_interval)
             return
-        path = self.navigation.route(state["map_id"], state["x"], state["y"], rng, now,
+        path = self.navigation.patrol(state["map_id"], state["x"], state["y"], rng, now,
                                      seconds=max(2, runtime["phase_until"] - now))
         if path:
             runtime["path"] = path
             self._increment(bot, "exploration_steps", len(path.get("segments", [path])))
-            self._schedule(bot, min(runtime["phase_until"], runtime["path"]["end"]))
+            self._schedule(bot, runtime["phase_until"])
         else:
             # No teleport escape: remain at safe ground and try another heading.
             self._schedule(bot, now + 1.5)
@@ -368,9 +379,9 @@ class BotManager:
         elif step == 1:
             self._materialize(bot)
         elif step == 2:
-            self._evolve(bot)
-        elif step == 3:
             self._manage_party(bot)
+        elif step == 3:
+            self._evolve(bot)
         elif step == 4:
             self._shop(bot)
         else:
@@ -390,11 +401,11 @@ class BotManager:
             return
         ready = [sid for sid, progress in state["scan"].items() if progress >= 100]
         known = {m["species_id"] for m in state["party"] + state["storage"]}
-        # New species first; enough duplicates to fill all six real party slots.
+        # Earned duplicates supply later training rounds too; never mint scan data.
         ready.sort(key=lambda sid: (sid in known, not self.engine.species[sid].get("paradox"), sid))
         for sid in ready[:2]:
-            if sid in known and len(state["party"]) >= 6:
-                continue
+            if len(state["storage"]) >= 48:
+                break
             progress = state["scan"][sid]
             self._execute(bot, "materialize", {"species_id": sid})
             self._increment(bot, "materialized")
@@ -404,66 +415,212 @@ class BotManager:
                          species_id=sid, scan_before=progress)
             known.add(sid)
 
+    @staticmethod
+    def _field_level(party):
+        # A high-level reserve must not send a fresh field team into lethal maps.
+        return min((m["level"] for m in party[:3]), default=1)
+
+    def _coverage_guard(self, bot):
+        """Retain some capable teams while other residents start fresh cohorts.
+
+        Count actual field strength, not merely map membership: low-level teams
+        awaiting their next departure cannot stand in for experienced residents.
+        Small custom populations remain free to train without a coverage quota.
+        """
+        if self.count < len(self.by_map) * 2:
+            return False
+        state = bot["state"]
+        level = int(self.engine.maps[state["map_id"]].get("level", 1))
+        if level <= 3:
+            return False
+        quota = max(1, self.count // max(1, len(self.by_map)) // 4)
+        capable = sum(self._field_level(self.bots[ident]["state"]["party"]) + 2 >= level
+                      for ident in self.by_map[state["map_id"]] if ident != bot["id"])
+        return capable < quota
+
+    def _observe_training(self, bot):
+        runtime, state = bot["runtime"], bot["state"]
+        cohort = set(runtime.get("training_uids", []))
+        levels = [m["level"] for m in state["party"] if m["uid"] in cohort]
+        if levels:
+            runtime["training_peak"] = max(runtime.get("training_peak", 0), min(levels))
+
+    def _reserve_coverage(self, bot, target=None):
+        previous = bot["runtime"].pop("coverage_target", None)
+        if previous in self.coverage_reservations:
+            self.coverage_reservations[previous].discard(bot["id"])
+        if target in self.coverage_reservations:
+            self.coverage_reservations[target].add(bot["id"])
+            bot["runtime"]["coverage_target"] = target
+
     def _evolve(self, bot):
         state, runtime = bot["state"], bot["runtime"]
-        if len(state["party"]) == 1 and int(self.engine.maps[state["map_id"]].get("level", 1)) > 3:
-            # Keep one capable partner while scan collection earns a second one.
+        self._observe_training(bot)
+        guarded = bool(runtime.get("coverage_duty"))
+        if len(state["party"]) + len(state["storage"]) == 1:
+            # Earn a recruit before resetting the only established partner. This
+            # leaves a real veteran available for later map-coverage visits.
             return
-        # At most one identity-preserving evolution per cycle; do not downgrade a
-        # sole partner without a clear ABI requirement, or repeatedly flip forms.
-        for index in sorted(range(len(state["party"])), key=lambda slot: state["party"][slot]["level"]):
+        for index in sorted(range(len(state["party"])), key=lambda i: state["party"][i]["level"]):
             monster = state["party"][index]
-            sector_level = int(self.engine.maps[state["map_id"]].get("level", 1))
-            other_strength = max((member["level"] for slot, member in enumerate(state["party"][:3]) if slot != index), default=1)
-            if sector_level > 3 and other_strength < sector_level + 1:
-                # Never reset the only capable partner just because its first
-                # freshly materialized level-one recruit has joined the party.
+            if guarded and index < 3:
                 continue
             options = self.engine.evolution_options(monster)
             eligible = [route for route in options if route["eligible"] and not route.get("devolve")]
             down = False
-            if not eligible and monster["level"] >= 30 and len(state["party"]) >= 3:
+            if not eligible and monster["level"] >= 30:
                 needs_abi = any(not route.get("devolve") and route.get("abi", 0) > monster["abi"] for route in options)
-                if needs_abi:
+                # A full collection can keep training existing identities through
+                # legitimate de-digivolution rather than deleting earned partners.
+                if needs_abi or len(state["storage"]) >= 48:
                     eligible = [route for route in options if route["eligible"] and route.get("devolve")
-                                and route["to"] in monster.get("history", [])]
+                                and (len(state["storage"]) >= 48 or route["to"] in monster.get("history", []))]
                     down = True
             if eligible:
-                route = eligible[bot["rng"].randrange(len(eligible))]
+                if down:
+                    familiar = [route for route in eligible if route["to"] in monster.get("history", [])]
+                    eligible = familiar or eligible
+                route = bot["rng"].choice(eligible)
                 old_name = monster["name"]
                 self._execute(bot, "evolve", {"party_index": index, "to": route["to"]})
                 self._increment(bot, "devolutions" if down else "evolutions")
                 self._record(bot, "devolve" if down else "evolve", f"{old_name} became {route['name']}.")
-                # A reset-to-level-one team must choose a viable training sector.
-                strongest = max(m["level"] for m in state["party"][:3])
-                if strongest + 3 < int(self.engine.maps[state["map_id"]].get("level", 1)):
+                if self._field_level(state["party"]) + 2 < int(self.engine.maps[state["map_id"]].get("level", 1)):
                     runtime["relocate"] = True
                 break
 
-    def _manage_party(self, bot):
+    def _equip_party(self, bot, desired):
+        """Change real Lab storage/party membership while retaining every UID."""
         state = bot["state"]
-        # Rotate reserves into active slots so every earned partner trains; keeping
-        # the strongest lead protects a fresh level-one recruit in tougher areas.
-        if len(state["party"]) > 3:
-            index = min(range(3, len(state["party"])), key=lambda i: state["party"][i]["level"])
-            self._execute(bot, "party", {"action": "lead", "index": index})
+        desired = list(dict.fromkeys(desired))[:6]
+        if not desired:
+            return
+
+        def action(kind, index):
+            self._execute(bot, "party", {"action": kind, "index": index})
             self._increment(bot, "party_swaps")
-        if len(state["party"]) > 1:
-            strongest = max(range(len(state["party"])), key=lambda i: (state["party"][i]["level"], state["party"][i]["max_hp"]))
-            if strongest:
-                self._execute(bot, "party", {"action": "lead", "index": strongest})
-                self._increment(bot, "party_swaps")
-        # Periodically train a banked species by exchanging a mature duplicate.
-        if state["storage"] and bot["runtime"].get("cycle", 0) % 5 == 4:
-            if len(state["party"]) >= 6:
-                duplicate = next((i for i in range(3, len(state["party"]))
-                                  if sum(m["species_id"] == state["party"][i]["species_id"] for m in state["party"]) > 1), None)
-                if duplicate is not None:
-                    self._execute(bot, "party", {"action": "deposit", "index": duplicate})
-                    self._increment(bot, "party_swaps")
-            if len(state["party"]) < 6:
-                self._execute(bot, "party", {"action": "withdraw", "index": 0})
-                self._increment(bot, "party_swaps")
+
+        for index in range(len(state["party"]) - 1, -1, -1):
+            if len(state["party"]) > 1 and state["party"][index]["uid"] not in desired:
+                action("deposit", index)
+        for uid in desired:
+            index = next((i for i, m in enumerate(state["storage"]) if m["uid"] == uid), None)
+            if index is not None:
+                action("withdraw", index)
+                # The last old partner protected the nonempty-party invariant;
+                # release it as soon as the first requested partner is active.
+                for slot in range(len(state["party"]) - 1, -1, -1):
+                    if len(state["party"]) > 1 and state["party"][slot]["uid"] not in desired:
+                        action("deposit", slot)
+        for index in range(len(state["party"]) - 1, -1, -1):
+            if len(state["party"]) > 1 and state["party"][index]["uid"] not in desired:
+                action("deposit", index)
+        for uid in reversed(desired):
+            index = next(i for i, m in enumerate(state["party"]) if m["uid"] == uid)
+            if index:
+                action("lead", index)
+
+    def _manage_party(self, bot):
+        state, runtime = bot["state"], bot["runtime"]
+        self.dirty.add(bot["id"])
+        self._observe_training(bot)
+        owned = state["party"] + state["storage"]
+        by_uid = {m["uid"]: m for m in owned}
+        current = [uid for uid in runtime.get("training_uids", []) if uid in by_uid]
+        round_number = int(runtime.get("training_round", 1))
+        goal = int(runtime.get("training_goal", 16 + (bot["ordinal"] * 7 + (round_number - 1) * 11) % 49))
+        wins = bot["stats"]["wild_wins"] - runtime.get("training_start_wins", bot["stats"]["wild_wins"])
+        peak = runtime.get("training_peak", 0)
+        completed = bool(current) and (peak >= goal or (peak >= 16 and wins >= 24 + bot["ordinal"] % 24))
+        ranked = sorted(owned, key=lambda m: (m["level"], -m["abi"], m["uid"]))
+        alternatives = [m for m in ranked if m["uid"] not in current]
+        rotate = completed and bool(alternatives) and alternatives[0]["level"] < max(peak, goal)
+        if not current or rotate:
+            pool = alternatives if rotate else ranked
+            lowest = pool[0]["level"]
+            desired = [m["uid"] for m in pool if m["level"] <= lowest + 8][:6]
+        else:
+            desired = current[:6]
+            lowest = min(by_uid[uid]["level"] for uid in desired)
+            # Grow a young party, but do not continually restart its training
+            # whenever another level-one recruit becomes available.
+            desired += [m["uid"] for m in ranked if m["uid"] not in desired
+                        and abs(m["level"] - lowest) <= 8][:6 - len(desired)]
+        # A bounded veteran visit can use banked partners, then hands them back
+        # to storage for at least twelve normal training cycles. No bot is a
+        # permanent high-level caretaker and no levels are assigned to fill gaps.
+        if runtime.get("coverage_duty"):
+            duty_wins = bot["stats"]["wild_wins"] - runtime.get("coverage_start_wins", bot["stats"]["wild_wins"])
+            duty_cycles = runtime["cycle"] - runtime.get("coverage_started_cycle", runtime["cycle"])
+            if duty_wins >= 8 + bot["ordinal"] % 8 or duty_cycles >= 16:
+                runtime.update(coverage_duty=False, coverage_rest_until_cycle=runtime["cycle"] + 12)
+                self._reserve_coverage(bot)
+        can_cover = (self.count >= len(self.by_map) * 2
+                     and runtime["cycle"] >= runtime.get("coverage_rest_until_cycle", 0))
+        target = None
+        if can_cover:
+            sector = self.engine.maps[state["map_id"]]
+            pending = self.engine.maps.get(runtime.get("coverage_target"))
+            if (pending and pending["id"] != state["map_id"]
+                    and any(m["level"] + 2 >= pending.get("level", 1) for m in owned)):
+                # Lab maintenance resumes from its first step after a restart.
+                # Keep this bot's existing reservation rather than counting it
+                # as somebody else's claim and picking another destination.
+                target = pending
+            elif self._coverage_guard(bot) and any(m["level"] + 2 >= sector.get("level", 1) for m in owned):
+                target = sector
+            else:
+                quota = max(1, self.count // max(1, len(self.by_map)) // 4)
+                strength = max(m["level"] for m in owned)
+                # Map occupancy is cheap to inspect and applies only to remote
+                # destinations; local protection counts capable field teams.
+                choices = [area for area in self.engine.maps.values()
+                           if 3 < area.get("level", 1) <= strength + 2
+                           and len(self.by_map[area["id"]]) + len(self.coverage_reservations[area["id"]]) < quota
+                           and area.get("level", 1) > self._field_level([by_uid[uid] for uid in desired]) + 2]
+                if choices:
+                    target = min(choices, key=lambda area: (len(self.by_map[area["id"]]) + len(self.coverage_reservations[area["id"]]),
+                                                           -area.get("level", 1), area["id"]))
+        if target:
+            sector_level = int(target.get("level", 1))
+            veterans = sorted((m for m in owned if m["level"] + 2 >= sector_level),
+                              key=lambda m: (-m["level"], m["uid"]))[:3]
+            if veterans:
+                selected = [m["uid"] for m in veterans]
+                if len(selected) == 3:
+                    selected += [uid for uid in desired if uid not in selected][:3]
+                self._equip_party(bot, selected)
+                if not runtime.get("coverage_duty"):
+                    runtime.update(coverage_start_wins=bot["stats"]["wild_wins"],
+                                   coverage_started_cycle=runtime["cycle"])
+                    self._record(bot, "coverage", "Fielded experienced partners for a short veteran visit.",
+                                 map_id=target["id"])
+                runtime["coverage_duty"] = True
+                if target["id"] != state["map_id"]:
+                    self._reserve_coverage(bot, target["id"])
+                    runtime["relocate"] = True
+                return
+        runtime["coverage_duty"] = False
+        self._reserve_coverage(bot)
+        if not current or rotate:
+            if rotate:
+                self._increment(bot, "training_rotations")
+                self._increment(bot, "teams_trained")
+                round_number += 1
+                goal = 16 + (bot["ordinal"] * 7 + (round_number - 1) * 11) % 49
+            runtime.update(training_round=round_number, training_goal=goal,
+                           training_started_cycle=runtime["cycle"],
+                           training_start_wins=bot["stats"]["wild_wins"], training_peak=0)
+            self._record(bot, "training", f"Started training team {round_number} with {len(desired)} partners.",
+                         training_round=round_number, goal=goal, partner_uids=desired)
+        runtime["training_uids"] = desired
+        # Rotate the actual field slots so reserves also lead and receive full XP.
+        if len(desired) > 3:
+            offset = runtime["cycle"] % len(desired)
+            desired = desired[offset:] + desired[:offset]
+        self._equip_party(bot, desired)
+        if self._field_level(state["party"]) + 2 < int(self.engine.maps[state["map_id"]].get("level", 1)):
+            runtime["relocate"] = True
 
     def _shop(self, bot):
         state = bot["state"]
@@ -498,7 +655,7 @@ class BotManager:
                 runtime["last_ranked"] = now
                 runtime.pop("ranked_wait_reason", None)
         runtime["cycle"] += 1
-        runtime.update(phase="explore", phase_until=now + self.walk_seconds * bot["rng"].uniform(.7, 1.5))
+        runtime.update(phase="explore", walk_pending=True)
         self._schedule(bot, now + 1)
 
     def record_ranked_result(self, result):
@@ -531,25 +688,39 @@ class BotManager:
         state, runtime = bot["state"], bot["runtime"]
         old_map = state["map_id"]
         old_level = int(self.engine.maps[old_map].get("level", 1))
-        strength = max(m["level"] for m in state["party"][:3])
+        strength = self._field_level(state["party"])
         if easier:
             ceiling = max(1, min(strength, old_level - max(2, runtime.get("consecutive_losses", 1) * 2)))
             candidates = [area for area in self.engine.maps.values()
                           if max(1, ceiling - 4) <= int(area.get("level", 1)) <= ceiling and area["id"] != old_map]
         else:
             candidates = [area for area in self.engine.maps.values()
-                          if max(1, strength - 12) <= int(area.get("level", 1)) <= strength + 2 and area["id"] != old_map]
+                          if int(area.get("level", 1)) <= strength + 2 and area["id"] != old_map]
         if not candidates:
             candidates = [area for area in self.engine.maps.values() if area["id"] != old_map
                           and int(area.get("level", 1)) <= max(1, strength)]
+        assigned = runtime.get("coverage_target")
+        self._reserve_coverage(bot)
+        if assigned in self.engine.maps and assigned != old_map and int(self.engine.maps[assigned].get("level", 1)) <= strength + 2:
+            candidates = [self.engine.maps[assigned]]
         if candidates:
             # Density first; a tiny deterministic jitter breaks ties without a
             # handful of alphabetically first sectors receiving the whole fleet.
             target = min(candidates, key=lambda area: len(self.by_map[area["id"]]) + bot["rng"].random() * .7)
             self._execute(bot, "travel", {"map_id": target["id"]})
-            # Travel uses the same exact catalog spawn as a player's sector change.
+            # Spread arrivals only on a real sector transition. Existing walkers
+            # remain on their continuous path; every client sees the same point.
+            peers = []
+            for ident in self.by_map[target["id"]]:
+                other = self.bots[ident]
+                sample = self.navigation.sample(other["runtime"].get("path"), now)
+                peers.append(sample[:2] if sample else (other["state"]["x"], other["state"]["y"]))
+            state["x"], state["y"] = self.navigation.arrival(target["id"], peers, bot["ordinal"])
+            if int(target.get("level", 1)) + 12 < strength:
+                self._increment(bot, "coverage_visits")
             self.by_map[old_map].discard(bot["id"])
             self.by_map[target["id"]].add(bot["id"])
+            runtime["walk_pending"] = True
             self._increment(bot, "travels")
             self._record(bot, "travel", f"Moved to {target['name']}" + (" for safer training." if easier else " to explore."),
                          from_map=old_map, map_id=target["id"], reason="difficulty" if easier else "exploration")
@@ -590,7 +761,11 @@ class BotManager:
                       "scan_species": sum(value > 0 for value in state["scan"].values()),
                       "storage_count": len(state["storage"]), "credits": state["credits"],
                       "cycle": runtime["cycle"], "next_activity": NEXT_PHASE.get(runtime["phase"], "Exploration"),
-                      "seed_level": runtime["seed_level"]}
+                      "seed_level": runtime["seed_level"],
+                      "training_round": runtime.get("training_round", 1),
+                      "training_goal": runtime.get("training_goal", 16),
+                      "training_partners": len(runtime.get("training_uids", [])),
+                      "coverage_duty": bool(runtime.get("coverage_duty", False))}
             sample = self.navigation.sample(runtime.get("path"), self.last_tick)
             result.update(x=sample[0] if sample else state["x"], y=sample[1] if sample else state["y"],
                           in_lab=bool(state.get("in_lab")), battle=bool(state.get("battle")))

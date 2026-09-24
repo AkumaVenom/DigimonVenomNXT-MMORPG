@@ -33,7 +33,10 @@ def test_shutdown_does_not_flush_after_another_world_acquires_the_lease():
 
     service.bots = SimpleNamespace(flush=stale_flush)
     try:
-        service.shutdown()
+        # A skipped checkpoint is no longer reported as a clean shutdown: the
+        # portable process manager must leave MySQL available for recovery.
+        with pytest.raises(DatabaseError, match="final rival checkpoint"):
+            service.shutdown()
         assert not writes
         assert service.store.bot_load_all() == [{"id": "bot:00001", "earned_xp": 99}]
         assert service.store.renew_world("successor-world", now=now + 1)

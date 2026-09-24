@@ -17,6 +17,31 @@ GOLD = (247, 199, 104)
 _TEXT_CACHE = OrderedDict()
 _TEXT_CACHE_BYTES = 0
 _TEXT_CACHE_LIMIT = 8 * 1024 * 1024
+_TEXT_LAYOUT_CACHE = OrderedDict()
+
+
+def _fit_text(font, value, width):
+    """Measure a repeating label once, at its actual native-pixel width.
+
+    The glyph cache alone does not avoid SDL_ttf layout: measuring/truncating
+    every button and HUD label each frame was still work in the render loop.
+    Include the font object and physical width so DPI/resize changes cannot
+    reuse a layout from a different display size.
+    """
+    key = (font, value, width)
+    cached = _TEXT_LAYOUT_CACHE.get(key)
+    if cached is not None:
+        _TEXT_LAYOUT_CACHE.move_to_end(key)
+        return cached
+    fitted = value
+    while fitted and font.size(fitted)[0] > width:
+        fitted = fitted[:-2] + '…' if len(fitted) > 2 else ''
+    # Bound both the number of labels and the maximum retained string size.
+    if len(value) <= 4096:
+        _TEXT_LAYOUT_CACHE[key] = fitted
+        while len(_TEXT_LAYOUT_CACHE) > 1024:
+            _TEXT_LAYOUT_CACHE.popitem(last=False)
+    return fitted
 
 
 def _render_text(font, value, color):
@@ -42,8 +67,7 @@ def text(screen, assets, value, position, size=18, color=WHITE, bold=False, max_
     font = assets.font(max(1, round(size * scale)), bold)
     value = str(value)
     if max_width is not None:
-        while value and font.size(value)[0] > max_width * scale:
-            value = value[:-2] + '…' if len(value) > 2 else ''
+        value = _fit_text(font, value, max_width * scale)
     surface = _render_text(font, value, color)
     point = screen.to_physical_point(position) if isinstance(screen, NativeCanvas) else position
     rect = surface.get_rect(center=point) if center else surface.get_rect(topleft=point)
@@ -112,18 +136,31 @@ class UI:
         self.focus = None
         self.values = {}
         self.fields = []
+        self.on_activate = None
 
     def begin(self):
         self.actions, self.fields = [], []
         position = pygame.mouse.get_pos()
         self.mouse = self.screen.to_logical_point(position) if isinstance(self.screen, NativeCanvas) else position
 
-    def button(self, rect, label, callback, primary=False, selected=False, disabled=False, small=False):
+    def button(self, rect, label, callback, primary=False, selected=False, disabled=False, small=False,
+               *, accent=None):
         rect = pygame.Rect(rect)
         hover = rect.collidepoint(self.mouse)
         fill = LIME if primary and not disabled else (32, 68, 82) if selected else (32, 48, 69) if hover else CARD
         color = BG if primary and not disabled else MUTED if disabled else WHITE
-        panel(self.screen, rect, fill, CYAN if selected else LINE, 9)
+        if accent is not None:
+            fill = accent if primary and not disabled else (27, 51, 67) if hover and not disabled else (19, 38, 53)
+            color = BG if primary and not disabled else MUTED if disabled else WHITE
+            edge = accent if (selected or hover or primary) and not disabled else (43, 66, 81)
+            panel(self.screen, rect, fill, edge, 6)
+            if not disabled:
+                shine = tuple(min(255, int(c*.6+80)) for c in fill)
+                draw.line(self.screen, shine, (rect.x+7, rect.y+1), (rect.right-8, rect.y+1))
+                if selected:
+                    draw.line(self.screen, accent, (rect.x+7, rect.bottom-2), (rect.right-8, rect.bottom-2), 2)
+        else:
+            panel(self.screen, rect, fill, CYAN if selected else LINE, 9)
         text(self.screen, self.assets, label, rect.center, 14 if small else 16, color, primary, rect.width-14, True)
         if not disabled:
             self.actions.append((rect, callback))
@@ -153,6 +190,8 @@ class UI:
             for rect, callback in reversed(self.actions):
                 if rect.collidepoint(position):
                     callback()
+                    if self.on_activate:
+                        self.on_activate()
                     return True
         if self.focus:
             if event.type == pygame.TEXTINPUT:

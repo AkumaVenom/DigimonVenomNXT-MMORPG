@@ -1,3 +1,9 @@
+HISTORICAL DISPLAY GUIDE
+Its client-only installation instructions describe v0.1.1 and do not apply
+to this fresh portable database release. Use ../PORTABLE_SERVER_README.md
+and SETUP.md for current installation. The display descriptions below remain
+useful.
+
 DIGIMON VENOM NXT - WINDOWS DISPLAY UPGRADE
 Version 0.1.1 alpha
 

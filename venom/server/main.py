@@ -20,14 +20,16 @@ from websockets.asyncio.server import serve
 from websockets.exceptions import ConnectionClosed
 
 from venom.common.game import GameEngine
+from venom.common.farm import move_farm_position, normalize_farm_position
 from venom.common.paths import root_path
 from venom.server.database import Database, DatabaseError, validate_credentials
+from venom.server.lifecycle import WorldProcessLock
 
 LOG = logging.getLogger("venom.server")
-VERSION = "0.3.0"
+VERSION = "0.6.0"
 MOVE_SPEED = 180.0
 MAX_MESSAGE = 65_536
-GAME_OPS = {"encounter", "battle", "digilab", "materialize", "evolve", "party", "shop", "item", "travel"}
+GAME_OPS = {"encounter", "battle", "digilab", "digifarm", "materialize", "evolve", "party", "shop", "item", "travel"}
 
 
 def project_root():
@@ -82,6 +84,7 @@ class WorldServer:
         self.stopping = False
         self.community = None
         self.stop_signal = None
+        self.persistence_failed = False
         self.community_rate = {}
 
     async def initialize_community(self):
@@ -141,6 +144,10 @@ class WorldServer:
                 try:
                     state, revision = await asyncio.to_thread(self.database.load, key)
                     state["events"] = []
+                    # Add farm metadata to old saves without changing their location,
+                    # existing battles, inventory or legacy storage contents.
+                    if hasattr(self.engine, "_refresh"):
+                        self.engine._refresh(state)
                     session = Session(ws, key, token, state, revision)
                     if self.community and self.community.ready:
                         await asyncio.to_thread(self.community.register_player, copy.deepcopy(state))
@@ -165,7 +172,7 @@ class WorldServer:
         try:
             await self.send(ws, {"op": "hello", "version": VERSION,
                 "game": "Digimon Venom NXT", "tick_hz": 10, "movement_speed": MOVE_SPEED,
-                "features": ["ranked", "rivals", "bot_activity"] if self.community else [],
+                "features": ["digifarm"] + (["ranked", "rivals", "bot_activity"] if self.community else []),
                 "registration": self.config.get("allow_registration", True)})
             while not self.stopping:
                 try:
@@ -213,8 +220,12 @@ class WorldServer:
                                 await self.save(session)
                                 await self.result(ws, rid, state=session.state)
                             else:
-                                await self.result(ws, rid, position={key: session.state[key]
-                                    for key in ("map_id", "x", "y")})
+                                if session.state.get("in_farm"):
+                                    position = {"space": "farm", **normalize_farm_position(session.state)}
+                                else:
+                                    position = {"space": "field", **{key: session.state[key]
+                                        for key in ("map_id", "x", "y")}}
+                                await self.result(ws, rid, position=position)
                         elif op == "chat":
                             await self.chat(session, message)
                             await self.result(ws, rid)
@@ -245,7 +256,7 @@ class WorldServer:
                                 raise
                             if op == "encounter":
                                 session.last_encounter = time.monotonic()
-                            if op in ("digilab", "travel"):
+                            if op in ("digilab", "digifarm", "travel"):
                                 session.dx = session.dy = 0
                                 session.walked = 0
                             await self.result(ws, rid, state=session.state)
@@ -279,6 +290,7 @@ class WorldServer:
                         if self.community and self.community.ready:
                             await asyncio.to_thread(self.community.register_player, copy.deepcopy(session.state))
                 except Exception:
+                    self.persistence_failed = True
                     LOG.exception("Failed final save for %s; retaining database lease for recovery", session.key)
                 else:
                     with contextlib.suppress(Exception):
@@ -319,13 +331,28 @@ class WorldServer:
         session.move_credit -= dt
         state = session.state
         state["events"] = []
-        if state.get("battle") or state.get("in_lab"):
+        space = "farm" if state.get("in_farm") else "field"
+        requested_space = message.get("space", space)
+        if requested_space not in ("farm", "field"):
+            raise ValueError("Unknown movement space.")
+        # A delayed input queued before Home/Return cannot walk in the new space.
+        if requested_space != space or state.get("battle") or state.get("in_lab"):
             session.dx = session.dy = 0
             return False
         length = math.hypot(dx, dy)
         if length > 1:
             dx, dy = dx / length, dy / length
         session.dx, session.dy = dx, dy
+        if state.get("in_farm"):
+            position = normalize_farm_position(state)
+            position["x"], position["y"] = move_farm_position(
+                (position["x"], position["y"]), dx, dy, dt, MOVE_SPEED)
+            if dx or dy:
+                position["direction"] = (("down" if dy > 0 else "up") + ("_right" if dx > 0 else "_left")
+                    if dx and dy else ("down" if dy > 0 else "up") if dy else ("right" if dx > 0 else "left"))
+            # Regular movement uses the same autosave/disconnect persistence as
+            # fields. Home never accrues walking encounters or mutates map x/y.
+            return False
         map_data = self.engine.maps[state["map_id"]]
         old_x, old_y = float(state["x"]), float(state["y"])
         x = min(max(12, old_x + dx * MOVE_SPEED * dt), max(12, map_data["width"] - 12))
@@ -371,8 +398,15 @@ class WorldServer:
         await asyncio.gather(*(self.send(s.websocket, data) for s in peers), return_exceptions=True)
 
     @staticmethod
+    def place(session):
+        state = session.state
+        if state.get("in_farm"):
+            return (state["map_id"], "farm", session.key)
+        return (state["map_id"], "lab" if state.get("in_lab") else "field", None)
+
+    @staticmethod
     def same_place(a, b):
-        return (a.state["map_id"], bool(a.state.get("in_lab"))) == (b.state["map_id"], bool(b.state.get("in_lab")))
+        return WorldServer.place(a) == WorldServer.place(b)
 
     async def broadcast_once(self):
         sessions = list(self.sessions.values())
@@ -381,21 +415,22 @@ class WorldServer:
         now = time.monotonic()
         for s in sessions:
             state = s.state
-            group = (state["map_id"], bool(state.get("in_lab")))
+            group = self.place(s)
             snapshot_places[s.key] = group
-            moving = now - s.last_move < 0.2 and not state.get("battle")
+            moving = now - s.last_move < 0.2 and not (state.get("battle") or state.get("in_farm") or state.get("in_lab"))
             groups.setdefault(group, []).append({"username": state["username"], "tamer": state["tamer"],
                 "map_id": state["map_id"], "x": state["x"], "y": state["y"],
                 "dx": s.dx if moving else 0, "dy": s.dy if moving else 0,
                 "lead": state["party"][0]["species_id"] if state.get("party") else None,
-                "battle": bool(state.get("battle")), "in_lab": bool(state.get("in_lab"))})
+                "battle": bool(state.get("battle")), "in_lab": bool(state.get("in_lab")),
+                "in_farm": bool(state.get("in_farm"))})
         if self.community and self.community.ready:
             # Each occupied field has one shared bot snapshot at the same server
             # timestamp. No client receives the entire 5,000-rival population.
-            fields = {map_id for map_id, in_lab in groups if not in_lab}
+            fields = {group[0] for group in groups if group[1] == "field"}
             rivals = await asyncio.to_thread(self.community.snapshots, fields, now)
             for group, actors in groups.items():
-                if not group[1]:
+                if group[1] == "field":
                     actors.extend(rivals.get(group[0], []))
         # Per-recipient async sends avoid the unbounded-buffer broadcast helper.
         stamp = time.time()
@@ -414,11 +449,21 @@ class WorldServer:
         while not self.stopping:
             start = time.monotonic()
             await self.broadcast_once()
-            await asyncio.sleep(max(0.005, 0.1 - (time.monotonic() - start)))
+            await self.pause(max(0.005, 0.1 - (time.monotonic() - start)))
+
+    async def pause(self, delay):
+        """Wake promptly for shutdown without cancelling an in-flight SQL worker."""
+        if self.stop_signal is None:
+            await asyncio.sleep(delay)
+        else:
+            with contextlib.suppress(asyncio.TimeoutError):
+                await asyncio.wait_for(self.stop_signal.wait(), delay)
 
     async def autosave_loop(self):
         while not self.stopping:
-            await asyncio.sleep(20)
+            await self.pause(20)
+            if self.stopping or (self.stop_signal is not None and self.stop_signal.is_set()):
+                break
             for session in list(self.sessions.values()):
                 try:
                     async with session.lock:
@@ -442,17 +487,18 @@ class WorldServer:
                     await asyncio.to_thread(self.community.invitations, states, started)
                     next_invites = started+10
             except Exception:
+                self.persistence_failed = True
                 LOG.exception('Community simulation stopped to protect persistent progress.')
                 if self.stop_signal is not None:
                     self.stop_signal.set()
                 return
             previous = started
-            await asyncio.sleep(max(.005, .1-(time.monotonic()-started)))
+            await self.pause(max(.005, .1-(time.monotonic()-started)))
 
 
 def read_config(path, dev=False):
     root = project_root()
-    path = Path(path) if path else root / "config/server.json"
+    path = root / path if path else root / "config/server.json"
     if path.is_file():
         config = json.loads(path.read_text(encoding="utf-8"))
     elif dev:
@@ -482,48 +528,105 @@ def tls_context(config, root=None):
 
 async def run(config, dev=False, stop=None):
     root = project_root()
-    context = None if dev else tls_context(config, root)
-    db = Database(config["database"], dev=dev)
-    await asyncio.to_thread(db.initialize)
-    try:
-        engine = GameEngine(root)
-        world = WorldServer(engine, db, config)
-        await world.initialize_community()
-    except Exception:
-        await asyncio.to_thread(db.close)
-        raise
+    with WorldProcessLock(root) as control:
+        await _run_world(config, root, dev, stop, control)
+        control.mark_stopped()
+
+
+async def _run_world(config, root, dev, stop, control):
+    """Finish every database worker and final save before confirming shutdown."""
     stop = stop or asyncio.Event()
-    world.stop_signal = stop
     loop = asyncio.get_running_loop()
+    old_handlers = {}
     for sig in (signal.SIGINT, signal.SIGTERM):
-        with contextlib.suppress(NotImplementedError, RuntimeError):
+        try:
+            previous = signal.getsignal(sig)
             loop.add_signal_handler(sig, stop.set)
+            old_handlers[sig] = (previous, True)
+        except (NotImplementedError, RuntimeError, ValueError):
+            # Windows ProactorEventLoop has no add_signal_handler support.
+            # A real signal handler keeps Ctrl+C on the same graceful path as
+            # the stop batch file instead of cancelling database worker tasks.
+            try:
+                previous = signal.signal(sig, lambda *_: loop.call_soon_threadsafe(stop.set))
+                old_handlers[sig] = (previous, False)
+            except (ValueError, OSError):
+                pass
+
+    async def watch_stop_request():
+        while not stop.is_set():
+            if control.stop_requested():
+                LOG.info("Stop requested. Saving players and rival progress...")
+                stop.set()
+                return
+            with contextlib.suppress(asyncio.TimeoutError):
+                await asyncio.wait_for(stop.wait(), 0.2)
+
+    monitor = asyncio.create_task(watch_stop_request())
+    db = None
+    world = None
     tasks = []
     try:
+        context = None if dev else tls_context(config, root)
+        db = Database(config["database"], dev=dev, root=root)
+        await asyncio.to_thread(db.initialize)
+        engine = GameEngine(root)
+        world = WorldServer(engine, db, config)
+        world.stop_signal = stop
+        await world.initialize_community()
+
+        def background_finished(task):
+            if task.cancelled():
+                return
+            error = task.exception()
+            if error is not None:
+                world.persistence_failed = True
+                LOG.error("World background task failed; stopping to protect saves.",
+                          exc_info=(type(error), error, error.__traceback__))
+                stop.set()
+
         async with serve(world.connection, config.get("host", "0.0.0.0"), int(config.get("port", 8765)),
                          ssl=context, origins=[None], max_size=MAX_MESSAGE, max_queue=16,
                          compression=None, ping_interval=20, ping_timeout=20, close_timeout=5,
-                         open_timeout=10, server_header=None):
+                         open_timeout=10, server_header=None) as listener:
             tasks = [asyncio.create_task(world.world_loop()), asyncio.create_task(world.autosave_loop()),
                      asyncio.create_task(world.community_loop())]
+            for task in tasks:
+                task.add_done_callback(background_finished)
+            control.update("running")
             LOG.info("Digimon Venom NXT %s | %s://%s:%s | %s", VERSION, "ws (LOCAL DEV)" if dev else "wss",
                      config.get("host"), config.get("port"), db.driver)
             LOG.info("World ready. Ctrl+C saves players and shuts down.")
             await stop.wait()
             world.stopping = True
+            control.update("stopping")
+            listener.close()
+            # Cooperative completion matters: cancelling asyncio.to_thread
+            # leaves its SQL operation running in the background.
+            await asyncio.gather(*tasks, return_exceptions=True)
     finally:
-        world.stopping = True
-        for task in tasks:
-            task.cancel()
-        await asyncio.gather(*tasks, return_exceptions=True)
+        stop.set()
+        if world is not None:
+            world.stopping = True
         try:
-            if world.community:
+            await asyncio.gather(*tasks, monitor, return_exceptions=True)
+            if world is not None and world.community:
                 await asyncio.to_thread(world.community.shutdown)
         finally:
-            # serve's context has awaited connection finalizers and their saves.
-            # Release the connection even if the final bot checkpoint fails.
-            await asyncio.to_thread(db.close)
-        LOG.info("World stopped. Player sessions closed.")
+            try:
+                # The listener has awaited player finalizers; the workers and
+                # final rival checkpoint have finished before MySQL can stop.
+                if db is not None:
+                    await asyncio.to_thread(db.close)
+            finally:
+                for sig, (previous, used_loop) in old_handlers.items():
+                    if used_loop:
+                        loop.remove_signal_handler(sig)
+                    with contextlib.suppress(ValueError, OSError):
+                        signal.signal(sig, previous)
+    if world is not None and world.persistence_failed:
+        raise DatabaseError("The world stopped with a save error. MySQL must remain running; check runtime/logs/server.log.")
+    LOG.info("World stopped cleanly. Players and rival progress are saved.")
 
 
 def main(argv=None):

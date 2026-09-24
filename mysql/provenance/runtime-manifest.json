@@ -1,0 +1,1136 @@
+{
+  "product": "MySQL Community Server",
+  "version": "8.4.11",
+  "architecture": "Windows x64",
+  "source_archive": "mysql-8.4.11-winx64.zip",
+  "source_url": "https://cdn.mysql.com/Downloads/MySQL-8.4/mysql-8.4.11-winx64.zip",
+  "source_sha256": "a492371d687d2bab088b0062581144a0044b8964baefdf4faa579292b423d25c",
+  "signature_fingerprint": "BCA43417C3B485DD128EC6D4B7B3B788A8D3785C",
+  "signature_result": "Good signature; fingerprint compared with official MySQL documentation",
+  "signature_documentation": "https://dev.mysql.com/doc/refman/8.4/en/checking-gpg-signature.html",
+  "package_selection": "All production binaries, DLLs, plugins, share files, bundled documentation and licenses. Excludes developer headers, link libraries, CMake/pkg-config files, debug variants and debug symbols. Retained upstream files are byte-for-byte unchanged.",
+  "excluded_paths": [
+    "bin/abseil_dll-debug.dll",
+    "bin/abseil_dll-debug.pdb",
+    "bin/abseil_dll.lib",
+    "bin/fido2.lib",
+    "bin/jemalloc.pdb",
+    "bin/libcrypto-3-x64.pdb",
+    "bin/libprotobuf-debug.dll",
+    "bin/libprotobuf-lite-debug.dll",
+    "bin/libprotobuf-lite.lib",
+    "bin/libprotobuf.lib",
+    "bin/libssl-3-x64.pdb",
+    "bin/mysqld.pdb",
+    "include/errmsg.h",
+    "include/field_types.h",
+    "include/mysql/client_plugin.h",
+    "include/mysql/plugin_auth_common.h",
+    "include/mysql/udf_registration_types.h",
+    "include/mysql.h",
+    "include/mysqld_error.h",
+    "include/mysqlx_ername.h",
+    "include/mysqlx_error.h",
+    "include/mysqlx_version.h",
+    "include/mysql_com.h",
+    "include/mysql_time.h",
+    "include/mysql_version.h",
+    "include/my_command.h",
+    "include/my_compress.h",
+    "include/my_list.h",
+    "include/openssl/applink.c",
+    "lib/libmysql.lib",
+    "lib/mysqlclient.lib",
+    "lib/mysqlservices.lib",
+    "lib/plugin/debug/adt_null.dll",
+    "lib/plugin/debug/adt_null.pdb",
+    "lib/plugin/debug/component_audit_api_message_emit.dll",
+    "lib/plugin/debug/component_audit_api_message_emit.pdb",
+    "lib/plugin/debug/component_keyring_file.dll",
+    "lib/plugin/debug/component_keyring_file.pdb",
+    "lib/plugin/debug/component_log_filter_dragnet.dll",
+    "lib/plugin/debug/component_log_filter_dragnet.pdb",
+    "lib/plugin/debug/component_log_sink_json.dll",
+    "lib/plugin/debug/component_log_sink_json.pdb",
+    "lib/plugin/debug/component_log_sink_syseventlog.dll",
+    "lib/plugin/debug/component_log_sink_syseventlog.pdb",
+    "lib/plugin/debug/component_mysqlbackup.dll",
+    "lib/plugin/debug/component_mysqlbackup.pdb",
+    "lib/plugin/debug/component_query_attributes.dll",
+    "lib/plugin/debug/component_query_attributes.pdb",
+    "lib/plugin/debug/component_reference_cache.dll",
+    "lib/plugin/debug/component_reference_cache.pdb",
+    "lib/plugin/debug/component_validate_password.dll",
+    "lib/plugin/debug/component_validate_password.pdb",
+    "lib/plugin/debug/connection_control.dll",
+    "lib/plugin/debug/connection_control.pdb",
+    "lib/plugin/debug/ddl_rewriter.dll",
+    "lib/plugin/debug/ddl_rewriter.pdb",
+    "lib/plugin/debug/group_replication.dll",
+    "lib/plugin/debug/group_replication.pdb",
+    "lib/plugin/debug/ha_example.dll",
+    "lib/plugin/debug/ha_example.pdb",
+    "lib/plugin/debug/ha_mock.dll",
+    "lib/plugin/debug/ha_mock.pdb",
+    "lib/plugin/debug/keyring_udf.dll",
+    "lib/plugin/debug/keyring_udf.pdb",
+    "lib/plugin/debug/libpluginmecab.dll",
+    "lib/plugin/debug/libpluginmecab.pdb",
+    "lib/plugin/debug/locking_service.dll",
+    "lib/plugin/debug/locking_service.pdb",
+    "lib/plugin/debug/mypluglib.dll",
+    "lib/plugin/debug/mypluglib.pdb",
+    "lib/plugin/debug/mysql_clone.dll",
+    "lib/plugin/debug/mysql_clone.pdb",
+    "lib/plugin/debug/mysql_no_login.dll",
+    "lib/plugin/debug/mysql_no_login.pdb",
+    "lib/plugin/debug/rewriter.dll",
+    "lib/plugin/debug/rewriter.pdb",
+    "lib/plugin/debug/rewrite_example.dll",
+    "lib/plugin/debug/rewrite_example.pdb",
+    "lib/plugin/debug/semisync_master.dll",
+    "lib/plugin/debug/semisync_master.pdb",
+    "lib/plugin/debug/semisync_replica.dll",
+    "lib/plugin/debug/semisync_replica.pdb",
+    "lib/plugin/debug/semisync_slave.dll",
+    "lib/plugin/debug/semisync_slave.pdb",
+    "lib/plugin/debug/semisync_source.dll",
+    "lib/plugin/debug/semisync_source.pdb",
+    "lib/plugin/debug/validate_password.dll",
+    "lib/plugin/debug/validate_password.pdb",
+    "lib/plugin/debug/version_token.dll",
+    "lib/plugin/debug/version_token.pdb"
+  ],
+  "files": [
+    {
+      "path": "bin/abseil_dll.dll",
+      "size": 1751688,
+      "sha256": "1dde8e4d1a45dd804bb72c7982d8334af8ed0166e0a4005889fb0c874567fc62"
+    },
+    {
+      "path": "bin/ccapiserver.exe",
+      "size": 167048,
+      "sha256": "1e1e7cd56a409d9ca7e6954ed2555c45464e99a04c3365b110a18651b2de7f1a"
+    },
+    {
+      "path": "bin/comerr64.dll",
+      "size": 31360,
+      "sha256": "666fe83e07bebea221f904dcbca19e06ebcd7485a5e1db1382dc780f93e14ca6"
+    },
+    {
+      "path": "bin/echo.exe",
+      "size": 24184,
+      "sha256": "f0ee856b75577fb0f4b67f15d01e1cecc3e6f9c00ed02b5e0e3db6ea2c5c3172"
+    },
+    {
+      "path": "bin/fido2.dll",
+      "size": 255096,
+      "sha256": "965aa98192bb4a175c0644f0648cbf1a444d7c6ac617032a613ef3da9c065954"
+    },
+    {
+      "path": "bin/gssapi64.dll",
+      "size": 412800,
+      "sha256": "8db649272ac335017bd4e1fee09d236bdd493a9082c84903f5a4ed438baf1476"
+    },
+    {
+      "path": "bin/ibd2sdi.exe",
+      "size": 6449792,
+      "sha256": "a24fe6434bb28d865bade67e86304d146dc95cf9d9f14b01e2daf46e34b4ec7d"
+    },
+    {
+      "path": "bin/innochecksum.exe",
+      "size": 6434952,
+      "sha256": "c3cc9f94755b2bd195f369de91434e4b3a49d7ce4a0176e27e57a52ca0072221"
+    },
+    {
+      "path": "bin/jemalloc.dll",
+      "size": 505984,
+      "sha256": "204c039efba1ef83b27a307b66dcda6f188aa99bee5920a2fefc43a444c98954"
+    },
+    {
+      "path": "bin/k5sprt64.dll",
+      "size": 162432,
+      "sha256": "6872a4b2a6e6ac591cf85ffe2406e84583952e81814f94978ae9508050f3ff93"
+    },
+    {
+      "path": "bin/krb5_64.dll",
+      "size": 1237632,
+      "sha256": "1f949af6bd3b44a10f30e3c96357bb7389d13fe4368de98a5924aec6f6d4c501"
+    },
+    {
+      "path": "bin/krbcc64.dll",
+      "size": 122496,
+      "sha256": "e82be4d24c02eb13d2a8c9fcb2fc7424c4b13219a3427c0f39705616c2fbb98e"
+    },
+    {
+      "path": "bin/libcrypto-3-x64.dll",
+      "size": 7155856,
+      "sha256": "6992b28c9f2f57982e3d89f170d3ff3cdc3755cb1d0d0a527d6c30b941c5e787"
+    },
+    {
+      "path": "bin/libmecab.dll",
+      "size": 1849984,
+      "sha256": "ed872e45f590857bacec31d001c90d07e2c33359e4a1dee2543253b1cffce9c3"
+    },
+    {
+      "path": "bin/libprotobuf-lite.dll",
+      "size": 674960,
+      "sha256": "ad26d57b4ff9f1418f8ee876cb8620ec0a948012c5676f747b9911561558589a"
+    },
+    {
+      "path": "bin/libprotobuf.dll",
+      "size": 4205192,
+      "sha256": "0dc5396331f92213f8685095d04f4ac967334889d5b7ca40bfa686e17053fafe"
+    },
+    {
+      "path": "bin/libsasl.dll",
+      "size": 120960,
+      "sha256": "757feec6e63bb5d46e14ad44f40ec5b6db1656811c1baddc57c2094730133ed6"
+    },
+    {
+      "path": "bin/libssl-3-x64.dll",
+      "size": 1315976,
+      "sha256": "c8f44d315ab2140a5df7dea4aefcb579b984bb3116272d8633f47b574b34f454"
+    },
+    {
+      "path": "bin/myisamchk.exe",
+      "size": 6681728,
+      "sha256": "6741cb3d77dfef99fb47cf1cc654928c0676c7b9b6b6e4b369234c87dcabac86"
+    },
+    {
+      "path": "bin/myisamlog.exe",
+      "size": 6524032,
+      "sha256": "f1f02352a56c5459b0098a7de7eb5390b4e5da4adc63489706bb1e15cf88e2f6"
+    },
+    {
+      "path": "bin/myisampack.exe",
+      "size": 6587016,
+      "sha256": "5ccf50fe430b782056ca3fdef5c79e39b84682259369f2e2eb6e6ab6ca82cc89"
+    },
+    {
+      "path": "bin/myisam_ftdump.exe",
+      "size": 6563976,
+      "sha256": "11737445ca4186eb00b2d5f5b3212036f76857606c37d0080703a1d31a026c2b"
+    },
+    {
+      "path": "bin/mysql.exe",
+      "size": 7177848,
+      "sha256": "66994f521874606872630d3909a08d54db0ca1ca831d4348be5b26b80ab41ea2"
+    },
+    {
+      "path": "bin/mysqladmin.exe",
+      "size": 7053448,
+      "sha256": "79579f5aee74db46a8a3a1c452f9f9eafa552e425dd55e23bb48db64a9604ce3"
+    },
+    {
+      "path": "bin/mysqlbinlog.exe",
+      "size": 7575176,
+      "sha256": "afd551ff8637f45db79993ee1580896f1c193ae74dd4362259d1f8ae74652190"
+    },
+    {
+      "path": "bin/mysqlcheck.exe",
+      "size": 7060616,
+      "sha256": "35d69b0372139fa4773454704fc11dec40a4bb8801049e161cedd2dd6893de41"
+    },
+    {
+      "path": "bin/mysqld.exe",
+      "size": 51604608,
+      "sha256": "b83561f885785133b79cfe53f225dffbdbdec160ea54b5245cfb30cc7a440fa7"
+    },
+    {
+      "path": "bin/mysqldump.exe",
+      "size": 7143552,
+      "sha256": "f263d3a563604ff4c5f2a38d1f2398c356ee200e0692425d410cba19c0ab791e"
+    },
+    {
+      "path": "bin/mysqldumpslow.pl",
+      "size": 7932,
+      "sha256": "bf37e785b3f610a35ab4ea2773df0f4e46622bb6e7c0e90d33ea15484b114344"
+    },
+    {
+      "path": "bin/mysqld_multi.pl",
+      "size": 28827,
+      "sha256": "cf4b493eb48fa5d31c97606b8a70fdfc4534a98644210138e08aaa7b996f3580"
+    },
+    {
+      "path": "bin/mysqlimport.exe",
+      "size": 7047304,
+      "sha256": "278bcc71089e5bf9037e33c001eb3f05388427beac36b2529f3607e54ad58d60"
+    },
+    {
+      "path": "bin/mysqlshow.exe",
+      "size": 7043712,
+      "sha256": "631a6b19bcf8e6785a4008f45bc4c285e1ef3834f208453ad387df7bc9430596"
+    },
+    {
+      "path": "bin/mysqlslap.exe",
+      "size": 7063168,
+      "sha256": "e9ac50e197fe29b48227ccd0c08e8f334c4208b0770b8e1dc627158e94648fd4"
+    },
+    {
+      "path": "bin/mysql_configurator.exe",
+      "size": 5995160,
+      "sha256": "59997f70a2f86599a4bc4882e6fa9097b9a3a9ffb7410869831ec6faa72b07c4"
+    },
+    {
+      "path": "bin/mysql_config_editor.exe",
+      "size": 6321816,
+      "sha256": "687dd5a66afd35a8727f5db85f71c22f0789332dca01cc54257f50280a506ca3"
+    },
+    {
+      "path": "bin/mysql_migrate_keyring.exe",
+      "size": 7137944,
+      "sha256": "ec3b181cf91249a37d8975e6c8e42324a1e17265168ea7e530e510d2a58f7bce"
+    },
+    {
+      "path": "bin/mysql_secure_installation.exe",
+      "size": 7041184,
+      "sha256": "0148f80e77a5e6ab23df174d52d6a7ee687165baa1c3f7e51a33d8a0532a0944"
+    },
+    {
+      "path": "bin/mysql_tzinfo_to_sql.exe",
+      "size": 6253720,
+      "sha256": "8e0c45243f0a20f89c7eaa885d0004a37a72819defecb0c2c9d17eee53b816e9"
+    },
+    {
+      "path": "bin/my_print_defaults.exe",
+      "size": 6306960,
+      "sha256": "b92488434b6a05a7ea6e5d92990601d57b832066a2ac5acbb3588833dbba569a"
+    },
+    {
+      "path": "bin/perror.exe",
+      "size": 7255680,
+      "sha256": "f001eeb13754d191c93aa3f156fb71d756d47acfa92d89cb46b5bfc7c94123b5"
+    },
+    {
+      "path": "bin/sasl2/saslGSSAPI.dll",
+      "size": 46728,
+      "sha256": "4e048d77d5916a315f34e6ffc4ce408ef87c1c864e49e03403b6738cac922040"
+    },
+    {
+      "path": "bin/sasl2/saslSCRAM.dll",
+      "size": 57472,
+      "sha256": "659428856d34ca342f158250ad0e1577d652c101c2eac6d05cfa426a4a8f041e"
+    },
+    {
+      "path": "bin/xpprof64.dll",
+      "size": 64640,
+      "sha256": "1e739ebc65e8b679ff747c469b7a018a50115b2370a424f72c21d029588d8bad"
+    },
+    {
+      "path": "docs/INFO_BIN",
+      "size": 11178,
+      "sha256": "3f5424add2c8c9169664c97527f81a135907e08f016c89e1ca56a27eab35229c"
+    },
+    {
+      "path": "docs/INFO_SRC",
+      "size": 216,
+      "sha256": "a70c88800475d2a86a83b85b4bba161e14b14cec6bdd2d6f624bfd3392910daf"
+    },
+    {
+      "path": "lib/libmysql.dll",
+      "size": 7031424,
+      "sha256": "fd8c1fa3ffda4c5b01081a9c283fe9063cf0ae6f20a980081e9afbdbbded9121"
+    },
+    {
+      "path": "lib/mecab/dic/ipadic_euc-jp/char.bin",
+      "size": 262496,
+      "sha256": "81bba502ae48fa005a374819f15e44452eb68086a8b323ec20a044d514400832"
+    },
+    {
+      "path": "lib/mecab/dic/ipadic_euc-jp/dicrc",
+      "size": 693,
+      "sha256": "add6bb131a75e69478961ea59712541ace3779f7c5daa4da80d281f097c9d4d1"
+    },
+    {
+      "path": "lib/mecab/dic/ipadic_euc-jp/left-id.def",
+      "size": 55910,
+      "sha256": "6d07aea525bc9730a4a07d12cc9f50abef4700431c938840b68896e79c761fe4"
+    },
+    {
+      "path": "lib/mecab/dic/ipadic_euc-jp/matrix.bin",
+      "size": 3463716,
+      "sha256": "ee44d7350cdcb680ebd699f83e121be1dc63310f8832d55bcb537a068177611a"
+    },
+    {
+      "path": "lib/mecab/dic/ipadic_euc-jp/pos-id.def",
+      "size": 1477,
+      "sha256": "6a8a84243800970fd33327800d71477dbcacb3af71a7de572e1a98ce18f7fafb"
+    },
+    {
+      "path": "lib/mecab/dic/ipadic_euc-jp/rewrite.def",
+      "size": 6241,
+      "sha256": "df412c702cfa8e061500ee9aa77c0e4d4e182eee2790b05cbe8be7adf784bc03"
+    },
+    {
+      "path": "lib/mecab/dic/ipadic_euc-jp/right-id.def",
+      "size": 55910,
+      "sha256": "6d07aea525bc9730a4a07d12cc9f50abef4700431c938840b68896e79c761fe4"
+    },
+    {
+      "path": "lib/mecab/dic/ipadic_euc-jp/sys.dic",
+      "size": 37779919,
+      "sha256": "4c0af8c82992fc5c47d925bb65d24b83e3ff1769d77d0d0c903b2de85fd662b9"
+    },
+    {
+      "path": "lib/mecab/dic/ipadic_euc-jp/unk.dic",
+      "size": 5409,
+      "sha256": "4db635218d0c9ab6248c43cf07a539b8452933de21248c341b36a99955837203"
+    },
+    {
+      "path": "lib/mecab/dic/ipadic_sjis/char.bin",
+      "size": 262496,
+      "sha256": "81bba502ae48fa005a374819f15e44452eb68086a8b323ec20a044d514400832"
+    },
+    {
+      "path": "lib/mecab/dic/ipadic_sjis/dicrc",
+      "size": 693,
+      "sha256": "add6bb131a75e69478961ea59712541ace3779f7c5daa4da80d281f097c9d4d1"
+    },
+    {
+      "path": "lib/mecab/dic/ipadic_sjis/left-id.def",
+      "size": 55910,
+      "sha256": "6d07aea525bc9730a4a07d12cc9f50abef4700431c938840b68896e79c761fe4"
+    },
+    {
+      "path": "lib/mecab/dic/ipadic_sjis/matrix.bin",
+      "size": 3463716,
+      "sha256": "ee44d7350cdcb680ebd699f83e121be1dc63310f8832d55bcb537a068177611a"
+    },
+    {
+      "path": "lib/mecab/dic/ipadic_sjis/pos-id.def",
+      "size": 1477,
+      "sha256": "6a8a84243800970fd33327800d71477dbcacb3af71a7de572e1a98ce18f7fafb"
+    },
+    {
+      "path": "lib/mecab/dic/ipadic_sjis/rewrite.def",
+      "size": 6241,
+      "sha256": "df412c702cfa8e061500ee9aa77c0e4d4e182eee2790b05cbe8be7adf784bc03"
+    },
+    {
+      "path": "lib/mecab/dic/ipadic_sjis/right-id.def",
+      "size": 55910,
+      "sha256": "6d07aea525bc9730a4a07d12cc9f50abef4700431c938840b68896e79c761fe4"
+    },
+    {
+      "path": "lib/mecab/dic/ipadic_sjis/sys.dic",
+      "size": 37635899,
+      "sha256": "306079c3fd16f6a49c73e72089f3bdf8b9a000b255be72c089921823de00f520"
+    },
+    {
+      "path": "lib/mecab/dic/ipadic_sjis/unk.dic",
+      "size": 5409,
+      "sha256": "a4d0b5e9562699a232382a3c4491dfd83269f993c6be5e33ccb6a0138e450552"
+    },
+    {
+      "path": "lib/mecab/dic/ipadic_utf-8/char.bin",
+      "size": 262496,
+      "sha256": "81bba502ae48fa005a374819f15e44452eb68086a8b323ec20a044d514400832"
+    },
+    {
+      "path": "lib/mecab/dic/ipadic_utf-8/dicrc",
+      "size": 693,
+      "sha256": "add6bb131a75e69478961ea59712541ace3779f7c5daa4da80d281f097c9d4d1"
+    },
+    {
+      "path": "lib/mecab/dic/ipadic_utf-8/left-id.def",
+      "size": 55910,
+      "sha256": "6d07aea525bc9730a4a07d12cc9f50abef4700431c938840b68896e79c761fe4"
+    },
+    {
+      "path": "lib/mecab/dic/ipadic_utf-8/matrix.bin",
+      "size": 3463716,
+      "sha256": "ee44d7350cdcb680ebd699f83e121be1dc63310f8832d55bcb537a068177611a"
+    },
+    {
+      "path": "lib/mecab/dic/ipadic_utf-8/pos-id.def",
+      "size": 1477,
+      "sha256": "6a8a84243800970fd33327800d71477dbcacb3af71a7de572e1a98ce18f7fafb"
+    },
+    {
+      "path": "lib/mecab/dic/ipadic_utf-8/rewrite.def",
+      "size": 6241,
+      "sha256": "df412c702cfa8e061500ee9aa77c0e4d4e182eee2790b05cbe8be7adf784bc03"
+    },
+    {
+      "path": "lib/mecab/dic/ipadic_utf-8/right-id.def",
+      "size": 55910,
+      "sha256": "6d07aea525bc9730a4a07d12cc9f50abef4700431c938840b68896e79c761fe4"
+    },
+    {
+      "path": "lib/mecab/dic/ipadic_utf-8/sys.dic",
+      "size": 49199027,
+      "sha256": "aeff6b7473d14fdba40f2505921c31c7ea52db661dfdbfed9ff930cca2fa799a"
+    },
+    {
+      "path": "lib/mecab/dic/ipadic_utf-8/unk.dic",
+      "size": 5690,
+      "sha256": "6903ccc5b0bc4dceeaa53b005da1b5b6c60636b581ce4aa6b9c41997d958e473"
+    },
+    {
+      "path": "lib/mecab/etc/mecabrc",
+      "size": 1432,
+      "sha256": "f76918ac809ff40829cf42070f5cdb07bbe232c3e2f21c8e8c6e70e4c4d16af2"
+    },
+    {
+      "path": "lib/plugin/adt_null.dll",
+      "size": 38016,
+      "sha256": "4602072e539bfe56147588ecec140244a2c8650cf08bb719bb2e8240cd3e11b8"
+    },
+    {
+      "path": "lib/plugin/authentication_kerberos_client.dll",
+      "size": 6286512,
+      "sha256": "3d38f0bcaf645974a852380cf0a728e00cd62195d64c119fdeebfde2b5ff96a2"
+    },
+    {
+      "path": "lib/plugin/authentication_ldap_sasl_client.dll",
+      "size": 6279344,
+      "sha256": "56e4126d31e2776f4c0a7e31567054f63d0d249e82ff7f266bfd58fc6d5c30b7"
+    },
+    {
+      "path": "lib/plugin/authentication_oci_client.dll",
+      "size": 6333088,
+      "sha256": "6a6555562aaa74d66587089dda7f0a7f03eeb9e1aa452052f15744c921e0a0a4"
+    },
+    {
+      "path": "lib/plugin/authentication_webauthn_client.dll",
+      "size": 6274736,
+      "sha256": "b0189cf185c5e23755047b9d92e286a2a32f47523d3102d655a8dab5a4bd1d78"
+    },
+    {
+      "path": "lib/plugin/component_audit_api_message_emit.dll",
+      "size": 35504,
+      "sha256": "72ed4e7a7bfd6ee8b527227ff48c2485b5a25d65a99be17648e25c7742eff27c"
+    },
+    {
+      "path": "lib/plugin/component_keyring_file.dll",
+      "size": 1323680,
+      "sha256": "1b937db6d11a739a8014442e1bb78209562c9b0e818c52b9f057017de830b860"
+    },
+    {
+      "path": "lib/plugin/component_log_filter_dragnet.dll",
+      "size": 44200,
+      "sha256": "e546ca032f571e2baea95bb216d3fdb85ec73a4b2c2dd6aeebd58322ef478b97"
+    },
+    {
+      "path": "lib/plugin/component_log_sink_json.dll",
+      "size": 47264,
+      "sha256": "e3b59d1d52c84b37e4a6c38a500eca6c035071664873153604eb7f326f9305ce"
+    },
+    {
+      "path": "lib/plugin/component_log_sink_syseventlog.dll",
+      "size": 31920,
+      "sha256": "e151602010c7ef87a61f2373759c452d6f1f03db0a181df2204d127819d2828f"
+    },
+    {
+      "path": "lib/plugin/component_mysqlbackup.dll",
+      "size": 56472,
+      "sha256": "6fc8a4d03b8b81112dca564156e9f948b062a0bbd51de42b89abb261f39517ba"
+    },
+    {
+      "path": "lib/plugin/component_query_attributes.dll",
+      "size": 25256,
+      "sha256": "5cb59687a77bed42d2d2e2102c6606c64bfe1933506f6e65ee823836bd9775f1"
+    },
+    {
+      "path": "lib/plugin/component_reference_cache.dll",
+      "size": 72352,
+      "sha256": "6e2374d3657740bba8e2d62b971cbcc7d30c2885af0bf14db21bb50ce510bd93"
+    },
+    {
+      "path": "lib/plugin/component_validate_password.dll",
+      "size": 79016,
+      "sha256": "37c31879d73b9599d5c6bd9a1a3d34e8e0821b02ef2e60748cd855693af12e39"
+    },
+    {
+      "path": "lib/plugin/connection_control.dll",
+      "size": 58520,
+      "sha256": "aad6f932a099446f3bb47cb6c838a41004ed0b6bb0d2fbcf1f9ebcb1d082515b"
+    },
+    {
+      "path": "lib/plugin/ddl_rewriter.dll",
+      "size": 82056,
+      "sha256": "acf844f5c5530ec43e3032799a7e11b1d733fc9a345dfa0635a3d11bcf2650c8"
+    },
+    {
+      "path": "lib/plugin/group_replication.dll",
+      "size": 2203792,
+      "sha256": "b6dbc3fd3de1a8bb90c647f9dbe73dc66d6a6ceff14bffead378852811c34d78"
+    },
+    {
+      "path": "lib/plugin/ha_example.dll",
+      "size": 45192,
+      "sha256": "8a018d1118aa6301e84fbe93debc3e2fb8950918d829c311067c9526b8cb523d"
+    },
+    {
+      "path": "lib/plugin/ha_mock.dll",
+      "size": 55424,
+      "sha256": "1e3ba806fa499d8b93ba90a4381c449aa53e06660e41aebefed7740496c165f0"
+    },
+    {
+      "path": "lib/plugin/keyring_udf.dll",
+      "size": 38536,
+      "sha256": "8e4badd14c3060eef16c3b7d1714419808f5543a9d7d2463a4cf4e1bc4e12fae"
+    },
+    {
+      "path": "lib/plugin/libpluginmecab.dll",
+      "size": 42640,
+      "sha256": "1bbb036b3c988d3bbd8cd3fee6b6d8267b0018720c71d8233cf963dec17cdc9f"
+    },
+    {
+      "path": "lib/plugin/locking_service.dll",
+      "size": 27280,
+      "sha256": "bc8480037fc2c9b9debe7448420679da14d565ce543b384e85d269c358a0d891"
+    },
+    {
+      "path": "lib/plugin/mypluglib.dll",
+      "size": 27776,
+      "sha256": "48182de97e6ce3f15f1d91e6701cafeda7dc178137f9e28597d4a23ce3b3ab1a"
+    },
+    {
+      "path": "lib/plugin/mysql_clone.dll",
+      "size": 154760,
+      "sha256": "d1b18afe2410066a108b50fbc90b12f0bb38c89dfb7f320a3e1c1679d64c4c9d"
+    },
+    {
+      "path": "lib/plugin/mysql_no_login.dll",
+      "size": 26768,
+      "sha256": "37c48511a83a7f512f9876ec33e54fec2a34b385505fb8570070ec2750596d76"
+    },
+    {
+      "path": "lib/plugin/rewriter.dll",
+      "size": 72320,
+      "sha256": "9374fb0f1e2671c0b5e4e024ae2dead079fe468d4b03ef8befb5482bff8a3a2e"
+    },
+    {
+      "path": "lib/plugin/rewrite_example.dll",
+      "size": 26768,
+      "sha256": "bfa6f5160b54a52a5c4f069ee09dfd58df28dc273273f443f4b232f4de77e92d"
+    },
+    {
+      "path": "lib/plugin/semisync_master.dll",
+      "size": 92816,
+      "sha256": "12e3f05a22113899721fbdec3e845c0b7df5241f117e5dd0baefa24f0abc0a7e"
+    },
+    {
+      "path": "lib/plugin/semisync_replica.dll",
+      "size": 47248,
+      "sha256": "5cf4a206b26bbbe38d6f8bd41f454158c569c6e80bfd9d6560e38decdba4420b"
+    },
+    {
+      "path": "lib/plugin/semisync_slave.dll",
+      "size": 48784,
+      "sha256": "94dc01e1f2ef1ddb79c41a38bb247450c3c5bba9a158a0b047a218370e7df681"
+    },
+    {
+      "path": "lib/plugin/semisync_source.dll",
+      "size": 92304,
+      "sha256": "4787266c98bcc6485142805312114d302a302b20946a39af8f5ae90dcf4fc4f2"
+    },
+    {
+      "path": "lib/plugin/validate_password.dll",
+      "size": 60048,
+      "sha256": "3884fae935c1b008bf2f8e23bbd3ba3c9ab32890819832b09a680a26fda919de"
+    },
+    {
+      "path": "lib/plugin/version_token.dll",
+      "size": 64648,
+      "sha256": "2b9775ce354e6ac52d4ee32924265897e27a454aef4453d8477043c7fdee3f74"
+    },
+    {
+      "path": "lib/private/icudt77l/brkitr/burmesedict.dict",
+      "size": 254448,
+      "sha256": "99f1b2afe6672bc495a872e85dd5ed2be5ffc4d9b8377deff2dbc18a2b4538e5"
+    },
+    {
+      "path": "lib/private/icudt77l/brkitr/char.brk",
+      "size": 13360,
+      "sha256": "2a0e1730d20a0dde9611149e9fcf12a0f945cb22bfaa681a8fd6091f71796251"
+    },
+    {
+      "path": "lib/private/icudt77l/brkitr/cjdict.dict",
+      "size": 2007296,
+      "sha256": "3850478c713b2004cbb96ef4b9f049caf16d6faf32a883d2e63c09659d0c59c7"
+    },
+    {
+      "path": "lib/private/icudt77l/brkitr/de.res",
+      "size": 2992,
+      "sha256": "a08312a9303b1373f7129bdb6ebd798cb39073476f75d30f1602c0c6a99c05b2"
+    },
+    {
+      "path": "lib/private/icudt77l/brkitr/el.res",
+      "size": 160,
+      "sha256": "de0af623cf2c0440bfd567bb89116f02c78dc666b7fe3f62baaa47315937ebe3"
+    },
+    {
+      "path": "lib/private/icudt77l/brkitr/en.res",
+      "size": 1776,
+      "sha256": "74c5fbfbfc3517d5383a84f9cbfbd0e3ab7c47fbdd09320d0429938fdb6ca984"
+    },
+    {
+      "path": "lib/private/icudt77l/brkitr/en_US.res",
+      "size": 80,
+      "sha256": "ee066818c0bfc2e92c9f4486f3087c3669b998786b0363a04467136d80c00d8b"
+    },
+    {
+      "path": "lib/private/icudt77l/brkitr/en_US_POSIX.res",
+      "size": 160,
+      "sha256": "f0b36c871bf8cde086d24478f43c465de47a62ad267922022f0b2cf29bc5f94c"
+    },
+    {
+      "path": "lib/private/icudt77l/brkitr/es.res",
+      "size": 2176,
+      "sha256": "4db4b3ef626368fa010b546855296c5fa1556e5843d62fa5647e19bbe25cfdc6"
+    },
+    {
+      "path": "lib/private/icudt77l/brkitr/fi.res",
+      "size": 80,
+      "sha256": "ee066818c0bfc2e92c9f4486f3087c3669b998786b0363a04467136d80c00d8b"
+    },
+    {
+      "path": "lib/private/icudt77l/brkitr/fr.res",
+      "size": 1200,
+      "sha256": "d95b1d5e778b175096289618ba726c7f31844609cdd1a69b5bb6748873f2d7ce"
+    },
+    {
+      "path": "lib/private/icudt77l/brkitr/it.res",
+      "size": 688,
+      "sha256": "86b433f7a2456522c6c9310e6a23d7783e414f72c66dd5d4643096225caeec6a"
+    },
+    {
+      "path": "lib/private/icudt77l/brkitr/ja.res",
+      "size": 2784,
+      "sha256": "2cf394b51397cf3bc8f172275e1a956ee243658caa1120ef13c809ba276aeb5a"
+    },
+    {
+      "path": "lib/private/icudt77l/brkitr/khmerdict.dict",
+      "size": 445552,
+      "sha256": "080582d61636c7f9039d65bc37452d100faa07f3ba7f5e21aa32aa1672441413"
+    },
+    {
+      "path": "lib/private/icudt77l/brkitr/ko.res",
+      "size": 544,
+      "sha256": "7af4ffd62b4dffaf18f453701fd37361f6c3c2d05a1edce201c45f37949f882c"
+    },
+    {
+      "path": "lib/private/icudt77l/brkitr/laodict.dict",
+      "size": 162624,
+      "sha256": "b044d4232c2fea926b88f6047c4efcd683e7cf0573cf9f60990aa7500c60ef0c"
+    },
+    {
+      "path": "lib/private/icudt77l/brkitr/line.brk",
+      "size": 73232,
+      "sha256": "f8cd15f438d9fa65ff49de922d15affa9ce265d1abf80a73138801015c57de4c"
+    },
+    {
+      "path": "lib/private/icudt77l/brkitr/line_cj.brk",
+      "size": 73264,
+      "sha256": "c87df2dae2f91152dc730c8ef67db90893b2bc03257be8e740002f7ac4bb2746"
+    },
+    {
+      "path": "lib/private/icudt77l/brkitr/line_loose.brk",
+      "size": 75392,
+      "sha256": "9fced216b2c859c83b0ed5bdb383d4e966d83b96efba1c70a89e0106ddc1e107"
+    },
+    {
+      "path": "lib/private/icudt77l/brkitr/line_loose_cj.brk",
+      "size": 80928,
+      "sha256": "82178ed973312864aab2c54beff3e58f7c4b0c5c50bb40e5a0b6a0f59cf6b38c"
+    },
+    {
+      "path": "lib/private/icudt77l/brkitr/line_loose_phrase_cj.brk",
+      "size": 86336,
+      "sha256": "5768526c010a78a2b8f5d19ed8db15a08b0490652343d82cd8c50e169640d527"
+    },
+    {
+      "path": "lib/private/icudt77l/brkitr/line_normal.brk",
+      "size": 73120,
+      "sha256": "66069ccbc23cb0f63ed965a87f393af791fe66cc8f873ca400a6fcd2c92bfeab"
+    },
+    {
+      "path": "lib/private/icudt77l/brkitr/line_normal_cj.brk",
+      "size": 74224,
+      "sha256": "e85343e49ff4b1e13c9ffd5c940798e5f115ef5a90d30fce3921bd06de24b055"
+    },
+    {
+      "path": "lib/private/icudt77l/brkitr/line_normal_phrase_cj.brk",
+      "size": 79424,
+      "sha256": "cd6160b0fcbe651952a4ace22c3b969cacb4cc98d9fefde14c43391ed842ebf5"
+    },
+    {
+      "path": "lib/private/icudt77l/brkitr/line_phrase_cj.brk",
+      "size": 78416,
+      "sha256": "154ba9a8ab4b3b3183bcbf758fc5aca5f10cac9efb80eb584a41a876db5ee30e"
+    },
+    {
+      "path": "lib/private/icudt77l/brkitr/pt.res",
+      "size": 2288,
+      "sha256": "200c5c8d1a5d1ef45a57b40517cb966842ce9fa63d0147f8f6fb210a8a8dbefe"
+    },
+    {
+      "path": "lib/private/icudt77l/brkitr/res_index.res",
+      "size": 240,
+      "sha256": "0ef57bf600536ec93b119a45e72df7033a41e790e9693dfc27ec307d4fbd806e"
+    },
+    {
+      "path": "lib/private/icudt77l/brkitr/root.res",
+      "size": 800,
+      "sha256": "49a4511b6d9430b5d0c8938e4f7275a35723fb48febd6e6aa198367cfcc6681a"
+    },
+    {
+      "path": "lib/private/icudt77l/brkitr/ru.res",
+      "size": 336,
+      "sha256": "9e934ecf7041a7aead1c5aa813582e36b21565fb626e762cf6247c709d936614"
+    },
+    {
+      "path": "lib/private/icudt77l/brkitr/sent.brk",
+      "size": 19920,
+      "sha256": "201c63fbd84e3068f4a9f87c40d1acee56e98d55ce9c13d49aca1efccee45e59"
+    },
+    {
+      "path": "lib/private/icudt77l/brkitr/sent_el.brk",
+      "size": 19936,
+      "sha256": "99b68579f3d559d89df07fbb5d7d750369a229be068bc8b7615b39a752e59e37"
+    },
+    {
+      "path": "lib/private/icudt77l/brkitr/sv.res",
+      "size": 80,
+      "sha256": "ee066818c0bfc2e92c9f4486f3087c3669b998786b0363a04467136d80c00d8b"
+    },
+    {
+      "path": "lib/private/icudt77l/brkitr/thaidict.dict",
+      "size": 126144,
+      "sha256": "ea47ae521cea65077bf047a75d1e9d28c495ec2f8cf4d2734fcb65a888229be9"
+    },
+    {
+      "path": "lib/private/icudt77l/brkitr/title.brk",
+      "size": 12272,
+      "sha256": "db249734898a13360e54e00e21bcf67aa1f2b16b355ceff5d1ca65a3a7c38083"
+    },
+    {
+      "path": "lib/private/icudt77l/brkitr/word.brk",
+      "size": 22960,
+      "sha256": "c866c32a0b51947d331281dc555f8e3c979f8f292045a17165e42bc03d977224"
+    },
+    {
+      "path": "lib/private/icudt77l/brkitr/word_POSIX.brk",
+      "size": 22976,
+      "sha256": "d0c1f161990711c689546b72304a11a793806ec2313f98faec25097ac2be3733"
+    },
+    {
+      "path": "lib/private/icudt77l/brkitr/zh.res",
+      "size": 272,
+      "sha256": "35e7c34f5b94dda401bfc8d79c88dacc80a6985d821df44b5b8b667eacfe3646"
+    },
+    {
+      "path": "lib/private/icudt77l/brkitr/zh_Hant.res",
+      "size": 272,
+      "sha256": "35e7c34f5b94dda401bfc8d79c88dacc80a6985d821df44b5b8b667eacfe3646"
+    },
+    {
+      "path": "lib/private/icudt77l/cnvalias.icu",
+      "size": 64016,
+      "sha256": "e833f51cb0a0874388cfef50c165af672cf2178c497b9d1bc70270744becf24b"
+    },
+    {
+      "path": "lib/private/icudt77l/uemoji.icu",
+      "size": 13296,
+      "sha256": "011733fe9b3401dabc6ec4c87cce8503a81fbe8b1c8548353fade634b95c99f5"
+    },
+    {
+      "path": "lib/private/icudt77l/ulayout.icu",
+      "size": 14224,
+      "sha256": "e3c39ae4966544703e89ac80fc64ed3b55f00a2ef67d810635dc010245ba154b"
+    },
+    {
+      "path": "lib/private/icudt77l/unames.icu",
+      "size": 337136,
+      "sha256": "262483b0171456733567fd1e3d2a7768373c181463a26ceb092fc250f081ad36"
+    },
+    {
+      "path": "LICENSE",
+      "size": 259903,
+      "sha256": "cb104b45f22bdecc7517916f792726056912586ffa5f4b1b0322d687bc3f3f1e"
+    },
+    {
+      "path": "README",
+      "size": 666,
+      "sha256": "4f8f901666dfdc5dbd307ff90248eac8c3da030249b630019d982a4e57ba91d5"
+    },
+    {
+      "path": "share/bulgarian/errmsg.sys",
+      "size": 413608,
+      "sha256": "a62dd4d595f14ac54004b18a4d41c6bf76f2d623f354e4cec208aadd372cae58"
+    },
+    {
+      "path": "share/charsets/armscii8.xml",
+      "size": 6011,
+      "sha256": "d9350c8967f6d5cac862e7d263e36166235a8899eb874f37cbfb56c48feab687"
+    },
+    {
+      "path": "share/charsets/ascii.xml",
+      "size": 5997,
+      "sha256": "4f4183f7c6482d28541627854849e80697233fa8f14a6d17a65432dd2472b5f2"
+    },
+    {
+      "path": "share/charsets/cp1250.xml",
+      "size": 8726,
+      "sha256": "36d50fa4b2f002b14a0cba2c0af4ba8fe327ac2ccac249647e93ee2c6f033964"
+    },
+    {
+      "path": "share/charsets/cp1251.xml",
+      "size": 8812,
+      "sha256": "fce7f7197770f0b1e64dd3ddf91edca9ba30d4411e14ddd4781b00c5d2d62fc3"
+    },
+    {
+      "path": "share/charsets/cp1256.xml",
+      "size": 6060,
+      "sha256": "be476c400c55faad610505c9811e5aef4a6bf8d173cd92f5febc84320081c69d"
+    },
+    {
+      "path": "share/charsets/cp1257.xml",
+      "size": 9393,
+      "sha256": "182c37fd78e7a56b7578c738e7aa6336bb3222d831b98b5c41c547ff371d2357"
+    },
+    {
+      "path": "share/charsets/cp850.xml",
+      "size": 5997,
+      "sha256": "b477edfa7c38579fd445dd6aa6ac320bdccbfdacfd8df3be1b01144396cb8744"
+    },
+    {
+      "path": "share/charsets/cp852.xml",
+      "size": 6013,
+      "sha256": "4bfcc35a63ee96b979e433fbf9ac65ab8eecc063cca74bd9e8d2ff9367e22dc3"
+    },
+    {
+      "path": "share/charsets/cp866.xml",
+      "size": 6104,
+      "sha256": "86a0348753ce1acea14a52a205d499a0f8920b293b11bc107d532dcc6c677f2c"
+    },
+    {
+      "path": "share/charsets/dec8.xml",
+      "size": 7020,
+      "sha256": "a40d3f923313b881512830228e3d162766497ea19dca53432faf3b82f6f07695"
+    },
+    {
+      "path": "share/charsets/geostd8.xml",
+      "size": 6007,
+      "sha256": "25d51ded5d8cd437250ebe4441c6baad0b84877a61523718f1914d73f8cbf21c"
+    },
+    {
+      "path": "share/charsets/greek.xml",
+      "size": 6219,
+      "sha256": "e50f290ebbb194d3b5b9eeaddd54e4df16996ee4ce095bef574675e86f8b82bf"
+    },
+    {
+      "path": "share/charsets/hebrew.xml",
+      "size": 6002,
+      "sha256": "c5ec1e30390bb4abb80f7b2e45e40b03a8121d91a99fbf27fb9ca5498c797fa0"
+    },
+    {
+      "path": "share/charsets/hp8.xml",
+      "size": 5993,
+      "sha256": "b744eeb5dbe430c280b6adbb741eb1e770720eb403adba6fd48069dbe3126180"
+    },
+    {
+      "path": "share/charsets/Index.xml",
+      "size": 19525,
+      "sha256": "610942fc8428f982b4212b516d4127e7904261d43c9fd5f7c8ea0f2693f0f2e8"
+    },
+    {
+      "path": "share/charsets/keybcs2.xml",
+      "size": 6020,
+      "sha256": "fa0bd1b6b8d7c6bdbf4b27ac5416eb2e8d367c556de53c9334fe5212a17ce15a"
+    },
+    {
+      "path": "share/charsets/koi8r.xml",
+      "size": 6001,
+      "sha256": "3ed078c3a348050e9478ac6c3354e85dc1464dd8bb4031efbc8afc179326f936"
+    },
+    {
+      "path": "share/charsets/koi8u.xml",
+      "size": 7023,
+      "sha256": "bff681bddc3035c3597fb25bd0886cff5a584b50893e87d140675663a13a5da9"
+    },
+    {
+      "path": "share/charsets/latin1.xml",
+      "size": 10301,
+      "sha256": "8b624470fd4de341b5cd4d45073f763116ff610ca0480f5630ad9ae06a11fea5"
+    },
+    {
+      "path": "share/charsets/latin2.xml",
+      "size": 7723,
+      "sha256": "90dc04a5b03985ca70857d835ed154f619139b56e7aa7ca2bc27ae920baa15c0"
+    },
+    {
+      "path": "share/charsets/latin5.xml",
+      "size": 6000,
+      "sha256": "10abc670fd6eefef5c0024d18e0df2faa88a43ee4497be6bfc916d060ee98dbe"
+    },
+    {
+      "path": "share/charsets/latin7.xml",
+      "size": 7929,
+      "sha256": "17344a68c87f0fb4db5cf6966bbaf12fb9e398bbcbd63d169c7795c24b341919"
+    },
+    {
+      "path": "share/charsets/macce.xml",
+      "size": 8538,
+      "sha256": "7aea20421e5926b329af00e52d0b309a00bc70e982ce107a2107528f08ae3ed7"
+    },
+    {
+      "path": "share/charsets/macroman.xml",
+      "size": 8549,
+      "sha256": "1bb8872b21a052cc0d3abc55c09642ec5bc1bd5542fb5b46d95c7c4728ba72a7"
+    },
+    {
+      "path": "share/charsets/README",
+      "size": 1749,
+      "sha256": "0af62ce1ae651e980006f2e9d29bd2f24e1cd18c6a0b1914e9c437cc80e990ab"
+    },
+    {
+      "path": "share/charsets/swe7.xml",
+      "size": 7021,
+      "sha256": "b603c8791b7962d165d359bf4decd3a702375115011bee00cab46363fa267640"
+    },
+    {
+      "path": "share/czech/errmsg.sys",
+      "size": 413530,
+      "sha256": "b7b76c710c7cb9c596144a7f388a4fb4dbdb11ba78aa30b71534e7698edcb0c3"
+    },
+    {
+      "path": "share/danish/errmsg.sys",
+      "size": 413504,
+      "sha256": "a46e1d5a3ff0859a68fc2b72e028aec8decdc69af2ce2dbe9b642f457cf40571"
+    },
+    {
+      "path": "share/dictionary.txt",
+      "size": 25575,
+      "sha256": "d031a0f90d77595abe02112adf69a86560e3168ba379fd450176a8e070763077"
+    },
+    {
+      "path": "share/dutch/errmsg.sys",
+      "size": 414518,
+      "sha256": "2d83d08e6c92348caa3ec98bb29dd0b79c233ad39231fe53e82c5f716a337473"
+    },
+    {
+      "path": "share/english/errmsg.sys",
+      "size": 412771,
+      "sha256": "f115353d47fa8301b2dc46de5a6a570f32658e40a1f43c50176058d1d074bfea"
+    },
+    {
+      "path": "share/estonian/errmsg.sys",
+      "size": 413035,
+      "sha256": "1ac8d5999d9b043f5de4ad7ad736f404310fe53f41492d705ad86a0650de91eb"
+    },
+    {
+      "path": "share/french/errmsg.sys",
+      "size": 414144,
+      "sha256": "03c10c9eb380b6ab248bf724cd572641fd9a58e2c0f8eeeb102d2263672e90ae"
+    },
+    {
+      "path": "share/german/errmsg.sys",
+      "size": 420330,
+      "sha256": "c79d16116f22e33c8cad2e5cdb8d1bcc43ed01ccc5e5668c1c034dd2dba5894c"
+    },
+    {
+      "path": "share/greek/errmsg.sys",
+      "size": 419562,
+      "sha256": "766fdea9f1b98a5508d60995d85e014a1ec59fafa9387df504792a8e38857090"
+    },
+    {
+      "path": "share/hungarian/errmsg.sys",
+      "size": 413412,
+      "sha256": "e01e04a5a125e19b9a315417838b5cf4972730d195dcaa4d919c59d312bb8062"
+    },
+    {
+      "path": "share/install_rewriter.sql",
+      "size": 2323,
+      "sha256": "c9faaa48b12878bb85e8bbb791dc6d008ab065f0e0eb15bb643d0759d7608b28"
+    },
+    {
+      "path": "share/italian/errmsg.sys",
+      "size": 414515,
+      "sha256": "aaff28d2cb22112d280ba6cd3d14d1e102327f38c6c6f776a8caaea5006c944c"
+    },
+    {
+      "path": "share/japanese/errmsg.sys",
+      "size": 420140,
+      "sha256": "95eac260831fcec0f51a9434bb2ad6d77b62e927178f2e191a9db158f668d296"
+    },
+    {
+      "path": "share/korean/errmsg.sys",
+      "size": 415811,
+      "sha256": "a4f9b35d44d605a3a64447011ec8beab3962f1a0ca9336fa66d7e6b6dade92d6"
+    },
+    {
+      "path": "share/messages_to_clients.txt",
+      "size": 645546,
+      "sha256": "e331fe816f3dfe9f8382baadc60a1f45dd8f3409f24752030c6d858593f5379c"
+    },
+    {
+      "path": "share/messages_to_error_log.txt",
+      "size": 423178,
+      "sha256": "d55f651263ddac73e607af69186cd78f804a43f329ec87a1172ccff63d0266fd"
+    },
+    {
+      "path": "share/norwegian/errmsg.sys",
+      "size": 412841,
+      "sha256": "02fb05414d5c80c59ef2badffec232abd97095b468169ad8d7a8a07cb6717886"
+    },
+    {
+      "path": "share/norwegian-ny/errmsg.sys",
+      "size": 412894,
+      "sha256": "a3af012ddf76759caba6a3fa45f4fd91e5fe0e15c2604b6cd0c287c6060c9877"
+    },
+    {
+      "path": "share/polish/errmsg.sys",
+      "size": 413754,
+      "sha256": "8949dbe3971ae486086d9407e018feef03981d221e6b6613942598d5d3e4a731"
+    },
+    {
+      "path": "share/portuguese/errmsg.sys",
+      "size": 415662,
+      "sha256": "f4c882f876ee4318718f031e4f51342547800af7510e2b5233f1b6a1cd19eb1a"
+    },
+    {
+      "path": "share/romanian/errmsg.sys",
+      "size": 414483,
+      "sha256": "cd76831685b311344546cfef364861cb3016601991ea77566b38ad7f5e37da4a"
+    },
+    {
+      "path": "share/russian/errmsg.sys",
+      "size": 427956,
+      "sha256": "25e1137a4e36a991ed269b368aaf4c56044e30246d7793fba13b8ab8282c6c45"
+    },
+    {
+      "path": "share/serbian/errmsg.sys",
+      "size": 415103,
+      "sha256": "7e873ee65b8eae2012576d602374aba04f5cfbbc29f684308616715f62f801a0"
+    },
+    {
+      "path": "share/slovak/errmsg.sys",
+      "size": 413297,
+      "sha256": "607139a81d35f7b4e8eed355ebd152b86970a39d7f0e200cd3fddf8c96317239"
+    },
+    {
+      "path": "share/spanish/errmsg.sys",
+      "size": 414371,
+      "sha256": "3989d03dac5b271ca4f51d4647effba1b4052092211b5c5262efff76713d6b95"
+    },
+    {
+      "path": "share/swedish/errmsg.sys",
+      "size": 413584,
+      "sha256": "eabbe970728738f7f8926f8a1335a00f8177a7f6f920134050068e16165fac06"
+    },
+    {
+      "path": "share/ukrainian/errmsg.sys",
+      "size": 422579,
+      "sha256": "e1555e2035b10d88d35071613cdf97730344b219344c7ef8addeda4e20f0135d"
+    },
+    {
+      "path": "share/uninstall_rewriter.sql",
+      "size": 1325,
+      "sha256": "b7ebda2402162219bf0a5954c35ff39f9d0442918d7496b35ff50addaecc8481"
+    }
+  ]
+}

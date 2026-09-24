@@ -62,6 +62,9 @@ class CommunityWSSTests(unittest.IsolatedAsyncioTestCase):
         result = await self.request(ws,'register',username=name,password='rival-test-pass-123',
                                     tamer=next(iter(self.engine.tamers)),starter=self.engine.starters[0])
         self.assertTrue(result['ok'],result)
+        # Community motion and local invitations are field scenarios.
+        result = await self.request(ws, 'digifarm', action='return')
+        self.assertTrue(result['ok'], result)
         return result['state']
 
     async def test_same_world_snapshot_for_two_players_and_actual_rival_motion(self):

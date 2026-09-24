@@ -1,17 +1,61 @@
 # Digimon Venom NXT
 
-**v0.3.0 alpha — native Windows x64 client and dedicated world server**
+**DigiFarm v0.6.0 — native Windows x64 client and dedicated world server.**
 
-**One setup window from database connection to hosting.** Build the complete
-source, then run **`01_SETUP_SERVER.bat`** from the new server folder. The wizard
-checks your XAMPP connection before creating the game database login, offers
-local or public hosting, and reports readiness with actionable error details.
-It can generate the game database password for you; no existing game or player
-account is required. Errors stay visible and diagnostic reports omit passwords.
-The database service's existing password remains unchanged.
+Your tamer now has a private DigiFarm home using the supplied island artwork,
+with up to 100 stored Digimon, gentle wandering, click-to-manage feeding and
+its own original soundtrack. Walk the island as your selected tamer with your
+lead partner following, and use the normal 1×–8× camera controls. Optional
+Friendship DigiMeat raises CAM; six kinds
+of training DigiMeat permanently improve HP, SP, ATK, DEF, INT or SPD. Shop
+purchases and occasional PvE victory drops use authoritative server rules.
+The existing native UI, rivals, arena and FPS improvements are retained.
 
-Read `docs/SETUP.md` or `PASSWORD_SETUP_FIX.txt` for the full procedure. This is the
-complete source release, including the artwork, maps, audio and rival systems.
+This is a **source release**. Rebuild **both the client and world server** on
+Windows x64 with `BUILD_ALL.bat`. Existing portable-server saves are retained;
+do not reset the database or run fresh setup for an upgrade. Follow
+[docs/DIGIFARM_V060.md](docs/DIGIFARM_V060.md) for the feature rules, controls,
+prices and exact update procedure. Previous UI-only upgrade instructions are
+historical and do not apply to v0.6.0.
+
+This corrected **v0.6.0** release includes DigiFarm walking and camera zoom.
+Owners of the earlier v0.6.0 release must also rebuild both applications. The
+replacement patch applies over either the supplied UI2 source or that previous
+v0.6.0 source. Farm position and zoom are saved separately from their field
+counterparts; home stays private and free of wild encounters.
+
+## Retained baseline features
+
+**Rival walking and repeat team training.** Rivals start their walking time when
+scheduled work actually begins, follow continuous collision-checked patrols, and
+arrive at spaced safe positions when changing sectors. Training rounds keep earned
+partners in storage, field younger teams, and bring experienced rivals back to
+quieter eligible maps. Veteran visits to underfilled higher-level sectors are
+limited, followed by a dedicated stretch of normal team training. Arrival
+reservations spread those assignments between sectors. Ranked battles,
+collection, healing and travel continue.
+
+**Fresh portable database setup.** This release includes its own **MySQL Community
+Server 8.4.11 for Windows x64** under `mysql/runtime`. MySQL runs as a separate
+process; every production database file and save stays in `mysql/data` inside the
+server folder. It uses `127.0.0.1:3307` and needs no XAMPP, installed database
+service, external database, or existing administrator password.
+
+This is the **complete source package**, including the game assets and Windows
+MySQL engine. For a new installation, build the Windows applications first, then
+use the generated server folder for play. A new server setup starts with fresh
+accounts and progress; it does not import an older installation. Existing
+portable-baseline players should follow the v0.6.0 upgrade guide to update both
+applications while keeping their accounts and progress.
+
+For day-to-day use, run **START_MYSQL.bat**, then
+**START_WORLD_SERVER_CONSOLE.bat**. When you want to back up or move the server,
+run **STOP_SERVER.bat**, wait for confirmed shutdown, then ZIP the complete server
+folder. Extract that ZIP on another compatible Windows x64 PC and run the same
+launchers to continue. **Never ZIP a running database.**
+
+Read [PORTABLE_SERVER_README.md](PORTABLE_SERVER_README.md) for the short operating
+guide and [docs/SETUP.md](docs/SETUP.md) for the full build and setup procedure.
 
 A playable multiplayer foundation built around the supplied Digimon v7 / Paradox artwork and x2 Dawn maps. The desktop client uses pygame-ce / SDL; the authoritative Python world server owns movement, combat, scanning, inventory and persistent character saves. There are no browser pages or page-refresh movement.
 
@@ -23,32 +67,49 @@ The dedicated server now runs a default population of **5,000 persistent AI tame
 
 Battle Park adds automatic weekly seasons, current and career records, top-100 ladders and season archives, promotion battles, and DigiRuby rewards. Its points, rewards, stamina and three-active-partner battles are published NXT rules. The mode adapts documented ReArise features; it is not an exact recreation of every ReArise rule. See `docs/RIVALS_AND_RANKED.md` for the complete rules and `docs/REARISE_RULES_RESEARCH.md` for the recovered official references.
 
-**Upgrading an existing installation? Update both server and client.** Follow `docs/RIVALS_UPGRADE.md`. Preserve the working database, server/client `config` folders and private TLS keys. The new server creates its additional tables automatically; the normal upgrade does not need either setup wizard or a password change. Build in a separate folder because `BUILD_ALL.bat` recreates its `dist` outputs.
-
 ## High-DPI display and camera
 
 The client now renders text and interface shapes at native display resolution, supports Windows high DPI and borderless fullscreen (**F11 / Alt + Enter**), and provides saved display/audio preferences (**Settings / F10**). World zoom ranges from a complete-level **1×** view to a close-up **8×**, with plus/minus buttons, keyboard and mouse-wheel controls. Artwork uses crisp nearest-neighbor sampling; its original resolution remains unchanged.
 
-The display improvements from v0.1.1 are retained. `docs/DISPLAY_UPGRADE.md` describes their settings and historical client-only release; use `docs/RIVALS_UPGRADE.md` for the current server-and-client upgrade.
+The display improvements from v0.1.1 are retained. `docs/DISPLAY_UPGRADE.md` describes their settings and historical client-only release. Historical gameplay upgrade guides do not describe this fresh portable database setup.
 
-## Start on Windows
+## First installation on Windows
 
-Use Windows 10/11 x64 with **Python 3.11 or newer, 64-bit**, installed with the Python launcher or on PATH. Internet access is needed on the first build. MySQL 8 or MariaDB through XAMPP must already be installed and running for a public server.
+Build on Windows x64 with **Python 3.11 or newer, 64-bit**, the Python launcher or
+Python on PATH, and Tcl/Tk support. The first build needs internet access for its
+Python dependencies. The resulting client and server applications do not need a
+separate Python installation.
 
-1. Extract this entire archive to a writable folder, for example `C:\Games\DigimonVenomNXT`. Do not run a BAT from inside the ZIP.
-2. Double-click **`BUILD_ALL.bat`**. It verifies the shipped content hashes, creates an isolated Python environment, downloads the declared dependencies, and builds the client, console server and setup utility.
-3. Extract `dist\Windows_Server_x64.zip` to a permanent private server folder outside the build's `dist` directory. Start MySQL in XAMPP and run **`01_SETUP_SERVER.bat`** in that server folder. Check that the wizard shows **0.3.0**.
-4. Test the database connection using the existing XAMPP administrator login. Blank is allowed if that account has no password. Create the game's own database login, then choose local or public hosting and finish the readiness checks. No existing game database account or player account is needed.
-5. Extract the generated `Public_Player_Connection_Kit.zip` **into the Windows client folder**, merging `config`. The client verifies the bundled CA and hostname without asking players to manually trust a Windows certificate.
-6. Run **`START_WORLD_SERVER_CONSOLE.bat`** in the server folder. Allow initial rival creation to finish. Run **`PLAY_DIGIMON_VENOM_NXT.bat`** in the configured client folder. Register a tamer and choose a regular Rookie partner.
+1. Extract the entire source package to a writable folder, such as
+   `C:\Games\DigimonVenomNXT-Source`. Do not run files from inside an archive.
+2. Run **BUILD_ALL.bat**. It verifies shipped game content, creates an isolated
+   build environment, and builds the client, world server and administration tools.
+3. Extract `dist\Windows_Server_x64.zip` into a permanent private server folder
+   **outside `dist`**. Extract `dist\Windows_Client_x64.zip` into a separate client
+   folder. Rebuilding replaces the build outputs.
+4. Install the Microsoft Visual C++ x64 runtime if needed by running
+   **mysql\prerequisites\INSTALL_VC_RUNTIME.bat** in the server folder. This
+   helper downloads Microsoft's installer and needs internet access; Windows may
+   request administrator approval for that prerequisite.
+5. Run **01_SETUP_SERVER.bat**. Prepare the bundled MySQL, create the game database
+   login, and choose local or public hosting. Database credentials are generated
+   automatically when the optional game password is left blank. No old account,
+   password, database or configuration is needed.
+6. Extract `Public_Player_Connection_Kit.zip` **inside the client folder**, merging
+   `config`. Run **START_MYSQL.bat**, then **START_WORLD_SERVER_CONSOLE.bat**. The
+   world launcher also starts MySQL when needed and verifies it before launching.
+7. Wait for initial rival creation to finish. Run **PLAY_DIGIMON_VENOM_NXT.bat** in
+   the configured client folder and use **Register** to create a new tamer.
 
-The builder also produces independent `dist\Windows_Client_x64.zip` and `dist\Windows_Server_x64.zip`. The initial client ZIP must receive your connection kit before connecting to the configured server. Keep the configured server folder private: it holds the database password and private certificate keys.
-
-For internet hosting, allow and forward the chosen TCP port to your server. The certificate wizard cannot configure your router, ISP or DNS. A DNS hostname is useful when your public IP can change.
+The server folder and its backups contain credentials, player saves and private
+TLS keys. Keep them private; share the client and player connection kit only.
+For internet hosting, allow and forward the **game** TCP port, normally **8765**.
+MySQL stays local on **3307** and must not be forwarded. Hosting setup cannot
+configure your router, ISP or DNS.
 
 ## Local development
 
-For a local game without MySQL or public hosting, run `START_LOCAL_DEV.bat`, then `PLAY_LOCAL_DEV.bat`. This explicitly uses a localhost server and a separate development SQLite save. It is not the production database. `START_LOCAL_DEV.bat` installs the source runtime dependencies on first use.
+For an optional source-development game without the production MySQL database, run `START_LOCAL_DEV.bat`, then `PLAY_LOCAL_DEV.bat`. This explicitly uses a localhost server and a separate development SQLite save. It is not the production database. `START_LOCAL_DEV.bat` installs the source runtime dependencies on first use.
 
 On any supported development OS:
 
@@ -66,17 +127,18 @@ Public play uses TLS and MySQL. The public server refuses the development databa
 - 1,004 Digimon entries: 502 normal and 502 Paradox records, including alternate artwork sets supplied under different stages. Every entry belongs to an encounter pool.
 - 64 selectable original Dawn/Dusk/guest tamer appearances, each with eight directional movement animations decoded from the ROM.
 - 254 map backgrounds and 97 foreground overlays, using the supplied x2 images. All 254 traversable maps use original ROM pixel collision data.
-- One Rookie starter, up to six party partners, a three-partner active battle team, storage, leader selection and an overworld follower.
+- One Rookie starter, up to six party partners, a three-partner active battle team, 100-resident private DigiFarm storage, leader selection and an overworld follower.
+- A walkable DigiFarm with your selected animated tamer and lead follower, shared client/server shoreline collision, independent saved position and 1×–8× zoom, click-to-manage residents, gentle wandering, optional CAM treats, six permanent stat-training meat families and unique original home music.
 - One to three wild enemies, speed-based turns, physical and elemental skills, SP, a free attack/Struggle, item use, movement effects, particles, 96 decoded original battle-effect sequences, and floating damage/effectiveness text.
 - Defeated-enemy scan data, DigiLab materialization at 100% or more, a 200% scan cap, evolution/de-evolution requirements, levels, ABI and CAM.
 - A 2.5% chance for an encounter to include a Paradox; Paradox defeats award less scan data than normal defeats.
 - Free DigiLab healing and return to the saved world position; a shop with small, medium and large HP/SP capsules.
 - Shared world presence, map-local chat, account authentication, durable progression, per-pixel movement validation and rate limits.
-- 5,000 configurable persistent AI rivals, initially distributed evenly across the maps, with authentic walking frames, shared authoritative positions, real combat/collection progression, party care, map travel and clickable profiles.
+- 5,000 configurable persistent AI rivals, initially distributed evenly across the maps, with authentic walking frames, continuous server-owned patrols, spaced sector arrivals, real combat/collection progression, repeat team training, party storage, density-aware travel and clickable profiles.
 - Ranked auto battles against saved defender teams, weekly UTC seasons, season and career wins/losses, top-100 current/career/archive ladders, earned-grade and placement rewards in a persistent DigiRuby wallet.
 - Nearby friendly rival invitations, an accept/decline hub, head-to-head history, and a bot activity screen with cumulative counters and the latest 100 population events.
 - Original-ROM sequence/sample audio rendered into 46 music tracks and 183 sound effects. The renderer approximates some NDS synthesis behavior; it is not a hardware-perfect emulator.
-- Windows build, a complete native setup wizard, MySQL connection diagnostics, local/public TLS connection kits, a console server launcher, content verification and automated tests.
+- Windows build, a native setup wizard, bundled portable MySQL with readiness checks, graceful shutdown for manual whole-folder ZIP backups, local/public TLS connection kits, content verification and automated tests.
 
 ## Source layout
 
@@ -87,7 +149,8 @@ Public play uses TLS and MySQL. The public server refuses the development databa
 | `venom/common/game.py` | Combat, progression, scanning, evolution, items and party rules |
 | `data/` | Catalog, original balance rules, provenance and content hashes |
 | `assets/` | Supplied artwork and extracted runtime content |
-| `tools/` | Reproducible import/extraction, verification, build and setup utilities |
+| `tools/` | Reproducible import/extraction, verification, build, setup and portable database utilities |
+| `mysql/` | Bundled Windows database engine, its provenance and prerequisites; runtime saves and private credentials are created here during setup |
 | `tests/` | Gameplay, collision, persistence, network and setup checks |
 | `docs/` | Setup, controls, mechanics, extraction notes and release status |
 
@@ -101,4 +164,4 @@ python -m pip install -r requirements-dev.txt
 python -m pytest -q
 ```
 
-Windows executables must be built on Windows. Linux verification does not establish that a Windows binary has been built or tested. See the validation report for checks actually run on this release.
+Windows executables must be built on Windows. Linux verification does not establish that a Windows binary has been built or tested. See [docs/PORTABLE_MYSQL_VALIDATION.md](docs/PORTABLE_MYSQL_VALIDATION.md) for the new database checks and [docs/PORTABLE_MYSQL.md](docs/PORTABLE_MYSQL.md) for implementation boundaries. A successful build on the target Windows host remains necessary.

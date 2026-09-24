@@ -59,7 +59,7 @@ class ImportedGameWSSTests(unittest.IsolatedAsyncioTestCase):
 
     async def request(self, ws, op, **fields):
         # Exercise production anti-spam limits at a normal UI interaction rate.
-        if op in {"battle", "digilab", "shop", "encounter", "travel", "materialize", "party"}:
+        if op in {"battle", "digilab", "digifarm", "shop", "encounter", "travel", "materialize", "party"}:
             await asyncio.sleep(0.18)
         self.rid += 1
         await ws.send(json.dumps({"op": op, "rid": self.rid, **fields}))
@@ -78,6 +78,11 @@ class ImportedGameWSSTests(unittest.IsolatedAsyncioTestCase):
             await self.receive(bob, "hello")
             state = await self.action(alice, "register", username="AliceOne", password="integration-pass-123", tamer=tamers[0], starter=starter)
             await self.action(bob, "register", username="BobTwo", password="integration-pass-456", tamer=tamers[1], starter=starter)
+            # v0.6.0 registration starts at the private home. This test exercises
+            # the shared field, so both tamers explicitly leave their farms.
+            self.assertTrue(state["in_farm"])
+            state = await self.action(alice, "digifarm", action="return")
+            await self.action(bob, "digifarm", action="return")
             snapshot = await self.receive(alice, "world")
             while len(snapshot["players"]) < 2:
                 snapshot = await self.receive(alice, "world")

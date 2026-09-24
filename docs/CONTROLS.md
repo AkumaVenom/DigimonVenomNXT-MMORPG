@@ -10,6 +10,10 @@ Press **F11** or **Alt + Enter** for borderless fullscreen at the current Window
 
 At **1×**, the complete level fits within the field, with borders where needed. **− / +** buttons, the keyboard's minus/plus keys, or the mouse wheel over the field zoom toward or away from your tamer, up to **8× relative to the fitted view**. **Fit level / 0** returns to 1×. Map zoom is independent of interface size. Fractional fit scales preserve the source colors with nearest sampling, but uniform source-pixel replication occurs only at integer enlargement factors.
 
+The DigiFarm uses these same camera controls over its island. At closer zoom the
+camera follows your tamer. Farm zoom is saved separately from field zoom, so
+visiting home preserves your preferred camera scale for each location.
+
 Preferences are stored at `%LOCALAPPDATA%\DigimonVenomNXT\display.json` for the current Windows user. To reset them, close the game and rename that file. Connection settings and certificates remain in the separate client `config` folder.
 
 ## Sign in and create a tamer
@@ -22,12 +26,14 @@ The client reads `config/client.json` and trusts only the bundled `config/server
 
 | Control | Action |
 |---|---|
-| WASD or arrow keys | Move, including diagonal movement |
+| WASD or arrow keys | Move in the field or DigiFarm, including diagonal movement |
 | E / Search for Digimon | Start a wild encounter in this zone |
 | F1 / DigiLab | Enter the lab, restore all partners and remember your exact field location |
 | J or Tab / Digidex | Browse scan data and materialize partners in the DigiLab |
 | P / Partners | Inspect stats, choose a leader, manage storage and evolution |
-| B / Shop | Buy and use HP/SP capsules |
+| B / Shop | Buy recovery capsules and optional DigiMeat |
+| Home · DigiFarm / F2 (top left) | Return to your private home; an active battle requires confirming abandonment |
+| Click a DigiFarm resident | Open its management card and choose optional meat to feed |
 | M / Worlds | Search and transfer to an imported world map |
 | R / Ranked Arena | Open ranked opponents, season/career ladders and rewards |
 | V / Rivals Hub | View nearby rivals, invitations, rival directory and head-to-head history |
@@ -37,12 +43,26 @@ The client reads `config/client.json` and trusts only the bundled `config/server
 | Escape | Close the current menu/settings; open settings from a clear screen |
 | Settings / F10 | Open or close display and audio preferences |
 | F11 / Alt + Enter | Toggle borderless fullscreen |
-| − / + buttons or keys | Zoom the field from whole-level 1× to close-up 8× |
+| − / + buttons or keys | Zoom the field or DigiFarm from whole-level 1× to close-up 8× |
 | Fit level / 0 | Restore whole-level 1× camera view |
 | Mouse wheel | Zoom over the playable field; scroll lists and appearance selectors elsewhere |
 | Music note | Mute or restore audio |
 
 Walking also triggers encounters after sufficient travel. Map collision is enforced on the dedicated server and predicted locally. The lead partner follows your tamer; other players and AI rivals in the same zone use shared server positions. AI tamers are identified as rivals rather than presented as human players. Typing, menus, battles and lab visits suspend field movement.
+
+## At home in the DigiFarm
+
+Your selected tamer walks around the island with the same eight-direction
+animation and speed as in the field, with your lead partner following. The
+grass shoreline is enforced by the client and server. Home is private and
+walking there never starts a wild encounter. Your farm position is saved
+separately, preserving the world location you left behind.
+
+Click a stored Digimon to open its management and feeding card. Close the card
+to resume walking. Feeding, search entry, menus, settings and confirmation
+dialogs pause movement. The mouse wheel scrolls menus and lists when the pointer
+is over them; use it over the island to zoom. **0** restores the whole-island
+view, and the zoomed camera follows your tamer.
 
 ## Ranked battles and tamer rivals
 
@@ -70,9 +90,9 @@ Attack poses, contact movement, genuine decoded Dawn effect frames and additiona
 
 Entering the DigiLab fully restores the party. **Return to field** restores the map and exact location recorded on entry. **Heal all partners** is free and can also be used inside the lab.
 
-Digidex lists the full imported catalog, with scanned species sorted first. At 100% or more scan data, **Materialize** creates a partner in the DigiLab. At most six partners travel with you; additional partners use storage. Evolution routes display the server's level, ABI, CAM and stat requirements. Select a partner on the right, then choose an eligible Digivolve or De-digivolve route in the lab. Scroll below routes to withdraw stored partners. **Make leader** moves the selected partner to slot one; repeated use also lets you arrange the active trio.
+Digidex lists the full imported catalog, with scanned species sorted first. At 100% or more scan data, **Materialize** creates a partner in the DigiFarm or DigiLab. At most six partners travel with you; up to 100 additional partners live in DigiFarm storage. Legacy over-cap collections are preserved; withdraw residents until space is available before adding more. When your party is full, DigiBank lets you choose a named party slot and confirm a stored-partner swap. Swaps work at full farm capacity and with archived partners, without increasing either collection count. Evolution routes display the server's level, ABI, CAM and stat requirements. Select a partner on the right, then choose an eligible Digivolve or De-digivolve route at the farm or lab. Scroll below routes to withdraw stored partners. **Make leader** moves the selected partner to slot one; repeated use also lets you arrange the active trio.
 
-The shop sells small, medium and large HP and SP capsules. Prices, restoration amounts and inventory counts come from the server. Select a partner in the right panel before clicking **Use**.
+The shop sells small, medium and large HP and SP capsules, Friendship DigiMeat and training DigiMeat. Prices, effects and inventory counts come from the server. Select a party partner before using a capsule. Feed DigiMeat through a stored resident's management card in your private DigiFarm. See [DIGIFARM_V060.md](DIGIFARM_V060.md) for prices, permanent bonuses, capacity and upgrade steps.
 
 ## Development and visual checks
 

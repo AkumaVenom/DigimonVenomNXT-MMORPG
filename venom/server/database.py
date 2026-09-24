@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import base64
+import contextlib
 import hashlib
 import hmac
 import json
@@ -11,6 +12,8 @@ import sqlite3
 import threading
 import time
 from pathlib import Path
+
+from venom.common.paths import mysql_data_path, root_path
 
 SCHEMA_VERSION = 1
 USERNAME = re.compile(r"^[A-Za-z0-9_]{3,24}$")
@@ -58,31 +61,50 @@ class Database:
     Blocking calls are run by the server in worker threads. Revision checks and
     renewable session leases prevent two world processes from overwriting a player.
     """
-    def __init__(self, config: dict, dev: bool = False):
+    def __init__(self, config: dict, dev: bool = False, root=None):
         self.config = dict(config)
+        self.root = Path(root or root_path()).resolve()
         self.driver = self.config.get("driver", "mysql")
         if self.driver not in ("mysql", "sqlite"):
             raise DatabaseError("Database driver must be mysql or sqlite.")
         if self.driver == "sqlite" and not dev:
             raise DatabaseError("SQLite is allowed only with --dev on localhost.")
+        if self.driver == "mysql":
+            if self.config.get("host", "127.0.0.1") != "127.0.0.1":
+                raise DatabaseError("The world requires its own portable MySQL on 127.0.0.1.")
+            self.port = int(self.config.get("port", 3307))
+            if not 1 <= self.port <= 65535:
+                raise DatabaseError("The portable MySQL port must be between 1 and 65535.")
+            self.data_directory = mysql_data_path(self.root)
         self.lock = threading.RLock()
         self.connection = None
         self.dummy_hash = hash_password(secrets.token_urlsafe(24))
 
     def _connect(self):
+        if self.connection is not None and self.driver == "mysql":
+            import pymysql
+            try:
+                # Never let the driver reconnect to a replacement server before
+                # checking that server's data directory again.
+                self.connection.ping(reconnect=False)
+            except pymysql.MySQLError:
+                with contextlib.suppress(Exception):
+                    self.connection.close()
+                self.connection = None
         if self.connection is None:
             if self.driver == "sqlite":
                 path = self.config.get("path", "runtime/development.sqlite3")
                 if path != ":memory:":
+                    path = str((self.root / path).resolve())
                     Path(path).parent.mkdir(parents=True, exist_ok=True)
                 self.connection = sqlite3.connect(path, check_same_thread=False, timeout=15)
                 self.connection.execute("PRAGMA foreign_keys=ON")
                 self.connection.execute("PRAGMA journal_mode=WAL")
             else:
                 import pymysql
-                self.connection = pymysql.connect(
-                    host=self.config.get("host", "127.0.0.1"),
-                    port=int(self.config.get("port", 3306)),
+                connection = pymysql.connect(
+                    host="127.0.0.1",
+                    port=self.port,
                     user=self.config.get("user", "venom"),
                     # PyMySQL encodes str passwords as latin1. Our setup and JSON
                     # use UTF-8, including passwords containing non-ASCII text.
@@ -91,9 +113,29 @@ class Database:
                     charset="utf8mb4", autocommit=False,
                     connect_timeout=10, read_timeout=15, write_timeout=15,
                 )
-        elif self.driver == "mysql":
-            self.connection.ping(reconnect=True)
+                try:
+                    self._verify_portable_connection(connection)
+                except Exception:
+                    connection.close()
+                    raise
+                self.connection = connection
         return self.connection
+
+    def _verify_portable_connection(self, connection):
+        """Refuse external/XAMPP databases, including after a dropped connection."""
+        cursor = connection.cursor()
+        try:
+            cursor.execute("SELECT @@datadir, @@port")
+            row = cursor.fetchone()
+            if not row or len(row) != 2:
+                raise DatabaseError("Could not verify the portable MySQL data directory.")
+            actual = Path(str(row[0]).replace("\\", "/")).resolve()
+            if actual != self.data_directory or int(row[1]) != self.port:
+                raise DatabaseError(
+                    "Refusing a database outside this server's mysql/data directory. "
+                    "Start this folder's MySQL launcher before starting the world.")
+        finally:
+            cursor.close()
 
     def _sql(self, sql):
         return sql if self.driver == "sqlite" else sql.replace("?", "%s")
@@ -265,9 +307,9 @@ class Database:
                 self.connection = None
 
 
-def initialize_database(database_config: dict):
+def initialize_database(database_config: dict, root=None):
     """Setup entry point: create only this application's tables, never change users."""
-    db = Database(database_config)
+    db = Database(database_config, root=root)
     try:
         db.initialize()
     finally:
