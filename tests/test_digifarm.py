@@ -319,13 +319,19 @@ def test_world_snapshots_and_local_chat_are_private_per_farm_and_field_location_
     world.move(a, {"dx": 1, "dy": 0, "dt": .1})
     assert (a.state["x"], a.state["y"]) == before and not a.state["battle"]
     assert a.state["farm_position"]["x"] > farm_x
-    asyncio.run(world.broadcast_once())
-    for session in (a, b, c):
-        assert [p["username"] for p in session.websocket.messages[-1]["players"]] == [session.state["username"]]
-    asyncio.run(world.chat(a, {"text": "At home"}))
-    assert a.websocket.messages[-1]["op"] == "chat"
-    assert b.websocket.messages[-1]["op"] == "world"
-    assert c.websocket.messages[-1]["op"] == "world"
+    async def check_delivery():
+        # v0.6.2 queues snapshots per client; let the senders deliver within
+        # the same event loop before inspecting their output.
+        await world.broadcast_once()
+        await asyncio.gather(*(session.world_updates.join() for session in (a, b, c)))
+        for session in (a, b, c):
+            assert [p["username"] for p in session.websocket.messages[-1]["players"]] == [session.state["username"]]
+        await world.chat(a, {"text": "At home"})
+        assert a.websocket.messages[-1]["op"] == "chat"
+        assert b.websocket.messages[-1]["op"] == "world"
+        assert c.websocket.messages[-1]["op"] == "world"
+        await asyncio.gather(*(world._stop_world_sender(session) for session in (a, b, c)))
+    asyncio.run(check_delivery())
 
 
 def test_live_farm_protocol_rejects_cross_account_feeding_and_commits_bonus(farm, tmp_path):

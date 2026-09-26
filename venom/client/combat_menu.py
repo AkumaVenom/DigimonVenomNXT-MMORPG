@@ -78,6 +78,8 @@ class CombatMenu:
             self.items(area)
             self.recipients(side, party, actor)
         message = ('Waiting for the current battle action to finish.' if self.busy()
+                   else 'Your live match is saved after every command. Close this screen to use Attack or Struggle.'
+                   if battle.get('season') or battle.get('kind') == 'season'
                    else 'Your server confirms every command. Close this screen to use Attack, Struggle or Flee.')
         text(app.screen, app.assets, message, (rect.x+25, rect.bottom-18), 10,
              p['muted'], max_width=rect.width-50)

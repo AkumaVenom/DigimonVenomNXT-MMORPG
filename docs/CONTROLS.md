@@ -64,6 +64,16 @@ dialogs pause movement. The mouse wheel scrolls menus and lists when the pointer
 is over them; use it over the island to zoom. **0** restores the whole-island
 view, and the zoomed camera follows your tamer.
 
+## Private Season Mode
+
+Choose **Season Mode** in the top-left navigation (or press **F3**) to create or continue your
+private career. Review the weekly card, play your scheduled match with the
+normal combat controls, reveal the other results, then select **Next Week**.
+**Save & Return to World** pauses the career between matches. Flee and activity
+switching are disabled during a league match; logging out saves the exact turn
+for your next login. No fictional time passes while you are away. See
+[SEASON_MODE_V070.md](SEASON_MODE_V070.md) for the calendar, rules and upgrade.
+
 ## Ranked battles and tamer rivals
 
 **Ranked Arena / R** opens the Battle Park system and displays your DigiRuby balance, season points, earned grade, season/career wins and losses, recovering battle energy, and opponents. Ranked matches automatically resolve against saved defender teams using the actual partners' stats, SP, skills and type/attribute matchups. The first three partners start; up to three reserves replace defeated partners. Both teams use restored copies, so an arena battle does not spend your field HP/SP or consume inventory. You prepare the team before entering; arena turns are automatic. During the replay, **1× playback** toggles 2× speed; **Show result** skips the remaining replay. **Return to hub** leaves the result screen.

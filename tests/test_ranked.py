@@ -24,7 +24,8 @@ class RankedTests(unittest.TestCase):
         self.store.initialize()
         self.now = 1_800_000_000.0
         self.service = RankedService(self.engine, self.store,
-                                     {"match_cooldown": 0, "opponent_cooldown": 0, "season_seconds": 600},
+                                     {"match_cooldown": 0, "opponent_cooldown": 0, "season_seconds": 600,
+                                      "energy_capacity": 5, "energy_refill_seconds": 1800},
                                      clock=lambda: self.now)
         self.sid = self.engine.starters[0]
         self.a = self.profile("player:alice", "player", 45)

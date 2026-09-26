@@ -6,8 +6,9 @@ import json
 import queue
 import ssl
 import threading
-import time
 from pathlib import Path
+
+from venom.common.network import network_settings
 
 
 class Connection:
@@ -41,11 +42,14 @@ class Connection:
             host, port = self.config.get('host', 'localhost'), self.config.get('port', 8765)
             if isinstance(exc, ssl.SSLCertVerificationError):
                 message = 'Server certificate verification failed. Obtain a current player kit from your administrator.'
+            elif isinstance(exc, (asyncio.TimeoutError, TimeoutError)):
+                message = f'Connection to {host}:{port} timed out. Check your connection and try signing in again.'
             elif isinstance(exc, OSError):
                 message = f'Cannot reach {host}:{port}. Check that the world server is running and the hosting address is correct.'
             else:
                 message = str(exc)
-            self.incoming.put({'op': 'error', 'error': message, 'detail': str(exc)})
+            if self.running:
+                self.incoming.put({'op': 'error', 'error': message, 'detail': str(exc)})
 
     async def _session(self):
         import websockets
@@ -56,7 +60,10 @@ class Connection:
             raise ValueError('Development mode is restricted to a local server.')
         if tls and self.config.get('tls', True) is False:
             raise ValueError('Public connections require TLS. Use the server administrator’s player kit.')
-        options = {'max_size': 8*1024*1024, 'ping_interval': 20, 'ping_timeout': 20, 'open_timeout': 10}
+        settings = network_settings(self.config)
+        options = {'max_size': 8 * 1024 * 1024,
+                   **{name: settings[name] for name in
+                      ('ping_interval', 'ping_timeout', 'open_timeout', 'close_timeout')}}
         if tls:
             ca = self.root / self.config.get('ca_file', 'config/server-ca.pem')
             if not ca.is_file():
@@ -99,8 +106,16 @@ class Connection:
                 await asyncio.gather(sender, receiver, return_exceptions=True)
                 self.connected = False
                 self.status = 'Disconnected'
-                if self.running:
-                    self.incoming.put({'op': 'error', 'error': 'Connection closed. Return to sign in to reconnect.'})
+        # Only report a normal remote close here. Errors propagate to _run(),
+        # which reports the actual cause once instead of a second generic error.
+        if self.running:
+            code = getattr(socket, 'close_code', None)
+            reason = getattr(socket, 'close_reason', '') or ''
+            message = 'Connection closed. Return to sign in to reconnect.'
+            if reason:
+                message = f'{reason}. Return to sign in to reconnect.'
+            self.incoming.put({'op': 'error', 'error': message,
+                               'detail': f'WebSocket close code={code}; reason={reason}'})
 
     def close(self):
         self.running = False

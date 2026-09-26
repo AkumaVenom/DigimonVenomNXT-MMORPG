@@ -17,7 +17,7 @@ import zipfile
 ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
-BUILD_VERSION = "0.6.0"
+BUILD_VERSION = "0.8.0"
 
 
 def safe_asset(root: Path, name: str) -> Path:
@@ -182,7 +182,7 @@ def build(args) -> None:
         (destination / "docs").mkdir(exist_ok=True)
         for name in ("SETUP.md", "SERVER.md", "RIVALS_UPGRADE.md", "RIVAL_MOVEMENT_UPGRADE.md",
                      "RIVAL_MOVEMENT_UPGRADE.txt", "RIVALS_AND_RANKED.md",
-                     "REARISE_RULES_RESEARCH.md", "RELEASE_STATUS.md", "DIGIFARM_V060.md", "VALIDATION.md",
+                     "REARISE_RULES_RESEARCH.md", "RELEASE_STATUS.md", "DIGIFARM_V060.md", "SEASON_MODE_V070.md", "SEASON_VALIDATION.md", "VALIDATION.md",
                      "RIVALS_BENCHMARK.md", "RIVALS_BENCHMARK.json",
                      "RIVAL_FIX_VALIDATION.json", "RIVAL_TRAINING_VALIDATION.json"):
             shutil.copy2(ROOT / "docs" / name, destination / "docs" / name)
@@ -229,22 +229,23 @@ def build(args) -> None:
     (client / "READ_ME_FIRST.txt").write_text(
         f"DIGIMON VENOM NXT {BUILD_VERSION} - CLIENT\n\n"
         "Start the game: PLAY_DIGIMON_VENOM_NXT.bat\n"
-        "Connect to a matching v0.6.0 server. Both the client and world server must be updated.\n"
+        "Connect to a matching v0.7.0 server. Both the client and world server must be updated.\n"
         "Existing installation: copy your existing client config folder into this complete new client folder.\n"
-        "DigiFarm v0.6.0: your private home, stored Digimon, optional DigiMeat and permanent training.\n"
-        "See docs/DIGIFARM_V060.md for safe upgrade steps; preserve existing server saves and credentials.\n"
+        "Season Mode v0.7.0: private endless career, live battles, weekly cards and championships.\n"
+        "See docs/SEASON_MODE_V070.md for safe upgrade steps; preserve existing server saves and credentials.\n"
         "Keep its client.json and trusted server-ca.pem. Your saved display preferences remain in Local AppData.\n"
         "New installation: extract the host's Public_Player_Connection_Kit.zip INTO this folder, merging config.\n"
         "Built clients need no Python installation or manual Windows certificate trust.\n"
         "DigiFarm / F2: use the top-left home button. Click a farm Digimon to inspect and feed it.\n"
+        "Season Mode: top-left league button. Continue Season or Save & Return to World.\n"
         "R: Ranked Arena. V: Rivals Hub. O: Bot Activity. Click a map rival to inspect them.\n"
         "F10: display/audio settings. F11: fullscreen/windowed.\n"
-        "Upgrade steps: docs/DIGIFARM_V060.md. Interface history: docs/UI2_UPGRADE.md. Game rules: docs/RIVALS_AND_RANKED.md.\n",
+        "Upgrade steps: docs/SEASON_MODE_V070.md. Interface history: docs/UI2_UPGRADE.md. Game rules: docs/RIVALS_AND_RANKED.md.\n",
         encoding="utf-8")
     (server / "READ_ME_FIRST.txt").write_text(
         f"DIGIMON VENOM NXT {BUILD_VERSION} - PORTABLE DEDICATED SERVER\n\n"
         "UPGRADING AN EXISTING SERVER\n"
-        "Read docs/DIGIFARM_V060.md first. Stop and back up the complete existing server.\n"
+        "Read docs/SEASON_MODE_V070.md first. Stop and back up the complete existing server.\n"
         "Update both client and server applications; preserve mysql/data, mysql credentials and config.\n"
         "Do not run a fresh database setup or replace your saves for this upgrade.\n\n"
         "FRESH SETUP\n"
@@ -274,7 +275,7 @@ def build(args) -> None:
         (directory / "build-info.json").write_text(json.dumps(metadata, indent=2) + "\n", encoding="utf-8")
     for directory in (client, server):
         archive(directory, output / f"{directory.name}.zip")
-    print("\nBuild complete. DigiFarm v0.6.0 packages:\n  dist/Windows_Client_x64.zip\n  dist/Windows_Server_x64.zip\nUpdate BOTH the client and world server. Preserve the existing database, credentials and config.\nUpgrade steps: docs/DIGIFARM_V060.md. For a NEW server only: follow PORTABLE_SERVER_README.md.", flush=True)
+    print("\nBuild complete. Season Mode v0.7.0 packages:\n  dist/Windows_Client_x64.zip\n  dist/Windows_Server_x64.zip\nUpdate BOTH the client and world server. Preserve the existing database, credentials and config.\nUpgrade steps: docs/SEASON_MODE_V070.md. For a NEW server only: follow PORTABLE_SERVER_README.md.", flush=True)
 
 
 def main(argv=None):

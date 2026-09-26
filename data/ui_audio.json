@@ -16,7 +16,9 @@
     "auth": "assets/audio/interface/bgm00.ogg",
     "settings": "assets/audio/interface/bgm43.ogg",
     "authpicker": "assets/audio/interface/bgm01.ogg",
-    "farm": "assets/audio/original/digifarm_home.ogg"
+    "farm": "assets/audio/original/digifarm_home.ogg",
+    "season": "assets/audio/music/bgm50.ogg",
+    "season_results": "assets/audio/music/bgm51.ogg"
   },
   "cues": {
     "confirm": "assets/audio/interface/se001.ogg",
@@ -26,7 +28,9 @@
     "purchase": "assets/audio/interface/se009.ogg",
     "error": "assets/audio/interface/se004.ogg",
     "scan_complete": "assets/audio/interface/se009.ogg",
-    "evolution_complete": "assets/audio/interface/se030.ogg"
+    "evolution_complete": "assets/audio/interface/se030.ogg",
+    "season_enter": "assets/audio/interface/se003.ogg",
+    "season_results": "assets/audio/interface/se030.ogg"
   },
   "source_assets": {
     "bgm11": {

@@ -77,7 +77,8 @@ def test_former_world_cannot_commit_a_ranked_result_or_spend_energy():
     former, successor = CommunityStore(db), CommunityStore(db)
     former.initialize()
     engine = GameEngine(Path(__file__).resolve().parents[1], seed=717)
-    service = RankedService(engine, former, {"match_cooldown": 0, "opponent_cooldown": 0})
+    service = RankedService(engine, former, {"match_cooldown": 0, "opponent_cooldown": 0,
+                                             "energy_capacity": 5, "energy_refill_seconds": 1800})
     participants = [{"id": ident, "name": ident, "kind": "bot",
                      "tamer": next(iter(engine.tamers)),
                      "party": [engine._monster(engine.starters[0], level=level)]}

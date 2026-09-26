@@ -96,15 +96,16 @@ def test_windows_build_includes_whole_wizard_and_current_launchers(tmp_path, mon
     assert not (server / "mysql" / "data").exists()
     assert not (server / "mysql" / "credentials.json").exists()
     assert "01_SETUP_SERVER.bat" in (server / "READ_ME_FIRST.txt").read_text()
-    assert json.loads((server / "build-info.json").read_text())["version"] == "0.6.0"
-    assert json.loads((client / "build-info.json").read_text())["version"] == "0.6.0"
+    assert json.loads((server / "build-info.json").read_text())["version"] == "0.8.0"
+    assert json.loads((client / "build-info.json").read_text())["version"] == "0.8.0"
     assert (client / "docs" / "FPS_FIX.md").is_file()
     assert (client / "docs" / "UI_UPGRADE.md").is_file()
     assert (client / "docs" / "UI2_UPGRADE.md").is_file()
     for package in (client, server):
         assert (package / "docs" / "DIGIFARM_V060.md").is_file()
+        assert (package / "docs" / "SEASON_MODE_V070.md").is_file()
     assert "Both the client and world server must be updated" in (client / "READ_ME_FIRST.txt").read_text()
-    assert "Upgrade steps: docs/DIGIFARM_V060.md" in (client / "READ_ME_FIRST.txt").read_text()
+    assert "Upgrade steps: docs/SEASON_MODE_V070.md" in (client / "READ_ME_FIRST.txt").read_text()
     assert "preserve mysql/data, mysql credentials and config" in (server / "READ_ME_FIRST.txt").read_text()
     assert "Upgrade steps: docs/RIVAL_MOVEMENT_UPGRADE.md" not in (client / "READ_ME_FIRST.txt").read_text()
     assert (client / "assets" / "sprite.png").is_file()

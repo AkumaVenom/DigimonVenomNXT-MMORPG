@@ -183,7 +183,7 @@ class Audio:
     FADE_OUT_SECONDS = .14
     FADE_IN_MS = 420
     CUE_INTERVAL_SECONDS = .065
-    SUCCESS_CUES = frozenset(('scan_complete', 'evolution_complete', 'purchase', 'error'))
+    SUCCESS_CUES = frozenset(('scan_complete', 'evolution_complete', 'purchase', 'error', 'season_enter', 'season_results'))
 
     def __init__(self, assets):
         self.assets, self.enabled = assets, False

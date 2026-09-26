@@ -1,6 +1,49 @@
 # Digimon Venom NXT
 
-**DigiFarm v0.6.0 — native Windows x64 client and dedicated world server.**
+**Local Admin Console v0.8.0 — host-only administration and player titles.**
+
+Type `/help` in the existing **START_WORLD_SERVER_CONSOLE.bat** window on the
+server PC. Manage Digimon, items, credits, live encounters, moderation, accounts,
+saves and server restarts through permission-checked local commands. Broadcasts
+and warnings appear as trusted native notices, and persistent cosmetic titles
+appear above player usernames. Players cannot execute these commands in chat.
+Your v0.7.0 private Season careers, DigiFarm, shared rivals and Ranked Arena are
+retained.
+
+**Upgrade from v0.7.0: rebuild and update both client and world server with
+BUILD_ALL.bat.** Apply the source patch to a copy of the v0.7.0 Season Mode source,
+or use the complete v0.8.0 source. Stop and back up the existing server first;
+retain its configuration and `mysql/data` when replacing application files.
+Do not run fresh database setup. Administration tables are added automatically.
+Existing configurations enable the local console at OWNER by default.
+
+Read [docs/ADMIN_CONSOLE_V080.md](docs/ADMIN_CONSOLE_V080.md) for the full command
+reference, console tiers, hidden password prompts, confirmation rules, and exact
+upgrade procedure. Windows executables must be built on Windows x64.
+
+The following v0.7.0 and earlier notes describe retained features. For the current
+release, use the v0.8.0 upgrade procedure above.
+
+**Retained Season Mode v0.7.0 — private, persistent tamer careers.**
+
+Enter **Season Mode** from the top-left navigation. Review your fictional week's
+match card, play your own scheduled Digimon battle with the normal controls,
+reveal the rest of the league results, and continue directly to the next week.
+Your private roster, rivalries, championship and career records carry forward
+through an open-ended Gregorian calendar. Nothing advances while you are away.
+Fleeing is disabled in league matches; logging out preserves the active turn.
+The shared world, DigiFarm, persistent rivals and Ranked Arena remain available.
+
+The v0.7.0 release built on the supplied v0.6.2 High Ping Disconnect Fix source
+and added private career archives without resetting existing character saves.
+Read [docs/SEASON_MODE_V070.md](docs/SEASON_MODE_V070.md) for Season controls,
+rules and save behavior. Its upgrade section is historical; use the v0.8.0
+procedure linked above for this release.
+
+The following DigiFarm and earlier-release notes describe retained features.
+For the current update, use the v0.8.0 upgrade procedure above.
+
+**Retained DigiFarm — native Windows x64 client and dedicated world server.**
 
 Your tamer now has a private DigiFarm home using the supplied island artwork,
 with up to 100 stored Digimon, gentle wandering, click-to-manage feeding and

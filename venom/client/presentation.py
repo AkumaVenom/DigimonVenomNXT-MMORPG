@@ -39,6 +39,7 @@ def _destination(accent, secondary, glow, grid='m_bg04.png'):
 
 
 PALETTES.update({
+    'season': _destination((105, 229, 255), (211, 154, 255), (29, 36, 76), 'bt_me_bak.png'),
     'farm': _destination((166, 237, 140), (110, 222, 222), (23, 53, 60), 'm_bg01.png'),
     'lab': _destination((166, 237, 140), (100, 225, 210), (23, 53, 60), 'm_bg01.png'),
     'scan': _destination((109, 231, 247), (157, 238, 180), (19, 53, 70), 'm_bg03.png'),
@@ -306,7 +307,7 @@ class Presentation:
                    'lab': 'DIGILAB SIGNAL', 'scan': 'SCAN FREQUENCY', 'dex': 'ARCHIVE SIGNAL',
                    'party': 'PARTNER LINK', 'evolution': 'EVOLUTION SIGNAL', 'storage': 'STORAGE LINK',
                    'maps': 'WORLD FREQUENCY', 'skills': 'TACTICAL SIGNAL', 'battle': 'BATTLE LINK',
-                   'auth': 'GATEWAY SIGNAL', 'settings': 'SYSTEM FREQUENCY'}.get(theme, 'DIGITAL WORLD')
+                   'auth': 'GATEWAY SIGNAL', 'settings': 'SYSTEM FREQUENCY', 'season': 'CAREER SIGNAL'}.get(theme, 'DIGITAL WORLD')
         text(self.screen, self.app.assets, station, (rect.x+67, rect.y+header_height-25),
              9, p['muted'], True, usable-40)
         return pygame.Rect(rect.x+22, rect.y+header_height+20, rect.width-44,
@@ -338,7 +339,7 @@ class Presentation:
             self._stamp(c, 'm_bg03.png', (w-266, 6, 144, 121), (19, 0, 225, 192), 60,
                         (90, 255, 188) if theme == 'activity' else p['accent'])
         self._header_art(c, w, header_height, theme)
-        if theme == 'ranked':
+        if theme in ('ranked', 'season'):
             self.icon(pygame.Rect(w-360, 34, 66, 66), 'crown', theme, screen=c)
         elif theme == 'shop':
             self.icon(pygame.Rect(w-360, 34, 66, 66), 'shop', theme, screen=c)

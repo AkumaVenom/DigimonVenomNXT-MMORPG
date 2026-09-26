@@ -170,6 +170,25 @@ class Database:
                     updated_at DOUBLE NOT NULL,
                     FOREIGN KEY(username) REFERENCES venom_accounts(username) ON DELETE CASCADE
                 )""" + suffix)
+                # Additive to schema v1: old player saves remain readable. Keep
+                # the full fictional week as decimal text, never a SQL date or
+                # fixed-width integer. The digest makes the owner/week identity
+                # indexable on MySQL without imposing a final fictional year.
+                c.execute("""CREATE TABLE IF NOT EXISTS venom_season_history (
+                    username VARCHAR(24) NOT NULL,
+                    week_hash CHAR(64) NOT NULL,
+                    week LONGTEXT NOT NULL,
+                    week_digits BIGINT NOT NULL,
+                    result_json LONGTEXT NOT NULL,
+                    created_at DOUBLE NOT NULL,
+                    PRIMARY KEY(username, week_hash),
+                    FOREIGN KEY(username) REFERENCES venom_accounts(username)
+                )""" + suffix)
+                # Local-console metadata is an additive extension of schema 1.
+                # Use this cursor so failed initialization never publishes only
+                # part of the new account metadata on transactional backends.
+                from venom.server.admin_store import AdminStore
+                AdminStore(self).initialize(c)
                 db.commit()
             except Exception:
                 db.rollback()
@@ -258,10 +277,23 @@ class Database:
 
     @staticmethod
     def _serialize(state):
+        # This queue belongs to the transaction, not to the active player JSON.
+        state = {key: value for key, value in state.items() if key != "_season_archive_pending"}
         return json.dumps(state, ensure_ascii=True, separators=(",", ":"), allow_nan=False)
 
     def save(self, username, state, revision, session_token=None):
         raw = self._serialize(state)
+        pending = state.get("_season_archive_pending", [])
+        if not isinstance(pending, list):
+            raise DatabaseError("The season archive queue is invalid.")
+        archives = []
+        for result in pending:
+            week = result.get("week") if isinstance(result, dict) else None
+            if isinstance(week, bool) or not isinstance(week, int) or week < 1:
+                raise DatabaseError("A season archive must contain a positive fictional booking week.")
+            decimal = str(week)
+            digest = hashlib.sha256(decimal.encode("ascii")).hexdigest()
+            archives.append((digest, decimal, len(decimal), self._serialize(result)))
         with self.lock:
             db = self._connect()
             c = db.cursor()
@@ -278,13 +310,61 @@ class Database:
                           (raw, time.time(), username.lower(), revision))
                 if c.rowcount != 1:
                     raise DatabaseError("Player save changed in another session; refusing to overwrite it.")
+                for digest, decimal, digits, result_raw in archives:
+                    c.execute(self._sql("""SELECT week FROM venom_season_history
+                        WHERE username=? AND week_hash=?"""), (username.lower(), digest))
+                    existing = c.fetchone()
+                    if existing:
+                        if existing[0] != decimal:
+                            raise DatabaseError("Season archive identity collision; refusing to overwrite history.")
+                        raise DatabaseError("This fictional booking week has already been archived.")
+                    c.execute(self._sql("""INSERT INTO venom_season_history
+                        (username,week_hash,week,week_digits,result_json,created_at)
+                        VALUES (?,?,?,?,?,?)"""),
+                        (username.lower(), digest, decimal, digits, result_raw, time.time()))
                 db.commit()
+                # Never discard unsaved history on a failed lease, stale CAS,
+                # archive insertion failure, or failed database commit.
+                state.pop("_season_archive_pending", None)
                 return revision + 1
             except Exception:
                 db.rollback()
                 raise
             finally:
                 c.close()
+
+    def season_history(self, username, page=0, page_size=10):
+        """Read one account's immutable completed weeks, newest first.
+
+        Fictional time is independent of created_at, which is audit metadata.
+        The world supplies its authenticated account key, never a client owner.
+        """
+        if isinstance(page, bool) or not isinstance(page, int) or page < 0:
+            raise ValueError("Choose a non-negative history page.")
+        if isinstance(page_size, bool) or not isinstance(page_size, int) or page_size < 1:
+            raise ValueError("Choose a positive history page size.")
+        page_size = min(page_size, 20)
+        offset = page * page_size
+        # SQL offsets have a machine integer limit; a page beyond every
+        # physically possible archive is simply empty, never a career reset.
+        if offset > 2**63 - 1:
+            return {"items": [], "page": page, "page_size": page_size, "has_more": False}
+        with self.lock:
+            db = self._connect()
+            c = db.cursor()
+            try:
+                c.execute(self._sql("""SELECT result_json FROM venom_season_history
+                    WHERE username=? ORDER BY week_digits DESC, week DESC
+                    LIMIT ? OFFSET ?"""), (username.lower(), page_size + 1, offset))
+                rows = c.fetchall()
+                db.commit()
+            except Exception:
+                db.rollback()
+                raise
+            finally:
+                c.close()
+        return {"items": [json.loads(row[0]) for row in rows[:page_size]],
+                "page": page, "page_size": page_size, "has_more": len(rows) > page_size}
 
     def release_session(self, username, token):
         with self.lock:
@@ -299,6 +379,92 @@ class Database:
                 raise
             finally:
                 c.close()
+
+    def _require_admin_lease(self, cursor, username, session_token):
+        """Lock the account row and verify ownership in the mutation transaction."""
+        if not isinstance(session_token, str) or not session_token:
+            raise DatabaseError("An owned account session lease is required.")
+        now = time.time()
+        cursor.execute(self._sql("""UPDATE venom_accounts SET lease_until=?
+            WHERE username=? AND session_token=? AND lease_until>=?"""),
+            (now + 90, username, session_token, now))
+        if cursor.rowcount != 1:
+            raise DatabaseError("Account session lease expired or belongs to another world server.")
+
+    def reset_password(self, username, new_password, session_token):
+        """Reset under an acquired lease; caller obtains secrets via hidden stdin.
+
+        Plaintext is only fed to scrypt, never serialized into state or an audit
+        record. The caller retains responsibility for releasing its lease.
+        """
+        key = validate_credentials(username, new_password)
+        encoded = hash_password(new_password)
+        with self.lock:
+            db = self._connect()
+            c = db.cursor()
+            try:
+                self._require_admin_lease(c, key, session_token)
+                c.execute(self._sql("UPDATE venom_accounts SET password_hash=? WHERE username=?"), (encoded, key))
+                db.commit()
+            except Exception:
+                db.rollback()
+                raise
+            finally:
+                c.close()
+        return True
+
+    def delete_account(self, username, session_token, expected_revision):
+        """Delete a confirmed offline account and owned records atomically.
+
+        Account lease ownership and the confirmed revision must still match.
+        Immutable public match results may retain historical display names;
+        active ranked entries, defenders, reward records and private history do
+        not survive deletion or leak into a later account with the same name.
+        """
+        from venom.server.admin_store import account_key
+        key = account_key(username)
+        if isinstance(expected_revision, bool) or not isinstance(expected_revision, int) or expected_revision < 0:
+            raise ValueError("Account deletion requires the confirmed save revision.")
+        with self.lock:
+            db = self._connect()
+            c = db.cursor()
+            try:
+                self._require_admin_lease(c, key, session_token)
+                c.execute(self._sql("SELECT revision FROM venom_players WHERE username=?"), (key,))
+                row = c.fetchone()
+                if not row or row[0] != expected_revision:
+                    raise DatabaseError("Player save changed since confirmation; request a new deletion confirmation.")
+                # Community may be disabled and its tables not installed. All
+                # identifiers below are constants, never console input.
+                if self.driver == "mysql":
+                    c.execute("SELECT table_name FROM information_schema.tables WHERE table_schema=DATABASE()")
+                else:
+                    c.execute("SELECT name FROM sqlite_master WHERE type='table'")
+                tables = {str(row[0]) for row in c.fetchall()}
+                participant = "player:" + key
+                for table, column in (
+                    ("venom_ranked_records", "participant_id"),
+                    ("venom_ranked_rewards", "participant_id"),
+                    ("venom_rival_matches", "player_id"),
+                    ("venom_rival_history", "player_id"),
+                    ("venom_competitors", "id"),
+                ):
+                    if table in tables:
+                        c.execute(self._sql(f"DELETE FROM {table} WHERE {column}=?"), (participant,))
+                if "venom_rival_history" in tables:
+                    c.execute(self._sql("DELETE FROM venom_rival_history WHERE rival_id=?"), (participant,))
+                for table in ("venom_season_history", "venom_admin_warnings", "venom_admin_bans", "venom_players"):
+                    c.execute(self._sql(f"DELETE FROM {table} WHERE username=?"), (key,))
+                c.execute(self._sql("DELETE FROM venom_accounts WHERE username=?"), (key,))
+                if c.rowcount != 1:
+                    raise DatabaseError("The account disappeared before deletion could commit.")
+                db.commit()
+            except Exception:
+                db.rollback()
+                raise
+            finally:
+                c.close()
+        return True
 
     def close(self):
         with self.lock:

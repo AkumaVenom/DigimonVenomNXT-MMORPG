@@ -37,7 +37,7 @@ PLACEMENT_REWARDS = (
 )
 DEFAULTS = {
     "season_seconds": 7 * 24 * 3600, "season_anchor": 4 * 24 * 3600,  # Monday 1970-01-05 UTC
-    "energy_capacity": 5, "energy_refill_seconds": 1800,
+    "energy_capacity": 30, "energy_refill_seconds": 300,
     "win_points": 20, "loss_points": 5, "match_cooldown": 2.0,
     "opponent_cooldown": 60.0, "turn_limit": 240,
 }

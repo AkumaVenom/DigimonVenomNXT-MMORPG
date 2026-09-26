@@ -22,14 +22,16 @@ from websockets.exceptions import ConnectionClosed
 from venom.common.game import GameEngine
 from venom.common.farm import move_farm_position, normalize_farm_position
 from venom.common.paths import root_path
+from venom.common.network import network_settings
 from venom.server.database import Database, DatabaseError, validate_credentials
 from venom.server.lifecycle import WorldProcessLock
+from venom.server.moderation import clear_jail, is_jailed, jail_expired
 
 LOG = logging.getLogger("venom.server")
-VERSION = "0.6.0"
+VERSION = "0.8.0"
 MOVE_SPEED = 180.0
 MAX_MESSAGE = 65_536
-GAME_OPS = {"encounter", "battle", "digilab", "digifarm", "materialize", "evolve", "party", "shop", "item", "travel"}
+GAME_OPS = {"encounter", "battle", "digilab", "digifarm", "materialize", "evolve", "party", "shop", "item", "travel", "season"}
 
 
 def project_root():
@@ -69,11 +71,18 @@ class Session:
     last_encounter: float = 0
     last_chat: float = 0
     action_rate: TokenBucket = field(default_factory=lambda: TokenBucket(6, 12))
+    # World messages are complete visual snapshots, not transactions. Keep
+    # only the newest waiting snapshot while this player's send is blocked.
+    world_updates: asyncio.Queue = field(default_factory=lambda: asyncio.Queue(maxsize=1), repr=False)
+    world_sender: asyncio.Task | None = field(default=None, repr=False, compare=False)
+    closing: bool = False
 
 
 class WorldServer:
-    def __init__(self, engine, database, config):
+    def __init__(self, engine, database, config=None):
+        config = config or {}
         self.engine, self.database, self.config = engine, database, config
+        self.network = network_settings(config)
         self.sessions: dict[str, Session] = {}
         self.session_lock = asyncio.Lock()
         self.authentication_slots = asyncio.Semaphore(4)
@@ -86,6 +95,37 @@ class WorldServer:
         self.stop_signal = None
         self.persistence_failed = False
         self.community_rate = {}
+        self.restart_requested = False
+        self.admin_store = None
+        if database is not None and hasattr(database, "_sql"):
+            from venom.server.admin_store import AdminStore
+            self.admin_store = AdminStore(database)
+
+    async def check_ban(self, key):
+        if self.admin_store is not None:
+            ban = await asyncio.to_thread(self.admin_store.ban_status, key)
+            if ban:
+                raise ValueError("This account is banned. " + str(ban.get("reason", "Contact the server administrator.")))
+
+    async def expire_jail(self, session, notify=True):
+        """Caller holds session.lock; publish release only after a durable save."""
+        if session.closing or not jail_expired(session.state):
+            return False
+        candidate = copy.deepcopy(session.state)
+        clear_jail(candidate)
+        # World snapshots read without session.lock. Keep release invisible
+        # until the same revision/lease-aware save has committed successfully.
+        proposed = copy.copy(session)
+        proposed.state = candidate
+        await self.save(proposed)
+        session.state, session.revision = proposed.state, proposed.revision
+        session.dx = session.dy = 0
+        session.walked = 0
+        if notify:
+            await self.result(session.websocket, 0, state=session.state)
+            await self.send(session.websocket, {"op": "notice", "kind": "admin",
+                "text": "Your holding-cell time has ended. Your previous activity has been restored."})
+        return True
 
     async def initialize_community(self):
         from .community import Community
@@ -95,9 +135,73 @@ class WorldServer:
         self.community = service
         LOG.info('Tamer rivals ready. Ranked history and population progress are persistent.')
 
-    async def send(self, ws, message, timeout=5):
-        # Bound backpressure so an unresponsive peer can't stall shutdown or a map.
-        await asyncio.wait_for(ws.send(json.dumps(message, separators=(",", ":"), allow_nan=False)), timeout=timeout)
+    async def _send_encoded(self, ws, encoded, timeout=None):
+        """Bound backpressure, closing a stalled socket before cancelling send."""
+        limit = self.network["send_timeout"] if timeout is None else timeout
+        task = asyncio.create_task(ws.send(encoded))
+        try:
+            done, _ = await asyncio.wait((task,), timeout=limit)
+            if not done:
+                LOG.warning("Closing stalled connection: peer=%r send_timeout=%gs last_ping_rtt_seconds=%r",
+                            getattr(ws, "remote_address", None), limit, getattr(ws, "latency", None))
+                # Cancelling a send is not a retry mechanism. Close first so
+                # a partially transmitted message cannot be reused/replayed.
+                with contextlib.suppress(Exception):
+                    await ws.close(1013, f"Send stalled for {limit:g}s")
+                raise asyncio.TimeoutError(f"Send stalled for {limit:g}s")
+            task.result()
+        finally:
+            if not task.done():
+                task.cancel()
+            await asyncio.gather(task, return_exceptions=True)
+
+    async def send(self, ws, message, timeout=None):
+        encoded = json.dumps(message, separators=(",", ":"), allow_nan=False)
+        await self._send_encoded(ws, encoded, timeout)
+
+    async def _world_sender(self, session):
+        """One bounded sender per player; never await it from the world tick."""
+        try:
+            while not self.stopping and not session.closing:
+                group, encoded = await session.world_updates.get()
+                try:
+                    # Don't send a queued snapshot for a map the player left.
+                    if group == self.place(session):
+                        await self._send_encoded(session.websocket, encoded)
+                finally:
+                    session.world_updates.task_done()
+        except (ConnectionClosed, asyncio.TimeoutError):
+            # The socket is already closed (or _send_encoded closed it).
+            pass
+        except Exception:
+            LOG.exception("World update failed for %s", session.key)
+            with contextlib.suppress(Exception):
+                await session.websocket.close(1011, "World update failed")
+        finally:
+            session.closing = True
+
+    def _queue_world(self, session, group, encoded):
+        if self.stopping or session.closing:
+            return
+        if session.world_sender is None:
+            session.world_sender = asyncio.create_task(self._world_sender(session))
+        elif session.world_sender.done():
+            return
+        if session.world_updates.full():
+            session.world_updates.get_nowait()
+            session.world_updates.task_done()
+        session.world_updates.put_nowait((group, encoded))
+
+    async def _stop_world_sender(self, session):
+        session.closing = True
+        task = session.world_sender
+        if task is not None:
+            if not task.done():
+                task.cancel()
+            await asyncio.gather(task, return_exceptions=True)
+        while not session.world_updates.empty():
+            session.world_updates.get_nowait()
+            session.world_updates.task_done()
 
     async def result(self, ws, rid, ok=True, **fields):
         await self.send(ws, {"op": "result", "rid": rid, "ok": ok, **fields})
@@ -108,6 +212,9 @@ class WorldServer:
         try:
             session.revision = await asyncio.to_thread(
                 self.database.save, session.key, snapshot, session.revision, session.token)
+            # Database.save commits the copied queue together with the player
+            # revision. The live queue can be cleared only after that succeeds.
+            session.state.pop("_season_archive_pending", None)
         except DatabaseError:
             raise
         except Exception as exc:
@@ -133,7 +240,11 @@ class WorldServer:
                 authenticated = await asyncio.to_thread(self.database.authenticate, username, password)
                 if not authenticated:
                     raise ValueError("Tamer name or password is incorrect.")
+            await self.check_ban(key)
             async with self.session_lock:
+                # Local bans share this lock. Recheck after credentials and
+                # serialization so a concurrent ban cannot race a new login.
+                await self.check_ban(key)
                 if key in self.sessions:
                     raise ValueError("This account is already online. Close the other client first.")
                 if len(self.sessions) >= int(self.config.get("max_players", 500)):
@@ -149,8 +260,9 @@ class WorldServer:
                     if hasattr(self.engine, "_refresh"):
                         self.engine._refresh(state)
                     session = Session(ws, key, token, state, revision)
-                    if self.community and self.community.ready:
-                        await asyncio.to_thread(self.community.register_player, copy.deepcopy(state))
+                    await self.expire_jail(session, notify=False)
+                    if self.community and self.community.ready and not self.in_season(session.state) and not is_jailed(session.state):
+                        await asyncio.to_thread(self.community.register_player, copy.deepcopy(session.state))
                     self.sessions[key] = session
                 except Exception:
                     await asyncio.to_thread(self.database.release_session, key, token)
@@ -172,14 +284,15 @@ class WorldServer:
         try:
             await self.send(ws, {"op": "hello", "version": VERSION,
                 "game": "Digimon Venom NXT", "tick_hz": 10, "movement_speed": MOVE_SPEED,
-                "features": ["digifarm"] + (["ranked", "rivals", "bot_activity"] if self.community else []),
+                "features": ["digifarm", "season", "server_notices", "player_titles"] + (["ranked", "rivals", "bot_activity"] if self.community else []),
                 "registration": self.config.get("allow_registration", True)})
             while not self.stopping:
                 try:
                     # Unauthenticated sockets cannot occupy a slot forever.
-                    raw = await asyncio.wait_for(ws.recv(), timeout=None if session else 30)
+                    raw = await asyncio.wait_for(
+                        ws.recv(), timeout=None if session else self.network["login_timeout"])
                 except asyncio.TimeoutError:
-                    await ws.close(1000, "Connection idle")
+                    await ws.close(1000, "Sign-in timed out")
                     break
                 rid = 0
                 try:
@@ -200,6 +313,11 @@ class WorldServer:
                     if not isinstance(op, str) or len(op) > 32:
                         raise ValueError("Invalid operation.")
                     if op == "ping":
+                        if session is not None and jail_expired(session.state):
+                            async with session.lock:
+                                if session.closing:
+                                    raise ValueError("This session is disconnecting; no further actions are accepted.")
+                                await self.expire_jail(session)
                         await self.result(ws, rid, server_time=time.time())
                         continue
                     if session is None:
@@ -214,6 +332,11 @@ class WorldServer:
                         await self.result(ws, rid)
                         break
                     async with session.lock:
+                        if session.closing:
+                            raise ValueError("This session is disconnecting; no further actions are accepted.")
+                        await self.expire_jail(session)
+                        if is_jailed(session.state) and (op in GAME_OPS or op == "community"):
+                            raise ValueError("You are in a private holding cell. Activities resume after release.")
                         if op == "move":
                             changed = self.move(session, message)
                             if changed:
@@ -230,6 +353,8 @@ class WorldServer:
                             await self.chat(session, message)
                             await self.result(ws, rid)
                         elif op == "community":
+                            if self.in_season(session.state):
+                                raise ValueError("Save & Return to World before visiting Ranked Arena or shared rivals.")
                             if not self.community:
                                 raise ValueError("This server does not have ranked rivals enabled. Start the updated server first.")
                             bucket = self.community_rate.setdefault(session.key, TokenBucket(2, 8))
@@ -239,11 +364,19 @@ class WorldServer:
                             payload = await asyncio.to_thread(self.community.request,
                                 copy.deepcopy(session.state), message, session.token)
                             await self.result(ws, rid, community=payload)
+                        elif op == "season" and message.get("action") == "history":
+                            if not session.action_rate.take():
+                                raise ValueError("Please wait a moment before refreshing career history.")
+                            history = await asyncio.to_thread(self.database.season_history,
+                                session.key, message.get("page", 0), message.get("page_size", 10))
+                            await self.result(ws, rid, season_history=history)
                         elif op in GAME_OPS:
                             if not session.action_rate.take():
                                 raise ValueError("Please wait a moment between actions.")
                             if op == "encounter" and time.monotonic() - session.last_encounter < 2:
                                 raise ValueError("Take a breath before searching again.")
+                            if op == "encounter" and self.in_season(session.state):
+                                raise ValueError("Save & Return to World before searching for wild Digimon.")
                             # Invalid actions cannot partially mutate a live save.
                             candidate = copy.deepcopy(session.state)
                             self.engine.handle(candidate, op, message)
@@ -256,7 +389,7 @@ class WorldServer:
                                 raise
                             if op == "encounter":
                                 session.last_encounter = time.monotonic()
-                            if op in ("digilab", "digifarm", "travel"):
+                            if op in ("digilab", "digifarm", "travel", "season"):
                                 session.dx = session.dy = 0
                                 session.walked = 0
                             await self.result(ws, rid, state=session.state)
@@ -274,20 +407,27 @@ class WorldServer:
                     await self.result(ws, rid, ok=False, error="The server could not safely save your session. Please reconnect.")
                     await ws.close(1011, "Save unavailable")
                     break
+                except (ConnectionClosed, asyncio.TimeoutError):
+                    raise
                 except Exception:
                     LOG.exception("Request failed for %s", session.key if session else "login")
                     await self.result(ws, rid, ok=False, error="The server could not complete that request. Please try again.")
-        except (ConnectionClosed, asyncio.TimeoutError):
-            pass
+        except (ConnectionClosed, asyncio.TimeoutError) as exc:
+            LOG.info("Connection ended for %s (%s): %s",
+                     session.key if session else "not signed in", ip, exc)
         finally:
+            LOG.info("Connection closed: player=%s peer=%s code=%s reason=%r",
+                     session.key if session else "not signed in", ip,
+                     getattr(ws, "close_code", None), getattr(ws, "close_reason", ""))
             self.connections_by_ip[ip] -= 1
             if not self.connections_by_ip[ip]:
                 self.connections_by_ip.pop(ip, None)
             if session:
+                await self._stop_world_sender(session)
                 try:
                     async with session.lock:
                         await self.save(session)
-                        if self.community and self.community.ready:
+                        if self.community and self.community.ready and not self.in_season(session.state) and not is_jailed(session.state):
                             await asyncio.to_thread(self.community.register_player, copy.deepcopy(session.state))
                 except Exception:
                     self.persistence_failed = True
@@ -324,6 +464,11 @@ class WorldServer:
         dx, dy, requested_dt = values
         if abs(dx) > 1 or abs(dy) > 1 or not 0 <= requested_dt <= 0.1:
             raise ValueError("Movement input is out of bounds.")
+        # Late world movement packets cannot move a tamer or start a wild
+        # encounter while their private league is open, including mid-battle.
+        if self.in_season(session.state) or is_jailed(session.state):
+            session.dx = session.dy = 0
+            return False
         now = time.monotonic()
         session.move_credit = min(0.15, session.move_credit + max(0, now - session.last_move))
         session.last_move = now
@@ -383,12 +528,16 @@ class WorldServer:
         return False
 
     async def chat(self, session, message):
+        if self.in_season(session.state):
+            raise ValueError("Save & Return to World before using world chat.")
         raw = message.get("text")
         if not isinstance(raw, str) or not 1 <= len(raw) <= 240:
             raise ValueError("Chat messages must contain 1–240 characters.")
         text = "".join(c for c in raw if c.isprintable()).strip()
         if not text:
             raise ValueError("Chat message is empty.")
+        if text.startswith("/"):
+            raise ValueError("Commands are available only in the local world-server console; player chat has no commands.")
         now = time.monotonic()
         if now - session.last_chat < 0.75:
             raise ValueError("Please wait a moment before chatting again.")
@@ -398,8 +547,17 @@ class WorldServer:
         await asyncio.gather(*(self.send(s.websocket, data) for s in peers), return_exceptions=True)
 
     @staticmethod
+    def in_season(state):
+        battle = state.get("battle") or {}
+        return bool(state.get("in_season") or battle.get("kind") == "season" or battle.get("season"))
+
+    @staticmethod
     def place(session):
         state = session.state
+        if is_jailed(state):
+            return (state["map_id"], "jail", session.key)
+        if WorldServer.in_season(state):
+            return (state["map_id"], "season", session.key)
         if state.get("in_farm"):
             return (state["map_id"], "farm", session.key)
         return (state["map_id"], "lab" if state.get("in_lab") else "field", None)
@@ -409,7 +567,7 @@ class WorldServer:
         return WorldServer.place(a) == WorldServer.place(b)
 
     async def broadcast_once(self):
-        sessions = list(self.sessions.values())
+        sessions = [s for s in self.sessions.values() if not s.closing]
         groups = {}
         snapshot_places = {}
         now = time.monotonic()
@@ -417,13 +575,14 @@ class WorldServer:
             state = s.state
             group = self.place(s)
             snapshot_places[s.key] = group
-            moving = now - s.last_move < 0.2 and not (state.get("battle") or state.get("in_farm") or state.get("in_lab"))
+            moving = now - s.last_move < 0.2 and not (state.get("battle") or state.get("in_farm") or state.get("in_lab") or self.in_season(state) or is_jailed(state))
             groups.setdefault(group, []).append({"username": state["username"], "tamer": state["tamer"],
                 "map_id": state["map_id"], "x": state["x"], "y": state["y"],
                 "dx": s.dx if moving else 0, "dy": s.dy if moving else 0,
                 "lead": state["party"][0]["species_id"] if state.get("party") else None,
                 "battle": bool(state.get("battle")), "in_lab": bool(state.get("in_lab")),
-                "in_farm": bool(state.get("in_farm"))})
+                "in_farm": bool(state.get("in_farm")), "in_season": self.in_season(state),
+                "in_jail": is_jailed(state), "active_title": str(state.get("active_title") or "")[:32]})
         if self.community and self.community.ready:
             # Each occupied field has one shared bot snapshot at the same server
             # timestamp. No client receives the entire 5,000-rival population.
@@ -432,18 +591,14 @@ class WorldServer:
             for group, actors in groups.items():
                 if group[1] == "field":
                     actors.extend(rivals.get(group[0], []))
-        # Per-recipient async sends avoid the unbounded-buffer broadcast helper.
+        # Queue independently: a stalled player must not slow the 10 Hz tick.
+        # At most one snapshot is sending and one newer snapshot is waiting.
         stamp = time.time()
         encoded = {group:json.dumps({"op":"world", "players":actors, "server_time":stamp},
                    separators=(",", ":"), allow_nan=False) for group,actors in groups.items()}
-        async def deliver(s):
-            try:
-                group = snapshot_places[s.key]
-                await asyncio.wait_for(s.websocket.send(encoded[group]), timeout=0.06)
-            except (ConnectionClosed, asyncio.TimeoutError):
-                with contextlib.suppress(Exception):
-                    await s.websocket.close(1013, "Slow connection")
-        await asyncio.gather(*(deliver(s) for s in sessions))
+        for s in sessions:
+            group = snapshot_places[s.key]
+            self._queue_world(s, group, encoded[group])
 
     async def world_loop(self):
         while not self.stopping:
@@ -468,7 +623,7 @@ class WorldServer:
                 try:
                     async with session.lock:
                         await self.save(session)
-                        if self.community and self.community.ready:
+                        if self.community and self.community.ready and not self.in_season(session.state) and not is_jailed(session.state):
                             await asyncio.to_thread(self.community.register_player, copy.deepcopy(session.state))
                 except Exception:
                     LOG.exception("Autosave failed for %s", session.key)
@@ -483,7 +638,7 @@ class WorldServer:
             try:
                 await asyncio.to_thread(self.community.step, started, min(1., started-previous))
                 if started >= next_invites:
-                    states = [copy.deepcopy(s.state) for s in self.sessions.values()]
+                    states = [copy.deepcopy(s.state) for s in self.sessions.values() if not self.in_season(s.state) and not is_jailed(s.state)]
                     await asyncio.to_thread(self.community.invitations, states, started)
                     next_invites = started+10
             except Exception:
@@ -494,6 +649,22 @@ class WorldServer:
                 return
             previous = started
             await self.pause(max(.005, .1-(time.monotonic()-started)))
+
+    async def moderation_loop(self):
+        while not self.stopping:
+            for session in list(self.sessions.values()):
+                if session.closing or not jail_expired(session.state):
+                    continue
+                try:
+                    async with session.lock:
+                        await self.expire_jail(session)
+                except (ConnectionClosed, asyncio.TimeoutError):
+                    pass
+                except Exception:
+                    LOG.exception("Could not safely release holding cell for %s", session.key)
+                    with contextlib.suppress(Exception):
+                        await session.websocket.close(1011, "Moderation save unavailable")
+            await self.pause(1)
 
 
 def read_config(path, dev=False):
@@ -528,12 +699,28 @@ def tls_context(config, root=None):
 
 async def run(config, dev=False, stop=None):
     root = project_root()
-    with WorldProcessLock(root) as control:
-        await _run_world(config, root, dev, stop, control)
-        control.mark_stopped()
+    from venom.server.local_console import LocalConsole
+    options = config.get("console", {})
+    if not isinstance(options, dict):
+        raise ValueError("The console configuration must be an object.")
+    console = LocalConsole(asyncio.get_running_loop()) if options.get("enabled", True) else None
+    try:
+        with WorldProcessLock(root) as control:
+            while True:
+                restart = await _run_world(config, root, dev, stop, control, console)
+                if not restart or control.stop_requested():
+                    break
+                LOG.info("Restarting world in this process after all saves and leases were closed...")
+                if stop is not None:
+                    stop.clear()
+                control.update("starting")
+            control.mark_stopped()
+    finally:
+        if console is not None:
+            console.close()
 
 
-async def _run_world(config, root, dev, stop, control):
+async def _run_world(config, root, dev, stop, control, console=None):
     """Finish every database worker and final save before confirming shutdown."""
     stop = stop or asyncio.Event()
     loop = asyncio.get_running_loop()
@@ -565,6 +752,7 @@ async def _run_world(config, root, dev, stop, control):
     monitor = asyncio.create_task(watch_stop_request())
     db = None
     world = None
+    admin = None
     tasks = []
     try:
         context = None if dev else tls_context(config, root)
@@ -574,6 +762,9 @@ async def _run_world(config, root, dev, stop, control):
         world = WorldServer(engine, db, config)
         world.stop_signal = stop
         await world.initialize_community()
+        if console is not None:
+            from venom.server.admin_commands import AdminConsole
+            admin = AdminConsole(world, role=config.get("console", {}).get("role", "OWNER"))
 
         def background_finished(task):
             if task.cancelled():
@@ -587,19 +778,29 @@ async def _run_world(config, root, dev, stop, control):
 
         async with serve(world.connection, config.get("host", "0.0.0.0"), int(config.get("port", 8765)),
                          ssl=context, origins=[None], max_size=MAX_MESSAGE, max_queue=16,
-                         compression=None, ping_interval=20, ping_timeout=20, close_timeout=5,
-                         open_timeout=10, server_header=None) as listener:
+                         compression=None, ping_interval=world.network["ping_interval"],
+                         ping_timeout=world.network["ping_timeout"], close_timeout=world.network["close_timeout"],
+                         open_timeout=world.network["open_timeout"], server_header=None) as listener:
             tasks = [asyncio.create_task(world.world_loop()), asyncio.create_task(world.autosave_loop()),
-                     asyncio.create_task(world.community_loop())]
+                     asyncio.create_task(world.community_loop()), asyncio.create_task(world.moderation_loop())]
             for task in tasks:
                 task.add_done_callback(background_finished)
             control.update("running")
             LOG.info("Digimon Venom NXT %s | %s://%s:%s | %s", VERSION, "ws (LOCAL DEV)" if dev else "wss",
                      config.get("host"), config.get("port"), db.driver)
+            LOG.info("Network seconds: ping_interval=%g ping_timeout=%g open_timeout=%g "
+                     "send_timeout=%g login_timeout=%g",
+                     world.network["ping_interval"], world.network["ping_timeout"],
+                     world.network["open_timeout"], world.network["send_timeout"], world.network["login_timeout"])
             LOG.info("World ready. Ctrl+C saves players and shuts down.")
+            if admin is not None and not console.attach(admin):
+                LOG.info("Local console disabled: no interactive terminal. The world remains running.")
             await stop.wait()
             world.stopping = True
             control.update("stopping")
+            if admin is not None:
+                console.detach(admin)
+                await admin.close()
             listener.close()
             # Cooperative completion matters: cancelling asyncio.to_thread
             # leaves its SQL operation running in the background.
@@ -609,6 +810,9 @@ async def _run_world(config, root, dev, stop, control):
         if world is not None:
             world.stopping = True
         try:
+            if admin is not None:
+                console.detach(admin)
+                await admin.close()
             await asyncio.gather(*tasks, monitor, return_exceptions=True)
             if world is not None and world.community:
                 await asyncio.to_thread(world.community.shutdown)
@@ -627,6 +831,7 @@ async def _run_world(config, root, dev, stop, control):
     if world is not None and world.persistence_failed:
         raise DatabaseError("The world stopped with a save error. MySQL must remain running; check runtime/logs/server.log.")
     LOG.info("World stopped cleanly. Players and rival progress are saved.")
+    return bool(world is not None and world.restart_requested)
 
 
 def main(argv=None):

@@ -1,0 +1,63 @@
+{
+  "release": "0.8.0 Local Admin Console",
+  "baseline": "0.7.0 Season Mode",
+  "baseline_source_sha256": "e79e75411e965aa0c08cdeaecf591d85abc0f3ffef585ddbae8763d280906d07",
+  "commands": 51,
+  "tests": {
+    "full_regression_suite": {
+      "passed": 555,
+      "skipped": 10
+    },
+    "additional_admin_commit_and_deletion_regressions": {
+      "passed": 7
+    },
+    "total_distinct_passed": 562,
+    "skipped_reasons": [
+      "1 opt-in live portable MySQL check requires VENOM_TEST_MYSQL_RUNTIME",
+      "9 setup-wizard graphical checks require a desktop/Xvfb"
+    ],
+    "integration": "Actual GameEngine, SQLite transactions and loopback WebSockets; real same-process world restart with saved reconnect.",
+    "covered": [
+      "No administrative chat or network operation",
+      "Local role enforcement and hidden password redaction",
+      "Online/offline leases and revisions",
+      "Uncommitted administration is not broadcast",
+      "Failed writes retain original live state",
+      "One-use expiring destructive confirmations",
+      "Account recreation invalidates old confirmations",
+      "Deletion removes live ranked caches and invitations",
+      "Bans close even when a checkpoint fails",
+      "Jail preserves and restores a live Season battle across reconnect",
+      "Title persistence and nameplate snapshots",
+      "Graceful save/shutdown/restart and one terminal reader"
+    ]
+  },
+  "assets": {
+    "verified_files": 21360,
+    "catalog_or_asset_changes": false,
+    "method": "python3 tools/build.py --verify-only"
+  },
+  "source_checks": [
+    "python3 -m compileall -q venom tools",
+    "git diff --check"
+  ],
+  "native_previews": {
+    "resolutions": [
+      "1280x800",
+      "960x600"
+    ],
+    "directory": "docs/previews/admin-console",
+    "scenes": [
+      "Titles",
+      "Broadcast",
+      "Detention",
+      "Notice history"
+    ]
+  },
+  "limits": [
+    "Windows executables were not built or launched in this Linux environment.",
+    "New SQL persistence was exercised with SQLite; the optional live MySQL check was skipped.",
+    "Headless native screenshots are not an interactive hardware playtest.",
+    "Build both client and server on Windows x64 with BUILD_ALL.bat."
+  ]
+}

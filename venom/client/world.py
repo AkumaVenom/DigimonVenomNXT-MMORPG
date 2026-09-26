@@ -12,7 +12,14 @@ import math
 
 import pygame
 
-from .widgets import BG, CYAN, LINE, LIME, MUTED, WHITE, panel, text
+from .widgets import BG, CYAN, GOLD, LINE, LIME, MUTED, WHITE, panel, text
+
+
+def player_title(value):
+    """Bound a server-owned display label without changing the account identity."""
+    if not isinstance(value, str):
+        return ''
+    return ' '.join(''.join(c if c.isprintable() else ' ' for c in value).split())[:32]
 
 
 def _zoom(value):
@@ -202,7 +209,7 @@ class WorldRenderer:
                 self._sprite_bytes -= old[2]
         return scaled
 
-    def _draw_actor(self, kind, world_pos, ident, moving, direction, label, bot_id=None, *, frame=None):
+    def _draw_actor(self, kind, world_pos, ident, moving, direction, label, bot_id=None, *, title='', frame=None):
         app = self.app
         if frame is None:
             scale, origin = self.camera.scale, self.camera.origin
@@ -261,10 +268,26 @@ class WorldRenderer:
             else:
                 self._label_sizes.move_to_end(key)
             width, height = dimensions
-            label_rect = pygame.Rect(0, 0, width + 12, height + 6)
+            title = player_title(title) if kind == 'tamer' and bot_id is None else ''
+            title_height = app.assets.font(10, True).get_height() + 3 if title else 0
+            title_width = app.assets.font(10, True).size(title)[0] if title else 0
+            label_rect = pygame.Rect(0, 0, max(width, title_width) + 12, height + 6 + title_height)
             label_rect.midbottom = (round(label_position[0]), round(label_position[1] - 6))
+            # Both lines stay inside the map, including at its edges and at any DPI.
+            corner = self._logical_point(self.camera.viewport.topleft)
+            opposite = self._logical_point(self.camera.viewport.bottomright)
+            label_view = pygame.Rect(corner, (opposite[0]-corner[0], opposite[1]-corner[1])).inflate(-4, -4)
+            label_rect.width = min(label_rect.width, label_view.width)
+            label_rect.clamp_ip(label_view)
             panel(app.screen, label_rect, BG, None, 4)
-            text(app.screen, app.assets, label, label_rect.center, 11, CYAN if bot_id else WHITE, True, center=True)
+            if title:
+                text(app.screen, app.assets, title,
+                     (label_rect.centerx, label_rect.y+3+title_height//2), 10, GOLD, True,
+                     max_width=label_rect.width-12, center=True)
+            # The title is a separate line: it never changes or shortens a username.
+            name_center = (label_rect.centerx, label_rect.y+3+title_height+height//2)
+            text(app.screen, app.assets, label, name_center, 11,
+                 CYAN if bot_id else WHITE, True, center=True)
             if bot_id is not None and hasattr(app, 'community'):
                 app.ui.actions.append((label_rect.clip(app.screen.to_logical_rect(self.camera.viewport)),
                                        lambda ident=bot_id: app.community.open_profile(ident)))
@@ -274,9 +297,9 @@ class WorldRenderer:
         self._facings = {name: direction for name, direction in self._facings.items() if name in app.players}
         party = app.state.get('party', [])
         if party:
-            actors.append((app.follower.y, 'digimon', app.follower, party[0]['species_id'], app.moving, app.direction, '', None))
+            actors.append((app.follower.y, 'digimon', app.follower, party[0]['species_id'], app.moving, app.direction, '', '', None))
         actors.append((app.position.y, 'tamer', app.position, app.state.get('tamer', app.tamer),
-                       app.moving, app.direction, app.state.get('username', ''), None))
+                       app.moving, app.direction, app.state.get('username', ''), player_title(app.state.get('active_title')), None))
         for name, player in app.players.items():
             if name == app.state.get('username') or player.get('map_id') != app.state.get('map_id'):
                 continue
@@ -292,11 +315,13 @@ class WorldRenderer:
                 direction = supplied if supplied in ('up', 'down', 'left', 'right', 'up_left', 'up_right', 'down_left', 'down_right') else self._facings.get(name, 'down')
             self._facings[name] = direction
             bot_id = player.get('id') if player.get('is_bot') else None
-            label = ('AI RIVAL · ' if bot_id is not None else '')+str(player.get('name') or name)
-            actors.append((pos.y, 'tamer', pos, player.get('tamer'), bool(dx or dy), direction, label, bot_id))
+            label = ('AI RIVAL · '+str(player.get('name') or name) if bot_id is not None
+                     else str(player.get('username') or name))
+            title = player_title(player.get('active_title')) if bot_id is None else ''
+            actors.append((pos.y, 'tamer', pos, player.get('tamer'), bool(dx or dy), direction, label, title, bot_id))
             if player.get('lead'):
                 follower = pos + pygame.Vector2(-24, 28)
-                actors.append((follower.y, 'digimon', follower, player['lead'], bool(dx or dy), direction, '', None))
+                actors.append((follower.y, 'digimon', follower, player['lead'], bool(dx or dy), direction, '', '', None))
         return sorted(actors, key=lambda actor: actor[0])
 
     def draw(self, view):
@@ -320,8 +345,8 @@ class WorldRenderer:
                 scale = self.camera.scale
                 frame = (scale, self.camera.origin,
                          self.camera.viewport.inflate(round(180 * scale), round(180 * scale)))
-                for _, kind, position, ident, moving, direction, label, bot_id in self._actors():
-                    self._draw_actor(kind, position, ident, moving, direction, label, bot_id, frame=frame)
+                for _, kind, position, ident, moving, direction, label, title, bot_id in self._actors():
+                    self._draw_actor(kind, position, ident, moving, direction, label, bot_id, title=title, frame=frame)
                 foreground = app.assets.image(entry.get('foreground'))
                 if foreground:
                     self._draw_layer(foreground, 'foreground')
@@ -350,7 +375,7 @@ class WorldRenderer:
         app.ui.button((controls.x + 133, controls.y + 5, 33, 33), '+', lambda: change_zoom(.5), disabled=self.zoom >= 8)
         app.ui.button((controls.x + 177, controls.y + 5, 83, 33), 'Fit level', lambda: set_zoom(1), small=True, selected=self.zoom <= 1)
         app.ui.button((view.right - 187, view.bottom - 51, 172, 36), 'Search for Digimon  E',
-                      lambda: app.send('encounter'), small=True, disabled=app.action_pending)
+                      lambda: app.send('encounter'), small=True, disabled=app.action_pending or bool(app.state.get('admin_jail')))
 
     def _draw_minimap(self, entry, rect):
         surface = self.app.assets.map(self.app.state.get('map_id'))

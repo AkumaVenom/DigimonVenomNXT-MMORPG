@@ -10,7 +10,7 @@ import math
 import pygame
 
 from .render import draw
-from .world import MapCamera, WorldRenderer, _zoom
+from .world import MapCamera, WorldRenderer, _zoom, player_title
 from .widgets import text, bar, wrap, panel, WHITE, MUTED, CYAN, LIME, GOLD, RED
 
 
@@ -323,13 +323,18 @@ class DigiFarmScreen(WorldRenderer):
             self.player_rect = visible if visible.width and visible.height else None
             if self.player_rect:
                 label = 'YOU · '+str(app.state.get('username') or 'Tamer')
-                width = min(190, app.assets.font(11, True).size(label)[0]+16)
-                nameplate = pygame.Rect(0, 0, width, 23)
+                title = player_title(app.state.get('active_title'))
+                title_width = app.assets.font(10, True).size(title)[0] if title else 0
+                width = max(app.assets.font(11, True).size(label)[0], title_width)+16
+                nameplate = pygame.Rect(0, 0, width, 38 if title else 23)
                 nameplate.midbottom = (logical.centerx, logical.top-5)
                 nameplate.clamp_ip(self.viewport.inflate(-8, -8))
                 panel(app.screen, nameplate, (9, 29, 38), CYAN, 5)
-                text(app.screen, app.assets, label, nameplate.center, 11, WHITE,
-                     True, width-10, True)
+                if title:
+                    text(app.screen, app.assets, title, (nameplate.centerx, nameplate.y+11),
+                         10, GOLD, True, width-10, True)
+                text(app.screen, app.assets, label, (nameplate.centerx, nameplate.bottom-12),
+                     11, WHITE, True, center=True)
         else:
             self.follower_rect = visible if visible.width and visible.height else None
 

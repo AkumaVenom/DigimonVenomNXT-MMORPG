@@ -16,6 +16,7 @@ from pathlib import Path
 from typing import Any
 
 from venom.common.farm import normalize_farm_position
+from venom.common import season as solo_season
 
 
 class GameError(ValueError):
@@ -307,17 +308,25 @@ class GameEngine:
         handlers = {"encounter": self._encounter, "battle": self._battle, "digilab": self._digilab,
                     "materialize": self._materialize, "evolve": self._evolve, "party": self._party,
                     "shop": self._shop, "item": self._item, "travel": self._travel,
-                    "digifarm": self._digifarm}
+                    "digifarm": self._digifarm, "season": self._season}
         if op not in handlers:
             raise GameError("Unknown gameplay operation.")
+        if state.get("in_season") and op not in ("season", "battle"):
+            raise GameError("Use Save & Return to World before another activity.")
         state["events"] = []
-        handlers[op](state, payload)
+        try:
+            handlers[op](state, payload)
+        except solo_season.SeasonError as exc:
+            raise GameError(str(exc)) from exc
         self._refresh(state)
         return state
 
     def _refresh(self, state: dict) -> None:
         # Additive save migration: never move existing players or discard old storage.
         state.setdefault("in_farm", False)
+        state.setdefault("in_season", False)
+        if state.get("season"):
+            solo_season.update_views(state["season"], state)
         normalize_farm_position(state)
         state.setdefault("storage", [])
         state["farm"] = {"capacity": FARM_CAPACITY,
@@ -420,12 +429,20 @@ class GameEngine:
         battle = state.get("battle")
         if not battle:
             raise GameError("There is no battle in progress.")
+        if battle.get("kind") == "season":
+            if (payload.get("battle_id") != battle["id"] or
+                    isinstance(payload.get("expected_turn"), bool) or
+                    not isinstance(payload.get("expected_turn"), int) or
+                    payload["expected_turn"] != battle["turn"]):
+                raise GameError("This battle turn has changed. Wait for the current battle controls.")
         action = payload.get("action", "attack")
         if action not in {"attack", "skill", "struggle", "item", "flee", "guard", "swap"}:
             raise GameError("Unknown battle action.")
         actor_index = battle["actor"]
         actor = state["party"][actor_index]
         if action == "flee":
+            if battle.get("kind") == "season":
+                raise GameError("Season matches cannot be fled. Finish this match; disconnecting safely pauses it.")
             state["battle"] = None
             for monster in state["party"]:
                 monster.pop("guard", None)
@@ -541,6 +558,8 @@ class GameEngine:
 
     def _scan_defeat(self, state: dict, enemy_index: int) -> None:
         battle = state["battle"]
+        if battle.get("kind") == "season":
+            return  # Trainer partners are never collectible wild scan data.
         if enemy_index in battle["scanned"]:
             return
         battle["scanned"].append(enemy_index)
@@ -557,6 +576,13 @@ class GameEngine:
         battle = state.get("battle")
         if not battle:
             return True
+        if battle.get("kind") == "season":
+            won = not any(e["hp"] > 0 for e in battle["enemies"])
+            lost = not any(state["party"][i]["hp"] > 0 for i in battle["active"])
+            if won or lost:
+                self._finish_season_battle(state, won)
+                return True
+            return False
         if not any(e["hp"] > 0 for e in battle["enemies"]):
             enemies = battle["enemies"]
             xp = sum(24 + e["level"] * 12 + STAGE_RANK.get(e.get("stage"), 2) * 8 for e in enemies)
@@ -581,6 +607,96 @@ class GameEngine:
             self._event(state, "lose", text="Your battle team was defeated. DigiLab emergency recovery restored all partners; no credits or scan data lost.")
             return True
         return False
+
+    def _season(self, state: dict, payload: dict) -> None:
+        action = payload.get("action", "enter")
+        if action == "enter":
+            if state.get("in_season"):
+                self._event(state, "message", text="Your private Season is ready to continue.")
+                return
+            self._peace(state)
+            if not state.get("season"):
+                state["season"] = solo_season.create_career(state, self.species, self.tamers, self.starters)
+            state["season_return_location"] = {key: copy.deepcopy(state.get(key)) for key in
+                                                ("map_id", "x", "y", "in_lab", "in_farm")}
+            state.update(in_season=True, in_lab=False, in_farm=False)
+            self._event(state, "message", text="Welcome to your private World Circuit. Your career advances only when you play.")
+            return
+        if action not in ("return", "start", "next"):
+            raise GameError("Unknown Season Mode action.")
+        if not state.get("in_season") or not state.get("season"):
+            raise GameError("Enter Season Mode to continue your private career.")
+        if action == "return":
+            if state.get("battle"):
+                raise GameError("Finish your Season match before returning to the world. Disconnecting safely pauses the match.")
+            location = state.pop("season_return_location", {})
+            if location.get("map_id") in self.maps:
+                state.update(location)
+            state["in_season"] = False
+            self._event(state, "message", text="Season saved. Your calendar, champion and booked matches will wait for your return.")
+            return
+        self._peace(state)
+        if action == "next":
+            solo_season.next_week(state, payload.get("token"))
+            self._event(state, "message", text=f"Week {state['season']['week']} is booked. Your next match is ready now.")
+            return
+        season = state["season"]
+        solo_season.update_views(season, state)
+        fixture = solo_season.begin_match(season, payload.get("token"))
+        opponent_id = fixture["away_id"] if fixture["home_id"] == solo_season.PLAYER_ID else fixture["home_id"]
+        opponent = solo_season.member(season, opponent_id)
+        # League recovery is independent of the farm/lab and preserves partner identities.
+        for monster in state["party"]:
+            monster["hp"], monster["sp"] = monster["max_hp"], monster["max_sp"]
+            monster.pop("guard", None)
+        active = list(range(min(3, len(state["party"]))))
+        enemies = [self._monster(partner["species_id"], partner["level"],
+                                 abi=min(200, opponent["development"] // 6),
+                                 cam=min(100, 10 + opponent["development"] // 3))
+                   for partner in opponent["team"][:len(active)]]
+        battle = {"id": uuid.uuid4().hex, "kind": "season", "season": True,
+                  "season_card_token": season["card"]["token"], "season_match_id": fixture["id"],
+                  "opponent_id": opponent_id, "opponent_name": opponent["name"],
+                  "title_match": fixture["title_match"], "enemies": enemies, "active": active,
+                  "turn": 0, "actor": active[0], "clock": 0.0, "queue": [], "scanned": []}
+        state["battle"] = battle
+        for index in active:
+            battle["queue"].append({"side": "player", "index": index,
+                                    "at": 500 / max(1, state["party"][index]["spd"])})
+        for index, enemy in enumerate(enemies):
+            battle["queue"].append({"side": "enemy", "index": index,
+                                    "at": 500 / max(1, enemy["spd"]) + .001})
+        self._event(state, "message", text=f"Season match: {state['username']} versus {opponent['name']}. Fight with your normal controls. No fleeing!")
+        self._advance(state)
+
+    def _finish_season_battle(self, state: dict, won: bool) -> None:
+        battle = state["battle"]
+        season = state["season"]
+        fixture = solo_season.human_match(season)
+        if (battle.get("season_card_token") != season["card"]["token"] or
+                battle.get("season_match_id") != fixture["id"]):
+            raise GameError("The saved Season fixture does not match this battle.")
+        solo_season.finish_human(season, won, self.species)
+        credits = xp = 0
+        if won:
+            xp = sum(24 + e["level"] * 12 + STAGE_RANK.get(e.get("stage"), 2) * 8 for e in battle["enemies"])
+            credits = sum(25 + e["level"] * 7 for e in battle["enemies"])
+            state["credits"] += credits
+            state["wins"] = state.get("wins", 0) + 1
+            for index, monster in enumerate(state["party"]):
+                monster["cam"] = min(100, monster["cam"] + (2 if index in battle["active"] else 1))
+                self._add_xp(state, monster, xp if index in battle["active"] else max(1, xp // 2), index)
+        else:
+            state["losses"] = state.get("losses", 0) + 1
+        for monster in state["party"]:
+            monster["hp"], monster["sp"] = monster["max_hp"], monster["max_sp"]
+            monster.pop("guard", None)
+        state["battle"] = None
+        text = (f"Season victory! +{credits} credits and {xp} XP. " if won else "Season defeat. Your career continues. ")
+        self._event(state, "win" if won else "lose", amount=credits, xp=xp,
+                    text=text + "Partners recovered. The complete weekly results are ready.")
+        self._event(state, "season_result", won=won, week=season["week"],
+                    text="Review this week's card, then continue immediately to the next fictional week.")
 
     def _add_xp(self, state: dict, monster: dict, amount: int, index: int) -> None:
         monster["xp"] += amount
