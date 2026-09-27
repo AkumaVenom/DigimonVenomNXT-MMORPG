@@ -16,5 +16,114 @@
     "filename": "Digimon World - Dawn (USA)(4).nds",
     "size": 67108864,
     "sha256": "b8fbc2272ec2a7b3c85674a43ffce0a7dde208319e331b349218e1238ce83005"
+  },
+  {
+    "kind": "world_ds_maps",
+    "parts": [
+      {
+        "filename": "DigimonWorldMapLevels.part01.rar",
+        "size": 26214400,
+        "sha256": "bd5d59a7c5267acd287f1cce875f3dc482be8f64d93e8a8ee4ceae9f98998243"
+      },
+      {
+        "filename": "DigimonWorldMapLevels.part02.rar",
+        "size": 26214400,
+        "sha256": "ec099fb5fbd8d229138a25dfb7f53ff6f5ac1b8824922328c465287a039eb571"
+      },
+      {
+        "filename": "DigimonWorldMapLevels.part03.rar",
+        "size": 26214400,
+        "sha256": "88c6b2dd0855ac001b89428a8ea298fc1b9f3f1516d61d109a2f00783c02de4b"
+      },
+      {
+        "filename": "DigimonWorldMapLevels.part04.rar",
+        "size": 26214400,
+        "sha256": "b453e92c78da9cc8c707b40fb9105ef0232fec821e2dc16e581c3d9d43119ff9"
+      },
+      {
+        "filename": "DigimonWorldMapLevels.part05.rar",
+        "size": 26214400,
+        "sha256": "2e17940a9fc175c8321f2a57037dc31a010da61d0c898f57d6b6d19145947a5d"
+      },
+      {
+        "filename": "DigimonWorldMapLevels.part06.rar",
+        "size": 26214400,
+        "sha256": "8c0559af631938a21f9d385e077000a4e447ee6b7b73d46f07da55efad063585"
+      },
+      {
+        "filename": "DigimonWorldMapLevels.part07.rar",
+        "size": 26214400,
+        "sha256": "0ca31479fac39bbed8b5fbc690fe60de1288d26742e7f15c2fde5aab09883366"
+      },
+      {
+        "filename": "DigimonWorldMapLevels.part08.rar",
+        "size": 26214400,
+        "sha256": "305fb414a2039371627d3666a0a0105fe50dc59914a8f600c092162b8cec1d2f"
+      },
+      {
+        "filename": "DigimonWorldMapLevels.part09.rar",
+        "size": 26214400,
+        "sha256": "bed0b340ca8df390b64a2c4ef0ae12caddf5677b9cdc4fd1c3666279f6fdaa09"
+      },
+      {
+        "filename": "DigimonWorldMapLevels.part10.rar",
+        "size": 26214400,
+        "sha256": "79a2d9069154fda94f4342402c7e3fc3361cd6f5edde7b8d0565305e500ba7cd"
+      },
+      {
+        "filename": "DigimonWorldMapLevels.part11.rar",
+        "size": 26214400,
+        "sha256": "a7569ec7adbf2a6a94c9c0e92880eb810e5e42312250dada0c5cb53ae7d24d6f"
+      },
+      {
+        "filename": "DigimonWorldMapLevels.part12.rar",
+        "size": 26214400,
+        "sha256": "46e9549eb14a8200bb7158d39b139da7f92c902aafa7d785c5afdef8f5172667"
+      },
+      {
+        "filename": "DigimonWorldMapLevels.part13.rar",
+        "size": 12054287,
+        "sha256": "53af2f4fa114269c2d66e8cdbdb51d77bb980a66a950d5a811dd69ed4c7a46b3"
+      }
+    ],
+    "use": "Imported adventure field assets",
+    "new_characters_used": false
+  },
+  {
+    "kind": "world_ds_audio",
+    "parts": [
+      {
+        "filename": "DigimonWorldSoundAndMusic.part1.rar",
+        "size": 26214400,
+        "sha256": "7ba3b988b3b00539bd90182b0147b7ac9ad44203196184e0e5178292c0af4fa7"
+      },
+      {
+        "filename": "DigimonWorldSoundAndMusic.part2.rar",
+        "size": 26214400,
+        "sha256": "895273c48fec037e7d15600eba50f9afb10d2742911db48e4c17e71800ade3a4"
+      },
+      {
+        "filename": "DigimonWorldSoundAndMusic.part3.rar",
+        "size": 26214400,
+        "sha256": "6a68acf329fd522dc4bc4ddea8c3c602b397f6af54c9e790980fd0eb41c1b751"
+      },
+      {
+        "filename": "DigimonWorldSoundAndMusic.part4.rar",
+        "size": 26214400,
+        "sha256": "463a92383c37eab677d43aa3ab59c8fdb810fee00c9761376e36149e1ca22ecd"
+      },
+      {
+        "filename": "DigimonWorldSoundAndMusic.part5.rar",
+        "size": 26214400,
+        "sha256": "344f8842758db272dda6bc1bc1fb55e2a29954eab377e7c810a03f3a601da21d"
+      },
+      {
+        "filename": "DigimonWorldSoundAndMusic.part6.rar",
+        "size": 19499037,
+        "sha256": "d1882e6138612545a93a5a5971f118e8eb0d360937fc2b4c0c1adf4fd61c0f5b"
+      }
+    ],
+    "use": "Imported complete unique supplied music previews",
+    "new_characters_used": false
   }
 ]

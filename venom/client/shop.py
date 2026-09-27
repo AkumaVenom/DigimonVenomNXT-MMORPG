@@ -2,9 +2,10 @@
 from __future__ import annotations
 
 import pygame
+import uuid
 
 from .render import draw
-from .widgets import text, wrap, bar, WHITE, CYAN, GOLD, LIME, MUTED
+from .widgets import text, wrap, bar, WHITE, CYAN, GOLD, LIME, MUTED, RED
 
 
 class ShopScreen:
@@ -12,6 +13,38 @@ class ShopScreen:
         self.app = app
         self.category = 'all'
         self.quantities = {}
+        self.currency = 'credits'
+
+    @property
+    def ruby_enabled(self):
+        features = getattr(self.app, 'server_features', None)
+        return bool((self.app.state.get('economy') or {}).get('enabled')) and (features is None or 'digiruby_economy' in features)
+
+    @property
+    def busy(self):
+        return self.app.action_pending or bool(getattr(getattr(self.app,'community',None),'busy',False))
+
+    def select_currency(self, currency):
+        if self.busy or currency not in ('credits','digirubies'):
+            return
+        if currency == 'digirubies' and not self.ruby_enabled:
+            self.app.toast('DigiRuby purchases require an updated server with the ranked economy enabled.', GOLD)
+            return
+        self.currency = currency
+        self.app.ui.actions, self.app.ui.fields = [], []
+        self.app.audio.cue('tab', now=self.app.now)
+
+    def unit_price(self, item):
+        value = item.get('ruby_price') if self.currency == 'digirubies' else item.get('price')
+        return value if isinstance(value,int) and not isinstance(value,bool) and value > 0 else None
+
+    def can_buy(self, key, item, quantity):
+        price = self.unit_price(item)
+        owned = self.app.state.get('inventory',{}).get(key,0)
+        return (not self.busy and bool(self.app.state.get('in_lab') or self.app.state.get('in_farm'))
+                and (self.currency != 'digirubies' or self.ruby_enabled)
+                and price is not None and 1 <= quantity <= min(99,999-owned)
+                and self.app.state.get(self.currency,0) >= price*quantity)
 
     def filter(self, category):
         self.app.audio.cue('tab', now=self.app.now)
@@ -19,12 +52,21 @@ class ShopScreen:
         self.app.scroll = 0
 
     def change_quantity(self, key, change):
+        if self.busy:
+            return
         owned = self.app.state.get('inventory', {}).get(key, 0)
         maximum = max(1, min(99, 999-owned))
         self.quantities[key] = max(1, min(maximum, self.quantities.get(key, 1)+change))
 
     def buy(self, key):
-        self.app.send('shop', item=key, quantity=self.quantities.get(key, 1))
+        item, quantity = self.app.shop_data().get(key,{}), self.quantities.get(key,1)
+        if not self.can_buy(key,item,quantity):
+            return
+        if self.currency == 'digirubies':
+            self.app.send('shop',item=key,quantity=quantity,currency='digirubies',transaction_id=uuid.uuid4().hex)
+        else:
+            # Keep the existing credits protocol usable on older servers.
+            self.app.send('shop',item=key,quantity=quantity)
 
     def use(self, key):
         item = self.app.shop_data().get(key, {})
@@ -63,11 +105,13 @@ class ShopScreen:
             app.ui.button((body.x+index*126, body.y, 116, 34), label,
                           lambda value=key: self.filter(value), selected=self.category == key,
                           small=True, accent=palette['accent'])
-        balance = pygame.Rect(body.right-348, body.y, 214, 34)
-        theme.card(balance, 'shop')
-        text(app.screen, app.assets, 'YOUR CREDITS', (balance.x+12, balance.y+11), 9, palette['muted'], True)
-        text(app.screen, app.assets, f"{app.state.get('credits', 0):,} ¥", (balance.right-61, balance.centery),
-             16, GOLD, True, max_width=112, center=True)
+        for index,(currency,label,color) in enumerate((('credits','Credits',GOLD),('digirubies','DigiRubies',(215,161,255)))):
+            value = app.state.get(currency,0)
+            suffix = ' ¥' if currency == 'credits' else ''
+            app.ui.button((body.right-553+index*216,body.y,204,34),f'{label} · {value:,}{suffix}',
+                          lambda c=currency:self.select_currency(c),selected=self.currency==currency,
+                          disabled=self.busy or currency=='digirubies' and not self.ruby_enabled,
+                          small=True,accent=color)
         back_label = ('DigiFarm  Esc' if app.state.get('in_farm') else
                       'DigiLab  Esc' if app.state.get('in_lab') else 'Field  Esc')
         app.ui.button((body.right-121, body.y, 121, 34), back_label,
@@ -106,7 +150,12 @@ class ShopScreen:
             self.farm_care(side)
         else:
             self.partner(side)
-        if app.args.demo:
+        if self.busy:
+            status = 'PROCESSING  ·  Waiting for the server to confirm. Your displayed balances update after approval.'
+        elif self.currency == 'digirubies':
+            status = ('PAYING WITH DIGIRUBIES  ·  Ranked rewards buy the same supplies. All prices shown are in DigiRubies.' if self.ruby_enabled else
+                      'DIGIRUBIES UNAVAILABLE  ·  Connect to an updated server with the ranked economy enabled.')
+        elif app.args.demo:
             status = 'OFFLINE PREVIEW  ·  Connect to your server to buy and use supplies.'
         elif app.state.get('in_lab') or app.state.get('in_farm'):
             status = 'HOME SUPPLIES  ·  Use capsules on your party. Feed DigiMeat to a stored companion at your DigiFarm.'
@@ -148,20 +197,22 @@ class ShopScreen:
                   f'Permanent +{amount} {resource.upper()}') if meat else f'Restore {amount:,} {resource.upper()}'
         text(app.screen, app.assets, effect,
              (rect.x+14, rect.y+band+34), 11, color, max_width=rect.width-28)
-        price = item.get('price', 0)
-        total = price*quantity
-        text(app.screen, app.assets, f'{total:,} ¥', (rect.x+14, rect.bottom-70), 17,
-             GOLD, True, rect.width-120)
-        text(app.screen, app.assets, f'{price:,} each', (rect.right-99, rect.bottom-65), 10,
+        price = self.unit_price(item)
+        total = price*quantity if price is not None else None
+        affordable = total is not None and app.state.get(self.currency,0) >= total
+        denomination = ('DigiRuby' if total==1 else 'DigiRubies') if self.currency=='digirubies' else '¥'
+        price_label = 'Unavailable' if total is None else f'{total:,} {denomination}'
+        text(app.screen, app.assets, price_label, (rect.x+14, rect.bottom-70), 15 if self.currency=='digirubies' else 17,
+             (215,161,255) if affordable and self.currency=='digirubies' else GOLD if affordable else RED, True, rect.width-112)
+        text(app.screen, app.assets, f'{price:,} each' if price is not None else 'No quote', (rect.right-99, rect.bottom-65), 10,
              palette['muted'], max_width=86)
         y = rect.bottom-43
         app.ui.button((rect.x+12, y, 32, 30), '−', lambda: self.change_quantity(key, -1),
-                      disabled=quantity <= 1 or app.action_pending, small=True, accent=color)
+                      disabled=quantity <= 1 or self.busy, small=True, accent=color)
         text(app.screen, app.assets, str(quantity), (rect.x+60, y+15), 13, WHITE, True, center=True)
         app.ui.button((rect.x+76, y, 32, 30), '+', lambda: self.change_quantity(key, 1),
-                      disabled=quantity >= maximum or app.action_pending, small=True, accent=color)
-        can_buy = (bool(app.state.get('in_lab') or app.state.get('in_farm')) and not app.action_pending
-                   and app.state.get('credits', 0) >= total and owned+quantity <= 999)
+                      disabled=quantity >= maximum or self.busy, small=True, accent=color)
+        can_buy = self.can_buy(key,item,quantity)
         use_width = 62 if meat else 47
         buy_width = max(55, rect.width-138-use_width)
         app.ui.button((rect.x+116, y, buy_width, 30), 'Buy', lambda: self.buy(key),

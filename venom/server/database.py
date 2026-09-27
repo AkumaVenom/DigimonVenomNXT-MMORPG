@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import base64
 import contextlib
+import copy
 import hashlib
 import hmac
 import json
@@ -184,6 +185,17 @@ class Database:
                     PRIMARY KEY(username, week_hash),
                     FOREIGN KEY(username) REFERENCES venom_accounts(username)
                 )""" + suffix)
+                # Durable, account-scoped checkout receipts provide idempotency
+                # across retries/reconnects without duplicating the SQL wallet.
+                c.execute("""CREATE TABLE IF NOT EXISTS venom_economy_transactions (
+                    username VARCHAR(24) NOT NULL,
+                    transaction_id VARCHAR(64) NOT NULL,
+                    intent_json LONGTEXT NOT NULL,
+                    receipt_json LONGTEXT NOT NULL,
+                    created_at DOUBLE NOT NULL,
+                    PRIMARY KEY(username, transaction_id),
+                    FOREIGN KEY(username) REFERENCES venom_accounts(username) ON DELETE CASCADE
+                )""" + suffix)
                 # Local-console metadata is an additive extension of schema 1.
                 # Use this cursor so failed initialization never publishes only
                 # part of the new account metadata on transactional backends.
@@ -273,13 +285,135 @@ class Database:
         state = json.loads(row[0])
         if not isinstance(state, dict) or not isinstance(state.get("party"), list):
             raise DatabaseError("Player save is invalid; contact the server administrator.")
+        state.pop("digirubies", None)
+        state.pop("economy", None)
         return state, int(row[2])
 
     @staticmethod
     def _serialize(state):
         # This queue belongs to the transaction, not to the active player JSON.
-        state = {key: value for key, value in state.items() if key != "_season_archive_pending"}
+        # DigiRubies are a read-only projection of venom_competitors, never a
+        # second balance that autosave, old snapshots or clients may overwrite.
+        state = {key: value for key, value in state.items()
+                 if key not in ("_season_archive_pending", "digirubies", "economy")}
         return json.dumps(state, ensure_ascii=True, separators=(",", ":"), allow_nan=False)
+
+    def _has_competitors(self, cursor):
+        if self.driver == "mysql":
+            cursor.execute("SELECT COUNT(*) FROM information_schema.tables WHERE table_schema=DATABASE() AND table_name='venom_competitors'")
+        else:
+            cursor.execute("SELECT COUNT(*) FROM sqlite_master WHERE type='table' AND name='venom_competitors'")
+        return bool(cursor.fetchone()[0])
+
+    def wallet_balance(self, username):
+        """Read the sole canonical wallet without registering a private profile."""
+        with self.lock:
+            db = self._connect()
+            c = db.cursor()
+            try:
+                if not self._has_competitors(c):
+                    db.commit()
+                    return 0
+                c.execute(self._sql("SELECT digirubies FROM venom_competitors WHERE id=? AND kind='player'"),
+                          ("player:" + username.lower(),))
+                row = c.fetchone()
+                db.commit()
+                return max(0, int(row[0])) if row else 0
+            except Exception:
+                db.rollback()
+                raise
+            finally:
+                c.close()
+
+    def economy_transaction(self, username, state, revision, session_token,
+                            transaction_id, operation, payload, engine):
+        """Debit SQL rubies and commit a player grant, lease, CAS and receipt.
+
+        Callers provide authenticated identity and a session-owned live state.
+        All quoted prices/balances/rewards are ignored. A receipt replay keeps
+        the session's current revision or reloads the latest player record,
+        never an old purchase snapshot, and still verifies the account lease.
+        """
+        from venom.common.economy import TRANSACTION_ID, economy_view, normalize_intent
+        from venom.common.game import SHOP
+        key = username.lower()
+        if not isinstance(transaction_id, str) or not TRANSACTION_ID.fullmatch(transaction_id):
+            raise ValueError("Use a valid transaction reference and retry the same reference if needed.")
+        if isinstance(revision, bool) or not isinstance(revision, int) or revision < 0:
+            raise DatabaseError("A current player revision is required for checkout.")
+        intent = normalize_intent(operation, payload, SHOP)
+        encoded_intent = json.dumps(intent, sort_keys=True, separators=(",", ":"))
+        with self.lock:
+            db = self._connect()
+            c = db.cursor()
+            try:
+                if self.driver == "sqlite":
+                    c.execute("BEGIN IMMEDIATE")
+                self._require_admin_lease(c, key, session_token)
+                player_query = "SELECT state_json,revision FROM venom_players WHERE username=?"
+                if self.driver == "mysql":
+                    player_query += " FOR UPDATE"
+                c.execute(self._sql(player_query), (key,))
+                saved = c.fetchone()
+                if not saved:
+                    raise DatabaseError("The player save is missing; checkout was cancelled.")
+                if not self._has_competitors(c):
+                    raise ValueError("DigiRuby checkout is unavailable on this server.")
+                wallet_query = "SELECT digirubies FROM venom_competitors WHERE id=? AND kind='player'"
+                if self.driver == "mysql":
+                    wallet_query += " FOR UPDATE"
+                participant = "player:" + key
+                c.execute(self._sql(wallet_query), (participant,))
+                row = c.fetchone()
+                balance = int(row[0]) if row else 0
+                c.execute(self._sql("SELECT intent_json,receipt_json FROM venom_economy_transactions WHERE username=? AND transaction_id=?"),
+                          (key, transaction_id))
+                existing = c.fetchone()
+                if existing:
+                    if existing[0] != encoded_intent:
+                        raise ValueError("This transaction reference was already used for a different purchase or exchange.")
+                    # Movement can be newer than the last durable checkpoint
+                    # while inventory/progression still share the same CAS.
+                    # Preserve that session-owned location on ordinary retries;
+                    # stale callers recover the newest committed state instead.
+                    current = copy.deepcopy(state) if int(saved[1]) == revision else json.loads(saved[0])
+                    current["events"] = []
+                    engine._refresh(current)
+                    current["digirubies"], current["economy"] = balance, economy_view(True)
+                    receipt = json.loads(existing[1])
+                    receipt.update(duplicate=True, balance=balance)
+                    db.commit()
+                    return {"state": current, "revision": int(saved[1]), "receipt": receipt}
+                if int(saved[1]) != revision:
+                    raise DatabaseError("Player save changed in another session; checkout was cancelled.")
+                if state.get("_season_archive_pending"):
+                    raise DatabaseError("Save pending season history before using DigiRuby checkout.")
+                candidate = copy.deepcopy(state)
+                candidate["events"] = []
+                receipt = engine.apply_digiruby_transaction(candidate, operation, intent)
+                spent = receipt["rubies_spent"]
+                if balance < spent:
+                    raise ValueError("Not enough DigiRubies for this transaction.")
+                c.execute(self._sql("UPDATE venom_competitors SET digirubies=digirubies-? WHERE id=? AND kind='player' AND digirubies>=?"),
+                          (spent, participant, spent))
+                if c.rowcount != 1:
+                    raise ValueError("Not enough DigiRubies for this transaction.")
+                balance -= spent
+                candidate["digirubies"], candidate["economy"] = balance, economy_view(True)
+                c.execute(self._sql("UPDATE venom_players SET state_json=?,revision=revision+1,updated_at=? WHERE username=? AND revision=?"),
+                          (self._serialize(candidate), time.time(), key, revision))
+                if c.rowcount != 1:
+                    raise DatabaseError("Player save changed in another session; checkout was cancelled.")
+                receipt.update(transaction_id=transaction_id, duplicate=False, balance=balance)
+                c.execute(self._sql("INSERT INTO venom_economy_transactions(username,transaction_id,intent_json,receipt_json,created_at) VALUES (?,?,?,?,?)"),
+                          (key, transaction_id, encoded_intent, self._serialize(receipt), time.time()))
+                db.commit()
+                return {"state": candidate, "revision": revision + 1, "receipt": receipt}
+            except Exception:
+                db.rollback()
+                raise
+            finally:
+                c.close()
 
     def save(self, username, state, revision, session_token=None):
         raw = self._serialize(state)

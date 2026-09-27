@@ -95,7 +95,7 @@ class SeasonClientTests(unittest.TestCase):
         self.assertIsNone(self.app.menu)
         self.draw()
         labels=[name for name,_,_ in self.controls]
-        for label in ('Attack','Skill · SP','Struggle · 0 SP','Items'):
+        for label in ('Attack','Skill · SP','Items'):
             self.assertIn(label,labels)
         self.assertNotIn('Flee',labels)
         self.assertNotIn('chat',[key for _,key in self.app.ui.fields])
@@ -135,7 +135,7 @@ class SeasonClientTests(unittest.TestCase):
         self.engine.handle(self.state,'season',{'action':'start','token':self.state['season']['card']['token']})
         self.app.state=copy.deepcopy(self.state)
         battle=self.app.state['battle']
-        for action in ('attack','struggle','skill','item'):
+        for action in ('attack','skill','item'):
             self.app.send('battle',action=action,target=0)
             op,payload=self.app.connection.sent[-1]
             self.assertEqual(op,'battle')

@@ -158,6 +158,35 @@ class DestinationsCombatTests(unittest.TestCase):
                         self.assertGreater(min(rect.size), 0)
         self.assertFalse(self.app.assets.errors)
 
+    def test_zero_sp_attack_bar_fills_available_space_without_an_extra_command(self):
+        self.battle()
+        self.app.state['party'][2]['sp'] = 0
+        self.app.animations = []
+        self.app.action_pending = False
+        for physical, scale in (((960,600), 1.), ((1280,800), 1.), ((3840,2160), 2.5)):
+            self.app.screen = NativeCanvas(pygame.display.set_mode(physical), scale)
+            self.app.ui.screen = self.app.screen
+            w, h = self.app.screen.get_size()
+            self.app.viewport = pygame.Rect(20, 94, w-352, h-262)
+            for kind in ('wild', 'story', 'season'):
+                with self.subTest(physical=physical, kind=kind):
+                    self.app.state['battle']['kind'] = kind
+                    self.app.ui.begin()
+                    self.buttons.clear()
+                    self.app.draw_battle()
+                    expected = ['Attack', 'Skill · SP', 'Items'] + (['Flee'] if kind == 'wild' else [])
+                    self.assertEqual([label for label, _, _ in self.buttons], expected)
+                    rects = [rect for _, rect, _ in self.buttons]
+                    self.assertTrue(all(self.app.viewport.contains(rect) for rect in rects))
+                    self.assertTrue(all(not options.get('disabled') for _, _, options in self.buttons))
+                    self.assertTrue(all(rect.width == rects[0].width for rect in rects))
+                    self.assertTrue(all(right.left - left.right == 8 for left, right in zip(rects, rects[1:])))
+                    self.assertLessEqual(abs((rects[0].left - self.app.viewport.left)
+                                             - (self.app.viewport.right - rects[-1].right)), len(rects)-1)
+                    with patch.object(self.app, 'send') as send:
+                        self.click('Attack')
+                        send.assert_called_once_with('battle', action='attack', target=1, party_index=2)
+
     def test_close_works_during_battle_and_busy_commands_do_not_send(self):
         self.battle()
         self.app.action_pending = True

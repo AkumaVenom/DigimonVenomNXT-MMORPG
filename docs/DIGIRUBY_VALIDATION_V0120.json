@@ -1,0 +1,72 @@
+{
+  "version": "0.12.0",
+  "baseline": "0.11.0",
+  "tests": {
+    "collected": 777,
+    "passed": 767,
+    "failed": 0,
+    "skipped": [
+      {
+        "test": "tests.test_portable_mysql_live.PortableMySQLLiveTests.test_production_mysql_wss_manual_zip_and_moved_folder_recovery",
+        "reason": "Set VENOM_TEST_MYSQL_RUNTIME for opt-in Linux/MySQL validation"
+      },
+      {
+        "test": "tests.test_setup_wizard.WizardDesktopTests.test_actual_clipboard_paste_preserves_secrets_and_rejects_multiline",
+        "reason": "Requires a graphical desktop / Xvfb"
+      },
+      {
+        "test": "tests.test_setup_wizard.WizardDesktopTests.test_busy_operation_prevents_close_and_duplicate_submissions",
+        "reason": "Requires a graphical desktop / Xvfb"
+      },
+      {
+        "test": "tests.test_setup_wizard.WizardDesktopTests.test_closing_after_database_does_not_configure_hosting",
+        "reason": "Requires a graphical desktop / Xvfb"
+      },
+      {
+        "test": "tests.test_setup_wizard.WizardDesktopTests.test_error_code_stays_visible_and_retry_keeps_game_settings",
+        "reason": "Requires a graphical desktop / Xvfb"
+      },
+      {
+        "test": "tests.test_setup_wizard.WizardDesktopTests.test_fresh_install_needs_no_administrator_credentials",
+        "reason": "Requires a graphical desktop / Xvfb"
+      },
+      {
+        "test": "tests.test_setup_wizard.WizardDesktopTests.test_full_flow_uses_one_background_worker_and_saved_actual_username",
+        "reason": "Requires a graphical desktop / Xvfb"
+      },
+      {
+        "test": "tests.test_setup_wizard.WizardDesktopTests.test_invalid_game_port_does_not_start_hosting_work",
+        "reason": "Requires a graphical desktop / Xvfb"
+      },
+      {
+        "test": "tests.test_setup_wizard.WizardDesktopTests.test_portable_database_page_has_no_external_endpoint_controls",
+        "reason": "Requires a graphical desktop / Xvfb"
+      },
+      {
+        "test": "tests.test_setup_wizard.WizardDesktopTests.test_small_window_scrolls_and_primary_controls_remain_visible",
+        "reason": "Requires a graphical desktop / Xvfb"
+      }
+    ]
+  },
+  "assets": {
+    "sha256_records_verified": 21806,
+    "original_assets_changed": false
+  },
+  "syntax": "python -m compileall -q venom tools tests passed",
+  "coverage": [
+    "Actual ranked season rewards fund all 19 shop items and one-way credit exchange",
+    "Atomic wallet debit and inventory/credit grant; failure rollback",
+    "Replay/reconnect idempotency and same-session movement preservation",
+    "Concurrent season payouts and purchases preserve balances",
+    "Lease and revision checks; invalid input and forged quote rejection",
+    "Both story shops, shared-mode exchange boundaries, passive wallet updates",
+    "Shop and confirmation controls checked at 960x540,1180x800,1920x1080",
+    "Free Attack at zero SP and removed Struggle action"
+  ],
+  "visual_previews": "docs/previews/digiruby_economy",
+  "limitations": [
+    "Windows executables not built in this Linux environment",
+    "Native Windows interactive playtest remains to be done",
+    "Graphical setup wizard and optional live MySQL tests are listed as skipped above"
+  ]
+}

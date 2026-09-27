@@ -9,6 +9,7 @@ import copy
 from collections import OrderedDict
 import math
 import time
+import uuid
 from datetime import datetime, timezone
 
 import pygame
@@ -75,6 +76,8 @@ class CommunityPanel:
         self.replay = None
         self.activity_filter = 'All'
         self.stats_page = 0
+        self.exchange_review = None
+        self.exchange_receipt = None
 
     @property
     def visible(self):
@@ -83,6 +86,95 @@ class CommunityPanel:
     @property
     def busy(self):
         return any(action not in self.QUERY_ACTIONS for action in self.pending)
+
+    @property
+    def exchange_modal(self):
+        return self.visible and self.tab == 'ranked' and self.mode == 'exchange' and self.exchange_review is not None
+
+    @property
+    def economy_enabled(self):
+        features = getattr(self.app,'server_features',None)
+        return bool((self.app.state.get('economy') or {}).get('enabled')) and (features is None or 'digiruby_economy' in features)
+
+    def exchange_terms(self):
+        economy = self.app.state.get('economy') or {}
+        rate, maximum = economy.get('credits_per_ruby'), economy.get('max_exchange_rubies')
+        if not all(isinstance(value,int) and not isinstance(value,bool) and value>0 for value in (rate,maximum)):
+            return None,None
+        return rate,maximum
+
+    def exchange_amount(self):
+        value = self.app.ui.values.get('ruby_exchange_amount','1').strip()
+        return int(value) if value.isascii() and value.isdecimal() and len(value)<=9 else None
+
+    def exchange_problem(self, amount=None):
+        rate,maximum = self.exchange_terms()
+        if not self.economy_enabled or rate is None:
+            return 'DigiRuby exchange requires an updated server with the ranked economy enabled.'
+        if any(self.app.state.get(key) for key in ('battle','in_story','in_season')):
+            return 'Return to the shared world before exchanging DigiRubies.'
+        amount = self.exchange_amount() if amount is None else amount
+        if amount is None or not 1 <= amount <= maximum:
+            return f'Enter a whole number from 1 to {number(maximum)}.'
+        balance = self.app.state.get('digirubies',0)
+        if amount > balance:
+            return f'You need {number(amount-balance)} more DigiRubies for this exchange.'
+        from venom.common.economy import MAX_CREDITS
+        ceiling = (self.app.state.get('economy') or {}).get('max_credits',MAX_CREDITS)
+        if self.app.state.get('credits',0)+amount*rate > ceiling:
+            return 'Your credits are near their limit. Spend credits or choose a smaller amount.'
+        return ''
+
+    def exchange_maximum(self):
+        from venom.common.economy import MAX_CREDITS
+        rate,maximum = self.exchange_terms()
+        if not rate or not maximum:
+            return 0
+        ceiling = (self.app.state.get('economy') or {}).get('max_credits',MAX_CREDITS)
+        capacity = max(0,(ceiling-self.app.state.get('credits',0))//rate)
+        return min(maximum,self.app.state.get('digirubies',0),capacity)
+
+    def set_exchange_amount(self, amount):
+        if self.busy or self.app.action_pending or self.exchange_review is not None:
+            return
+        self.app.ui.values['ruby_exchange_amount'] = str(max(1,int(amount)))
+        self.exchange_receipt = None
+        self.error = ''
+
+    def review_exchange(self):
+        if self.busy or self.app.action_pending or self.exchange_review is not None:
+            return
+        problem = self.exchange_problem()
+        if problem:
+            self.error = problem
+            return
+        amount = self.exchange_amount()
+        rate,_ = self.exchange_terms()
+        self.exchange_review = {'amount':amount,'rate':rate,'credits':amount*rate,'transaction_id':uuid.uuid4().hex}
+        self.exchange_receipt = None
+        self.error = ''
+        self.app.ui.focus = None
+        self.app.ui.actions,self.app.ui.fields = [],[]
+        pygame.key.stop_text_input()
+
+    def cancel_exchange_review(self):
+        if self.busy:
+            return
+        self.exchange_review = None
+        self.app.ui.actions,self.app.ui.fields = [],[]
+        self.cue('back')
+
+    def confirm_exchange(self):
+        review = self.exchange_review
+        if not review or self.busy or self.app.action_pending:
+            return
+        problem = self.exchange_problem(review['amount'])
+        if self.exchange_terms()[0] != review['rate']:
+            problem = 'The exchange rate changed. Go back and review the current offer.'
+        if problem:
+            self.error = problem
+            return
+        self.request('exchange',amount=review['amount'],transaction_id=review['transaction_id'])
 
     def cue(self, name):
         audio = getattr(self.app, 'audio', None)
@@ -104,6 +196,8 @@ class CommunityPanel:
     def request(self, action, **payload):
         if action in self.pending:
             return
+        if action not in self.QUERY_ACTIONS and (self.busy or self.app.action_pending):
+            return
         if self.app.args.demo:
             self.error = 'Connect to your dedicated server to view the live tamer network.'
             return
@@ -116,6 +210,7 @@ class CommunityPanel:
             self.request_ids[rid] = action
             self.last_query = self.app.now
             self.error = ''
+        return rid
 
     def open(self, tab='ranked'):
         if not self.app.state:
@@ -163,7 +258,7 @@ class CommunityPanel:
         self.refresh()
 
     def refresh(self):
-        if self.replay:
+        if self.replay or self.exchange_review is not None:
             return
         if self.tab == 'ranked':
             if self.mode == 'ladder':
@@ -198,12 +293,15 @@ class CommunityPanel:
 
     def receive(self, packet, rid=None):
         action = packet.get('action') or self.request_ids.get(rid, '')
+        if action == 'exchange' and self.request_ids.get(rid) != 'exchange':
+            return
         self.request_ids.pop(rid, None)
         self.pending.pop(action, None)
         data = packet.get('data', {})
         self.data[action] = data
         self.received_at[action] = self.app.now
-        self.error = ''
+        if self.exchange_review is None or action == 'exchange':
+            self.error = ''
         if action in ('match', 'challenge', 'accept'):
             result = data.get('match', data.get('result', data)) if isinstance(data, dict) else {}
             if isinstance(result, dict) and result.get('replay'):
@@ -216,6 +314,14 @@ class CommunityPanel:
         elif action == 'decline':
             self.app.toast('Challenge declined.')
             self.request('rivals', query='', offset=0, limit=50)
+        elif action == 'exchange':
+            self.exchange_review = None
+            self.exchange_receipt = copy.deepcopy(data)
+            message = ('Exchange already confirmed' if data.get('duplicate') else 'Exchange complete')
+            message += f" · {number(data.get('rubies_spent'))} DigiRubies → {number(data.get('credits_gained'))} credits"
+            self.app.toast(message,LIME)
+            self.app.ui.actions,self.app.ui.fields = [],[]
+            self.last_query = self.app.now
 
     def finish_replay(self):
         self.replay = None
@@ -269,21 +375,22 @@ class CommunityPanel:
         if self.replay:
             self.replay.draw(body, self.finish_replay)
         else:
-            nav = ([('overview', 'My arena'), ('ladder', 'Top 100'), ('seasons', 'Season archive')] if self.tab == 'ranked'
+            nav = ([('overview', 'My arena'), ('ladder', 'Top 100'), ('seasons', 'Season archive'), ('exchange','DigiRuby exchange')] if self.tab == 'ranked'
                    else [('invites', 'Challenges'), ('directory', 'Rival directory'), ('history', 'Battle history')] if self.tab == 'rivals'
                    else [('feed', 'Live activity'), ('maps', 'Map population')])
             for index, (key, label) in enumerate(nav):
-                self.button((body.x+index*153, body.y, 143, 34), label,
+                self.button((body.x+index*153, body.y, 180 if key=='exchange' else 143, 34), label,
                             lambda mode=key: self.set_mode(mode), selected=self.mode == key)
             if self.mode == 'profile' and self.tab == 'rivals':
                 self.presentation.badge(pygame.Rect(body.x+466, body.y+5, 118, 24), 'RIVAL DOSSIER', 'rivals')
             self.button((body.right-210, body.y, 98, 34), 'Refresh', self.refresh, disabled=bool(self.pending))
-            self.button((body.right-102, body.y, 102, 34), ('DigiLab  Esc' if app.state.get('in_lab') else 'Field  Esc'), self.close)
+            self.button((body.right-102, body.y, 102, 34), ('DigiLab  Esc' if app.state.get('in_lab') else 'DigiFarm  Esc' if app.state.get('in_farm') else 'Field  Esc'), self.close)
             body.y += 48
             body.height -= 48
             if self.tab == 'ranked':
                 if self.mode == 'ladder': self.draw_ladder(body)
                 elif self.mode == 'seasons': self.draw_seasons(body)
+                elif self.mode == 'exchange': self.draw_exchange(body)
                 else: self.draw_ranked(body)
             elif self.tab == 'rivals':
                 if self.mode == 'profile': self.draw_profile(body)
@@ -296,6 +403,8 @@ class CommunityPanel:
         color = RED if self.error else GOLD if app.args.demo else self.presentation.colors(self.tab)['accent']
         draw.circle(app.screen, color, (rect.x+28, rect.bottom-17), 3)
         text(app.screen, app.assets, status, (rect.x+39, rect.bottom-24), 10, color, max_width=rect.width-70)
+        if self.exchange_modal:
+            self.draw_exchange_review(rect)
 
     def empty(self, rect, message='Waiting for the dedicated server…'):
         app = self.app
@@ -346,7 +455,7 @@ class CommunityPanel:
         draw.line(app.screen, (89, 65, 46), (side.x+20, side.y+195), (side.right-20, side.y+195))
         pairs = [('Season record', f"{number(own.get('wins'))} W  /  {number(own.get('losses'))} L"),
                  ('Career record', f"{number(own.get('career_wins'))} W  /  {number(own.get('career_losses'))} L"),
-                 ('DigiRubies', number(own.get('digirubies')))]
+                 ('DigiRubies', number(app.state.get('digirubies',own.get('digirubies'))))]
         for i, (label, value) in enumerate(pairs):
             y = side.y+211+i*31
             text(app.screen, app.assets, label, (side.x+20, y), 11, MUTED)
@@ -384,6 +493,98 @@ class CommunityPanel:
                      f"Next grade: {next_grade.get('name')} at {number(next_grade.get('points'))} points" if next_grade else 'Highest grade reached')
         text(app.screen, app.assets, promotion, (reward.x+16, reward.y+57), 11, GOLD, max_width=reward.width-32)
         text(app.screen, app.assets, 'Play one ranked battle this season to qualify. Scroll opponents to browse.', (reward.x+16, reward.y+81), 10, MUTED, max_width=reward.width-32)
+
+    def draw_exchange(self, rect):
+        app = self.app
+        rate,maximum = self.exchange_terms()
+        amount = self.exchange_amount()
+        problem = self.exchange_problem()
+        pending = self.busy or app.action_pending
+        rubies,credits = app.state.get('digirubies',0),app.state.get('credits',0)
+        valid = not problem and amount is not None and rate is not None
+        gain = amount*rate if valid else None
+        left = pygame.Rect(rect.x,rect.y,int(rect.width*.59),rect.height)
+        right = pygame.Rect(left.right+16,rect.y,rect.width-left.width-16,rect.height)
+        self.presentation.card(left,'ranked',accent=True)
+        self.presentation.card(right,'ranked')
+        text(app.screen,app.assets,'YOUR RANKED REWARDS  /  YOUR CHOICE',(left.x+23,left.y+20),10,GOLD,True,left.width-46)
+        text(app.screen,app.assets,'Turn DigiRubies into credits',(left.x+23,left.y+43),25,WHITE,True,left.width-46)
+        rate_label = f'1 DigiRuby → {number(rate)} credits' if rate else 'Waiting for the server’s exchange rate'
+        text(app.screen,app.assets,rate_label,(left.x+23,left.y+84),14,GOLD,True,left.width-46)
+        text(app.screen,app.assets,'DIGIRUBIES TO CONVERT',(left.x+23,left.y+117),10,MUTED,True)
+        field = pygame.Rect(left.x+23,left.y+139,left.width-46,44)
+        app.ui.values.setdefault('ruby_exchange_amount','1')
+        if pending:
+            panel(app.screen,field,BG,LINE,8)
+            text(app.screen,app.assets,app.ui.values['ruby_exchange_amount'],(field.x+12,field.y+10),19,MUTED,max_width=field.width-24)
+        else:
+            app.ui.field(field,'ruby_exchange_amount','Enter a whole number',size=19)
+        preset_width = (left.width-76)//4
+        max_amount = self.exchange_maximum()
+        for i,(label,value) in enumerate((('1',1),('10',10),('100',100),('Max',max_amount))):
+            self.button((left.x+23+i*(preset_width+10),left.y+195,preset_width,31),label,
+                        lambda n=value:self.set_exchange_amount(n),disabled=pending or not self.economy_enabled or value<1)
+        quote = pygame.Rect(left.x+23,left.y+245,left.width-46,91)
+        panel(app.screen,quote,(26,31,42),(81,65,49),8)
+        text(app.screen,app.assets,'YOU SPEND',(quote.x+17,quote.y+15),10,MUTED,True)
+        text(app.screen,app.assets,f'{number(amount)} DigiRubies' if amount is not None else '—',
+             (quote.x+17,quote.y+40),20,WHITE,True,quote.width//2-25)
+        text(app.screen,app.assets,'YOU RECEIVE',(quote.centerx+13,quote.y+15),10,GOLD,True)
+        text(app.screen,app.assets,f'{number(gain)} credits' if gain is not None else '—',
+             (quote.centerx+13,quote.y+40),20,GOLD,True,quote.width//2-28)
+        if self.exchange_receipt:
+            receipt = self.exchange_receipt
+            message = f"Confirmed: {number(receipt.get('rubies_spent'))} DigiRubies exchanged for {number(receipt.get('credits_gained'))} credits."
+            color = LIME
+        else:
+            message = problem or f'Up to {number(maximum)} DigiRubies per exchange. Review before confirming.'
+            color = RED if problem else MUTED
+        wrap(app.screen,app.assets,message,(left.x+23,left.y+350),left.width-46,12,color,max_lines=2)
+        self.button((left.x+23,left.bottom-56,left.width-46,37),'Review exchange',self.review_exchange,
+                    primary=True,disabled=pending or not valid or app.args.demo)
+        text(app.screen,app.assets,'YOUR WALLET',(right.x+23,right.y+20),10,GOLD,True)
+        text(app.screen,app.assets,number(rubies),(right.x+23,right.y+49),31,(215,161,255),True,right.width-46)
+        text(app.screen,app.assets,'DIGIRUBIES',(right.x+24,right.y+91),10,MUTED,True)
+        text(app.screen,app.assets,number(credits)+' ¥',(right.x+23,right.y+123),27,GOLD,True,right.width-46)
+        text(app.screen,app.assets,'CREDITS',(right.x+24,right.y+158),10,MUTED,True)
+        draw.line(app.screen,(81,65,49),(right.x+23,right.y+194),(right.right-23,right.y+194))
+        text(app.screen,app.assets,'AFTER THIS EXCHANGE',(right.x+23,right.y+214),10,GOLD,True)
+        for i,(label,value) in enumerate((('DigiRubies',rubies-amount if valid else None),('Credits',credits+gain if valid else None))):
+            y = right.y+246+i*32
+            text(app.screen,app.assets,label,(right.x+23,y),12,MUTED)
+            # A separate bounded value column keeps large wallets inside.
+            value_rect = pygame.Rect(right.x+130,y,right.width-153,22)
+            text(app.screen,app.assets,number(value) if value is not None else '—',
+                 value_rect.center,12,WHITE,True,value_rect.width,True)
+        wrap(app.screen,app.assets,'DigiRubies can also buy supplies directly in the shop. Compare both prices before choosing. Credits work with your usual items and systems.',
+             (right.x+23,right.y+326),right.width-46,12,MUTED,max_lines=4)
+        text(app.screen,app.assets,'Balances change only after server confirmation.',
+             (right.x+23,right.bottom-27),10,GOLD,max_width=right.width-46)
+
+    def draw_exchange_review(self, bounds):
+        app,review = self.app,self.exchange_review
+        rect = pygame.Rect(0,0,min(680,bounds.width-48),390)
+        rect.center = bounds.center
+        app.ui.actions,app.ui.fields = [],[]
+        panel(app.screen,rect,(10,23,37),GOLD,12)
+        text(app.screen,app.assets,'REVIEW YOUR EXCHANGE',(rect.x+28,rect.y+23),11,GOLD,True)
+        text(app.screen,app.assets,'Confirm this amount?',(rect.x+27,rect.y+50),27,WHITE,True,rect.width-54)
+        text(app.screen,app.assets,f"{number(review['amount'])} DigiRubies → {number(review['credits'])} credits",
+             (rect.x+28,rect.y+109),24,GOLD,True,rect.width-56)
+        text(app.screen,app.assets,f"Rate: 1 DigiRuby = {number(review['rate'])} credits",
+             (rect.x+28,rect.y+153),13,MUTED,max_width=rect.width-56)
+        remaining = app.state.get('digirubies',0)-review['amount']
+        text(app.screen,app.assets,f'DigiRubies remaining: {number(max(0,remaining))}',
+             (rect.x+28,rect.y+191),14,WHITE,max_width=rect.width-56)
+        pending = 'exchange' in self.pending
+        message = ('Waiting for the server to confirm this exchange…' if pending else self.error or
+                   'Confirming spends the selected DigiRubies. Your credits become available as soon as the server confirms.')
+        wrap(app.screen,app.assets,message,(rect.x+28,rect.y+236),rect.width-56,13,
+             GOLD if pending else RED if self.error else MUTED,max_lines=3)
+        width = (rect.width-68)//2
+        self.button((rect.x+28,rect.bottom-65,width,39),'Back',self.cancel_exchange_review,disabled=pending)
+        self.button((rect.x+40+width,rect.bottom-65,width,39),'Confirm exchange',self.confirm_exchange,
+                    primary=True,disabled=pending or app.action_pending or bool(self.exchange_problem(review['amount'])))
 
     def draw_tamer_row(self, row, entry, badge=True):
         app = self.app

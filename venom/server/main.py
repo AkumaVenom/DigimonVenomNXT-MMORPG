@@ -5,6 +5,7 @@ import argparse
 import asyncio
 import contextlib
 import copy
+import hashlib
 from dataclasses import dataclass, field
 import json
 import logging
@@ -20,6 +21,7 @@ from websockets.asyncio.server import serve
 from websockets.exceptions import ConnectionClosed
 
 from venom.common.game import GameEngine
+from venom.common.economy import economy_view
 from venom.common.farm import move_farm_position, normalize_farm_position
 from venom.common.paths import root_path
 from venom.common.network import network_settings
@@ -28,10 +30,10 @@ from venom.server.lifecycle import WorldProcessLock
 from venom.server.moderation import clear_jail, is_jailed, jail_expired
 
 LOG = logging.getLogger("venom.server")
-VERSION = "0.8.0"
+VERSION = "0.12.0"
 MOVE_SPEED = 180.0
 MAX_MESSAGE = 65_536
-GAME_OPS = {"encounter", "battle", "digilab", "digifarm", "materialize", "evolve", "party", "shop", "item", "travel", "season"}
+GAME_OPS = {"encounter", "battle", "digilab", "digifarm", "materialize", "evolve", "party", "shop", "item", "travel", "season", "story"}
 
 
 def project_root():
@@ -95,6 +97,7 @@ class WorldServer:
         self.stop_signal = None
         self.persistence_failed = False
         self.community_rate = {}
+        self.world_sequence = 0
         self.restart_requested = False
         self.admin_store = None
         if database is not None and hasattr(database, "_sql"):
@@ -206,6 +209,50 @@ class WorldServer:
     async def result(self, ws, rid, ok=True, **fields):
         await self.send(ws, {"op": "result", "rid": rid, "ok": ok, **fields})
 
+    def economy_enabled(self):
+        return bool(self.community and self.community.ready)
+
+    async def refresh_wallet(self, session, notify=False):
+        """Expose SQL wallet data without registering a private Story profile."""
+        if self.community is None:
+            # Preserve the legacy/offline-server state contract. Missing
+            # feature/config metadata keeps newer clients' ruby controls off.
+            session.state.pop("digirubies", None)
+            session.state.pop("economy", None)
+            return False
+        before = (session.state.get("digirubies"), session.state.get("economy"))
+        try:
+            balance = (await asyncio.to_thread(self.database.wallet_balance, session.key)
+                       if hasattr(self.database, "wallet_balance") else 0)
+            session.state["digirubies"] = balance
+            session.state["economy"] = economy_view(self.economy_enabled())
+        except Exception:
+            # A display refresh must never report a committed purchase/match as
+            # failed. Disable checkout controls until the next successful read.
+            LOG.warning("Wallet display refresh failed for %s", session.key, exc_info=True)
+            session.state.setdefault("digirubies", 0)
+            session.state["economy"] = economy_view(False)
+        changed = before != (session.state["digirubies"], session.state["economy"])
+        if notify and changed:
+            await self.result(session.websocket, 0, wallet={"digirubies": session.state["digirubies"]},
+                              economy=session.state["economy"])
+        return changed
+
+    async def checkout(self, session, message, operation):
+        if not self.economy_enabled():
+            raise ValueError("DigiRuby checkout is unavailable while the community service is offline.")
+        reference = message.get("transaction_id")
+        if reference is None:
+            # Old clients still get per-session request idempotency; current
+            # clients retain a transaction_id for retries across reconnects.
+            reference = hashlib.sha256(f"{session.token}:{message['rid']}".encode()).hexdigest()
+        result = await asyncio.to_thread(self.database.economy_transaction,
+            session.key, session.state, session.revision, session.token,
+            reference, operation, message, self.engine)
+        # Publish the grant only after the SQL wallet/player/receipt commit.
+        session.state, session.revision = result["state"], result["revision"]
+        return result["receipt"]
+
     async def save(self, session):
         # Caller holds session.lock; all writes serialize with gameplay and logout.
         snapshot = copy.deepcopy(session.state)
@@ -261,8 +308,9 @@ class WorldServer:
                         self.engine._refresh(state)
                     session = Session(ws, key, token, state, revision)
                     await self.expire_jail(session, notify=False)
-                    if self.community and self.community.ready and not self.in_season(session.state) and not is_jailed(session.state):
+                    if self.community and self.community.ready and self.shared_profile(session.state):
                         await asyncio.to_thread(self.community.register_player, copy.deepcopy(session.state))
+                    await self.refresh_wallet(session)
                     self.sessions[key] = session
                 except Exception:
                     await asyncio.to_thread(self.database.release_session, key, token)
@@ -284,7 +332,7 @@ class WorldServer:
         try:
             await self.send(ws, {"op": "hello", "version": VERSION,
                 "game": "Digimon Venom NXT", "tick_hz": 10, "movement_speed": MOVE_SPEED,
-                "features": ["digifarm", "season", "server_notices", "player_titles"] + (["ranked", "rivals", "bot_activity"] if self.community else []),
+                "features": ["digifarm", "season", "story", "world_ds_story", "server_notices", "player_titles"] + (["ranked", "rivals", "bot_activity"] if self.community else []) + (["digiruby_economy"] if self.economy_enabled() else []),
                 "registration": self.config.get("allow_registration", True)})
             while not self.stopping:
                 try:
@@ -353,6 +401,8 @@ class WorldServer:
                             await self.chat(session, message)
                             await self.result(ws, rid)
                         elif op == "community":
+                            if self.in_story(session.state):
+                                raise ValueError("Save & Return to World before visiting Ranked Arena or shared rivals.")
                             if self.in_season(session.state):
                                 raise ValueError("Save & Return to World before visiting Ranked Arena or shared rivals.")
                             if not self.community:
@@ -360,11 +410,20 @@ class WorldServer:
                             bucket = self.community_rate.setdefault(session.key, TokenBucket(2, 8))
                             if not bucket.take():
                                 raise ValueError("Please wait a moment before refreshing the community screens.")
+                            if message.get("action") == "exchange":
+                                receipt = await self.checkout(session, message, "exchange")
+                                await self.result(ws, rid, state=session.state,
+                                    community={"action": "exchange", "data": receipt})
+                                continue
                             # No client can submit a battle outcome or change any bot state.
                             payload = await asyncio.to_thread(self.community.request,
                                 copy.deepcopy(session.state), message, session.token)
-                            await self.result(ws, rid, community=payload)
+                            await self.refresh_wallet(session)
+                            await self.result(ws, rid, community=payload,
+                                wallet={"digirubies": session.state["digirubies"]}, economy=session.state["economy"])
                         elif op == "season" and message.get("action") == "history":
+                            if self.in_story(session.state):
+                                raise ValueError("Save & Return to World before visiting your Season career.")
                             if not session.action_rate.take():
                                 raise ValueError("Please wait a moment before refreshing career history.")
                             history = await asyncio.to_thread(self.database.season_history,
@@ -375,21 +434,30 @@ class WorldServer:
                                 raise ValueError("Please wait a moment between actions.")
                             if op == "encounter" and time.monotonic() - session.last_encounter < 2:
                                 raise ValueError("Take a breath before searching again.")
+                            if op == "encounter" and self.in_story(session.state):
+                                raise ValueError("Use Story training to search for Digimon on your private adventure.")
                             if op == "encounter" and self.in_season(session.state):
                                 raise ValueError("Save & Return to World before searching for wild Digimon.")
+                            if op == "shop" and message.get("currency") == "digirubies":
+                                receipt = await self.checkout(session, message, "shop")
+                                await self.result(ws, rid, state=session.state, economy_result=receipt)
+                                continue
+                            if op in ("shop", "digilab", "digifarm", "story", "season"):
+                                await self.refresh_wallet(session)
                             # Invalid actions cannot partially mutate a live save.
                             candidate = copy.deepcopy(session.state)
                             self.engine.handle(candidate, op, message)
-                            previous = session.state
-                            session.state = candidate
-                            try:
-                                await self.save(session)
-                            except Exception:
-                                session.state = previous
-                                raise
+                            # Mode transitions must stay private until their
+                            # save commits: the world tick reads without this
+                            # session lock and must never publish an uncommitted
+                            # return to the shared field.
+                            committing = copy.copy(session)
+                            committing.state = candidate
+                            await self.save(committing)
+                            session.state, session.revision = committing.state, committing.revision
                             if op == "encounter":
                                 session.last_encounter = time.monotonic()
-                            if op in ("digilab", "digifarm", "travel", "season"):
+                            if op in ("digilab", "digifarm", "travel", "season", "story"):
                                 session.dx = session.dy = 0
                                 session.walked = 0
                             await self.result(ws, rid, state=session.state)
@@ -427,7 +495,7 @@ class WorldServer:
                 try:
                     async with session.lock:
                         await self.save(session)
-                        if self.community and self.community.ready and not self.in_season(session.state) and not is_jailed(session.state):
+                        if self.community and self.community.ready and self.shared_profile(session.state):
                             await asyncio.to_thread(self.community.register_player, copy.deepcopy(session.state))
                 except Exception:
                     self.persistence_failed = True
@@ -511,6 +579,11 @@ class WorldServer:
             if self._walkable(map_data, state["x"], state["y"] + step_y):
                 state["y"] += step_y
         state["x"], state["y"] = round(state["x"], 3), round(state["y"], 3)
+        # Story keeps normal map collision and walking, but its authored NPC
+        # battles and training encounters are the only way to start combat.
+        if self.in_story(state):
+            session.walked = 0
+            return False
         session.walked += math.hypot(state["x"] - old_x, state["y"] - old_y)
         if session.walked >= session.next_encounter and map_data.get("encounters", True):
             candidate = copy.deepcopy(state)
@@ -552,12 +625,28 @@ class WorldServer:
         return bool(state.get("in_season") or battle.get("kind") == "season" or battle.get("season"))
 
     @staticmethod
+    def in_story(state):
+        battle = state.get("battle") or {}
+        return bool(state.get("in_story") or battle.get("kind") == "story")
+
+    @staticmethod
+    def shared_profile(state):
+        """Only the active MMO team may be published to shared competitors.
+
+        Detention can temporarily clear an activity flag while its party is
+        still active, so every jailed profile is excluded as well.
+        """
+        return not (WorldServer.in_season(state) or WorldServer.in_story(state) or is_jailed(state))
+
+    @staticmethod
     def place(session):
         state = session.state
         if is_jailed(state):
             return (state["map_id"], "jail", session.key)
         if WorldServer.in_season(state):
             return (state["map_id"], "season", session.key)
+        if WorldServer.in_story(state):
+            return (state["map_id"], "story", session.key)
         if state.get("in_farm"):
             return (state["map_id"], "farm", session.key)
         return (state["map_id"], "lab" if state.get("in_lab") else "field", None)
@@ -582,6 +671,7 @@ class WorldServer:
                 "lead": state["party"][0]["species_id"] if state.get("party") else None,
                 "battle": bool(state.get("battle")), "in_lab": bool(state.get("in_lab")),
                 "in_farm": bool(state.get("in_farm")), "in_season": self.in_season(state),
+                "in_story": self.in_story(state),
                 "in_jail": is_jailed(state), "active_title": str(state.get("active_title") or "")[:32]})
         if self.community and self.community.ready:
             # Each occupied field has one shared bot snapshot at the same server
@@ -594,7 +684,9 @@ class WorldServer:
         # Queue independently: a stalled player must not slow the 10 Hz tick.
         # At most one snapshot is sending and one newer snapshot is waiting.
         stamp = time.time()
-        encoded = {group:json.dumps({"op":"world", "players":actors, "server_time":stamp},
+        self.world_sequence += 1
+        encoded = {group:json.dumps({"op":"world", "players":actors, "server_time":stamp,
+                                    "scope":group, "sequence":self.world_sequence},
                    separators=(",", ":"), allow_nan=False) for group,actors in groups.items()}
         for s in sessions:
             group = snapshot_places[s.key]
@@ -623,8 +715,9 @@ class WorldServer:
                 try:
                     async with session.lock:
                         await self.save(session)
-                        if self.community and self.community.ready and not self.in_season(session.state) and not is_jailed(session.state):
+                        if self.community and self.community.ready and self.shared_profile(session.state):
                             await asyncio.to_thread(self.community.register_player, copy.deepcopy(session.state))
+                        await self.refresh_wallet(session, notify=True)
                 except Exception:
                     LOG.exception("Autosave failed for %s", session.key)
                     with contextlib.suppress(Exception):
@@ -638,7 +731,7 @@ class WorldServer:
             try:
                 await asyncio.to_thread(self.community.step, started, min(1., started-previous))
                 if started >= next_invites:
-                    states = [copy.deepcopy(s.state) for s in self.sessions.values() if not self.in_season(s.state) and not is_jailed(s.state)]
+                    states = [copy.deepcopy(s.state) for s in self.sessions.values() if self.shared_profile(s.state)]
                     await asyncio.to_thread(self.community.invitations, states, started)
                     next_invites = started+10
             except Exception:

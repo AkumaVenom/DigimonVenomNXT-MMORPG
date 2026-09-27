@@ -1,0 +1,105 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.14, pytest-8.3.5, pluggy-1.6.0
+rootdir: /workspace/scratch/45f9f6fca9ab/DigimonVenomNXT
+configfile: pytest.ini
+testpaths: tests
+collected 674 items
+
+tests/test_admin_client.py ..............                                [  2%]
+tests/test_admin_commands.py .......                                     [  3%]
+tests/test_admin_game.py ..................                              [  5%]
+tests/test_admin_moderation.py ........                                  [  6%]
+tests/test_admin_protocol.py ............                                [  8%]
+tests/test_admin_store.py .........                                      [ 10%]
+tests/test_asset_rendering.py .....                                      [ 10%]
+tests/test_background_cache.py .                                         [ 10%]
+tests/test_bot_training_cycles.py .............                          [ 12%]
+tests/test_bots.py ...........                                           [ 14%]
+tests/test_camera.py ........                                            [ 15%]
+tests/test_catalog.py ...                                                [ 16%]
+tests/test_client.py ...                                                 [ 16%]
+tests/test_collision.py ...                                              [ 17%]
+tests/test_community_client.py ........                                  [ 18%]
+tests/test_community_integration.py ...                                  [ 18%]
+tests/test_community_safety.py ....                                      [ 19%]
+tests/test_cyber.py .......                                              [ 20%]
+tests/test_destinations_combat_design.py ......                          [ 21%]
+tests/test_digifarm.py ..............................                    [ 25%]
+tests/test_digifarm_audio.py ....                                        [ 26%]
+tests/test_digifarm_battle_items.py .                                    [ 26%]
+tests/test_digifarm_client.py ............                               [ 28%]
+tests/test_digifarm_movement.py .....................                    [ 31%]
+tests/test_digifarm_render.py .......                                    [ 32%]
+tests/test_digifarm_shop.py ...                                          [ 32%]
+tests/test_digifarm_walking_client.py ...............                    [ 35%]
+tests/test_display.py ......                                             [ 35%]
+tests/test_display_integration.py ...                                    [ 36%]
+tests/test_entry_settings_design.py .....                                [ 37%]
+tests/test_farm_partner_integration.py ......                            [ 37%]
+tests/test_farm_ranked.py ....                                           [ 38%]
+tests/test_game.py ...............                                       [ 40%]
+tests/test_integration.py ..                                             [ 41%]
+tests/test_laboratory_design.py .....                                    [ 41%]
+tests/test_local_console.py .......                                      [ 42%]
+tests/test_motion.py .........                                           [ 44%]
+tests/test_nds_audio.py ......                                           [ 45%]
+tests/test_nds_effects.py ..                                             [ 45%]
+tests/test_package_source.py .                                           [ 45%]
+tests/test_partner_screens.py .....                                      [ 46%]
+tests/test_password_setup.py ................                            [ 48%]
+tests/test_performance_caches.py ....                                    [ 49%]
+tests/test_population_acceptance.py ....                                 [ 49%]
+tests/test_portable_mysql.py .............                               [ 51%]
+tests/test_portable_mysql_live.py s                                      [ 51%]
+tests/test_portable_runtime.py ...........                               [ 53%]
+tests/test_presentation.py ......                                        [ 54%]
+tests/test_ranked.py .............                                       [ 56%]
+tests/test_render.py ......                                              [ 57%]
+tests/test_rival_motion_regression.py .........                          [ 58%]
+tests/test_screen_audio.py ..........                                    [ 60%]
+tests/test_season.py ..............                                      [ 62%]
+tests/test_season_client.py .........                                    [ 63%]
+tests/test_season_persistence.py .................                       [ 66%]
+tests/test_season_protocol.py ....                                       [ 66%]
+tests/test_server.py ..........                                          [ 68%]
+tests/test_setup.py .....                                                [ 68%]
+tests/test_setup_diagnostics.py ...................                      [ 71%]
+tests/test_setup_launchers.py ...                                        [ 72%]
+tests/test_setup_repair.py .......                                       [ 73%]
+tests/test_setup_service.py ...............                              [ 75%]
+tests/test_setup_wizard.py ..sssssssss                                   [ 77%]
+tests/test_story_acceptance.py ........                                  [ 78%]
+tests/test_story_client.py ...........                                   [ 79%]
+tests/test_story_content.py ......                                       [ 80%]
+tests/test_story_engine.py ............                                  [ 82%]
+tests/test_story_map_client.py ............                              [ 84%]
+tests/test_story_protocol.py ......                                      [ 85%]
+tests/test_text_layout_cache.py ..                                       [ 85%]
+tests/test_ui2_audio.py ......                                           [ 86%]
+tests/test_ui2_integration.py .........                                  [ 87%]
+tests/test_ui2_navigation.py ..........                                  [ 89%]
+tests/test_ui_integration.py .......                                     [ 90%]
+tests/test_ui_navigation.py ..........                                   [ 91%]
+tests/test_world_ds_acceptance.py .......                                [ 92%]
+tests/test_world_ds_audio.py ........                                    [ 93%]
+tests/test_world_ds_bots.py .......                                      [ 94%]
+tests/test_world_ds_client.py ......                                     [ 95%]
+tests/test_world_ds_engine.py ......                                     [ 96%]
+tests/test_world_ds_maps.py ......                                       [ 97%]
+tests/test_world_ds_merge.py ..                                          [ 97%]
+tests/test_world_ds_replication.py .....                                 [ 98%]
+tests/test_world_performance.py .........                                [100%]
+
+- generated xml file: /workspace/scratch/45f9f6fca9ab/world_ds_full_tests_final.xml -
+=========================== short test summary info ============================
+SKIPPED [1] tests/test_portable_mysql_live.py:177: Set VENOM_TEST_MYSQL_RUNTIME for opt-in Linux/MySQL validation
+SKIPPED [1] tests/test_setup_wizard.py:167: Requires a graphical desktop / Xvfb
+SKIPPED [1] tests/test_setup_wizard.py:145: Requires a graphical desktop / Xvfb
+SKIPPED [1] tests/test_setup_wizard.py:158: Requires a graphical desktop / Xvfb
+SKIPPED [1] tests/test_setup_wizard.py:130: Requires a graphical desktop / Xvfb
+SKIPPED [1] tests/test_setup_wizard.py:105: Requires a graphical desktop / Xvfb
+SKIPPED [1] tests/test_setup_wizard.py:111: Requires a graphical desktop / Xvfb
+SKIPPED [1] tests/test_setup_wizard.py:201: Requires a graphical desktop / Xvfb
+SKIPPED [1] tests/test_setup_wizard.py:183: Requires a graphical desktop / Xvfb
+SKIPPED [1] tests/test_setup_wizard.py:190: Requires a graphical desktop / Xvfb
+================= 664 passed, 10 skipped in 157.24s (0:02:37) ==================

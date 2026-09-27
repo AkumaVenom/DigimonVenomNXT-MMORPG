@@ -49,7 +49,7 @@ class AdminGame:
     def _editable(state):
         if state.get("battle"):
             raise GameError("Finish the player's current battle before changing game state.")
-        if state.get("in_season"):
+        if state.get("in_season") or state.get("in_story"):
             raise GameError("The player must Save & Return to World before this command.")
         if isinstance(state.get("admin_jail"), dict):
             raise GameError("Release the player's jail restriction before this command.")

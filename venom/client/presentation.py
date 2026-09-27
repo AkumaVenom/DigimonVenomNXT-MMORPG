@@ -39,6 +39,7 @@ def _destination(accent, secondary, glow, grid='m_bg04.png'):
 
 
 PALETTES.update({
+    'story': _destination((244, 199, 111), (112, 227, 230), (37, 44, 62), 'm_bg01.png'),
     'season': _destination((105, 229, 255), (211, 154, 255), (29, 36, 76), 'bt_me_bak.png'),
     'farm': _destination((166, 237, 140), (110, 222, 222), (23, 53, 60), 'm_bg01.png'),
     'lab': _destination((166, 237, 140), (100, 225, 210), (23, 53, 60), 'm_bg01.png'),

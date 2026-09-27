@@ -183,7 +183,7 @@ class Audio:
     FADE_OUT_SECONDS = .14
     FADE_IN_MS = 420
     CUE_INTERVAL_SECONDS = .065
-    SUCCESS_CUES = frozenset(('scan_complete', 'evolution_complete', 'purchase', 'error', 'season_enter', 'season_results'))
+    SUCCESS_CUES = frozenset(('scan_complete', 'evolution_complete', 'purchase', 'error', 'season_enter', 'season_results', 'story_enter', 'story_badge', 'story_victory'))
 
     def __init__(self, assets):
         self.assets, self.enabled = assets, False
@@ -193,6 +193,25 @@ class Audio:
         info = self.assets.catalog.get('audio', {})
         self._tracks = info.get('music', [])
         self._tracks_by_id = {t.get('id'): t for t in self._tracks if isinstance(t, dict)}
+        # Appending another region must not change Dawn's established rotation.
+        self._world_tracks = [track for track in self._tracks
+                              if not isinstance(track, dict) or
+                              (track.get('region_id') != 'world_ds' and
+                               not str(track.get('id', '')).startswith('ds_'))]
+        self._world_ds_tracks, self._world_ds_scenes = {}, {}
+        self._world_ds_result = None
+        self._play_once_paths = set()
+        try:
+            region_audio = json.loads((self.assets.root/'data/world_ds_audio.json').read_text('utf-8'))
+            self._world_ds_tracks = {track['id']: track for track in region_audio.get('music', [])
+                                     if isinstance(track, dict) and track.get('id') and track.get('path')}
+            self._world_ds_scenes = region_audio.get('scene_tracks', {})
+            self._tracks_by_id.update(self._world_ds_tracks)
+            self._play_once_paths = {track['path'] for track in self._world_ds_tracks.values()
+                                     if not track.get('looped', True)}
+        except (OSError, ValueError, TypeError):
+            # Older/custom asset packs retain their existing score.
+            pass
         self._scene_tracks = info.get('scene_tracks', {})
         self._map_indices = {map_id: index for index, map_id in enumerate(self.assets.maps)}
         self._music_context = None
@@ -248,7 +267,8 @@ class Audio:
         try:
             pygame.mixer.music.load(str(self.assets.root/path))
             self._apply_music_volume()
-            pygame.mixer.music.play(-1, fade_ms=self.FADE_IN_MS)
+            once = path in self._play_once_paths
+            pygame.mixer.music.play(0 if once else -1, fade_ms=25 if once else self.FADE_IN_MS)
             self.track = path
         except (pygame.error, OSError):
             # Do not retry missing/corrupt optional art every rendered frame.
@@ -265,7 +285,13 @@ class Audio:
             self._music_gain = self._fade_from*(1.-elapsed/self.FADE_OUT_SECONDS)
             self._apply_music_volume()
 
-    def music(self, battle=False, map_id=None, in_lab=False, screen=None, now=None, in_farm=False):
+    STORY_TRACKS = {'story': 'bgm30', 'story_results': 'bgm60',
+                    'story_tamer': 'bgm40', 'story_warden': 'bgm50', 'story_champion': 'bgm51'}
+    STORY_REGIONS = ('bgm10', 'bgm12', 'bgm14', 'bgm16', 'bgm18', 'bgm20', 'bgm30', 'bgm31', 'bgm33')
+
+    def music(self, battle=False, map_id=None, in_lab=False, screen=None, now=None, in_farm=False,
+              in_story=False, story_battle=None, story_region=None, in_season=False, replay=False,
+              story_campaign=None):
         """Route visible screens, with live battles/replays taking priority.
 
         Call again with ``screen=None`` when an overlay closes to restore its
@@ -277,19 +303,61 @@ class Audio:
             return
         now = pygame.time.get_ticks()/1000 if now is None else now
         screen = {'lab': 'digilab', 'digifarm': 'farm'}.get(screen, screen)
-        scene = ('battle' if battle else screen if screen in self._screen_tracks
+        role = (story_battle.get('story_role', story_battle.get('role', 'tamer'))
+                if isinstance(story_battle, dict) else story_battle)
+        story_combat = 'story_'+('champion' if role in ('champion', 'defense', 'reclaim', 'challenger')
+                                else 'warden' if role in ('warden', 'leader') else 'tamer')
+        map_entry = self.assets.maps.get(map_id, {})
+        ds_story = in_story and story_campaign == 'world_ds_paradox'
+        world_ds = (map_entry.get('region_id') == 'world_ds' and
+                    not (in_story or in_season or in_farm or in_lab or replay))
+        scene = ('world_ds_final' if battle and ds_story and role == 'final'
+                 else 'world_ds_battle' if battle and ds_story
+                 else story_combat if battle and story_battle
+                 else 'world_ds_battle' if battle and world_ds else 'battle' if battle
+                 else screen if screen in self._screen_tracks or screen in self.STORY_TRACKS
                  else 'farm' if in_farm else 'digilab' if in_lab
+                 else 'world_ds_world' if ds_story else 'story_world' if in_story
                  else 'title' if map_id is None else 'world')
-        context = (scene, map_id if scene == 'world' else None)
+        if self._world_ds_result and (now >= self._world_ds_result['until'] or
+                                      map_id != self._world_ds_result['map_id'] or battle or
+                                      not world_ds or scene != 'world'):
+            self._world_ds_result = None
+        if scene == 'world' and world_ds:
+            scene = 'world_ds_victory' if self._world_ds_result else 'world_ds_world'
+        region = story_region if story_region is not None else map_id
+        context = (scene, map_id if scene == 'world' or scene.startswith('world_ds_')
+                   else region if scene == 'story_world' else None)
         if context == self._music_context:
             self._advance_transition(now)
             return
         self._music_context = context
         tracks = self._tracks
         track = self._screen_tracks.get(scene)
-        if scene == 'world':
+        if scene.startswith('world_ds_'):
+            identifier = (map_entry.get('music_id') if scene == 'world_ds_world' else
+                          map_entry.get('battle_music_id') if scene == 'world_ds_battle' else
+                          self._world_ds_scenes.get('endgame_battle') if scene == 'world_ds_final' else
+                          self._world_ds_scenes.get('victory'))
+            fallback = self._world_ds_scenes.get(scene.removeprefix('world_ds_'))
+            track = self._world_ds_tracks.get(identifier) or self._world_ds_tracks.get(fallback)
+            if not track:
+                fallback = 'battle' if battle else 'world'
+                track = self._tracks_by_id.get(self._scene_tracks.get(fallback),
+                                                self._world_tracks[0] if self._world_tracks else None)
+        elif scene == 'story_world':
+            region_index = region if isinstance(region, int) else sum(ord(c) for c in str(region))
+            track = self._tracks_by_id.get(self.STORY_REGIONS[region_index % len(self.STORY_REGIONS)])
+            if not track:
+                track = self._tracks_by_id.get(self._scene_tracks.get('world'), tracks[0] if tracks else None)
+        elif scene in self.STORY_TRACKS and not track:
+            track = self._tracks_by_id.get(self.STORY_TRACKS[scene])
+            if not track:
+                fallback = 'battle' if scene.startswith('story_') and scene != 'story_results' else 'world'
+                track = self._tracks_by_id.get(self._scene_tracks.get(fallback), tracks[0] if tracks else None)
+        elif scene == 'world':
             map_index = self._map_indices.get(map_id, 0)
-            track = tracks[map_index % len(tracks)] if tracks else None
+            track = self._world_tracks[map_index % len(self._world_tracks)] if self._world_tracks else None
         elif not track:
             track = self._tracks_by_id.get(self._scene_tracks.get(scene), tracks[0] if tracks else None)
         if isinstance(track, dict):
@@ -309,6 +377,22 @@ class Audio:
             self._pending_track = track
             self._fade_started, self._fade_from = now, self._music_gain
 
+    def world_ds_victory(self, map_id, now=None):
+        """Play the supplied fanfare after a confirmed shared-world victory.
+
+        The caller filters private-mode battles. Save loads and other tamers'
+        replays never call this method. A new battle, map change or leaving the
+        field cancels the temporary result soundtrack.
+        """
+        if self.assets.maps.get(map_id, {}).get('region_id') != 'world_ds':
+            return
+        track = self._world_ds_tracks.get(self._world_ds_scenes.get('victory'))
+        if not track:
+            return
+        now = pygame.time.get_ticks()/1000 if now is None else now
+        self._world_ds_result = {'map_id': map_id,
+                                 'until': now + float(track.get('duration', 4.4)) + self.FADE_OUT_SECONDS}
+
     def cue(self, name='confirm', now=None):
         """A short UI response, debounced across nested button callbacks.
 
@@ -326,13 +410,15 @@ class Audio:
         elif now-self._last_cue < self.CUE_INTERVAL_SECONDS:
             return
         self._last_cue = now
-        path = self._ui_cues.get(name)
+        fallback_cue = {'story_enter': 'open', 'story_badge': 'evolution_complete',
+                        'story_victory': 'purchase'}.get(name, name)
+        path = self._ui_cues.get(name) or self._ui_cues.get(fallback_cue)
         if path:
             self._play_effect(path)
         else:
             self.effect({'back': 'cancel', 'tab': 'click', 'open': 'confirm',
                          'purchase': 'confirm', 'error': 'cancel',
-                         'scan_complete': 'scan', 'evolution_complete': 'evolve'}.get(name, name))
+                         'scan_complete': 'scan', 'evolution_complete': 'evolve'}.get(fallback_cue, fallback_cue))
 
     def effect(self, name='hit'):
         if not self.enabled or self.effects_volume <= 0:

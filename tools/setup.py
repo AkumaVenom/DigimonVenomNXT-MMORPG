@@ -19,7 +19,7 @@ if str(ROOT) not in sys.path:
 
 from tools.password_prompt import PasswordCancelled, read_password
 
-SETUP_VERSION = "0.6.0"
+SETUP_VERSION = "0.12.0"
 
 
 def read_json(path: Path, default=None):

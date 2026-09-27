@@ -112,7 +112,7 @@ class AdminClientTests(unittest.TestCase):
         self.assertFalse(self.app.connection.sent)
 
     def test_title_lines_apply_to_self_and_real_players_but_not_ai_or_partner(self):
-        self.packet({'op': 'world', 'players': [
+        self.packet({'op': 'world', 'scope': [self.app.state['map_id'], 'field', None], 'sequence': 1, 'players': [
             {'username': 'OtherTamer', 'name': 'NotTheAccountName', 'active_title': 'Digital Guardian',
              'map_id': self.app.state['map_id'], 'x': 200, 'y': 300, 'tamer': self.app.tamer},
             {'username': 'BotName', 'name': 'RivalName', 'is_bot': True, 'id': 'bot:1',

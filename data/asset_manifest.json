@@ -4787,6 +4787,146 @@
       "sha256": "0bff292ab7e3766dea15fe87770a141b4d17f73d3465cdd1debf38f7c85d5b9c"
     },
     {
+      "path": "assets/audio/world_ds/ds_bgm00.ogg",
+      "size": 1419932,
+      "sha256": "6a1936aa048a83c8e1ed9f5ba92ad3e7a58461fd52d0893dba02af126a8482a2"
+    },
+    {
+      "path": "assets/audio/world_ds/ds_bgm01.ogg",
+      "size": 1080735,
+      "sha256": "73b8661195200b028cd21d4c610026b4875fddeee0470b72291b0362f9713b59"
+    },
+    {
+      "path": "assets/audio/world_ds/ds_bgm02.ogg",
+      "size": 1055726,
+      "sha256": "7a5c095577d7b1938f4a9401ac0626d08c47ebfc0953e52eccf17efe8e7ccf77"
+    },
+    {
+      "path": "assets/audio/world_ds/ds_bgm03.ogg",
+      "size": 1282198,
+      "sha256": "85ad52b50fe81f33bd98ecf1e094cca9fbc5df469517a484445058f61163522d"
+    },
+    {
+      "path": "assets/audio/world_ds/ds_bgm04.ogg",
+      "size": 1262964,
+      "sha256": "72bc762c3a148b5ad3685322ffd8f7fe9bc1ef9bd0f824f9d6b2c0176b7628f6"
+    },
+    {
+      "path": "assets/audio/world_ds/ds_bgm05.ogg",
+      "size": 793789,
+      "sha256": "ff9a86396a3cfe603e97fb4726976eaf5cf5beefeaac90fbe6302a9b05ae57ac"
+    },
+    {
+      "path": "assets/audio/world_ds/ds_bgm06.ogg",
+      "size": 531041,
+      "sha256": "e056f951a21e98a03182421485681c369fc18c1267964f54c5bfc4d8d7b15ec1"
+    },
+    {
+      "path": "assets/audio/world_ds/ds_bgm07.ogg",
+      "size": 748175,
+      "sha256": "6aff4bed53a5bafa87547866f6904dcdcea7b3db9554adf1989132b37aa37362"
+    },
+    {
+      "path": "assets/audio/world_ds/ds_bgm08.ogg",
+      "size": 1365417,
+      "sha256": "83db5b28518241b4bf6488ce9482dfff72fc9cd34b376186a4910302ac83b8a9"
+    },
+    {
+      "path": "assets/audio/world_ds/ds_bgm09.ogg",
+      "size": 1083618,
+      "sha256": "8423d598059dd353b9a30f417fe382d63f803d40538bbd1622f4291dd6447bdf"
+    },
+    {
+      "path": "assets/audio/world_ds/ds_bgm10.ogg",
+      "size": 896502,
+      "sha256": "e1b96117b416472f67dd326097e41687f105e3ab7aa7036a9b0ac6c7255ebdc4"
+    },
+    {
+      "path": "assets/audio/world_ds/ds_bgm11.ogg",
+      "size": 911491,
+      "sha256": "f4af3da976b3d8a5bd9ebd8c7f6a2978726b69801a1e5aff778eeb30c12c67b7"
+    },
+    {
+      "path": "assets/audio/world_ds/ds_bgm12.ogg",
+      "size": 823496,
+      "sha256": "4a17f66d518b205080524e409978f5e0de40b03ebe52d2c7817ba6da35e811f7"
+    },
+    {
+      "path": "assets/audio/world_ds/ds_bgm13.ogg",
+      "size": 892906,
+      "sha256": "5a83dae9d3dc7eccc04b28a5d0492310a5206da5dc510913bbd40b02a7affdd3"
+    },
+    {
+      "path": "assets/audio/world_ds/ds_bgm14.ogg",
+      "size": 941563,
+      "sha256": "7a6bcb9164107d4bba7a6cace9f5cca525d3f39e0c17becba5ec619d9878188a"
+    },
+    {
+      "path": "assets/audio/world_ds/ds_bgm15.ogg",
+      "size": 1236289,
+      "sha256": "e752e18ffab94bf70670cb12f0dad214b32b895c801c2e65e668a0d63b6c9cfd"
+    },
+    {
+      "path": "assets/audio/world_ds/ds_bgm16.ogg",
+      "size": 1008628,
+      "sha256": "9ec4f6582b0fa05f5f214be17d7e5bc7129372e021e5c309e79aa7e1c24d217d"
+    },
+    {
+      "path": "assets/audio/world_ds/ds_bgm17.ogg",
+      "size": 778669,
+      "sha256": "f2bd19af7c566aa1d19612c98b45fbef074ce789fc65800af4feb00cfd411e97"
+    },
+    {
+      "path": "assets/audio/world_ds/ds_bgm19.ogg",
+      "size": 936192,
+      "sha256": "9eaf63fdaccdcd0fa5b4a339d8b0313cb716daafab7e55b2110df7d6d8249641"
+    },
+    {
+      "path": "assets/audio/world_ds/ds_bgm21.ogg",
+      "size": 1054846,
+      "sha256": "0e18a27741357b1efe05754ca8bda5602945dbd79a983e239c5af91db7123906"
+    },
+    {
+      "path": "assets/audio/world_ds/ds_bgm22.ogg",
+      "size": 581543,
+      "sha256": "389733e3852aff534e814005d895f939077c1e1d1bb25d45fb01a083cf327e20"
+    },
+    {
+      "path": "assets/audio/world_ds/ds_bgm23.ogg",
+      "size": 853666,
+      "sha256": "9569d10477c1f9525cc6014c94a6742fec6cb8287cda8948451419d7be5eec59"
+    },
+    {
+      "path": "assets/audio/world_ds/ds_bgm24.ogg",
+      "size": 1023352,
+      "sha256": "d3bb507d19f74f26422bfb886e6f7416b0579d7947aa264bd91f98ca03026d68"
+    },
+    {
+      "path": "assets/audio/world_ds/ds_bgm25.ogg",
+      "size": 965703,
+      "sha256": "0a6d5cd0ccf5c3e39060cc9887a05c78612ca8c7bdbe558f14262035fd0bb917"
+    },
+    {
+      "path": "assets/audio/world_ds/ds_bgm28.ogg",
+      "size": 1161403,
+      "sha256": "33a18a0ce3e15f7c8af4997a8e6dc72d62a3636254bf2ffddd033b2330dcb418"
+    },
+    {
+      "path": "assets/audio/world_ds/ds_bgm29.ogg",
+      "size": 1061365,
+      "sha256": "131cd8bd9fda083bc819b59f7e72efeb3dc6a1a9bcafbaddda8bd19d4e4c041e"
+    },
+    {
+      "path": "assets/audio/world_ds/ds_bgm30.ogg",
+      "size": 78054,
+      "sha256": "5e74f9ff42de8939dcd2c019ac5b7ec867622e66de21d75d00702de02a2f4c71"
+    },
+    {
+      "path": "assets/audio/world_ds/ds_bgm33.ogg",
+      "size": 128915,
+      "sha256": "f341e74740937284d8502ba82320be6c3613ea44e12e3ac5a13dce66d04ed755"
+    },
+    {
       "path": "assets/collision/map_001_a.png",
       "size": 3593,
       "sha256": "902903510dcb6fced83e5b99706bdb0114e020eac2298f91992f9c51cb311c17"
@@ -6055,6 +6195,756 @@
       "path": "assets/collision/map_264_a.png",
       "size": 5158,
       "sha256": "d16e9eb6d3f454b42ee56bf6ee0fc7ce0f3d59e4c8664aa9f449c9b0a610ec3d"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_030.png",
+      "size": 2699,
+      "sha256": "f2b48c79a7d01256e2f5566624381a1f1d6f097e96c3b18ea0ac5435c595f6af"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_048.png",
+      "size": 2878,
+      "sha256": "aa98f369cd30aa03b85757772870a47dd71a41bc3968899c55705bf46c5f65ae"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_049.png",
+      "size": 1899,
+      "sha256": "af87da2c8e29f2ba8b04a54e3e8b4aa39ddf8fad6dcc8ee6d2b8a681e3a1793f"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_050.png",
+      "size": 3100,
+      "sha256": "7b51a98f3a41ca37e63f6fd7d9a2bc1db7d377c90567a189405caf93e1a11a51"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_051.png",
+      "size": 2828,
+      "sha256": "23bc205011434056fa5bba5bc29d979029f81dc5284db0bdec3931306ef5cf9a"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_052.png",
+      "size": 2820,
+      "sha256": "17d9ad899854fc155bb8fd784852387903f4e69f83ab5354ab212477990188f6"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_053.png",
+      "size": 4415,
+      "sha256": "d8eda1e8f8034eb65851c9017fe1e3e5385a1f0d853a62c37b9af9722584de3f"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_054.png",
+      "size": 4180,
+      "sha256": "86be13434e3dfd3239b5bd2de752d16e3a0fdc8f3ff344f0a6f21dec575d69bd"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_055.png",
+      "size": 3433,
+      "sha256": "84d77707c826b3fac9525abfa569614e082f895a50a17f3070c27d3a86e25c37"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_056.png",
+      "size": 2742,
+      "sha256": "83c098e18ad3f7dad1b4159d6345293c31a58601433035ec4558ff40be97d59f"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_057.png",
+      "size": 4393,
+      "sha256": "0148e540e347ea97806a46036f824c6d317c4e2c4471a79207937175f51eadd2"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_058.png",
+      "size": 2246,
+      "sha256": "036468bb7222bcc5239a8e642520489829755dc0b5f295ca7dda4490663dd5b0"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_059.png",
+      "size": 3597,
+      "sha256": "04096eb51112a9716e715cff8f592063f00a6cb3054108a0b2b6c6767bf802b1"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_060.png",
+      "size": 3256,
+      "sha256": "3d1b0e443d026734f5a2be8725e2c9df07b0bf2da3277b3391e93ad3d3421c2a"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_061.png",
+      "size": 3641,
+      "sha256": "3f7825e0e773a11f64470226a8f7496643bc538a277b48d713bc9c8a20357551"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_062.png",
+      "size": 3729,
+      "sha256": "53c8e85b5bd99dda931f71c096a04aa5bd70bd05f9115a87c12cff80ae008836"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_063.png",
+      "size": 3427,
+      "sha256": "2d9b746b1b957e52a72fc854a0b26be641ea042b153e6aeb24d77fe8ac88b68b"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_064.png",
+      "size": 3406,
+      "sha256": "97031f8f95e44d78735369c6e8b7dbecf4bcfc8c5c9a46fbf359ab93e08e1abb"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_065.png",
+      "size": 3713,
+      "sha256": "64981736e521e9fe899c0c8cfc025e55c16f4393f2d2ed02e107875038d8dd8f"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_066.png",
+      "size": 3394,
+      "sha256": "6c97e4f5d2cb3e31a68ab60d2c40f588cd3e7cdcf4fb50fd0f8237172012e357"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_067.png",
+      "size": 3397,
+      "sha256": "f4a1f7b662c61d14309534e2b4ce362660c5188f149af174137a35e68b3a2cdb"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_068.png",
+      "size": 3881,
+      "sha256": "0030fd0bcb5821334f385c4be00d4de36202884cc4cc33bb4f791a83c981f3be"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_069.png",
+      "size": 3038,
+      "sha256": "846121518362c996e3cf40632bdbaa2b5ddbcdd8e7be0a14925de200fb7ab2bb"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_070.png",
+      "size": 3099,
+      "sha256": "13466921f548d51984dcb269a8a7099e6fc56eb4f613f1de3248601659bc7292"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_071.png",
+      "size": 2851,
+      "sha256": "6d5e0898a1d89938a2ed7eabe3df6055dfee8522c653920e9a2064bcdd364252"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_072.png",
+      "size": 3043,
+      "sha256": "8f6831ee0151ea39ff7f54281d47ce35d8e8103cf9e07f80a53ac884a70a1b30"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_073.png",
+      "size": 2693,
+      "sha256": "92a7d5f6da779fd6aebd84150444f8bd3eddb58b17df28e614eae3e644ac7562"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_074.png",
+      "size": 3430,
+      "sha256": "ccf16297fcb2901afd7b9757acf4cff2891cd62e901a0071bd28936b910933db"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_075.png",
+      "size": 3903,
+      "sha256": "64bd52ed5fdfcabd599165c4c010a8320a4e95c9f1fd546d3ebe29ecfec56db1"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_076.png",
+      "size": 3870,
+      "sha256": "fbaf2916a57657449be20c1764b93356faa2181f46e3a44b518946234dad676f"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_077.png",
+      "size": 3757,
+      "sha256": "fafcd374703620d772435d9d58dda3ef1794607c0efdbbfe6968a0299979917a"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_078.png",
+      "size": 3614,
+      "sha256": "8c4da508575cfa659bf820e895abfe12983bce1fc6dda917109a9d2a1c6913f6"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_079.png",
+      "size": 3280,
+      "sha256": "f284e4aa1c05eef21d94b2d93c824055ed09cf8000a62e5277926aa5e66ea9c2"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_080.png",
+      "size": 3473,
+      "sha256": "5a6bbf60cbe77c781136959aa2c5a49c4109a39a3a54ab2c01bccd3e34a0592e"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_081.png",
+      "size": 3008,
+      "sha256": "cba57e92d25d6b4bc7b7c8dd40c3f33d99a29954756288a4cb9514aeee4e3baa"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_082.png",
+      "size": 2792,
+      "sha256": "4e45768e0215a807c7c3bc71ccb2cd39f5635281c358486b3ce8b776fccc928c"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_083.png",
+      "size": 3320,
+      "sha256": "c119f75654c77b742cc7d3126b6dfaf48e4ae339fecf3a1c3da5524af34a3b55"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_084.png",
+      "size": 3209,
+      "sha256": "197fdb2c0e8f5dbbcf6225e0161d14f084e9e11c23f52a20ed0e09a19fd6546c"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_085.png",
+      "size": 2299,
+      "sha256": "76424a5ac43fc52feccfe87e0804283286f7aafb6ff4087f5b3d2953ba5b3176"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_086.png",
+      "size": 3435,
+      "sha256": "72122c2c6d6ec790de8f509c1417f6ae0c283c925ea29f3c7df3476390225b04"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_087.png",
+      "size": 2882,
+      "sha256": "5eeb42a7001112a2711c40099a5ad5b0d9ddcf0d48debfd6c5cf5ec3a058077d"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_088.png",
+      "size": 2429,
+      "sha256": "c30fd904938e481e1220a2b2d42bcda909307ee75ec76cf1564e471d5a35e2bd"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_089.png",
+      "size": 4000,
+      "sha256": "9ecbc7ae9489521c44d8f7abadcc115ab264f7727d75a24c2dee4dba5bef5c8c"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_090.png",
+      "size": 3786,
+      "sha256": "f92edb6df0d8c80f966d8ab3c07c836fbb098812d15574251fa36c173e75b857"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_091.png",
+      "size": 3770,
+      "sha256": "c456e5e79db62f396729eeeadc285ae762b00b74b265ae4f48ac22ea5971839c"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_092.png",
+      "size": 4090,
+      "sha256": "f340bb8f12abe432fd7de3e7ae7360c88b2d3eef2c3f0e0840fe470b28989e8a"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_093.png",
+      "size": 4065,
+      "sha256": "a1e315a8feabffd496c563ca3a8e8d97010ed9ac9e5798860b2c291a434a6de3"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_094.png",
+      "size": 4051,
+      "sha256": "e1e86ea71149e3f801c860936806cc71482592e85b4aa5406198fc69d600f369"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_095.png",
+      "size": 3797,
+      "sha256": "30914b93deb4d7f4843da5d8129bfaa3a4accfa296d20ab6a41b756be42deece"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_096.png",
+      "size": 4054,
+      "sha256": "c795923a339d293181dd283f5f018c7a7f83675c60d022615324139dbe7fbbd3"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_097.png",
+      "size": 3606,
+      "sha256": "60102a19bbf68eecee87f0e002ca9b2fd86a7169554cdf51b96ff36625f42991"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_098.png",
+      "size": 3729,
+      "sha256": "f1cf236935a269f1ff2844f04889d0377a1f9f4c0f0cdc8637e6d2dc7cac5286"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_099.png",
+      "size": 2994,
+      "sha256": "9ca87803a44265cfd101e4284a523a4c4dd322150840dd5a01e0c9f936e51cc6"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_100.png",
+      "size": 2845,
+      "sha256": "67acea7263619eb9989f2eb69d75601046c2928ce38f1627976d1902f8bbf743"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_101.png",
+      "size": 2841,
+      "sha256": "03786177d2443f6153c53976822532ffad42d7ba5ae35cac1162a581f0fa6757"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_102.png",
+      "size": 2856,
+      "sha256": "668ad5407c984ff16a277133eccc1306531efaa8989378f14fe5868df935c997"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_103.png",
+      "size": 3023,
+      "sha256": "515779d3c115e95d43e2782645469cfa8e850ffc7b28267548de00afe09aaf14"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_104.png",
+      "size": 3727,
+      "sha256": "11346fdbfe0167d83797d64afbfed4f8432e1d4a76f1b9fca790a75e823ce9d7"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_105.png",
+      "size": 2480,
+      "sha256": "01605142ca95c38fd83632256280a5f831c19a02b85651176bd8836f7c51583c"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_106.png",
+      "size": 2526,
+      "sha256": "3d95cbe0f7f4c884562a3a8d9d097615235b0af0eebf72fc79c8c0b42850aad4"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_107.png",
+      "size": 3288,
+      "sha256": "b87cdc70c96d0e458bbfa385a227ea69b53c8a2da1d6a3a66f984e3e693cf7bb"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_108.png",
+      "size": 4186,
+      "sha256": "13bc77841d25566d6440cbca5c045e4cab8672faa596d0a07912f9b3a7cb9898"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_109.png",
+      "size": 4382,
+      "sha256": "d54e5c65f6e32021fe67c030e885e50aa33cd0113c06a0e47c6165b86102f06b"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_110.png",
+      "size": 2524,
+      "sha256": "89c0c4da062b168dbe244cf8ac7397f02d1b247fd1ac16d8782cb82d1bba3f17"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_111.png",
+      "size": 3499,
+      "sha256": "402c506956c7c0c45e9e8a03e8a90b83150f3a7cd2eac0f2f1d4d4e3ace180ab"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_112.png",
+      "size": 3956,
+      "sha256": "74a65cba231490c13898fe7fcb30f0c354d60af56c16a7c684a45d2df24b5eb3"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_113.png",
+      "size": 2831,
+      "sha256": "4e11a8d992817d79b0c90891ded201b3d622ba10319f4324cab0276eaf5d4275"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_114.png",
+      "size": 3674,
+      "sha256": "38dc155a57fbe20abf89b09e5984832825cecce37c9a709d2a9be5dc906228a7"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_115.png",
+      "size": 3817,
+      "sha256": "44a964d8a15e4570ec592561d53a206ff65e0a06b8962509925e09d17f2c6e3c"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_116.png",
+      "size": 4168,
+      "sha256": "073fc9fcaff0ae83452cb55b9353e720548b9ee2c79568b6dc631fdc2872d313"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_117.png",
+      "size": 3625,
+      "sha256": "466f4f9e94852844d25a82cb04fec54bd5f7ab41193e3f5ecc7ab482ee55bb9d"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_118.png",
+      "size": 3825,
+      "sha256": "41ada4d51384abb33660273f8103b7faca83e241b47014f254854b4eaecc796c"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_119.png",
+      "size": 4508,
+      "sha256": "1f4e28ebf4faf144bae69be71468dd43740e9f088eb7533a8b208de6a05f230a"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_120.png",
+      "size": 3954,
+      "sha256": "4eac40cde2ac5fa9c2970adbd44dd9f6f6dea93d7c7761c4ce19bbe6d4a41de8"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_121.png",
+      "size": 3345,
+      "sha256": "2569acc2e7a8a182ba315cfad0f36adb18609dd188183621873750cc72d00c8a"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_122.png",
+      "size": 4020,
+      "sha256": "aba1e0ef47e674aa56a337fb4aa32e3a13a5179268a2e9ed2669dacb62d6224e"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_123.png",
+      "size": 4451,
+      "sha256": "543fe4ed9fc8abb407119ec22cdc4fca4967a57fcfe2a9d9abbe253bb532a9c7"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_124.png",
+      "size": 3122,
+      "sha256": "4b13dabca653742f2673980028483b35c0c0a7544b363edaf9d735b14684aee5"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_125.png",
+      "size": 3435,
+      "sha256": "50ff3f24edc184947f22e9406a0621dd8fe91e0066315a84b80ebe115d61480c"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_126.png",
+      "size": 2865,
+      "sha256": "3923714a6a8408833f7811c4f8d9da7baeed748a5c4e6f485df23f8600f77f37"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_127.png",
+      "size": 3190,
+      "sha256": "47547bc4675a1558038e7511e008b46292f13cda1a2674c213306d5a51e548e3"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_128.png",
+      "size": 2952,
+      "sha256": "aa2e902400cf56ba35fe9aea093bf0b4015e31f6fa565cefbc822d572ce1ffa8"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_129.png",
+      "size": 3322,
+      "sha256": "f0e56b051e1f773e0f67f1519a7d99e0323b9e4b524162b2cc802fb8c863b790"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_130.png",
+      "size": 3267,
+      "sha256": "0882967d29999d65499187b9c1454c5157a78fcc684f2e080fdcd3faa983c10c"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_131.png",
+      "size": 3649,
+      "sha256": "6f43d0ea2a10c38e6440f66c27874f591859b735707073f38a18d6ccc8784cdd"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_132.png",
+      "size": 5219,
+      "sha256": "fc95736f1ece8fc3f9f01a2601304207d43e2b53bc92ce192a803a5dfc66174d"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_140.png",
+      "size": 3543,
+      "sha256": "07f0d2336360e607573c240f74b17d55b500c38209a383c30f994f7982be9774"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_141.png",
+      "size": 3320,
+      "sha256": "ad10c201ee2b06212c32d62569caca4806cfa82afa02cfce07d7864b4d3c5090"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_142.png",
+      "size": 3629,
+      "sha256": "5e63fc55204f675ab2b4597ece6977409b92bd6cb94fdf51c3aaa628fdc04680"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_143.png",
+      "size": 3131,
+      "sha256": "f1523c46c3384a2d0164b298cda55ae91fdb1f327b07f4bc8f61e4b4fde99adc"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_144.png",
+      "size": 3771,
+      "sha256": "a103473a0136c9d8a7cd1f232c73b05663f3d35b0a119aad60c759e09687f9c1"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_145.png",
+      "size": 4335,
+      "sha256": "afe651e8af3cc1975f468d1dca71e3bb78997f3dcba3a69b725d1827e6cc3d58"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_146.png",
+      "size": 3573,
+      "sha256": "f80393ba567cf617c49a6d24a74bba5826bcff2113d13a0172f45793e4a45e5f"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_147.png",
+      "size": 3689,
+      "sha256": "1a9ee40a1a1c5660375e9bac9296efb087a55b85461e9df55612350aca27b88b"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_148.png",
+      "size": 3521,
+      "sha256": "083b4ee4c22d923b576d7bffc6ba60507fd23f473a4f6543a932e3f96c0e7b66"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_149.png",
+      "size": 2863,
+      "sha256": "b457d97e304f2b825986f18f12c44b8278a6e95a76f8192b33d716ca31f595c4"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_150.png",
+      "size": 4413,
+      "sha256": "86a39f482295f40f388636bf929a83c5e929306a5cabba6421618a34ee8d9634"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_151.png",
+      "size": 3317,
+      "sha256": "b36358ff37a3f9ce51e4b736e1641885057920aa883fa97c770c92c4883a57ef"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_152.png",
+      "size": 3916,
+      "sha256": "c8999e21138818456a7f8d7153fc966efcf9a6eef081bb29afd2e7a6176e9b5f"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_153.png",
+      "size": 3084,
+      "sha256": "647d92323dad7bb7766c591275cb754def504c67baaa6dcebfc33860e672a6c1"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_154.png",
+      "size": 4382,
+      "sha256": "15ff3b30aa620c2999a9a2def62534ee20fa0b347a9bec3e87349d9888f449b0"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_155.png",
+      "size": 3719,
+      "sha256": "58430ec798717af130c56b2a586b7c0581ac8f764730ae228b980ee407745afb"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_156.png",
+      "size": 3305,
+      "sha256": "4641b5a116fa4b37aea87c97661f2314e372a4b0b131ea94e364008eb15f459d"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_157.png",
+      "size": 5365,
+      "sha256": "e0cd0d3ee76706a011ab01585f78d68e82aa12e5d75f63c65cdb49a0535cc59b"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_158.png",
+      "size": 3469,
+      "sha256": "0021eeb35770f4df9d1e40fb527cb9679187351672efaa97c2028492a111020b"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_159.png",
+      "size": 3021,
+      "sha256": "0e5551d6cf3fc4fa23ee776ce49ecbbdceb7fd816965ea8229098328f3f6778e"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_160.png",
+      "size": 3019,
+      "sha256": "997fb8f6295a7c20e14d25a8594f4e5afa61c9a1a7180eb52918d36d4c4cd317"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_161.png",
+      "size": 3197,
+      "sha256": "fedb7f213790f58ad7eca3df6941f53ce6aefbed433c2209b6016081365b5b8b"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_162.png",
+      "size": 2935,
+      "sha256": "6400849789ee713c7d645e2edaecc3a1f6e41e8c58e618be3d19eff1d0e68493"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_163.png",
+      "size": 2943,
+      "sha256": "f5bab380817269775c28802d69224b312c9ac068fcb40f66f18185634b9493b8"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_164.png",
+      "size": 3148,
+      "sha256": "292decf12ee546fdf3532b8cae5f5f2d70e29faf6216282d3fb6b0aa3f1c8495"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_165.png",
+      "size": 3252,
+      "sha256": "f2bedaf254e23f0feef055383d42a0cf443c3b54911029545d7283d790a40dd2"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_166.png",
+      "size": 3197,
+      "sha256": "fce827b304a2144a25bbee6fa77018ce17f3767f62145567282e905a3bbd9d00"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_167.png",
+      "size": 3362,
+      "sha256": "a4069f02af33064997b1b4ba7a4e9664728a1bda6fccba815bd9db97b1b8d312"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_168.png",
+      "size": 3140,
+      "sha256": "6f9508448917dbfa2d2563ba55c28fd55c17afba7e6c0edd4fe13cce93ad4b2d"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_169.png",
+      "size": 3707,
+      "sha256": "452e19c2b1976df0b0ff494f43549c81e7149282d500ec6397ba36dc2b02329f"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_170.png",
+      "size": 3494,
+      "sha256": "689847c7d44f98127348f0d45a92b52ac5f8668f62b47543eb19d74ef4aed25f"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_171.png",
+      "size": 3430,
+      "sha256": "e922ffe6ffda7dbb9b2c372bcdc3ecf5edc1b67741b620954173ff67ff5ccef5"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_172.png",
+      "size": 3102,
+      "sha256": "4d8733cb0f1adb9b51aea47361e72bdc2cd2b5db85673f5a9089a543bcef1dd1"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_173.png",
+      "size": 2976,
+      "sha256": "b58857619431329cf94e57603ea7a8a8636b185688d0d41abdd45a6b0645cf7b"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_174.png",
+      "size": 3525,
+      "sha256": "46c3bf8eb01bd6a2e68096680d4780ff31c761ec857b64712a1bb2b1036fd1b0"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_175.png",
+      "size": 3767,
+      "sha256": "1ea1cde55117985a57cbb8665ddb2bec18eee80eeda24b7c9aa9d065df13701f"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_176.png",
+      "size": 3699,
+      "sha256": "27eff1b8cf4b4405c8edbe798225516b268f7d8261637c75b6a22a3388e5c839"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_177.png",
+      "size": 3581,
+      "sha256": "84b50536363cef3b697e18d10760579ea11582c91df2820d2292a6a909e061b8"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_178.png",
+      "size": 3836,
+      "sha256": "4b247e1b73e5984bdaa459c4b2a7679c64bbdf5c96c6549705f20d83fdef1e3b"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_179.png",
+      "size": 3739,
+      "sha256": "3fbc67516eee4c03f318b56bb4195441b9356b2b9230108eef6e9c5367cb27de"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_180.png",
+      "size": 3929,
+      "sha256": "dbd103e9ff827f89cd9f5e21490088cb49e4c92f99c99e6a42c38153f4770cee"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_181.png",
+      "size": 3768,
+      "sha256": "5f908cf4d62215b008e68de360922a09aac23509125f717bfb3c06820985f3c4"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_182.png",
+      "size": 3485,
+      "sha256": "4e995f3f830590ed0ee8f59d4a70e23d6e951de894752fb42a522e74814164e6"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_183.png",
+      "size": 3810,
+      "sha256": "18b77a91a91b54e2e86d598c4f4e4ead5da83b367fe800b4f1cfadb2acca3bf4"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_184.png",
+      "size": 3906,
+      "sha256": "02f95f15a2962af76e29fa437e995c12162a43593562ced11cb438bdb7d195ca"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_185.png",
+      "size": 3087,
+      "sha256": "99c381248c7947f6e11170436376c1514498ac83003c82e94058827db30fbe9a"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_186.png",
+      "size": 3087,
+      "sha256": "99c381248c7947f6e11170436376c1514498ac83003c82e94058827db30fbe9a"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_187.png",
+      "size": 3087,
+      "sha256": "99c381248c7947f6e11170436376c1514498ac83003c82e94058827db30fbe9a"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_188.png",
+      "size": 3480,
+      "sha256": "7133c34f47c1cd0d932db9e6f0a05257aeb089cb8318ad828f8e680d9fdc3834"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_189.png",
+      "size": 3421,
+      "sha256": "0c33bda14305584bbbf5c76d8a96a48ca36e77f8e202ea5c5c5c2e38deecd3ed"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_190.png",
+      "size": 3836,
+      "sha256": "275daf3a45c15a773d3374735ac2a7d1e5c5c4cbf5c952068ee79ac89afc6af2"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_191.png",
+      "size": 3554,
+      "sha256": "d592a6121a045393654a4b84578faa59662c86f1abad9384cad08c85ae2d1126"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_192.png",
+      "size": 3210,
+      "sha256": "8b7f4b3bd5011052541bf24b94470a88d5e3737c724db355179a669bfe7c55fc"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_193.png",
+      "size": 3645,
+      "sha256": "0177bd30cd207a67ef9290f5d19ebb0a7a4cfb36e10a0627f4d6c9364183674a"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_194.png",
+      "size": 3755,
+      "sha256": "d7c3658b699708b69a6940af4ed03921245b1c7269ac8ef26971932e5b2ced6f"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_195.png",
+      "size": 3406,
+      "sha256": "861abe2481738ad87307770c6d7399dd0a26213368d68a8a552ae8eb6f52b4b2"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_196.png",
+      "size": 3225,
+      "sha256": "69740749b648bec58f5442c7e35c6c6ab5f5869074a92b1fb91934d0cc08ccc2"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_197.png",
+      "size": 3746,
+      "sha256": "c50c1ef2e3644e2664470c1ebed3c5da6fba161d3ccf07879f5fff86fac8ab1a"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_198.png",
+      "size": 3631,
+      "sha256": "9634d3d8d17708801371dfe4839b88b9266c1fc36cfd72c0b745e931293efa52"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_199.png",
+      "size": 2742,
+      "sha256": "aeffbcbb6a84c2984eeeb68ce4e60df14a47f2dafe8909c3011f0bf101b07df1"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_200.png",
+      "size": 4486,
+      "sha256": "4bd7b382ad31c25dfc5b9aa318cfa7a468d50934230ae906dbeec2bd3d27b3eb"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_201.png",
+      "size": 4302,
+      "sha256": "d877959012d53e1e0fbb88501b94bb1542fbc0baff3d2885b6885c9bc99cd399"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_202.png",
+      "size": 4427,
+      "sha256": "912cc1a2d05c35c9d83bf17c0460a3e0cc836febf835329ee70a7898fc80dff9"
+    },
+    {
+      "path": "assets/collision/world_ds/world_ds_203.png",
+      "size": 4512,
+      "sha256": "edad8bb257de051b6f50a8c9a4e0e4e20c40f9b2030be7319022f5e0b98fc52c"
     },
     {
       "path": "assets/digimon/1 Fresh/Bommon/Bommon_AttackPart1.png",
@@ -95587,6 +96477,1336 @@
       "sha256": "9c7d65dccec6aaedbb5997a0f7037a8b733120df9c3817e1e75748e7eca87701"
     },
     {
+      "path": "assets/maps/world_ds/world_ds_030_base.png",
+      "size": 421068,
+      "sha256": "0b684ba0662de275ee0cb2dbfebbf732f84af9e0f27ba386c8be6af14aa56879"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_030_foreground.png",
+      "size": 181928,
+      "sha256": "06b5c53ee9bfdd8421cce34866fec48718dc93f56e633c55d3241c5d17902c32"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_048_base.png",
+      "size": 750323,
+      "sha256": "ecc3aa24b4f738d61a75dffa0630df9c4ec1480f698b2316b09cb68588920531"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_048_foreground.png",
+      "size": 18598,
+      "sha256": "941f760133c795a8aea0540df3c98a2e08307b76ecfa44b8dee9f70dc5f91b59"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_049_base.png",
+      "size": 462371,
+      "sha256": "115faf76f0746cd0a26e4bf250a089a093c0c8618306b755080b743b9fa09e25"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_049_foreground.png",
+      "size": 6903,
+      "sha256": "735e6a103bac76846765a11ec171099cd8213ad9c29aec9e18d39b46324a76c1"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_050_base.png",
+      "size": 734746,
+      "sha256": "0d852aa8284b7c71973b52cf2d60767022e5a0dd806a74bd1fd06280190367cb"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_050_foreground.png",
+      "size": 26473,
+      "sha256": "2471f6fbfecdb30336a87d082c1828cd097e30d9c111174a04209eee4124a54d"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_051_base.png",
+      "size": 736735,
+      "sha256": "2a4a24cc4a740f83eb6352dcbe94cf52e2fb1270b188f0f225f77cd1bd36d74f"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_051_foreground.png",
+      "size": 8633,
+      "sha256": "87d76999607849b7b31dddb49c686792f2b74701a22c41a365adc1ef44df3dcd"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_052_base.png",
+      "size": 723480,
+      "sha256": "c4b973cb5fc9fba5680c22301423502a67f8377d34390c8d2d1a58743c1df6b7"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_052_foreground.png",
+      "size": 12573,
+      "sha256": "2f3296da553952024a5cda5eaa22277f771a3fe0b737b64542e573b091545ea3"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_053_base.png",
+      "size": 830537,
+      "sha256": "7052c1629034378f5f75273daa86e217d985f2a189fae3f8470ba6496178a78c"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_053_foreground.png",
+      "size": 166455,
+      "sha256": "263f87a6868ba95b54e322eefcfd33057f568f625f4bc0591c400a08f698b3de"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_054_base.png",
+      "size": 787648,
+      "sha256": "0b259212c2b99033747169d342a065c38162c491a37f39242240fb0d94dafb32"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_054_foreground.png",
+      "size": 136495,
+      "sha256": "4301cb7442c3e22ec6139e1c8a0ecfb0e73fcba8d6f75eeacc5646adf84a9386"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_055_base.png",
+      "size": 793907,
+      "sha256": "1b0c074bae4cf54611be542d30eaaa363b370abd7e0cb1561171d1591741e3a0"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_055_foreground.png",
+      "size": 207332,
+      "sha256": "c6bad78534e6bec9a0a5569bcecf1c39447d087b9d94a464ce890381847d1d3c"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_056_base.png",
+      "size": 570530,
+      "sha256": "c4e920901a4cfc1604fff52bfe33cd3b969855be9221efaf648b2ad621677596"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_056_foreground.png",
+      "size": 112866,
+      "sha256": "2ceaafa6e6477617096ed6dcc4a7f7f88016f5734747de8749241b535d2b6efa"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_057_base.png",
+      "size": 864019,
+      "sha256": "9993af3e14b9627b80b1024ac6b1c7ceee9062972c4dab0418527d76b4d14c72"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_057_foreground.png",
+      "size": 165273,
+      "sha256": "fe522ec67ae0f58df47b7f9a62deb6a0ee1fc68fa208b867735b285ba183f901"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_058_base.png",
+      "size": 409760,
+      "sha256": "9b11fd09515b5f2a3216ba95a4b23b337cf5e8f8bb00d4780283f9e3fc96be8c"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_058_foreground.png",
+      "size": 107860,
+      "sha256": "6ac310a15086fe2d1d564fc8744a8e85e84d9eb984b5a0140616540be51eaebf"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_059_base.png",
+      "size": 528151,
+      "sha256": "626e2ce5f39e12545784dd2ca5411d34dcbceea392f5fd8da54408bc8a87147d"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_059_foreground.png",
+      "size": 27951,
+      "sha256": "197be779ff458222459eab15e000848fc914f1db535e9942dedfcd566aa9b274"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_060_base.png",
+      "size": 552453,
+      "sha256": "39d869360ab7abb4d813d8c435f99d9561af7933363738df3afa5a156cc23330"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_060_foreground.png",
+      "size": 14248,
+      "sha256": "b621d4b63d29e6c12cb9769b50daa8d666f257590806e84f856d3edd39ec43d4"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_061_base.png",
+      "size": 620347,
+      "sha256": "e1558f8d8ab7a102b16567fa4eca0bf1d491fe3c0dfc26a3ce186010d1562c9b"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_062_base.png",
+      "size": 604944,
+      "sha256": "30d080f8c519d3f3a79d04131d333e1b167b8f50477c7890ba3876f6e121f5c6"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_062_foreground.png",
+      "size": 63768,
+      "sha256": "a950b441d3e44aab082c3f5c07db951042c158d827a9be9dd4acaf51408bde1a"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_063_base.png",
+      "size": 623138,
+      "sha256": "5e663d6b53b05ec5bd4dda60c05e7903fca03485be0d201d053f6ad804a014f6"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_064_base.png",
+      "size": 612355,
+      "sha256": "988b259efce89436648b7561414cc2250aea7cb6b282ac677c250b2d432f96ce"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_064_foreground.png",
+      "size": 18252,
+      "sha256": "8d593e08a613534a0acb83cba10c57fba2b8f0843e99d8698bf668569cb0a967"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_065_base.png",
+      "size": 604944,
+      "sha256": "30d080f8c519d3f3a79d04131d333e1b167b8f50477c7890ba3876f6e121f5c6"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_065_foreground.png",
+      "size": 26337,
+      "sha256": "5c03385f31695e48e673ff335305781450d66c75d7ba223febf5e0c449b8d0e4"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_066_base.png",
+      "size": 829726,
+      "sha256": "7eff615e4a9a2390953261c721aa4b659bbea1a014608e927795a84d7aabbe88"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_066_foreground.png",
+      "size": 108074,
+      "sha256": "c02d4c1990b0e88a0fe118ca8c188a73ee246bc53d08dfbab3ce38ae0929d6f9"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_067_base.png",
+      "size": 929688,
+      "sha256": "93a6713ba76586da76e1e2c01f6345f415ca1d9916aab3a2b61f6ee6a9f8648e"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_067_foreground.png",
+      "size": 89095,
+      "sha256": "a93b6188596bf767e3dd32f0d1453e10d138aba623b973d25e38bee45c5a182a"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_068_base.png",
+      "size": 861540,
+      "sha256": "4476253577cfded045cb5e872ea3effa69f734bec74bd40f15320f72e13f7d3e"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_068_foreground.png",
+      "size": 234255,
+      "sha256": "81942adea1af0a8fa30431af0b3d09d09d9d39f63b431f67fe9b10522fa6e618"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_069_base.png",
+      "size": 744079,
+      "sha256": "f677556a3c0ec85306e191c556600a81a5c36d4562d296bd6a24e99f9b80d0a5"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_069_foreground.png",
+      "size": 205718,
+      "sha256": "bc82fe6bb878070c4776ef393b6b9a88bc3ec84663c9861edadd340824c4a13d"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_070_base.png",
+      "size": 682893,
+      "sha256": "b22e743a0b78be8a411e2f32d6378b00aaa9b77c8973b3dbbfe3432335a592a3"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_070_foreground.png",
+      "size": 235466,
+      "sha256": "219c525c0ffb03e1d36c884f41af10f6f5e5976a224915cfa3223ca633b3a103"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_071_base.png",
+      "size": 665199,
+      "sha256": "fccce9d74202175d92162106a44438f40e523fcccce367396243cfa6eba0bf8e"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_071_foreground.png",
+      "size": 129172,
+      "sha256": "f5d0fa05df31fc44fb9c75ee6d1a4dfeee126df9ce0f56cebcdf890a1a4318a3"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_072_base.png",
+      "size": 574973,
+      "sha256": "7ec0bd3d10d7debd346fa2729101843946c298d57c2ea3c6db807f5fc6b72eed"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_072_foreground.png",
+      "size": 91961,
+      "sha256": "b5ed2018435087b0d0a46b2f4107c4883a1c513948ce56a5d6b257a4cbfac98f"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_073_base.png",
+      "size": 695697,
+      "sha256": "c27bbdb76829f2687d67cce79e97df1d912d44540ce3e48556e121709bb62caa"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_073_foreground.png",
+      "size": 27729,
+      "sha256": "42f82af838924d9568ca2b81c2a22e231b88fbf1c02ee28eb2147fd6684d0a03"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_074_base.png",
+      "size": 742802,
+      "sha256": "8297dea7f4367aa494e255a5eb175000984c7056b280334d9c5d6153dcafe081"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_074_foreground.png",
+      "size": 36011,
+      "sha256": "9e2fcf4a27eb7a30c0d19181593a7902a7fd7f2133d1e719f03d15b8f1cb2a3c"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_075_base.png",
+      "size": 806958,
+      "sha256": "1116e31578bbda6c2a7cd54f2b4286b1aab72cdfc72004e7acd29dda732e8e65"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_075_foreground.png",
+      "size": 39179,
+      "sha256": "67f3c63b4f4455042b2b030ea779a4a790acf652416810cfb1c512bf2c166364"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_076_base.png",
+      "size": 729894,
+      "sha256": "5a075be46920925cf233a026a12a4b3fccbda0cc09d8ce963cac769cf728233d"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_076_foreground.png",
+      "size": 46165,
+      "sha256": "21a2949880c35420bea3c7d612f1efb7c736abf61b25da52777c6297ce468432"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_077_base.png",
+      "size": 584711,
+      "sha256": "2e75b4b3a3e148eab533c92fb783e80170e2def1adaeaa29bbdac57f282aa157"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_077_foreground.png",
+      "size": 37151,
+      "sha256": "15ffbaec98c49d5647d909782e3dc62372013f8e57ede7d4c3a7b743bef2a687"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_078_base.png",
+      "size": 673803,
+      "sha256": "060b8913dad22bf1f96f9521a1900f1d46dd5cae8fc1d2a8852180f0f1a228f0"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_078_foreground.png",
+      "size": 108027,
+      "sha256": "e047c4829949a94528c3f18e44bf08a5b645f9a03d39033ac01ecedd31baf8e0"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_079_base.png",
+      "size": 763810,
+      "sha256": "d941cf02bb7c178417bdf1c1d9a26c786cb84801abfedd7296528d8175807daa"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_079_foreground.png",
+      "size": 66744,
+      "sha256": "164bb8d80f416390bdf44895a4ae856d911f9414f035a748fcb0eb42c323cc39"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_080_base.png",
+      "size": 772288,
+      "sha256": "aa988f95eded8534fd1ed077d06bd1cbf72b72eb69fb6ddf4e44db76c16e3c93"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_080_foreground.png",
+      "size": 58265,
+      "sha256": "8424a0cde1a098d7411e0b765da0b1ebfe8fe66282049681019ef6c0947d2f82"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_081_base.png",
+      "size": 589796,
+      "sha256": "b7ff8955f448a1777f050a070f413fe1b2f208d9a0d9ee70be261cee938fa03f"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_081_foreground.png",
+      "size": 19063,
+      "sha256": "f9e8b7651eefe8d48568a03dbc2cdfb793d2a7dd6d12e85c1fe630bd2c601cd3"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_082_base.png",
+      "size": 506441,
+      "sha256": "6b9bbb07b4d28b4068d88827a229e8cff10e0ae3f5c1ef38065230484d274ea4"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_082_foreground.png",
+      "size": 32725,
+      "sha256": "bd08e10ba7cbc686774f7b93e3f052aeb394146f512fa9add1a656dab2d4805d"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_083_base.png",
+      "size": 706250,
+      "sha256": "1dbd19631eb63c1784feee885a6cdc77465e7b7c314abd1ccba59084946ffcb8"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_084_base.png",
+      "size": 631189,
+      "sha256": "7f39d9be2cd4ee42cc4d493548e3e154f9dda6fa4bcb5a5d4ad0d47db819dbdd"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_084_foreground.png",
+      "size": 32902,
+      "sha256": "33a0f9fe399f6d06d68b5e5d33291f4dbee1243b3f1a7fe39a55de65159ebf6d"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_085_base.png",
+      "size": 484946,
+      "sha256": "3e279007e0442de1ae275c3e725de622f9c56f8e90c241d9c499827b948d0019"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_086_base.png",
+      "size": 658560,
+      "sha256": "293367784f3f960a57e7f59e82ba6b55e7b828069ea7583773145c5177530156"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_087_base.png",
+      "size": 643192,
+      "sha256": "4e1baa50bde225f47fab683f25a915e81b724d28025753082a5e8e24e2d7a1ca"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_088_base.png",
+      "size": 432407,
+      "sha256": "3aecedf6794f16ec1ec5b6970b584adc32193244bc1130f0e66b742c39373163"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_088_foreground.png",
+      "size": 5427,
+      "sha256": "5dcce03661f583b1844efcd3844341f5110cc8bb9987bf58c677703fa35ee0e0"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_089_base.png",
+      "size": 643719,
+      "sha256": "7219f398a16d48e8209696980cb8dfcded26370570719cb1ed3f22aaacc85a19"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_090_base.png",
+      "size": 510654,
+      "sha256": "b2040d5a3bc99ccb2c2d7a93931ac3a306a3412c7b9b051e6957ce6376acc6b9"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_091_base.png",
+      "size": 573756,
+      "sha256": "44d0b8db56ecc74bc9c95e16f58113118e88cf95a5cf79222c70f097f5079044"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_092_base.png",
+      "size": 624718,
+      "sha256": "4995074430e423ca1aa0fed229c52a62cb905cf6c1a3006f3235893f217c81c7"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_093_base.png",
+      "size": 590165,
+      "sha256": "e87e66c7153526672175618a81053196aaa02223d57a64745c6254ed87b77f99"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_094_base.png",
+      "size": 633999,
+      "sha256": "c517a5781bcd126f737c5d9568a0e01d1cc2c5c1ee0e86e9fd11ddc1b55bb91a"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_095_base.png",
+      "size": 534533,
+      "sha256": "d75175279a8824743794d12340548181d50d7c33d4d93323a9455c080792dc4d"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_095_foreground.png",
+      "size": 10056,
+      "sha256": "c16737937e60025d58674d68bcb39dae4de88d5f7af71ed05fda02718ed57b52"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_096_base.png",
+      "size": 653857,
+      "sha256": "9ce18390a9c2f94118187dfa7dbdadfe14d0a442a36b4ef34a8c4ef299988272"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_096_foreground.png",
+      "size": 13860,
+      "sha256": "717f30e7592f76c443a55999f9c7c7ed2b0b79517345d25d890f7650b17905f6"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_097_base.png",
+      "size": 61529,
+      "sha256": "3ada6e5f4ec4e554c3e419bff0a099b5d2390193662d6dac28729bd7cecf804d"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_097_foreground.png",
+      "size": 590551,
+      "sha256": "7dde5efc4259d8799c9404fbaf60f43542544c12880c9282ed2af3231569b7fe"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_098_base.png",
+      "size": 61529,
+      "sha256": "3ada6e5f4ec4e554c3e419bff0a099b5d2390193662d6dac28729bd7cecf804d"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_098_foreground.png",
+      "size": 567921,
+      "sha256": "0660f68f64864b3a36975959887481e628b22a9ffb7496de6ba0d102dd0dafc3"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_099_base.png",
+      "size": 46360,
+      "sha256": "39e1e284ab767aac14acc70e49a1c4d177b8b3d2e399b85d1a59c5b581a6de1e"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_099_foreground.png",
+      "size": 416047,
+      "sha256": "3a046c0ca7102479a782d05dae7919a1cd1671c766f1e9c47a0bea5f679125fd"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_100_base.png",
+      "size": 46360,
+      "sha256": "39e1e284ab767aac14acc70e49a1c4d177b8b3d2e399b85d1a59c5b581a6de1e"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_100_foreground.png",
+      "size": 410840,
+      "sha256": "0bfed006037f68e2df6dbde900c94dbf4203414fe5798c942e8da4904d52f6aa"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_101_base.png",
+      "size": 46360,
+      "sha256": "39e1e284ab767aac14acc70e49a1c4d177b8b3d2e399b85d1a59c5b581a6de1e"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_101_foreground.png",
+      "size": 422526,
+      "sha256": "85598425fac9992976a9876e731e73f4d65af45f41d3233a4772d3114d44131b"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_102_base.png",
+      "size": 46360,
+      "sha256": "39e1e284ab767aac14acc70e49a1c4d177b8b3d2e399b85d1a59c5b581a6de1e"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_102_foreground.png",
+      "size": 334700,
+      "sha256": "0e7cc2d06e6df31a79efec8100b6621027fe5a46c6b372b379336e203e5c7ba2"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_103_base.png",
+      "size": 46360,
+      "sha256": "39e1e284ab767aac14acc70e49a1c4d177b8b3d2e399b85d1a59c5b581a6de1e"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_103_foreground.png",
+      "size": 393613,
+      "sha256": "91022e3ef389806601080eca55ed78c5abd22ece74b18f856aee70b180650522"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_104_base.png",
+      "size": 61529,
+      "sha256": "3ada6e5f4ec4e554c3e419bff0a099b5d2390193662d6dac28729bd7cecf804d"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_104_foreground.png",
+      "size": 610236,
+      "sha256": "cebbfecfe4b3f0fb39403d7e6a4a033adcd597f411b02534791605d5db84e0fc"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_105_base.png",
+      "size": 61529,
+      "sha256": "3ada6e5f4ec4e554c3e419bff0a099b5d2390193662d6dac28729bd7cecf804d"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_105_foreground.png",
+      "size": 724022,
+      "sha256": "af0ccbacee6c744718abd43916e83b6c77ce284344b2db74bde6447a667916b6"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_106_base.png",
+      "size": 328940,
+      "sha256": "916078c643e1bf9487546c4a24ebda613f5e17bed451727af0fee54c8d6323e2"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_106_foreground.png",
+      "size": 20079,
+      "sha256": "cc298b679b8b5a19549ddb7fa41dafd913d83a9bababa5bbc0c99da2393277e9"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_107_base.png",
+      "size": 367838,
+      "sha256": "23cf83293beb5c3b7d7e1b230adeb429e1450af50fea3c6d73d8e11b4722e0dd"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_107_foreground.png",
+      "size": 70618,
+      "sha256": "193dc0f4b3a4c00b0b7eeab3353141a83da0a310754faa45166739ab9d7d26f8"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_108_base.png",
+      "size": 585524,
+      "sha256": "10581c14fcd12b570fa15885b3fdac7cd0642674ea9216de5d439d58441f8a0c"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_109_base.png",
+      "size": 628490,
+      "sha256": "f38b2d53858a6fa4d1943ad05c757f717882b3b8f00554f26e542a9f3f7e2776"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_109_foreground.png",
+      "size": 13421,
+      "sha256": "a1333e649fb618f2fae17191bb7e832e5445db473324af7089aeeb2d60185152"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_110_base.png",
+      "size": 558271,
+      "sha256": "24a58bd03cb764213414de33d400ed068920977adca4a7c84930dcf5e3b409b4"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_111_base.png",
+      "size": 571473,
+      "sha256": "ef22ba812416201397a13b750e6cb43e37be9c58871ae205db108512d4a490a4"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_112_base.png",
+      "size": 607739,
+      "sha256": "6e296431a2984a6e9e5fb477074ba07be04229ed802b760ce4af02fc527212e5"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_113_base.png",
+      "size": 587848,
+      "sha256": "795a072faed1a6abd3fc3e5ff99adf2c5a75b77fa483da07b3bc289d6774f849"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_113_foreground.png",
+      "size": 77002,
+      "sha256": "2154c4f0a4c9b2ac9b1f084cb181d709c14ba496388797a81ddfcaecaac87562"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_114_base.png",
+      "size": 534158,
+      "sha256": "f9635ed8c05fd7e4a8dea05604bb8d317e3931f58c83c92514cc7b7fa6c1d62d"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_114_foreground.png",
+      "size": 50176,
+      "sha256": "28c76b3061b60328eb8381c3bbfba1ffe59be9534b645ff24d964a2df5be4845"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_115_base.png",
+      "size": 231204,
+      "sha256": "77493a9a067dba77c770a753eb0c8a3199b81e9f3730c198bcd988da928f7745"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_115_foreground.png",
+      "size": 13628,
+      "sha256": "007f78ef0a1c1478cf63292d3596b413bcfc92bc26f75ec78c1aeba72da4ff17"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_116_base.png",
+      "size": 245788,
+      "sha256": "16440b2dfcd6db0cf77b16e757f4db51b87a0a187fe749f711d4c744110e08fb"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_116_foreground.png",
+      "size": 8814,
+      "sha256": "1599dd6bb4df91a87d95bcdd82b09a8b77820581f7fea1742e8578254e568aea"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_117_base.png",
+      "size": 274266,
+      "sha256": "fcc3add1065f91fbf027f7119481270513ce5aad643a8172c278247ad01533f8"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_117_foreground.png",
+      "size": 10735,
+      "sha256": "e151868a69f7dbe8788a1f379648de460bd4fd93b2c7e46a0ffc2c31399da0e9"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_118_base.png",
+      "size": 248297,
+      "sha256": "9405a0b752dacb1129f960ab7e22b394518bdae50a402f6cc58a5f91f7591f16"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_118_foreground.png",
+      "size": 9614,
+      "sha256": "cc949eb788d27fc3fa250bb39a4c0189f705e948cb1d878af87b0baeadddea3a"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_119_base.png",
+      "size": 250070,
+      "sha256": "3a490fa454b500c0900e3a32b5f79f53bd82bd2cc96bfc26e71f4a6b79eb0bc2"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_120_base.png",
+      "size": 264337,
+      "sha256": "a89727c2d640f167d65e43db0b9ffc21c1278bf9e5476e3e66d9d67c5f872122"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_120_foreground.png",
+      "size": 27021,
+      "sha256": "c5247de85f6c68801340ee01ae6e300fb8440c59aa09ec094119ecb868313858"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_121_base.png",
+      "size": 223684,
+      "sha256": "adde7d54659ca44eff660502b41ae7e85772698bd67415ec77b869f3816bb355"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_122_base.png",
+      "size": 268587,
+      "sha256": "578ffe184c857eec16b3b78d64bc51f35ea2ce530a90567b4856a3ea3cfdf050"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_123_base.png",
+      "size": 241265,
+      "sha256": "b994280967c7f3a0d7371a1698af49fa45a3cb7f3902b2d7250b4d8becdd44d5"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_124_base.png",
+      "size": 212424,
+      "sha256": "48a861251cb15b018ac2e92018cd81e7212ac62c4f6e881c605c4f0e7a7120f5"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_124_foreground.png",
+      "size": 10822,
+      "sha256": "19707919c94f0f101c04a171edea591c884f197f2abd4ced486fb1aefb0e8017"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_125_base.png",
+      "size": 606053,
+      "sha256": "82f26dcdea35c6637d35abf71d3c387aa0f142679e5f3f4bcb5511beb6524d6e"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_125_foreground.png",
+      "size": 14601,
+      "sha256": "fea2ed1890b0a3597be1c0e4f38af58adb52d04ce55a0336eedfd01214a8485d"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_126_base.png",
+      "size": 537997,
+      "sha256": "6273fb55a041eb5954e2fd3f3f6c3021c31eb372ca4699b5558c0b7edaabd0b7"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_127_base.png",
+      "size": 636038,
+      "sha256": "8b4f3b6626c73a89108d7489ad5e10c92e2474c14e37b86f518d6f8ef05f5a75"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_127_foreground.png",
+      "size": 14611,
+      "sha256": "f4514b053191d2f04cdb79a285f6ebd0c3bc353273d988833b3673ca3c4c07c7"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_128_base.png",
+      "size": 519325,
+      "sha256": "4bbdf74b5a846add844c122d04b8dea19ca12e94a1ce7b86d3df55e93c2510f1"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_128_foreground.png",
+      "size": 16267,
+      "sha256": "1e691e64e5dd084aada9fa997b51c82f38471122b2b07c062202e26a3dc24828"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_129_base.png",
+      "size": 469103,
+      "sha256": "39c887048e561383881f634ae7071b0bd9ed5a83cb184f48d25a7e2b5002286d"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_129_foreground.png",
+      "size": 9440,
+      "sha256": "bcb53e8c38927b1118e95d88f1c823c7e94e39c6d0dbfbf21780c488feb99976"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_130_base.png",
+      "size": 496562,
+      "sha256": "b70d4dca0d688c3d890093de1241334f5540f823c99feaa6273a6a613afb8ba8"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_130_foreground.png",
+      "size": 14098,
+      "sha256": "5b39780c5b392b66fec1c735d08bfb7cd19b661c22263bda91137cdb3f545e3b"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_131_base.png",
+      "size": 487084,
+      "sha256": "36e54e46b44635661c8053a851aa96cb8555f8602b15a38ea895b9baf2f0d005"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_132_base.png",
+      "size": 738377,
+      "sha256": "ef9e5b31f06a260b83c0ba90212558e03a27ed7df27096ddb10d6901cd5fbf13"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_132_foreground.png",
+      "size": 13120,
+      "sha256": "b38d91d45dc4816ff590ffa15b309902ac42df573c8b94cbb1e787dbe9b9f727"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_140_base.png",
+      "size": 251879,
+      "sha256": "0b0fc17edb8edc0a86e2982faf74b3af9b3896d257562234555a888d8a0c5686"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_140_foreground.png",
+      "size": 38882,
+      "sha256": "4b46503b8576dd7fbb741e25216177aa8ca4bea5bac861d58070a3ea9982ffe3"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_141_base.png",
+      "size": 253914,
+      "sha256": "eec7bef5d5b3a1adc0bdd837ca5d2cc1b3a9f88835ab3b5fcb7e80292c478b68"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_141_foreground.png",
+      "size": 64262,
+      "sha256": "ed93139bee78229767a1269557bab7b11e7e6ebafb38b61567e82b6fa8d54cc2"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_142_base.png",
+      "size": 259415,
+      "sha256": "169acf356280b25c0e2ab7823da20863b5401cbe46072e256ca01f30e091eb50"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_142_foreground.png",
+      "size": 74856,
+      "sha256": "5fcf96ae40eb56a06c8103fc5c5f972d46d87a18147e6b4bc16066bf22a6a749"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_143_base.png",
+      "size": 226652,
+      "sha256": "49285715884a03348eebc36326050ad6ee073f15954b41ebd08210734acef884"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_143_foreground.png",
+      "size": 81795,
+      "sha256": "7679fcde3473b44bb1f20608264b4a795b6193f22bd638a3fb5da249e0bb31fc"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_144_base.png",
+      "size": 212971,
+      "sha256": "2d01b961b8b7810d0940a5ede5ea915e5b9d6bfd391f69701bfbf640fc208129"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_144_foreground.png",
+      "size": 78049,
+      "sha256": "6fec784fb53a255cdadf7923c67b21b5ec13f8813fab6097f4599beac8688cac"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_145_base.png",
+      "size": 239376,
+      "sha256": "d2e6bd39e788ce5c37d6d3daf17e98ea7040c1598cfc67984dc1245abdd9796a"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_145_foreground.png",
+      "size": 68285,
+      "sha256": "2a237977892727b6a51d7d7897b9baf8ce1e2666568c18a3a52bada37f45cfe2"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_146_base.png",
+      "size": 236442,
+      "sha256": "e889417ad8d837c456331cbe9d0781e44b149fc2cf0c4473d6aaa4e32e2963ea"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_146_foreground.png",
+      "size": 82802,
+      "sha256": "cfc3bd4b1620ac32c3fd15a5704c0e69adad1a864e218502b4fcbb547fd966b6"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_147_base.png",
+      "size": 229659,
+      "sha256": "400bcf79237d25b7df063e47d28a036593d2fc7ab69a5c3228f332ce3191eca9"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_147_foreground.png",
+      "size": 88580,
+      "sha256": "cab0bf44d47659a86e21ed62b73e53cb2099cd80caedbce8a322dbf4b0396419"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_148_base.png",
+      "size": 238491,
+      "sha256": "00e43dd32f2f9a140fc519d95bf3184d80bb8076659679c2f31d411400e0303c"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_148_foreground.png",
+      "size": 41141,
+      "sha256": "93da782c6f4230ab62334629ce70c4fc10f0e75371c39c67b4e018a13d378a2b"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_149_base.png",
+      "size": 175507,
+      "sha256": "be84b9fd87e2e04f326743026ac55e0b110edce932ad32ab1566243596ab51c7"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_149_foreground.png",
+      "size": 13743,
+      "sha256": "f9d5c9cf505a7977df165cc1bc675e471c74dbe5a97cdf90de43437867891949"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_150_base.png",
+      "size": 397439,
+      "sha256": "dfbbe3a72c0c530ab97664c0b0797c735449c2e890c98ed8a527b19e38fa2de7"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_150_foreground.png",
+      "size": 16943,
+      "sha256": "2b0dbbe3f8db5ca849b0ee1788cae8bd26c2fa91124b4584b1e936e639562660"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_151_base.png",
+      "size": 441543,
+      "sha256": "0f2dbf99807272b863430cbec886c164a66b1da6d9ff64140384657488eb561c"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_151_foreground.png",
+      "size": 21433,
+      "sha256": "f6ad5c814783745ecdd851af6bd4624a9862fb6cb114d1d639210b351a5dbb2c"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_152_base.png",
+      "size": 345602,
+      "sha256": "df19a4a5836370a4b1f1edc576f9be803a8937d4c2f609a46db3b66c9d6bc745"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_153_base.png",
+      "size": 476262,
+      "sha256": "39fad47d99cfbe12eaea0a002eba5c563009861136a88978d6a5db146acf6bbc"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_154_base.png",
+      "size": 435069,
+      "sha256": "899e1f6c35f04056d35a3316573660a07ef1fad96091e85b12566e9ad6559e68"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_155_base.png",
+      "size": 316211,
+      "sha256": "3b828d3535338eea9cc8d7122fb9e6c53cf241d104559fa6372e60df04894c71"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_156_base.png",
+      "size": 489862,
+      "sha256": "c8370c03adebd5b0dc0d3f16bfc46dd21794f93925a30151a26a065c3b033543"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_157_base.png",
+      "size": 474564,
+      "sha256": "273f3e40d91e0939252e63b6c451c05d94449914544e6a1dd2766a4434f8276f"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_158_base.png",
+      "size": 328509,
+      "sha256": "d23faf8ae5654ca1ce4accc0171575776c67696f9c9a05b6098d53234ea8b7d0"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_159_base.png",
+      "size": 465924,
+      "sha256": "66d91eabd9e3e54f045e3108a184871e0a320526a227698572a407efbcd9e5a6"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_160_base.png",
+      "size": 419084,
+      "sha256": "91f423031527ea0db12bc93df626706e6b5bc9f2ea26f4ecdf6f9f2deb64b0af"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_160_foreground.png",
+      "size": 18830,
+      "sha256": "2d0abf74c8e8e34aaf9d465da2bc310025954368bc35320ab68316df74122da6"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_161_base.png",
+      "size": 657560,
+      "sha256": "11d867963cd408be7ef9e6ada7c957eaae9cb13c24939b175d6ae81e4f444677"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_162_base.png",
+      "size": 548646,
+      "sha256": "991b6735841240192723c7d86a0fea6e84c430a5168052acf48647d5940661f1"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_162_foreground.png",
+      "size": 15232,
+      "sha256": "122b986b8a91d85d49152fe7fee0c36b2f43c7016e279d5ec62b82cd04202410"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_163_base.png",
+      "size": 579189,
+      "sha256": "281494e4ee450442a4cc0071cc6d0bfeb6818150165ce9cc671522f1a0b1b7d9"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_163_foreground.png",
+      "size": 13749,
+      "sha256": "852a31a0c2808f6697367f25f901e789520b090d1c41740f6a43877dc959ce91"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_164_base.png",
+      "size": 604081,
+      "sha256": "c39f3a13ed4e3e923fb02b28084e96fa5ddfb2c743fea99fb2c144fa258550d4"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_164_foreground.png",
+      "size": 12568,
+      "sha256": "73a2910554a197978581fc5cc97f186ce64723646dee909dc4409eb00322efc6"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_165_base.png",
+      "size": 704295,
+      "sha256": "86826fe35209ffb040f723ba9b9ef71cba06a577804cbcf6ac8567bba2810857"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_165_foreground.png",
+      "size": 11154,
+      "sha256": "73def6d0b494567052812f85074786a7437028f9399153a9a2ae671d44dbbd7a"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_166_base.png",
+      "size": 665882,
+      "sha256": "7116a448f94a863eebbea8892eeea3d3b07932a271d5f34bd8ba586330fb0585"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_166_foreground.png",
+      "size": 12418,
+      "sha256": "7913b3af287939b6e74062c8d4aa0958bd248eee0b2b9facf5baed16cb2b089a"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_167_base.png",
+      "size": 600453,
+      "sha256": "2f40c36da003e1f9a1d5a3628c9fed23223d3ebc015137a91d779b8686d04c1c"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_167_foreground.png",
+      "size": 12262,
+      "sha256": "62791a24f9eb2ff185c69ad5b286cfa6e11bfff5dce75194ebbabb01c4dc380e"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_168_base.png",
+      "size": 606517,
+      "sha256": "5e50cbe48b836b52ff1143fd41b3b06294962431c7c8c96f05bdf038d4e1eec8"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_168_foreground.png",
+      "size": 15273,
+      "sha256": "1ff7bfd043c8a1bb86131eb204bd42ee601a81418b1684c8ea69730417ea6b15"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_169_base.png",
+      "size": 621613,
+      "sha256": "0ca9f78db33490cb7407923a890a1fe4d74cc3c77bb77f7b46cb1652f6b67df9"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_169_foreground.png",
+      "size": 20592,
+      "sha256": "98c8d56c2f708f03ee148cd288b3eed0cf8badea00e6cd459e4df7df6b8a0614"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_170_base.png",
+      "size": 702469,
+      "sha256": "41313132fcc25e869e013eae53e96537535c6beea586fa9987a90a6f0aa21058"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_170_foreground.png",
+      "size": 12542,
+      "sha256": "a426b5f7801edd685505dc90693d97851db69592bbc415de7fefccfd41672825"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_171_base.png",
+      "size": 536388,
+      "sha256": "1929a0a4729834f664f8d480143d83b399a734fb52ad3ad03be3089520fa2be7"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_171_foreground.png",
+      "size": 14050,
+      "sha256": "882e96c8b60b9bad24f839020b1171cd628424760fb854e4571c8cf1dcaefbc2"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_172_base.png",
+      "size": 643652,
+      "sha256": "19fd94455f9905f8fedd0b0660e6f8892dff83520eced3ee9333bfae243905ae"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_172_foreground.png",
+      "size": 13712,
+      "sha256": "9381e9c2b327cfbf6d21986860bb29f05d6d5def29be640134d3ba1c556157dd"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_173_base.png",
+      "size": 93270,
+      "sha256": "4af93aa7907087ca7d0ac927e6bc975e6200dd930a2950b830ccf7863625de37"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_173_foreground.png",
+      "size": 174423,
+      "sha256": "2ff6be86848626d459ba334170cf9396f1760d1faf8e4757e6212ddd881d78e1"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_174_base.png",
+      "size": 93270,
+      "sha256": "4af93aa7907087ca7d0ac927e6bc975e6200dd930a2950b830ccf7863625de37"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_174_foreground.png",
+      "size": 194273,
+      "sha256": "c300d7736cca19d4302e3b460d37dfd3b028ee22fe5fbdb17b4b916992255d4b"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_175_base.png",
+      "size": 93270,
+      "sha256": "4af93aa7907087ca7d0ac927e6bc975e6200dd930a2950b830ccf7863625de37"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_175_foreground.png",
+      "size": 189424,
+      "sha256": "a8503fce7712934dffd42ab782edb754fbb990d04877858427a8eaafe4a412c5"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_176_base.png",
+      "size": 93270,
+      "sha256": "4af93aa7907087ca7d0ac927e6bc975e6200dd930a2950b830ccf7863625de37"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_176_foreground.png",
+      "size": 205345,
+      "sha256": "190a29310cb07956f21b32622d0e098b2e5805ce826d1a6b7674c8d72a7e4d00"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_177_base.png",
+      "size": 93270,
+      "sha256": "4af93aa7907087ca7d0ac927e6bc975e6200dd930a2950b830ccf7863625de37"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_177_foreground.png",
+      "size": 220140,
+      "sha256": "7cc02f7e8e7972b0d81dd289df159a2bb130863c35309d78e8274936fd6fb621"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_178_base.png",
+      "size": 93270,
+      "sha256": "4af93aa7907087ca7d0ac927e6bc975e6200dd930a2950b830ccf7863625de37"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_178_foreground.png",
+      "size": 214517,
+      "sha256": "0aacd9b3b948a4105857eab0dfc96ec7dddc52e88a306eecef7c731a22b467af"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_179_base.png",
+      "size": 93270,
+      "sha256": "4af93aa7907087ca7d0ac927e6bc975e6200dd930a2950b830ccf7863625de37"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_179_foreground.png",
+      "size": 193263,
+      "sha256": "719ac34c5095b3839002252038594c8c5cf24326fef62ce37eca766b232b7c83"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_180_base.png",
+      "size": 93270,
+      "sha256": "4af93aa7907087ca7d0ac927e6bc975e6200dd930a2950b830ccf7863625de37"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_180_foreground.png",
+      "size": 190354,
+      "sha256": "d7ce66ebbc6ba2937f7aa87a2c366ba566dc24b037f31e8b7804122aa10d683c"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_181_base.png",
+      "size": 93270,
+      "sha256": "4af93aa7907087ca7d0ac927e6bc975e6200dd930a2950b830ccf7863625de37"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_181_foreground.png",
+      "size": 219791,
+      "sha256": "087a0a4dd30023ae9f3c67b1dc52869456a04d47e73653268736ac24a41e9e75"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_182_base.png",
+      "size": 93270,
+      "sha256": "4af93aa7907087ca7d0ac927e6bc975e6200dd930a2950b830ccf7863625de37"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_182_foreground.png",
+      "size": 188226,
+      "sha256": "5612caa6caf6b79e85d0bbda186026e2668fcb4b8e192bf26f860ece5165e251"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_183_base.png",
+      "size": 93270,
+      "sha256": "4af93aa7907087ca7d0ac927e6bc975e6200dd930a2950b830ccf7863625de37"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_183_foreground.png",
+      "size": 204051,
+      "sha256": "b617a55711ccf9401a696d09742efde6beb3235eb8fad05a74a59a77be945d83"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_184_base.png",
+      "size": 93270,
+      "sha256": "4af93aa7907087ca7d0ac927e6bc975e6200dd930a2950b830ccf7863625de37"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_184_foreground.png",
+      "size": 187636,
+      "sha256": "1d78e50e660f8381d336bd64229f729727313a4d53d87189ff3f722f5432e5b9"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_185_base.png",
+      "size": 444850,
+      "sha256": "92d9daba1dce346f7021d3b4db5661da96a474d49eeeffcfb19246f86fac61f8"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_185_foreground.png",
+      "size": 71458,
+      "sha256": "d78a193746331e2bb22c901fa9926fc3234bfbd549dfe5bab3303cc5d4029da9"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_186_base.png",
+      "size": 487138,
+      "sha256": "0636737c74d21cad4f6b7a14a249b3c7f77f52a755f3ec4ad7a6faf2a96ad203"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_186_foreground.png",
+      "size": 52557,
+      "sha256": "6f3d4022a2cd7cb2959eeda496b7b57b0cda7bdaa8cabd013fab2961ff723fc9"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_187_base.png",
+      "size": 444850,
+      "sha256": "92d9daba1dce346f7021d3b4db5661da96a474d49eeeffcfb19246f86fac61f8"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_187_foreground.png",
+      "size": 54059,
+      "sha256": "776771b28f6e247a89261e9009934027e8ef8e3a451584928bdc08ef254f17ca"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_188_base.png",
+      "size": 770407,
+      "sha256": "24b33c05d36eed687d83af9639aedf7bb02faac8b6fdc4e8f9925a80e013020b"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_188_foreground.png",
+      "size": 91976,
+      "sha256": "46d6fdf108c311a9dc19f6bcd3156bd5b3f6b4adeeff88cebb446eb684775a50"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_189_base.png",
+      "size": 774642,
+      "sha256": "3aa213a8b2dfac1424cacb66cd6844faf13183ba4b0275ca80861c1c903e7430"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_189_foreground.png",
+      "size": 73830,
+      "sha256": "786e88a49da8f2d2ad05e2c922c18985d0340f086559373abc2cab72db62260a"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_190_base.png",
+      "size": 812968,
+      "sha256": "02c34e08950cb1301fecf8a17d56f62515c5fe41c6aaff98a467047eded4ea68"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_190_foreground.png",
+      "size": 88785,
+      "sha256": "983dc42e865e81bd8ba5ca455000138510d46ea8d0814cfeb06a488d5b14bc20"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_191_base.png",
+      "size": 734613,
+      "sha256": "2610dca8d4073d50181f7057de4ae95faf4be89b5165ee03218d9187dcd3a6e5"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_191_foreground.png",
+      "size": 57080,
+      "sha256": "b4e7bc6b2e24bc13edc37603716a50742b4e12fbb48fa5ec1bc0ffd4c093f844"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_192_base.png",
+      "size": 636773,
+      "sha256": "753e506e4dbd45e15181d1a5173e9725028c32a971bf2ab030bce7b2e24adbe0"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_192_foreground.png",
+      "size": 273570,
+      "sha256": "0cfdd3a6733bba6c71dc68844f918ae30ced3b6318a4ffd35e473587ce5434eb"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_193_base.png",
+      "size": 759307,
+      "sha256": "d2142343e65856e357dd11878c9766c6f3f85961d114c846a7b47cdc2748d118"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_193_foreground.png",
+      "size": 158859,
+      "sha256": "62ee09a726a17a7d714cd4b4d9fc13d190658c77a10115b1c94003a1b1947dae"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_194_base.png",
+      "size": 676961,
+      "sha256": "c47cd12a77280d0bc62ca35f8fb6a55207b54e6d240b70c497ce1780ef6e3c79"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_194_foreground.png",
+      "size": 145240,
+      "sha256": "3b46ebe57d1bbba3a4fe15be1daa29bc141190aeb8dab78997f2276a87030cc3"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_195_base.png",
+      "size": 526350,
+      "sha256": "f9a52d5e653015b6d5c1a115246898ecee42d990dd3d16c59110d45b53f29e9c"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_195_foreground.png",
+      "size": 71712,
+      "sha256": "30fc14f747e50730968e81c65e3ebb879fedb0a6a2982c77507f6c89fcf59f90"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_196_base.png",
+      "size": 492007,
+      "sha256": "4ebb42b7e37edbe3b634be5b78cde2d5dd1f59d7e35a4b6c6183ae5af9165ee7"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_197_base.png",
+      "size": 547003,
+      "sha256": "94cc2d9e42be52ff0bbffc27b2bb9551c68658b7492435b3947bf51e8c3672b6"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_198_base.png",
+      "size": 596098,
+      "sha256": "b981721347f3cc94f0d790a56e15f85983c0e3709267d25a53d692abc8f7d0c6"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_198_foreground.png",
+      "size": 23174,
+      "sha256": "822f6ac43a2a3277f9fd0ac1a787079868f60ecb5d228c3f1f35f9a8a2236e7b"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_199_base.png",
+      "size": 620678,
+      "sha256": "e020d7fc4e7ad5cebe231fb395c51c4daa85414b216392ed42eb91a52a289a9d"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_199_foreground.png",
+      "size": 43839,
+      "sha256": "595e559cfc3e38883898f1b169cfb00026f141ac8e2c68201ed18b314699cde3"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_200_base.png",
+      "size": 411074,
+      "sha256": "32d00f6719c83c7aeb27a8e233634777d5425a1c843e9670fef915f954ab0f09"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_200_foreground.png",
+      "size": 12468,
+      "sha256": "a5a9f45e16d368e6d0ba00bb900dd988dd0cc2181b32a79dc963ac21fc01d8d2"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_201_base.png",
+      "size": 397244,
+      "sha256": "00f27a8f9976d64097583acd51dfdaa129ffbafe7fe560980c21dfce2aea753e"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_202_base.png",
+      "size": 435816,
+      "sha256": "04b8ffe4f550a3859a2969d8e257e04eab65a9ecda98beb9d2380f3f9fc46ab9"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_202_foreground.png",
+      "size": 32566,
+      "sha256": "1df19e226cb2fc81bbe8b519e70ae94310852881f68214e544f02f3e27a7d754"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_203_base.png",
+      "size": 595394,
+      "sha256": "cb1a69d11bb2393b11e18aac4dd5e92a621cbf4c82a87995c27f1727b70a8272"
+    },
+    {
+      "path": "assets/maps/world_ds/world_ds_203_foreground.png",
+      "size": 48665,
+      "sha256": "8f55a83f4af14533cccb39a36423f9772fab06d048479b1e3ed61fe166c161bc"
+    },
+    {
       "path": "assets/tamers/tamer_002/down_00.png",
       "size": 736,
       "sha256": "eb0b79eedf37611e993e687da206312c772ec7dfe207f07db5d7ea9b3198eeb3"
@@ -106758,13 +108978,13 @@
     },
     {
       "path": "data/audio_catalog.json",
-      "size": 50053,
-      "sha256": "fb423f4e5db0f5b0bca82ad897e5897be13022726e670471e82ab0a6a2d84cc9"
+      "size": 85843,
+      "sha256": "bfed3f8ff4318e39597470dffaa208f4d566b9c7162e253789adfebf5b669629"
     },
     {
       "path": "data/catalog.json",
-      "size": 2939314,
-      "sha256": "4c341772a0fbeed29300b15d37612cfd7cceb038c603cecf23d75bb1ff0c8483"
+      "size": 3316879,
+      "sha256": "399edef93fbceb7bd4fb9d247e713a41a58916d5cf234c32cb9782ee5ee0bb69"
     },
     {
       "path": "data/collision.json",
@@ -106783,8 +109003,8 @@
     },
     {
       "path": "data/source_assets.json",
-      "size": 574,
-      "sha256": "55aa872398f63319058473029d6423cc75d1ebfc84b5c541a695c7c728bf7a1f"
+      "size": 4382,
+      "sha256": "d0be6e9e355ceee0d371d0b6b43760c3b3593999a0806568a3550595cde6928a"
     },
     {
       "path": "data/tamers_catalog.json",
@@ -106800,6 +109020,16 @@
       "path": "data/ui_audio.json",
       "size": 7958,
       "sha256": "3ebc6e23988e7f4fc2a2ba150f652cf1ef91011bc80449d7b5596a4aa4984a79"
+    },
+    {
+      "path": "data/world_ds_audio.json",
+      "size": 37879,
+      "sha256": "143fc6d7195f8ecfa438954a6cd1a480787193f609416e21ec4f1b4e66e1d91a"
+    },
+    {
+      "path": "data/world_ds_maps.json",
+      "size": 504432,
+      "sha256": "cc64bd53062e24f3e9bfe7d41c91495ee74d3f308e9b06377fc5c7fe367dddf8"
     }
   ]
 }

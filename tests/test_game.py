@@ -65,10 +65,10 @@ class GameTests(unittest.TestCase):
             self.engine.new_player("test", "missing", "alpha")
         self.assertEqual(len(self.state["party"]), 1)
 
-    def test_zero_sp_struggle_and_regular_attack_are_free(self):
+    def test_zero_sp_regular_attack_is_free(self):
         enemy = self.battle(enemy_hp=1000)
         self.state["party"][0]["sp"] = 0
-        self.act("battle", action="struggle", target=0)
+        self.act("battle", action="attack", target=0)
         self.assertLess(enemy["hp"], 1000)
         self.assertEqual(self.state["party"][0]["sp"], 0)
         self.act("battle", action="attack", target=0)

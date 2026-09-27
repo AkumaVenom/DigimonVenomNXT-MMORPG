@@ -1,0 +1,24 @@
+........................................................................ [  9%]
+........................................................................ [ 18%]
+........................................................................ [ 27%]
+........................................................................ [ 37%]
+........................................................................ [ 46%]
+................................................................s....... [ 55%]
+........................................................................ [ 64%]
+........................................................................ [ 74%]
+.........sssssssss...................................................... [ 83%]
+........................................................................ [ 92%]
+.........................................................                [100%]
+- generated xml file: /workspace/scratch/db3f24de84d0/work/DigimonVenomNXT/docs/validation/digiruby_v0120/full_suite.xml -
+=========================== short test summary info ============================
+SKIPPED [1] tests/test_portable_mysql_live.py:177: Set VENOM_TEST_MYSQL_RUNTIME for opt-in Linux/MySQL validation
+SKIPPED [1] tests/test_setup_wizard.py:167: Requires a graphical desktop / Xvfb
+SKIPPED [1] tests/test_setup_wizard.py:145: Requires a graphical desktop / Xvfb
+SKIPPED [1] tests/test_setup_wizard.py:158: Requires a graphical desktop / Xvfb
+SKIPPED [1] tests/test_setup_wizard.py:130: Requires a graphical desktop / Xvfb
+SKIPPED [1] tests/test_setup_wizard.py:105: Requires a graphical desktop / Xvfb
+SKIPPED [1] tests/test_setup_wizard.py:111: Requires a graphical desktop / Xvfb
+SKIPPED [1] tests/test_setup_wizard.py:201: Requires a graphical desktop / Xvfb
+SKIPPED [1] tests/test_setup_wizard.py:183: Requires a graphical desktop / Xvfb
+SKIPPED [1] tests/test_setup_wizard.py:190: Requires a graphical desktop / Xvfb
+767 passed, 10 skipped in 216.86s (0:03:36)

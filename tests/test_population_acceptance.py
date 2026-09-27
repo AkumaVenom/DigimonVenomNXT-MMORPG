@@ -29,7 +29,8 @@ class NavigationAcceptanceTests(unittest.TestCase):
         cls.navigation = Navigation(ROOT, cls.engine.maps)
 
     def test_every_imported_map_has_safe_distributed_spawn_points(self):
-        self.assertEqual(len(self.engine.maps), 254)
+        self.assertEqual(sum(mid.startswith("map_") for mid in self.engine.maps), 254)
+        self.assertGreater(len(self.engine.maps), 254)
         for map_id in self.engine.maps:
             with self.subTest(map_id=map_id):
                 points = [self.navigation.spawn(map_id, index) for index in range(20)]
@@ -97,9 +98,11 @@ class PopulationAcceptanceTests(unittest.TestCase):
                 manager = BotManager(engine, store, config={"count": 5000, "seed": 880})
                 manager.initialize(now=1000.0)
                 self.assertEqual(len(manager.bots), 5000)
-                self.assertEqual(len(manager.by_map), 254)
+                self.assertEqual(set(manager.by_map), set(engine.maps))
+                self.assertEqual(sum(mid.startswith("map_") for mid in manager.by_map), 254)
                 occupancy = [len(ids) for ids in manager.by_map.values()]
-                self.assertEqual(set(occupancy), {19, 20})
+                low, remainder = divmod(5000, len(engine.maps))
+                self.assertEqual(set(occupancy), {low, low + 1} if remainder else {low})
                 self.assertEqual(sum(occupancy), 5000)
                 self.assertEqual(set().union(*manager.by_map.values()), set(manager.bots))
                 for bot in manager.bots.values():
@@ -115,7 +118,7 @@ class PopulationAcceptanceTests(unittest.TestCase):
                 for map_id in manager.by_map:
                     actors = manager.snapshot(map_id, now=1000.0)
                     self.assertEqual(actors, manager.snapshot(map_id, now=1000.0))
-                    self.assertLessEqual(len(actors), 20)
+                    self.assertLessEqual(len(actors), math.ceil(5000 / len(engine.maps)))
                     self.assertTrue(all(actor["map_id"] == map_id and actor["is_bot"] for actor in actors))
                 self.assertEqual(len(manager.directory(limit=100000)["entries"]), 100)
                 self.assertEqual(manager.directory(offset=5000)["entries"], [])

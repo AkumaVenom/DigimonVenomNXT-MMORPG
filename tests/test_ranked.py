@@ -139,10 +139,12 @@ class RankedTests(unittest.TestCase):
         a = self.profile("bot:drained-a", level=10, count=1)
         b = self.profile("bot:drained-b", level=10, count=1)
         for p in (a, b):
-            p["party"][0]["max_sp"] = 1
+            p["party"][0]["max_sp"] = 0
             p["party"][0]["max_hp"] = 3000
         result = self.service._fight(a, b, "no-affordable-skill")
-        self.assertTrue(all(e.get("move") in ("Attack", "Struggle") for e in result["replay"]["events"] if e["kind"] == "damage"))
+        damage = [e for e in result["replay"]["events"] if e["kind"] == "damage"]
+        self.assertTrue(damage)
+        self.assertTrue(all(e.get("move") == "Attack" for e in damage))
         self.assertGreater(result["turns"], 1)
 
     def test_ranked_rematch_cooldown_is_enforced_without_spending_energy(self):

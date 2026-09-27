@@ -1,4 +1,75 @@
-# Release status — DigiFarm v0.6.0
+# Release status — DigiRuby Economy v0.12.0
+
+All 19 shop items now offer credit and DigiRuby payment. Prices are shown before
+purchase. A new **DigiRuby Exchange** tab in Ranked Arena converts earned
+DigiRubies to ordinary credits at **100 credits per DigiRuby**. Shop ruby prices
+are one DigiRuby per 200 credits of item value, rounded upward, with a minimum
+of one. The complete price table and limits are documented in
+[DIGIRUBY_ECONOMY_V0120.md](DIGIRUBY_ECONOMY_V0120.md).
+
+The redundant Struggle action has been removed; the existing basic Attack
+continues to cost zero SP. Existing wallets, inventories, partners, story saves,
+Season careers and ranked records are preserved. Economy transactions validate
+the balance and capacity on the server before committing the payment and grant.
+
+This is a source release. Rebuild **both Windows x64 applications** and upgrade
+from a stopped, complete server backup. Preserve `mysql/data`, private database
+settings and all existing `config` files; do not run fresh database setup. The
+current guide provides the exact upgrade from v0.11.0. Windows executable builds
+and an interactive target-machine playtest are separate release checks; this
+note does not claim they have been completed.
+
+## Retained Paradox Chronicle v0.11.0
+
+The v0.11.0 source release added **World DS: Paradox Chronicle** as a second private
+Story Mode campaign: 18 supplied DS maps, a peaceful service hub, 17 authored
+quest and tamer sequences, 17 Paradox guardians and collectible Paradox Crests,
+then a final team of three level-100 Paradox Megas. A first final victory grants
+a permanent 20% increase to wild Paradox victory scan, from 5% to 6%, subject to
+the existing 200% cap. Repeated clears do not multiply the benefit.
+
+Campaign choice appears under **Story Mode / F4**. Dawn Relay progress and
+championship records remain separate. Characters keep their existing partners,
+inventory, credits and services. New story tamers use authored NPC teams and
+private progression, independently of the shared AI rival population.
+
+Read [WORLD_DS_STORY_V0110.md](WORLD_DS_STORY_V0110.md) for player guidance and
+its historical upgrade from v0.10.0. Rebuild and update **both Windows x64
+applications**. Preserve the stopped server's `mysql/data`, private MySQL
+configuration and complete `config` folder; do not run fresh database setup.
+This document makes no claim of a completed Windows native build or target-PC
+playtest. Source validation and target-machine release checks are separate.
+
+## Retained World DS region v0.10.0
+
+The v0.10.0 release added the supplied World DS field maps and music as a shared
+MMO region beside Dawn. Existing characters, wild battle/scan systems and saved
+AI tamers continue across both regions. Story Mode, Season Mode and all prior
+activities remain. The v0.10.0 NPC character archive was unused. Read
+[WORLD_DS_V0100.md](WORLD_DS_V0100.md) for shared-region behavior and historical upgrade steps and
+[WORLD_DS_VALIDATION_V0100.json](WORLD_DS_VALIDATION_V0100.json) for validation.
+Rebuild and update both Windows applications together; preserve existing saves.
+
+## Retained Story Mode v0.9.0
+
+The v0.9.0 release added **Dawn Relay**, a private story journey that uses the
+player's existing partners, items, credits, DigiLab and DigiFarm. It contains
+18 supplied Dawn maps, 54 authored NPC placements, eight DigiBadges, live tamer
+battles and a repeatable championship defense/reclaim cycle. NPC opponents reach
+level 100; the existing owned-partner level cap remains 99.
+
+Story progress and instances are private. Partner growth and rewards remain on
+the ordinary character. Season careers, Ranked Arena, shared rivals and the
+host-only local administration console remain available. Read
+[STORY_MODE_V090.md](STORY_MODE_V090.md) for behavior and its historical upgrade
+procedure; rebuild both Windows applications together. See
+[STORY_MODE_VALIDATION_V090.json](STORY_MODE_VALIDATION_V090.json) for the checks
+actually run. Windows executable building and an interactive target-machine
+playtest remain required before deploying this source update.
+
+The notes below describe retained features and historical release boundaries.
+
+## Retained DigiFarm v0.6.0
 
 The v0.6.0 release adds the player's private DigiFarm to the accepted UI2,
 FPS1 and portable-MySQL baseline. Each account has its own home, up to 100
@@ -87,7 +158,7 @@ feature guides do not provide a database migration procedure for it.
 | Dedicated server | Authoritative WebSocket world, accounts, collision, battles and durable actions; shared players and chat | A single world process; no proven production human-connection capacity, clustering or operator dashboard |
 | Tamer rivals | Default population of 5,000 persistent AI tamers, even initial map distribution, continuous collision-aware patrols, shared positions, spaced sector arrivals, clickable profiles, wild combat, earned XP/scan, materialization, persistent training teams, veteran storage, evolution, shop use, ranked participation and density-aware travel | Fresh rivals receive a clearly identified sector-appropriate seed level. Collection/evolution require eligibility and ranked attacks require energy. Existing partners retain their identities and earned progression; legal evolution can change levels under normal game rules. Population balancing does not promise equal visible occupancy. No simulated offline training while the world server is stopped |
 | Population performance | Worker-driven scheduler, bounded work batches, map-local snapshots and shared navigation data; rivals do not open 5,000 player sockets | A configured population size is not a certified capacity for 5,000 human connections. Hardware, network and database performance must be measured on the target Windows host; see validation evidence for tests actually run |
-| Battle Park | Asynchronous automatic battles using restored party snapshots, three active partners plus up to three reserves, weekly seasons, points, promotion battles, career rating, top-100 current/career/archive ladders and automatic DigiRuby rewards | ReArise-inspired structure with documented NXT numerical rules and SP combat, not verified exact ReArise parity. DigiRubies accumulate in a wallet; no DigiRuby shop is included. No real-time human-versus-human command exchange |
+| Battle Park | Asynchronous automatic battles using restored party snapshots, three active partners plus up to three reserves, weekly seasons, points, promotion battles, career rating, top-100 current/career/archive ladders and automatic DigiRuby rewards | ReArise-inspired structure with documented NXT numerical rules and SP combat, not verified exact ReArise parity. Earned DigiRubies can buy every shop item or convert to credits at the published rate. No real-time human-versus-human command exchange |
 | Rivals Hub/activity | Nearby invitations, accept/decline, friendly challenges, head-to-head totals, bot directory, cumulative activity counters, latest 100 events and sector distribution | Global event detail is deliberately bounded to 100 recent events; cumulative totals remain. Head-to-head data persists, with the 100 most recent opponents exposed by the hub. Bots are explicitly identified as AI |
 | Persistence | Bundled folder-owned MySQL 8.4.11, fresh native setup, authenticated readiness and data-directory checks, local game login, exact-database grants, transactional saves, password hashing, session leases and revisions; coordinated world/database shutdown for manual whole-folder backups | Physical portability requires a clean shutdown, the complete folder and the same engine on a compatible Windows x64 host. Native Windows execution and production performance remain target-host checks |
 | Public hosting | CA-signed SAN server certificate, bundled client CA trust, hostname validation, private-key exclusion from public kit | Administrator supplies a reachable hostname/IP and network forwarding; hosting setup does not alter ISP/router/DNS |

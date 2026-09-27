@@ -93,7 +93,7 @@ def test_report_ignores_driver_sql_secrets_unapproved_keys_and_arbitrary_objects
         assert secret not in raw
         assert secret not in str(failure)
     data = json.loads(raw)
-    assert data["setup_version"] == "0.6.0"
+    assert data["setup_version"] == "0.12.0"
     assert set(data["environment"]) == {"python", "platform", "pymysql"}
     assert data["events"][0]["host"] == "127.0.0.1"
     assert data["events"][1]["error_code"] == 1064

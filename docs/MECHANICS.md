@@ -26,7 +26,7 @@ At the DigiFarm or DigiLab, 100% scan can materialize a level-1 partner. Materia
 
 The type cycle is Vaccine → Virus → Data → Vaccine. Advantage multiplies damage by 2, disadvantage by 0.5; equal types and Free matchups use 1. Attributes are separate: Fire → Plant → Water → Fire; Electric → Wind → Earth → Electric; Light and Dark each beat the other. An attribute advantage grants 1.5×; other attribute matchups grant 1×. There is no invented 0.5× reverse elemental resistance. Both bonuses multiply, allowing 3× damage.
 
-A basic Attack costs no SP and uses a neutral physical attack. Struggle is also always available for zero SP, with 70% normal power and no recoil. Every partner has two original moves: an elemental magic Burst costing `5 + stage rank` SP, and neutral physical Power Strike costing `4 + stage rank` SP. These are original generic moves, not claimed to be the creature's complete signature move list.
+A basic Attack costs no SP and uses a neutral physical attack at full normal power, including when the partner has 0 SP. Every partner has two original moves: an elemental magic Burst costing `5 + stage rank` SP, and neutral physical Power Strike costing `4 + stage rank` SP. These are original generic moves, not claimed to be the creature's complete signature move list.
 
 Damage uses the appropriate attacking stat (ATK physical; INT magic) against DEF or INT. Its original formula is:
 
@@ -34,7 +34,7 @@ Damage uses the appropriate attacking stat (ATK physical; INT magic) against DEF
 
 Wild damage then receives the balance adjustment above. Guard halves damage until the next action opportunity. With CAM at least 20 and a living active ally, an attack has `CAM / 500` chance to become a Cross Combo for 25% additional damage. Actual HP removed is used for floating damage numbers. Events identify attacker, defender, attribute, effectiveness, combo and defeat so the client can animate the correct combatants.
 
-Battle actions include Attack, Skill, Struggle, Item and Flee. The server also supports Guard and reserve Swap through the battle API. Swapping consumes the outgoing partner's action. Flee is guaranteed and gives no victory XP or credits. Recovery items consume the current actor's action in combat; using them through the out-of-battle operation during combat is rejected.
+Battle actions include Attack, Skill, Item and Flee. The server also supports Guard and reserve Swap through the battle API. Swapping consumes the outgoing partner's action. Flee is guaranteed and gives no victory XP or credits. Recovery items consume the current actor's action in combat; using them through the out-of-battle operation during combat is rejected.
 
 ## Speed, XP, stats, ABI and CAM
 

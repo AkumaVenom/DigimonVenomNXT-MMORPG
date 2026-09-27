@@ -1,6 +1,105 @@
 # Digimon Venom NXT
 
-**Local Admin Console v0.8.0 — host-only administration and player titles.**
+**v0.12.0 — Spend DigiRubies in the shop or exchange them for credits.**
+
+Open **Shop / B** and choose **Credits** or **DigiRubies** to buy any capsule or
+DigiMeat. All 19 shop items support both currencies, with clearly displayed
+prices. Open **Ranked Arena / R → DigiRuby Exchange** to convert earned
+DigiRubies into credits at **1 DigiRuby = 100 credits**. The exchange is one-way;
+review the amount before confirming.
+
+The redundant Struggle option has been removed. **Attack remains free at 0 SP**,
+so every partner can still act when its SP runs out. Existing partners, items,
+credits, DigiRuby balances, both story campaigns and Season progress carry on.
+
+Read [docs/DIGIRUBY_ECONOMY_V0120.md](docs/DIGIRUBY_ECONOMY_V0120.md) for the full
+price table, shop and exchange controls, and safe upgrade instructions.
+
+**Upgrade from v0.11.0: rebuild BOTH Windows applications with BUILD_ALL.bat.**
+Use the full v0.12.0 source or apply the source patch to a copy of the complete
+v0.11.0 baseline. Stop and back up the server first; preserve `mysql/data`,
+private MySQL settings, and the existing client/server `config` folders.
+**Do not run fresh database setup.** This is a source release. Build and check
+both Windows x64 applications on the intended Windows machine.
+
+The following sections retain earlier release notes. The v0.12.0 guide above
+contains the current upgrade procedure.
+
+**Retained v0.11.0 — World DS: Paradox Chronicle, a second private story campaign.**
+
+Open **Story Mode / F4** and choose **World DS: Paradox Chronicle**. Begin at a
+peaceful service hub, then journey through 17 supplied Digimon World DS field
+maps. Meet local quest characters, complete their stories, challenge authored
+NPC tamers and defeat a different Paradox guardian in each area. Earn all
+**17 Paradox Crests** to summon the final team of **three level-100 Paradox
+Megas**. Opponents rise from around level 10 through the campaign.
+
+Your first final victory permanently increases scan earned from winning wild
+Paradox battles by **20%: the normal 5% becomes 6% per defeated Paradox**.
+The benefit does not stack, and the existing 200% scan cap still applies.
+Bring your existing partners and use the normal live battle controls, DigiLab,
+DigiFarm, inventory and shop. Dawn Relay keeps its own progress, badges and
+championship; the new story's NPCs belong to its private campaign.
+
+Read [docs/WORLD_DS_STORY_V0110.md](docs/WORLD_DS_STORY_V0110.md) for the player
+guide, progression, reward rules and upgrade procedure.
+
+**Upgrade from v0.10.0: rebuild BOTH Windows applications with BUILD_ALL.bat.**
+Use the full v0.11.0 source or apply its source patch to a copy of the complete
+v0.10.0 World DS baseline. Stop and back up the existing server first. Preserve
+`mysql/data`, private MySQL files and the complete server/client `config`
+folders. **Do not run fresh database setup.** This is a source release;
+Windows x64 executables must be built and checked on Windows.
+
+The sections below preserve earlier release notes and their original upgrade
+procedures. Use the v0.12.0 guide above for the current update.
+
+**Retained World DS region v0.10.0 — shared maps, encounters and music.**
+
+Open **Worlds** and choose **Digimon World DS** to explore 150 additional field
+maps alongside the original 254 Dawn sectors. Wild encounters progress from level
+1 to 99, using your existing team, live battle controls, scan collection, DigiLab
+and DigiFarm. The same saved AI tamer population roams, trains, battles and travels
+across both regions. New DS map music accompanies the journey.
+
+Your private Story Mode, Season careers, Ranked Arena and host-only admin console
+remain available. The v0.10.0 region used the existing character artwork.
+Read [docs/WORLD_DS_V0100.md](docs/WORLD_DS_V0100.md) for the new atlas, imported
+content, rival behavior and exact upgrade procedure.
+
+**Upgrade from v0.9.0: rebuild BOTH Windows applications with BUILD_ALL.bat.**
+Use the update on a copy of the complete v0.9.0 source, or the full v0.10.0 source.
+Back up the stopped server and preserve its database and private configuration;
+do not run fresh database setup. This is a source release, not prebuilt EXEs.
+
+The v0.10.0 guide below documents the shared region and its historical upgrade.
+
+**Retained Story Mode v0.9.0 — Dawn Relay, a private adventure with your own Digimon.**
+
+Enter **Story Mode** from the top-left navigation or press **F4**. Explore 18
+supplied Dawn maps, speak to authored NPC tamers, earn all eight DigiBadges and
+challenge the Dawn Champion. Opponents progress from early levels to level 100.
+After winning the championship, keep defending it; after a defeat, win it back.
+Every fight uses the normal live battle controls. NPC tamer matches cannot be
+fled; Field Training remains a normal wild encounter.
+
+Bring your existing party at its actual strength. Your Digimon, DigiLab,
+DigiFarm, inventory and credits stay connected to the main game. Only the story
+journey, NPC progress, badges and championship belong to your private instance.
+Story rewards and partner growth remain yours when you return to the MMO.
+Season careers, shared rivals, Ranked Arena and the local admin console remain.
+
+**Upgrade from v0.8.0: rebuild both client and world server with BUILD_ALL.bat.**
+Apply the source update to a copy of the v0.8.0 Local Admin source, or use the
+complete v0.9.0 source. Back up the stopped server and preserve its database and
+configuration. Do not run fresh database setup. Read
+[docs/STORY_MODE_V090.md](docs/STORY_MODE_V090.md) for controls, progression,
+shared-system behavior and the exact upgrade procedure. This is a source release;
+Windows x64 executables must be built on Windows.
+
+The release notes below describe retained features and historical upgrades.
+
+**Retained Local Admin Console v0.8.0 — host-only administration and player titles.**
 
 Type `/help` in the existing **START_WORLD_SERVER_CONSOLE.bat** window on the
 server PC. Manage Digimon, items, credits, live encounters, moderation, accounts,
@@ -21,8 +120,7 @@ Read [docs/ADMIN_CONSOLE_V080.md](docs/ADMIN_CONSOLE_V080.md) for the full comma
 reference, console tiers, hidden password prompts, confirmation rules, and exact
 upgrade procedure. Windows executables must be built on Windows x64.
 
-The following v0.7.0 and earlier notes describe retained features. For the current
-release, use the v0.8.0 upgrade procedure above.
+The following v0.7.0 and earlier notes describe retained features. For the current upgrade, use the v0.12.0 guide linked above.
 
 **Retained Season Mode v0.7.0 — private, persistent tamer careers.**
 
@@ -37,11 +135,11 @@ The shared world, DigiFarm, persistent rivals and Ranked Arena remain available.
 The v0.7.0 release built on the supplied v0.6.2 High Ping Disconnect Fix source
 and added private career archives without resetting existing character saves.
 Read [docs/SEASON_MODE_V070.md](docs/SEASON_MODE_V070.md) for Season controls,
-rules and save behavior. Its upgrade section is historical; use the v0.8.0
-procedure linked above for this release.
+rules and save behavior. Its upgrade section is historical; use the v0.12.0
+procedure in the DigiRuby Economy guide for this release.
 
 The following DigiFarm and earlier-release notes describe retained features.
-For the current update, use the v0.8.0 upgrade procedure above.
+For the current update, use the v0.12.0 DigiRuby Economy upgrade guide above.
 
 **Retained DigiFarm — native Windows x64 client and dedicated world server.**
 
@@ -88,8 +186,8 @@ This is the **complete source package**, including the game assets and Windows
 MySQL engine. For a new installation, build the Windows applications first, then
 use the generated server folder for play. A new server setup starts with fresh
 accounts and progress; it does not import an older installation. Existing
-portable-baseline players should follow the v0.6.0 upgrade guide to update both
-applications while keeping their accounts and progress.
+portable-baseline players should follow the v0.12.0 DigiRuby Economy upgrade guide to
+update both applications while keeping their accounts and progress.
 
 For day-to-day use, run **START_MYSQL.bat**, then
 **START_WORLD_SERVER_CONSOLE.bat**. When you want to back up or move the server,
@@ -172,13 +270,13 @@ Public play uses TLS and MySQL. The public server refuses the development databa
 - 254 map backgrounds and 97 foreground overlays, using the supplied x2 images. All 254 traversable maps use original ROM pixel collision data.
 - One Rookie starter, up to six party partners, a three-partner active battle team, 100-resident private DigiFarm storage, leader selection and an overworld follower.
 - A walkable DigiFarm with your selected animated tamer and lead follower, shared client/server shoreline collision, independent saved position and 1×–8× zoom, click-to-manage residents, gentle wandering, optional CAM treats, six permanent stat-training meat families and unique original home music.
-- One to three wild enemies, speed-based turns, physical and elemental skills, SP, a free attack/Struggle, item use, movement effects, particles, 96 decoded original battle-effect sequences, and floating damage/effectiveness text.
+- One to three wild enemies, speed-based turns, physical and elemental skills, SP, a free basic Attack, item use, movement effects, particles, 96 decoded original battle-effect sequences, and floating damage/effectiveness text.
 - Defeated-enemy scan data, DigiLab materialization at 100% or more, a 200% scan cap, evolution/de-evolution requirements, levels, ABI and CAM.
 - A 2.5% chance for an encounter to include a Paradox; Paradox defeats award less scan data than normal defeats.
-- Free DigiLab healing and return to the saved world position; a shop with small, medium and large HP/SP capsules.
+- Free DigiLab healing and return to the saved world position; a shop with HP/SP capsules and DigiMeat, each purchasable with credits or DigiRubies.
 - Shared world presence, map-local chat, account authentication, durable progression, per-pixel movement validation and rate limits.
 - 5,000 configurable persistent AI rivals, initially distributed evenly across the maps, with authentic walking frames, continuous server-owned patrols, spaced sector arrivals, real combat/collection progression, repeat team training, party storage, density-aware travel and clickable profiles.
-- Ranked auto battles against saved defender teams, weekly UTC seasons, season and career wins/losses, top-100 current/career/archive ladders, earned-grade and placement rewards in a persistent DigiRuby wallet.
+- Ranked auto battles against saved defender teams, weekly UTC seasons, season and career wins/losses, top-100 current/career/archive ladders, earned-grade and placement rewards in a persistent DigiRuby wallet, and a DigiRuby-to-credit exchange.
 - Nearby friendly rival invitations, an accept/decline hub, head-to-head history, and a bot activity screen with cumulative counters and the latest 100 population events.
 - Original-ROM sequence/sample audio rendered into 46 music tracks and 183 sound effects. The renderer approximates some NDS synthesis behavior; it is not a hardware-perfect emulator.
 - Windows build, a native setup wizard, bundled portable MySQL with readiness checks, graceful shutdown for manual whole-folder ZIP backups, local/public TLS connection kits, content verification and automated tests.

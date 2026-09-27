@@ -34,7 +34,10 @@ The client reads `config/client.json` and trusts only the bundled `config/server
 | B / Shop | Buy recovery capsules and optional DigiMeat |
 | Home · DigiFarm / F2 (top left) | Return to your private home; an active battle requires confirming abandonment |
 | Click a DigiFarm resident | Open its management card and choose optional meat to feed |
-| M / Worlds | Search and transfer to an imported world map |
+| M / Worlds | Search shared world maps; open the campaign atlas while in Story Mode |
+| F4 / Story Mode | Open the campaign chooser; return to the MMO from a story outside combat |
+| J in Story Mode | Open the story journal, objectives, atlas and earned badges or crests |
+| E near a story NPC or exit | Talk to that character or use the marked exit |
 | R / Ranked Arena | Open ranked opponents, season/career ladders and rewards |
 | V / Rivals Hub | View nearby rivals, invitations, rival directory and head-to-head history |
 | O / Bot Activity | View population activity, totals and the latest 100 events |
@@ -64,6 +67,31 @@ dialogs pause movement. The mouse wheel scrolls menus and lists when the pointer
 is over them; use it over the island to zoom. **0** restores the whole-island
 view, and the zoomed camera follows your tamer.
 
+## Private Story Mode
+
+Choose **Story Mode / F4**, then select **Dawn Relay** or **World DS: Paradox
+Chronicle**. The campaigns keep separate objectives, locations and collectibles.
+Both use your existing partners, inventory and credits. Outside combat, use
+**Return to MMO / F4** before switching campaigns.
+
+Approach a marked story NPC and press **E**, or click them, to talk. Read the
+conversation and choose its displayed action. **Enter / Space** advances text;
+**Esc** closes a conversation when allowed. Press **J** for the journal and
+current objective. The story atlas and marked exits connect unlocked areas.
+The regular Partners, Items, shop, DigiLab and DigiFarm services remain available.
+
+Paradox Chronicle begins in a peaceful hub with no battles. Each of its 17 field
+chapters has a quest, an authored tamer challenge and a Paradox guardian. Earn
+all 17 Paradox Crests, then face the final team of three level-100 Paradox Megas.
+The first final victory permanently raises normal wild Paradox victory scan
+from **5% to 6%**, without stacking or changing the 200% cap.
+
+Story NPC matches use the normal live battle controls; finish the match before
+leaving or switching activities. They do not award scan. Field Training outside
+the DS hub retains ordinary wild battle rules. See
+[WORLD_DS_STORY_V0110.md](WORLD_DS_STORY_V0110.md) for the new campaign and
+[STORY_MODE_V090.md](STORY_MODE_V090.md) for Dawn Relay's retained rules.
+
 ## Private Season Mode
 
 Choose **Season Mode** in the top-left navigation (or press **F3**) to create or continue your
@@ -80,6 +108,8 @@ for your next login. No fictional time passes while you are away. See
 
 The default season changes on **Monday at 00:00 UTC**. Start and complete at least one ranked attack that season to qualify for automatic DigiRuby rewards; passive defenses alone do not qualify. Use **My arena**, **Top 100** and **Season history** to browse your competition. The ladder offers **Current season**, **Overall career** and **Past seasons**. A points threshold opens a promotion opportunity; a subsequent attacking win earns the next grade. The complete points, energy and reward tables are in `RIVALS_AND_RANKED.md`.
 
+Open **Ranked Arena / R → DigiRuby exchange** to convert earned DigiRubies into credits at **100 credits per DigiRuby**. Enter a whole-number amount and review the totals before confirming. The server checks your balance and commits the exchange before the wallet changes. See [DIGIRUBY_ECONOMY_V0120.md](DIGIRUBY_ECONOMY_V0120.md) for the shop prices and exchange rules.
+
 **Rivals Hub / V** offers **Challenges**, **Rival directory** and **Battle history**. Accept or decline a bot invitation, or inspect a nearby map rival and choose **Challenge rival**. **Find rival** searches the directory; **Prev / Next** browse pages of 50. The server checks availability and location when a challenge starts, so a rival who has moved away or entered another activity may ask you to try again. Friendly challenges do not consume ranked energy or change ranked points, ranked records or rewards; they do update head-to-head history.
 
 **Bot Activity / O** offers **Live activity** and **Map population**. It shows population, activity phases, map distribution and cumulative counters, including wild/ranked wins and losses, scan data, materializations, earned levels, evolution, recovery, purchases and travel. Use **More counters** for additional totals and **All / Wild / Ranked / Progress / Travel** to filter the latest 100 events. Fresh bots start with one Rookie at a sector-appropriate seed level; this initial level is shown separately from levels actually earned through training. Walking positions and activity come from the server, so different clients see the same population. **Escape** or **Field** closes a community screen.
@@ -88,9 +118,8 @@ The default season changes on **Monday at 00:00 UTC**. Start and complete at lea
 
 Click a living enemy to select the gold target. The server chooses the active partner by speed initiative; **YOUR TURN** identifies the acting partner. The first three party members participate. Defeated active partners remain down until healed; reserves are managed outside battle.
 
-- **Attack** (also Space) is a free basic attack.
+- **Attack** (also Space) costs 0 SP and keeps its normal power even when your partner has no SP left.
 - **Skill · SP** opens the actor's skill list, costs SP and displays each skill's attribute and physical/magical class.
-- **Struggle · 0 SP** is a weaker free attack available even without SP.
 - **Items** opens the inventory. Select the recipient in the right party panel, then use a capsule. This consumes the acting partner's turn.
 - **Flee** leaves the encounter without victory XP or credits.
 
@@ -103,6 +132,8 @@ Entering the DigiLab fully restores the party. **Return to field** restores the 
 Digidex lists the full imported catalog, with scanned species sorted first. At 100% or more scan data, **Materialize** creates a partner in the DigiFarm or DigiLab. At most six partners travel with you; up to 100 additional partners live in DigiFarm storage. Legacy over-cap collections are preserved; withdraw residents until space is available before adding more. When your party is full, DigiBank lets you choose a named party slot and confirm a stored-partner swap. Swaps work at full farm capacity and with archived partners, without increasing either collection count. Evolution routes display the server's level, ABI, CAM and stat requirements. Select a partner on the right, then choose an eligible Digivolve or De-digivolve route at the farm or lab. Scroll below routes to withdraw stored partners. **Make leader** moves the selected partner to slot one; repeated use also lets you arrange the active trio.
 
 The shop sells small, medium and large HP and SP capsules, Friendship DigiMeat and training DigiMeat. Prices, effects and inventory counts come from the server. Select a party partner before using a capsule. Feed DigiMeat through a stored resident's management card in your private DigiFarm. See [DIGIFARM_V060.md](DIGIFARM_V060.md) for prices, permanent bonuses, capacity and upgrade steps.
+
+In **Shop / B**, choose **Credits** or **DigiRubies** to set the payment currency. All 19 existing shop items support both currencies. The displayed unit price and total use the selected currency; a purchase delivers the same item to your normal inventory. DigiRuby purchases and exchanges require an updated server advertising the ranked economy feature.
 
 ## Development and visual checks
 

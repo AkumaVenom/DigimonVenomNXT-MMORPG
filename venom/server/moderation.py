@@ -11,7 +11,7 @@ from venom.server.navigation import Navigation
 # Preserve field presence as well as values: a jail visit must not rewrite an
 # interrupted Season battle, private farm position, or return destination.
 SUSPENDED_FIELDS = (
-    "map_id", "x", "y", "in_lab", "in_farm", "in_season", "farm_position",
+    "map_id", "x", "y", "in_lab", "in_farm", "in_season", "in_story", "farm_position",
     "return_location", "battle",
 )
 
@@ -60,7 +60,7 @@ def jail_state(engine, state, until, reason):
     state["admin_jail"] = {"until": until, "reason": reason.strip(), "issued_at": time.time(),
                            "suspended": suspended}
     state.update(map_id=cell[0], x=cell[1], y=cell[2], battle=None,
-                 in_season=False, in_lab=False, in_farm=False)
+                 in_season=False, in_story=False, in_lab=False, in_farm=False)
     state["events"] = []
     return state
 
@@ -71,10 +71,16 @@ def clear_jail(state):
     if not isinstance(jail, dict):
         return False
     suspended = jail.get("suspended")
-    if not isinstance(suspended, dict) or any(not isinstance(suspended.get(key), dict) for key in SUSPENDED_FIELDS):
+    # v0.8 holding cells predate Story Mode. Missing only the new flag means
+    # that the original activity had no Story state; other missing fields still
+    # indicate a damaged return snapshot and must not be guessed.
+    if not isinstance(suspended, dict) or any(not isinstance(suspended.get(key), dict)
+            for key in SUSPENDED_FIELDS if key != "in_story"):
+        raise ValueError("The saved holding-cell return state is incomplete; administrator repair is required.")
+    if "in_story" in suspended and not isinstance(suspended["in_story"], dict):
         raise ValueError("The saved holding-cell return state is incomplete; administrator repair is required.")
     for name in SUSPENDED_FIELDS:
-        original = suspended[name]
+        original = suspended.get(name, {"present": False})
         if original.get("present"):
             state[name] = copy.deepcopy(original.get("value"))
         else:

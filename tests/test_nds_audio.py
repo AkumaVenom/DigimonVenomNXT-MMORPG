@@ -40,13 +40,21 @@ class AudioDecoderTests(unittest.TestCase):
 
     def test_all_exported_music_and_effects_decode_and_are_audible(self):
         catalog=json.loads((ROOT/'data/audio_catalog.json').read_text())
-        self.assertEqual(len(catalog['music']),46)
+        world_ds=json.loads((ROOT/'data/world_ds_audio.json').read_text())
+        dawn_music=[entry for entry in catalog['music'] if entry.get('region_id')!='world_ds']
+        ds_music=[entry for entry in catalog['music'] if entry.get('region_id')=='world_ds']
+        self.assertEqual(len(dawn_music),46)
+        self.assertEqual(len(ds_music),28)
+        self.assertEqual(ds_music,world_ds['music'])
+        self.assertEqual(len({entry['id'] for entry in catalog['music']}),74)
         self.assertEqual(len(catalog['effects']),183)
         self.assertEqual(catalog['errors'],[])
         for entry in catalog['music']+catalog['effects']:
             with self.subTest(sequence=entry['id']):
                 data,rate=sf.read(ROOT/entry['path'],dtype='float32')
-                self.assertEqual(rate,22050)
+                # Existing synthesized Dawn exports retain their 22.05 kHz
+                # format; supplied DS preview recordings retain native 32 kHz.
+                self.assertEqual(rate,32000 if entry.get('region_id')=='world_ds' else 22050)
                 self.assertGreater(len(data),100)
                 self.assertTrue(np.isfinite(data).all())
                 self.assertGreater(float(np.max(np.abs(data))),.0001)

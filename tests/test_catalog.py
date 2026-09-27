@@ -21,7 +21,12 @@ def test_all_supplied_forms_can_be_encountered():
 
 def test_every_map_has_matching_collision_and_safe_spawn():
     catalog=json.loads((ROOT/'data/catalog.json').read_text(encoding='utf8'))
-    assert len(catalog['maps'])==254
+    dawn=[m for m in catalog['maps'] if m.get('region_id','dawn')=='dawn']
+    world_ds=[m for m in catalog['maps'] if m.get('region_id')=='world_ds']
+    assert len(dawn)==254
+    assert len(world_ds)==150
+    assert len(catalog['maps'])==404
+    assert len({m['id'] for m in catalog['maps']})==404
     for area in catalog['maps']:
         with Image.open(ROOT/area['path']) as image:
             assert image.size==(area['width'],area['height']),area['id']

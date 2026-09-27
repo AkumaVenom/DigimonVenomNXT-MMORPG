@@ -416,6 +416,902 @@
       "missing_notes": 0,
       "looped": true,
       "peak_before_normalization": 0.8022
+    },
+    {
+      "id": "ds_bgm00",
+      "region_id": "world_ds",
+      "path": "assets/audio/world_ds/ds_bgm00.ogg",
+      "duration": 67.826094,
+      "looped": true,
+      "sha256": "6a1936aa048a83c8e1ed9f5ba92ad3e7a58461fd52d0893dba02af126a8482a2",
+      "source": {
+        "preview_path": "tracks/bgm00/bgm00_preview.flac",
+        "preview_sha256": "6db5741267e374b47d5dcbd169d4b5644b85e3eb6a193e3fd5881288c09d69f0",
+        "sequence_sha256": "667f4c8874ba59d51e99d2661fac8eb8d0958cb5ea1a9395974db0444cda5983",
+        "loop_start_seconds": 13.043478261,
+        "loop_end_seconds": 80.869565217,
+        "tempo": [
+          [
+            0,
+            138
+          ]
+        ],
+        "preview_accuracy": "Approximate software mix from original samples. One sequence pass; envelope, modulation, tie/portamento, active-note controllers and hardware timing are not bit-exact. MIDI programs refer to the original bank, not General MIDI instruments."
+      },
+      "quality": {
+        "sample_rate": 32000,
+        "channels": 2,
+        "frames": 2170435,
+        "peak": 0.799234,
+        "rms": 0.119172,
+        "gain_db": -1.2334,
+        "endpoint_taper_ms": 2,
+        "missing_instruments": []
+      }
+    },
+    {
+      "id": "ds_bgm01",
+      "region_id": "world_ds",
+      "path": "assets/audio/world_ds/ds_bgm01.ogg",
+      "duration": 61.016937,
+      "looped": true,
+      "sha256": "73b8661195200b028cd21d4c610026b4875fddeee0470b72291b0362f9713b59",
+      "source": {
+        "preview_path": "tracks/bgm01/bgm01_preview.flac",
+        "preview_sha256": "d77c63779b8694595d35f331dea124dc095d3fb9f91907c84c0c746779550b8c",
+        "sequence_sha256": "5d9d61207574549d789eba3849882b98eb116a84c940526593c87690e8668548",
+        "loop_start_seconds": 2.033898305,
+        "loop_end_seconds": 63.050847458,
+        "tempo": [
+          [
+            0,
+            118
+          ]
+        ],
+        "preview_accuracy": "Approximate software mix from original samples. One sequence pass; envelope, modulation, tie/portamento, active-note controllers and hardware timing are not bit-exact. MIDI programs refer to the original bank, not General MIDI instruments."
+      },
+      "quality": {
+        "sample_rate": 32000,
+        "channels": 2,
+        "frames": 1952542,
+        "peak": 0.790442,
+        "rms": 0.108554,
+        "gain_db": -1.2334,
+        "endpoint_taper_ms": 2,
+        "missing_instruments": []
+      }
+    },
+    {
+      "id": "ds_bgm02",
+      "region_id": "world_ds",
+      "path": "assets/audio/world_ds/ds_bgm02.ogg",
+      "duration": 52.777781,
+      "looped": true,
+      "sha256": "7a5c095577d7b1938f4a9401ac0626d08c47ebfc0953e52eccf17efe8e7ccf77",
+      "source": {
+        "preview_path": "tracks/bgm02/bgm02_preview.flac",
+        "preview_sha256": "1517bb339823690dec5f6d406a5ead2e03f77d8738ae81ab74a042f2620b41df",
+        "sequence_sha256": "983bd2bbce06ae0c97c8855fb749d3845d23532e01997fa18264e5fa6b72b11a",
+        "loop_start_seconds": 0.0,
+        "loop_end_seconds": 52.777777778,
+        "tempo": [
+          [
+            0,
+            108
+          ]
+        ],
+        "preview_accuracy": "Approximate software mix from original samples. One sequence pass; envelope, modulation, tie/portamento, active-note controllers and hardware timing are not bit-exact. MIDI programs refer to the original bank, not General MIDI instruments."
+      },
+      "quality": {
+        "sample_rate": 32000,
+        "channels": 2,
+        "frames": 1688889,
+        "peak": 0.794115,
+        "rms": 0.107042,
+        "gain_db": -1.2334,
+        "endpoint_taper_ms": 2,
+        "missing_instruments": []
+      }
+    },
+    {
+      "id": "ds_bgm03",
+      "region_id": "world_ds",
+      "path": "assets/audio/world_ds/ds_bgm03.ogg",
+      "duration": 65.753438,
+      "looped": true,
+      "sha256": "85ad52b50fe81f33bd98ecf1e094cca9fbc5df469517a484445058f61163522d",
+      "source": {
+        "preview_path": "tracks/bgm03/bgm03_preview.flac",
+        "preview_sha256": "426374017504095ec903e4ccbd9b49e6eebd17138c3f4666dddf02627545e035",
+        "sequence_sha256": "14c162a1c5e04abd377a9929a1891a4cd068b294bde26f5d795e71a611658818",
+        "loop_start_seconds": 0.0,
+        "loop_end_seconds": 65.753424658,
+        "tempo": [
+          [
+            0,
+            146
+          ]
+        ],
+        "preview_accuracy": "Approximate software mix from original samples. One sequence pass; envelope, modulation, tie/portamento, active-note controllers and hardware timing are not bit-exact. MIDI programs refer to the original bank, not General MIDI instruments."
+      },
+      "quality": {
+        "sample_rate": 32000,
+        "channels": 2,
+        "frames": 2104110,
+        "peak": 0.680955,
+        "rms": 0.126092,
+        "gain_db": -2.5848,
+        "endpoint_taper_ms": 2,
+        "missing_instruments": []
+      }
+    },
+    {
+      "id": "ds_bgm04",
+      "region_id": "world_ds",
+      "path": "assets/audio/world_ds/ds_bgm04.ogg",
+      "duration": 66.88525,
+      "looped": true,
+      "sha256": "72bc762c3a148b5ad3685322ffd8f7fe9bc1ef9bd0f824f9d6b2c0176b7628f6",
+      "source": {
+        "preview_path": "tracks/bgm04/bgm04_preview.flac",
+        "preview_sha256": "2cae70068a267fdd795309f0f12d43ca189ff0834167bd86f44ea265d82f00d0",
+        "sequence_sha256": "0a85e8badfc904eaf487550d426c253a33cc777ff966af43ca7e5095c05b439f",
+        "loop_start_seconds": 0.983606557,
+        "loop_end_seconds": 67.868852459,
+        "tempo": [
+          [
+            0,
+            122
+          ]
+        ],
+        "preview_accuracy": "Approximate software mix from original samples. One sequence pass; envelope, modulation, tie/portamento, active-note controllers and hardware timing are not bit-exact. MIDI programs refer to the original bank, not General MIDI instruments."
+      },
+      "quality": {
+        "sample_rate": 32000,
+        "channels": 2,
+        "frames": 2140328,
+        "peak": 0.737348,
+        "rms": 0.126073,
+        "gain_db": -1.754,
+        "endpoint_taper_ms": 2,
+        "missing_instruments": []
+      }
+    },
+    {
+      "id": "ds_bgm05",
+      "region_id": "world_ds",
+      "path": "assets/audio/world_ds/ds_bgm05.ogg",
+      "duration": 44.210531,
+      "looped": true,
+      "sha256": "ff9a86396a3cfe603e97fb4726976eaf5cf5beefeaac90fbe6302a9b05ae57ac",
+      "source": {
+        "preview_path": "tracks/bgm05/bgm05_preview.flac",
+        "preview_sha256": "3bf2468c249f639538e15fe9de3402af3e3222a5b8ec23b443c67cf2fca4cb6b",
+        "sequence_sha256": "5e2cd4ecc310c35299ae83aa80b01760196c96f93ccfd44624dbe0b41d12023c",
+        "loop_start_seconds": 21.052631579,
+        "loop_end_seconds": 65.263157895,
+        "tempo": [
+          [
+            0,
+            114
+          ]
+        ],
+        "preview_accuracy": "Approximate software mix from original samples. One sequence pass; envelope, modulation, tie/portamento, active-note controllers and hardware timing are not bit-exact. MIDI programs refer to the original bank, not General MIDI instruments."
+      },
+      "quality": {
+        "sample_rate": 32000,
+        "channels": 2,
+        "frames": 1414737,
+        "peak": 0.753623,
+        "rms": 0.125883,
+        "gain_db": -1.6945,
+        "endpoint_taper_ms": 2,
+        "missing_instruments": []
+      }
+    },
+    {
+      "id": "ds_bgm06",
+      "region_id": "world_ds",
+      "path": "assets/audio/world_ds/ds_bgm06.ogg",
+      "duration": 30.977812,
+      "looped": true,
+      "sha256": "e056f951a21e98a03182421485681c369fc18c1267964f54c5bfc4d8d7b15ec1",
+      "source": {
+        "preview_path": "tracks/bgm06/bgm06_preview.flac",
+        "preview_sha256": "85f5d14101f1b946b56e083ce4672c05dd87b7bcb4d8b0a8258d66e5b0616017",
+        "sequence_sha256": "0ed364bffaf5034325d3e90e2a56ed814614dd0a510925331080f6855f71eba2",
+        "loop_start_seconds": 0.0,
+        "loop_end_seconds": 30.977822581,
+        "tempo": [
+          [
+            0,
+            124
+          ]
+        ],
+        "preview_accuracy": "Approximate software mix from original samples. One sequence pass; envelope, modulation, tie/portamento, active-note controllers and hardware timing are not bit-exact. MIDI programs refer to the original bank, not General MIDI instruments."
+      },
+      "quality": {
+        "sample_rate": 32000,
+        "channels": 2,
+        "frames": 991290,
+        "peak": 0.766095,
+        "rms": 0.126257,
+        "gain_db": -1.6496,
+        "endpoint_taper_ms": 2,
+        "missing_instruments": []
+      }
+    },
+    {
+      "id": "ds_bgm07",
+      "region_id": "world_ds",
+      "path": "assets/audio/world_ds/ds_bgm07.ogg",
+      "duration": 42.666688,
+      "looped": true,
+      "sha256": "6aff4bed53a5bafa87547866f6904dcdcea7b3db9554adf1989132b37aa37362",
+      "source": {
+        "preview_path": "tracks/bgm07/bgm07_preview.flac",
+        "preview_sha256": "faaa206c92cafb63851a22cb0a22022416bc6684a56ce58b0702f7707886c5bc",
+        "sequence_sha256": "ad9a57699eee815bc8a97383f8a5ecdc80abeff6ab3d9e55bd5bd439e76906dc",
+        "loop_start_seconds": 2.666666667,
+        "loop_end_seconds": 45.333333333,
+        "tempo": [
+          [
+            0,
+            90
+          ]
+        ],
+        "preview_accuracy": "Approximate software mix from original samples. One sequence pass; envelope, modulation, tie/portamento, active-note controllers and hardware timing are not bit-exact. MIDI programs refer to the original bank, not General MIDI instruments."
+      },
+      "quality": {
+        "sample_rate": 32000,
+        "channels": 2,
+        "frames": 1365334,
+        "peak": 0.792215,
+        "rms": 0.125719,
+        "gain_db": -1.2334,
+        "endpoint_taper_ms": 2,
+        "missing_instruments": []
+      }
+    },
+    {
+      "id": "ds_bgm08",
+      "region_id": "world_ds",
+      "path": "assets/audio/world_ds/ds_bgm08.ogg",
+      "duration": 68.571406,
+      "looped": true,
+      "sha256": "83db5b28518241b4bf6488ce9482dfff72fc9cd34b376186a4910302ac83b8a9",
+      "source": {
+        "preview_path": "tracks/bgm08/bgm08_preview.flac",
+        "preview_sha256": "913cf80aac09f2650cff7309e817477dd02f6458f74d3eb8949d5d7aafa0e742",
+        "sequence_sha256": "6330d0d35fa3ee4e3fcc49e4d233326bdd32d02b028189af7a4c22ad8e557a5c",
+        "loop_start_seconds": 8.571428571,
+        "loop_end_seconds": 77.142857143,
+        "tempo": [
+          [
+            0,
+            56
+          ]
+        ],
+        "preview_accuracy": "Approximate software mix from original samples. One sequence pass; envelope, modulation, tie/portamento, active-note controllers and hardware timing are not bit-exact. MIDI programs refer to the original bank, not General MIDI instruments."
+      },
+      "quality": {
+        "sample_rate": 32000,
+        "channels": 2,
+        "frames": 2194285,
+        "peak": 0.794074,
+        "rms": 0.111649,
+        "gain_db": -1.2334,
+        "endpoint_taper_ms": 2,
+        "missing_instruments": []
+      }
+    },
+    {
+      "id": "ds_bgm09",
+      "region_id": "world_ds",
+      "path": "assets/audio/world_ds/ds_bgm09.ogg",
+      "duration": 58.181812,
+      "looped": true,
+      "sha256": "8423d598059dd353b9a30f417fe382d63f803d40538bbd1622f4291dd6447bdf",
+      "source": {
+        "preview_path": "tracks/bgm09/bgm09_preview.flac",
+        "preview_sha256": "1c41d2af182caaaea697b7404ad1c3bdb2280d6e64a94d064e5b28e7c6431534",
+        "sequence_sha256": "13b2ae6f47580ad32eb36ce7040b0daaa363e89fba6900926630043bf5391e2e",
+        "loop_start_seconds": 0.909090909,
+        "loop_end_seconds": 59.090909091,
+        "tempo": [
+          [
+            0,
+            66
+          ]
+        ],
+        "preview_accuracy": "Approximate software mix from original samples. One sequence pass; envelope, modulation, tie/portamento, active-note controllers and hardware timing are not bit-exact. MIDI programs refer to the original bank, not General MIDI instruments."
+      },
+      "quality": {
+        "sample_rate": 32000,
+        "channels": 2,
+        "frames": 1861818,
+        "peak": 0.647686,
+        "rms": 0.126262,
+        "gain_db": -3.0272,
+        "endpoint_taper_ms": 2,
+        "missing_instruments": []
+      }
+    },
+    {
+      "id": "ds_bgm10",
+      "region_id": "world_ds",
+      "path": "assets/audio/world_ds/ds_bgm10.ogg",
+      "duration": 51.147531,
+      "looped": true,
+      "sha256": "e1b96117b416472f67dd326097e41687f105e3ab7aa7036a9b0ac6c7255ebdc4",
+      "source": {
+        "preview_path": "tracks/bgm10/bgm10_preview.flac",
+        "preview_sha256": "dd9330a7435f38678cfc0a5c14c06d7f996bf98e1ab021d3f710667ed21c21ed",
+        "sequence_sha256": "a6767fefb7b03917b839f3c6324dc0d8d73d9dea34c774c12e2ffba3bb015474",
+        "loop_start_seconds": 3.93442623,
+        "loop_end_seconds": 55.081967213,
+        "tempo": [
+          [
+            0,
+            122
+          ]
+        ],
+        "preview_accuracy": "Approximate software mix from original samples. One sequence pass; envelope, modulation, tie/portamento, active-note controllers and hardware timing are not bit-exact. MIDI programs refer to the original bank, not General MIDI instruments."
+      },
+      "quality": {
+        "sample_rate": 32000,
+        "channels": 2,
+        "frames": 1636721,
+        "peak": 0.800868,
+        "rms": 0.114515,
+        "gain_db": -1.2334,
+        "endpoint_taper_ms": 2,
+        "missing_instruments": []
+      }
+    },
+    {
+      "id": "ds_bgm11",
+      "region_id": "world_ds",
+      "path": "assets/audio/world_ds/ds_bgm11.ogg",
+      "duration": 55.714281,
+      "looped": true,
+      "sha256": "f4af3da976b3d8a5bd9ebd8c7f6a2978726b69801a1e5aff778eeb30c12c67b7",
+      "source": {
+        "preview_path": "tracks/bgm11/bgm11_preview.flac",
+        "preview_sha256": "dd3ada0492192cf0b0337ba656c2ded1c8197737250e58e2e4ad0e7b5407e55e",
+        "sequence_sha256": "147cc8d3a18b5568a5a64b2809f7659a17038a1b94f881b3768d9e55abc04a12",
+        "loop_start_seconds": 0.0,
+        "loop_end_seconds": 55.714285714,
+        "tempo": [
+          [
+            0,
+            70
+          ]
+        ],
+        "preview_accuracy": "Approximate software mix from original samples. One sequence pass; envelope, modulation, tie/portamento, active-note controllers and hardware timing are not bit-exact. MIDI programs refer to the original bank, not General MIDI instruments."
+      },
+      "quality": {
+        "sample_rate": 32000,
+        "channels": 2,
+        "frames": 1782857,
+        "peak": 0.663631,
+        "rms": 0.126147,
+        "gain_db": -2.7922,
+        "endpoint_taper_ms": 2,
+        "missing_instruments": []
+      }
+    },
+    {
+      "id": "ds_bgm12",
+      "region_id": "world_ds",
+      "path": "assets/audio/world_ds/ds_bgm12.ogg",
+      "duration": 43.636375,
+      "looped": true,
+      "sha256": "4a17f66d518b205080524e409978f5e0de40b03ebe52d2c7817ba6da35e811f7",
+      "source": {
+        "preview_path": "tracks/bgm12/bgm12_preview.flac",
+        "preview_sha256": "881dcc9a665ecf37efca86240e15fa83c52f8a2df19593ae0ede8d6b911842c8",
+        "sequence_sha256": "006e59f0721cffa7c856a532a686ab4e513c8632d87523ca2b25b1784e516333",
+        "loop_start_seconds": 0.0,
+        "loop_end_seconds": 43.636363636,
+        "tempo": [
+          [
+            0,
+            110
+          ]
+        ],
+        "preview_accuracy": "Approximate software mix from original samples. One sequence pass; envelope, modulation, tie/portamento, active-note controllers and hardware timing are not bit-exact. MIDI programs refer to the original bank, not General MIDI instruments."
+      },
+      "quality": {
+        "sample_rate": 32000,
+        "channels": 2,
+        "frames": 1396364,
+        "peak": 0.616791,
+        "rms": 0.126023,
+        "gain_db": -3.3912,
+        "endpoint_taper_ms": 2,
+        "missing_instruments": []
+      }
+    },
+    {
+      "id": "ds_bgm13",
+      "region_id": "world_ds",
+      "path": "assets/audio/world_ds/ds_bgm13.ogg",
+      "duration": 42.666688,
+      "looped": true,
+      "sha256": "5a83dae9d3dc7eccc04b28a5d0492310a5206da5dc510913bbd40b02a7affdd3",
+      "source": {
+        "preview_path": "tracks/bgm13/bgm13_preview.flac",
+        "preview_sha256": "5504f1fb9df00da9a992e7216f8b69539d6c19d435054422b0a2b35f1d813734",
+        "sequence_sha256": "f8514e36ae8f325abd6d5d382e755ebf7ff401c7a9142c8f1b0697fe3ab8e6d1",
+        "loop_start_seconds": 10.666666667,
+        "loop_end_seconds": 53.333333333,
+        "tempo": [
+          [
+            0,
+            90
+          ]
+        ],
+        "preview_accuracy": "Approximate software mix from original samples. One sequence pass; envelope, modulation, tie/portamento, active-note controllers and hardware timing are not bit-exact. MIDI programs refer to the original bank, not General MIDI instruments."
+      },
+      "quality": {
+        "sample_rate": 32000,
+        "channels": 2,
+        "frames": 1365334,
+        "peak": 0.795643,
+        "rms": 0.122271,
+        "gain_db": -1.2334,
+        "endpoint_taper_ms": 2,
+        "missing_instruments": []
+      }
+    },
+    {
+      "id": "ds_bgm14",
+      "region_id": "world_ds",
+      "path": "assets/audio/world_ds/ds_bgm14.ogg",
+      "duration": 54.0,
+      "looped": true,
+      "sha256": "7a6bcb9164107d4bba7a6cace9f5cca525d3f39e0c17becba5ec619d9878188a",
+      "source": {
+        "preview_path": "tracks/bgm14/bgm14_preview.flac",
+        "preview_sha256": "41f6f2581d16410915dae1605cfb82c04fc3ef2e8a49309f39f1f545f7b4297d",
+        "sequence_sha256": "c9ae09b1603560ed8a7b0b2a0aeae5672912c705d6c6e64f38f045808c9570af",
+        "loop_start_seconds": 6.0,
+        "loop_end_seconds": 60.0,
+        "tempo": [
+          [
+            0,
+            80
+          ]
+        ],
+        "preview_accuracy": "Approximate software mix from original samples. One sequence pass; envelope, modulation, tie/portamento, active-note controllers and hardware timing are not bit-exact. MIDI programs refer to the original bank, not General MIDI instruments."
+      },
+      "quality": {
+        "sample_rate": 32000,
+        "channels": 2,
+        "frames": 1728000,
+        "peak": 0.713788,
+        "rms": 0.125934,
+        "gain_db": -2.274,
+        "endpoint_taper_ms": 2,
+        "missing_instruments": []
+      }
+    },
+    {
+      "id": "ds_bgm15",
+      "region_id": "world_ds",
+      "path": "assets/audio/world_ds/ds_bgm15.ogg",
+      "duration": 66.461531,
+      "looped": true,
+      "sha256": "e752e18ffab94bf70670cb12f0dad214b32b895c801c2e65e668a0d63b6c9cfd",
+      "source": {
+        "preview_path": "tracks/bgm15/bgm15_preview.flac",
+        "preview_sha256": "1aa39c0abe2baa51a409c10e0e07573aba23462756e226e16b1075259cfd5d57",
+        "sequence_sha256": "154b6e859f860b526d06e7d1c7336dc44a6defded3a375806fb98ea35e2ac8a6",
+        "loop_start_seconds": 7.384615385,
+        "loop_end_seconds": 73.846153846,
+        "tempo": [
+          [
+            0,
+            130
+          ]
+        ],
+        "preview_accuracy": "Approximate software mix from original samples. One sequence pass; envelope, modulation, tie/portamento, active-note controllers and hardware timing are not bit-exact. MIDI programs refer to the original bank, not General MIDI instruments."
+      },
+      "quality": {
+        "sample_rate": 32000,
+        "channels": 2,
+        "frames": 2126769,
+        "peak": 0.788291,
+        "rms": 0.119426,
+        "gain_db": -1.2334,
+        "endpoint_taper_ms": 2,
+        "missing_instruments": []
+      }
+    },
+    {
+      "id": "ds_bgm16",
+      "region_id": "world_ds",
+      "path": "assets/audio/world_ds/ds_bgm16.ogg",
+      "duration": 51.2,
+      "looped": true,
+      "sha256": "9ec4f6582b0fa05f5f214be17d7e5bc7129372e021e5c309e79aa7e1c24d217d",
+      "source": {
+        "preview_path": "tracks/bgm16/bgm16_preview.flac",
+        "preview_sha256": "92ac6cbaa102f90d523dd6178255be7dacf3a5798f3deaba11535f6256980621",
+        "sequence_sha256": "b3f19f021e911a9e2be3ef0f33b30e38323c8b7ee62d1996c78c9270ebe23b84",
+        "loop_start_seconds": 0.8,
+        "loop_end_seconds": 52.0,
+        "tempo": [
+          [
+            0,
+            150
+          ]
+        ],
+        "preview_accuracy": "Approximate software mix from original samples. One sequence pass; envelope, modulation, tie/portamento, active-note controllers and hardware timing are not bit-exact. MIDI programs refer to the original bank, not General MIDI instruments."
+      },
+      "quality": {
+        "sample_rate": 32000,
+        "channels": 2,
+        "frames": 1638400,
+        "peak": 0.736941,
+        "rms": 0.125644,
+        "gain_db": -1.5941,
+        "endpoint_taper_ms": 2,
+        "missing_instruments": []
+      }
+    },
+    {
+      "id": "ds_bgm17",
+      "region_id": "world_ds",
+      "path": "assets/audio/world_ds/ds_bgm17.ogg",
+      "duration": 45.176469,
+      "looped": true,
+      "sha256": "f2bd19af7c566aa1d19612c98b45fbef074ce789fc65800af4feb00cfd411e97",
+      "source": {
+        "preview_path": "tracks/bgm17/bgm17_preview.flac",
+        "preview_sha256": "4d93e06319d248c5c2656733d3556752b0efb1d57980c5650bf62b22c7ea90d2",
+        "sequence_sha256": "080471d19a09c4accd4545d4ff3543f55b601fd8a0826fad2385c18a7038ee71",
+        "loop_start_seconds": 11.294117647,
+        "loop_end_seconds": 56.470588235,
+        "tempo": [
+          [
+            0,
+            170
+          ]
+        ],
+        "preview_accuracy": "Approximate software mix from original samples. One sequence pass; envelope, modulation, tie/portamento, active-note controllers and hardware timing are not bit-exact. MIDI programs refer to the original bank, not General MIDI instruments."
+      },
+      "quality": {
+        "sample_rate": 32000,
+        "channels": 2,
+        "frames": 1445647,
+        "peak": 0.802342,
+        "rms": 0.121793,
+        "gain_db": -1.2334,
+        "endpoint_taper_ms": 2,
+        "missing_instruments": []
+      }
+    },
+    {
+      "id": "ds_bgm19",
+      "region_id": "world_ds",
+      "path": "assets/audio/world_ds/ds_bgm19.ogg",
+      "duration": 45.714281,
+      "looped": true,
+      "sha256": "9eaf63fdaccdcd0fa5b4a339d8b0313cb716daafab7e55b2110df7d6d8249641",
+      "source": {
+        "preview_path": "tracks/bgm19/bgm19_preview.flac",
+        "preview_sha256": "94ed292dfa34c01bf361d34520a1effa42a577600ff025fe13670de13e079688",
+        "sequence_sha256": "5c9cfd0375658aded710f4dd6ba6924a1a60fa5bc87820ab6a202aabc3848364",
+        "loop_start_seconds": 15.238095238,
+        "loop_end_seconds": 60.952380952,
+        "tempo": [
+          [
+            0,
+            126
+          ]
+        ],
+        "preview_accuracy": "Approximate software mix from original samples. One sequence pass; envelope, modulation, tie/portamento, active-note controllers and hardware timing are not bit-exact. MIDI programs refer to the original bank, not General MIDI instruments."
+      },
+      "quality": {
+        "sample_rate": 32000,
+        "channels": 2,
+        "frames": 1462857,
+        "peak": 0.744369,
+        "rms": 0.126245,
+        "gain_db": -1.9027,
+        "endpoint_taper_ms": 2,
+        "missing_instruments": []
+      }
+    },
+    {
+      "id": "ds_bgm21",
+      "region_id": "world_ds",
+      "path": "assets/audio/world_ds/ds_bgm21.ogg",
+      "duration": 54.0,
+      "looped": true,
+      "sha256": "0e18a27741357b1efe05754ca8bda5602945dbd79a983e239c5af91db7123906",
+      "source": {
+        "preview_path": "tracks/bgm21/bgm21_preview.flac",
+        "preview_sha256": "b5dcc0350819bb48f82869b40c212a29fd361b011b282cb87003e9691e3bf8ed",
+        "sequence_sha256": "e52bb6b98256428774549be346cb639452c328986524d7237591675d3feb4935",
+        "loop_start_seconds": 9.0,
+        "loop_end_seconds": 63.0,
+        "tempo": [
+          [
+            0,
+            80
+          ]
+        ],
+        "preview_accuracy": "Approximate software mix from original samples. One sequence pass; envelope, modulation, tie/portamento, active-note controllers and hardware timing are not bit-exact. MIDI programs refer to the original bank, not General MIDI instruments."
+      },
+      "quality": {
+        "sample_rate": 32000,
+        "channels": 2,
+        "frames": 1728000,
+        "peak": 0.790551,
+        "rms": 0.126259,
+        "gain_db": -1.3507,
+        "endpoint_taper_ms": 2,
+        "missing_instruments": []
+      }
+    },
+    {
+      "id": "ds_bgm22",
+      "region_id": "world_ds",
+      "path": "assets/audio/world_ds/ds_bgm22.ogg",
+      "duration": 33.417719,
+      "looped": true,
+      "sha256": "389733e3852aff534e814005d895f939077c1e1d1bb25d45fb01a083cf327e20",
+      "source": {
+        "preview_path": "tracks/bgm22/bgm22_preview.flac",
+        "preview_sha256": "1821b063ea4ecf9d2903e4f20fd63fdb8056a20a3333f584301e7e3db3e2024c",
+        "sequence_sha256": "678715c3230ce02570bdcc92c66d9f68b136e0e604c03e6aaa7f378426b4e0ad",
+        "loop_start_seconds": 1.518987342,
+        "loop_end_seconds": 34.936708861,
+        "tempo": [
+          [
+            0,
+            158
+          ]
+        ],
+        "preview_accuracy": "Approximate software mix from original samples. One sequence pass; envelope, modulation, tie/portamento, active-note controllers and hardware timing are not bit-exact. MIDI programs refer to the original bank, not General MIDI instruments."
+      },
+      "quality": {
+        "sample_rate": 32000,
+        "channels": 2,
+        "frames": 1069367,
+        "peak": 0.794669,
+        "rms": 0.121121,
+        "gain_db": -1.2334,
+        "endpoint_taper_ms": 2,
+        "missing_instruments": []
+      }
+    },
+    {
+      "id": "ds_bgm23",
+      "region_id": "world_ds",
+      "path": "assets/audio/world_ds/ds_bgm23.ogg",
+      "duration": 45.176469,
+      "looped": true,
+      "sha256": "9569d10477c1f9525cc6014c94a6742fec6cb8287cda8948451419d7be5eec59",
+      "source": {
+        "preview_path": "tracks/bgm23/bgm23_preview.flac",
+        "preview_sha256": "3d368bf472d0c05fcc0974231fd3fde20baacb3df038fc29812f60c9bea82557",
+        "sequence_sha256": "42cbd7490a31ac24d1b3e3bfdfab21df6fe56634970b6600065746b5ce19e882",
+        "loop_start_seconds": 15.882352941,
+        "loop_end_seconds": 61.058823529,
+        "tempo": [
+          [
+            0,
+            85
+          ]
+        ],
+        "preview_accuracy": "Approximate software mix from original samples. One sequence pass; envelope, modulation, tie/portamento, active-note controllers and hardware timing are not bit-exact. MIDI programs refer to the original bank, not General MIDI instruments."
+      },
+      "quality": {
+        "sample_rate": 32000,
+        "channels": 2,
+        "frames": 1445647,
+        "peak": 0.764165,
+        "rms": 0.126126,
+        "gain_db": -1.5953,
+        "endpoint_taper_ms": 2,
+        "missing_instruments": []
+      }
+    },
+    {
+      "id": "ds_bgm24",
+      "region_id": "world_ds",
+      "path": "assets/audio/world_ds/ds_bgm24.ogg",
+      "duration": 56.842094,
+      "looped": true,
+      "sha256": "d3bb507d19f74f26422bfb886e6f7416b0579d7947aa264bd91f98ca03026d68",
+      "source": {
+        "preview_path": "tracks/bgm24/bgm24_preview.flac",
+        "preview_sha256": "3f7b46cd5d359c5ac2271083436710ced76440b87987cd23decb4b9d1657aa51",
+        "sequence_sha256": "c08ae7c9a94adb6fd75a8be9b0958bef8ad7b17d151a2a8b7a23971251dc7f85",
+        "loop_start_seconds": 1.184210526,
+        "loop_end_seconds": 58.026315789,
+        "tempo": [
+          [
+            0,
+            76
+          ]
+        ],
+        "preview_accuracy": "Approximate software mix from original samples. One sequence pass; envelope, modulation, tie/portamento, active-note controllers and hardware timing are not bit-exact. MIDI programs refer to the original bank, not General MIDI instruments."
+      },
+      "quality": {
+        "sample_rate": 32000,
+        "channels": 2,
+        "frames": 1818947,
+        "peak": 0.682973,
+        "rms": 0.125948,
+        "gain_db": -2.5778,
+        "endpoint_taper_ms": 2,
+        "missing_instruments": []
+      }
+    },
+    {
+      "id": "ds_bgm25",
+      "region_id": "world_ds",
+      "path": "assets/audio/world_ds/ds_bgm25.ogg",
+      "duration": 48.0,
+      "looped": true,
+      "sha256": "0a6d5cd0ccf5c3e39060cc9887a05c78612ca8c7bdbe558f14262035fd0bb917",
+      "source": {
+        "preview_path": "tracks/bgm25/bgm25_preview.flac",
+        "preview_sha256": "f8e64bc287de5bfd3a63c24864bc0c6c73e392822cb6cd03ad9582ab12ed80fe",
+        "sequence_sha256": "96cd50572a0eb27a7c03913bfb92a26b87203b6683357f2ca1e6f490db410183",
+        "loop_start_seconds": 4.0,
+        "loop_end_seconds": 52.0,
+        "tempo": [
+          [
+            0,
+            120
+          ]
+        ],
+        "preview_accuracy": "Approximate software mix from original samples. One sequence pass; envelope, modulation, tie/portamento, active-note controllers and hardware timing are not bit-exact. MIDI programs refer to the original bank, not General MIDI instruments."
+      },
+      "quality": {
+        "sample_rate": 32000,
+        "channels": 2,
+        "frames": 1536000,
+        "peak": 0.699002,
+        "rms": 0.126273,
+        "gain_db": -2.3546,
+        "endpoint_taper_ms": 2,
+        "missing_instruments": []
+      }
+    },
+    {
+      "id": "ds_bgm28",
+      "region_id": "world_ds",
+      "path": "assets/audio/world_ds/ds_bgm28.ogg",
+      "duration": 60.0,
+      "looped": true,
+      "sha256": "33a18a0ce3e15f7c8af4997a8e6dc72d62a3636254bf2ffddd033b2330dcb418",
+      "source": {
+        "preview_path": "tracks/bgm28/bgm28_preview.flac",
+        "preview_sha256": "3a2caf2fbe7668283019399fc88385d22304345221724941a2800cf13c4a92ad",
+        "sequence_sha256": "50a2f0f62c11694a07e25d53aacc6184066d3c0d336338177fd425da5c8986ae",
+        "loop_start_seconds": 16.363636364,
+        "loop_end_seconds": 76.363636364,
+        "tempo": [
+          [
+            0,
+            132
+          ]
+        ],
+        "preview_accuracy": "Approximate software mix from original samples. One sequence pass; envelope, modulation, tie/portamento, active-note controllers and hardware timing are not bit-exact. MIDI programs refer to the original bank, not General MIDI instruments."
+      },
+      "quality": {
+        "sample_rate": 32000,
+        "channels": 2,
+        "frames": 1920000,
+        "peak": 0.77985,
+        "rms": 0.116318,
+        "gain_db": -1.2334,
+        "endpoint_taper_ms": 2,
+        "missing_instruments": []
+      }
+    },
+    {
+      "id": "ds_bgm29",
+      "region_id": "world_ds",
+      "path": "assets/audio/world_ds/ds_bgm29.ogg",
+      "duration": 60.0,
+      "looped": true,
+      "sha256": "131cd8bd9fda083bc819b59f7e72efeb3dc6a1a9bcafbaddda8bd19d4e4c041e",
+      "source": {
+        "preview_path": "tracks/bgm29/bgm29_preview.flac",
+        "preview_sha256": "43c39f900074e97189f28440a4254d4a2d7816ecc00465eb0bce28e33cd5d98a",
+        "sequence_sha256": "fc9f892f8bd129b5d969f2713898bce6d4433bf7a79ecdf4320e7e901c0c4511",
+        "loop_start_seconds": 18.0,
+        "loop_end_seconds": 78.0,
+        "tempo": [
+          [
+            0,
+            120
+          ]
+        ],
+        "preview_accuracy": "Approximate software mix from original samples. One sequence pass; envelope, modulation, tie/portamento, active-note controllers and hardware timing are not bit-exact. MIDI programs refer to the original bank, not General MIDI instruments."
+      },
+      "quality": {
+        "sample_rate": 32000,
+        "channels": 2,
+        "frames": 1920000,
+        "peak": 0.769857,
+        "rms": 0.126107,
+        "gain_db": -1.5158,
+        "endpoint_taper_ms": 2,
+        "missing_instruments": []
+      }
+    },
+    {
+      "id": "ds_bgm30",
+      "region_id": "world_ds",
+      "path": "assets/audio/world_ds/ds_bgm30.ogg",
+      "duration": 4.408531,
+      "looped": false,
+      "sha256": "5e74f9ff42de8939dcd2c019ac5b7ec867622e66de21d75d00702de02a2f4c71",
+      "source": {
+        "preview_path": "tracks/bgm30/bgm30_preview.flac",
+        "preview_sha256": "746807875e7f14f36e551dd1bff70ec0255e98c2d89f0381fd830d67d0c9fe82",
+        "sequence_sha256": "ad2101b4d6d65f05ca63614f934f64c03f8760dacc18fa1f540d0eb399c7d10e",
+        "loop_start_seconds": 0.0,
+        "loop_end_seconds": 4.40853125,
+        "tempo": [
+          [
+            0,
+            136
+          ]
+        ],
+        "preview_accuracy": "Approximate software mix from original samples. One sequence pass; envelope, modulation, tie/portamento, active-note controllers and hardware timing are not bit-exact. MIDI programs refer to the original bank, not General MIDI instruments."
+      },
+      "quality": {
+        "sample_rate": 32000,
+        "channels": 2,
+        "frames": 141073,
+        "peak": 0.791182,
+        "rms": 0.125768,
+        "gain_db": -1.2551,
+        "endpoint_taper_ms": 2,
+        "missing_instruments": []
+      }
+    },
+    {
+      "id": "ds_bgm33",
+      "region_id": "world_ds",
+      "path": "assets/audio/world_ds/ds_bgm33.ogg",
+      "duration": 6.887375,
+      "looped": false,
+      "sha256": "f341e74740937284d8502ba82320be6c3613ea44e12e3ac5a13dce66d04ed755",
+      "source": {
+        "preview_path": "tracks/bgm33/bgm33_preview.flac",
+        "preview_sha256": "805a30af50e10eaaf65eba77e410b78af87553dfd0fe1c2a483e670b44f94dfb",
+        "sequence_sha256": "bef1bd20c6ab6bfb483ee43ec00135a428d94999bd3636ed557b81d4249dfda2",
+        "loop_start_seconds": 0.0,
+        "loop_end_seconds": 6.887375,
+        "tempo": [
+          [
+            0,
+            76
+          ]
+        ],
+        "preview_accuracy": "Approximate software mix from original samples. One sequence pass; envelope, modulation, tie/portamento, active-note controllers and hardware timing are not bit-exact. MIDI programs refer to the original bank, not General MIDI instruments."
+      },
+      "quality": {
+        "sample_rate": 32000,
+        "channels": 2,
+        "frames": 220396,
+        "peak": 0.793033,
+        "rms": 0.114074,
+        "gain_db": -1.2334,
+        "endpoint_taper_ms": 2,
+        "missing_instruments": []
+      }
     }
   ],
   "effects": [
@@ -2084,5 +2980,46 @@
     "heal": "se011",
     "scan": "se009",
     "evolve": "se030"
+  },
+  "region_tracks": {
+    "world_ds": {
+      "world": "ds_bgm10",
+      "battle": "ds_bgm03",
+      "endgame_battle": "ds_bgm17",
+      "victory": "ds_bgm30"
+    }
+  },
+  "region_sources": {
+    "world_ds": {
+      "archives": [
+        {
+          "name": "DigimonWorldSoundAndMusic.part1.rar",
+          "sha256": "7ba3b988b3b00539bd90182b0147b7ac9ad44203196184e0e5178292c0af4fa7"
+        },
+        {
+          "name": "DigimonWorldSoundAndMusic.part2.rar",
+          "sha256": "895273c48fec037e7d15600eba50f9afb10d2742911db48e4c17e71800ade3a4"
+        },
+        {
+          "name": "DigimonWorldSoundAndMusic.part3.rar",
+          "sha256": "6a68acf329fd522dc4bc4ddea8c3c602b397f6af54c9e790980fd0eb41c1b751"
+        },
+        {
+          "name": "DigimonWorldSoundAndMusic.part4.rar",
+          "sha256": "463a92383c37eab677d43aa3ab59c8fdb810fee00c9761376e36149e1ca22ecd"
+        },
+        {
+          "name": "DigimonWorldSoundAndMusic.part5.rar",
+          "sha256": "344f8842758db272dda6bc1bc1fb55e2a29954eab377e7c810a03f3a601da21d"
+        },
+        {
+          "name": "DigimonWorldSoundAndMusic.part6.rar",
+          "sha256": "d1882e6138612545a93a5a5971f118e8eb0d360937fc2b4c0c1adf4fd61c0f5b"
+        }
+      ],
+      "preview_accuracy": "Uses supplied approximate software mixes of original samples; no new synthesis. Source previews are not hardware-bit-exact.",
+      "assignment_note": "Region, battle and victory assignments are original Venom NXT choices; numeric source names do not identify official map music.",
+      "conversion": "Original sequence loop range, 2 ms click-prevention taper, RMS target -18 dBFS bounded by -2 dBFS source peak, stereo Ogg Vorbis quality 6. All outputs decoded and checked for clipping."
+    }
   }
 }

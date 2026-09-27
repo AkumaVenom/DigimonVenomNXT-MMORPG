@@ -12,7 +12,7 @@ import math
 
 import pygame
 
-from .widgets import BG, CYAN, GOLD, LINE, LIME, MUTED, WHITE, panel, text
+from .widgets import BG, CYAN, GOLD, LINE, LIME, MUTED, WHITE, panel, text, wrap
 
 
 def player_title(value):
@@ -121,6 +121,7 @@ class WorldRenderer:
         self._mini_surface = None
         self._facings = {}
         self._label_sizes = OrderedDict()
+        self._story_label_rects = []
 
     @property
     def zoom(self):
@@ -209,7 +210,7 @@ class WorldRenderer:
                 self._sprite_bytes -= old[2]
         return scaled
 
-    def _draw_actor(self, kind, world_pos, ident, moving, direction, label, bot_id=None, *, title='', frame=None):
+    def _draw_actor(self, kind, world_pos, ident, moving, direction, label, bot_id=None, *, title='', frame=None, story_npc=None):
         app = self.app
         if frame is None:
             scale, origin = self.camera.scale, self.camera.origin
@@ -241,6 +242,10 @@ class WorldRenderer:
                 destination = sprite.get_rect(midbottom=(round(pos.x), round(pos.y)))
             self._surface.blit(sprite, destination)
             top = destination.top
+        if story_npc is not None:
+            # Authored story tamers never route to the shared rival profile.
+            self._story_target(destination, story_npc)
+            title = self._story_role(story_npc)
         if bot_id is not None and hasattr(app, 'community'):
             # Hit areas use the same interpolated foot anchor and camera transform
             # as the rendered sprite, including at fractional DPI and map zoom.
@@ -268,7 +273,7 @@ class WorldRenderer:
             else:
                 self._label_sizes.move_to_end(key)
             width, height = dimensions
-            title = player_title(title) if kind == 'tamer' and bot_id is None else ''
+            title = self._story_role(story_npc) if story_npc is not None else player_title(title) if kind == 'tamer' and bot_id is None else ''
             title_height = app.assets.font(10, True).get_height() + 3 if title else 0
             title_width = app.assets.font(10, True).size(title)[0] if title else 0
             label_rect = pygame.Rect(0, 0, max(width, title_width) + 12, height + 6 + title_height)
@@ -279,7 +284,10 @@ class WorldRenderer:
             label_view = pygame.Rect(corner, (opposite[0]-corner[0], opposite[1]-corner[1])).inflate(-4, -4)
             label_rect.width = min(label_rect.width, label_view.width)
             label_rect.clamp_ip(label_view)
-            panel(app.screen, label_rect, BG, None, 4)
+            if self._story_view() is not None:
+                label_rect = self._place_story_label(label_rect)
+                self._story_leader(label_rect, (pos.x, top-2), self._story_color(story_npc) if story_npc else MUTED)
+            panel(app.screen, label_rect, BG, self._story_color(story_npc) if story_npc else None, 4)
             if title:
                 text(app.screen, app.assets, title,
                      (label_rect.centerx, label_rect.y+3+title_height//2), 10, GOLD, True,
@@ -288,9 +296,155 @@ class WorldRenderer:
             name_center = (label_rect.centerx, label_rect.y+3+title_height+height//2)
             text(app.screen, app.assets, label, name_center, 11,
                  CYAN if bot_id else WHITE, True, center=True)
+            if story_npc is not None:
+                self._story_target(self._physical_rect(label_rect), story_npc)
             if bot_id is not None and hasattr(app, 'community'):
                 app.ui.actions.append((label_rect.clip(app.screen.to_logical_rect(self.camera.viewport)),
                                        lambda ident=bot_id: app.community.open_profile(ident)))
+
+    def _story_view(self):
+        state = self.app.state
+        if (not state.get('in_story') or state.get('in_lab') or state.get('in_farm')
+                or state.get('admin_jail') or state.get('in_jail')):
+            return None
+        return (state.get('story') or {}).get('view') or {}
+
+    def _story_entries(self, key):
+        view = self._story_view()
+        if view is None:
+            return []
+        return [row for row in view.get(key, []) if isinstance(row, dict)
+                and row.get('id') and row.get('map_id', self.app.state.get('map_id')) == self.app.state.get('map_id')]
+
+    def _story_npcs(self):
+        return self._story_entries('npcs')
+
+    def _story_exits(self):
+        return self._story_entries('exits')
+
+    @staticmethod
+    def _story_color(npc):
+        status, role = npc.get('status', ''), npc.get('role', '')
+        return (MUTED if status in ('locked', 'unavailable') else LIME if status in ('complete', 'defeated', 'cleared')
+                else GOLD if role in ('warden', 'champion', 'challenger', 'final') else CYAN)
+
+    @staticmethod
+    def _story_role(npc):
+        status, role = npc.get('status', ''), npc.get('role', 'tamer')
+        label = {'trainer': 'STORY TAMER', 'tamer': 'STORY TAMER', 'warden': 'DIGIBADGE WARDEN',
+                 'champion': 'STORY CHAMPION', 'healer': 'PARTNER RECOVERY', 'guide': 'STORY GUIDE',
+                 'mentor': 'STORY MENTOR', 'shop': 'SUPPLIES', 'quest': 'STORY QUEST',
+                 'final': 'FINAL CONVERGENCE', 'lab': 'DIGILAB', 'farm': 'DIGIFARM'}.get(role, role.replace('_', ' ').upper())
+        if npc.get('display_species') and role == 'warden':
+            label = 'PARADOX GUARDIAN'
+        if npc.get('level') and role in ('trainer','warden','final'):
+            label += f" · Lv.{npc['level']}"
+        marker = 'CLEARED' if status in ('complete', 'defeated', 'cleared') else 'LOCKED' if status in ('locked', 'unavailable') else 'REPORT' if status=='turn_in' else '!'
+        return f'{marker}  ·  {label}'
+
+    def nearest_story_interaction(self):
+        """One proximity rule for the E shortcut and the native map prompt."""
+        view = self._story_view()
+        if view is None:
+            return None
+        choices = [(pygame.Vector2(row.get('x', 0), row.get('y', 0)).distance_to(self.app.position), kind, row)
+                   for kind, rows in (('npc', self._story_npcs()), ('exit', self._story_exits())) for row in rows]
+        choices.sort(key=lambda item: item[0])
+        return choices[0][1:] if choices and choices[0][0] <= view.get('talk_radius', 128) else None
+
+    def _nearby_story_npc(self):
+        nearby = self.nearest_story_interaction()
+        return nearby[1] if nearby and nearby[0] == 'npc' else None
+
+    def _story_target(self, destination, row, *, kind='npc'):
+        app = self.app
+        if not hasattr(app, 'story_screen'):
+            return
+        logical_rect = getattr(app.screen, 'to_logical_rect', pygame.Rect)
+        target = logical_rect(destination).inflate(10, 8).clip(logical_rect(self.camera.viewport))
+        if target.width and target.height:
+            callback = app.story_screen.exit if kind == 'exit' else app.story_screen.talk
+            app.ui.actions.append((target, lambda ident=row['id'], invoke=callback: invoke(ident)))
+
+    def _story_exit_requirement(self, gate):
+        if gate.get('unlocked'):
+            return 'OPEN PATH  ·  E NEARBY'
+        badge_id = gate.get('requires_badge')
+        badges = (self._story_view() or {}).get('badges', [])
+        badge = next((row.get('name', 'DigiBadge') for row in badges if row.get('id') == badge_id), 'Next DigiBadge')
+        return f'LOCKED  ·  {badge}'
+
+    def _reset_story_labels(self, view):
+        self._story_label_rects = []
+        if self._story_view() is not None:
+            # Keep world names away from opaque HUD panels as well as each other.
+            self._story_label_rects = [
+                pygame.Rect(view.x+14, view.y+14, min(430, view.width-186), 116),
+                pygame.Rect(view.right-153, view.y+15, 136, 88),
+                pygame.Rect(view.x+14, view.bottom-57, 266, 43),
+                pygame.Rect(view.right-203, view.bottom-51, 188, 36)]
+
+    def _place_story_label(self, preferred):
+        logical = getattr(self.app.screen, 'to_logical_rect', pygame.Rect)
+        bounds = logical(self.camera.viewport).inflate(-8, -8)
+        preferred = pygame.Rect(preferred)
+        preferred.clamp_ip(bounds)
+        candidates = []
+        for row in (0, -1, 1, -2, 2, -3, 3, -4, 4):
+            for column in (0, -1, 1, -2, 2):
+                dx, dy = column*(preferred.width+10), row*(preferred.height+9)
+                rect = preferred.move(dx, dy)
+                if bounds.contains(rect):
+                    candidates.append((dx*dx+dy*dy, rect))
+        candidates.sort(key=lambda item: item[0])
+        chosen = preferred
+        for _, rect in candidates:
+            if not any(rect.colliderect(other.inflate(8, 6)) for other in self._story_label_rects):
+                chosen = rect
+                break
+        self._story_label_rects.append(chosen)
+        return chosen
+
+    def _story_leader(self, label, anchor, color):
+        physical = self._physical_rect(label)
+        x = min(physical.right-5, max(physical.left+5, round(anchor[0])))
+        y = physical.bottom if anchor[1] >= physical.centery else physical.top
+        if pygame.Vector2(x, y).distance_to(anchor) > 16:
+            pygame.draw.line(self._surface, tuple(round(value*.6) for value in color),
+                             (x, y), (round(anchor[0]), round(anchor[1])),
+                             max(1, round(getattr(self.app.screen, 'scale', 1))))
+
+    def _draw_story_exits(self):
+        app, scale = self.app, self.camera.scale
+        for gate in self._story_exits():
+            point = self.camera.world_to_screen((gate.get('x', 0), gate.get('y', 0)))
+            if not self.camera.viewport.inflate(round(140*scale), round(140*scale)).collidepoint(point):
+                continue
+            color = CYAN if gate.get('unlocked') else MUTED
+            radius = max(8, round(24*scale))
+            ring = pygame.Rect(0, 0, radius*2, max(6, round(radius*.7)))
+            ring.center = (round(point.x), round(point.y))
+            pygame.draw.ellipse(self._surface, BG, ring)
+            pygame.draw.ellipse(self._surface, color, ring, max(1, round(scale)))
+            for step in (-1, 1):
+                y = point.y+step*5*scale
+                pygame.draw.lines(self._surface, color, False,
+                                  [(round(point.x-8*scale), round(y+3*scale)), (round(point.x), round(y-2*scale)),
+                                   (round(point.x+8*scale), round(y+3*scale))], max(1, round(2*scale)))
+            logical = self._logical_point((point.x, point.y-radius-8))
+            viewport = getattr(app.screen, 'to_logical_rect', pygame.Rect)(self.camera.viewport).inflate(-8, -8)
+            label = pygame.Rect(0, 0, min(202, viewport.width), 40)
+            label.midbottom = (round(logical[0]), round(logical[1]))
+            label.clamp_ip(viewport)
+            label = self._place_story_label(label)
+            self._story_leader(label, point, color)
+            panel(app.screen, label, BG, color, 5)
+            text(app.screen, app.assets, gate.get('name', 'Story path'), (label.centerx, label.y+12),
+                 11, WHITE, True, label.width-12, center=True)
+            text(app.screen, app.assets, self._story_exit_requirement(gate), (label.centerx, label.y+28),
+                 9, color, True, label.width-12, center=True)
+            self._story_target(ring.inflate(10, 10), gate, kind='exit')
+            self._story_target(self._physical_rect(label), gate, kind='exit')
 
     def _actors(self):
         app, actors = self.app, []
@@ -300,6 +454,12 @@ class WorldRenderer:
             actors.append((app.follower.y, 'digimon', app.follower, party[0]['species_id'], app.moving, app.direction, '', '', None))
         actors.append((app.position.y, 'tamer', app.position, app.state.get('tamer', app.tamer),
                        app.moving, app.direction, app.state.get('username', ''), player_title(app.state.get('active_title')), None))
+        if app.state.get('in_story'):
+            for npc in self._story_npcs():
+                pos = pygame.Vector2(npc.get('x', 0), npc.get('y', 0))
+                actors.append((pos.y, 'story_npc', pos, npc.get('display_species') or npc.get('tamer_id', npc.get('tamer')),
+                               False, npc.get('direction', 'down'), npc.get('name', 'Story tamer'), '', npc))
+            return sorted(actors, key=lambda actor: actor[0])
         for name, player in app.players.items():
             if name == app.state.get('username') or player.get('map_id') != app.state.get('map_id'):
                 continue
@@ -327,6 +487,7 @@ class WorldRenderer:
     def draw(self, view):
         app = self.app
         view = pygame.Rect(view)
+        self._reset_story_labels(view)
         panel(app.screen, view, (12, 23, 31), LINE, 12)
         map_id = app.state.get('map_id')
         entry = app.assets.maps.get(map_id, {})
@@ -346,10 +507,13 @@ class WorldRenderer:
                 frame = (scale, self.camera.origin,
                          self.camera.viewport.inflate(round(180 * scale), round(180 * scale)))
                 for _, kind, position, ident, moving, direction, label, title, bot_id in self._actors():
-                    self._draw_actor(kind, position, ident, moving, direction, label, bot_id, title=title, frame=frame)
+                    npc = bot_id if kind == 'story_npc' else None
+                    self._draw_actor(('digimon' if npc.get('display_species') else 'tamer') if npc else kind, position, ident, moving, direction, label,
+                                     None if npc else bot_id, title=title, frame=frame, story_npc=npc)
                 foreground = app.assets.image(entry.get('foreground'))
                 if foreground:
                     self._draw_layer(foreground, 'foreground')
+                self._draw_story_exits()
             finally:
                 self._surface.set_clip(old_clip)
         else:
@@ -358,12 +522,27 @@ class WorldRenderer:
 
     def _draw_hud(self, entry, view):
         app = self.app
-        hud = pygame.Rect(view.x + 14, view.y + 14, min(390, view.width - 186), 70)
+        story = self._story_view()
+        hud = pygame.Rect(view.x + 14, view.y + 14, min(430 if story is not None else 390, view.width - 186),
+                          116 if story is not None else 70)
         panel(app.screen, hud, (9, 19, 31), LINE, 9)
-        text(app.screen, app.assets, entry.get('name', 'Digital World'), (hud.x + 13, hud.y + 11),
-             19, WHITE, True, hud.width - 26)
-        text(app.screen, app.assets, 'WASD / arrows  ·  Mouse wheel to zoom', (hud.x + 13, hud.y + 42),
-             12, CYAN, max_width=hud.width - 26)
+        text(app.screen, app.assets, (story.get('map_name') if story is not None else None) or entry.get('name', 'Digital World'),
+             (hud.x + 13, hud.y + 11), 19, WHITE, True, hud.width - 26)
+        if story is not None:
+            subtitle = (f"WORLD DS  ·  {story.get('badge_count',0)} / {story.get('badge_total',17)} PARADOX CRESTS"
+                        if story.get('campaign_id') == 'world_ds_paradox' else story.get('chapter_name', 'STORY MODE'))
+            text(app.screen, app.assets, subtitle, (hud.x+13, hud.y+39),
+                 11, GOLD, True, hud.width-26)
+            # Preparation guidance remains in the full journal/feed. Keep this
+            # compact map overlay focused on the actionable quest objective.
+            objective = story.get('objective', 'Speak with the tamers in this area.').split(' Field training and free recovery',1)[0]
+            wrap(app.screen, app.assets, objective,
+                 (hud.x+13, hud.y+60), hud.width-26, 12, WHITE, max_lines=2)
+            text(app.screen, app.assets, 'WASD / arrows to explore  ·  E to interact', (hud.x+13, hud.bottom-17),
+                 10, CYAN, max_width=hud.width-26)
+        else:
+            text(app.screen, app.assets, 'WASD / arrows  ·  Mouse wheel to zoom', (hud.x + 13, hud.y + 42),
+                 12, CYAN, max_width=hud.width - 26)
         self._draw_minimap(entry, pygame.Rect(view.right - 153, view.y + 15, 136, 88))
         controls = pygame.Rect(view.x + 14, view.bottom - 57, 266, 43)
         panel(app.screen, controls, (9, 19, 31), LINE, 9)
@@ -374,8 +553,18 @@ class WorldRenderer:
         text(app.screen, app.assets, label, (controls.x + 86, controls.centery), 15, WHITE, True, center=True)
         app.ui.button((controls.x + 133, controls.y + 5, 33, 33), '+', lambda: change_zoom(.5), disabled=self.zoom >= 8)
         app.ui.button((controls.x + 177, controls.y + 5, 83, 33), 'Fit level', lambda: set_zoom(1), small=True, selected=self.zoom <= 1)
-        app.ui.button((view.right - 187, view.bottom - 51, 172, 36), 'Search for Digimon  E',
-                      lambda: app.send('encounter'), small=True, disabled=app.action_pending or bool(app.state.get('admin_jail')))
+        if story is not None:
+            nearby = self.nearest_story_interaction()
+            label = ('Take path  E' if nearby[1].get('unlocked') else 'Locked path  E') if nearby and nearby[0] == 'exit' else 'Talk nearby  E' if nearby else 'Approach a marker'
+            def interact():
+                if nearby:
+                    callback = app.story_screen.exit if nearby[0] == 'exit' else app.story_screen.talk
+                    callback(nearby[1]['id'])
+            app.ui.button((view.right-203, view.bottom-51, 188, 36), label, interact,
+                          small=True, disabled=app.action_pending or nearby is None, accent=GOLD)
+        else:
+            app.ui.button((view.right - 187, view.bottom - 51, 172, 36), 'Search for Digimon  E',
+                          lambda: app.send('encounter'), small=True, disabled=app.action_pending or bool(app.state.get('admin_jail')))
 
     def _draw_minimap(self, entry, rect):
         surface = self.app.assets.map(self.app.state.get('map_id'))
@@ -396,6 +585,16 @@ class WorldRenderer:
             visible = pygame.Rect(round(destination.x + crop.x * factor), round(destination.y + crop.y * factor),
                                   max(1, round(crop.width * factor)), max(1, round(crop.height * factor)))
             pygame.draw.rect(self._surface, CYAN, visible, max(1, round(getattr(self.app.screen, 'scale', 1))))
+        for npc in self._story_npcs():
+            marker = (round(destination.x+npc.get('x', 0)*factor), round(destination.y+npc.get('y', 0)*factor))
+            radius = max(2, round(3*getattr(self.app.screen, 'scale', 1)))
+            pygame.draw.circle(self._surface, BG, marker, radius+1)
+            pygame.draw.circle(self._surface, self._story_color(npc), marker, radius)
+        for gate in self._story_exits():
+            marker = pygame.Rect(0, 0, max(4, round(6*getattr(self.app.screen, 'scale', 1))), max(4, round(6*getattr(self.app.screen, 'scale', 1))))
+            marker.center = (round(destination.x+gate.get('x', 0)*factor), round(destination.y+gate.get('y', 0)*factor))
+            pygame.draw.rect(self._surface, BG, marker.inflate(2, 2))
+            pygame.draw.rect(self._surface, CYAN if gate.get('unlocked') else MUTED, marker, 1 if not gate.get('unlocked') else 0)
         position = (round(destination.x + self.app.position.x * factor),
                     round(destination.y + self.app.position.y * factor))
         ui_scale = getattr(self.app.screen, 'scale', 1)

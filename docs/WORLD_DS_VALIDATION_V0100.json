@@ -1,0 +1,249 @@
+{
+  "release": "0.10.0",
+  "feature": "Digimon World DS shared MMO region",
+  "baseline": {
+    "version": "0.9.0",
+    "commit": "53906cd3feb50280322dcc30db52da5bcade8c11",
+    "source_zip_sha256": "daf43cdd94deaf6c24e50ba780a2d14a1eef5dbf7e107e6ca353d86d26570764"
+  },
+  "regression": {
+    "passed": 664,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 10,
+    "duration_seconds": 157.231,
+    "command": "python3 -m pytest --junitxml=world_ds_full_tests_final.xml",
+    "evidence": "world_ds_validation/world_ds_full_tests_final.xml",
+    "world_ds_test_cases": {
+      "tests.test_world_ds_acceptance": 6,
+      "tests.test_world_ds_acceptance.WorldDSProtocolAcceptance": 1,
+      "tests.test_world_ds_audio.WorldDSAudioRoutingTests": 7,
+      "tests.test_world_ds_audio.WorldDSRecordingTests": 1,
+      "tests.test_world_ds_bots": 7,
+      "tests.test_world_ds_client.WorldDSClientTests": 6,
+      "tests.test_world_ds_engine": 6,
+      "tests.test_world_ds_maps": 6,
+      "tests.test_world_ds_merge": 2,
+      "tests.test_world_ds_replication.SnapshotScopeTests": 1,
+      "tests.test_world_ds_replication.WorldDSReplicationTests": 4
+    },
+    "skip_reasons": [
+      "Requires a graphical desktop / Xvfb",
+      "Set VENOM_TEST_MYSQL_RUNTIME for opt-in Linux/MySQL validation"
+    ]
+  },
+  "assets": {
+    "verified_records": 21806,
+    "evidence": "world_ds_validation/world_ds_asset_validation_final.log",
+    "source_map_groups": 204,
+    "source_map_files": 1228,
+    "playable_new_maps": 150,
+    "original_dawn_maps": 254,
+    "total_playable_maps": 404,
+    "authored_zones": 21,
+    "wild_level_min": 1,
+    "wild_level_max": 99,
+    "geometry": "Original art dimensions and source collision geometry retained; every base-layer byte hash matches the supplied original.",
+    "arrivals_per_map_verified": 20,
+    "minimum_arrival_separation_pixels": 20.095,
+    "complete_new_music_tracks": 28,
+    "original_dawn_music_tracks": 46,
+    "original_effects_retained": 183,
+    "characters_archive_imported": false,
+    "provenance": [
+      "data/source_assets.json",
+      "data/world_ds_maps.json",
+      "data/world_ds_audio.json"
+    ]
+  },
+  "replication": {
+    "transport": "Actual local WebSocket server and clients plus client packet-consumer checks",
+    "covered": [
+      "Two human players move within the same DS map using authoritative collision",
+      "DS-to-DS and DS-to-Dawn transfers remove old presence",
+      "Reconnect restores DS location and shared presence",
+      "Shared bot roaming, battle presence and map travel",
+      "A deliberately delayed old-map world frame is rejected after confirmed travel",
+      "Monotonic snapshot sequence and scene scope reject obsolete frames",
+      "Private Story, Season and DigiFarm scope remain isolated"
+    ],
+    "stationary_facing": "Direction is inferred from movement; no new independent stationary-facing channel."
+  },
+  "progression_and_saves": [
+    "Live wild battle commands, rewards, scan capture and materialization use the owned party",
+    "SQLite close/reopen and actual server reconnect preserve DS progress including active battle state",
+    "Existing 5,000 saved rival identities, teams, credits, items and records survive expansion and restart",
+    "Mature saved rivals cover all 404 maps through normal relocation; weaker rosters earn access through training",
+    "Level 98-to-99 partner progression verified through real wild-battle XP",
+    "Dawn encounter pools and original tamer definitions remain unchanged",
+    "DigiFarm, DigiLab, Story and Season return to the saved DS field"
+  ],
+  "visual_review": {
+    "fixture": "Offline native client QA; actual imported maps, isolated synthetic player state.",
+    "captures": [
+      {
+        "file": "world_ds_atlas_960x600.png",
+        "pixels": [
+          960,
+          600
+        ],
+        "ui_scale": 0.75,
+        "actions": 31,
+        "fields": [
+          "world_search"
+        ],
+        "actions_outside_display": []
+      },
+      {
+        "file": "world_ds_endgame_960x600.png",
+        "pixels": [
+          960,
+          600
+        ],
+        "ui_scale": 0.75,
+        "actions": 31,
+        "fields": [
+          "world_search"
+        ],
+        "actions_outside_display": []
+      },
+      {
+        "file": "world_ds_current_map_960x600.png",
+        "pixels": [
+          960,
+          600
+        ],
+        "ui_scale": 0.75,
+        "actions": 31,
+        "fields": [
+          "world_search"
+        ],
+        "actions_outside_display": []
+      },
+      {
+        "file": "world_ds_field_960x600.png",
+        "pixels": [
+          960,
+          600
+        ],
+        "ui_scale": 0.75,
+        "actions": 26,
+        "fields": [
+          "chat"
+        ],
+        "actions_outside_display": []
+      },
+      {
+        "file": "world_ds_atlas_1280x800.png",
+        "pixels": [
+          1280,
+          800
+        ],
+        "ui_scale": 1.0,
+        "actions": 31,
+        "fields": [
+          "world_search"
+        ],
+        "actions_outside_display": []
+      },
+      {
+        "file": "world_ds_endgame_1280x800.png",
+        "pixels": [
+          1280,
+          800
+        ],
+        "ui_scale": 1.0,
+        "actions": 31,
+        "fields": [
+          "world_search"
+        ],
+        "actions_outside_display": []
+      },
+      {
+        "file": "world_ds_current_map_1280x800.png",
+        "pixels": [
+          1280,
+          800
+        ],
+        "ui_scale": 1.0,
+        "actions": 31,
+        "fields": [
+          "world_search"
+        ],
+        "actions_outside_display": []
+      },
+      {
+        "file": "world_ds_field_1280x800.png",
+        "pixels": [
+          1280,
+          800
+        ],
+        "ui_scale": 1.0,
+        "actions": 26,
+        "fields": [
+          "chat"
+        ],
+        "actions_outside_display": []
+      },
+      {
+        "file": "world_ds_atlas_1920x1080.png",
+        "pixels": [
+          1920,
+          1080
+        ],
+        "ui_scale": 1.25,
+        "actions": 31,
+        "fields": [
+          "world_search"
+        ],
+        "actions_outside_display": []
+      },
+      {
+        "file": "world_ds_endgame_1920x1080.png",
+        "pixels": [
+          1920,
+          1080
+        ],
+        "ui_scale": 1.25,
+        "actions": 31,
+        "fields": [
+          "world_search"
+        ],
+        "actions_outside_display": []
+      },
+      {
+        "file": "world_ds_current_map_1920x1080.png",
+        "pixels": [
+          1920,
+          1080
+        ],
+        "ui_scale": 1.25,
+        "actions": 31,
+        "fields": [
+          "world_search"
+        ],
+        "actions_outside_display": []
+      },
+      {
+        "file": "world_ds_field_1920x1080.png",
+        "pixels": [
+          1920,
+          1080
+        ],
+        "ui_scale": 1.25,
+        "actions": 26,
+        "fields": [
+          "chat"
+        ],
+        "actions_outside_display": []
+      }
+    ]
+  },
+  "limitations": [
+    "Windows client and server executables were not built in this Linux environment.",
+    "A live external MySQL instance was not exercised; its opt-in test was skipped.",
+    "Nine graphical setup-wizard tests require a desktop/Xvfb and were skipped.",
+    "Native client screenshots use isolated synthetic state, not a live Windows client.",
+    "Automated socket tests are local; WAN latency and intended-host performance need a deployment smoke test."
+  ]
+}

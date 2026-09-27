@@ -263,7 +263,7 @@ class AdminConsole:
 
     async def _refresh_profile(self, saved, key):
         community = self.world.community
-        if community and community.ready and not saved.get('in_season') and not saved.get('admin_jail'):
+        if community and community.ready and self.world.shared_profile(saved):
             try:
                 def refresh():
                     with community.lock:
@@ -302,8 +302,8 @@ class AdminConsole:
         state, revision, online = await self._read(username)
         if name == 'deleteaccount' and online:
             raise ValueError('Account deletion requires the player offline. Kick them, wait for their save, then retry.')
-        if name == 'clearinventory' and (state.get('battle') or state.get('in_season') or state.get('admin_jail')):
-            raise ValueError('Finish the battle and leave Season Mode or detention before clearing inventory.')
+        if name == 'clearinventory' and (state.get('battle') or state.get('in_season') or state.get('in_story') or state.get('admin_jail')):
+            raise ValueError('Finish the battle and leave Story Mode, Season Mode or detention before clearing inventory.')
         now = time.monotonic()
         self.pending = {k:v for k,v in self.pending.items() if v['expires'] > now}
         if len(self.pending) >= 32:

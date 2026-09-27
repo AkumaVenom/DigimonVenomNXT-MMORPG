@@ -1,0 +1,101 @@
+{
+  "release": "Digimon Venom NXT v0.9.0 \u2014 Dawn Relay Story Mode",
+  "baseline": "v0.8.0 Local Admin Console full source",
+  "baseline_archive_sha256": "29df4fcf6a5fd57d2567191df8835c187fdc7267552d6f787911ebe91ccc22d5",
+  "validation_date_utc": "2026-09-26T18:37:39.926038+00:00",
+  "environment": {
+    "system": "Linux",
+    "python": "3.12.14",
+    "SDL_VIDEODRIVER": "dummy",
+    "SDL_AUDIODRIVER": "dummy"
+  },
+  "full_regression": {
+    "command": "SDL_VIDEODRIVER=dummy SDL_AUDIODRIVER=dummy python3 -m pytest -q",
+    "passed": 616,
+    "skipped": 10,
+    "failed": 0,
+    "duration_seconds": 100.17,
+    "evidence": "story_validation/story_full_tests.xml"
+  },
+  "skip_reasons": {
+    "portable_mysql_live": 1,
+    "setup_wizard_requires_graphical_desktop": 9
+  },
+  "story_test_cases": {
+    "engine": 12,
+    "content": 6,
+    "websocket_protocol": 6,
+    "acceptance": 8,
+    "client_ui": 11,
+    "map_audio": 12
+  },
+  "final_targeted_recheck": {
+    "passed": 30,
+    "failed": 0,
+    "duration_seconds": 9.77,
+    "scope": "Acceptance, Story UI and map/audio tests after visual polish; final small label adjustment recorded separately.",
+    "evidence": "story_validation/story_final_checks.xml"
+  },
+  "assets": {
+    "verified_sha256_records": 21360,
+    "size_mib_rounded": 506.3,
+    "modified_assets": 0,
+    "evidence": "story_validation/asset_validation_v090.log"
+  },
+  "content": {
+    "regions": 9,
+    "maps": 18,
+    "placed_npcs": 54,
+    "npc_sprite_identities": 27,
+    "battle_species": 67,
+    "digibadges": 8,
+    "first_campaign_tamer_battles": 27,
+    "repeatable_championship_challengers": 6,
+    "maximum_opponent_level": 100,
+    "owned_partner_level_cap": 99
+  },
+  "acceptance_coverage": [
+    "All 78 starter species can clear the opening directly or after limited live-command training.",
+    "Three complete campaigns use normal attack/skill/item commands through all eight badges and championship, then defense, intentional loss and reclaim.",
+    "Existing high-level parties keep their identities, strength, items, credits, and progress across entry and return.",
+    "Normal evolution to level 1 followed by free recovery and training can continue the journey.",
+    "NPC battle flee, stale turns, stale dialogue tokens, locked trials and remote/locked map gates are rejected.",
+    "WebSocket tests cover private actors and chat, no shared rival publication, failed-save isolation, restart, and legacy detention recovery.",
+    "DigiLab, DigiFarm and normal inventory operations remain available; early story rewards and companion awards persist on the ordinary character."
+  ],
+  "visual_review": {
+    "renderer": "Native pygame/SDL with shipped assets, headless surface capture",
+    "sizes": [
+      "960x600",
+      "1280x800",
+      "1920x1080",
+      "3840x2160"
+    ],
+    "surfaces": [
+      "Field, NPC sprites and map gates",
+      "Paged dialogue and portrait",
+      "Journey and services",
+      "Region atlas",
+      "Eight earned badge glyphs",
+      "Championship record and defense streaks",
+      "Actual battle-command reward summaries",
+      "Live champion battle command layout",
+      "Narrow-map NPC/gate label separation with connector lines"
+    ],
+    "reproduction_script": "Provided in the separate Native Previews archive.",
+    "note": "Preview capture uses isolated engine-created saves; it is not a live Windows session or a replacement game client."
+  },
+  "limits": [
+    "Windows client/server executables were not built or run in this Linux environment. Rebuild both with BUILD_ALL.bat on Windows x64.",
+    "The optional live MySQL test and graphical setup-wizard tests were skipped; WebSocket persistence checks use the existing SQLite development path.",
+    "Audio routing and file integrity were checked; no target-speaker listening acceptance or performance/load certification is claimed.",
+    "Recent Story result cards retain 30 entries; cumulative stats, badges and championship progress persist without a designed ending."
+  ],
+  "final_polish_recheck": {
+    "passed": 40,
+    "failed": 0,
+    "duration_seconds": 10.102,
+    "scope": "Story acceptance, UI, map/audio and world performance after final label placement and dialogue Settings shortcut.",
+    "evidence": "story_validation/story_final_polish.xml"
+  }
+}

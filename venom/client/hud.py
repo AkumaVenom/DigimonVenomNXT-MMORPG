@@ -17,15 +17,16 @@ class GameHUD:
         w = screen.get_width()
         accent = art.colors('party')['accent']
         season = bool(app.state.get('in_season'))
+        story = bool(app.state.get('in_story'))
         jailed = bool(app.state.get('admin_jail'))
         draw.rect(screen, (9, 20, 34), (0, 0, w, 92))
         draw.line(screen, (31, 61, 77), (0, 75), (w, 75))
         draw.line(screen, CYAN, (22, 75), (179, 75), 2)
         app.ui.button((22, 18, 156, 37), 'Home · DigiFarm', app.enter_farm,
                       selected=bool(app.state.get('in_farm')) and not app.menu,
-                      small=True, accent=LIME, disabled=app.action_pending or season or jailed)
-        text(screen, app.assets, 'VENOM NXT / v0.8.0', (25, 3), 9, MUTED, True)
-        tabs = [('dex', 'DigiDex'), ('party', 'Partners'), ('shop', 'Shop'), ('maps', 'Worlds')]
+                      small=True, accent=LIME, disabled=app.action_pending or season or jailed or story and bool(app.state.get('battle')))
+        text(screen, app.assets, 'VENOM NXT / v0.12.0', (25, 3), 9, MUTED, True)
+        tabs = [('dex', 'DigiDex'), ('party', 'Partners'), ('shop', 'Shop'), ('maps', 'Story atlas' if story else 'Worlds')]
         battle = bool(app.state.get('battle'))
         for i, (key, label) in enumerate(tabs):
             app.ui.button((210+i*101, 18, 96, 37), label, lambda k=key:app.set_menu(k),
@@ -46,13 +47,16 @@ class GameHUD:
             app.ui.button((22+i*148, 65, 138, 23), label,
                           lambda value=key:app.community.open(value), small=True,
                           selected=app.menu=='community' and app.community.tab==key,
-                          accent=art.colors(key)['accent'], disabled=battle or season or jailed)
+                          accent=art.colors(key)['accent'], disabled=battle or season or story or jailed)
         app.ui.button((466, 65, 187, 23), 'Return to World  F3' if season else 'Season Mode  F3',
                       app.season_screen.toggle, small=True, selected=season, accent=(105, 229, 255),
-                      disabled=app.action_pending or battle or jailed)
-        app.ui.button((665, 65, 145, 23), f'Server notices  {len(app.server_notices)}',
+                      disabled=app.action_pending or battle or story or jailed)
+        app.ui.button((665, 65, 187, 23), 'Return to MMO  F4' if story else 'Story Mode  F4',
+                      app.story_screen.toggle, small=True, selected=story, accent=(115, 230, 224),
+                      disabled=app.action_pending or battle or season or jailed)
+        app.ui.button((864, 65, 151, 23), f'Server notices  {len(app.server_notices)}',
                       app.toggle_notices, small=True, accent=CYAN, selected=app.notice_history_open)
-        text(screen, app.assets, 'LINK  /  '+('DETAINED' if jailed else 'SOLO SEASON' if season else 'DIGIFARM' if app.state.get('in_farm') else 'DIGILAB' if app.state.get('in_lab') else 'BATTLE' if battle else 'FIELD'),
+        text(screen, app.assets, 'LINK  /  '+('DETAINED' if jailed else 'SOLO SEASON' if season else 'STORY MODE' if story else 'DIGIFARM' if app.state.get('in_farm') else 'DIGILAB' if app.state.get('in_lab') else 'BATTLE' if battle else 'FIELD'),
              (w-223, 71), 9, accent, True)
 
     def party(self, rect):
@@ -90,12 +94,13 @@ class GameHUD:
         app, rect = self.app, pygame.Rect(rect)
         app.presentation.card(rect, 'activity')
         season = bool(app.state.get('in_season'))
+        story = bool(app.state.get('in_story'))
         jailed = bool(app.state.get('admin_jail'))
-        text(app.screen,app.assets,'PRIVATE CELL FREQUENCY' if jailed else 'SEASON MATCH LOG' if season else 'WORLD FREQUENCY',(rect.x+15,rect.y+9),10,CYAN,True)
+        text(app.screen,app.assets,'PRIVATE CELL FREQUENCY' if jailed else 'STORY BATTLE LOG' if story else 'SEASON MATCH LOG' if season else 'WORLD FREQUENCY',(rect.x+15,rect.y+9),10,CYAN,True)
         for i,(message,color) in enumerate(app.logs[-3:]):
             text(app.screen,app.assets,message,(rect.x+15,rect.y+30+i*20),12,color,max_width=rect.width-30)
-        if season and not jailed:
-            text(app.screen, app.assets, 'Your commands are live. Exit safely saves this match for later.',
+        if (season or story) and not jailed:
+            text(app.screen, app.assets, 'Your commands are live. Exit safely saves this battle for later.',
                  (rect.x+15, rect.bottom-25), 11, MUTED, max_width=rect.width-30)
             return
         app.ui.field((rect.x+12,rect.bottom-35,rect.width-89,27),'chat','Message your private cell…' if jailed else 'Enter to chat with your world…',size=13)

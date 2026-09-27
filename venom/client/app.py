@@ -27,6 +27,8 @@ from .entry_screen import EntryScreen
 from .hud import GameHUD
 from .digifarm import DigiFarmScreen
 from .season import SeasonScreen
+from .story import StoryScreen
+from venom.common.replication import snapshot_matches, world_scope
 
 
 class App:
@@ -100,6 +102,7 @@ class App:
         self.hud = GameHUD(self)
         self.farm_screen = DigiFarmScreen(self)
         self.season_screen = SeasonScreen(self)
+        self.story_screen = StoryScreen(self)
         self.presentation_notice = None
         if args.demo:
             self.make_demo()
@@ -107,6 +110,7 @@ class App:
             self.connect()
 
     def connect(self):
+        self.server_features = None
         if self.connection:
             self.connection.close()
         path = Path(self.args.config) if self.args.config else self.root/'config/client.json'
@@ -147,6 +151,12 @@ class App:
         if self.in_jail() and op not in ('chat', 'ping'):
             self.toast('Activities are paused while you are detained. See the release status above.', GOLD)
             return
+        features = getattr(self, 'server_features', None)
+        if (op == 'story' and payload.get('action') == 'enter'
+                and payload.get('campaign_id') == 'world_ds_paradox'
+                and features is not None and 'world_ds_story' not in features):
+            self.toast('This server needs the v0.11.0 story update. Update both the server and client to play Paradox Chronicle.', GOLD)
+            return
         battle = (self.state or {}).get('battle') or {}
         in_season = bool((self.state or {}).get('in_season'))
         # Native navigation cannot silently leave a private booking. The server
@@ -154,9 +164,15 @@ class App:
         if in_season and op in ('travel', 'digifarm', 'digilab', 'community', 'encounter'):
             self.toast('Use Save & Return to World before entering another activity.')
             return
-        if op == 'battle' and (battle.get('season') or battle.get('kind') == 'season'):
-            if payload.get('action') == 'flee':
-                self.toast('Fleeing is disabled in Season matches.', GOLD)
+        if (self.state or {}).get('in_story') and battle and op in ('digifarm', 'digilab'):
+            self.toast('Complete this Story battle before visiting your farm or DigiLab.')
+            return
+        if (self.state or {}).get('in_story') and op in ('travel', 'season', 'community', 'encounter'):
+            self.toast('Use the Story atlas to travel, or save and return to the MMO for other activities.')
+            return
+        if op == 'battle' and (battle.get('season') or battle.get('kind') in ('season', 'story')):
+            if payload.get('action') == 'flee' and not battle.get('story_training'):
+                self.toast('Fleeing is disabled in this tamer battle.', GOLD)
                 return
             payload['battle_id'] = battle.get('id')
             payload['expected_turn'] = battle.get('turn')
@@ -199,7 +215,7 @@ class App:
         self.requests[rid] = op
         if op == 'move':
             self._motion.track(rid, payload)
-        elif op in ('travel', 'digilab', 'digifarm', 'season'):
+        elif op in ('travel', 'digilab', 'digifarm', 'season', 'story'):
             self._motion.transition_pending = rid
         # Movement does not require a pending state; authoritative updates arrive asynchronously.
         if op in ('login', 'register'):
@@ -261,7 +277,10 @@ class App:
                 break
             op = message.get('op')
             if op == 'connected':
+                self._last_world_sequence = 0
                 self.status = 'Server connected. Sign in or create your tamer.'
+            elif op == 'hello':
+                self.server_features = set(message.get('features') or [])
             elif op == 'error':
                 self.status = message.get('error', 'Connection error')
                 self.auth_pending = self.action_pending = False
@@ -273,6 +292,13 @@ class App:
             elif op == 'chat':
                 self.log(f"{message.get('username', 'World')}: {message.get('text', '')}", CYAN)
             elif op == 'world':
+                if not snapshot_matches(self.state, message):
+                    continue
+                sequence = message.get('sequence')
+                if isinstance(sequence, int):
+                    if sequence <= getattr(self, '_last_world_sequence', 0):
+                        continue
+                    self._last_world_sequence = sequence
                 self.players = {p['username']: p for p in message.get('players', []) if 'username' in p}
                 self._remote_motion.push(self.now, self.players)
                 self.last_snapshot = self.now
@@ -296,6 +322,17 @@ class App:
                     if request not in ('move', 'ping'):
                         self.audio.cue('error', now=self.now)
                     continue
+                # Ranked reads refresh the SQL wallet without replacing the
+                # character or replaying old battle/reward events.
+                if self.state:
+                    wallet = message.get('wallet')
+                    if isinstance(wallet, dict):
+                        balance = wallet.get('digirubies')
+                        if isinstance(balance, int) and not isinstance(balance, bool) and balance >= 0:
+                            self.state['digirubies'] = balance
+                    economy = message.get('economy')
+                    if isinstance(economy, dict):
+                        self.state['economy'] = dict(economy)
                 if message.get('community'):
                     self.community.receive(message['community'], rid)
                 if 'season_history' in message:
@@ -324,6 +361,10 @@ class App:
                     old_battle = self.state.get('battle') if self.state else None
                     old_map = self.state.get('map_id') if self.state else None
                     self.state = state
+                    if world_scope(previous_state or {}) != world_scope(state):
+                        self.players.clear()
+                        self.player_render.clear()
+                        self._remote_motion.samples.clear()
                     jail_changed = bool((previous_state or {}).get('admin_jail')) != self.in_jail()
                     if self.in_jail():
                         self.menu = None
@@ -336,8 +377,9 @@ class App:
                         if self.ui.focus != 'chat':
                             self.ui.focus = None
                     desired = pygame.Vector2(self.active_position(state))
-                    scene_changed = bool((previous_state or {}).get('in_farm')) != bool(state.get('in_farm'))
-                    teleport = request in ('register', 'login', 'travel', 'digilab') or rid == 0 or jail_changed or scene_changed or old_map != state.get('map_id')
+                    scene_changed = (bool((previous_state or {}).get('in_farm')) != bool(state.get('in_farm'))
+                                     or bool((previous_state or {}).get('in_story')) != bool(state.get('in_story')))
+                    teleport = request in ('register', 'login', 'travel', 'digilab', 'story') or rid == 0 or jail_changed or scene_changed or old_map != state.get('map_id')
                     entry, mask = self.movement_context(state)
                     self.position.update(self._motion.reconcile(rid, desired, entry, mask,
                         reset=teleport or bool(state.get('battle') or state.get('in_lab'))))
@@ -356,6 +398,10 @@ class App:
                     if old_battle and not state.get('battle') and not self.in_jail():
                         self.battle_old = old_battle
                         self.battle_until = self.now+max(1.2, len(self.animations)*.5)
+                        if (old_battle.get('kind') not in ('season', 'story')
+                                and not any((previous_state or {}).get(key) for key in ('in_lab', 'in_farm', 'in_story', 'in_season'))
+                                and any(event.get('kind') == 'win' for event in state.get('events', []))):
+                            self.audio.world_ds_victory(old_map, now=self.now)
                     if request == 'digilab':
                         self.menu = 'lab' if state.get('in_lab') else None
                     if request == 'digifarm':
@@ -367,6 +413,7 @@ class App:
                         else:
                             self.menu = None
                     self.season_screen.confirmed(previous_state, state)
+                    self.story_screen.confirmed(previous_state, state)
                     if request == 'travel':
                         self.menu = None
                     if state.get('battle'):
@@ -419,10 +466,18 @@ class App:
         if self.state and self.state.get('battle'):
             self.toast('Finish the current battle first.')
             return
+        if (self.state or {}).get('in_story') and menu in ('maps', 'community'):
+            menu = 'story'
+            self.story_screen.tab = 'atlas'
+        if self.story_screen.modal:
+            self.toast('Finish this conversation first.')
+            return
         self.farm_screen.manager_open = False
         self.partner_screen.pending_exchange = None
         self.menu = None if self.menu == menu else menu
         self.scroll = 0
+        if self.menu == 'maps':
+            self.world_screen.on_open()
         self.detail_species = None
         self.ui.values['search'] = ''
         self.ui.focus = None
@@ -469,6 +524,9 @@ class App:
             return
         if not self.state or self.action_pending:
             return
+        if self.state.get('in_story') and self.state.get('battle'):
+            self.toast('Complete this Story battle before visiting DigiFarm.')
+            return
         if self.settings_open:
             self.toggle_settings()
         self.farm_screen.manager_open = False
@@ -494,6 +552,7 @@ class App:
         self.community.reset()
         self.farm_screen.reset()
         self.season_screen.reset()
+        self.story_screen.reset()
         self.partner_screen.pending_exchange = None
         self.ui.values['password'] = ''
         self.connect()
@@ -536,7 +595,11 @@ class App:
             screen_scene = 'settings' 
         self.audio.music(bool(self.state.get('battle') or self.community.visible and self.community.replay),
                          self.state.get('map_id'), self.state.get('in_lab', False),
-                         screen=screen_scene, now=self.now, in_farm=self.state.get('in_farm', False))
+                         screen=screen_scene, now=self.now, in_farm=self.state.get('in_farm', False),
+                         in_season=self.state.get('in_season', False), replay=bool(self.community.visible and self.community.replay),
+                         in_story=self.state.get('in_story', False), story_region=self.story_screen.data.get('chapter'),
+                         story_campaign=(self.state.get('story') or {}).get('campaign_id'),
+                         story_battle=self.state.get('battle') if (self.state.get('battle') or {}).get('kind') == 'story' else None)
         map_id = self.state.get('map_id')
         scene = ('farm' if self.state.get('in_farm') else 'field', map_id)
         entry, self.walk_mask = self.movement_context()
@@ -545,7 +608,7 @@ class App:
             self.reset_scene_position()
         keys = pygame.key.get_pressed()
         allowed = (not self.menu and not self.ui.focus and not getattr(self, 'settings_open', False)
-                   and not self.in_jail() and not self.notice_history_open
+                   and not self.in_jail() and not self.notice_history_open and not self.story_screen.modal
                    and not self.state.get('battle') and not self.state.get('in_lab') and not self.state.get('in_season')
                    and not self.farm_screen.manager_open and not self.farm_screen.home_confirmation
                    and self.partner_screen.pending_exchange is None
@@ -668,7 +731,7 @@ class App:
     def field_visible(self):
         return bool(self.state and not self.settings_open and not self.menu and
                     not self.state.get('battle') and not self.state.get('in_lab') and not self.state.get('in_farm')
-                    and not self.state.get('in_season') and not self.in_jail())
+                    and not self.state.get('in_season') and not self.in_jail() and not self.story_screen.modal)
 
     def key(self, event):
         if event.type == pygame.QUIT:
@@ -686,8 +749,10 @@ class App:
             view = self.farm_screen.viewport if self.farm_visible() else getattr(self, 'viewport', pygame.Rect(0,0,0,0))
             if self.zoom_visible() and view.collidepoint(point):
                 self.change_zoom(event.y*.5)
+            elif self.menu == 'maps':
+                self.world_screen.wheel(event.y)
             else:
-                self.scroll = max(0, self.scroll-event.y*(1 if self.menu in ('scan','dex','party','maps') else 2))
+                self.scroll = max(0, self.scroll-event.y*(1 if self.menu in ('scan','dex','party') else 2))
         elif event.type == pygame.KEYDOWN:
             if event.key == pygame.K_F11 or (event.key == pygame.K_RETURN and getattr(event, 'mod', 0)&pygame.KMOD_ALT):
                 self.apply_display(fullscreen=not self.display.fullscreen)
@@ -699,6 +764,16 @@ class App:
             if self.farm_screen.home_confirmation:
                 if event.key == pygame.K_ESCAPE:
                     self.farm_screen.home_confirmation = False
+                return
+            if self.story_screen.modal and not self.settings_open and event.key != pygame.K_F10:
+                if event.key in (pygame.K_e, pygame.K_RETURN, pygame.K_SPACE):
+                    self.story_screen.advance_dialogue()
+                elif event.key == pygame.K_ESCAPE:
+                    self.story_screen.choose('leave')
+                return
+            if self.community.exchange_modal and not self.settings_open and event.key != pygame.K_F10:
+                if event.key == pygame.K_ESCAPE:
+                    self.community.cancel_exchange_review()
                 return
             if event.key == pygame.K_F2 and self.state:
                 self.enter_farm()
@@ -726,7 +801,7 @@ class App:
                 elif self.ui.focus == 'farm_search':
                     self.ui.focus = None
                     pygame.key.stop_text_input()
-                elif self.in_jail() or self.field_visible() or (self.state and self.state.get('battle') and not self.menu and not self.state.get('in_season')):
+                elif self.in_jail() or (not (self.state or {}).get('in_story') and (self.field_visible() or (self.state and self.state.get('battle') and not self.menu and not self.state.get('in_season')))):
                     self.ui.focus = 'chat'
                 return
             if event.key == pygame.K_ESCAPE:
@@ -748,6 +823,15 @@ class App:
                 return
             if self.in_jail():
                 return
+            if event.key == pygame.K_F4:
+                self.story_screen.toggle()
+                return
+            if self.state.get('in_story') and event.key in (pygame.K_j, pygame.K_m):
+                self.story_screen.journal('atlas' if event.key == pygame.K_m else None)
+                return
+            if self.state.get('in_story') and event.key in (pygame.K_r, pygame.K_v, pygame.K_o, pygame.K_F3):
+                self.toast('Save & Return to MMO to enter that activity.')
+                return
             if event.key == pygame.K_F3:
                 self.season_screen.toggle()
                 return
@@ -762,7 +846,8 @@ class App:
             elif event.key == pygame.K_r: self.community.open('ranked')
             elif event.key == pygame.K_v: self.community.open('rivals')
             elif event.key == pygame.K_o: self.community.open('activity')
-            elif event.key == pygame.K_e and self.field_visible(): self.send('encounter')
+            elif event.key == pygame.K_e and self.field_visible():
+                self.story_screen.interact() if self.state.get('in_story') else self.send('encounter')
             elif event.key == pygame.K_SPACE and self.state.get('battle'): self.battle_action('attack')
             elif event.key in (pygame.K_PLUS, pygame.K_EQUALS, pygame.K_KP_PLUS) and self.zoom_visible(): self.change_zoom(.5)
             elif event.key in (pygame.K_MINUS, pygame.K_KP_MINUS) and self.zoom_visible(): self.change_zoom(-.5)
@@ -774,8 +859,8 @@ class App:
         battle = self.state.get('battle') if self.state else None
         if not battle:
             return
-        if action == 'flee' and (battle.get('season') or battle.get('kind') == 'season'):
-            self.toast('Fleeing is disabled in Season matches.', GOLD)
+        if action == 'flee' and (battle.get('season') or battle.get('kind') == 'season' or battle.get('kind') == 'story' and not battle.get('story_training')):
+            self.toast('Fleeing is disabled in this tamer battle.', GOLD)
             return
         payload = {'action': action, 'target': self.target, 'party_index': battle.get('actor', 0)}
         if item:
@@ -792,6 +877,7 @@ class App:
             self.draw_auth()
         else:
             self.draw_game()
+        self.story_screen.draw_dialogue()
         if self.settings_open:
             self.settings_panel.draw()
             if self.state:
@@ -834,6 +920,9 @@ class App:
         if self.state.get('in_season') and not self.state.get('battle') and not (self.battle_old and self.now < self.battle_until):
             self.season_screen.draw(full)
             return
+        if self.menu == 'story':
+            self.story_screen.draw(full)
+            return
         if self.menu == 'shop':
             self.shop_screen.draw(full)
             return
@@ -854,7 +943,10 @@ class App:
         else:
             self.draw_world()
         self.draw_party_sidebar(pygame.Rect(w-312, 94, 292, h-115))
-        self.draw_log(pygame.Rect(20, h-152, w-352, 132))
+        if self.state.get('in_story') and not self.state.get('battle') and not (self.battle_old and self.now < self.battle_until):
+            self.story_screen.draw_feed(pygame.Rect(20, h-152, w-352, 132))
+        else:
+            self.draw_log(pygame.Rect(20, h-152, w-352, 132))
         if self.args.demo:
             text(self.screen, self.assets, 'OFFLINE VISUAL PREVIEW — NOT CONNECTED', (self.viewport.centerx, h-163), 11, GOLD, center=True)
         elif not self.connection or not self.connection.connected:
@@ -889,8 +981,10 @@ class App:
         old_clip = self.screen.get_clip()
         self.screen.set_clip(view)
         season_battle = bool(battle.get('season') or battle.get('kind') == 'season')
-        text(self.screen, self.assets, 'SEASON MATCH' if season_battle else 'WILD ENCOUNTER', (view.x+20, view.y+14), 23, WHITE, True)
-        text(self.screen, self.assets, 'YOUR LIVE MATCH  /  NO FLEEING  /  SELECT YOUR TARGET' if season_battle else 'TACTICAL LINK  /  SELECT YOUR TARGET', (view.x+21, view.y+45), 9, CYAN, True)
+        story_battle = battle.get('kind') == 'story'
+        heading = 'STORY TRAINING' if battle.get('story_training') else ('STORY · '+str(battle.get('opponent_name') or battle.get('tamer_name') or 'TAMER CHALLENGE')) if story_battle else 'SEASON MATCH' if season_battle else 'WILD ENCOUNTER'
+        text(self.screen, self.assets, heading, (view.x+20, view.y+14), 23, WHITE, True)
+        text(self.screen, self.assets, 'YOUR LIVE MATCH  /  NO FLEEING  /  SELECT YOUR TARGET' if season_battle or story_battle and not battle.get('story_training') else 'TACTICAL LINK  /  SELECT YOUR TARGET', (view.x+21, view.y+45), 9, CYAN, True)
         text(self.screen, self.assets, f"TURN {battle.get('turn', 1):02}", (view.right-99, view.y+23), 16, GOLD, True)
         actor = battle.get('actor', 0)
         for side, mons in (('enemy', enemies), ('player', [party[i] for i in active if i < len(party)])):
@@ -934,8 +1028,8 @@ class App:
             self.draw_effect(animation, enemies, active)
         self.screen.set_clip(old_clip)
         disabled = bool(self.action_pending or self.animations or not self.state.get('battle'))
-        actions = [('Attack', 'attack'), ('Skill · SP', 'skill'), ('Struggle · 0 SP', 'struggle'), ('Items', 'items'), ('Flee', 'flee')]
-        if season_battle:
+        actions = [('Attack', 'attack'), ('Skill · SP', 'skill'), ('Items', 'items'), ('Flee', 'flee')]
+        if season_battle or story_battle and not battle.get('story_training'):
             actions = [(label, action) for label, action in actions if action != 'flee']
         width = (view.width-40-(len(actions)-1)*8)//len(actions)
         for i, (label, action) in enumerate(actions):

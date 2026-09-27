@@ -1,5 +1,8 @@
 # Local admin console v0.8.0
 
+For the current v0.9.0 release, Story Mode also blocks gameplay edits while active.
+Use [STORY_MODE_V090.md](STORY_MODE_V090.md) for the current upgrade procedure.
+
 Run your server from **START_WORLD_SERVER_CONSOLE.bat**, then type commands at the
 `venom>` prompt in that same world-server window on the host PC. Start with
 `/help`, `/permissions`, and `/players`.

@@ -168,6 +168,10 @@ def main():
  catalog={'version':'0.1.0','species':species_catalog(),'tamers':json.loads(tamers_path.read_text(encoding='utf-8')) if tamers_path.exists() else [],'maps':map_catalog(),'audio':json.loads(audio_path.read_text(encoding='utf-8')) if audio_path.exists() else {'music':[],'effects':[]},'mechanics_note':'Cyber Sleuth-inspired rules with curated type/attribute mappings where available; remaining species and all Paradox variants use explicitly provisional fan balancing.'}
  effects_path=ROOT/'data/effects_catalog.json'
  if effects_path.exists():catalog['battle_effects']=json.loads(effects_path.read_text(encoding='utf-8')).get('effects',[])
+ if (ROOT/'data/world_ds_maps.json').is_file():
+  sys.path.insert(0,str(ROOT))
+  from tools.merge_world_ds import merge_catalog
+  catalog=merge_catalog(catalog,ROOT)
  save_json(ROOT/'data/catalog.json',catalog)
  if (ROOT/'venom/common/game.py').exists() and catalog['tamers']:
   sys.path.insert(0,str(ROOT))

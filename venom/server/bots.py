@@ -4,7 +4,7 @@ Wild combat, scan conversion, shopping, evolution and party changes go through
 GameEngine.handle, exactly like human requests. Ranked combat belongs to the
 shared RankedService. Counters are consequences of these operations, never dice
 rolls masquerading as battles. Fresh rivals have one level-seeded Rookie so all
-254 sectors have viable inhabitants; that initial level is not reported as XP.
+catalog sectors have viable inhabitants; that initial level is not reported as XP.
 """
 from __future__ import annotations
 
@@ -56,6 +56,10 @@ class BotManager:
         self.navigation = Navigation(engine.root, engine.maps)
         self.bots = {}
         self.by_map = {key: set() for key in engine.maps}
+        self.map_order = sorted(engine.maps)
+        self.map_indices = {key: index for index, key in enumerate(self.map_order)}
+        self.training_ceiling = min(99, max(64, max(
+            (int(area.get("level", 1)) for area in engine.maps.values()), default=1)))
         self.coverage_reservations = {key: set() for key in engine.maps}
         self.heap = []
         self.serial = 0
@@ -158,6 +162,9 @@ class BotManager:
         runtime.setdefault("seed_level", state["party"][0]["level"])
         runtime.setdefault("relocate", False)
         runtime.setdefault("consecutive_losses", 0)
+        # A single stable cursor avoids a growing per-rival travel history. It
+        # survives restarts and also works when new catalog regions are added.
+        runtime.setdefault("route_after_map", state["map_id"])
         bot = {"id": row["id"], "state": state, "runtime": runtime,
                "stats": {key: row.get("stats", {}).get(key, 0) for key in STAT_KEYS},
                "ordinal": ordinal, "rng": random.Random(self.seed + ordinal * 7919)}
@@ -366,7 +373,7 @@ class BotManager:
         if actor["sp"] == 0 and state["inventory"].get("sp_s", 0) and actor["max_sp"] >= 25:
             return {"action": "item", "item": "sp_s", "party_index": actor_index}
         target = min(living, key=lambda pair: pair[1]["hp"] / max(.1, effectiveness(actor, pair[1])))[0]
-        return {"action": "struggle" if actor["sp"] == 0 else "attack", "target": target}
+        return {"action": "attack", "target": target}
 
     def _lab_step(self, bot, now):
         state, runtime = bot["state"], bot["runtime"]
@@ -457,6 +464,7 @@ class BotManager:
         state, runtime = bot["state"], bot["runtime"]
         self._observe_training(bot)
         guarded = bool(runtime.get("coverage_duty"))
+        frontier_goal = int(runtime.get("training_goal", 0))
         if len(state["party"]) + len(state["storage"]) == 1:
             # Earn a recruit before resetting the only established partner. This
             # leaves a real veteran available for later map-coverage visits.
@@ -464,6 +472,12 @@ class BotManager:
         for index in sorted(range(len(state["party"])), key=lambda i: state["party"][i]["level"]):
             monster = state["party"][index]
             if guarded and index < 3:
+                continue
+            # Endgame expeditions need genuinely earned high-level partners.
+            # Resetting them at every eligible evolution/devolution threshold
+            # would otherwise make the newly reachable 65-99 fields forever
+            # inaccessible to an upgraded, previously level-60 population.
+            if frontier_goal > 64 and monster["level"] < frontier_goal:
                 continue
             options = self.engine.evolution_options(monster)
             eligible = [route for route in options if route["eligible"] and not route.get("devolve")]
@@ -528,10 +542,11 @@ class BotManager:
         by_uid = {m["uid"]: m for m in owned}
         current = [uid for uid in runtime.get("training_uids", []) if uid in by_uid]
         round_number = int(runtime.get("training_round", 1))
-        goal = int(runtime.get("training_goal", 16 + (bot["ordinal"] * 7 + (round_number - 1) * 11) % 49))
+        goal = int(runtime.get("training_goal", self._training_goal(bot, round_number)))
         wins = bot["stats"]["wild_wins"] - runtime.get("training_start_wins", bot["stats"]["wild_wins"])
         peak = runtime.get("training_peak", 0)
-        completed = bool(current) and (peak >= goal or (peak >= 16 and wins >= 24 + bot["ordinal"] % 24))
+        completed = bool(current) and (peak >= goal or (
+            goal <= 64 and peak >= 16 and wins >= 24 + bot["ordinal"] % 24))
         ranked = sorted(owned, key=lambda m: (m["level"], -m["abi"], m["uid"]))
         alternatives = [m for m in ranked if m["uid"] not in current]
         rotate = completed and bool(alternatives) and alternatives[0]["level"] < max(peak, goal)
@@ -607,7 +622,7 @@ class BotManager:
                 self._increment(bot, "training_rotations")
                 self._increment(bot, "teams_trained")
                 round_number += 1
-                goal = 16 + (bot["ordinal"] * 7 + (round_number - 1) * 11) % 49
+                goal = self._training_goal(bot, round_number)
             runtime.update(training_round=round_number, training_goal=goal,
                            training_started_cycle=runtime["cycle"],
                            training_start_wins=bot["stats"]["wild_wins"], training_peak=0)
@@ -621,6 +636,10 @@ class BotManager:
         self._equip_party(bot, desired)
         if self._field_level(state["party"]) + 2 < int(self.engine.maps[state["map_id"]].get("level", 1)):
             runtime["relocate"] = True
+
+    def _training_goal(self, bot, round_number):
+        """Only future cohorts adopt expanded catalog difficulty; no XP is minted."""
+        return 16 + (bot["ordinal"] * 7 + (round_number - 1) * 11) % (self.training_ceiling - 15)
 
     def _shop(self, bot):
         state = bot["state"]
@@ -704,9 +723,14 @@ class BotManager:
         if assigned in self.engine.maps and assigned != old_map and int(self.engine.maps[assigned].get("level", 1)) <= strength + 2:
             candidates = [self.engine.maps[assigned]]
         if candidates:
-            # Density first; a tiny deterministic jitter breaks ties without a
-            # handful of alphabetically first sectors receiving the whole fleet.
-            target = min(candidates, key=lambda area: len(self.by_map[area["id"]]) + bot["rng"].random() * .7)
+            # Shared density includes real pending Lab reservations, preventing
+            # explorers from crowding the same empty destination. A persisted
+            # circular cursor breaks ties fairly: even a one-rival custom world
+            # can visit every eligible map instead of bouncing between a few.
+            cursor = self.map_indices.get(runtime.get("route_after_map"), bot["ordinal"] % len(self.map_order))
+            target = min(candidates, key=lambda area: (
+                len(self.by_map[area["id"]]) + len(self.coverage_reservations[area["id"]]),
+                (self.map_indices[area["id"]] - cursor - 1) % len(self.map_order)))
             self._execute(bot, "travel", {"map_id": target["id"]})
             # Spread arrivals only on a real sector transition. Existing walkers
             # remain on their continuous path; every client sees the same point.
@@ -720,6 +744,7 @@ class BotManager:
                 self._increment(bot, "coverage_visits")
             self.by_map[old_map].discard(bot["id"])
             self.by_map[target["id"]].add(bot["id"])
+            runtime["route_after_map"] = target["id"]
             runtime["walk_pending"] = True
             self._increment(bot, "travels")
             self._record(bot, "travel", f"Moved to {target['name']}" + (" for safer training." if easier else " to explore."),

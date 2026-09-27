@@ -347,7 +347,7 @@ class RankedService:
                 # final hit when a free physical attack will already do it.
                 return min(target["hp"], expected) + (80 if expected >= target["hp"] else 0) - (skill["sp"] * .8 if skill else 0)
             skill, target_index = max(options, key=score)
-            action = "skill" if skill else ("struggle" if actor["sp"] == 0 else "attack")
+            action = "skill" if skill else "attack"
             if skill:
                 actor["sp"] -= skill["sp"]
             state = {"party": teams[side], "battle": {"active": active[side]}, "events": []}

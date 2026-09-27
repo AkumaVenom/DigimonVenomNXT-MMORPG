@@ -1,0 +1,219 @@
+{
+  "release": "0.11.0",
+  "campaign": "World DS: Paradox Chronicle",
+  "baseline": "0.10.0 World DS Full Source",
+  "archive_integrity": {
+    "volumes": 28,
+    "extracted_files_checked_against_rar_crc": 22292,
+    "failures": 0
+  },
+  "content": {
+    "maps": 18,
+    "hub_maps": 1,
+    "quest_givers": 17,
+    "tamer_trials": 17,
+    "paradox_guardians": 17,
+    "npcs": 92,
+    "crests": 17,
+    "final_team": [
+      {
+        "species": "alphamon_paradox",
+        "level": 100
+      },
+      {
+        "species": "omnimon_paradox",
+        "level": 100
+      },
+      {
+        "species": "imperialdramonpaladinmode_paradox",
+        "level": 100
+      }
+    ],
+    "levels": [
+      {
+        "map": "world_ds_030",
+        "area": "Forest Glade",
+        "peaceful": true,
+        "minimum": 10,
+        "maximum": 10
+      },
+      {
+        "map": "world_ds_048",
+        "area": "Green Valley",
+        "peaceful": false,
+        "minimum": 10,
+        "maximum": 13
+      },
+      {
+        "map": "world_ds_053",
+        "area": "Sandstone Pass",
+        "peaceful": false,
+        "minimum": 15,
+        "maximum": 18
+      },
+      {
+        "map": "world_ds_059",
+        "area": "Drainage Tunnels",
+        "peaceful": false,
+        "minimum": 20,
+        "maximum": 23
+      },
+      {
+        "map": "world_ds_066",
+        "area": "Canopy Ridge",
+        "peaceful": false,
+        "minimum": 25,
+        "maximum": 28
+      },
+      {
+        "map": "world_ds_073",
+        "area": "Sun Spire",
+        "peaceful": false,
+        "minimum": 30,
+        "maximum": 33
+      },
+      {
+        "map": "world_ds_080",
+        "area": "Crystal Mine",
+        "peaceful": false,
+        "minimum": 35,
+        "maximum": 38
+      },
+      {
+        "map": "world_ds_089",
+        "area": "Mirage Marsh",
+        "peaceful": false,
+        "minimum": 40,
+        "maximum": 43
+      },
+      {
+        "map": "world_ds_097",
+        "area": "Silver Strand",
+        "peaceful": false,
+        "minimum": 45,
+        "maximum": 48
+      },
+      {
+        "map": "world_ds_106",
+        "area": "Amber Badlands",
+        "peaceful": false,
+        "minimum": 50,
+        "maximum": 53
+      },
+      {
+        "map": "world_ds_115",
+        "area": "Clockwork Fort",
+        "peaceful": false,
+        "minimum": 55,
+        "maximum": 58
+      },
+      {
+        "map": "world_ds_125",
+        "area": "Frost Shelf",
+        "peaceful": false,
+        "minimum": 60,
+        "maximum": 63
+      },
+      {
+        "map": "world_ds_140",
+        "area": "Radiant Citadel",
+        "peaceful": false,
+        "minimum": 65,
+        "maximum": 68
+      },
+      {
+        "map": "world_ds_149",
+        "area": "Coral Archipelago",
+        "peaceful": false,
+        "minimum": 70,
+        "maximum": 73
+      },
+      {
+        "map": "world_ds_161",
+        "area": "Magma Citadel",
+        "peaceful": false,
+        "minimum": 75,
+        "maximum": 78
+      },
+      {
+        "map": "world_ds_173",
+        "area": "Shadow Grid",
+        "peaceful": false,
+        "minimum": 80,
+        "maximum": 83
+      },
+      {
+        "map": "world_ds_192",
+        "area": "Dusk Highlands",
+        "peaceful": false,
+        "minimum": 86,
+        "maximum": 89
+      },
+      {
+        "map": "world_ds_200",
+        "area": "Eclipse Sanctum",
+        "peaceful": false,
+        "minimum": 92,
+        "maximum": 96
+      }
+    ]
+  },
+  "verification": {
+    "full_suite": {
+      "tests": 711,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 10,
+      "passed": 701,
+      "seconds": 171.676
+    },
+    "after_final_dialogue_polish": {
+      "tests": 38,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": 38,
+      "seconds": 17.193
+    },
+    "asset_sha256_records": 21806,
+    "asset_failures": 0,
+    "complete_automated_playthroughs": [
+      {
+        "starter": "agumon",
+        "initial_level": 10
+      },
+      {
+        "starter": "betamon",
+        "initial_level": 10
+      }
+    ],
+    "playthrough_method": "Production engine, collision-aware walking, actual quest/dialogue/travel and battle commands. No fabricated victory or mid-route partner/stat replacement.",
+    "native_client_visual_review": [
+      "1280x800",
+      "960x540"
+    ],
+    "coverage": [
+      "quest and crest prerequisites",
+      "stale dialogue and battle request rejection",
+      "whole server restart midbattle",
+      "SQLite save and independent campaign round trips",
+      "private isolation with running shared bots",
+      "native evolution/materialization/party/shop/DigiFarm services",
+      "loss/retry and finale replay",
+      "5 to 6 Paradox scan at wild victory, cap, fleeing, loss and reconnect"
+    ]
+  },
+  "limitations": [
+    "Windows client and server executables were not built in this Linux workspace. Run BUILD_ALL.bat on Windows x64 and use matching client/server packages.",
+    "Ten existing environment-specific tests skipped: nine graphical Tk setup-wizard tests and one opt-in Linux/MySQL runtime test.",
+    "Automated game and native headless rendering checks do not replace a target-hardware human playtest."
+  ],
+  "evidence": [
+    "world_ds_story_validation/full_suite.log",
+    "world_ds_story_validation/full_suite.xml",
+    "world_ds_story_validation/final_dialogue_checks.log",
+    "world_ds_story_validation/final_dialogue_checks.xml",
+    "world_ds_story_validation/asset_verification.log",
+    "previews/world_ds_story/"
+  ]
+}

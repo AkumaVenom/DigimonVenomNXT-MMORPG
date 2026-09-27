@@ -221,7 +221,10 @@ class ScanScreen:
         page = app.scroll
         text(app.screen, app.assets, f'{len(entries):,} forms  /  Page {page+1} of {pages}',
              (body.x, filters.bottom+11), 10, MUTED)
-        text(app.screen, app.assets, '100% unlocks reconstruction  ·  200% gives 5 ABI',
+        scan_hint = ('Paradox Mastery: +20% scan on wild victories' if
+                     app.state.get('permanent_rewards', {}).get('paradox_scan_mastery') else
+                     '100% unlocks reconstruction  ·  200% gives 5 ABI')
+        text(app.screen, app.assets, scan_hint,
              (body.right-344, filters.bottom+11), 10, art.colors(theme)['accent'], max_width=344)
         cw, ch = (body.width-(cols-1)*12)//cols, (gallery_h-(rows-1)*12)//rows
         for index, entry in enumerate(entries[page*count:(page+1)*count]):
