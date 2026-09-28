@@ -1,30 +1,34 @@
 # Digimon Venom NXT
 
-**v1.0.0 — Cyber-blue battles and Fanglongmon artwork.**
+**v1.0.1 — Permanent ABI growth for every partner.**
 
-The battle scene gains a polished blue cyber-grid background with clear space
-for the combatants and readable battle controls. Corrected target cards size
-their outline around the full name, details, sprite and HP bar with padding;
-long names wrap, and selection stays anchored during attack animation.
-Fanglongmon and Paradox
-Fanglongmon use the supplied six-frame artwork for each form, integrated with
-the existing animation system. Their stable species identities and earned
-ownership, scans and progression carry forward.
+Buy **ABI DigiMeat** in **Shop → ABI growth** for **6,000 credits or 30
+DigiRubies**. Each owned treat adds **+1 permanent ABI**, up to 200, without
+resetting level. Feed a selected party member at the DigiLab or DigiFarm, or
+feed a stored farm resident. This provides an ABI path even when the species
+has no de-digivolution, including when it is your only party member. Evolution
+still checks the selected route's level, CAM and stat requirements.
+
+Read [docs/ABI_DIGIMEAT_V101.md](docs/ABI_DIGIMEAT_V101.md) for feeding rules and
+the current upgrade. **Run BUILD_ALL.bat and deploy BOTH rebuilt Windows
+applications**, even if already running v1.0.0. The server owns the new item
+and its permanent effect. Back up the complete stopped server and preserve its
+database, private credentials and configuration. No database reset or fresh
+setup is required. These downloads contain source, not prebuilt executables.
+
+**Retained v1.0.0 — Cyber-blue battles and Fanglongmon artwork.**
+
+The blue cyber-grid arena, corrected target highlights, full wrapped combatant
+names and supplied Fanglongmon/Paradox Fanglongmon animation remain in place.
+Stable species identities, ownership, scans and progression carry forward.
+See [docs/RELEASE_V100.md](docs/RELEASE_V100.md) and
+[docs/FANGLONGMON_V100.md](docs/FANGLONGMON_V100.md) for that release's history.
 
 The complete game retains both private story campaigns, DigiLab, DigiFarm,
 DigiRuby shopping and exchange, private Season careers and Ranked Arena. The
 **3,000-rival maximum**, **12-hour Bot Activity window**, startup ownership
-repair and compressed world updates remain in place.
-
-Read [docs/RELEASE_V100.md](docs/RELEASE_V100.md) for the current upgrade and
-[docs/FANGLONGMON_V100.md](docs/FANGLONGMON_V100.md) for the artwork and species
-details. **Run BUILD_ALL.bat and deploy BOTH rebuilt Windows applications.**
-If already running the earlier v1.0.0 release, rebuild and redeploy the client
-to receive the corrected target layout; the existing v1.0.0 server can remain.
-Back up the complete stopped server and preserve its database, private
-credentials and configuration. These downloads contain source, not prebuilt
-Windows executables. Earlier upgrade instructions below describe their original
-releases; use the v1.0.0 guide for this update.
+repair and compressed world updates remain in place. Earlier instructions
+below describe their original releases; use the v1.0.1 guide for this update.
 
 **Retained v0.12.3 — 3,000 persistent tamer rivals.**
 
@@ -35,7 +39,7 @@ retires the extra 2,000 rivals and removes their saved rival state; the retained
 negotiated WebSocket compression while preserving the complete map population
 and update rate. Read [docs/POPULATION_V0123.md](docs/POPULATION_V0123.md) for
 that migration's exact scope and historical measurements. For this release,
-follow the v1.0.0 guide above and update both applications.
+follow the v1.0.1 guide above and update both applications.
 
 **Retained v0.12.2 — Bot Activity shows the latest 12 hours.**
 
@@ -52,13 +56,13 @@ The previous restart repair also remains: **there is no overall startup
 loading deadline**.
 
 Read [docs/BOT_ACTIVITY_V0122.md](docs/BOT_ACTIVITY_V0122.md) for retention details
-and its original upgrade. For the current update use the v1.0.0 guide above.
+and its original upgrade. For the current update use the v1.0.1 guide above.
 The original activity upgrade required both applications for the updated
 display. Preserve `config`, `mysql/data`, private MySQL settings and
 `mysql/runtime`; do not run fresh setup or clear saved progress.
 
 The notes below retain earlier features and their original release context.
-Use the v1.0.0 guide above for the current upgrade.
+Use the v1.0.1 guide above for the current upgrade.
 
 **Retained v0.12.1 — Persistent-rival startup and restart hotfix.**
 
@@ -74,7 +78,7 @@ if another error remains. Existing saves, rivals and rewards are preserved.
 
 Read [docs/RESTART_REPAIR_V0121.md](docs/RESTART_REPAIR_V0121.md) for the original
 repair details and restart checks. That server-only hotfix preserved
-compatibility with v0.12.0 clients. For the current v1.0.0 update, rebuild and
+compatibility with v0.12.0 clients. For the current v1.0.1 update, rebuild and
 deploy both applications using the guide above.
 
 **Retained v0.12.0 — Spend DigiRubies in the shop or exchange them for credits.**
@@ -100,7 +104,7 @@ private MySQL settings, and the existing client/server `config` folders.
 both Windows x64 applications on the intended Windows machine.
 
 The v0.12.0 guide describes the economy feature release and its original
-upgrade. For the current update, follow the v1.0.0 guide above.
+upgrade. For the current update, follow the v1.0.1 guide above.
 
 **Retained v0.11.0 — World DS: Paradox Chronicle, a second private story campaign.**
 
@@ -129,7 +133,7 @@ folders. **Do not run fresh database setup.** This is a source release;
 Windows x64 executables must be built and checked on Windows.
 
 The sections below preserve earlier release notes and their original upgrade
-procedures. Use the v1.0.0 guide above for the current update.
+procedures. Use the v1.0.1 guide above for the current update.
 
 **Retained World DS region v0.10.0 — shared maps, encounters and music.**
 
@@ -197,7 +201,7 @@ Read [docs/ADMIN_CONSOLE_V080.md](docs/ADMIN_CONSOLE_V080.md) for the full comma
 reference, console tiers, hidden password prompts, confirmation rules, and exact
 upgrade procedure. Windows executables must be built on Windows x64.
 
-The following v0.7.0 and earlier notes describe retained features. For the current upgrade, use the v1.0.0 guide linked above.
+The following v0.7.0 and earlier notes describe retained features. For the current upgrade, use the v1.0.1 guide linked above.
 
 **Retained Season Mode v0.7.0 — private, persistent tamer careers.**
 
@@ -212,11 +216,11 @@ The shared world, DigiFarm, persistent rivals and Ranked Arena remain available.
 The v0.7.0 release built on the supplied v0.6.2 High Ping Disconnect Fix source
 and added private career archives without resetting existing character saves.
 Read [docs/SEASON_MODE_V070.md](docs/SEASON_MODE_V070.md) for Season controls,
-rules and save behavior. Its upgrade section is historical; use the v1.0.0
+rules and save behavior. Its upgrade section is historical; use the v1.0.1
 release guide for the current update.
 
 The following DigiFarm and earlier-release notes describe retained features.
-For the current update, use the v1.0.0 release guide above.
+For the current update, use the v1.0.1 release guide above.
 
 **Retained DigiFarm — native Windows x64 client and dedicated world server.**
 

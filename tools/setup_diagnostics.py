@@ -17,7 +17,7 @@ import tempfile
 import threading
 
 
-SETUP_VERSION = "1.0.0"
+from venom.version import VERSION as SETUP_VERSION
 STAGES = frozenset({
     "validate", "endpoint", "administrator", "create_database", "game_account",
     "grants", "schema", "save_config", "hosting", "verify", "runtime", "initialize", "start", "connect", "provision",

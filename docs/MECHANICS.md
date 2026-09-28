@@ -1,6 +1,6 @@
 # Digimon Venom NXT — gameplay rules and data provenance
 
-This alpha implements an original, server-authoritative Digimon collection RPG inside a shared multiplayer world. It is inspired by Cyber Sleuth's collection and party combat concepts. **It does not contain a verified complete Cyber Sleuth stat, move, support-skill, personality, evolution-requirement or progression database.** The supplied v7 pack contains artwork and stage folders; the Dawn ROM and maps are from a different game. They cannot establish Cyber Sleuth statistics for every imported species, particularly the custom Paradox variants.
+This game implements an original, server-authoritative Digimon collection RPG inside a shared multiplayer world. It is inspired by Cyber Sleuth's collection and party combat concepts. **It does not contain a verified complete Cyber Sleuth stat, move, support-skill, personality, evolution-requirement or progression database.** The supplied v7 pack contains artwork and stage folders; the Dawn ROM and maps are from a different game. They cannot establish Cyber Sleuth statistics for every imported species, particularly the custom Paradox variants.
 
 All 1,004 imported normal and Paradox species are playable. Their sprite identity and stage come from the supplied pack. Their numerical base stats are deterministic original balance generated during import. The runtime applies hand-curated type/attribute choices for familiar species; other entries use explicitly provisional deterministic assignments. These choices are not represented as officially verified values. `data/mechanics.json` records overrides, family routes and the provenance statement; the catalog marks provisional records. Do not describe this release as a one-to-one recreation of every Cyber Sleuth system.
 
@@ -46,7 +46,9 @@ XP needed for the next level is `35 + floor(12 × level^1.45)`. Victory awards X
 
 Evolution requires the DigiFarm or DigiLab and checks the advertised level, ABI, CAM and stat thresholds on the server. Known family chains are curated routes with original balance requirements. Uncharted species have a stable, explicitly labelled **original data-splice route** into the next stage; these are not canon evolution claims. Paradox versions follow the corresponding Paradox target.
 
-Evolution resets level to 1, preserves the individual UID and CAM, changes species/stats and increases ABI by `2 + floor(old level / 10)`. De-digivolution to a listed previous form requires level 5, resets level to 1, preserves identity/CAM, and grants `5 + floor(old level / 5)` ABI. This makes higher ABI requirements reachable without a dead end. The UI reads the server's `evolution_options`, including all unmet requirements and whether a route goes backwards.
+Evolution resets level to 1, preserves the individual UID and CAM, changes species/stats and increases ABI by `2 + floor(old level / 10)`. De-digivolution to a listed previous form requires level 5, resets level to 1, preserves identity/CAM, and grants `5 + floor(old level / 5)` ABI. De-digivolution only helps species with an available previous form. ABI DigiMeat provides an independent way to raise ABI when no backward route exists. The UI reads the server's `evolution_options`, including all unmet requirements and whether a route goes backwards.
+
+**ABI DigiMeat** (`digimeat_abi`) costs **6,000 credits or 30 DigiRubies** in the regular shop and permanently adds **+1 ABI per owned item**, up to 200. Use it outside battle on a selected party partner at the DigiLab or DigiFarm, including the only party member, or feed a stored resident at the farm. It preserves level, XP, CAM, identity and permanent training bonuses; its ABI survives evolution and save/load. Normal ABI-based stats are recalculated immediately. It does not count toward the farm's +100-per-stat or +300-total training limits. At 200 ABI, or if the quantity would exceed that cap, the request is rejected without consuming items. All other evolution requirements still apply. See [ABI_DIGIMEAT_V101.md](ABI_DIGIMEAT_V101.md).
 
 ## DigiLab and shop
 
@@ -76,8 +78,10 @@ A PvE victory has an 18% chance to award one. Six training-meat families improve
 HP, SP, ATK, DEF, INT or SPD: +1 costs 2,500 credits; rare +5 costs 25,000.
 Permanent bonuses cap at +100 per stat and +300 combined per Digimon. These flat
 bonuses are added after normal level/ABI stats, persist through level changes
-and evolution, and participate in ranked snapshots. Feeding requires a stored
-resident and an owned item and is checked on the server before consumption.
+and evolution, and participate in ranked snapshots. These CAM/stat treats require a stored
+resident and an owned item and are checked on the server before consumption.
+ABI DigiMeat can also be used directly on a party partner at the DigiLab or
+DigiFarm, as described above.
 See [DIGIFARM_V060.md](DIGIFARM_V060.md) for the complete item names and rules.
 
 ## Scope of this version

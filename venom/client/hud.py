@@ -6,6 +6,7 @@ import time
 from .render import draw
 from .widgets import text, bar, panel, WHITE, MUTED, CYAN, LIME, GOLD, RED
 from .world import player_title
+from venom.version import VERSION
 
 
 class GameHUD:
@@ -25,7 +26,7 @@ class GameHUD:
         app.ui.button((22, 18, 156, 37), 'Home · DigiFarm', app.enter_farm,
                       selected=bool(app.state.get('in_farm')) and not app.menu,
                       small=True, accent=LIME, disabled=app.action_pending or season or jailed or story and bool(app.state.get('battle')))
-        text(screen, app.assets, 'VENOM NXT / v1.0.0', (25, 3), 9, MUTED, True)
+        text(screen, app.assets, f'VENOM NXT / v{VERSION}', (25, 3), 9, MUTED, True)
         tabs = [('dex', 'DigiDex'), ('party', 'Partners'), ('shop', 'Shop'), ('maps', 'Story atlas' if story else 'Worlds')]
         battle = bool(app.state.get('battle'))
         for i, (key, label) in enumerate(tabs):

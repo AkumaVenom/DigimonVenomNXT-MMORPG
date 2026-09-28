@@ -241,7 +241,7 @@ def test_shop_all_meats_allowed_at_home_and_inventory_cap_is_atomic(farm):
     engine, state = farm
     state["credits"] = 1_000_000
     meats = {key: value for key, value in SHOP.items() if value.get("category") == "digimeat"}
-    assert len(meats) == 13
+    assert len(meats) == 14
     for key, item in meats.items():
         before = state["inventory"].get(key, 0)
         credits = state["credits"]

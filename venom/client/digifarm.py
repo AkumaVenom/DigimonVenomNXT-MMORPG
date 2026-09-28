@@ -15,7 +15,7 @@ from .widgets import text, bar, wrap, panel, WHITE, MUTED, CYAN, LIME, GOLD, RED
 
 
 ACCENT = (166, 237, 140)
-STAT_NAMES = {'hp': 'HP', 'sp': 'SP', 'atk': 'ATK', 'def': 'DEF', 'int': 'INT', 'spd': 'SPD', 'cam': 'CAM'}
+STAT_NAMES = {'hp': 'HP', 'sp': 'SP', 'atk': 'ATK', 'def': 'DEF', 'int': 'INT', 'spd': 'SPD', 'cam': 'CAM', 'abi': 'ABI'}
 
 
 class DigiFarmScreen(WorldRenderer):
@@ -135,7 +135,9 @@ class DigiFarmScreen(WorldRenderer):
         item = self.app.shop_data().get(self.item, {})
         available = self.allowance(mon, item) if mon else 0
         fits = available > 0 if item.get('resource') == 'cam' else available >= item.get('amount', 1)
-        if mon and not self.app.action_pending and fits:
+        if (mon and not self.app.action_pending and not self.app.state.get('battle')
+                and self.app.state.get('in_farm') and fits
+                and self.app.state.get('inventory', {}).get(self.item, 0) > 0):
             self.app.send('digifarm', action='feed', uid=mon['uid'], item=self.item, quantity=1)
 
     @staticmethod
@@ -143,6 +145,8 @@ class DigiFarmScreen(WorldRenderer):
         resource = item.get('resource')
         if resource == 'cam':
             return max(0, 100-mon.get('cam', 0))
+        if resource == 'abi':
+            return max(0, 200-mon.get('abi', 0))
         bonuses = mon.get('farm_bonuses', {})
         # The server publishes and enforces the same limits. The display never
         # modifies the monster, even while a care request is pending.
@@ -158,6 +162,9 @@ class DigiFarmScreen(WorldRenderer):
             delta = mon.get('cam', 0)-old.get('cam', 0)
             if delta:
                 changes.append(f'CAM +{delta}')
+            abi_delta = mon.get('abi', 0)-old.get('abi', 0)
+            if abi_delta:
+                changes.append(f'ABI +{abi_delta} permanently')
             for stat, amount in mon.get('farm_bonuses', {}).items():
                 gained = amount-old.get('farm_bonuses', {}).get(stat, 0)
                 if gained:
@@ -381,7 +388,7 @@ class DigiFarmScreen(WorldRenderer):
             if image:
                 app.screen.blit(image, image.get_rect(center=(row.x+26, row.centery)))
             text(app.screen, app.assets, mon.get('name', 'Partner'), (row.x+51, row.y+6), 12, WHITE, True, row.width-61)
-            text(app.screen, app.assets, f"Lv.{mon.get('level',1)}  ·  CAM {mon.get('cam',0)}%", (row.x+51, row.y+25), 9, MUTED)
+            text(app.screen, app.assets, f"Lv.{mon.get('level',1)}  ·  ABI {mon.get('abi',0)}  ·  CAM {mon.get('cam',0)}%", (row.x+51, row.y+25), 9, MUTED)
             app.ui.actions.append((row, lambda uid=mon['uid']: self.select(uid)))
         if not entries:
             wrap(app.screen, app.assets, 'No matching residents.' if query else 'Walk around with your lead partner. Deposit spare partners from DigiBank to welcome your first residents.',
@@ -413,22 +420,25 @@ class DigiFarmScreen(WorldRenderer):
         image = app.assets.sprite(mon.get('species_id'), (142, 116), now=app.now)
         if image:
             app.screen.blit(image, image.get_rect(midbottom=(left.centerx, left.y+130)))
-        text(app.screen, app.assets, mon.get('name', 'Partner'), (left.centerx, left.y+150), 22, WHITE, True, left.width-30, True)
+        text(app.screen, app.assets, mon.get('name', 'Partner'), (left.centerx, left.y+150), 20, WHITE, True, left.width-30, True)
         text(app.screen, app.assets, f"Lv.{mon.get('level',1)}  /  Farm resident", (left.centerx, left.y+178), 11, MUTED, center=True)
-        text(app.screen, app.assets, f"CAM  {mon.get('cam',0)} / 100", (left.x+20, left.y+207), 12, ACCENT, True)
-        bar(app.screen, pygame.Rect(left.x+20, left.y+229, left.width-40, 6), mon.get('cam',0), 100, ACCENT)
+        for column, (resource, maximum, color) in enumerate((('cam', 100, ACCENT), ('abi', 200, GOLD))):
+            x = left.x+20+column*140
+            text(app.screen, app.assets, f"{resource.upper()}  {mon.get(resource,0)} / {maximum}",
+                 (x, left.y+207), 11, color, True)
+            bar(app.screen, pygame.Rect(x, left.y+229, 126, 6), mon.get(resource,0), maximum, color)
         bonuses = mon.get('farm_bonuses', {})
         for i, stat in enumerate(STAT_NAMES):
-            if stat == 'cam':
+            if stat in ('cam', 'abi'):
                 continue
             x = left.x+20+(i%2)*136
             y = left.y+254+(i//2)*39
             value = mon.get('max_'+stat if stat in ('hp', 'sp') else stat, 0)
             text(app.screen, app.assets, f'{STAT_NAMES[stat]}  {value}', (x, y), 13, WHITE, True)
             text(app.screen, app.assets, f"+{bonuses.get(stat,0)} from care", (x, y+18), 9, ACCENT)
-        wrap(app.screen, app.assets, 'Treats are optional. Your partners never go hungry and never lose stats when you are away.',
+        wrap(app.screen, app.assets, 'ABI DigiMeat raises ABI permanently, even without a de-digivolution route. ABI uses its own 200 cap.',
              (left.x+20, left.y+377), left.width-40, 11, MUTED, 3)
-        text(app.screen, app.assets, f'Care bonus: {sum(bonuses.values())} / 300 total',
+        text(app.screen, app.assets, f'Stat care: {sum(bonuses.values())} / 300 total',
              (left.x+20, left.bottom-41), 11, ACCENT, True)
         text(app.screen, app.assets, 'Up to +100 in each stat. Kept on evolution.',
              (left.x+20, left.bottom-23), 9, MUTED)
@@ -462,14 +472,18 @@ class DigiFarmScreen(WorldRenderer):
         amount = min(item.get('amount',0), allowance)
         owned = app.state.get('inventory',{}).get(self.item,0)
         fits = allowance > 0 if item.get('resource') == 'cam' else allowance >= item.get('amount', 1)
-        ready = bool(item and owned and fits and not app.action_pending)
+        ready = bool(item and owned and fits and not app.action_pending and not app.state.get('battle') and app.state.get('in_farm'))
         explanation = ('Waiting for the server…' if app.action_pending else
+                       'ABI is at its permanent cap of 200.' if item.get('resource') == 'abi' and allowance <= 0 else
                        'This care bonus is at its limit.' if allowance <= 0 else
                        'This bonus will not fit. Choose a +1 treat instead.' if not fits else
                        'Buy this treat in the shop to feed it.' if not owned else
                        f"Use 1 {item.get('name','treat')} → {STAT_NAMES.get(item.get('resource'),'?')} +{amount}")
         text(app.screen, app.assets, explanation, (right.x,right.bottom-91), 11, GOLD if amount < item.get('amount',0) else MUTED,
              max_width=right.width)
+        if item.get('resource') == 'abi' and allowance:
+            text(app.screen, app.assets, f"ABI {mon.get('abi', 0)} → {mon.get('abi', 0)+amount} / 200 · Separate from stat care limits",
+                 (right.x, right.bottom-70), 10, GOLD, max_width=right.width)
         if item.get('resource') != 'cam' and amount < item.get('amount',0) and allowance:
             text(app.screen, app.assets, 'No treat is consumed when its stat bonus exceeds the limit.', (right.x,right.bottom-70), 10, GOLD, max_width=right.width)
         self._button((right.x, right.bottom-43, right.width, 40), 'Feeding…' if app.action_pending else 'Feed one treat', self.feed, primary=True, disabled=not ready)

@@ -234,13 +234,13 @@ class PartnerScreen:
                  (rect.x+20, rect.centery-8), 15, p['muted'], max_width=rect.width-40)
             return
         self._portrait(mon.get('species_id'), (rect.x+15, rect.y+10, 69, rect.height-19))
-        text(app.screen, app.assets, mon.get('name', 'Partner'), (rect.x+100, rect.y+17), 21,
-             WHITE, True, 255)
-        text(app.screen, app.assets, f"Lv.{mon.get('level', 1)}  ·  ABI {mon.get('abi', 0)}  ·  CAM {mon.get('cam', 0)}%",
-             (rect.x+101, rect.y+49), 11, p['muted'], max_width=260)
         party = app.state.get('party', [])
         width = min(86, (rect.width-385)//6)
         start = rect.right-14-len(party)*(width+7)
+        text(app.screen, app.assets, mon.get('name', 'Partner'), (rect.x+100, rect.y+17), 21,
+             WHITE, True, max(150, start-rect.x-115))
+        text(app.screen, app.assets, f"Lv.{mon.get('level', 1)}  ·  ABI {mon.get('abi', 0)}  ·  CAM {mon.get('cam', 0)}%",
+             (rect.x+101, rect.y+49), 11, p['muted'], max_width=260)
         for index, member in enumerate(party):
             card = pygame.Rect(start+index*(width+7), rect.y+12, width, rect.height-24)
             art.card(card, self.theme, selected=index == app.selected_party)
@@ -252,18 +252,40 @@ class PartnerScreen:
         self.app.scroll = 0
         self.app.audio.cue('tab', now=self.app.now)
 
+    def open_abi_shop(self):
+        self.app.shop_screen.filter('abi')
+        self.app.set_menu('shop')
+
+    def abi_help(self, rect, mon):
+        app = self.app
+        p = app.presentation.colors(self.theme)
+        app.presentation.card(rect, self.theme)
+        text(app.screen, app.assets, 'Need ABI? ABI DigiMeat adds +1 permanently (cap 200).',
+             (rect.x+13, rect.y+10), 12, p['accent'], True)
+        text(app.screen, app.assets, 'No de-digivolution needed. Other route requirements still apply.',
+             (rect.x+13, rect.y+31), 10, p['muted'])
+        owned = app.state.get('inventory', {}).get('digimeat_abi', 0)
+        uid = mon.get('uid') if mon else None
+        abi = mon.get('abi', 0) if mon else 0
+        self._button((rect.right-317, rect.y+10, 154, 34), 'ABI DigiMeat shop', self.open_abi_shop)
+        label = 'Use +1 ABI' if owned else 'No ABI meat'
+        self._button((rect.right-153, rect.y+10, 140, 34), label,
+                     lambda: app.shop_screen.use('digimeat_abi', uid=uid),
+                     primary=True, disabled=not app.shop_screen.can_use_abi(uid))
+
     def draw_evolution(self, rect):
         app = self.app
         p = app.presentation.colors(self.theme)
         mon = self._selected()
         self.partner_strip(pygame.Rect(rect.x, rect.y, rect.width, 82), mon)
+        self.abi_help(pygame.Rect(rect.x, rect.y+91, rect.width, 55), mon)
         routes = [r for r in self.routes() if self.route_filter == 'all'
                   or (bool(r.get('devolve')) == (self.route_filter == 'down'))]
         for index, (key, label) in enumerate((('all', 'All routes'), ('up', 'Digivolve'), ('down', 'De-digivolve'))):
-            self._button((rect.x+index*123, rect.y+92, 113, 28), label,
+            self._button((rect.x+index*123, rect.y+157, 113, 28), label,
                          lambda k=key: self.set_route_filter(k), selected=self.route_filter == key)
-        text(app.screen, app.assets, f'{len(routes)} ROUTES', (rect.right-113, rect.y+101), 10, p['muted'], True)
-        top = rect.y+132
+        text(app.screen, app.assets, f'{len(routes)} ROUTES', (rect.right-113, rect.y+166), 10, p['muted'], True)
+        top = rect.y+197
         page_size = 3
         offset = min(max(0, app.scroll), max(0, len(routes)-page_size))
         app.scroll = offset
@@ -341,18 +363,20 @@ class PartnerScreen:
         p = art.colors(self.theme)
         art.card(rect, self.theme)
         text(app.screen, app.assets, 'BEFORE YOU EVOLVE', (rect.x+20, rect.y+19), 10, p['accent'], True)
+        compact = rect.height < 320
         wrap(app.screen, app.assets, 'A new form. The same partner.', (rect.x+20, rect.y+47),
-             rect.width-40, 24, WHITE, 2)
+             rect.width-40, 16 if compact else 24, WHITE, 2)
         facts = [('01', 'Level resets to 1', 'Train your new form from the beginning.'),
                  ('02', 'CAM is retained', f"Your bond stays at {mon.get('cam', 0)}%."),
-                 ('03', 'ABI grows with you', 'Each route shows the resulting ABI.')]
-        top = rect.y+115
-        step = min(67, max(47, (rect.height-157)//3))
+                 ('03', 'ABI grows with you', 'ABI DigiMeat also adds +1 permanently.')]
+        top = rect.y+(82 if compact else 115)
+        footer_space = 50 if not (app.state.get('in_lab') or app.state.get('in_farm')) else 0
+        step = min(67, max(31, (rect.bottom-top-footer_space-15)//3))
         for index, (number, title, detail) in enumerate(facts):
             y = top+index*step
             text(app.screen, app.assets, number, (rect.x+20, y+2), 10, p['accent'], True)
-            text(app.screen, app.assets, title, (rect.x+49, y), 14, WHITE, True, rect.width-66)
-            text(app.screen, app.assets, detail, (rect.x+49, y+23), 10, p['muted'], max_width=rect.width-66)
+            text(app.screen, app.assets, title, (rect.x+49, y), 12 if compact else 14, WHITE, True, rect.width-66)
+            text(app.screen, app.assets, detail, (rect.x+49, y+(19 if compact else 23)), 10, p['muted'], max_width=rect.width-66)
         if not (app.state.get('in_lab') or app.state.get('in_farm')):
             self._button((rect.x+20, rect.bottom-43, rect.width-40, 30), 'Enter DigiLab to evolve',
                          app.enter_lab, disabled=not self._peace(), primary=True)

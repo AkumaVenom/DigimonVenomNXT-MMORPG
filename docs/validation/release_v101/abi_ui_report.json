@@ -1,0 +1,137 @@
+{
+  "fixture": "Unsaved QA. Only party partner has ABI 0 and no de-digivolution route.",
+  "captures": [
+    {
+      "file": "abi_shop_credits_960x600.png",
+      "pixels": [
+        960,
+        600
+      ],
+      "ui_scale": 0.75,
+      "actions": 28,
+      "fields": [],
+      "actions_outside_display": []
+    },
+    {
+      "file": "abi_shop_rubies_960x600.png",
+      "pixels": [
+        960,
+        600
+      ],
+      "ui_scale": 0.75,
+      "actions": 28,
+      "fields": [],
+      "actions_outside_display": []
+    },
+    {
+      "file": "abi_evolution_960x600.png",
+      "pixels": [
+        960,
+        600
+      ],
+      "ui_scale": 0.75,
+      "actions": 27,
+      "fields": [],
+      "actions_outside_display": []
+    },
+    {
+      "file": "abi_evolution_no_devolve_960x600.png",
+      "pixels": [
+        960,
+        600
+      ],
+      "ui_scale": 0.75,
+      "actions": 27,
+      "fields": [],
+      "actions_outside_display": []
+    },
+    {
+      "file": "abi_evolution_cap_960x600.png",
+      "pixels": [
+        960,
+        600
+      ],
+      "ui_scale": 0.75,
+      "actions": 26,
+      "fields": [],
+      "actions_outside_display": []
+    },
+    {
+      "file": "abi_farm_960x600.png",
+      "pixels": [
+        960,
+        600
+      ],
+      "ui_scale": 0.75,
+      "actions": 25,
+      "fields": [],
+      "actions_outside_display": []
+    },
+    {
+      "file": "abi_shop_credits_2047x1155.png",
+      "pixels": [
+        2047,
+        1155
+      ],
+      "ui_scale": 1.25,
+      "actions": 28,
+      "fields": [],
+      "actions_outside_display": []
+    },
+    {
+      "file": "abi_shop_rubies_2047x1155.png",
+      "pixels": [
+        2047,
+        1155
+      ],
+      "ui_scale": 1.25,
+      "actions": 28,
+      "fields": [],
+      "actions_outside_display": []
+    },
+    {
+      "file": "abi_evolution_2047x1155.png",
+      "pixels": [
+        2047,
+        1155
+      ],
+      "ui_scale": 1.25,
+      "actions": 27,
+      "fields": [],
+      "actions_outside_display": []
+    },
+    {
+      "file": "abi_evolution_no_devolve_2047x1155.png",
+      "pixels": [
+        2047,
+        1155
+      ],
+      "ui_scale": 1.25,
+      "actions": 27,
+      "fields": [],
+      "actions_outside_display": []
+    },
+    {
+      "file": "abi_evolution_cap_2047x1155.png",
+      "pixels": [
+        2047,
+        1155
+      ],
+      "ui_scale": 1.25,
+      "actions": 26,
+      "fields": [],
+      "actions_outside_display": []
+    },
+    {
+      "file": "abi_farm_2047x1155.png",
+      "pixels": [
+        2047,
+        1155
+      ],
+      "ui_scale": 1.25,
+      "actions": 25,
+      "fields": [],
+      "actions_outside_display": []
+    }
+  ]
+}

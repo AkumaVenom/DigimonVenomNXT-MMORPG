@@ -19,7 +19,7 @@ if str(ROOT) not in sys.path:
 
 from tools.password_prompt import PasswordCancelled, read_password
 
-SETUP_VERSION = "1.0.0"
+from venom.version import VERSION as SETUP_VERSION
 
 
 def read_json(path: Path, default=None):

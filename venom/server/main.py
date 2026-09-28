@@ -26,12 +26,12 @@ from venom.common.economy import economy_view
 from venom.common.farm import move_farm_position, normalize_farm_position
 from venom.common.paths import root_path
 from venom.common.network import network_settings
+from venom.version import VERSION
 from venom.server.database import Database, DatabaseError, validate_credentials
 from venom.server.lifecycle import WorldProcessLock
 from venom.server.moderation import clear_jail, is_jailed, jail_expired
 
 LOG = logging.getLogger("venom.server")
-VERSION = "1.0.0"
 MOVE_SPEED = 180.0
 MAX_MESSAGE = 65_536
 GAME_OPS = {"encounter", "battle", "digilab", "digifarm", "materialize", "evolve", "party", "shop", "item", "travel", "season", "story"}

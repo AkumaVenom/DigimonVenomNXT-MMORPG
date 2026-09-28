@@ -43,6 +43,12 @@ SHOP["digimeat_cam"] = {
     "category": "digimeat", "rarity": "common", "icon": "assets/ui/digifarm/digimeat.png",
     "description": "Feed a DigiFarm resident to gain 5 CAM (up to 100). An optional treat.",
 }
+SHOP["digimeat_abi"] = {
+    "name": "ABI DigiMeat", "price": 6000, "resource": "abi", "amount": 1,
+    "category": "digimeat", "rarity": "rare", "icon": "assets/ui/digifarm/digimeat.png",
+    "description": "Permanently adds 1 ABI, up to 200. Use on a party partner at the DigiLab or "
+                   "DigiFarm, or feed a farm resident. Kept through evolution; no de-digivolution needed.",
+}
 for _stat, _flavor in (("hp", "Vitality"), ("sp", "Spirit"), ("atk", "Power"),
                         ("def", "Guard"), ("int", "Wisdom"), ("spd", "Swift")):
     for _amount in (1, 5):
@@ -941,7 +947,9 @@ class GameEngine:
             raise GameError("You do not have enough of that DigiMeat.")
         item = SHOP[item_id]
         resource, gain = item["resource"], item["amount"] * quantity
-        if resource == "cam":
+        if resource == "abi":
+            self._increase_abi(monster, gain)
+        elif resource == "cam":
             missing = 100 - monster.get("cam", 0)
             if missing <= 0:
                 raise GameError("This Digimon already has 100 CAM. No treat was consumed.")
@@ -968,6 +976,27 @@ class GameEngine:
         self._event(state, "feed", amount=gain, uid=uid, item=item_id, resource=resource, quantity=quantity,
                     text=f"{monster['name']} enjoyed {quantity} × {item['name']}: +{gain} {resource.upper()}" +
                     (" permanently!" if resource != "cam" else "!"))
+
+    def _increase_abi(self, monster: dict, gain: int) -> None:
+        """ABI is a partner attribute, never part of the separate farm stat pool.
+
+        Validate and calculate every value before mutating the partner. Raising
+        its maxima restores only the increase, just like levelling, and never
+        revives a defeated partner or resets its training progress.
+        """
+        abi = monster.get("abi", 0)
+        if abi >= 200:
+            raise GameError("This Digimon already has 200 ABI. No treat was consumed.")
+        if abi + gain > 200:
+            raise GameError("Choose fewer treats: that quantity would waste DigiMeat at the 200 ABI limit.")
+        abi += gain
+        stats = self.stats_for(self.species[monster["species_id"]], monster["level"], abi,
+                               monster.get("farm_bonuses"))
+        hp = (min(stats["hp"], max(1, monster["hp"] + stats["hp"] - monster["max_hp"]))
+              if monster["hp"] > 0 else 0)
+        sp = min(stats["sp"], max(0, monster["sp"] + stats["sp"] - monster["max_sp"]))
+        monster.update(abi=abi, max_hp=stats["hp"], max_sp=stats["sp"], hp=hp, sp=sp,
+                       **{key: stats[key] for key in ("atk", "def", "int", "spd")})
 
     def _materialize(self, state: dict, payload: dict) -> None:
         self._hub_only(state)
@@ -1109,11 +1138,30 @@ class GameEngine:
 
     def _item(self, state: dict, payload: dict) -> None:
         self._peace(state)
+        if payload.get("item") == "digimeat_abi":
+            self._hub_only(state)
+            index, monster = self._party_member(state, payload)
+            # The selected index may now contain another partner after a party
+            # reorder. A current client sends its expected UID as a safeguard.
+            if "uid" in payload and (not isinstance(payload["uid"], str) or payload["uid"] != monster.get("uid")):
+                raise GameError("That party selection has changed. Choose the partner again.")
+            quantity = _integer(payload, "quantity", 1, 1, 99)
+            item_id = "digimeat_abi"
+            if state["inventory"].get(item_id, 0) < quantity:
+                raise GameError("You do not have enough ABI DigiMeat.")
+            item = SHOP[item_id]
+            gain = item["amount"] * quantity
+            self._increase_abi(monster, gain)
+            state["inventory"][item_id] -= quantity
+            self._event(state, "feed", index=index, amount=gain, uid=monster["uid"], item=item_id,
+                        resource="abi", quantity=quantity,
+                        text=f"{monster['name']} enjoyed {quantity} × {item['name']}: +{gain} ABI permanently!")
+            return
         self._use_item(state, payload)
 
     def _use_item(self, state: dict, payload: dict) -> None:
         item_id = payload.get("item")
-        if item_id not in SHOP or SHOP[item_id].get("category") == "digimeat":
+        if not isinstance(item_id, str) or item_id not in SHOP or SHOP[item_id].get("category") == "digimeat":
             raise GameError("Unknown recovery capsule.")
         if state["inventory"].get(item_id, 0) <= 0:
             raise GameError("You do not have that capsule.")

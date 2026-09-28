@@ -1,35 +1,44 @@
-# Release status — Digimon Venom NXT v1.0.0
+# Release status — Digimon Venom NXT v1.0.1
 
-This source release adds blue cyber-grid battle scenery and the supplied normal
-and Paradox Fanglongmon animation frames. Existing Fanglongmon species IDs and
-saved progression are retained. The complete feature baseline includes both
-story campaigns, DigiLab, DigiFarm, DigiRuby economy, Season careers, Ranked
-Arena, 3,000 persistent rivals, 12-hour activity retention and the prior startup
-and network improvements.
+This source release adds **ABI DigiMeat**, a regular-shop item costing **6,000
+credits or 30 DigiRubies**. Each owned item adds **+1 permanent ABI**, capped at
+200, without resetting level or consuming the farm training-bonus allowance.
+A selected party partner can use it at the DigiLab or DigiFarm, and stored
+residents can be fed at the farm. Partners without a de-digivolution can now
+raise ABI independently of evolution cycling, including a sole party member.
+Level, CAM and stat requirements for each evolution still apply.
 
-The corrected v1.0.0 client measures target cards around the complete wrapped
-name, metadata, sprite and HP bar with padding. The selection outline and click
-area remain anchored during attack movement. This corrects the earlier target
-highlight without changing the release version or battle rules.
+Read [ABI_DIGIMEAT_V101.md](ABI_DIGIMEAT_V101.md) for current instructions. Use
+`BUILD_ALL.bat` and deploy **both rebuilt Windows applications**, including when
+upgrading from v1.0.0. The server defines the item and validates consumption.
+Preserve the complete stopped server's saved database, credentials and private
+configuration. No fresh setup, database reset or progress deletion is required.
 
-Read [RELEASE_V100.md](RELEASE_V100.md) for the current upgrade and
-[FANGLONGMON_V100.md](FANGLONGMON_V100.md) for the artwork and species details.
-Use `BUILD_ALL.bat` to rebuild **both Windows applications** when upgrading from
-v0.12.3. An existing v1.0.0 installation needs the rebuilt client for the target
-correction and may retain its v1.0.0 server. The source update applies over
-either complete baseline. Preserve the complete stopped server's saved database
-and private configuration. Do not run a fresh database setup.
+Current development evidence is recorded in
+[validation/release_v101](validation/release_v101/README.md). The complete suite
+finished with **938 passed and 10 skipped** in **236.43 seconds**, with no
+failures or errors. The skips are one opt-in live-MySQL check and nine graphical
+setup-wizard checks. Twelve native ABI interface captures cover 960×600 and
+2047×1155, with no actions outside the displays. Native Windows
+building and a playtest on the intended host are separate checks; this source
+release does not claim those checks were performed here.
 
-Current verification evidence is recorded in
-[validation/release_v100](validation/release_v100/README.md). The complete suite
-passed with **873 passed and 10 skipped** in **240.66 seconds**, with no failures
-or errors. One opt-in live-MySQL check and nine graphical setup-wizard checks
-were skipped. Native battle and replay captures were checked from the minimum
-960×600 window to 4K, including the supplied 2047×1155 layout and the artwork for
-both Fanglongmon forms. The asset manifest contains 21,820 files.
+## Retained v1.0.0 battle presentation
 
-Native Windows building and a playtest on the intended host are separate checks;
-this source release does not claim those checks have already been performed.
+The corrected cyber-blue arena and padded target cards retain full wrapped
+names, metadata, sprites and HP bars. The selection outline and click area
+stay anchored during attack movement. Normal and Paradox Fanglongmon keep
+the supplied animation frames, stable species IDs and saved progression.
+Both story campaigns, DigiLab, DigiFarm, DigiRuby economy, Season careers,
+Ranked Arena, 3,000 persistent rivals, 12-hour activity retention and the prior
+startup/network improvements remain part of the baseline.
+
+The v1.0.0 complete suite recorded **873 passed and 10 skipped** in **240.66
+seconds**. Its original visual and test evidence is retained in
+[validation/release_v100](validation/release_v100/README.md), with the original
+[release guide](RELEASE_V100.md) and [Fanglongmon guide](FANGLONGMON_V100.md).
+These are historical results, not the v1.0.1 test count. The asset manifest
+retains 21,820 records.
 
 Earlier results below retain their original versions and measurement scope.
 
@@ -45,7 +54,7 @@ actors or lowering the update rate.
 
 Read [POPULATION_V0123.md](POPULATION_V0123.md) for that migration and its
 original upgrade. That server-only update supported existing v0.12.2 clients,
-which already offered WebSocket compression. For the current v1.0.0 release,
+which already offered WebSocket compression. For the current v1.0.1 release,
 follow the guide above and deploy both rebuilt applications, preserving the
 stopped server's saved database and private configuration. Native Windows
 building and a target-host playtest are separate from development checks.
@@ -143,7 +152,7 @@ for original JSON results and measurement scope.
 
 Read [RESTART_REPAIR_V0121.md](RESTART_REPAIR_V0121.md) for the original source
 repair. The v0.12.1 server hotfix remained compatible with v0.12.0 clients.
-For the current upgrade, follow the v1.0.0 guide above and deploy both rebuilt
+For the current upgrade, follow the v1.0.1 guide above and deploy both rebuilt
 applications while preserving the database and configuration.
 
 ## Retained DigiRuby Economy v0.12.0
@@ -162,7 +171,7 @@ the balance and capacity on the server before committing the payment and grant.
 
 The original v0.12.0 feature upgrade from v0.11.0 required rebuilding both
 Windows x64 applications; its historical upgrade instructions are in the
-DigiRuby guide. For the current update, follow the v1.0.0 guide above.
+DigiRuby guide. For the current update, follow the v1.0.1 guide above.
 Preserve `mysql/data`, private database settings and all existing `config`
 files; do not run fresh database setup. Native Windows builds and
 target-machine playtests remain separate release checks.

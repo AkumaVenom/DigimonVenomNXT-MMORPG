@@ -51,6 +51,20 @@ class ShopScreen:
         self.category = category
         self.app.scroll = 0
 
+    def abi_recipient(self, uid=None):
+        party = self.app.state.get('party', [])
+        if uid is not None:
+            return next(((index, mon) for index, mon in enumerate(party) if mon.get('uid') == uid), (None, None))
+        index = max(0, min(self.app.selected_party, len(party)-1)) if party else 0
+        return (index, party[index]) if party else (None, None)
+
+    def can_use_abi(self, uid=None):
+        _, mon = self.abi_recipient(uid)
+        return bool(mon and mon.get('uid') and not self.busy and not self.app.state.get('battle')
+                    and (self.app.state.get('in_lab') or self.app.state.get('in_farm'))
+                    and mon.get('abi', 0) < 200
+                    and self.app.state.get('inventory', {}).get('digimeat_abi', 0) > 0)
+
     def change_quantity(self, key, change):
         if self.busy:
             return
@@ -68,9 +82,13 @@ class ShopScreen:
             # Keep the existing credits protocol usable on older servers.
             self.app.send('shop',item=key,quantity=quantity)
 
-    def use(self, key):
+    def use(self, key, uid=None):
         item = self.app.shop_data().get(key, {})
-        if item.get('category') == 'digimeat':
+        if key == 'digimeat_abi':
+            if self.can_use_abi(uid):
+                index, mon = self.abi_recipient(uid)
+                self.app.send('item', item=key, party_index=index, uid=mon['uid'], quantity=1)
+        elif item.get('category') == 'digimeat':
             self.app.farm_screen.open_manager(item=key)
         else:
             self.app.send('item', item=key, party_index=self.app.selected_party)
@@ -82,7 +100,8 @@ class ShopScreen:
     @staticmethod
     def matches(item, category):
         meat = item.get('category') == 'digimeat'
-        return category == 'all' or (meat if category == 'digimeat' else
+        return category == 'all' or (meat and item.get('resource') == 'abi' if category == 'abi' else
+                                     meat if category == 'digimeat' else
                                      not meat and item.get('resource') == category)
 
     def meat_icon(self, rect, item=None):
@@ -97,12 +116,13 @@ class ShopScreen:
         theme = app.presentation
         palette = theme.colors('shop')
         body = theme.shell(rect, 'shop', 'A little care. A stronger bond.',
-                           'Recovery for the road. Optional DigiMeat treats for your home companions.',
+                           'Recovery, permanent ABI growth and optional treats for your companions.',
                            'VENOM NXT  /  SUPPLY TERMINAL', header_height=148)
         tabs = [('all', 'All supplies'), ('hp', 'HP recovery'), ('sp', 'SP recovery'),
-                ('digimeat', 'DigiMeat')]
+                ('digimeat', 'DigiMeat'), ('abi', 'ABI growth')]
+        tab_pitch = min(116, (body.width-565)//len(tabs))
         for index, (key, label) in enumerate(tabs):
-            app.ui.button((body.x+index*126, body.y, 116, 34), label,
+            app.ui.button((body.x+index*tab_pitch, body.y, tab_pitch-8, 34), label,
                           lambda value=key: self.filter(value), selected=self.category == key,
                           small=True, accent=palette['accent'])
         for index,(currency,label,color) in enumerate((('credits','Credits',GOLD),('digirubies','DigiRubies',(215,161,255)))):
@@ -146,7 +166,9 @@ class ShopScreen:
         count = (f'{app.scroll+1}–{min(app.scroll+page_size, len(entries))} / {len(entries)} supplies'
                  if entries else '0 supplies')
         text(app.screen, app.assets, count, paging.center, 11, palette['muted'], center=True)
-        if self.category == 'digimeat':
+        if self.category == 'abi':
+            self.abi_partner(side)
+        elif self.category == 'digimeat':
             self.farm_care(side)
         else:
             self.partner(side)
@@ -158,7 +180,7 @@ class ShopScreen:
         elif app.args.demo:
             status = 'OFFLINE PREVIEW  ·  Connect to your server to buy and use supplies.'
         elif app.state.get('in_lab') or app.state.get('in_farm'):
-            status = 'HOME SUPPLIES  ·  Use capsules on your party. Feed DigiMeat to a stored companion at your DigiFarm.'
+            status = 'HOME SUPPLIES  ·  ABI DigiMeat works on your party here or on residents at your DigiFarm. Other route requirements still apply.'
         else:
             status = 'FIELD INVENTORY  ·  Use owned capsules here. Shop at your DigiFarm or the DigiLab.'
         text(app.screen, app.assets, status, (rect.x+25, rect.bottom-18), 10,
@@ -213,14 +235,62 @@ class ShopScreen:
         app.ui.button((rect.x+76, y, 32, 30), '+', lambda: self.change_quantity(key, 1),
                       disabled=quantity >= maximum or self.busy, small=True, accent=color)
         can_buy = self.can_buy(key,item,quantity)
+        abi = key == 'digimeat_abi'
         use_width = 62 if meat else 47
         buy_width = max(55, rect.width-138-use_width)
         app.ui.button((rect.x+116, y, buy_width, 30), 'Buy', lambda: self.buy(key),
                       primary=True, disabled=not can_buy, small=True, accent=palette['accent'])
         has_recipient = bool(app.state.get('storage')) if meat else bool(app.state.get('party'))
-        app.ui.button((rect.right-12-use_width, y, use_width, 30), 'Feed' if meat else 'Use', lambda: self.use(key),
-                      disabled=owned <= 0 or not has_recipient or app.action_pending,
+        _, recipient = self.abi_recipient()
+        uid = recipient.get('uid') if recipient else None
+        choose_abi = abi and self.category != 'abi'
+        app.ui.button((rect.right-12-use_width, y, use_width, 30), 'Choose' if choose_abi else 'Use' if abi or not meat else 'Feed',
+                      lambda: self.filter('abi') if abi and self.category != 'abi' else self.use(key, uid=uid),
+                      disabled=self.busy if choose_abi else not self.can_use_abi(uid) if abi else owned <= 0 or not has_recipient or app.action_pending,
                       small=True, accent=color)
+
+    def abi_partner(self, rect):
+        """A visible party recipient, including an only partner that cannot be deposited."""
+        app, art = self.app, self.app.presentation
+        palette = art.colors('shop')
+        art.card(rect, 'shop', accent=True)
+        text(app.screen, app.assets, 'SELECTED ABI RECIPIENT', (rect.x+17, rect.y+17),
+             10, palette['accent'], True)
+        party = app.state.get('party', [])[:6]
+        index, mon = self.abi_recipient()
+        if mon:
+            app.selected_party = index
+            image = app.assets.sprite(mon.get('species_id'), (110, 70), now=app.now)
+            if image:
+                app.screen.blit(image, image.get_rect(midbottom=(rect.centerx, rect.y+111)))
+            wrap(app.screen, app.assets, mon.get('name', 'Partner'),
+                 (rect.x+18, rect.y+125), rect.width-36, 14, WHITE, 2)
+            abi = mon.get('abi', 0)
+            text(app.screen, app.assets, f'ABI {abi} → {min(200, abi+1)} / 200',
+                 (rect.centerx, rect.y+175), 18, LIME, True, center=True)
+            hint = ('ABI is at its permanent cap of 200.' if abi >= 200 else
+                    'Visit DigiLab or DigiFarm to use ABI meat.' if not (app.state.get('in_lab') or app.state.get('in_farm')) else
+                    'Use on this partner. No de-digivolution needed.')
+            wrap(app.screen, app.assets, hint, (rect.x+18, rect.y+199), rect.width-36, 11, palette['muted'], 2)
+            roster_height = 51+(57 if len(party) > 3 else 0)
+            slots_y = rect.bottom-65-roster_height
+            text(app.screen, app.assets, 'CHOOSE PARTY PARTNER', (rect.x+17, slots_y-19), 9, palette['muted'], True)
+            slot_w = (rect.width-38)//3
+            for slot, member in enumerate(party):
+                cell = pygame.Rect(rect.x+13+(slot%3)*(slot_w+6), slots_y+(slot//3)*57, slot_w, 51)
+                art.card(cell, 'shop', selected=slot == index)
+                image = app.assets.sprite(member.get('species_id'), (42, 39), now=app.now)
+                if image:
+                    app.screen.blit(image, image.get_rect(center=cell.center))
+                app.ui.actions.append((cell, lambda selected=slot: setattr(app, 'selected_party', selected)))
+        else:
+            wrap(app.screen, app.assets, 'Withdraw a partner from DigiBank, or feed a resident at your DigiFarm.',
+                 (rect.x+18, rect.y+71), rect.width-36, 13, palette['muted'], 5)
+        home = bool(app.state.get('in_lab') or app.state.get('in_farm'))
+        app.ui.button((rect.x+16, rect.bottom-45, rect.width-32, 30),
+                      'Feed a farm resident' if home else 'Visit DigiLab to use',
+                      (lambda: app.farm_screen.open_manager(item='digimeat_abi')) if home else app.enter_lab,
+                      small=True, accent=LIME, disabled=self.busy or bool(app.state.get('battle')))
 
     def farm_care(self, rect):
         app, art = self.app, self.app.presentation
@@ -233,9 +303,9 @@ class ShopScreen:
              20, WHITE, True, rect.width-30, True)
         y = wrap(app.screen, app.assets, 'Choose a stored companion at home to feed it a treat.',
                  (rect.x+19, rect.y+157), rect.width-38, 11, palette['muted'], max_lines=3)
-        y = wrap(app.screen, app.assets, 'CAM meat builds your bond. Stat meat adds a permanent bonus.',
+        y = wrap(app.screen, app.assets, 'CAM builds your bond. Stat meat adds bonuses. ABI meat adds +1 permanent ABI.',
                  (rect.x+19, y+13), rect.width-38, 11, LIME, max_lines=3)
-        y = wrap(app.screen, app.assets, 'No hunger or upkeep. Feed only when you want to.',
+        y = wrap(app.screen, app.assets, 'Use the ABI growth tab for party partners. ABI has its own 200 cap.',
                  (rect.x+19, y+13), rect.width-38, 11, palette['muted'], max_lines=3)
         if y+68 < rect.bottom-56:
             text(app.screen, app.assets, 'PERMANENT TRAINING LIMIT', (rect.x+19, y+17),
