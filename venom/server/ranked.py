@@ -12,6 +12,7 @@ import copy
 from datetime import datetime, timezone
 import hashlib
 import heapq
+import logging
 import math
 import random
 import threading
@@ -19,6 +20,8 @@ import time
 import uuid
 
 from venom.common.game import GameError, effectiveness
+
+LOG = logging.getLogger('venom.ranked')
 
 
 GRADES = (
@@ -67,7 +70,9 @@ class RankedService:
         self.requested_config = dict(self.config)
         store.configure_ranked_schedule(self.config["season_seconds"], self.config["season_anchor"])
         self.lock = threading.RLock()
+        LOG.info('Ranked startup: restoring saved defender profiles...')
         self.profiles = {p["id"]: p for p in store.profiles()}
+        LOG.info('Ranked startup: restored %s defender profiles; checking season settlement...', len(self.profiles))
         self._power_order = []
         self._indexed_ids = set()
         self._power_at = -math.inf
@@ -76,12 +81,13 @@ class RankedService:
         self._generation = 0
         self._matches_started = 0
         self.tick()
+        LOG.info('Ranked startup: current season and automatic DigiRuby rewards are ready.')
 
     def register_participant(self, participant_id, profile):
         return self.register_many([{**profile, "id": participant_id}])
 
     def register_many(self, profiles):
-        """Batch initial 5,000 profiles; later writes only persist changed snapshots."""
+        """Batch initial profiles; later writes only persist changed snapshots."""
         changed = []
         with self.lock:
             for raw in profiles:
@@ -110,7 +116,7 @@ class RankedService:
                 self.store.register_many(changed, self.clock(), self.config["energy_capacity"])
                 self.profiles.update((p["id"], p) for p in changed)
                 # New participants must be immediately matchable; movement-only
-                # changes do not cause the sorted 5,000-team index to rebuild.
+                # changes do not cause the sorted defender index to rebuild.
                 if any(p["id"] not in self._indexed_ids for p in changed):
                     self._power_at = -math.inf
         return len(changed)
@@ -230,7 +236,7 @@ class RankedService:
             candidates = [pid for _, pid in self._power_order[max(0, at - 40):at + 41] if pid != participant_id]
             candidates.sort(key=lambda pid: (abs(self.profiles[pid]["power"] - power), pid))
             # Stable per-minute shuffle within comparable teams prevents the
-            # first equal-power identifier receiving all 5,000 attackers.
+            # first equal-power identifier receiving every rival's attacks.
             seed = hashlib.sha256(f"{participant_id}:{int(now // 60)}".encode()).digest()
             rng = random.Random(int.from_bytes(seed[:8], "big"))
             shortlist = candidates[:max(15, min(50, int(limit) * 3))]
@@ -292,7 +298,7 @@ class RankedService:
             self._generation += 1
             self._standings_cache.clear()
             # Human results need the wallet/record immediately. Bot callers
-            # inspect ledger counters without rebuilding a 5,000-row ladder.
+            # inspect ledger counters without rebuilding the full ladder.
             if attacker["kind"] == "player":
                 result["own"] = self._own(attacker_id, now)
             return result

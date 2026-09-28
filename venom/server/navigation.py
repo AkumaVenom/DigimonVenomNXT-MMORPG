@@ -2,7 +2,7 @@
 
 Routes share cached collision-checked edges. All spectators sample the same
 server timeline, including safe closed patrols during a delayed activity tick.
-This avoids 5,000 independent physics loops or client-side random movement.
+This avoids thousands of independent physics loops or client-side random movement.
 """
 from __future__ import annotations
 
@@ -159,7 +159,7 @@ class Navigation:
     def route(self, map_id, x, y, rng, now, seconds=12):
         """Chain cached safe edges into one long, continuous authoritative route.
 
-        Pixel checks are shared per map instead of repeated 5,000 times every
+        Pixel checks are shared per map instead of repeated for every rival each
         half-second. A resumed mid-edge position connects through a verified line.
         Sampling still returns the exact current heading at every corner.
         """

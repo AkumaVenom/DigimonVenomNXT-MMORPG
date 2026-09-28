@@ -1,4 +1,152 @@
-# Release status — DigiRuby Economy v0.12.0
+# Release status — Digimon Venom NXT v1.0.0
+
+This source release adds blue cyber-grid battle scenery and the supplied normal
+and Paradox Fanglongmon animation frames. Existing Fanglongmon species IDs and
+saved progression are retained. The complete feature baseline includes both
+story campaigns, DigiLab, DigiFarm, DigiRuby economy, Season careers, Ranked
+Arena, 3,000 persistent rivals, 12-hour activity retention and the prior startup
+and network improvements.
+
+The corrected v1.0.0 client measures target cards around the complete wrapped
+name, metadata, sprite and HP bar with padding. The selection outline and click
+area remain anchored during attack movement. This corrects the earlier target
+highlight without changing the release version or battle rules.
+
+Read [RELEASE_V100.md](RELEASE_V100.md) for the current upgrade and
+[FANGLONGMON_V100.md](FANGLONGMON_V100.md) for the artwork and species details.
+Use `BUILD_ALL.bat` to rebuild **both Windows applications** when upgrading from
+v0.12.3. An existing v1.0.0 installation needs the rebuilt client for the target
+correction and may retain its v1.0.0 server. The source update applies over
+either complete baseline. Preserve the complete stopped server's saved database
+and private configuration. Do not run a fresh database setup.
+
+Current verification evidence is recorded in
+[validation/release_v100](validation/release_v100/README.md). The complete suite
+passed with **873 passed and 10 skipped** in **240.66 seconds**, with no failures
+or errors. One opt-in live-MySQL check and nine graphical setup-wizard checks
+were skipped. Native battle and replay captures were checked from the minimum
+960×600 window to 4K, including the supplied 2047×1155 layout and the artwork for
+both Fanglongmon forms. The asset manifest contains 21,820 files.
+
+Native Windows building and a playtest on the intended host are separate checks;
+this source release does not claim those checks have already been performed.
+
+Earlier results below retain their original versions and measurement scope.
+
+## Retained Rival Population v0.12.3
+
+The live rival population is now **3,000 by default and at most**. Existing
+configuration values above 3,000 are capped without requiring manual edits.
+The extra rivals are removed through the startup migration; retained rivals
+and human players keep their earned progress. The 12-hour activity retention
+and startup loading without an overall deadline remain active. Negotiated
+WebSocket compression reduces repeated map-update payloads without removing
+actors or lowering the update rate.
+
+Read [POPULATION_V0123.md](POPULATION_V0123.md) for that migration and its
+original upgrade. That server-only update supported existing v0.12.2 clients,
+which already offered WebSocket compression. For the current v1.0.0 release,
+follow the guide above and deploy both rebuilt applications, preserving the
+stopped server's saved database and private configuration. Native Windows
+building and a target-host playtest are separate from development checks.
+
+The complete automated suite passed with **818 passed, 10 skipped** in
+228.94 seconds. The skips are one opt-in live-MySQL check and nine graphical
+setup-wizard checks. Saved-fleet regressions verify exactly 5,000 → 3,000
+persistent rivals, retained earned state/human history, repeat-safe migration,
+disabled startup, stale-owner rejection and interrupted cleanup across a
+season boundary. Native-client negotiation tests preserve complete decoded
+snapshots and support uncompressed fallback.
+
+The isolated moving-map benchmark measured 100 rivals plus one player at
+**315,255 → 56,846 WebSocket bytes/second** and 160 rivals plus one player at
+**502,677 → 88,684 bytes/second** with compression. These are Linux development
+measurements of complete 10 Hz snapshots, excluding TLS/TCP/IP overhead and
+other traffic, not a bandwidth guarantee for the user's host.
+
+The v0.12.3 validation evidence is in
+[validation/population_v0123](validation/population_v0123/README.md).
+Historical release measurements below retain their original populations and
+versions; they are not measurements of the current release.
+
+## Retained Bot Activity v0.12.2
+
+Global Bot Activity counters now cover the latest 12 hours. The feed retains
+at most the latest 100 events inside that window. Compact minute totals and
+expired activity receipt rows are cleaned up automatically at startup and
+regularly while the server runs. Displayed results exclude expired activity.
+The oldest partial minute of counters can expire less than one minute early so
+the display does not include events older than 12 hours.
+
+Old global lifetime totals had no timestamps and are not imported into the new
+window. Global tracking begins with this upgrade. Small per-rival lifetime
+career counters remain because they support individual records and training.
+Earned partners, XP, scans, inventories, wallets, stories, Season progress and
+ranked rewards are retained. Ranked outcome records remain available for
+career and reward integrity.
+
+The old counter integers themselves were small; the activity receipt table
+was a source of unbounded activity metadata growth. Retention now bounds that
+metadata. This does not promise that all database storage stops growing, and
+MySQL may reuse freed pages without shrinking its files on disk.
+
+The complete automated suite passed: **799 passed, 10 skipped** in 224.55
+seconds. One opt-in live-MySQL check and nine graphical setup-wizard checks
+were skipped. The [validation evidence](validation/activity_v0122/README.md)
+includes the full log and XML results.
+
+A 28-day simulated persistence check submitted **40,320 minute batches** using
+all 27 counters, including fractional walking distance. The shared global
+history remained bounded at **720 minute buckets** and **100 feed events**.
+Retained counter JSON was **318,960 bytes** at days 1, 7 and 28, excluding SQL
+overhead and other game data. Receipt counts depend on save frequency within
+the retained 12 hours; they do not have a fixed 720-row cap. See the
+[retention report](validation/activity_v0122/RETENTION_VALIDATION.md) and
+[UI preview index](validation/activity_v0122/README.md).
+
+The v0.12.1 restart repair remains in place: no overall startup deadline,
+continuous ownership renewal during loading, batched saved-rival restoration
+and visible progress. Read [BOT_ACTIVITY_V0122.md](BOT_ACTIVITY_V0122.md) for
+the original activity upgrade and [the validation evidence](validation/activity_v0122/README.md)
+for source checks. Rebuild and deploy **both Windows applications** with
+`BUILD_ALL.bat`; preserve the existing database and private configuration.
+This is a source release. Native Windows builds and target-machine playtests
+remain separate checks.
+
+## Retained persistent-rival restart repair v0.12.1
+
+Saved-world loading has no overall deadline. The server renews its population
+ownership throughout startup, restores saved rivals in bounded batches without
+duplicating the full fleet in memory, and logs restoration progress. Startup
+database reads and one-time history indexes can finish without the normal live
+gameplay socket timeout. Ranked history, rewards and player saves are retained.
+
+The complete automated suite passed: **785 passed, 10 skipped**. This includes
+18 new restart, saved-progress, lease-ownership and startup-I/O regressions.
+The full log and XML results are included in the validation evidence folder.
+
+The v0.12.0 lease-expiry failure was reproduced using its archived source and a
+durable saved population with a simulated long restore. Recovery and ownership
+tests exercise the repaired path and still reject a stale server after another
+server takes ownership. The affected installation's final traceback was not
+provided, so its exact error remains unverified.
+
+A Linux/SQLite before/after benchmark restored 5,000 grown rivals containing
+30,000 party Digimon, 240,000 stored Digimon and 2,500 unfinished battles.
+Community initialization measured **19.072 seconds → 8.216 seconds**; peak
+process resident memory measured **1,821.9 MiB → 1,184.1 MiB**. The exact
+saved-progress hash matched, the human fixture's 391 DigiRubies and 76,543
+credits were retained, and loading performed zero offline simulation actions.
+These single-run development measurements are not Windows/MySQL timings or a
+performance guarantee. See [the benchmark evidence](validation/restart_v0121/README.md)
+for original JSON results and measurement scope.
+
+Read [RESTART_REPAIR_V0121.md](RESTART_REPAIR_V0121.md) for the original source
+repair. The v0.12.1 server hotfix remained compatible with v0.12.0 clients.
+For the current upgrade, follow the v1.0.0 guide above and deploy both rebuilt
+applications while preserving the database and configuration.
+
+## Retained DigiRuby Economy v0.12.0
 
 All 19 shop items now offer credit and DigiRuby payment. Prices are shown before
 purchase. A new **DigiRuby Exchange** tab in Ranked Arena converts earned
@@ -12,12 +160,12 @@ continues to cost zero SP. Existing wallets, inventories, partners, story saves,
 Season careers and ranked records are preserved. Economy transactions validate
 the balance and capacity on the server before committing the payment and grant.
 
-This is a source release. Rebuild **both Windows x64 applications** and upgrade
-from a stopped, complete server backup. Preserve `mysql/data`, private database
-settings and all existing `config` files; do not run fresh database setup. The
-current guide provides the exact upgrade from v0.11.0. Windows executable builds
-and an interactive target-machine playtest are separate release checks; this
-note does not claim they have been completed.
+The original v0.12.0 feature upgrade from v0.11.0 required rebuilding both
+Windows x64 applications; its historical upgrade instructions are in the
+DigiRuby guide. For the current update, follow the v1.0.0 guide above.
+Preserve `mysql/data`, private database settings and all existing `config`
+files; do not run fresh database setup. Native Windows builds and
+target-machine playtests remain separate release checks.
 
 ## Retained Paradox Chronicle v0.11.0
 
@@ -156,8 +304,8 @@ feature guides do not provide a database migration procedure for it.
 | Native client | Native-resolution SDL desktop rendering, Windows DPI awareness, borderless fullscreen, saved UI/frame/audio preferences, continuous movement/camera, animated tamers and follower, account/party/collection/shop/world/lab/battle screens | Client and world-server EXEs must be generated with the supplied builder on Windows; the bundled MySQL engine alone does not make this source package a ready-to-run game server |
 | Display/camera | Native-size text and shapes; nearest-neighbor artwork; whole-level 1× through close-up 8×; independent UI scale, fullscreen restoration and selectable frame caps | Fullscreen uses the current desktop resolution. Original artwork detail is unchanged. Fractional map-fit scales can sample source pixels unevenly; uniform pixel replication requires integer enlargement. No guaranteed hardware frame rate or Windows DPI acceptance result is claimed |
 | Dedicated server | Authoritative WebSocket world, accounts, collision, battles and durable actions; shared players and chat | A single world process; no proven production human-connection capacity, clustering or operator dashboard |
-| Tamer rivals | Default population of 5,000 persistent AI tamers, even initial map distribution, continuous collision-aware patrols, shared positions, spaced sector arrivals, clickable profiles, wild combat, earned XP/scan, materialization, persistent training teams, veteran storage, evolution, shop use, ranked participation and density-aware travel | Fresh rivals receive a clearly identified sector-appropriate seed level. Collection/evolution require eligibility and ranked attacks require energy. Existing partners retain their identities and earned progression; legal evolution can change levels under normal game rules. Population balancing does not promise equal visible occupancy. No simulated offline training while the world server is stopped |
-| Population performance | Worker-driven scheduler, bounded work batches, map-local snapshots and shared navigation data; rivals do not open 5,000 player sockets | A configured population size is not a certified capacity for 5,000 human connections. Hardware, network and database performance must be measured on the target Windows host; see validation evidence for tests actually run |
+| Tamer rivals | Default and maximum population of 3,000 persistent AI tamers, even initial map distribution, continuous collision-aware patrols, shared positions, spaced sector arrivals, clickable profiles, wild combat, earned XP/scan, materialization, persistent training teams, veteran storage, evolution, shop use, ranked participation and density-aware travel | Fresh rivals receive a clearly identified sector-appropriate seed level. Collection/evolution require eligibility and ranked attacks require energy. Existing partners retain their identities and earned progression; legal evolution can change levels under normal game rules. Population balancing does not promise equal visible occupancy. No simulated offline training while the world server is stopped |
+| Population performance | Worker-driven scheduler, bounded work batches, map-local snapshots and shared navigation data; rivals do not open 3,000 player sockets | A configured population size is not a certified capacity for 3,000 human connections. Hardware, network and database performance must be measured on the target Windows host; see validation evidence for tests actually run |
 | Battle Park | Asynchronous automatic battles using restored party snapshots, three active partners plus up to three reserves, weekly seasons, points, promotion battles, career rating, top-100 current/career/archive ladders and automatic DigiRuby rewards | ReArise-inspired structure with documented NXT numerical rules and SP combat, not verified exact ReArise parity. Earned DigiRubies can buy every shop item or convert to credits at the published rate. No real-time human-versus-human command exchange |
 | Rivals Hub/activity | Nearby invitations, accept/decline, friendly challenges, head-to-head totals, bot directory, cumulative activity counters, latest 100 events and sector distribution | Global event detail is deliberately bounded to 100 recent events; cumulative totals remain. Head-to-head data persists, with the 100 most recent opponents exposed by the hub. Bots are explicitly identified as AI |
 | Persistence | Bundled folder-owned MySQL 8.4.11, fresh native setup, authenticated readiness and data-directory checks, local game login, exact-database grants, transactional saves, password hashing, session leases and revisions; coordinated world/database shutdown for manual whole-folder backups | Physical portability requires a clean shutdown, the complete folder and the same engine on a compatible Windows x64 host. Native Windows execution and production performance remain target-host checks |

@@ -224,8 +224,13 @@ class WorldRenderer:
         shadow = pygame.Rect(round(pos.x - 15 * scale), round(pos.y - 5 * scale),
                              max(2, round(30 * scale)), max(1, round(12 * scale)))
         pygame.draw.ellipse(self._surface, (22, 33, 40), shadow)
+        # Only explicitly directional pose packs opt in; existing imported
+        # sheet animations retain their established presentation.
+        facing_left = (kind != 'tamer' and str(direction).endswith('left')
+                       and bool(app.assets.species.get(ident, {}).get('mirrored_frames')))
         source = (app.assets.tamer(ident, direction, moving, app.now, (64, 80)) if kind == 'tamer'
-                  else app.assets.sprite(ident, (58, 64), 'walk' if moving else 'idle', app.now))
+                  else app.assets.sprite(ident, (58, 64), 'walk' if moving else 'idle', app.now,
+                                         flip=facing_left))
         top = pos.y - 64 * scale
         destination = pygame.Rect(round(pos.x-16*scale), round(top), max(8, round(32*scale)), max(8, round(64*scale)))
         if source:

@@ -68,7 +68,7 @@ class AuditManager(BotManager):
                 self.provenance_errors.append({"bot": bot["id"], "operation": op, "error": error})
 
 
-def run(count=5000, seconds=1800, mature_save=False, seed=7281, progress=None):
+def run(count=3000, seconds=1800, mature_save=False, seed=7281, progress=None):
     started = time.perf_counter()
     source = {str(path.relative_to(ROOT)): hashlib.sha256(path.read_bytes()).hexdigest()
               for path in (ROOT / "venom/server/bots.py", ROOT / "venom/server/navigation.py",
@@ -245,14 +245,14 @@ def run(count=5000, seconds=1800, mature_save=False, seed=7281, progress=None):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--bots", type=int, default=5000)
+    parser.add_argument("--bots", type=int, default=3000)
     parser.add_argument("--seconds", type=float, default=1800)
     parser.add_argument("--mature-save", action="store_true")
     parser.add_argument("--seed", type=int, default=7281)
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
-    if not 1 <= args.bots <= 5000 or not math.isfinite(args.seconds) or not 1 <= args.seconds <= 86400:
-        parser.error("Use 1–5000 bots and 1–86400 simulated seconds.")
+    if not 1 <= args.bots <= 3000 or not math.isfinite(args.seconds) or not 1 <= args.seconds <= 86400:
+        parser.error("Use 1–3000 bots and 1–86400 simulated seconds.")
     args.output.parent.mkdir(parents=True, exist_ok=True)
     def progress(row):
         args.output.with_suffix(".progress.json").write_text(json.dumps(row, indent=2) + "\n", encoding="utf-8")

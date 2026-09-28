@@ -189,7 +189,7 @@ def test_world_ds_location_roundtrips_through_hubs_and_both_private_modes():
     assert restored == state
 
 
-def test_existing_5000_saved_rivals_expand_into_world_ds_without_identity_or_career_reset(tmp_path):
+def test_existing_3000_saved_rivals_expand_into_world_ds_without_identity_or_career_reset(tmp_path):
     database = Database({"driver": "sqlite", "path": str(tmp_path / "rival_upgrade.sqlite3")}, dev=True)
     try:
         database.initialize()
@@ -197,7 +197,7 @@ def test_existing_5000_saved_rivals_expand_into_world_ds_without_identity_or_car
         store.initialize()
         old_engine = GameEngine(ROOT, seed=915)
         old_engine.maps = {mid: area for mid, area in old_engine.maps.items() if mid.startswith("map_")}
-        old = BotManager(old_engine, store, config={"count": 5000, "seed": 445, "min_dwell": 30, "max_dwell": 60})
+        old = BotManager(old_engine, store, config={"count": 3000, "seed": 445, "min_dwell": 30, "max_dwell": 60})
         old.initialize(now=100.0)
         # Explicit mature-save fixture: existing owned veterans can visit every
         # difficulty. No levels are granted by startup, migration or travel.
@@ -210,10 +210,10 @@ def test_existing_5000_saved_rivals_expand_into_world_ds_without_identity_or_car
             old.dirty.add(bot["id"])
         old.flush(force=True, now=100.0)
         before = {row["id"]: row for row in store.bot_load_all()}
-        assert len(before) == 5000
+        assert len(before) == 3000
 
         upgraded = BotManager(GameEngine(ROOT, seed=915), store,
-                              config={"count": 5000, "seed": 445, "min_dwell": 30, "max_dwell": 60})
+                              config={"count": 3000, "seed": 445, "min_dwell": 30, "max_dwell": 60})
         upgraded.initialize(now=1000.0)
         new_ids = {area["id"] for area in ds_maps(upgraded.engine)}
         assert set(upgraded.bots) == set(before)
@@ -227,7 +227,7 @@ def test_existing_5000_saved_rivals_expand_into_world_ds_without_identity_or_car
         for bot in upgraded.bots.values():
             upgraded._explore(bot, now=1100.0)
         assert all(upgraded.by_map[mid] for mid in upgraded.engine.maps), "The same population must cover both regions"
-        assert sum(map(len, upgraded.by_map.values())) == 5000
+        assert sum(map(len, upgraded.by_map.values())) == 3000
         assert set().union(*upgraded.by_map.values()) == set(before)
         for ident, bot in upgraded.bots.items():
             for key in ("party", "storage", "inventory", "credits", "scan", "wins", "losses"):
@@ -239,7 +239,7 @@ def test_existing_5000_saved_rivals_expand_into_world_ds_without_identity_or_car
         upgraded.flush(force=True, now=1100.0)
         migrated = {row["id"]: row for row in store.bot_load_all()}
         restored = BotManager(GameEngine(ROOT, seed=916), store,
-                              config={"count": 5000, "seed": 445, "min_dwell": 30, "max_dwell": 60})
+                              config={"count": 3000, "seed": 445, "min_dwell": 30, "max_dwell": 60})
         restored.initialize(now=9000.0)
         assert set(restored.bots) == set(before)
         for ident, bot in restored.bots.items():

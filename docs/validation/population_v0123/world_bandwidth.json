@@ -1,0 +1,76 @@
+{
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+  "python": "3.12.14",
+  "method": "Production broadcast_once JSON and WebSocket frame serializer; real BotManager actors on a crowded disposable map, following collision-checked patrols; 10Hz snapshots.",
+  "limits": [
+    "Frame sizes include WebSocket framing, not TLS/TCP/IP overhead, acknowledgements or other game traffic.",
+    "Initial occupancy is the exact ordinal-modulo-map-count allocation, not a claim about mature roaming populations.",
+    "Compression timings are this machine's isolated per-frame encoder cost, not a Windows hosting capacity guarantee."
+  ],
+  "compression": {
+    "server_no_context_takeover": true,
+    "client_no_context_takeover": true,
+    "window_bits": 12,
+    "level": 1,
+    "memLevel": 5
+  },
+  "catalog_map_count": 404,
+  "initial_population_occupancy": {
+    "3000": {
+      "minimum": 7,
+      "maximum": 8,
+      "mean": 7.426
+    },
+    "5000": {
+      "minimum": 12,
+      "maximum": 13,
+      "mean": 12.376
+    }
+  },
+  "scenarios": [
+    {
+      "rivals_on_map": 8,
+      "human_players_on_map": 1,
+      "snapshots": 100,
+      "moving_rivals_mean": 8.0,
+      "uncompressed_websocket_bytes_per_second": 28325,
+      "compressed_websocket_bytes_per_second": 7602,
+      "reduction_percent": 73.16,
+      "compression_mean_ms_per_frame": 0.037
+    },
+    {
+      "rivals_on_map": 13,
+      "human_players_on_map": 1,
+      "snapshots": 100,
+      "moving_rivals_mean": 13.0,
+      "uncompressed_websocket_bytes_per_second": 43876,
+      "compressed_websocket_bytes_per_second": 10396,
+      "reduction_percent": 76.31,
+      "compression_mean_ms_per_frame": 0.0429
+    },
+    {
+      "rivals_on_map": 100,
+      "human_players_on_map": 1,
+      "snapshots": 100,
+      "moving_rivals_mean": 100.0,
+      "uncompressed_websocket_bytes_per_second": 315255,
+      "compressed_websocket_bytes_per_second": 56846,
+      "reduction_percent": 81.97,
+      "compression_mean_ms_per_frame": 0.1785
+    },
+    {
+      "rivals_on_map": 160,
+      "human_players_on_map": 1,
+      "snapshots": 100,
+      "moving_rivals_mean": 160.0,
+      "uncompressed_websocket_bytes_per_second": 502677,
+      "compressed_websocket_bytes_per_second": 88684,
+      "reduction_percent": 82.36,
+      "compression_mean_ms_per_frame": 0.2714
+    }
+  ],
+  "source_sha256": {
+    "venom/server/main.py": "93c7168830a409f823d90bdaf6a2e76c411a3b8aa745e0bc3e4ad60561b6b364",
+    "venom/server/bots.py": "cde0803cb156e3f92f397122999de467ca1a5910905bff832dbbf02931873e18"
+  }
+}

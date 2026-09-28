@@ -1,0 +1,26 @@
+........................................................................ [  8%]
+........................................................................ [ 16%]
+........................................................................ [ 24%]
+........................................................................ [ 32%]
+........................................................................ [ 40%]
+........................................................................ [ 48%]
+........................................................................ [ 57%]
+....s................................................................... [ 65%]
+........................................................................ [ 73%]
+................................sssssssss............................... [ 81%]
+........................................................................ [ 89%]
+........................................................................ [ 97%]
+...................                                                      [100%]
+- generated xml file: /workspace/scratch/db3f24de84d0/work/DigimonVenomNXT/docs/validation/release_v100/full_suite.xml -
+=========================== short test summary info ============================
+SKIPPED [1] tests/test_portable_mysql_live.py:177: Set VENOM_TEST_MYSQL_RUNTIME for opt-in Linux/MySQL validation
+SKIPPED [1] tests/test_setup_wizard.py:167: Requires a graphical desktop / Xvfb
+SKIPPED [1] tests/test_setup_wizard.py:145: Requires a graphical desktop / Xvfb
+SKIPPED [1] tests/test_setup_wizard.py:158: Requires a graphical desktop / Xvfb
+SKIPPED [1] tests/test_setup_wizard.py:130: Requires a graphical desktop / Xvfb
+SKIPPED [1] tests/test_setup_wizard.py:105: Requires a graphical desktop / Xvfb
+SKIPPED [1] tests/test_setup_wizard.py:111: Requires a graphical desktop / Xvfb
+SKIPPED [1] tests/test_setup_wizard.py:201: Requires a graphical desktop / Xvfb
+SKIPPED [1] tests/test_setup_wizard.py:183: Requires a graphical desktop / Xvfb
+SKIPPED [1] tests/test_setup_wizard.py:190: Requires a graphical desktop / Xvfb
+873 passed, 10 skipped in 240.66s (0:04:00)

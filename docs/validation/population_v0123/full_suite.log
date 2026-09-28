@@ -1,0 +1,25 @@
+........................................................................ [  8%]
+........................................................................ [ 17%]
+........................................................................ [ 26%]
+........................................................................ [ 34%]
+........................................................................ [ 43%]
+........................................................................ [ 52%]
+.....................s.................................................. [ 60%]
+........................................................................ [ 69%]
+.................................................sssssssss.............. [ 78%]
+........................................................................ [ 86%]
+........................................................................ [ 95%]
+....................................                                     [100%]
+- generated xml file: /workspace/scratch/db3f24de84d0/work/DigimonVenomNXT/docs/validation/population_v0123/full_suite.xml -
+=========================== short test summary info ============================
+SKIPPED [1] tests/test_portable_mysql_live.py:177: Set VENOM_TEST_MYSQL_RUNTIME for opt-in Linux/MySQL validation
+SKIPPED [1] tests/test_setup_wizard.py:167: Requires a graphical desktop / Xvfb
+SKIPPED [1] tests/test_setup_wizard.py:145: Requires a graphical desktop / Xvfb
+SKIPPED [1] tests/test_setup_wizard.py:158: Requires a graphical desktop / Xvfb
+SKIPPED [1] tests/test_setup_wizard.py:130: Requires a graphical desktop / Xvfb
+SKIPPED [1] tests/test_setup_wizard.py:105: Requires a graphical desktop / Xvfb
+SKIPPED [1] tests/test_setup_wizard.py:111: Requires a graphical desktop / Xvfb
+SKIPPED [1] tests/test_setup_wizard.py:201: Requires a graphical desktop / Xvfb
+SKIPPED [1] tests/test_setup_wizard.py:183: Requires a graphical desktop / Xvfb
+SKIPPED [1] tests/test_setup_wizard.py:190: Requires a graphical desktop / Xvfb
+818 passed, 10 skipped in 228.94s (0:03:48)

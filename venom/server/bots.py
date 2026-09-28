@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import copy
 import heapq
+import logging
 import math
 import random
 import threading
@@ -18,7 +19,12 @@ import uuid
 from collections import Counter, deque
 
 from venom.common.game import GameError, SHOP, STAGE_RANK, effectiveness
+from venom.common.population import DEFAULT_BOTS, MAX_BOTS
+from .activity_window import RollingActivity, WINDOW_SECONDS, EVENT_LIMIT
 from .navigation import Navigation
+
+LOG = logging.getLogger('venom.bots')
+STARTUP_BATCH = 100
 
 
 STAT_KEYS = (
@@ -46,7 +52,7 @@ class BotManager:
     def __init__(self, engine, store, ranked=None, config=None):
         self.engine, self.store, self.ranked = engine, store, ranked
         self.config = dict(config or {})
-        self.count = max(0, min(5000, int(self.config.get("count", 5000))))
+        self.count = max(0, min(MAX_BOTS, int(self.config.get("count", DEFAULT_BOTS))))
         self.enabled = bool(self.config.get("enabled", True))
         if not self.enabled:
             self.count = 0
@@ -64,10 +70,13 @@ class BotManager:
         self.heap = []
         self.serial = 0
         self.dirty = set()
-        self.counters = Counter({key: 0 for key in STAT_KEYS})
-        self.events = deque(maxlen=100)
+        self.activity_window = RollingActivity(STAT_KEYS)
+        self.counters = self.activity_window.counters
+        self.events = deque(maxlen=EVENT_LIMIT)
         self.pending_events = []
         self.pending_counters = Counter()
+        self.pending_buckets = {}
+        self.pending_activity_batch = None
         self.last_save = 0.0
         self.last_tick = 0.0
         self.processed = 0
@@ -84,18 +93,28 @@ class BotManager:
         self.seen_match_ids = set()
 
     def initialize(self, now=None):
+        realtime = now is None
         now = time.monotonic() if now is None else float(now)
         with self.lock:
             if self.initialized:
                 return
-            loaded = {str(row["id"]): row for row in self.store.bot_load_all()}
+            LOG.info('Loading saved rival tamers in batches of %d; no overall loading deadline.', STARTUP_BATCH)
+            # Keep only one decoded page in addition to the live population.
+            # A mature world can contain hundreds of thousands of partners;
+            # fetching every JSON document and then copying it doubles peak RAM.
+            loaded = iter(self._saved_rows()) if self.count else iter(())
+            saved = next(loaded, None)
+            LOG.info('Reconciling rival counters with committed ranked matches...')
             ranked_totals = self.store.ranked_totals() if hasattr(self.store, "ranked_totals") else {}
             maps = sorted(self.engine.maps)
             tamers = sorted(self.engine.tamers)
-            profiles, new_rows = [], []
+            profiles, new_ids = [], []
+            restored = created = 0
             for ordinal in range(self.count):
                 ident = f"bot:{ordinal + 1:05d}"
-                row = loaded.get(ident)
+                while saved is not None and str(saved['id']) < ident:
+                    saved = next(loaded, None)
+                row = saved if saved is not None and str(saved['id']) == ident else None
                 if row is None:
                     area = self.engine.maps[maps[ordinal % len(maps)]]
                     name = self._name(ordinal)
@@ -111,24 +130,70 @@ class BotManager:
                     row = {"id": ident, "state": state,
                            "runtime": {"phase": "explore", "cycle": 0, "seed_level": seed_level},
                            "stats": {key: 0 for key in STAT_KEYS}}
-                    new_rows.append(row)
+                    new_ids.append(ident)
+                    created += 1
+                else:
+                    restored += 1
                 if ident in ranked_totals:
                     row.setdefault("stats", {}).update(ranked_totals[ident])
-                self._restore(row, ordinal, now)
-                profiles.append(self._rank_profile(self.bots[ident]))
-            # One batch establishes directory membership, rather than 5,000 commits.
-            if self.ranked and profiles:
-                self.ranked.register_many(profiles)
-            if new_rows:
-                for start in range(0, len(new_rows), 500):
-                    self.store.bot_save_batch([self._serialize(self.bots[row["id"]], now)
-                                               for row in new_rows[start:start + 500]])
-            if hasattr(self.store, "activity"):
-                history = self.store.activity(limit=100)
+                # Database pages and MemoryStore fixtures return owned decoded
+                # objects; the live bot can adopt them without a second copy.
+                self._restore(row, ordinal, now, owned=True)
+                if row is saved:
+                    saved = next(loaded, None)
+                if self.ranked:
+                    profiles.append(self._rank_profile(self.bots[ident]))
+                if (ordinal + 1) % STARTUP_BATCH == 0 or ordinal + 1 == self.count:
+                    if self.ranked and profiles:
+                        self.ranked.register_many(profiles)
+                        profiles.clear()
+                    if new_ids:
+                        self.store.bot_save_batch([self._serialize(self.bots[key], now) for key in new_ids])
+                        new_ids.clear()
+                    LOG.info('Rival tamers loaded: %d / %d (%d restored, %d new).',
+                             ordinal + 1, self.count, restored, created)
+            wall_now = time.time()
+            if hasattr(self.store, "activity_snapshot"):
+                history = self.store.activity_snapshot(now=wall_now)
+                self.activity_window.restore(history, wall_now)
                 self.events.extend(reversed(history.get("events", [])))
+            elif hasattr(self.store, "activity"):
+                # Legacy test adapters can retain their recent event feed, but
+                # undated totals must never become new twelve-hour activity.
+                history = self.store.activity(limit=EVENT_LIMIT)
+                self.events.extend(reversed(history.get("events", [])))
+            self._expire_activity(wall_now)
             self.dirty.clear()
+            if realtime:
+                # Loading time is not simulation time. Start saved dwell timers
+                # and the staggered scheduler when the world is actually ready.
+                ready_at = time.monotonic()
+                elapsed = max(0.0, ready_at - now)
+                for bot in self.bots.values():
+                    for key in ('leave_at', 'phase_until', 'next_at', 'visited_at'):
+                        bot['runtime'][key] += elapsed
+                self.heap = [(due + elapsed, ticket, ident) for due, ticket, ident in self.heap]
+                now = ready_at
             self.last_save = self.last_tick = now
             self.initialized = True
+            LOG.info('Rival population ready: %d tamers; saved partners and progress retained.', len(self.bots))
+
+    def _saved_rows(self):
+        if not hasattr(self.store, 'bot_load_batch'):
+            # Small in-memory test stores retain the original adapter contract.
+            yield from sorted(self.store.bot_load_all(), key=lambda row: str(row['id']))
+            return
+        after = ''
+        while True:
+            rows = self.store.bot_load_batch(after_id=after, limit=STARTUP_BATCH)
+            if not rows:
+                return
+            for row in rows:
+                ident = str(row['id'])
+                if ident <= after:
+                    raise ValueError('Saved rival pages are out of order; no progress was discarded.')
+                after = ident
+                yield row
 
     @staticmethod
     def _name(ordinal):
@@ -137,8 +202,8 @@ class BotManager:
         second = ("Scout", "Cipher", "Ranger", "Pulse", "Warden", "Link", "Voyager", "Spark")
         return f"AI {first[ordinal % len(first)]}{second[(ordinal // len(first)) % len(second)]}{ordinal + 1:04d}"
 
-    def _restore(self, row, ordinal, now):
-        state = copy.deepcopy(row["state"])
+    def _restore(self, row, ordinal, now, *, owned=False):
+        state = row["state"] if owned else copy.deepcopy(row["state"])
         if state.get("map_id") not in self.engine.maps or not state.get("party"):
             raise ValueError(f"Saved rival {row['id']} has an invalid map or empty party; restore its backup.")
         if any(m.get("species_id") not in self.engine.species for m in state["party"] + state.get("storage", [])):
@@ -172,7 +237,8 @@ class BotManager:
         self.by_map[state["map_id"]].add(bot["id"])
         if runtime.get("coverage_target") in self.coverage_reservations:
             self.coverage_reservations[runtime["coverage_target"]].add(bot["id"])
-        self.counters.update(bot["stats"])
+        # Career counters are fixed-size gameplay records. Global observatory
+        # totals come only from timestamped activity, never from a career sum.
         # Stagger the complete fleet over five seconds, without favouring low IDs.
         delay = ((ordinal * 3571) % max(1, self.count)) / max(1, self.count) * 5
         self._schedule(bot, now + delay)
@@ -191,7 +257,13 @@ class BotManager:
         if not value:
             return
         bot["stats"][key] += value
-        self.counters[key] += value
+        wall_now = time.time()
+        stamp = self.activity_window.record(key, value, wall_now)
+        if stamp not in self.pending_buckets:
+            # Even a custom, unusually long checkpoint interval cannot build
+            # an unbounded queue of expired minute aggregates in memory.
+            self._expire_activity(wall_now)
+        self.pending_buckets.setdefault(stamp, Counter())[key] += value
         self.pending_counters[key] += value
         self.dirty.add(bot["id"])
 
@@ -200,10 +272,51 @@ class BotManager:
                  "kind": kind, "text": text, "at": time.time(), "metadata": metadata}
         self.events.append(event)
         self.pending_events.append(event)
-        # Only the latest 100 events are requested; retain bounded memory even if
-        # persistence is temporarily unavailable. Totals remain in bot documents.
-        if len(self.pending_events) > 100:
-            del self.pending_events[:-100]
+        # Telemetry is bounded independently of durable gameplay checkpoints.
+        if len(self.pending_events) > EVENT_LIMIT:
+            del self.pending_events[:-EVENT_LIMIT]
+
+    def _expire_activity(self, now):
+        self.activity_window.advance(now)
+        cutoff = now - WINDOW_SECONDS
+        self.events = deque((event for event in self.events if cutoff < event.get('at', 0) <= now),
+                            maxlen=EVENT_LIMIT)
+        self.pending_events = [event for event in self.pending_events if cutoff < event.get('at', 0) <= now]
+        self.pending_buckets = {at: values for at, values in self.pending_buckets.items() if cutoff < at <= now}
+        self.pending_counters.clear()
+        for values in self.pending_buckets.values():
+            self.pending_counters.update(values)
+
+    def _flush_activity(self, now):
+        """Freeze retry identity and payload until a write is acknowledged.
+
+        A lost commit acknowledgement must not double count an older batch
+        when new activity arrives before its retry. Expired batches remain
+        timestamped and are rejected by the store instead of being re-dated.
+        """
+        self._expire_activity(now)
+        if hasattr(self.store, 'add_activity_batch'):
+            while self.pending_activity_batch or self.pending_events or self.pending_buckets:
+                if self.pending_activity_batch is None:
+                    self.pending_activity_batch = {
+                        'batch_id': uuid.uuid4().hex, 'batch_at': now,
+                        'events': self.pending_events,
+                        'buckets': [{'at': at, 'counters': dict(values)}
+                                    for at, values in sorted(self.pending_buckets.items())]}
+                    self.pending_events = []
+                    self.pending_buckets = {}
+                    self.pending_counters.clear()
+                self.store.add_activity_batch(**self.pending_activity_batch, now=now)
+                self.pending_activity_batch = None
+        elif (self.pending_events or self.pending_counters) and hasattr(self.store, 'add_events'):
+            self.store.add_events(list(self.pending_events), dict(self.pending_counters))
+            self.pending_events.clear()
+            self.pending_buckets.clear()
+            self.pending_counters.clear()
+        if hasattr(self.store, 'maintain_activity'):
+            # This also runs for an idle or disabled population, so expired
+            # telemetry does not depend on another battle being played.
+            self.store.maintain_activity(now=now)
 
     def _execute(self, bot, op, payload):
         state = bot["state"]
@@ -826,8 +939,11 @@ class BotManager:
     def activity(self, limit=100):
         limit = max(1, min(100, int(limit)))
         with self.lock:
+            wall_now = time.time()
+            self._expire_activity(wall_now)
             phases = Counter(bot["runtime"]["phase"] for bot in self.bots.values())
             return {"population": len(self.bots), "active": len(self.bots),
+                    **self.activity_window.metadata(wall_now),
                     "total_maps": len(self.by_map), "occupied_maps": sum(bool(v) for v in self.by_map.values()),
                     "counters": dict(self.counters), "phases": dict(phases),
                     "events": list(reversed(copy.deepcopy(list(self.events))))[:limit],
@@ -867,10 +983,7 @@ class BotManager:
                 self.dirty.difference_update(subset)
             if ids:
                 self.save_cursor = (self.bots[ids[-1]]["ordinal"] + 1) % max(1, self.count)
-            if (self.pending_events or self.pending_counters) and hasattr(self.store, "add_events"):
-                self.store.add_events(list(self.pending_events), dict(self.pending_counters))
-                self.pending_events.clear()
-                self.pending_counters.clear()
+            self._flush_activity(time.time())
             self.last_save = now
 
     def close(self):

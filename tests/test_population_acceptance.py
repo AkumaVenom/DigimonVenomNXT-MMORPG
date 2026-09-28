@@ -87,7 +87,7 @@ class NavigationAcceptanceTests(unittest.TestCase):
 
 
 class PopulationAcceptanceTests(unittest.TestCase):
-    def test_real_5000_population_seeds_all_sectors_and_scheduler_reaches_every_bot(self):
+    def test_real_3000_population_seeds_all_sectors_and_scheduler_reaches_every_bot(self):
         with tempfile.TemporaryDirectory(prefix="venom-population-test-") as directory:
             database = Database({"driver": "sqlite", "path": str(Path(directory) / "population.sqlite3")}, dev=True)
             try:
@@ -95,15 +95,15 @@ class PopulationAcceptanceTests(unittest.TestCase):
                 store = CommunityStore(database)
                 store.initialize()
                 engine = GameEngine(ROOT, seed=440)
-                manager = BotManager(engine, store, config={"count": 5000, "seed": 880})
+                manager = BotManager(engine, store, config={"count": 3000, "seed": 880})
                 manager.initialize(now=1000.0)
-                self.assertEqual(len(manager.bots), 5000)
+                self.assertEqual(len(manager.bots), 3000)
                 self.assertEqual(set(manager.by_map), set(engine.maps))
                 self.assertEqual(sum(mid.startswith("map_") for mid in manager.by_map), 254)
                 occupancy = [len(ids) for ids in manager.by_map.values()]
-                low, remainder = divmod(5000, len(engine.maps))
+                low, remainder = divmod(3000, len(engine.maps))
                 self.assertEqual(set(occupancy), {low, low + 1} if remainder else {low})
-                self.assertEqual(sum(occupancy), 5000)
+                self.assertEqual(sum(occupancy), 3000)
                 self.assertEqual(set().union(*manager.by_map.values()), set(manager.bots))
                 for bot in manager.bots.values():
                     state = bot["state"]
@@ -118,10 +118,10 @@ class PopulationAcceptanceTests(unittest.TestCase):
                 for map_id in manager.by_map:
                     actors = manager.snapshot(map_id, now=1000.0)
                     self.assertEqual(actors, manager.snapshot(map_id, now=1000.0))
-                    self.assertLessEqual(len(actors), math.ceil(5000 / len(engine.maps)))
+                    self.assertLessEqual(len(actors), math.ceil(3000 / len(engine.maps)))
                     self.assertTrue(all(actor["map_id"] == map_id and actor["is_bot"] for actor in actors))
                 self.assertEqual(len(manager.directory(limit=100000)["entries"]), 100)
-                self.assertEqual(manager.directory(offset=5000)["entries"], [])
+                self.assertEqual(manager.directory(offset=3000)["entries"], [])
                 # A bounded heap must eventually service high IDs too. This is a
                 # simulation fairness assertion, not a CPU/FPS performance gate.
                 for index in range(1, 601):
@@ -129,7 +129,7 @@ class PopulationAcceptanceTests(unittest.TestCase):
                     if all(bot["stats"]["exploration_steps"] for bot in manager.bots.values()):
                         break
                 self.assertTrue(all(bot["stats"]["exploration_steps"] > 0 for bot in manager.bots.values()))
-                self.assertGreater(manager.processed, 4999)
+                self.assertGreater(manager.processed, 2999)
                 self.assertTrue(all(bot["runtime"]["next_at"] > 0 for bot in manager.bots.values()))
                 self.assertLessEqual(len(manager.activity()["events"]), 100)
                 self.assertEqual(manager.counters["wild_wins"], sum(bot["state"]["wins"] for bot in manager.bots.values()))

@@ -38,6 +38,8 @@ def fixture(app):
                        'nearby': rows[:6], 'history': [dict(rival, last_at=1790070120)],
                        'directory': rows[:50], 'total': 5000, 'offset': 0},
             'activity': {'population': 5000, 'active': 5000, 'occupied_maps': 254, 'total_maps': 254,
+                         'window_seconds': 43200, 'window_start': 1790027020, 'as_of': 1790070220,
+                         'tracking_since': 1789983820,
                          'counters': rival['stats'], 'events': events,
                          'maps': [{'id': f'map{i}', 'name': f'Sector {i}', 'count': 20, 'level': 12} for i in range(254)]}}
 

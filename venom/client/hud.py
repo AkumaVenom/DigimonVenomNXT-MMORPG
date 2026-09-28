@@ -25,7 +25,7 @@ class GameHUD:
         app.ui.button((22, 18, 156, 37), 'Home · DigiFarm', app.enter_farm,
                       selected=bool(app.state.get('in_farm')) and not app.menu,
                       small=True, accent=LIME, disabled=app.action_pending or season or jailed or story and bool(app.state.get('battle')))
-        text(screen, app.assets, 'VENOM NXT / v0.12.0', (25, 3), 9, MUTED, True)
+        text(screen, app.assets, 'VENOM NXT / v1.0.0', (25, 3), 9, MUTED, True)
         tabs = [('dex', 'DigiDex'), ('party', 'Partners'), ('shop', 'Shop'), ('maps', 'Story atlas' if story else 'Worlds')]
         battle = bool(app.state.get('battle'))
         for i, (key, label) in enumerate(tabs):
@@ -56,8 +56,9 @@ class GameHUD:
                       disabled=app.action_pending or battle or season or jailed)
         app.ui.button((864, 65, 151, 23), f'Server notices  {len(app.server_notices)}',
                       app.toggle_notices, small=True, accent=CYAN, selected=app.notice_history_open)
+        status_x = max(1027, w-223)
         text(screen, app.assets, 'LINK  /  '+('DETAINED' if jailed else 'SOLO SEASON' if season else 'STORY MODE' if story else 'DIGIFARM' if app.state.get('in_farm') else 'DIGILAB' if app.state.get('in_lab') else 'BATTLE' if battle else 'FIELD'),
-             (w-223, 71), 9, accent, True)
+             (status_x, 71), 9, accent, True, max_width=max(0, w-22-status_x))
 
     def party(self, rect):
         app, art, rect = self.app, self.app.presentation, pygame.Rect(rect)
@@ -259,31 +260,32 @@ class GameHUD:
         text(app.screen,app.assets,'Partner data synchronized.',(rect.x+115,rect.y+75),11,MUTED,max_width=rect.width-132)
 
     def battle_stage(self, rect):
-        """Retain a native arena plate without repainting perspective lines."""
+        """Reuse one crisp native arena, keeping memory and draw work bounded."""
         from .render import NativeCanvas
+        from . import battle_arena
         app, rect = self.app, pygame.Rect(rect)
-        native=app.screen.to_physical_rect(rect)
-        key=(native.size,app.screen.scale)
-        palette=app.presentation.colors('battle')
-        def paint(canvas, area):
-            draw.rect(canvas,palette['panel'],area,border_radius=12)
-            old=canvas.get_clip();canvas.set_clip(area)
-            for y in range(area.y+80,area.bottom-25,36):
-                draw.line(canvas,(23,44,61),(area.x,y),(area.right,y))
-            for x in range(area.x-300,area.right+300,85):
-                draw.line(canvas,(23,44,61),(area.centerx+(x-area.centerx)*.25,area.y+80),(x,area.bottom))
-            draw.line(canvas,palette['line'],(area.x+18,area.y+65),(area.right-18,area.y+65))
-            draw.line(canvas,palette['accent'],(area.x+17,area.y+1),(area.x+220,area.y+1),2)
-            draw.rect(canvas,palette['line'],area,1,border_radius=12)
-            canvas.set_clip(old)
-        if getattr(self,'_stage_key',None)!=key:
-            self._stage_key=key;self._stage=None
-            if native.width*native.height*4 <= 32*1024*1024:
-                surface=pygame.Surface(native.size).convert()
-                canvas=NativeCanvas(surface,app.screen.scale)
-                paint(canvas,canvas.get_rect())
-                self._stage=surface
-        if self._stage is None:
-            paint(app.screen,rect)
-        else:
-            app.screen.blit_native(self._stage,rect.topleft)
+        native = app.screen.to_physical_rect(rect)
+        if native.width <= 0 or native.height <= 0:
+            return
+        key = (native.size, app.screen.scale, rect.size)
+        target = app.screen.surface
+        old_clip = target.get_clip()
+        target.set_clip(old_clip.clip(native))
+        try:
+            if getattr(self, '_stage_key', None) != key:
+                # Release the old plate before allocating after a large resize.
+                # Only publish a new key once a complete paint succeeds.
+                self._stage = None
+                self._stage_key = None
+                if native.width*native.height*4 <= battle_arena.CACHE_BYTES:
+                    surface = pygame.Surface(native.size).convert()
+                    canvas = NativeCanvas(surface, app.screen.scale)
+                    battle_arena.paint(canvas, pygame.Rect((0, 0), rect.size))
+                    self._stage = surface
+                self._stage_key = key
+            if self._stage is None:
+                battle_arena.paint(app.screen, rect)
+            else:
+                app.screen.blit_native(self._stage, rect.topleft)
+        finally:
+            target.set_clip(old_clip)

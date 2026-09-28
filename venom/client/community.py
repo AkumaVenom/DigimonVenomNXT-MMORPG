@@ -368,7 +368,7 @@ class CommunityPanel:
         app = self.app
         headings = {'ranked': ('RANKED ARENA', 'Enter the circuit. Build your legacy.', 'NXT COMPETITIVE CIRCUIT'),
                     'rivals': ('RIVALS HUB', 'A world of rivals. Your next great battle.', 'TAMER NETWORK'),
-                    'activity': ('BOT ACTIVITY', 'Every battle, every discovery, every journey.', 'WORLD OBSERVATORY')}
+                    'activity': ('BOT ACTIVITY', 'Recent adventures. A living world, right now.', 'WORLD OBSERVATORY')}
         title, subtitle, eyebrow = headings[self.tab]
         self.presentation.shell(rect, self.tab, title, subtitle, eyebrow)
         body = pygame.Rect(rect.x+24, rect.y+148, rect.width-48, rect.height-180)
@@ -377,7 +377,7 @@ class CommunityPanel:
         else:
             nav = ([('overview', 'My arena'), ('ladder', 'Top 100'), ('seasons', 'Season archive'), ('exchange','DigiRuby exchange')] if self.tab == 'ranked'
                    else [('invites', 'Challenges'), ('directory', 'Rival directory'), ('history', 'Battle history')] if self.tab == 'rivals'
-                   else [('feed', 'Live activity'), ('maps', 'Map population')])
+                   else [('feed', 'Recent activity'), ('maps', 'Map population')])
             for index, (key, label) in enumerate(nav):
                 self.button((body.x+index*153, body.y, 180 if key=='exchange' else 143, 34), label,
                             lambda mode=key: self.set_mode(mode), selected=self.mode == key)
@@ -779,7 +779,9 @@ class CommunityPanel:
                  ('Heals / items', number(stats.get('heals'))+' / '+number(stats.get('items_used'))),
                  ('Team changes', number(stats.get('training_rotations'))), ('Teams trained', number(stats.get('teams_trained'))),
                  ('Veteran visits', number(stats.get('coverage_visits'))), ('Banked partners', number(profile.get('storage_count')))]
-        stats_area = pygame.Rect(rect.x, rect.y+270, rect.width, max(1, rect.height-270))
+        text(app.screen, app.assets, 'CAREER RECORD  /  Current collection shown alongside career counters',
+             (rect.x, rect.y+263), 9, MUTED, max_width=rect.width)
+        stats_area = pygame.Rect(rect.x, rect.y+283, rect.width, max(1, rect.height-283))
         columns, gap = 4, 8
         metric_width = (rect.width-gap*(columns-1))//columns
         metric_height = min(70, max(46, (stats_area.height-2*gap)//3))
@@ -799,21 +801,25 @@ class CommunityPanel:
             self.empty(rect, 'Connect to your dedicated server to see the world in motion.' if app.args.demo else 'Loading the world activity feed…')
             return
         counters = data.get('counters', data.get('totals', {}))
+        rolling = data.get('window_seconds') == 43200
+        events = data.get('events', [])[:100]
         accent = self.presentation.colors('activity')['accent']
-        summary = [('AI population', number(data.get('population'))), ('Active tamers', number(data.get('active'))),
-                   ('Sectors occupied', f"{number(data.get('occupied_maps'))} / {number(data.get('total_maps'))}"),
-                   ('Recorded events', number(len(data.get('events', [])[:100])))]
+        summary = [('AI population now', number(data.get('population'))), ('Active tamers now', number(data.get('active'))),
+                   ('Sectors occupied now', f"{number(data.get('occupied_maps'))} / {number(data.get('total_maps'))}"),
+                   ('Recent events / 100', number(len(events)))]
         width = (rect.width-36)//4
         for i, (label, value) in enumerate(summary):
             self.metric(pygame.Rect(rect.x+i*(width+12), rect.y, width, 65), label, value)
         left = pygame.Rect(rect.x, rect.y+82, min(330, rect.width//3), rect.height-82)
         self.presentation.card(left, 'activity')
-        text(app.screen, app.assets, 'WORLD TOTALS', (left.x+14, left.y+14), 10, accent, True)
+        text(app.screen, app.assets, 'LAST 12 HOURS' if rolling else 'ACTIVITY TOTALS', (left.x+14, left.y+14), 10, accent, True)
+        text(app.screen, app.assets, 'Rolling activity counters' if rolling else 'Server update needed for 12h tracking',
+             (left.x+14, left.y+31), 9, MUTED, max_width=left.width-28)
         keys = self.COUNTERS[self.stats_page*12:(self.stats_page+1)*12]
-        metric_h = min(69, max(44, (left.height-78)//6))
+        metric_h = min(69, max(40, (left.height-93)//6))
         metric_w = (left.width-34)//2
         for i, (key, label) in enumerate(keys):
-            cell = pygame.Rect(left.x+12+(i%2)*(metric_w+10), left.y+39+(i//2)*metric_h, metric_w, metric_h-4)
+            cell = pygame.Rect(left.x+12+(i%2)*(metric_w+10), left.y+54+(i//2)*metric_h, metric_w, metric_h-4)
             text(app.screen, app.assets, label.upper(), (cell.x+2, cell.y+3), 8, MUTED, True, cell.width-4)
             text(app.screen, app.assets, number(counters.get(key)), (cell.x+2, cell.y+18), 20 if metric_h>46 else 18,
                  GOLD if 'loss' in key else accent, True, cell.width-4)
@@ -821,18 +827,31 @@ class CommunityPanel:
         self.button((left.x+12, left.bottom-35, left.width-24, 25), 'More counters' if self.stats_page==0 else 'Main counters',
                     lambda:setattr(self, 'stats_page', 1-self.stats_page))
         main = pygame.Rect(left.right+18, left.y, rect.right-left.right-18, left.height)
-        text(app.screen, app.assets, 'ON THE NETWORK', main.topleft, 12, accent, True)
-        text(app.screen, app.assets, 'RECORDED ADVENTURES', (main.right-155, main.y+3), 9, MUTED, True)
+        text(app.screen, app.assets, 'RECENT ACTIVITY', main.topleft, 12, accent, True)
+        text(app.screen, app.assets, 'LATEST 100 EVENTS', (main.right-143, main.y+3), 9, MUTED, True)
+        window_label = 'Latest 100 events within the last 12 hours.' if rolling else 'Latest events reported by the server.'
+        text(app.screen, app.assets, window_label, (main.x, main.y+22), 11, WHITE, max_width=main.width)
+        note = 'Older activity expires automatically. Rival progress stays saved.'
+        if rolling:
+            tracked = max(0., float(data.get('as_of', 0))-float(data.get('tracking_since', 0)))
+            if data.get('tracking_since') and tracked < 43200:
+                note = f'New tracking: {duration(tracked)} captured. Earlier totals are not included.'
+        else:
+            note = 'Update the server to enable the rolling 12-hour activity window.'
+        text(app.screen, app.assets, note, (main.x, main.y+41), 10, MUTED, max_width=main.width)
         filter_width = min(91, (main.width-32)//5)
         for i, label in enumerate(('All', 'Wild', 'Ranked', 'Progress', 'Travel')):
-            self.button((main.x+i*(filter_width+8), main.y+28, filter_width, 29), label,
+            self.button((main.x+i*(filter_width+8), main.y+64, filter_width, 29), label,
                         lambda value=label:self.set_activity_filter(value), selected=self.activity_filter==label)
-        events = data.get('events', [])[:100]
         if self.activity_filter != 'All':
             tokens = {'Wild': ('wild', 'scan'), 'Ranked': ('rank',), 'Progress': ('level', 'material', 'evol', 'swap', 'heal', 'item', 'purchase', 'training'), 'Travel': ('travel', 'relocat', 'map', 'coverage')}[self.activity_filter]
             events = [event for event in events if any(token in str(event.get('kind', '')).lower() for token in tokens)]
-        area = pygame.Rect(main.x, main.y+71, main.width, max(1, main.height-94))
-        if not events: self.empty(area, 'Activity appears here as the server population plays.')
+        area = pygame.Rect(main.x, main.y+107, main.width, max(1, main.height-130))
+        if not events:
+            message = ('No matching events in the recent feed.' if self.activity_filter != 'All' else
+                       'No activity in the last 12 hours. New adventures will appear here.' if rolling else
+                       'Activity appears here as the server population plays.')
+            self.empty(area, message)
         for row, event, _ in self.rows(area, events, 76):
             self.presentation.card(row, 'activity')
             kind = str(event.get('kind', 'activity')).replace('_', ' ').upper()
@@ -844,7 +863,7 @@ class CommunityPanel:
             text(app.screen, app.assets, kind, (row.x+47, row.y+30), 8, event_color, True, row.width-62)
             text(app.screen, app.assets, event.get('text', kind), (row.x+47, row.y+47), 11, WHITE, max_width=row.width-62)
             if event.get('bot_id'): app.ui.actions.append((row, lambda ident=event['bot_id']:self.open_profile(ident)))
-        text(app.screen, app.assets, f'{len(events)} / 100 latest records  ·  Click a rival to inspect  ·  Scroll to browse',
+        text(app.screen, app.assets, f'{len(events)} shown  ·  Click a rival to inspect  ·  Scroll to browse',
              (main.x, main.bottom-14), 10, MUTED, max_width=main.width)
 
     def set_activity_filter(self, value):
@@ -859,8 +878,8 @@ class CommunityPanel:
             return
         entries = sorted(data.get('maps', []), key=lambda entry: (-entry.get('count', 0), entry.get('name', '')))
         accent = self.presentation.colors('activity')['accent']
-        text(app.screen, app.assets, 'THE LIVING DIGITAL WORLD', rect.topleft, 12, accent, True)
-        text(app.screen, app.assets, 'Rivals explore, train and retreat across the world. Occupancy is relative to the busiest sector.', (rect.x, rect.y+25), 12, MUTED, max_width=rect.width)
+        text(app.screen, app.assets, 'CURRENT MAP POPULATION', rect.topleft, 12, accent, True)
+        text(app.screen, app.assets, 'Live occupancy, not a 12-hour total. Bars compare each sector with the busiest sector.', (rect.x, rect.y+25), 12, MUTED, max_width=rect.width)
         area = pygame.Rect(rect.x, rect.y+59, rect.width, rect.height-85)
         peak = max(1, entries[0].get('count', 1)) if entries else 1
         for row, entry, _ in self.grid(area, entries, 91):
@@ -949,18 +968,14 @@ class MatchReplay:
         presentation = app.community.presentation
         theme = 'ranked' if ranked else 'rivals'
         presentation.card(rect, theme, accent=True)
+        arena = pygame.Rect(rect.x+15, rect.y+50, rect.width-30, max(190, rect.height-120))
+        app.hud.battle_stage(arena)
         text(app.screen, app.assets, 'RANKED BATTLE' if ranked else 'RIVAL CHALLENGE', (rect.x+18, rect.y+17), 15, CYAN, True)
         title = self.result.get('attacker_name', 'Your team')+'  vs  '+self.result.get('defender_name', 'Rival')
-        text(app.screen, app.assets, title, (rect.centerx, rect.y+48), 18, WHITE, True, rect.width-45, True)
-        arena = pygame.Rect(rect.x+15, rect.y+50, rect.width-30, max(190, rect.height-120))
+        text(app.screen, app.assets, title, (arena.centerx, arena.y+28), 18, WHITE, True, arena.width-45, True)
         old_view, old_now = app.viewport, app.now
         app.viewport = arena
         event = self.events[self.index] if not self.done else None
-        draw.polygon(app.screen, (20, 38, 54), [(arena.x, arena.y+90), (arena.centerx-42, arena.y+110), (arena.centerx-12, arena.bottom-8), (arena.x, arena.bottom-8)])
-        draw.polygon(app.screen, (38, 29, 50), [(arena.right, arena.y+90), (arena.centerx+42, arena.y+110), (arena.centerx+12, arena.bottom-8), (arena.right, arena.bottom-8)])
-        draw.line(app.screen, (67, 82, 101), (arena.centerx, arena.y+115), (arena.centerx, arena.bottom-8), 1)
-        for y in range(arena.y+60, arena.bottom, 37):
-            draw.line(app.screen, (22, 43, 62), (arena.x, y), (arena.right, y))
         try:
             for side, indices in self.active.items():
                 for slot, index in enumerate(indices):

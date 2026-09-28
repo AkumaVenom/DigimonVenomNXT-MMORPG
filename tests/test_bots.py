@@ -1,6 +1,7 @@
 """Rival behavior tests use the real wild GameEngine and controlled small maps."""
 import copy
 import math
+import time
 from pathlib import Path
 
 import pytest
@@ -19,6 +20,9 @@ class MemoryStore:
         self.rows = {}
         self.events = []
         self.counters = {}
+        self.buckets = {}
+        self.receipts = {}
+        self.tracking_since = time.time()
 
     def bot_load_all(self):
         return copy.deepcopy(list(self.rows.values()))
@@ -34,6 +38,41 @@ class MemoryStore:
 
     def activity(self, limit=100):
         return {"events": list(reversed(self.events[-limit:])), "counters": dict(self.counters)}
+
+    def add_activity_batch(self, events, buckets, batch_id, batch_at, now=None):
+        now = time.time() if now is None else now
+        self.maintain_activity(now)
+        if batch_id in self.receipts or batch_at <= now - 43200:
+            return
+        self.receipts[batch_id] = batch_at
+        self.events = (self.events + copy.deepcopy([
+            event for event in events if now - 43200 < event['at'] <= now]))[-100:]
+        for bucket in buckets:
+            at = bucket['at']
+            if now - 43200 < at <= now:
+                row = self.buckets.setdefault(at, {})
+                for key, value in bucket['counters'].items():
+                    row[key] = row.get(key, 0) + value
+
+    def maintain_activity(self, now=None, drain=False):
+        now = time.time() if now is None else now
+        self.events = [event for event in self.events if event['at'] > now - 43200]
+        self.buckets = {at: row for at, row in self.buckets.items() if at > now - 43200}
+        self.receipts = {key: at for key, at in self.receipts.items() if at > now - 43200}
+
+    def activity_snapshot(self, now=None):
+        now = time.time() if now is None else now
+        self.maintain_activity(now)
+        totals = {}
+        for row in self.buckets.values():
+            for key, value in row.items():
+                totals[key] = totals.get(key, 0) + value
+        return {'events': copy.deepcopy(list(reversed(self.events))), 'counters': totals,
+                'buckets': [{'at': at, 'counters': copy.deepcopy(row)}
+                            for at, row in sorted(self.buckets.items())],
+                'window_seconds': 43200, 'precision_seconds': 60,
+                'window_start': now - 43200, 'as_of': now,
+                'tracking_since': self.tracking_since}
 
 
 class RankedStub:
@@ -249,6 +288,8 @@ def test_restart_reconciles_ranked_ledger_after_a_later_bot_checkpoint():
     restored = make_manager(count=2, store=store)
     assert restored.bots["bot:00001"]["stats"]["ranked_wins"] == 7
     assert restored.bots["bot:00002"]["stats"]["ranked_losses"] == 7
-    assert restored.counters["ranked_started"] == 9
-    assert restored.counters["ranked_wins"] == restored.counters["ranked_losses"] == 9
+    # The permanent ranked ledger repairs each rival's career checkpoint. Its
+    # undated totals must not be invented as recent global activity.
+    assert restored.counters["ranked_started"] == 0
+    assert restored.counters["ranked_wins"] == restored.counters["ranked_losses"] == 0
     assert restored.counters["wild_wins"] == 0

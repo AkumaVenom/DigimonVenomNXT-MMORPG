@@ -1,7 +1,7 @@
 """Measure the actual rival population in an isolated, temporary SQLite world.
 
 Example (from the source folder):
-    python tools/benchmark_rivals.py --bots 5000 --seconds 900 --output qa/rivals.json
+    python tools/benchmark_rivals.py --bots 3000 --seconds 900 --output qa/rivals.json
 
 Time advances at the production 10 Hz simulation interval without sleeping. This
 measures server simulation and persistence work, not real network/player capacity,
@@ -100,7 +100,7 @@ def ledger_totals(database):
             "balanced": matches == wins == losses == seasonal_wins == seasonal_losses}
 
 
-def run_benchmark(count=5000, simulated_seconds=900, observed_maps=16, seed=1907, progress=None):
+def run_benchmark(count=3000, simulated_seconds=900, observed_maps=16, seed=1907, progress=None):
     from venom.common.game import GameEngine
     from venom.server.bots import BotManager
     from venom.server.community_store import CommunityStore
@@ -225,8 +225,10 @@ def run_benchmark(count=5000, simulated_seconds=900, observed_maps=16, seed=1907
                 "directory_pages_limited_to_100": len(manager.directory(limit=100000)["entries"]) <= 100,
                 "no_gameplay_recovery_errors": counters.get("errors", 0) == 0,
             }
-            if count == 5000:
-                checks["initial_254_sector_occupancy_is_19_or_20"] = len(occupancy) == 254 and set(occupancy) == {19, 20}
+            if count == 3000:
+                minimum, remainder = divmod(count, len(occupancy))
+                expected = {minimum, minimum + 1} if remainder else {minimum}
+                checks["initial_3000_rival_occupancy_matches_map_count"] = set(occupancy) == expected
             if simulated_seconds >= 300:
                 checks["every_bot_explored_and_started_wild_battle"] = coverage["exploration_steps"] == coverage["wild_started"] == count
                 checks["every_bot_completed_activity_cycle"] = coverage["completed_activity_cycle"] == count
@@ -260,15 +262,15 @@ def run_benchmark(count=5000, simulated_seconds=900, observed_maps=16, seed=1907
 
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("--bots", type=int, default=5000, help="Population size (1–5000; default 5000).")
+    parser.add_argument("--bots", type=int, default=3000, help="Population size (1–3000; default 3000).")
     parser.add_argument("--seconds", type=float, default=900, help="Simulated seconds using normal activity timers.")
     parser.add_argument("--observed-maps", type=int, default=16,
                         help="Map snapshots sampled per 10 Hz tick (no real network clients).")
     parser.add_argument("--seed", type=int, default=1907)
     parser.add_argument("--output", type=Path, required=True, help="Destination for the JSON measurements.")
     args = parser.parse_args(argv)
-    if not 1 <= args.bots <= 5000 or not math.isfinite(args.seconds) or not 1 <= args.seconds <= 86400:
-        parser.error("Use 1–5000 bots and 1–86400 simulated seconds.")
+    if not 1 <= args.bots <= 3000 or not math.isfinite(args.seconds) or not 1 <= args.seconds <= 86400:
+        parser.error("Use 1–3000 bots and 1–86400 simulated seconds.")
     if not 0 <= args.observed_maps <= 254:
         parser.error("Observed maps must be between 0 and 254.")
     args.output.parent.mkdir(parents=True, exist_ok=True)

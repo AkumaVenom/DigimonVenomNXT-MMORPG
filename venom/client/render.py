@@ -172,12 +172,14 @@ class _NativeDraw:
                             [self._point(surface, p) for p in points], self._length(surface, width)))
 
     def aaline(self, surface, color, start_pos, end_pos, blend=1):
+        # pygame-ce 2.5.8 always blends these edges; its old blend argument is
+        # ignored and deprecated. Keep our call signature for existing users.
         return self._result(surface, pygame.draw.aaline(self._target(surface), color,
-                            self._point(surface, start_pos), self._point(surface, end_pos), blend))
+                            self._point(surface, start_pos), self._point(surface, end_pos)))
 
     def aalines(self, surface, color, closed, points, blend=1):
         return self._result(surface, pygame.draw.aalines(self._target(surface), color, closed,
-                            [self._point(surface, p) for p in points], blend))
+                            [self._point(surface, p) for p in points]))
 
     def circle(self, surface, color, center, radius, width=0, **kwargs):
         return self._result(surface, pygame.draw.circle(self._target(surface), color,

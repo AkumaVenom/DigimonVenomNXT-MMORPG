@@ -106,6 +106,12 @@ class Assets:
 
     def sprite(self, species_id, box, motion='idle', now=0., flip=False):
         path = self.sprite_path(species_id, motion, now)
+        if flip:
+            # Labelled pose packs can supply a genuine opposite-facing step.
+            # Other frames still mirror normally; never flip that supplied pose twice.
+            mirrored = self.species.get(species_id, {}).get('mirrored_frames', {}).get(path)
+            if mirrored:
+                path, flip = mirrored, False
         key = (path, tuple(box), flip)
         # The fitted frame is self-contained. Avoid decoding the original PNG
         # again after its independent source cache has evicted it.

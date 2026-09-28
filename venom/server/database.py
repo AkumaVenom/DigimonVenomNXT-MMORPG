@@ -79,7 +79,34 @@ class Database:
             self.data_directory = mysql_data_path(self.root)
         self.lock = threading.RLock()
         self.connection = None
+        self._loading_io = 0
         self.dummy_hash = hash_password(secrets.token_urlsafe(24))
+
+    @contextlib.contextmanager
+    def loading_io(self):
+        """Allow large startup reads/index builds to finish without an I/O deadline.
+
+        The world has not opened its player listener yet. Close only committed,
+        idle connections under the database lock; every replacement connection
+        still passes the portable-instance identity check. The lock is released
+        while loading so the ownership heartbeat can run between transactions.
+        Normal live gameplay keeps its existing socket failure timeouts.
+        """
+        with self.lock:
+            if not self._loading_io and self.driver == 'mysql' and self.connection is not None:
+                self.connection.close()
+                self.connection = None
+            self._loading_io += 1
+        try:
+            yield
+        finally:
+            with self.lock:
+                self._loading_io -= 1
+                if not self._loading_io and self.driver == 'mysql' and self.connection is not None:
+                    try:
+                        self.connection.close()
+                    finally:
+                        self.connection = None
 
     def _connect(self):
         if self.connection is not None and self.driver == "mysql":
@@ -112,7 +139,9 @@ class Database:
                     password=self.config.get("password", "").encode("utf-8"),
                     database=self.config.get("name", "digimon_venom_nxt"),
                     charset="utf8mb4", autocommit=False,
-                    connect_timeout=10, read_timeout=15, write_timeout=15,
+                    connect_timeout=10,
+                    read_timeout=None if self._loading_io else 15,
+                    write_timeout=None if self._loading_io else 15,
                 )
                 try:
                     self._verify_portable_connection(connection)

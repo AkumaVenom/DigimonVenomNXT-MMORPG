@@ -986,11 +986,18 @@ class App:
         text(self.screen, self.assets, heading, (view.x+20, view.y+14), 23, WHITE, True)
         text(self.screen, self.assets, 'YOUR LIVE MATCH  /  NO FLEEING  /  SELECT YOUR TARGET' if season_battle or story_battle and not battle.get('story_training') else 'TACTICAL LINK  /  SELECT YOUR TARGET', (view.x+21, view.y+45), 9, CYAN, True)
         text(self.screen, self.assets, f"TURN {battle.get('turn', 1):02}", (view.right-99, view.y+23), 16, GOLD, True)
+        from .battle_layout import layout_row
         actor = battle.get('actor', 0)
-        for side, mons in (('enemy', enemies), ('player', [party[i] for i in active if i < len(party)])):
+        teams = {'enemy': enemies, 'player': [party[i] for i in active if i < len(party)]}
+        cards = {side: layout_row(self.screen, self.assets, view, mons, side) for side, mons in teams.items()}
+        def position(side, index):
+            row = cards.get(side, [])
+            return pygame.Vector2(row[min(max(0, index), len(row)-1)].anchor) if row else pygame.Vector2(view.center)
+        for side, mons in teams.items():
             for index, mon in enumerate(mons):
                 actual_index = index if side=='enemy' else active[index]
-                pos = self.battle_positions(side, index, len(mons))
+                card = cards[side][index]
+                pos = position(side, index)
                 attacking, hit = False, False
                 for a in self.animations:
                     age = self.now-a['start']
@@ -998,34 +1005,37 @@ class App:
                         attacking = True
                         dest_side = a.get('side', 'enemy')
                         dest_idx = a.get('index', 0)
-                        dest = self.battle_positions(dest_side, dest_idx, len(enemies) if dest_side=='enemy' else len(active))
+                        if dest_side == 'player' and dest_idx in active:
+                            dest_idx = active.index(dest_idx)
+                        dest = position(dest_side, dest_idx)
                         pos += (dest-pos)*math.sin(age/.42*math.pi)*.55
                     if .18 < age < .5 and a.get('side') == side and a.get('index') == actual_index:
                         hit = True
                         pos.x += math.sin(age*85)*5
-                size = (112, 86) if view.height<500 else (135, 104)
+                size = card.sprite_size
+                # Labels, selection and hit regions stay anchored while the
+                # sprite lunges or recoils, keeping targeting stable.
+                if side == 'enemy' and mon.get('hp', 0)>0 and index == self.target:
+                    draw.rect(self.screen, GOLD, card.rect, 2, border_radius=13)
+                    text(self.screen, self.assets, 'TARGET', card.badge_center, 9, GOLD, True, center=True)
                 sprite = self.assets.sprite(mon['species_id'], size, 'attack' if attacking else 'idle', self.now)
                 draw.ellipse(self.screen, (13, 53, 64) if side=='player' else (52, 29, 55), (int(pos.x)-62, int(pos.y)-7, 124, 24))
                 if sprite:
                     copy = sprite.copy() if mon.get('hp', 0)<=0 else sprite
                     if mon.get('hp', 0)<=0: copy.set_alpha(75)
                     self.screen.blit(copy, copy.get_rect(midbottom=(int(pos.x), int(pos.y))))
-                name_y = int(pos.y)-size[1]-31
-                text(self.screen, self.assets, mon['name'], (pos.x, name_y), 15, RED if side=='enemy' else WHITE, True, 200, True)
-                text(self.screen, self.assets, f"Lv.{mon.get('level', 1)} · {mon.get('type', '?')} / {mon.get('attribute', '?')}", (pos.x, name_y+22), 11, MUTED, max_width=220, center=True)
-                bar(self.screen, pygame.Rect(int(pos.x)-65, int(pos.y)+20, 130, 7), mon.get('hp', 0), mon.get('max_hp', 1), RED if side=='enemy' else LIME)
+                for value, center, font_size, bold, role in card.labels:
+                    color = (RED if side=='enemy' else WHITE) if role=='name' else MUTED
+                    text(self.screen, self.assets, value, center, font_size, color, bold, center=True)
+                bar(self.screen, card.hp_rect, mon.get('hp', 0), mon.get('max_hp', 1), RED if side=='enemy' else LIME)
                 if side=='player':
-                    bar(self.screen, pygame.Rect(int(pos.x)-65, int(pos.y)+32, 130, 4), mon.get('sp', 0), mon.get('max_sp', 1), CYAN)
+                    bar(self.screen, card.sp_rect, mon.get('sp', 0), mon.get('max_sp', 1), CYAN)
                     if actor == actual_index and self.state.get('battle'):
-                        text(self.screen, self.assets, 'YOUR TURN', (pos.x, int(pos.y)+49), 11, LIME, True, center=True)
+                        text(self.screen, self.assets, 'YOUR TURN', (card.anchor[0], card.turn_y), 11, LIME, True, center=True)
                 elif mon.get('hp', 0)>0:
-                    target_rect = pygame.Rect(int(pos.x)-83, int(pos.y)-size[1]-50, 166, size[1]+93)
-                    if index==self.target:
-                        draw.rect(self.screen, GOLD, target_rect, 2, border_radius=13)
-                        text(self.screen, self.assets, 'TARGET', (pos.x, target_rect.y+9), 9, GOLD, True, center=True)
-                    self.ui.actions.append((target_rect, lambda i=index: setattr(self, 'target', i)))
+                    self.ui.actions.append((card.rect, lambda i=index: setattr(self, 'target', i)))
         for animation in self.animations:
-            self.draw_effect(animation, enemies, active)
+            self.draw_effect(animation, enemies, active, positions=position)
         self.screen.set_clip(old_clip)
         disabled = bool(self.action_pending or self.animations or not self.state.get('battle'))
         actions = [('Attack', 'attack'), ('Skill · SP', 'skill'), ('Items', 'items'), ('Flee', 'flee')]
@@ -1037,14 +1047,14 @@ class App:
                            (lambda: self.open_battle_menu('battle_items')) if action=='items' else (lambda: self.open_battle_menu('skills')) if action=='skill' else lambda a=action:self.battle_action(a),
                            primary=action=='attack', disabled=disabled, small=True, accent=self.presentation.colors('battle')['accent'])
 
-    def draw_effect(self, effect, enemies, active):
+    def draw_effect(self, effect, enemies, active, *, positions=None):
         age = self.now-effect['start']
         if age<0: return
         side = effect.get('side', 'enemy')
         idx = effect.get('index', 0)
         if side=='player':
             idx = active.index(idx) if idx in active else 0
-        pos = self.battle_positions(side, idx, len(enemies) if side=='enemy' else len(active))
+        pos = positions(side, idx) if positions else self.battle_positions(side, idx, len(enemies) if side=='enemy' else len(active))
         pos.y -= 65
         alpha = int(max(0, min(1, age/.09, (1.05-age)/.35))*255)
         color = LIME if effect.get('kind')=='heal' else GOLD if effect.get('effectiveness', 1)>1 else WHITE

@@ -92,6 +92,23 @@ def import_maps(path):
  with py7zr.SevenZipFile(path) as archive:
   if any(Path(n).is_absolute() or '..' in Path(n).parts for n in archive.getnames()):raise ValueError('Invalid map archive path')
   archive.extractall(ROOT/'assets/maps')
+def animation_override(directory,root=ROOT):
+ """Honor explicitly labelled pose packs instead of guessing from sheet parts."""
+ sidecar=directory/'animation.json'
+ if not sidecar.is_file():return {}
+ data=json.loads(sidecar.read_text(encoding='utf-8'))
+ if data.get('version')!=1:raise ValueError(f'Unsupported animation metadata: {sidecar}')
+ def asset(path):
+  if not isinstance(path,str) or Path(path).is_absolute() or '..' in Path(path).parts or '\\' in path:raise ValueError('Invalid animation frame path')
+  resolved=(directory/path).resolve()
+  if not resolved.is_relative_to(directory.resolve()) or not resolved.is_file():raise ValueError(f'Missing or unsafe animation frame: {path}')
+  return resolved.relative_to(root.resolve()).as_posix()
+ return {'sprites':{key:asset(path) for key,path in data['sprites'].items()},
+         'animations':{key:[asset(path) for path in paths] for key,paths in data['animations'].items()},
+         'mirrored_frames':{asset(path):asset(mirror) for path,mirror in data.get('mirrored_frames',{}).items()},
+         'source_frame_count':data['source_frame_count'],
+         'frame_selection':data['frame_selection'],
+         'art_provenance':data['art_provenance']}
 def species_catalog():
  records=[];seen=set()
  for stage_dir in sorted((ROOT/'assets/digimon').iterdir()):
@@ -125,6 +142,7 @@ def species_catalog():
     stats={'hp':120+rank*30+h[0]%35,'sp':24+rank*4+h[1]%10,'atk':18+rank*5+h[2]%12,'def':16+rank*5+h[3]%12,'int':18+rank*5+h[4]%12,'spd':18+rank*4+h[5]%12}
     # Non-CS species and Paradox fan variants do not have official CS statistics.
     records.append({'id':sid,'name':('Paradox ' if paradox else '')+base_dir.name,'stage':stage,'type':['vaccine','data','virus'][h[6]%3],'attribute':['fire','water','plant','earth','electric','wind','light','dark','neutral'][h[7]%9],'base_stats':stats,'sprites':{'idle':idle,'walk_left':walk_l,'walk_right':walk_r,'attack1':attack1,'attack2':attack2},'animations':{'idle':[idle,walk_l,idle,walk_r] if battle_frames else [idle],'walk':[idle,walk_l,idle,walk_r],'attack':[attack1,attack2]},'source_frame_count':len(frame_paths),'frame_selection':'combat-sized source poses; sheet credits and miniature overworld components excluded','paradox':paradox,'base_id':base_id,'provenance':'User-supplied v7 sprite pack; stage from source directory; provisional balance for non-curated mechanics','mechanics_status':'provisional_fan_balance','evolutions':[]})
+    records[-1].update(animation_override(directory))
  return records
 
 def map_catalog():

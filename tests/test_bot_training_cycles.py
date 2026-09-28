@@ -11,30 +11,10 @@ from pathlib import Path
 
 from venom.common.game import GameEngine, GameError
 from venom.server.bots import BotManager
+from test_bots import MemoryStore
 
 
 ROOT = Path(__file__).resolve().parents[1]
-
-
-class MemoryStore:
-    def __init__(self):
-        self.rows = {}
-        self.events = []
-        self.counters = {}
-
-    def bot_load_all(self):
-        return copy.deepcopy(list(self.rows.values()))
-
-    def bot_save_batch(self, rows):
-        self.rows.update({row["id"]: copy.deepcopy(row) for row in rows})
-
-    def add_events(self, events, counters=None):
-        self.events = (self.events + copy.deepcopy(events))[-100:]
-        for key, value in (counters or {}).items():
-            self.counters[key] = self.counters.get(key, 0) + value
-
-    def activity(self, limit=100):
-        return {"events": list(reversed(self.events[-limit:])), "counters": dict(self.counters)}
 
 
 class RankedRecorder:

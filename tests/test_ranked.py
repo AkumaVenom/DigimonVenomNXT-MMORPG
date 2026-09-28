@@ -3,6 +3,7 @@ import copy
 from pathlib import Path
 import tempfile
 import unittest
+from unittest.mock import patch
 
 from venom.common.game import GameEngine, GameError
 from venom.server.database import Database
@@ -215,18 +216,19 @@ class CommunityStoreTests(unittest.TestCase):
         self.assertTrue(self.store.acquire_world("three", now=250))
         self.assertFalse(self.store.renew_world("two", now=251))
 
-    def test_bot_save_and_latest_activity_are_durable_bounded(self):
+    @patch('time.time', return_value=1_800_000_149.0)
+    def test_bot_save_and_latest_activity_are_durable_bounded(self, _clock):
         self.store.bot_save_batch([{"id": "bot:00001", "xp": 10}, {"id": "bot:00002", "xp": 20}])
         self.store.bot_save_batch([{"id": "bot:00001", "xp": 50}])
         self.assertEqual([50, 20], [row["xp"] for row in self.store.bot_load_all()])
-        self.store.add_events([{"id": f"evt-{i:04d}", "bot_id": "bot:00001", "kind": "wild_win", "at": i} for i in range(150)],
+        self.store.add_events([{"id": f"evt-{i:04d}", "bot_id": "bot:00001", "kind": "wild_win", "at": 1_800_000_000 + i} for i in range(150)],
                               {"wild_wins": 150})
         activity = self.store.activity()
         self.assertEqual(100, len(activity["events"]))
-        self.assertEqual(149, activity["events"][0]["at"])
-        self.assertEqual(50, activity["events"][-1]["at"])
+        self.assertEqual(1_800_000_149, activity["events"][0]["at"])
+        self.assertEqual(1_800_000_050, activity["events"][-1]["at"])
         self.assertEqual(150, activity["counters"]["wild_wins"])
-        self.store.add_events([{"id": f"evt-{i:04d}", "bot_id": "bot:00001", "kind": "wild_win", "at": i} for i in range(150)],
+        self.store.add_events([{"id": f"evt-{i:04d}", "bot_id": "bot:00001", "kind": "wild_win", "at": 1_800_000_000 + i} for i in range(150)],
                               {"wild_wins": 150})
         self.assertEqual(150, self.store.activity()["counters"]["wild_wins"])
         self.store.initialize()

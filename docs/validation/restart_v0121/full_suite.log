@@ -1,0 +1,25 @@
+........................................................................ [  9%]
+........................................................................ [ 18%]
+........................................................................ [ 27%]
+........................................................................ [ 36%]
+........................................................................ [ 45%]
+................................................................s....... [ 54%]
+........................................................................ [ 63%]
+........................................................................ [ 72%]
+....................sssssssss........................................... [ 81%]
+........................................................................ [ 90%]
+........................................................................ [ 99%]
+...                                                                      [100%]
+- generated xml file: /workspace/scratch/db3f24de84d0/work/DigimonVenomNXT/docs/validation/restart_v0121/full_suite.xml -
+=========================== short test summary info ============================
+SKIPPED [1] tests/test_portable_mysql_live.py:177: Set VENOM_TEST_MYSQL_RUNTIME for opt-in Linux/MySQL validation
+SKIPPED [1] tests/test_setup_wizard.py:167: Requires a graphical desktop / Xvfb
+SKIPPED [1] tests/test_setup_wizard.py:145: Requires a graphical desktop / Xvfb
+SKIPPED [1] tests/test_setup_wizard.py:158: Requires a graphical desktop / Xvfb
+SKIPPED [1] tests/test_setup_wizard.py:130: Requires a graphical desktop / Xvfb
+SKIPPED [1] tests/test_setup_wizard.py:105: Requires a graphical desktop / Xvfb
+SKIPPED [1] tests/test_setup_wizard.py:111: Requires a graphical desktop / Xvfb
+SKIPPED [1] tests/test_setup_wizard.py:201: Requires a graphical desktop / Xvfb
+SKIPPED [1] tests/test_setup_wizard.py:183: Requires a graphical desktop / Xvfb
+SKIPPED [1] tests/test_setup_wizard.py:190: Requires a graphical desktop / Xvfb
+785 passed, 10 skipped in 230.05s (0:03:50)

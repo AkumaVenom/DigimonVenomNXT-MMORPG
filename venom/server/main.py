@@ -19,6 +19,7 @@ import time
 
 from websockets.asyncio.server import serve
 from websockets.exceptions import ConnectionClosed
+from websockets.extensions.permessage_deflate import ServerPerMessageDeflateFactory
 
 from venom.common.game import GameEngine
 from venom.common.economy import economy_view
@@ -30,7 +31,7 @@ from venom.server.lifecycle import WorldProcessLock
 from venom.server.moderation import clear_jail, is_jailed, jail_expired
 
 LOG = logging.getLogger("venom.server")
-VERSION = "0.12.0"
+VERSION = "1.0.0"
 MOVE_SPEED = 180.0
 MAX_MESSAGE = 65_536
 GAME_OPS = {"encounter", "battle", "digilab", "digifarm", "materialize", "evolve", "party", "shop", "item", "travel", "season", "story"}
@@ -38,6 +39,20 @@ GAME_OPS = {"encounter", "battle", "digilab", "digifarm", "materialize", "evolve
 
 def project_root():
     return root_path()
+
+
+def transport_extensions():
+    """Compress repeated map fields without retaining another message's data.
+
+    Native clients already offer this standard WebSocket extension. A client
+    without the extension keeps receiving the identical uncompressed protocol.
+    Small windows and the fastest compression level bound per-connection work;
+    both dictionaries are discarded after every message, including login.
+    """
+    return [ServerPerMessageDeflateFactory(
+        server_no_context_takeover=True, client_no_context_takeover=True,
+        server_max_window_bits=12, client_max_window_bits=12,
+        compress_settings={"level": 1, "memLevel": 5})]
 
 
 class TokenBucket:
@@ -134,9 +149,35 @@ class WorldServer:
         from .community import Community
         LOG.info('Starting ranked seasons and persistent tamer rivals...')
         service = Community(self.engine, self.database, self.config)
-        await asyncio.to_thread(service.initialize)
+        started = time.monotonic()
+        def load_saved_world():
+            # A healthy large query or one-time history index build must not
+            # hit the normal gameplay socket timeout during restoration.
+            with self.database.loading_io():
+                service.initialize()
+        loading = asyncio.create_task(asyncio.to_thread(load_saved_world))
+        try:
+            while not loading.done():
+                # This interval prints progress; it never cancels loading.
+                # Large saved worlds have no overall startup time limit.
+                done, _ = await asyncio.wait({loading}, timeout=15)
+                if not done:
+                    LOG.info('Still loading saved ranked seasons and rivals (%d seconds elapsed). '
+                             'Loading has no overall timeout; keep this window open.',
+                             round(time.monotonic() - started))
+            await loading
+        except asyncio.CancelledError:
+            # Never close the database underneath a synchronous restore worker.
+            # Finish its owned transaction/cleanup before propagating shutdown.
+            try:
+                await asyncio.shield(loading)
+            finally:
+                if service.ready:
+                    await asyncio.to_thread(service.shutdown)
+            raise
         self.community = service
-        LOG.info('Tamer rivals ready. Ranked history and population progress are persistent.')
+        LOG.info('Tamer rivals ready after %.1f seconds. Ranked history and population progress are persistent.',
+                 time.monotonic() - started)
 
     async def _send_encoded(self, ws, encoded, timeout=None):
         """Bound backpressure, closing a stalled socket before cancelling send."""
@@ -675,7 +716,7 @@ class WorldServer:
                 "in_jail": is_jailed(state), "active_title": str(state.get("active_title") or "")[:32]})
         if self.community and self.community.ready:
             # Each occupied field has one shared bot snapshot at the same server
-            # timestamp. No client receives the entire 5,000-rival population.
+            # timestamp. No client receives the entire rival population.
             fields = {group[0] for group in groups if group[1] == "field"}
             rivals = await asyncio.to_thread(self.community.snapshots, fields, now)
             for group, actors in groups.items():
@@ -871,7 +912,8 @@ async def _run_world(config, root, dev, stop, control, console=None):
 
         async with serve(world.connection, config.get("host", "0.0.0.0"), int(config.get("port", 8765)),
                          ssl=context, origins=[None], max_size=MAX_MESSAGE, max_queue=16,
-                         compression=None, ping_interval=world.network["ping_interval"],
+                         compression=None, extensions=transport_extensions(),
+                         ping_interval=world.network["ping_interval"],
                          ping_timeout=world.network["ping_timeout"], close_timeout=world.network["close_timeout"],
                          open_timeout=world.network["open_timeout"], server_header=None) as listener:
             tasks = [asyncio.create_task(world.world_loop()), asyncio.create_task(world.autosave_loop()),

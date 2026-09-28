@@ -1,0 +1,7082 @@
+{
+  "fixture": "Offline synthetic account; real catalog species and native client rendering",
+  "captures": [
+    {
+      "pixels": [
+        960,
+        600
+      ],
+      "ui_scale": 0.75,
+      "viewport": [
+        15,
+        70,
+        696,
+        404
+      ],
+      "target": 0,
+      "targets": [
+        [
+          108,
+          124,
+          161,
+          143
+        ],
+        [
+          284,
+          124,
+          158,
+          143
+        ],
+        [
+          458,
+          124,
+          158,
+          143
+        ]
+      ],
+      "outlines": [
+        [
+          108,
+          124,
+          161,
+          143
+        ]
+      ],
+      "text": [
+        {
+          "requested": "WILD ENCOUNTER",
+          "rendered": "WILD ENCOUNTER",
+          "rect": [
+            30,
+            81,
+            170,
+            20
+          ],
+          "glyphs": [
+            30,
+            85,
+            170,
+            12
+          ],
+          "color": [
+            231,
+            241,
+            249
+          ],
+          "bold": true,
+          "size": 23
+        },
+        {
+          "requested": "TACTICAL LINK  /  SELECT YOUR TARGET",
+          "rendered": "TACTICAL LINK  /  SELECT YOUR TARGET",
+          "rect": [
+            31,
+            104,
+            140,
+            9
+          ],
+          "glyphs": [
+            31,
+            106,
+            140,
+            6
+          ],
+          "color": [
+            67,
+            213,
+            231
+          ],
+          "bold": true,
+          "size": 9
+        },
+        {
+          "requested": "TURN 01",
+          "rendered": "TURN 01",
+          "rect": [
+            637,
+            88,
+            61,
+            14
+          ],
+          "glyphs": [
+            637,
+            91,
+            60,
+            9
+          ],
+          "color": [
+            247,
+            199,
+            104
+          ],
+          "bold": true,
+          "size": 16
+        },
+        {
+          "requested": "TARGET",
+          "rendered": "TARGET",
+          "rect": [
+            175,
+            132,
+            29,
+            9
+          ],
+          "glyphs": [
+            175,
+            134,
+            29,
+            5
+          ],
+          "color": [
+            247,
+            199,
+            104
+          ],
+          "bold": true,
+          "size": 9
+        },
+        {
+          "requested": "Paradox Fanglongmon",
+          "rendered": "Paradox Fanglongmon",
+          "rect": [
+            116,
+            149,
+            146,
+            13
+          ],
+          "glyphs": [
+            117,
+            151,
+            145,
+            11
+          ],
+          "color": [
+            255,
+            117,
+            138
+          ],
+          "bold": true,
+          "size": 15
+        },
+        {
+          "requested": "Lv.100 \u00b7 virus / electric",
+          "rendered": "Lv.100 \u00b7 virus / electric",
+          "rect": [
+            143,
+            169,
+            92,
+            10
+          ],
+          "glyphs": [
+            143,
+            170,
+            92,
+            8
+          ],
+          "color": [
+            141,
+            164,
+            185
+          ],
+          "bold": false,
+          "size": 11
+        },
+        {
+          "requested": "Paradox Imperialdramon",
+          "rendered": "Paradox Imperialdramon",
+          "rect": [
+            291,
+            142,
+            144,
+            12
+          ],
+          "glyphs": [
+            291,
+            144,
+            144,
+            10
+          ],
+          "color": [
+            255,
+            117,
+            138
+          ],
+          "bold": true,
+          "size": 14
+        },
+        {
+          "requested": "DragonModeBlack",
+          "rendered": "DragonModeBlack",
+          "rect": [
+            310,
+            156,
+            106,
+            12
+          ],
+          "glyphs": [
+            310,
+            158,
+            106,
+            10
+          ],
+          "color": [
+            255,
+            117,
+            138
+          ],
+          "bold": true,
+          "size": 14
+        },
+        {
+          "requested": "Lv.100 \u00b7 vaccine / wind",
+          "rendered": "Lv.100 \u00b7 vaccine / wind",
+          "rect": [
+            316,
+            169,
+            94,
+            10
+          ],
+          "glyphs": [
+            316,
+            170,
+            94,
+            8
+          ],
+          "color": [
+            141,
+            164,
+            185
+          ],
+          "bold": false,
+          "size": 11
+        },
+        {
+          "requested": "Paradox Imperialdramon",
+          "rendered": "Paradox Imperialdramon",
+          "rect": [
+            465,
+            142,
+            144,
+            12
+          ],
+          "glyphs": [
+            465,
+            144,
+            144,
+            10
+          ],
+          "color": [
+            255,
+            117,
+            138
+          ],
+          "bold": true,
+          "size": 14
+        },
+        {
+          "requested": "FighterMode",
+          "rendered": "FighterMode",
+          "rect": [
+            501,
+            156,
+            73,
+            12
+          ],
+          "glyphs": [
+            501,
+            158,
+            73,
+            10
+          ],
+          "color": [
+            255,
+            117,
+            138
+          ],
+          "bold": true,
+          "size": 14
+        },
+        {
+          "requested": "Lv.100 \u00b7 virus / water",
+          "rendered": "Lv.100 \u00b7 virus / water",
+          "rect": [
+            493,
+            169,
+            88,
+            10
+          ],
+          "glyphs": [
+            493,
+            171,
+            88,
+            7
+          ],
+          "color": [
+            141,
+            164,
+            185
+          ],
+          "bold": false,
+          "size": 11
+        },
+        {
+          "requested": "Fanglongmon",
+          "rendered": "Fanglongmon",
+          "rect": [
+            146,
+            284,
+            87,
+            13
+          ],
+          "glyphs": [
+            147,
+            286,
+            86,
+            11
+          ],
+          "color": [
+            231,
+            241,
+            249
+          ],
+          "bold": true,
+          "size": 15
+        },
+        {
+          "requested": "Lv.99 \u00b7 virus / electric",
+          "rendered": "Lv.99 \u00b7 virus / electric",
+          "rect": [
+            146,
+            297,
+            87,
+            10
+          ],
+          "glyphs": [
+            146,
+            298,
+            87,
+            8
+          ],
+          "color": [
+            141,
+            164,
+            185
+          ],
+          "bold": false,
+          "size": 11
+        },
+        {
+          "requested": "YOUR TURN",
+          "rendered": "YOUR TURN",
+          "rect": [
+            164,
+            415,
+            50,
+            10
+          ],
+          "glyphs": [
+            165,
+            417,
+            49,
+            6
+          ],
+          "color": [
+            190,
+            240,
+            107
+          ],
+          "bold": true,
+          "size": 11
+        },
+        {
+          "requested": "Omnimon",
+          "rendered": "Omnimon",
+          "rect": [
+            332,
+            284,
+            62,
+            13
+          ],
+          "glyphs": [
+            332,
+            287,
+            62,
+            8
+          ],
+          "color": [
+            231,
+            241,
+            249
+          ],
+          "bold": true,
+          "size": 15
+        },
+        {
+          "requested": "Lv.99 \u00b7 vaccine / light",
+          "rendered": "Lv.99 \u00b7 vaccine / light",
+          "rect": [
+            320,
+            297,
+            87,
+            10
+          ],
+          "glyphs": [
+            320,
+            298,
+            87,
+            9
+          ],
+          "color": [
+            141,
+            164,
+            185
+          ],
+          "bold": false,
+          "size": 11
+        },
+        {
+          "requested": "Paradox Fanglongmon",
+          "rendered": "Paradox Fanglongmon",
+          "rect": [
+            464,
+            284,
+            146,
+            13
+          ],
+          "glyphs": [
+            465,
+            286,
+            145,
+            11
+          ],
+          "color": [
+            231,
+            241,
+            249
+          ],
+          "bold": true,
+          "size": 15
+        },
+        {
+          "requested": "Lv.99 \u00b7 virus / electric",
+          "rendered": "Lv.99 \u00b7 virus / electric",
+          "rect": [
+            494,
+            297,
+            87,
+            10
+          ],
+          "glyphs": [
+            494,
+            298,
+            87,
+            8
+          ],
+          "color": [
+            141,
+            164,
+            185
+          ],
+          "bold": false,
+          "size": 11
+        },
+        {
+          "requested": "Attack",
+          "rendered": "Attack",
+          "rect": [
+            92,
+            445,
+            39,
+            12
+          ],
+          "glyphs": [
+            92,
+            447,
+            39,
+            8
+          ],
+          "color": [
+            9,
+            15,
+            27
+          ],
+          "bold": true,
+          "size": 14
+        },
+        {
+          "requested": "Skill \u00b7 SP",
+          "rendered": "Skill \u00b7 SP",
+          "rect": [
+            258,
+            445,
+            42,
+            12
+          ],
+          "glyphs": [
+            258,
+            447,
+            42,
+            8
+          ],
+          "color": [
+            231,
+            241,
+            249
+          ],
+          "bold": false,
+          "size": 14
+        },
+        {
+          "requested": "Items",
+          "rendered": "Items",
+          "rect": [
+            433,
+            445,
+            28,
+            12
+          ],
+          "glyphs": [
+            433,
+            448,
+            28,
+            7
+          ],
+          "color": [
+            231,
+            241,
+            249
+          ],
+          "bold": false,
+          "size": 14
+        },
+        {
+          "requested": "Flee",
+          "rendered": "Flee",
+          "rect": [
+            605,
+            445,
+            21,
+            12
+          ],
+          "glyphs": [
+            605,
+            447,
+            21,
+            8
+          ],
+          "color": [
+            231,
+            241,
+            249
+          ],
+          "bold": false,
+          "size": 14
+        }
+      ],
+      "species": [
+        "Paradox Fanglongmon",
+        "Paradox ImperialdramonDragonModeBlack",
+        "Paradox ImperialdramonFighterMode"
+      ],
+      "file": "fanglongmon_960x600_0.75.png",
+      "actions": 16,
+      "fields": [
+        "chat"
+      ],
+      "actions_outside_display": []
+    },
+    {
+      "pixels": [
+        960,
+        600
+      ],
+      "ui_scale": 0.75,
+      "viewport": [
+        15,
+        70,
+        696,
+        404
+      ],
+      "target": 0,
+      "targets": [
+        [
+          110,
+          124,
+          158,
+          143
+        ],
+        [
+          284,
+          124,
+          158,
+          143
+        ],
+        [
+          458,
+          124,
+          158,
+          143
+        ]
+      ],
+      "outlines": [
+        [
+          110,
+          124,
+          158,
+          143
+        ]
+      ],
+      "text": [
+        {
+          "requested": "WILD ENCOUNTER",
+          "rendered": "WILD ENCOUNTER",
+          "rect": [
+            30,
+            81,
+            170,
+            20
+          ],
+          "glyphs": [
+            30,
+            85,
+            170,
+            12
+          ],
+          "color": [
+            231,
+            241,
+            249
+          ],
+          "bold": true,
+          "size": 23
+        },
+        {
+          "requested": "TACTICAL LINK  /  SELECT YOUR TARGET",
+          "rendered": "TACTICAL LINK  /  SELECT YOUR TARGET",
+          "rect": [
+            31,
+            104,
+            140,
+            9
+          ],
+          "glyphs": [
+            31,
+            106,
+            140,
+            6
+          ],
+          "color": [
+            67,
+            213,
+            231
+          ],
+          "bold": true,
+          "size": 9
+        },
+        {
+          "requested": "TURN 01",
+          "rendered": "TURN 01",
+          "rect": [
+            637,
+            88,
+            61,
+            14
+          ],
+          "glyphs": [
+            637,
+            91,
+            60,
+            9
+          ],
+          "color": [
+            247,
+            199,
+            104
+          ],
+          "bold": true,
+          "size": 16
+        },
+        {
+          "requested": "TARGET",
+          "rendered": "TARGET",
+          "rect": [
+            175,
+            132,
+            29,
+            9
+          ],
+          "glyphs": [
+            175,
+            134,
+            29,
+            5
+          ],
+          "color": [
+            247,
+            199,
+            104
+          ],
+          "bold": true,
+          "size": 9
+        },
+        {
+          "requested": "Paradox Imperialdramon",
+          "rendered": "Paradox Imperialdramon",
+          "rect": [
+            117,
+            142,
+            144,
+            12
+          ],
+          "glyphs": [
+            117,
+            144,
+            144,
+            10
+          ],
+          "color": [
+            255,
+            117,
+            138
+          ],
+          "bold": true,
+          "size": 14
+        },
+        {
+          "requested": "DragonModeBlack",
+          "rendered": "DragonModeBlack",
+          "rect": [
+            136,
+            156,
+            106,
+            12
+          ],
+          "glyphs": [
+            136,
+            158,
+            106,
+            10
+          ],
+          "color": [
+            255,
+            117,
+            138
+          ],
+          "bold": true,
+          "size": 14
+        },
+        {
+          "requested": "Lv.100 \u00b7 vaccine / wind",
+          "rendered": "Lv.100 \u00b7 vaccine / wind",
+          "rect": [
+            142,
+            169,
+            94,
+            10
+          ],
+          "glyphs": [
+            142,
+            170,
+            94,
+            8
+          ],
+          "color": [
+            141,
+            164,
+            185
+          ],
+          "bold": false,
+          "size": 11
+        },
+        {
+          "requested": "Paradox Imperialdramon",
+          "rendered": "Paradox Imperialdramon",
+          "rect": [
+            291,
+            142,
+            144,
+            12
+          ],
+          "glyphs": [
+            291,
+            144,
+            144,
+            10
+          ],
+          "color": [
+            255,
+            117,
+            138
+          ],
+          "bold": true,
+          "size": 14
+        },
+        {
+          "requested": "FighterMode",
+          "rendered": "FighterMode",
+          "rect": [
+            327,
+            156,
+            73,
+            12
+          ],
+          "glyphs": [
+            327,
+            158,
+            73,
+            10
+          ],
+          "color": [
+            255,
+            117,
+            138
+          ],
+          "bold": true,
+          "size": 14
+        },
+        {
+          "requested": "Lv.100 \u00b7 virus / water",
+          "rendered": "Lv.100 \u00b7 virus / water",
+          "rect": [
+            319,
+            169,
+            88,
+            10
+          ],
+          "glyphs": [
+            319,
+            171,
+            88,
+            7
+          ],
+          "color": [
+            141,
+            164,
+            185
+          ],
+          "bold": false,
+          "size": 11
+        },
+        {
+          "requested": "Paradox Imperialdramon",
+          "rendered": "Paradox Imperialdramon",
+          "rect": [
+            465,
+            142,
+            144,
+            12
+          ],
+          "glyphs": [
+            465,
+            144,
+            144,
+            10
+          ],
+          "color": [
+            255,
+            117,
+            138
+          ],
+          "bold": true,
+          "size": 14
+        },
+        {
+          "requested": "PaladinMode",
+          "rendered": "PaladinMode",
+          "rect": [
+            500,
+            156,
+            74,
+            12
+          ],
+          "glyphs": [
+            500,
+            158,
+            74,
+            8
+          ],
+          "color": [
+            255,
+            117,
+            138
+          ],
+          "bold": true,
+          "size": 14
+        },
+        {
+          "requested": "Lv.100 \u00b7 data / plant",
+          "rendered": "Lv.100 \u00b7 data / plant",
+          "rect": [
+            496,
+            169,
+            83,
+            10
+          ],
+          "glyphs": [
+            496,
+            170,
+            83,
+            9
+          ],
+          "color": [
+            141,
+            164,
+            185
+          ],
+          "bold": false,
+          "size": 11
+        },
+        {
+          "requested": "Fanglongmon",
+          "rendered": "Fanglongmon",
+          "rect": [
+            146,
+            284,
+            87,
+            13
+          ],
+          "glyphs": [
+            147,
+            286,
+            86,
+            11
+          ],
+          "color": [
+            231,
+            241,
+            249
+          ],
+          "bold": true,
+          "size": 15
+        },
+        {
+          "requested": "Lv.99 \u00b7 virus / electric",
+          "rendered": "Lv.99 \u00b7 virus / electric",
+          "rect": [
+            146,
+            297,
+            87,
+            10
+          ],
+          "glyphs": [
+            146,
+            298,
+            87,
+            8
+          ],
+          "color": [
+            141,
+            164,
+            185
+          ],
+          "bold": false,
+          "size": 11
+        },
+        {
+          "requested": "YOUR TURN",
+          "rendered": "YOUR TURN",
+          "rect": [
+            164,
+            415,
+            50,
+            10
+          ],
+          "glyphs": [
+            165,
+            417,
+            49,
+            6
+          ],
+          "color": [
+            190,
+            240,
+            107
+          ],
+          "bold": true,
+          "size": 11
+        },
+        {
+          "requested": "Omnimon",
+          "rendered": "Omnimon",
+          "rect": [
+            332,
+            284,
+            62,
+            13
+          ],
+          "glyphs": [
+            332,
+            287,
+            62,
+            8
+          ],
+          "color": [
+            231,
+            241,
+            249
+          ],
+          "bold": true,
+          "size": 15
+        },
+        {
+          "requested": "Lv.99 \u00b7 vaccine / light",
+          "rendered": "Lv.99 \u00b7 vaccine / light",
+          "rect": [
+            320,
+            297,
+            87,
+            10
+          ],
+          "glyphs": [
+            320,
+            298,
+            87,
+            9
+          ],
+          "color": [
+            141,
+            164,
+            185
+          ],
+          "bold": false,
+          "size": 11
+        },
+        {
+          "requested": "Paradox Fanglongmon",
+          "rendered": "Paradox Fanglongmon",
+          "rect": [
+            464,
+            284,
+            146,
+            13
+          ],
+          "glyphs": [
+            465,
+            286,
+            145,
+            11
+          ],
+          "color": [
+            231,
+            241,
+            249
+          ],
+          "bold": true,
+          "size": 15
+        },
+        {
+          "requested": "Lv.99 \u00b7 virus / electric",
+          "rendered": "Lv.99 \u00b7 virus / electric",
+          "rect": [
+            494,
+            297,
+            87,
+            10
+          ],
+          "glyphs": [
+            494,
+            298,
+            87,
+            8
+          ],
+          "color": [
+            141,
+            164,
+            185
+          ],
+          "bold": false,
+          "size": 11
+        },
+        {
+          "requested": "Attack",
+          "rendered": "Attack",
+          "rect": [
+            92,
+            445,
+            39,
+            12
+          ],
+          "glyphs": [
+            92,
+            447,
+            39,
+            8
+          ],
+          "color": [
+            9,
+            15,
+            27
+          ],
+          "bold": true,
+          "size": 14
+        },
+        {
+          "requested": "Skill \u00b7 SP",
+          "rendered": "Skill \u00b7 SP",
+          "rect": [
+            258,
+            445,
+            42,
+            12
+          ],
+          "glyphs": [
+            258,
+            447,
+            42,
+            8
+          ],
+          "color": [
+            231,
+            241,
+            249
+          ],
+          "bold": false,
+          "size": 14
+        },
+        {
+          "requested": "Items",
+          "rendered": "Items",
+          "rect": [
+            433,
+            445,
+            28,
+            12
+          ],
+          "glyphs": [
+            433,
+            448,
+            28,
+            7
+          ],
+          "color": [
+            231,
+            241,
+            249
+          ],
+          "bold": false,
+          "size": 14
+        },
+        {
+          "requested": "Flee",
+          "rendered": "Flee",
+          "rect": [
+            605,
+            445,
+            21,
+            12
+          ],
+          "glyphs": [
+            605,
+            447,
+            21,
+            8
+          ],
+          "color": [
+            231,
+            241,
+            249
+          ],
+          "bold": false,
+          "size": 14
+        }
+      ],
+      "species": [
+        "Paradox ImperialdramonDragonModeBlack",
+        "Paradox ImperialdramonFighterMode",
+        "Paradox ImperialdramonPaladinMode"
+      ],
+      "file": "longest_960x600_0.75.png",
+      "actions": 16,
+      "fields": [
+        "chat"
+      ],
+      "actions_outside_display": []
+    },
+    {
+      "pixels": [
+        1280,
+        800
+      ],
+      "ui_scale": 1.0,
+      "viewport": [
+        20,
+        94,
+        928,
+        538
+      ],
+      "target": 0,
+      "targets": [
+        [
+          147,
+          167,
+          210,
+          190
+        ],
+        [
+          374,
+          167,
+          219,
+          190
+        ],
+        [
+          606,
+          167,
+          219,
+          190
+        ]
+      ],
+      "outlines": [
+        [
+          147,
+          167,
+          210,
+          190
+        ]
+      ],
+      "text": [
+        {
+          "requested": "WILD ENCOUNTER",
+          "rendered": "WILD ENCOUNTER",
+          "rect": [
+            40,
+            108,
+            241,
+            27
+          ],
+          "glyphs": [
+            40,
+            113,
+            241,
+            17
+          ],
+          "color": [
+            231,
+            241,
+            249
+          ],
+          "bold": true,
+          "size": 23
+        },
+        {
+          "requested": "TACTICAL LINK  /  SELECT YOUR TARGET",
+          "rendered": "TACTICAL LINK  /  SELECT YOUR TARGET",
+          "rect": [
+            41,
+            139,
+            188,
+            11
+          ],
+          "glyphs": [
+            41,
+            141,
+            188,
+            7
+          ],
+          "color": [
+            67,
+            213,
+            231
+          ],
+          "bold": true,
+          "size": 9
+        },
+        {
+          "requested": "TURN 01",
+          "rendered": "TURN 01",
+          "rect": [
+            849,
+            117,
+            78,
+            19
+          ],
+          "glyphs": [
+            849,
+            120,
+            77,
+            12
+          ],
+          "color": [
+            247,
+            199,
+            104
+          ],
+          "bold": true,
+          "size": 16
+        },
+        {
+          "requested": "TARGET",
+          "rendered": "TARGET",
+          "rect": [
+            233,
+            175,
+            38,
+            11
+          ],
+          "glyphs": [
+            233,
+            177,
+            38,
+            7
+          ],
+          "color": [
+            247,
+            199,
+            104
+          ],
+          "bold": true,
+          "size": 9
+        },
+        {
+          "requested": "Paradox Fanglongmon",
+          "rendered": "Paradox Fanglongmon",
+          "rect": [
+            157,
+            198,
+            190,
+            18
+          ],
+          "glyphs": [
+            158,
+            201,
+            188,
+            14
+          ],
+          "color": [
+            255,
+            117,
+            138
+          ],
+          "bold": true,
+          "size": 15
+        },
+        {
+          "requested": "Lv.100 \u00b7 virus / electric",
+          "rendered": "Lv.100 \u00b7 virus / electric",
+          "rect": [
+            187,
+            228,
+            131,
+            13
+          ],
+          "glyphs": [
+            188,
+            230,
+            130,
+            10
+          ],
+          "color": [
+            141,
+            164,
+            185
+          ],
+          "bold": false,
+          "size": 11
+        },
+        {
+          "requested": "Paradox Imperialdramon",
+          "rendered": "Paradox Imperialdramon",
+          "rect": [
+            385,
+            190,
+            199,
+            17
+          ],
+          "glyphs": [
+            386,
+            192,
+            197,
+            14
+          ],
+          "color": [
+            255,
+            117,
+            138
+          ],
+          "bold": true,
+          "size": 14
+        },
+        {
+          "requested": "DragonModeBlack",
+          "rendered": "DragonModeBlack",
+          "rect": [
+            411,
+            208,
+            147,
+            17
+          ],
+          "glyphs": [
+            412,
+            210,
+            145,
+            14
+          ],
+          "color": [
+            255,
+            117,
+            138
+          ],
+          "bold": true,
+          "size": 14
+        },
+        {
+          "requested": "Lv.100 \u00b7 vaccine / wind",
+          "rendered": "Lv.100 \u00b7 vaccine / wind",
+          "rect": [
+            419,
+            228,
+            131,
+            13
+          ],
+          "glyphs": [
+            420,
+            230,
+            129,
+            10
+          ],
+          "color": [
+            141,
+            164,
+            185
+          ],
+          "bold": false,
+          "size": 11
+        },
+        {
+          "requested": "Paradox Imperialdramon",
+          "rendered": "Paradox Imperialdramon",
+          "rect": [
+            617,
+            190,
+            199,
+            17
+          ],
+          "glyphs": [
+            618,
+            192,
+            197,
+            14
+          ],
+          "color": [
+            255,
+            117,
+            138
+          ],
+          "bold": true,
+          "size": 14
+        },
+        {
+          "requested": "FighterMode",
+          "rendered": "FighterMode",
+          "rect": [
+            666,
+            208,
+            100,
+            17
+          ],
+          "glyphs": [
+            667,
+            210,
+            98,
+            14
+          ],
+          "color": [
+            255,
+            117,
+            138
+          ],
+          "bold": true,
+          "size": 14
+        },
+        {
+          "requested": "Lv.100 \u00b7 virus / water",
+          "rendered": "Lv.100 \u00b7 virus / water",
+          "rect": [
+            655,
+            228,
+            122,
+            13
+          ],
+          "glyphs": [
+            656,
+            231,
+            121,
+            9
+          ],
+          "color": [
+            141,
+            164,
+            185
+          ],
+          "bold": false,
+          "size": 11
+        },
+        {
+          "requested": "Fanglongmon",
+          "rendered": "Fanglongmon",
+          "rect": [
+            194,
+            377,
+            116,
+            18
+          ],
+          "glyphs": [
+            195,
+            380,
+            114,
+            14
+          ],
+          "color": [
+            231,
+            241,
+            249
+          ],
+          "bold": true,
+          "size": 15
+        },
+        {
+          "requested": "Lv.99 \u00b7 virus / electric",
+          "rendered": "Lv.99 \u00b7 virus / electric",
+          "rect": [
+            190,
+            398,
+            124,
+            13
+          ],
+          "glyphs": [
+            191,
+            400,
+            123,
+            10
+          ],
+          "color": [
+            141,
+            164,
+            185
+          ],
+          "bold": false,
+          "size": 11
+        },
+        {
+          "requested": "YOUR TURN",
+          "rendered": "YOUR TURN",
+          "rect": [
+            214,
+            554,
+            77,
+            13
+          ],
+          "glyphs": [
+            215,
+            557,
+            76,
+            8
+          ],
+          "color": [
+            190,
+            240,
+            107
+          ],
+          "bold": true,
+          "size": 11
+        },
+        {
+          "requested": "Omnimon",
+          "rendered": "Omnimon",
+          "rect": [
+            443,
+            377,
+            82,
+            18
+          ],
+          "glyphs": [
+            443,
+            380,
+            81,
+            11
+          ],
+          "color": [
+            231,
+            241,
+            249
+          ],
+          "bold": true,
+          "size": 15
+        },
+        {
+          "requested": "Lv.99 \u00b7 vaccine / light",
+          "rendered": "Lv.99 \u00b7 vaccine / light",
+          "rect": [
+            423,
+            398,
+            123,
+            13
+          ],
+          "glyphs": [
+            424,
+            400,
+            122,
+            11
+          ],
+          "color": [
+            141,
+            164,
+            185
+          ],
+          "bold": false,
+          "size": 11
+        },
+        {
+          "requested": "Paradox Fanglongmon",
+          "rendered": "Paradox Fanglongmon",
+          "rect": [
+            621,
+            377,
+            190,
+            18
+          ],
+          "glyphs": [
+            622,
+            380,
+            188,
+            14
+          ],
+          "color": [
+            231,
+            241,
+            249
+          ],
+          "bold": true,
+          "size": 15
+        },
+        {
+          "requested": "Lv.99 \u00b7 virus / electric",
+          "rendered": "Lv.99 \u00b7 virus / electric",
+          "rect": [
+            654,
+            398,
+            124,
+            13
+          ],
+          "glyphs": [
+            655,
+            400,
+            123,
+            10
+          ],
+          "color": [
+            141,
+            164,
+            185
+          ],
+          "bold": false,
+          "size": 11
+        },
+        {
+          "requested": "Attack",
+          "rendered": "Attack",
+          "rect": [
+            122,
+            593,
+            52,
+            17
+          ],
+          "glyphs": [
+            122,
+            595,
+            51,
+            11
+          ],
+          "color": [
+            9,
+            15,
+            27
+          ],
+          "bold": true,
+          "size": 14
+        },
+        {
+          "requested": "Skill \u00b7 SP",
+          "rendered": "Skill \u00b7 SP",
+          "rect": [
+            343,
+            593,
+            58,
+            17
+          ],
+          "glyphs": [
+            343,
+            595,
+            58,
+            11
+          ],
+          "color": [
+            231,
+            241,
+            249
+          ],
+          "bold": false,
+          "size": 14
+        },
+        {
+          "requested": "Items",
+          "rendered": "Items",
+          "rect": [
+            577,
+            593,
+            39,
+            17
+          ],
+          "glyphs": [
+            578,
+            596,
+            38,
+            10
+          ],
+          "color": [
+            231,
+            241,
+            249
+          ],
+          "bold": false,
+          "size": 14
+        },
+        {
+          "requested": "Flee",
+          "rendered": "Flee",
+          "rect": [
+            805,
+            593,
+            30,
+            17
+          ],
+          "glyphs": [
+            806,
+            595,
+            28,
+            11
+          ],
+          "color": [
+            231,
+            241,
+            249
+          ],
+          "bold": false,
+          "size": 14
+        }
+      ],
+      "species": [
+        "Paradox Fanglongmon",
+        "Paradox ImperialdramonDragonModeBlack",
+        "Paradox ImperialdramonFighterMode"
+      ],
+      "file": "fanglongmon_1280x800_1.png",
+      "actions": 16,
+      "fields": [
+        "chat"
+      ],
+      "actions_outside_display": []
+    },
+    {
+      "pixels": [
+        1280,
+        800
+      ],
+      "ui_scale": 1.0,
+      "viewport": [
+        20,
+        94,
+        928,
+        538
+      ],
+      "target": 0,
+      "targets": [
+        [
+          142,
+          167,
+          219,
+          190
+        ],
+        [
+          374,
+          167,
+          219,
+          190
+        ],
+        [
+          606,
+          167,
+          219,
+          190
+        ]
+      ],
+      "outlines": [
+        [
+          142,
+          167,
+          219,
+          190
+        ]
+      ],
+      "text": [
+        {
+          "requested": "WILD ENCOUNTER",
+          "rendered": "WILD ENCOUNTER",
+          "rect": [
+            40,
+            108,
+            241,
+            27
+          ],
+          "glyphs": [
+            40,
+            113,
+            241,
+            17
+          ],
+          "color": [
+            231,
+            241,
+            249
+          ],
+          "bold": true,
+          "size": 23
+        },
+        {
+          "requested": "TACTICAL LINK  /  SELECT YOUR TARGET",
+          "rendered": "TACTICAL LINK  /  SELECT YOUR TARGET",
+          "rect": [
+            41,
+            139,
+            188,
+            11
+          ],
+          "glyphs": [
+            41,
+            141,
+            188,
+            7
+          ],
+          "color": [
+            67,
+            213,
+            231
+          ],
+          "bold": true,
+          "size": 9
+        },
+        {
+          "requested": "TURN 01",
+          "rendered": "TURN 01",
+          "rect": [
+            849,
+            117,
+            78,
+            19
+          ],
+          "glyphs": [
+            849,
+            120,
+            77,
+            12
+          ],
+          "color": [
+            247,
+            199,
+            104
+          ],
+          "bold": true,
+          "size": 16
+        },
+        {
+          "requested": "TARGET",
+          "rendered": "TARGET",
+          "rect": [
+            233,
+            175,
+            38,
+            11
+          ],
+          "glyphs": [
+            233,
+            177,
+            38,
+            7
+          ],
+          "color": [
+            247,
+            199,
+            104
+          ],
+          "bold": true,
+          "size": 9
+        },
+        {
+          "requested": "Paradox Imperialdramon",
+          "rendered": "Paradox Imperialdramon",
+          "rect": [
+            153,
+            190,
+            199,
+            17
+          ],
+          "glyphs": [
+            154,
+            192,
+            197,
+            14
+          ],
+          "color": [
+            255,
+            117,
+            138
+          ],
+          "bold": true,
+          "size": 14
+        },
+        {
+          "requested": "DragonModeBlack",
+          "rendered": "DragonModeBlack",
+          "rect": [
+            179,
+            208,
+            147,
+            17
+          ],
+          "glyphs": [
+            180,
+            210,
+            145,
+            14
+          ],
+          "color": [
+            255,
+            117,
+            138
+          ],
+          "bold": true,
+          "size": 14
+        },
+        {
+          "requested": "Lv.100 \u00b7 vaccine / wind",
+          "rendered": "Lv.100 \u00b7 vaccine / wind",
+          "rect": [
+            187,
+            228,
+            131,
+            13
+          ],
+          "glyphs": [
+            188,
+            230,
+            129,
+            10
+          ],
+          "color": [
+            141,
+            164,
+            185
+          ],
+          "bold": false,
+          "size": 11
+        },
+        {
+          "requested": "Paradox Imperialdramon",
+          "rendered": "Paradox Imperialdramon",
+          "rect": [
+            385,
+            190,
+            199,
+            17
+          ],
+          "glyphs": [
+            386,
+            192,
+            197,
+            14
+          ],
+          "color": [
+            255,
+            117,
+            138
+          ],
+          "bold": true,
+          "size": 14
+        },
+        {
+          "requested": "FighterMode",
+          "rendered": "FighterMode",
+          "rect": [
+            434,
+            208,
+            100,
+            17
+          ],
+          "glyphs": [
+            435,
+            210,
+            98,
+            14
+          ],
+          "color": [
+            255,
+            117,
+            138
+          ],
+          "bold": true,
+          "size": 14
+        },
+        {
+          "requested": "Lv.100 \u00b7 virus / water",
+          "rendered": "Lv.100 \u00b7 virus / water",
+          "rect": [
+            423,
+            228,
+            122,
+            13
+          ],
+          "glyphs": [
+            424,
+            231,
+            121,
+            9
+          ],
+          "color": [
+            141,
+            164,
+            185
+          ],
+          "bold": false,
+          "size": 11
+        },
+        {
+          "requested": "Paradox Imperialdramon",
+          "rendered": "Paradox Imperialdramon",
+          "rect": [
+            617,
+            190,
+            199,
+            17
+          ],
+          "glyphs": [
+            618,
+            192,
+            197,
+            14
+          ],
+          "color": [
+            255,
+            117,
+            138
+          ],
+          "bold": true,
+          "size": 14
+        },
+        {
+          "requested": "PaladinMode",
+          "rendered": "PaladinMode",
+          "rect": [
+            665,
+            208,
+            102,
+            17
+          ],
+          "glyphs": [
+            666,
+            210,
+            100,
+            11
+          ],
+          "color": [
+            255,
+            117,
+            138
+          ],
+          "bold": true,
+          "size": 14
+        },
+        {
+          "requested": "Lv.100 \u00b7 data / plant",
+          "rendered": "Lv.100 \u00b7 data / plant",
+          "rect": [
+            658,
+            228,
+            116,
+            13
+          ],
+          "glyphs": [
+            659,
+            230,
+            115,
+            11
+          ],
+          "color": [
+            141,
+            164,
+            185
+          ],
+          "bold": false,
+          "size": 11
+        },
+        {
+          "requested": "Fanglongmon",
+          "rendered": "Fanglongmon",
+          "rect": [
+            194,
+            377,
+            116,
+            18
+          ],
+          "glyphs": [
+            195,
+            380,
+            114,
+            14
+          ],
+          "color": [
+            231,
+            241,
+            249
+          ],
+          "bold": true,
+          "size": 15
+        },
+        {
+          "requested": "Lv.99 \u00b7 virus / electric",
+          "rendered": "Lv.99 \u00b7 virus / electric",
+          "rect": [
+            190,
+            398,
+            124,
+            13
+          ],
+          "glyphs": [
+            191,
+            400,
+            123,
+            10
+          ],
+          "color": [
+            141,
+            164,
+            185
+          ],
+          "bold": false,
+          "size": 11
+        },
+        {
+          "requested": "YOUR TURN",
+          "rendered": "YOUR TURN",
+          "rect": [
+            214,
+            554,
+            77,
+            13
+          ],
+          "glyphs": [
+            215,
+            557,
+            76,
+            8
+          ],
+          "color": [
+            190,
+            240,
+            107
+          ],
+          "bold": true,
+          "size": 11
+        },
+        {
+          "requested": "Omnimon",
+          "rendered": "Omnimon",
+          "rect": [
+            443,
+            377,
+            82,
+            18
+          ],
+          "glyphs": [
+            443,
+            380,
+            81,
+            11
+          ],
+          "color": [
+            231,
+            241,
+            249
+          ],
+          "bold": true,
+          "size": 15
+        },
+        {
+          "requested": "Lv.99 \u00b7 vaccine / light",
+          "rendered": "Lv.99 \u00b7 vaccine / light",
+          "rect": [
+            423,
+            398,
+            123,
+            13
+          ],
+          "glyphs": [
+            424,
+            400,
+            122,
+            11
+          ],
+          "color": [
+            141,
+            164,
+            185
+          ],
+          "bold": false,
+          "size": 11
+        },
+        {
+          "requested": "Paradox Fanglongmon",
+          "rendered": "Paradox Fanglongmon",
+          "rect": [
+            621,
+            377,
+            190,
+            18
+          ],
+          "glyphs": [
+            622,
+            380,
+            188,
+            14
+          ],
+          "color": [
+            231,
+            241,
+            249
+          ],
+          "bold": true,
+          "size": 15
+        },
+        {
+          "requested": "Lv.99 \u00b7 virus / electric",
+          "rendered": "Lv.99 \u00b7 virus / electric",
+          "rect": [
+            654,
+            398,
+            124,
+            13
+          ],
+          "glyphs": [
+            655,
+            400,
+            123,
+            10
+          ],
+          "color": [
+            141,
+            164,
+            185
+          ],
+          "bold": false,
+          "size": 11
+        },
+        {
+          "requested": "Attack",
+          "rendered": "Attack",
+          "rect": [
+            122,
+            593,
+            52,
+            17
+          ],
+          "glyphs": [
+            122,
+            595,
+            51,
+            11
+          ],
+          "color": [
+            9,
+            15,
+            27
+          ],
+          "bold": true,
+          "size": 14
+        },
+        {
+          "requested": "Skill \u00b7 SP",
+          "rendered": "Skill \u00b7 SP",
+          "rect": [
+            343,
+            593,
+            58,
+            17
+          ],
+          "glyphs": [
+            343,
+            595,
+            58,
+            11
+          ],
+          "color": [
+            231,
+            241,
+            249
+          ],
+          "bold": false,
+          "size": 14
+        },
+        {
+          "requested": "Items",
+          "rendered": "Items",
+          "rect": [
+            577,
+            593,
+            39,
+            17
+          ],
+          "glyphs": [
+            578,
+            596,
+            38,
+            10
+          ],
+          "color": [
+            231,
+            241,
+            249
+          ],
+          "bold": false,
+          "size": 14
+        },
+        {
+          "requested": "Flee",
+          "rendered": "Flee",
+          "rect": [
+            805,
+            593,
+            30,
+            17
+          ],
+          "glyphs": [
+            806,
+            595,
+            28,
+            11
+          ],
+          "color": [
+            231,
+            241,
+            249
+          ],
+          "bold": false,
+          "size": 14
+        }
+      ],
+      "species": [
+        "Paradox ImperialdramonDragonModeBlack",
+        "Paradox ImperialdramonFighterMode",
+        "Paradox ImperialdramonPaladinMode"
+      ],
+      "file": "longest_1280x800_1.png",
+      "actions": 16,
+      "fields": [
+        "chat"
+      ],
+      "actions_outside_display": []
+    },
+    {
+      "pixels": [
+        2047,
+        1155
+      ],
+      "ui_scale": 1.0625,
+      "viewport": [
+        21,
+        100,
+        1673,
+        876
+      ],
+      "target": 0,
+      "targets": [
+        [
+          329,
+          273,
+          221,
+          232
+        ],
+        [
+          679,
+          273,
+          357,
+          232
+        ],
+        [
+          1098,
+          273,
+          354,
+          232
+        ]
+      ],
+      "outlines": [
+        [
+          329,
+          273,
+          221,
+          232
+        ]
+      ],
+      "text": [
+        {
+          "requested": "WILD ENCOUNTER",
+          "rendered": "WILD ENCOUNTER",
+          "rect": [
+            42,
+            115,
+            250,
+            28
+          ],
+          "glyphs": [
+            42,
+            120,
+            249,
+            18
+          ],
+          "color": [
+            231,
+            241,
+            249
+          ],
+          "bold": true,
+          "size": 23
+        },
+        {
+          "requested": "TACTICAL LINK  /  SELECT YOUR TARGET",
+          "rendered": "TACTICAL LINK  /  SELECT YOUR TARGET",
+          "rect": [
+            44,
+            148,
+            239,
+            12
+          ],
+          "glyphs": [
+            44,
+            151,
+            239,
+            8
+          ],
+          "color": [
+            67,
+            213,
+            231
+          ],
+          "bold": true,
+          "size": 9
+        },
+        {
+          "requested": "TURN 01",
+          "rendered": "TURN 01",
+          "rect": [
+            1588,
+            124,
+            82,
+            20
+          ],
+          "glyphs": [
+            1588,
+            128,
+            81,
+            12
+          ],
+          "color": [
+            247,
+            199,
+            104
+          ],
+          "bold": true,
+          "size": 16
+        },
+        {
+          "requested": "TARGET",
+          "rendered": "TARGET",
+          "rect": [
+            416,
+            282,
+            48,
+            12
+          ],
+          "glyphs": [
+            416,
+            285,
+            48,
+            7
+          ],
+          "color": [
+            247,
+            199,
+            104
+          ],
+          "bold": true,
+          "size": 9
+        },
+        {
+          "requested": "Paradox Fanglongmon",
+          "rendered": "Paradox Fanglongmon",
+          "rect": [
+            341,
+            309,
+            199,
+            19
+          ],
+          "glyphs": [
+            342,
+            312,
+            197,
+            15
+          ],
+          "color": [
+            255,
+            117,
+            138
+          ],
+          "bold": true,
+          "size": 15
+        },
+        {
+          "requested": "Lv.100 \u00b7 virus / electric",
+          "rendered": "Lv.100 \u00b7 virus / electric",
+          "rect": [
+            371,
+            340,
+            139,
+            14
+          ],
+          "glyphs": [
+            372,
+            342,
+            137,
+            11
+          ],
+          "color": [
+            141,
+            164,
+            185
+          ],
+          "bold": false,
+          "size": 11
+        },
+        {
+          "requested": "Paradox ImperialdramonDragonMode",
+          "rendered": "Paradox ImperialdramonDragonMode",
+          "rect": [
+            690,
+            298,
+            335,
+            19
+          ],
+          "glyphs": [
+            691,
+            301,
+            333,
+            15
+          ],
+          "color": [
+            255,
+            117,
+            138
+          ],
+          "bold": true,
+          "size": 15
+        },
+        {
+          "requested": "Black",
+          "rendered": "Black",
+          "rect": [
+            833,
+            319,
+            49,
+            19
+          ],
+          "glyphs": [
+            834,
+            322,
+            48,
+            12
+          ],
+          "color": [
+            255,
+            117,
+            138
+          ],
+          "bold": true,
+          "size": 15
+        },
+        {
+          "requested": "Lv.100 \u00b7 vaccine / wind",
+          "rendered": "Lv.100 \u00b7 vaccine / wind",
+          "rect": [
+            787,
+            340,
+            141,
+            14
+          ],
+          "glyphs": [
+            788,
+            342,
+            139,
+            11
+          ],
+          "color": [
+            141,
+            164,
+            185
+          ],
+          "bold": false,
+          "size": 11
+        },
+        {
+          "requested": "Paradox ImperialdramonFighterMode",
+          "rendered": "Paradox ImperialdramonFighterMode",
+          "rect": [
+            1109,
+            309,
+            333,
+            19
+          ],
+          "glyphs": [
+            1110,
+            312,
+            331,
+            15
+          ],
+          "color": [
+            255,
+            117,
+            138
+          ],
+          "bold": true,
+          "size": 15
+        },
+        {
+          "requested": "Lv.100 \u00b7 virus / water",
+          "rendered": "Lv.100 \u00b7 virus / water",
+          "rect": [
+            1211,
+            340,
+            129,
+            14
+          ],
+          "glyphs": [
+            1212,
+            343,
+            128,
+            10
+          ],
+          "color": [
+            141,
+            164,
+            185
+          ],
+          "bold": false,
+          "size": 11
+        },
+        {
+          "requested": "Fanglongmon",
+          "rendered": "Fanglongmon",
+          "rect": [
+            380,
+            636,
+            120,
+            19
+          ],
+          "glyphs": [
+            381,
+            639,
+            118,
+            15
+          ],
+          "color": [
+            231,
+            241,
+            249
+          ],
+          "bold": true,
+          "size": 15
+        },
+        {
+          "requested": "Lv.99 \u00b7 virus / electric",
+          "rendered": "Lv.99 \u00b7 virus / electric",
+          "rect": [
+            375,
+            656,
+            131,
+            14
+          ],
+          "glyphs": [
+            376,
+            658,
+            129,
+            11
+          ],
+          "color": [
+            141,
+            164,
+            185
+          ],
+          "bold": false,
+          "size": 11
+        },
+        {
+          "requested": "YOUR TURN",
+          "rendered": "YOUR TURN",
+          "rect": [
+            400,
+            829,
+            80,
+            14
+          ],
+          "glyphs": [
+            401,
+            832,
+            78,
+            9
+          ],
+          "color": [
+            190,
+            240,
+            107
+          ],
+          "bold": true,
+          "size": 11
+        },
+        {
+          "requested": "Omnimon",
+          "rendered": "Omnimon",
+          "rect": [
+            814,
+            636,
+            86,
+            19
+          ],
+          "glyphs": [
+            814,
+            639,
+            85,
+            12
+          ],
+          "color": [
+            231,
+            241,
+            249
+          ],
+          "bold": true,
+          "size": 15
+        },
+        {
+          "requested": "Lv.99 \u00b7 vaccine / light",
+          "rendered": "Lv.99 \u00b7 vaccine / light",
+          "rect": [
+            792,
+            656,
+            131,
+            15
+          ],
+          "glyphs": [
+            793,
+            658,
+            130,
+            13
+          ],
+          "color": [
+            141,
+            164,
+            185
+          ],
+          "bold": false,
+          "size": 11
+        },
+        {
+          "requested": "Paradox Fanglongmon",
+          "rendered": "Paradox Fanglongmon",
+          "rect": [
+            1176,
+            636,
+            199,
+            19
+          ],
+          "glyphs": [
+            1177,
+            639,
+            197,
+            15
+          ],
+          "color": [
+            231,
+            241,
+            249
+          ],
+          "bold": true,
+          "size": 15
+        },
+        {
+          "requested": "Lv.99 \u00b7 virus / electric",
+          "rendered": "Lv.99 \u00b7 virus / electric",
+          "rect": [
+            1210,
+            656,
+            131,
+            14
+          ],
+          "glyphs": [
+            1211,
+            658,
+            129,
+            11
+          ],
+          "color": [
+            141,
+            164,
+            185
+          ],
+          "bold": false,
+          "size": 11
+        },
+        {
+          "requested": "Attack",
+          "rendered": "Attack",
+          "rect": [
+            215,
+            935,
+            54,
+            18
+          ],
+          "glyphs": [
+            215,
+            938,
+            54,
+            11
+          ],
+          "color": [
+            9,
+            15,
+            27
+          ],
+          "bold": true,
+          "size": 14
+        },
+        {
+          "requested": "Skill \u00b7 SP",
+          "rendered": "Skill \u00b7 SP",
+          "rect": [
+            619,
+            935,
+            65,
+            18
+          ],
+          "glyphs": [
+            620,
+            938,
+            64,
+            11
+          ],
+          "color": [
+            231,
+            241,
+            249
+          ],
+          "bold": false,
+          "size": 14
+        },
+        {
+          "requested": "Items",
+          "rendered": "Items",
+          "rect": [
+            1039,
+            935,
+            42,
+            18
+          ],
+          "glyphs": [
+            1040,
+            938,
+            41,
+            11
+          ],
+          "color": [
+            231,
+            241,
+            249
+          ],
+          "bold": false,
+          "size": 14
+        },
+        {
+          "requested": "Flee",
+          "rendered": "Flee",
+          "rect": [
+            1454,
+            935,
+            31,
+            18
+          ],
+          "glyphs": [
+            1455,
+            938,
+            30,
+            11
+          ],
+          "color": [
+            231,
+            241,
+            249
+          ],
+          "bold": false,
+          "size": 14
+        }
+      ],
+      "species": [
+        "Paradox Fanglongmon",
+        "Paradox ImperialdramonDragonModeBlack",
+        "Paradox ImperialdramonFighterMode"
+      ],
+      "file": "fanglongmon_2047x1155_1.0625.png",
+      "actions": 16,
+      "fields": [
+        "chat"
+      ],
+      "actions_outside_display": []
+    },
+    {
+      "pixels": [
+        2047,
+        1155
+      ],
+      "ui_scale": 1.0625,
+      "viewport": [
+        21,
+        100,
+        1673,
+        876
+      ],
+      "target": 0,
+      "targets": [
+        [
+          261,
+          273,
+          357,
+          232
+        ],
+        [
+          680,
+          273,
+          355,
+          232
+        ],
+        [
+          1096,
+          273,
+          358,
+          232
+        ]
+      ],
+      "outlines": [
+        [
+          261,
+          273,
+          357,
+          232
+        ]
+      ],
+      "text": [
+        {
+          "requested": "WILD ENCOUNTER",
+          "rendered": "WILD ENCOUNTER",
+          "rect": [
+            42,
+            115,
+            250,
+            28
+          ],
+          "glyphs": [
+            42,
+            120,
+            249,
+            18
+          ],
+          "color": [
+            231,
+            241,
+            249
+          ],
+          "bold": true,
+          "size": 23
+        },
+        {
+          "requested": "TACTICAL LINK  /  SELECT YOUR TARGET",
+          "rendered": "TACTICAL LINK  /  SELECT YOUR TARGET",
+          "rect": [
+            44,
+            148,
+            239,
+            12
+          ],
+          "glyphs": [
+            44,
+            151,
+            239,
+            8
+          ],
+          "color": [
+            67,
+            213,
+            231
+          ],
+          "bold": true,
+          "size": 9
+        },
+        {
+          "requested": "TURN 01",
+          "rendered": "TURN 01",
+          "rect": [
+            1588,
+            124,
+            82,
+            20
+          ],
+          "glyphs": [
+            1588,
+            128,
+            81,
+            12
+          ],
+          "color": [
+            247,
+            199,
+            104
+          ],
+          "bold": true,
+          "size": 16
+        },
+        {
+          "requested": "TARGET",
+          "rendered": "TARGET",
+          "rect": [
+            416,
+            282,
+            48,
+            12
+          ],
+          "glyphs": [
+            416,
+            285,
+            48,
+            7
+          ],
+          "color": [
+            247,
+            199,
+            104
+          ],
+          "bold": true,
+          "size": 9
+        },
+        {
+          "requested": "Paradox ImperialdramonDragonMode",
+          "rendered": "Paradox ImperialdramonDragonMode",
+          "rect": [
+            273,
+            298,
+            335,
+            19
+          ],
+          "glyphs": [
+            274,
+            301,
+            333,
+            15
+          ],
+          "color": [
+            255,
+            117,
+            138
+          ],
+          "bold": true,
+          "size": 15
+        },
+        {
+          "requested": "Black",
+          "rendered": "Black",
+          "rect": [
+            416,
+            319,
+            49,
+            19
+          ],
+          "glyphs": [
+            417,
+            322,
+            48,
+            12
+          ],
+          "color": [
+            255,
+            117,
+            138
+          ],
+          "bold": true,
+          "size": 15
+        },
+        {
+          "requested": "Lv.100 \u00b7 vaccine / wind",
+          "rendered": "Lv.100 \u00b7 vaccine / wind",
+          "rect": [
+            370,
+            340,
+            141,
+            14
+          ],
+          "glyphs": [
+            371,
+            342,
+            139,
+            11
+          ],
+          "color": [
+            141,
+            164,
+            185
+          ],
+          "bold": false,
+          "size": 11
+        },
+        {
+          "requested": "Paradox ImperialdramonFighterMode",
+          "rendered": "Paradox ImperialdramonFighterMode",
+          "rect": [
+            691,
+            309,
+            333,
+            19
+          ],
+          "glyphs": [
+            692,
+            312,
+            331,
+            15
+          ],
+          "color": [
+            255,
+            117,
+            138
+          ],
+          "bold": true,
+          "size": 15
+        },
+        {
+          "requested": "Lv.100 \u00b7 virus / water",
+          "rendered": "Lv.100 \u00b7 virus / water",
+          "rect": [
+            793,
+            340,
+            129,
+            14
+          ],
+          "glyphs": [
+            794,
+            343,
+            128,
+            10
+          ],
+          "color": [
+            141,
+            164,
+            185
+          ],
+          "bold": false,
+          "size": 11
+        },
+        {
+          "requested": "Paradox ImperialdramonPaladinMode",
+          "rendered": "Paradox ImperialdramonPaladinMode",
+          "rect": [
+            1108,
+            309,
+            335,
+            19
+          ],
+          "glyphs": [
+            1109,
+            312,
+            333,
+            15
+          ],
+          "color": [
+            255,
+            117,
+            138
+          ],
+          "bold": true,
+          "size": 15
+        },
+        {
+          "requested": "Lv.100 \u00b7 data / plant",
+          "rendered": "Lv.100 \u00b7 data / plant",
+          "rect": [
+            1213,
+            340,
+            124,
+            15
+          ],
+          "glyphs": [
+            1214,
+            342,
+            123,
+            13
+          ],
+          "color": [
+            141,
+            164,
+            185
+          ],
+          "bold": false,
+          "size": 11
+        },
+        {
+          "requested": "Fanglongmon",
+          "rendered": "Fanglongmon",
+          "rect": [
+            380,
+            636,
+            120,
+            19
+          ],
+          "glyphs": [
+            381,
+            639,
+            118,
+            15
+          ],
+          "color": [
+            231,
+            241,
+            249
+          ],
+          "bold": true,
+          "size": 15
+        },
+        {
+          "requested": "Lv.99 \u00b7 virus / electric",
+          "rendered": "Lv.99 \u00b7 virus / electric",
+          "rect": [
+            375,
+            656,
+            131,
+            14
+          ],
+          "glyphs": [
+            376,
+            658,
+            129,
+            11
+          ],
+          "color": [
+            141,
+            164,
+            185
+          ],
+          "bold": false,
+          "size": 11
+        },
+        {
+          "requested": "YOUR TURN",
+          "rendered": "YOUR TURN",
+          "rect": [
+            400,
+            829,
+            80,
+            14
+          ],
+          "glyphs": [
+            401,
+            832,
+            78,
+            9
+          ],
+          "color": [
+            190,
+            240,
+            107
+          ],
+          "bold": true,
+          "size": 11
+        },
+        {
+          "requested": "Omnimon",
+          "rendered": "Omnimon",
+          "rect": [
+            814,
+            636,
+            86,
+            19
+          ],
+          "glyphs": [
+            814,
+            639,
+            85,
+            12
+          ],
+          "color": [
+            231,
+            241,
+            249
+          ],
+          "bold": true,
+          "size": 15
+        },
+        {
+          "requested": "Lv.99 \u00b7 vaccine / light",
+          "rendered": "Lv.99 \u00b7 vaccine / light",
+          "rect": [
+            792,
+            656,
+            131,
+            15
+          ],
+          "glyphs": [
+            793,
+            658,
+            130,
+            13
+          ],
+          "color": [
+            141,
+            164,
+            185
+          ],
+          "bold": false,
+          "size": 11
+        },
+        {
+          "requested": "Paradox Fanglongmon",
+          "rendered": "Paradox Fanglongmon",
+          "rect": [
+            1176,
+            636,
+            199,
+            19
+          ],
+          "glyphs": [
+            1177,
+            639,
+            197,
+            15
+          ],
+          "color": [
+            231,
+            241,
+            249
+          ],
+          "bold": true,
+          "size": 15
+        },
+        {
+          "requested": "Lv.99 \u00b7 virus / electric",
+          "rendered": "Lv.99 \u00b7 virus / electric",
+          "rect": [
+            1210,
+            656,
+            131,
+            14
+          ],
+          "glyphs": [
+            1211,
+            658,
+            129,
+            11
+          ],
+          "color": [
+            141,
+            164,
+            185
+          ],
+          "bold": false,
+          "size": 11
+        },
+        {
+          "requested": "Attack",
+          "rendered": "Attack",
+          "rect": [
+            215,
+            935,
+            54,
+            18
+          ],
+          "glyphs": [
+            215,
+            938,
+            54,
+            11
+          ],
+          "color": [
+            9,
+            15,
+            27
+          ],
+          "bold": true,
+          "size": 14
+        },
+        {
+          "requested": "Skill \u00b7 SP",
+          "rendered": "Skill \u00b7 SP",
+          "rect": [
+            619,
+            935,
+            65,
+            18
+          ],
+          "glyphs": [
+            620,
+            938,
+            64,
+            11
+          ],
+          "color": [
+            231,
+            241,
+            249
+          ],
+          "bold": false,
+          "size": 14
+        },
+        {
+          "requested": "Items",
+          "rendered": "Items",
+          "rect": [
+            1039,
+            935,
+            42,
+            18
+          ],
+          "glyphs": [
+            1040,
+            938,
+            41,
+            11
+          ],
+          "color": [
+            231,
+            241,
+            249
+          ],
+          "bold": false,
+          "size": 14
+        },
+        {
+          "requested": "Flee",
+          "rendered": "Flee",
+          "rect": [
+            1454,
+            935,
+            31,
+            18
+          ],
+          "glyphs": [
+            1455,
+            938,
+            30,
+            11
+          ],
+          "color": [
+            231,
+            241,
+            249
+          ],
+          "bold": false,
+          "size": 14
+        }
+      ],
+      "species": [
+        "Paradox ImperialdramonDragonModeBlack",
+        "Paradox ImperialdramonFighterMode",
+        "Paradox ImperialdramonPaladinMode"
+      ],
+      "file": "longest_2047x1155_1.0625.png",
+      "actions": 16,
+      "fields": [
+        "chat"
+      ],
+      "actions_outside_display": []
+    },
+    {
+      "pixels": [
+        2047,
+        1155
+      ],
+      "ui_scale": 1.25,
+      "viewport": [
+        25,
+        118,
+        1606,
+        827
+      ],
+      "target": 0,
+      "targets": [
+        [
+          296,
+          236,
+          260,
+          273
+        ],
+        [
+          646,
+          236,
+          363,
+          273
+        ],
+        [
+          1050,
+          236,
+          360,
+          273
+        ]
+      ],
+      "outlines": [
+        [
+          296,
+          236,
+          260,
+          273
+        ]
+      ],
+      "text": [
+        {
+          "requested": "WILD ENCOUNTER",
+          "rendered": "WILD ENCOUNTER",
+          "rect": [
+            50,
+            135,
+            295,
+            34
+          ],
+          "glyphs": [
+            51,
+            141,
+            294,
+            21
+          ],
+          "color": [
+            231,
+            241,
+            249
+          ],
+          "bold": true,
+          "size": 23
+        },
+        {
+          "requested": "TACTICAL LINK  /  SELECT YOUR TARGET",
+          "rendered": "TACTICAL LINK  /  SELECT YOUR TARGET",
+          "rect": [
+            51,
+            174,
+            268,
+            13
+          ],
+          "glyphs": [
+            51,
+            177,
+            268,
+            9
+          ],
+          "color": [
+            67,
+            213,
+            231
+          ],
+          "bold": true,
+          "size": 9
+        },
+        {
+          "requested": "TURN 01",
+          "rendered": "TURN 01",
+          "rect": [
+            1508,
+            146,
+            103,
+            24
+          ],
+          "glyphs": [
+            1508,
+            150,
+            101,
+            15
+          ],
+          "color": [
+            247,
+            199,
+            104
+          ],
+          "bold": true,
+          "size": 16
+        },
+        {
+          "requested": "TARGET",
+          "rendered": "TARGET",
+          "rect": [
+            400,
+            247,
+            53,
+            13
+          ],
+          "glyphs": [
+            400,
+            250,
+            53,
+            8
+          ],
+          "color": [
+            247,
+            199,
+            104
+          ],
+          "bold": true,
+          "size": 9
+        },
+        {
+          "requested": "Paradox Fanglongmon",
+          "rendered": "Paradox Fanglongmon",
+          "rect": [
+            309,
+            277,
+            234,
+            23
+          ],
+          "glyphs": [
+            310,
+            281,
+            232,
+            18
+          ],
+          "color": [
+            255,
+            117,
+            138
+          ],
+          "bold": true,
+          "size": 15
+        },
+        {
+          "requested": "Lv.100 \u00b7 virus / electric",
+          "rendered": "Lv.100 \u00b7 virus / electric",
+          "rect": [
+            347,
+            315,
+            159,
+            17
+          ],
+          "glyphs": [
+            348,
+            317,
+            157,
+            13
+          ],
+          "color": [
+            141,
+            164,
+            185
+          ],
+          "bold": false,
+          "size": 11
+        },
+        {
+          "requested": "Paradox ImperialdramonDragon",
+          "rendered": "Paradox ImperialdramonDragon",
+          "rect": [
+            660,
+            264,
+            337,
+            23
+          ],
+          "glyphs": [
+            661,
+            268,
+            335,
+            18
+          ],
+          "color": [
+            255,
+            117,
+            138
+          ],
+          "bold": true,
+          "size": 15
+        },
+        {
+          "requested": "ModeBlack",
+          "rendered": "ModeBlack",
+          "rect": [
+            772,
+            289,
+            112,
+            23
+          ],
+          "glyphs": [
+            773,
+            293,
+            111,
+            14
+          ],
+          "color": [
+            255,
+            117,
+            138
+          ],
+          "bold": true,
+          "size": 15
+        },
+        {
+          "requested": "Lv.100 \u00b7 vaccine / wind",
+          "rendered": "Lv.100 \u00b7 vaccine / wind",
+          "rect": [
+            748,
+            315,
+            160,
+            17
+          ],
+          "glyphs": [
+            749,
+            317,
+            158,
+            13
+          ],
+          "color": [
+            141,
+            164,
+            185
+          ],
+          "bold": false,
+          "size": 11
+        },
+        {
+          "requested": "Paradox ImperialdramonFighter",
+          "rendered": "Paradox ImperialdramonFighter",
+          "rect": [
+            1063,
+            264,
+            334,
+            23
+          ],
+          "glyphs": [
+            1064,
+            268,
+            333,
+            18
+          ],
+          "color": [
+            255,
+            117,
+            138
+          ],
+          "bold": true,
+          "size": 15
+        },
+        {
+          "requested": "Mode",
+          "rendered": "Mode",
+          "rect": [
+            1202,
+            289,
+            56,
+            23
+          ],
+          "glyphs": [
+            1203,
+            293,
+            54,
+            14
+          ],
+          "color": [
+            255,
+            117,
+            138
+          ],
+          "bold": true,
+          "size": 15
+        },
+        {
+          "requested": "Lv.100 \u00b7 virus / water",
+          "rendered": "Lv.100 \u00b7 virus / water",
+          "rect": [
+            1157,
+            315,
+            146,
+            17
+          ],
+          "glyphs": [
+            1158,
+            317,
+            145,
+            13
+          ],
+          "color": [
+            141,
+            164,
+            185
+          ],
+          "bold": false,
+          "size": 11
+        },
+        {
+          "requested": "Fanglongmon",
+          "rendered": "Fanglongmon",
+          "rect": [
+            355,
+            587,
+            142,
+            23
+          ],
+          "glyphs": [
+            356,
+            591,
+            140,
+            18
+          ],
+          "color": [
+            231,
+            241,
+            249
+          ],
+          "bold": true,
+          "size": 15
+        },
+        {
+          "requested": "Lv.99 \u00b7 virus / electric",
+          "rendered": "Lv.99 \u00b7 virus / electric",
+          "rect": [
+            351,
+            612,
+            150,
+            17
+          ],
+          "glyphs": [
+            352,
+            614,
+            148,
+            13
+          ],
+          "color": [
+            141,
+            164,
+            185
+          ],
+          "bold": false,
+          "size": 11
+        },
+        {
+          "requested": "YOUR TURN",
+          "rendered": "YOUR TURN",
+          "rect": [
+            380,
+            816,
+            93,
+            17
+          ],
+          "glyphs": [
+            381,
+            819,
+            92,
+            10
+          ],
+          "color": [
+            190,
+            240,
+            107
+          ],
+          "bold": true,
+          "size": 11
+        },
+        {
+          "requested": "Omnimon",
+          "rendered": "Omnimon",
+          "rect": [
+            778,
+            587,
+            101,
+            23
+          ],
+          "glyphs": [
+            779,
+            591,
+            99,
+            14
+          ],
+          "color": [
+            231,
+            241,
+            249
+          ],
+          "bold": true,
+          "size": 15
+        },
+        {
+          "requested": "Lv.99 \u00b7 vaccine / light",
+          "rendered": "Lv.99 \u00b7 vaccine / light",
+          "rect": [
+            753,
+            612,
+            150,
+            17
+          ],
+          "glyphs": [
+            754,
+            614,
+            149,
+            14
+          ],
+          "color": [
+            141,
+            164,
+            185
+          ],
+          "bold": false,
+          "size": 11
+        },
+        {
+          "requested": "Paradox Fanglongmon",
+          "rendered": "Paradox Fanglongmon",
+          "rect": [
+            1113,
+            587,
+            234,
+            23
+          ],
+          "glyphs": [
+            1114,
+            591,
+            232,
+            18
+          ],
+          "color": [
+            231,
+            241,
+            249
+          ],
+          "bold": true,
+          "size": 15
+        },
+        {
+          "requested": "Lv.99 \u00b7 virus / electric",
+          "rendered": "Lv.99 \u00b7 virus / electric",
+          "rect": [
+            1155,
+            612,
+            150,
+            17
+          ],
+          "glyphs": [
+            1156,
+            614,
+            148,
+            13
+          ],
+          "color": [
+            141,
+            164,
+            185
+          ],
+          "bold": false,
+          "size": 11
+        },
+        {
+          "requested": "Attack",
+          "rendered": "Attack",
+          "rect": [
+            208,
+            896,
+            64,
+            21
+          ],
+          "glyphs": [
+            208,
+            899,
+            64,
+            14
+          ],
+          "color": [
+            9,
+            15,
+            27
+          ],
+          "bold": true,
+          "size": 14
+        },
+        {
+          "requested": "Skill \u00b7 SP",
+          "rendered": "Skill \u00b7 SP",
+          "rect": [
+            593,
+            896,
+            76,
+            21
+          ],
+          "glyphs": [
+            594,
+            899,
+            75,
+            14
+          ],
+          "color": [
+            231,
+            241,
+            249
+          ],
+          "bold": false,
+          "size": 14
+        },
+        {
+          "requested": "Items",
+          "rendered": "Items",
+          "rect": [
+            997,
+            896,
+            50,
+            21
+          ],
+          "glyphs": [
+            998,
+            900,
+            49,
+            13
+          ],
+          "color": [
+            231,
+            241,
+            249
+          ],
+          "bold": false,
+          "size": 14
+        },
+        {
+          "requested": "Flee",
+          "rendered": "Flee",
+          "rect": [
+            1396,
+            896,
+            37,
+            21
+          ],
+          "glyphs": [
+            1397,
+            899,
+            36,
+            14
+          ],
+          "color": [
+            231,
+            241,
+            249
+          ],
+          "bold": false,
+          "size": 14
+        }
+      ],
+      "species": [
+        "Paradox Fanglongmon",
+        "Paradox ImperialdramonDragonModeBlack",
+        "Paradox ImperialdramonFighterMode"
+      ],
+      "file": "fanglongmon_2047x1155_1.25.png",
+      "actions": 16,
+      "fields": [
+        "chat"
+      ],
+      "actions_outside_display": []
+    },
+    {
+      "pixels": [
+        2047,
+        1155
+      ],
+      "ui_scale": 1.25,
+      "viewport": [
+        25,
+        118,
+        1606,
+        827
+      ],
+      "target": 0,
+      "targets": [
+        [
+          245,
+          236,
+          363,
+          273
+        ],
+        [
+          648,
+          236,
+          360,
+          273
+        ],
+        [
+          1049,
+          236,
+          361,
+          273
+        ]
+      ],
+      "outlines": [
+        [
+          245,
+          236,
+          363,
+          273
+        ]
+      ],
+      "text": [
+        {
+          "requested": "WILD ENCOUNTER",
+          "rendered": "WILD ENCOUNTER",
+          "rect": [
+            50,
+            135,
+            295,
+            34
+          ],
+          "glyphs": [
+            51,
+            141,
+            294,
+            21
+          ],
+          "color": [
+            231,
+            241,
+            249
+          ],
+          "bold": true,
+          "size": 23
+        },
+        {
+          "requested": "TACTICAL LINK  /  SELECT YOUR TARGET",
+          "rendered": "TACTICAL LINK  /  SELECT YOUR TARGET",
+          "rect": [
+            51,
+            174,
+            268,
+            13
+          ],
+          "glyphs": [
+            51,
+            177,
+            268,
+            9
+          ],
+          "color": [
+            67,
+            213,
+            231
+          ],
+          "bold": true,
+          "size": 9
+        },
+        {
+          "requested": "TURN 01",
+          "rendered": "TURN 01",
+          "rect": [
+            1508,
+            146,
+            103,
+            24
+          ],
+          "glyphs": [
+            1508,
+            150,
+            101,
+            15
+          ],
+          "color": [
+            247,
+            199,
+            104
+          ],
+          "bold": true,
+          "size": 16
+        },
+        {
+          "requested": "TARGET",
+          "rendered": "TARGET",
+          "rect": [
+            400,
+            247,
+            53,
+            13
+          ],
+          "glyphs": [
+            400,
+            250,
+            53,
+            8
+          ],
+          "color": [
+            247,
+            199,
+            104
+          ],
+          "bold": true,
+          "size": 9
+        },
+        {
+          "requested": "Paradox ImperialdramonDragon",
+          "rendered": "Paradox ImperialdramonDragon",
+          "rect": [
+            258,
+            264,
+            337,
+            23
+          ],
+          "glyphs": [
+            259,
+            268,
+            335,
+            18
+          ],
+          "color": [
+            255,
+            117,
+            138
+          ],
+          "bold": true,
+          "size": 15
+        },
+        {
+          "requested": "ModeBlack",
+          "rendered": "ModeBlack",
+          "rect": [
+            370,
+            289,
+            112,
+            23
+          ],
+          "glyphs": [
+            371,
+            293,
+            111,
+            14
+          ],
+          "color": [
+            255,
+            117,
+            138
+          ],
+          "bold": true,
+          "size": 15
+        },
+        {
+          "requested": "Lv.100 \u00b7 vaccine / wind",
+          "rendered": "Lv.100 \u00b7 vaccine / wind",
+          "rect": [
+            346,
+            315,
+            160,
+            17
+          ],
+          "glyphs": [
+            347,
+            317,
+            158,
+            13
+          ],
+          "color": [
+            141,
+            164,
+            185
+          ],
+          "bold": false,
+          "size": 11
+        },
+        {
+          "requested": "Paradox ImperialdramonFighter",
+          "rendered": "Paradox ImperialdramonFighter",
+          "rect": [
+            661,
+            264,
+            334,
+            23
+          ],
+          "glyphs": [
+            662,
+            268,
+            333,
+            18
+          ],
+          "color": [
+            255,
+            117,
+            138
+          ],
+          "bold": true,
+          "size": 15
+        },
+        {
+          "requested": "Mode",
+          "rendered": "Mode",
+          "rect": [
+            800,
+            289,
+            56,
+            23
+          ],
+          "glyphs": [
+            801,
+            293,
+            54,
+            14
+          ],
+          "color": [
+            255,
+            117,
+            138
+          ],
+          "bold": true,
+          "size": 15
+        },
+        {
+          "requested": "Lv.100 \u00b7 virus / water",
+          "rendered": "Lv.100 \u00b7 virus / water",
+          "rect": [
+            755,
+            315,
+            146,
+            17
+          ],
+          "glyphs": [
+            756,
+            317,
+            145,
+            13
+          ],
+          "color": [
+            141,
+            164,
+            185
+          ],
+          "bold": false,
+          "size": 11
+        },
+        {
+          "requested": "Paradox ImperialdramonPaladin",
+          "rendered": "Paradox ImperialdramonPaladin",
+          "rect": [
+            1062,
+            264,
+            336,
+            23
+          ],
+          "glyphs": [
+            1063,
+            268,
+            334,
+            18
+          ],
+          "color": [
+            255,
+            117,
+            138
+          ],
+          "bold": true,
+          "size": 15
+        },
+        {
+          "requested": "Mode",
+          "rendered": "Mode",
+          "rect": [
+            1202,
+            289,
+            56,
+            23
+          ],
+          "glyphs": [
+            1203,
+            293,
+            54,
+            14
+          ],
+          "color": [
+            255,
+            117,
+            138
+          ],
+          "bold": true,
+          "size": 15
+        },
+        {
+          "requested": "Lv.100 \u00b7 data / plant",
+          "rendered": "Lv.100 \u00b7 data / plant",
+          "rect": [
+            1160,
+            315,
+            141,
+            17
+          ],
+          "glyphs": [
+            1161,
+            317,
+            140,
+            14
+          ],
+          "color": [
+            141,
+            164,
+            185
+          ],
+          "bold": false,
+          "size": 11
+        },
+        {
+          "requested": "Fanglongmon",
+          "rendered": "Fanglongmon",
+          "rect": [
+            355,
+            587,
+            142,
+            23
+          ],
+          "glyphs": [
+            356,
+            591,
+            140,
+            18
+          ],
+          "color": [
+            231,
+            241,
+            249
+          ],
+          "bold": true,
+          "size": 15
+        },
+        {
+          "requested": "Lv.99 \u00b7 virus / electric",
+          "rendered": "Lv.99 \u00b7 virus / electric",
+          "rect": [
+            351,
+            612,
+            150,
+            17
+          ],
+          "glyphs": [
+            352,
+            614,
+            148,
+            13
+          ],
+          "color": [
+            141,
+            164,
+            185
+          ],
+          "bold": false,
+          "size": 11
+        },
+        {
+          "requested": "YOUR TURN",
+          "rendered": "YOUR TURN",
+          "rect": [
+            380,
+            816,
+            93,
+            17
+          ],
+          "glyphs": [
+            381,
+            819,
+            92,
+            10
+          ],
+          "color": [
+            190,
+            240,
+            107
+          ],
+          "bold": true,
+          "size": 11
+        },
+        {
+          "requested": "Omnimon",
+          "rendered": "Omnimon",
+          "rect": [
+            778,
+            587,
+            101,
+            23
+          ],
+          "glyphs": [
+            779,
+            591,
+            99,
+            14
+          ],
+          "color": [
+            231,
+            241,
+            249
+          ],
+          "bold": true,
+          "size": 15
+        },
+        {
+          "requested": "Lv.99 \u00b7 vaccine / light",
+          "rendered": "Lv.99 \u00b7 vaccine / light",
+          "rect": [
+            753,
+            612,
+            150,
+            17
+          ],
+          "glyphs": [
+            754,
+            614,
+            149,
+            14
+          ],
+          "color": [
+            141,
+            164,
+            185
+          ],
+          "bold": false,
+          "size": 11
+        },
+        {
+          "requested": "Paradox Fanglongmon",
+          "rendered": "Paradox Fanglongmon",
+          "rect": [
+            1113,
+            587,
+            234,
+            23
+          ],
+          "glyphs": [
+            1114,
+            591,
+            232,
+            18
+          ],
+          "color": [
+            231,
+            241,
+            249
+          ],
+          "bold": true,
+          "size": 15
+        },
+        {
+          "requested": "Lv.99 \u00b7 virus / electric",
+          "rendered": "Lv.99 \u00b7 virus / electric",
+          "rect": [
+            1155,
+            612,
+            150,
+            17
+          ],
+          "glyphs": [
+            1156,
+            614,
+            148,
+            13
+          ],
+          "color": [
+            141,
+            164,
+            185
+          ],
+          "bold": false,
+          "size": 11
+        },
+        {
+          "requested": "Attack",
+          "rendered": "Attack",
+          "rect": [
+            208,
+            896,
+            64,
+            21
+          ],
+          "glyphs": [
+            208,
+            899,
+            64,
+            14
+          ],
+          "color": [
+            9,
+            15,
+            27
+          ],
+          "bold": true,
+          "size": 14
+        },
+        {
+          "requested": "Skill \u00b7 SP",
+          "rendered": "Skill \u00b7 SP",
+          "rect": [
+            593,
+            896,
+            76,
+            21
+          ],
+          "glyphs": [
+            594,
+            899,
+            75,
+            14
+          ],
+          "color": [
+            231,
+            241,
+            249
+          ],
+          "bold": false,
+          "size": 14
+        },
+        {
+          "requested": "Items",
+          "rendered": "Items",
+          "rect": [
+            997,
+            896,
+            50,
+            21
+          ],
+          "glyphs": [
+            998,
+            900,
+            49,
+            13
+          ],
+          "color": [
+            231,
+            241,
+            249
+          ],
+          "bold": false,
+          "size": 14
+        },
+        {
+          "requested": "Flee",
+          "rendered": "Flee",
+          "rect": [
+            1396,
+            896,
+            37,
+            21
+          ],
+          "glyphs": [
+            1397,
+            899,
+            36,
+            14
+          ],
+          "color": [
+            231,
+            241,
+            249
+          ],
+          "bold": false,
+          "size": 14
+        }
+      ],
+      "species": [
+        "Paradox ImperialdramonDragonModeBlack",
+        "Paradox ImperialdramonFighterMode",
+        "Paradox ImperialdramonPaladinMode"
+      ],
+      "file": "longest_2047x1155_1.25.png",
+      "actions": 16,
+      "fields": [
+        "chat"
+      ],
+      "actions_outside_display": []
+    },
+    {
+      "pixels": [
+        1920,
+        1080
+      ],
+      "ui_scale": 1.25,
+      "viewport": [
+        25,
+        118,
+        1480,
+        752
+      ],
+      "target": 0,
+      "targets": [
+        [
+          265,
+          209,
+          260,
+          272
+        ],
+        [
+          622,
+          209,
+          286,
+          272
+        ],
+        [
+          992,
+          209,
+          286,
+          272
+        ]
+      ],
+      "outlines": [
+        [
+          265,
+          209,
+          260,
+          272
+        ]
+      ],
+      "text": [
+        {
+          "requested": "WILD ENCOUNTER",
+          "rendered": "WILD ENCOUNTER",
+          "rect": [
+            50,
+            135,
+            295,
+            34
+          ],
+          "glyphs": [
+            51,
+            141,
+            294,
+            21
+          ],
+          "color": [
+            231,
+            241,
+            249
+          ],
+          "bold": true,
+          "size": 23
+        },
+        {
+          "requested": "TACTICAL LINK  /  SELECT YOUR TARGET",
+          "rendered": "TACTICAL LINK  /  SELECT YOUR TARGET",
+          "rect": [
+            51,
+            174,
+            268,
+            13
+          ],
+          "glyphs": [
+            51,
+            177,
+            268,
+            9
+          ],
+          "color": [
+            67,
+            213,
+            231
+          ],
+          "bold": true,
+          "size": 9
+        },
+        {
+          "requested": "TURN 01",
+          "rendered": "TURN 01",
+          "rect": [
+            1381,
+            146,
+            103,
+            24
+          ],
+          "glyphs": [
+            1381,
+            150,
+            101,
+            15
+          ],
+          "color": [
+            247,
+            199,
+            104
+          ],
+          "bold": true,
+          "size": 16
+        },
+        {
+          "requested": "TARGET",
+          "rendered": "TARGET",
+          "rect": [
+            369,
+            220,
+            53,
+            13
+          ],
+          "glyphs": [
+            369,
+            223,
+            53,
+            8
+          ],
+          "color": [
+            247,
+            199,
+            104
+          ],
+          "bold": true,
+          "size": 9
+        },
+        {
+          "requested": "Paradox Fanglongmon",
+          "rendered": "Paradox Fanglongmon",
+          "rect": [
+            278,
+            249,
+            234,
+            23
+          ],
+          "glyphs": [
+            279,
+            253,
+            232,
+            18
+          ],
+          "color": [
+            255,
+            117,
+            138
+          ],
+          "bold": true,
+          "size": 15
+        },
+        {
+          "requested": "Lv.100 \u00b7 virus / electric",
+          "rendered": "Lv.100 \u00b7 virus / electric",
+          "rect": [
+            316,
+            287,
+            159,
+            17
+          ],
+          "glyphs": [
+            317,
+            289,
+            157,
+            13
+          ],
+          "color": [
+            141,
+            164,
+            185
+          ],
+          "bold": false,
+          "size": 11
+        },
+        {
+          "requested": "Paradox Imperialdramon",
+          "rendered": "Paradox Imperialdramon",
+          "rect": [
+            635,
+            236,
+            260,
+            23
+          ],
+          "glyphs": [
+            636,
+            240,
+            258,
+            18
+          ],
+          "color": [
+            255,
+            117,
+            138
+          ],
+          "bold": true,
+          "size": 15
+        },
+        {
+          "requested": "DragonModeBlack",
+          "rendered": "DragonModeBlack",
+          "rect": [
+            671,
+            262,
+            189,
+            23
+          ],
+          "glyphs": [
+            672,
+            266,
+            188,
+            18
+          ],
+          "color": [
+            255,
+            117,
+            138
+          ],
+          "bold": true,
+          "size": 15
+        },
+        {
+          "requested": "Lv.100 \u00b7 vaccine / wind",
+          "rendered": "Lv.100 \u00b7 vaccine / wind",
+          "rect": [
+            685,
+            287,
+            160,
+            17
+          ],
+          "glyphs": [
+            686,
+            289,
+            158,
+            13
+          ],
+          "color": [
+            141,
+            164,
+            185
+          ],
+          "bold": false,
+          "size": 11
+        },
+        {
+          "requested": "Paradox Imperialdramon",
+          "rendered": "Paradox Imperialdramon",
+          "rect": [
+            1005,
+            236,
+            260,
+            23
+          ],
+          "glyphs": [
+            1006,
+            240,
+            258,
+            18
+          ],
+          "color": [
+            255,
+            117,
+            138
+          ],
+          "bold": true,
+          "size": 15
+        },
+        {
+          "requested": "FighterMode",
+          "rendered": "FighterMode",
+          "rect": [
+            1070,
+            262,
+            130,
+            23
+          ],
+          "glyphs": [
+            1071,
+            266,
+            128,
+            18
+          ],
+          "color": [
+            255,
+            117,
+            138
+          ],
+          "bold": true,
+          "size": 15
+        },
+        {
+          "requested": "Lv.100 \u00b7 virus / water",
+          "rendered": "Lv.100 \u00b7 virus / water",
+          "rect": [
+            1062,
+            287,
+            146,
+            17
+          ],
+          "glyphs": [
+            1063,
+            289,
+            145,
+            13
+          ],
+          "color": [
+            141,
+            164,
+            185
+          ],
+          "bold": false,
+          "size": 11
+        },
+        {
+          "requested": "Fanglongmon",
+          "rendered": "Fanglongmon",
+          "rect": [
+            324,
+            529,
+            142,
+            23
+          ],
+          "glyphs": [
+            325,
+            533,
+            140,
+            18
+          ],
+          "color": [
+            231,
+            241,
+            249
+          ],
+          "bold": true,
+          "size": 15
+        },
+        {
+          "requested": "Lv.99 \u00b7 virus / electric",
+          "rendered": "Lv.99 \u00b7 virus / electric",
+          "rect": [
+            320,
+            555,
+            150,
+            17
+          ],
+          "glyphs": [
+            321,
+            557,
+            148,
+            13
+          ],
+          "color": [
+            141,
+            164,
+            185
+          ],
+          "bold": false,
+          "size": 11
+        },
+        {
+          "requested": "YOUR TURN",
+          "rendered": "YOUR TURN",
+          "rect": [
+            349,
+            758,
+            93,
+            17
+          ],
+          "glyphs": [
+            350,
+            761,
+            92,
+            10
+          ],
+          "color": [
+            190,
+            240,
+            107
+          ],
+          "bold": true,
+          "size": 11
+        },
+        {
+          "requested": "Omnimon",
+          "rendered": "Omnimon",
+          "rect": [
+            715,
+            529,
+            101,
+            23
+          ],
+          "glyphs": [
+            716,
+            533,
+            99,
+            14
+          ],
+          "color": [
+            231,
+            241,
+            249
+          ],
+          "bold": true,
+          "size": 15
+        },
+        {
+          "requested": "Lv.99 \u00b7 vaccine / light",
+          "rendered": "Lv.99 \u00b7 vaccine / light",
+          "rect": [
+            690,
+            555,
+            150,
+            17
+          ],
+          "glyphs": [
+            691,
+            557,
+            149,
+            14
+          ],
+          "color": [
+            141,
+            164,
+            185
+          ],
+          "bold": false,
+          "size": 11
+        },
+        {
+          "requested": "Paradox Fanglongmon",
+          "rendered": "Paradox Fanglongmon",
+          "rect": [
+            1018,
+            529,
+            234,
+            23
+          ],
+          "glyphs": [
+            1019,
+            533,
+            232,
+            18
+          ],
+          "color": [
+            231,
+            241,
+            249
+          ],
+          "bold": true,
+          "size": 15
+        },
+        {
+          "requested": "Lv.99 \u00b7 virus / electric",
+          "rendered": "Lv.99 \u00b7 virus / electric",
+          "rect": [
+            1060,
+            555,
+            150,
+            17
+          ],
+          "glyphs": [
+            1061,
+            557,
+            148,
+            13
+          ],
+          "color": [
+            141,
+            164,
+            185
+          ],
+          "bold": false,
+          "size": 11
+        },
+        {
+          "requested": "Attack",
+          "rendered": "Attack",
+          "rect": [
+            193,
+            821,
+            64,
+            21
+          ],
+          "glyphs": [
+            193,
+            824,
+            64,
+            14
+          ],
+          "color": [
+            9,
+            15,
+            27
+          ],
+          "bold": true,
+          "size": 14
+        },
+        {
+          "requested": "Skill \u00b7 SP",
+          "rendered": "Skill \u00b7 SP",
+          "rect": [
+            547,
+            821,
+            76,
+            21
+          ],
+          "glyphs": [
+            548,
+            824,
+            75,
+            14
+          ],
+          "color": [
+            231,
+            241,
+            249
+          ],
+          "bold": false,
+          "size": 14
+        },
+        {
+          "requested": "Items",
+          "rendered": "Items",
+          "rect": [
+            920,
+            821,
+            50,
+            21
+          ],
+          "glyphs": [
+            921,
+            825,
+            49,
+            13
+          ],
+          "color": [
+            231,
+            241,
+            249
+          ],
+          "bold": false,
+          "size": 14
+        },
+        {
+          "requested": "Flee",
+          "rendered": "Flee",
+          "rect": [
+            1287,
+            821,
+            37,
+            21
+          ],
+          "glyphs": [
+            1288,
+            824,
+            36,
+            14
+          ],
+          "color": [
+            231,
+            241,
+            249
+          ],
+          "bold": false,
+          "size": 14
+        }
+      ],
+      "species": [
+        "Paradox Fanglongmon",
+        "Paradox ImperialdramonDragonModeBlack",
+        "Paradox ImperialdramonFighterMode"
+      ],
+      "file": "fanglongmon_1920x1080_1.25.png",
+      "actions": 16,
+      "fields": [
+        "chat"
+      ],
+      "actions_outside_display": []
+    },
+    {
+      "pixels": [
+        1920,
+        1080
+      ],
+      "ui_scale": 1.25,
+      "viewport": [
+        25,
+        118,
+        1480,
+        752
+      ],
+      "target": 0,
+      "targets": [
+        [
+          252,
+          209,
+          286,
+          272
+        ],
+        [
+          622,
+          209,
+          286,
+          272
+        ],
+        [
+          992,
+          209,
+          286,
+          272
+        ]
+      ],
+      "outlines": [
+        [
+          252,
+          209,
+          286,
+          272
+        ]
+      ],
+      "text": [
+        {
+          "requested": "WILD ENCOUNTER",
+          "rendered": "WILD ENCOUNTER",
+          "rect": [
+            50,
+            135,
+            295,
+            34
+          ],
+          "glyphs": [
+            51,
+            141,
+            294,
+            21
+          ],
+          "color": [
+            231,
+            241,
+            249
+          ],
+          "bold": true,
+          "size": 23
+        },
+        {
+          "requested": "TACTICAL LINK  /  SELECT YOUR TARGET",
+          "rendered": "TACTICAL LINK  /  SELECT YOUR TARGET",
+          "rect": [
+            51,
+            174,
+            268,
+            13
+          ],
+          "glyphs": [
+            51,
+            177,
+            268,
+            9
+          ],
+          "color": [
+            67,
+            213,
+            231
+          ],
+          "bold": true,
+          "size": 9
+        },
+        {
+          "requested": "TURN 01",
+          "rendered": "TURN 01",
+          "rect": [
+            1381,
+            146,
+            103,
+            24
+          ],
+          "glyphs": [
+            1381,
+            150,
+            101,
+            15
+          ],
+          "color": [
+            247,
+            199,
+            104
+          ],
+          "bold": true,
+          "size": 16
+        },
+        {
+          "requested": "TARGET",
+          "rendered": "TARGET",
+          "rect": [
+            369,
+            220,
+            53,
+            13
+          ],
+          "glyphs": [
+            369,
+            223,
+            53,
+            8
+          ],
+          "color": [
+            247,
+            199,
+            104
+          ],
+          "bold": true,
+          "size": 9
+        },
+        {
+          "requested": "Paradox Imperialdramon",
+          "rendered": "Paradox Imperialdramon",
+          "rect": [
+            265,
+            236,
+            260,
+            23
+          ],
+          "glyphs": [
+            266,
+            240,
+            258,
+            18
+          ],
+          "color": [
+            255,
+            117,
+            138
+          ],
+          "bold": true,
+          "size": 15
+        },
+        {
+          "requested": "DragonModeBlack",
+          "rendered": "DragonModeBlack",
+          "rect": [
+            301,
+            262,
+            189,
+            23
+          ],
+          "glyphs": [
+            302,
+            266,
+            188,
+            18
+          ],
+          "color": [
+            255,
+            117,
+            138
+          ],
+          "bold": true,
+          "size": 15
+        },
+        {
+          "requested": "Lv.100 \u00b7 vaccine / wind",
+          "rendered": "Lv.100 \u00b7 vaccine / wind",
+          "rect": [
+            315,
+            287,
+            160,
+            17
+          ],
+          "glyphs": [
+            316,
+            289,
+            158,
+            13
+          ],
+          "color": [
+            141,
+            164,
+            185
+          ],
+          "bold": false,
+          "size": 11
+        },
+        {
+          "requested": "Paradox Imperialdramon",
+          "rendered": "Paradox Imperialdramon",
+          "rect": [
+            635,
+            236,
+            260,
+            23
+          ],
+          "glyphs": [
+            636,
+            240,
+            258,
+            18
+          ],
+          "color": [
+            255,
+            117,
+            138
+          ],
+          "bold": true,
+          "size": 15
+        },
+        {
+          "requested": "FighterMode",
+          "rendered": "FighterMode",
+          "rect": [
+            700,
+            262,
+            130,
+            23
+          ],
+          "glyphs": [
+            701,
+            266,
+            128,
+            18
+          ],
+          "color": [
+            255,
+            117,
+            138
+          ],
+          "bold": true,
+          "size": 15
+        },
+        {
+          "requested": "Lv.100 \u00b7 virus / water",
+          "rendered": "Lv.100 \u00b7 virus / water",
+          "rect": [
+            692,
+            287,
+            146,
+            17
+          ],
+          "glyphs": [
+            693,
+            289,
+            145,
+            13
+          ],
+          "color": [
+            141,
+            164,
+            185
+          ],
+          "bold": false,
+          "size": 11
+        },
+        {
+          "requested": "Paradox Imperialdramon",
+          "rendered": "Paradox Imperialdramon",
+          "rect": [
+            1005,
+            236,
+            260,
+            23
+          ],
+          "glyphs": [
+            1006,
+            240,
+            258,
+            18
+          ],
+          "color": [
+            255,
+            117,
+            138
+          ],
+          "bold": true,
+          "size": 15
+        },
+        {
+          "requested": "PaladinMode",
+          "rendered": "PaladinMode",
+          "rect": [
+            1069,
+            262,
+            132,
+            23
+          ],
+          "glyphs": [
+            1070,
+            266,
+            130,
+            14
+          ],
+          "color": [
+            255,
+            117,
+            138
+          ],
+          "bold": true,
+          "size": 15
+        },
+        {
+          "requested": "Lv.100 \u00b7 data / plant",
+          "rendered": "Lv.100 \u00b7 data / plant",
+          "rect": [
+            1065,
+            287,
+            141,
+            17
+          ],
+          "glyphs": [
+            1066,
+            289,
+            140,
+            14
+          ],
+          "color": [
+            141,
+            164,
+            185
+          ],
+          "bold": false,
+          "size": 11
+        },
+        {
+          "requested": "Fanglongmon",
+          "rendered": "Fanglongmon",
+          "rect": [
+            324,
+            529,
+            142,
+            23
+          ],
+          "glyphs": [
+            325,
+            533,
+            140,
+            18
+          ],
+          "color": [
+            231,
+            241,
+            249
+          ],
+          "bold": true,
+          "size": 15
+        },
+        {
+          "requested": "Lv.99 \u00b7 virus / electric",
+          "rendered": "Lv.99 \u00b7 virus / electric",
+          "rect": [
+            320,
+            555,
+            150,
+            17
+          ],
+          "glyphs": [
+            321,
+            557,
+            148,
+            13
+          ],
+          "color": [
+            141,
+            164,
+            185
+          ],
+          "bold": false,
+          "size": 11
+        },
+        {
+          "requested": "YOUR TURN",
+          "rendered": "YOUR TURN",
+          "rect": [
+            349,
+            758,
+            93,
+            17
+          ],
+          "glyphs": [
+            350,
+            761,
+            92,
+            10
+          ],
+          "color": [
+            190,
+            240,
+            107
+          ],
+          "bold": true,
+          "size": 11
+        },
+        {
+          "requested": "Omnimon",
+          "rendered": "Omnimon",
+          "rect": [
+            715,
+            529,
+            101,
+            23
+          ],
+          "glyphs": [
+            716,
+            533,
+            99,
+            14
+          ],
+          "color": [
+            231,
+            241,
+            249
+          ],
+          "bold": true,
+          "size": 15
+        },
+        {
+          "requested": "Lv.99 \u00b7 vaccine / light",
+          "rendered": "Lv.99 \u00b7 vaccine / light",
+          "rect": [
+            690,
+            555,
+            150,
+            17
+          ],
+          "glyphs": [
+            691,
+            557,
+            149,
+            14
+          ],
+          "color": [
+            141,
+            164,
+            185
+          ],
+          "bold": false,
+          "size": 11
+        },
+        {
+          "requested": "Paradox Fanglongmon",
+          "rendered": "Paradox Fanglongmon",
+          "rect": [
+            1018,
+            529,
+            234,
+            23
+          ],
+          "glyphs": [
+            1019,
+            533,
+            232,
+            18
+          ],
+          "color": [
+            231,
+            241,
+            249
+          ],
+          "bold": true,
+          "size": 15
+        },
+        {
+          "requested": "Lv.99 \u00b7 virus / electric",
+          "rendered": "Lv.99 \u00b7 virus / electric",
+          "rect": [
+            1060,
+            555,
+            150,
+            17
+          ],
+          "glyphs": [
+            1061,
+            557,
+            148,
+            13
+          ],
+          "color": [
+            141,
+            164,
+            185
+          ],
+          "bold": false,
+          "size": 11
+        },
+        {
+          "requested": "Attack",
+          "rendered": "Attack",
+          "rect": [
+            193,
+            821,
+            64,
+            21
+          ],
+          "glyphs": [
+            193,
+            824,
+            64,
+            14
+          ],
+          "color": [
+            9,
+            15,
+            27
+          ],
+          "bold": true,
+          "size": 14
+        },
+        {
+          "requested": "Skill \u00b7 SP",
+          "rendered": "Skill \u00b7 SP",
+          "rect": [
+            547,
+            821,
+            76,
+            21
+          ],
+          "glyphs": [
+            548,
+            824,
+            75,
+            14
+          ],
+          "color": [
+            231,
+            241,
+            249
+          ],
+          "bold": false,
+          "size": 14
+        },
+        {
+          "requested": "Items",
+          "rendered": "Items",
+          "rect": [
+            920,
+            821,
+            50,
+            21
+          ],
+          "glyphs": [
+            921,
+            825,
+            49,
+            13
+          ],
+          "color": [
+            231,
+            241,
+            249
+          ],
+          "bold": false,
+          "size": 14
+        },
+        {
+          "requested": "Flee",
+          "rendered": "Flee",
+          "rect": [
+            1287,
+            821,
+            37,
+            21
+          ],
+          "glyphs": [
+            1288,
+            824,
+            36,
+            14
+          ],
+          "color": [
+            231,
+            241,
+            249
+          ],
+          "bold": false,
+          "size": 14
+        }
+      ],
+      "species": [
+        "Paradox ImperialdramonDragonModeBlack",
+        "Paradox ImperialdramonFighterMode",
+        "Paradox ImperialdramonPaladinMode"
+      ],
+      "file": "longest_1920x1080_1.25.png",
+      "actions": 16,
+      "fields": [
+        "chat"
+      ],
+      "actions_outside_display": []
+    },
+    {
+      "pixels": [
+        3840,
+        2160
+      ],
+      "ui_scale": 2.5,
+      "viewport": [
+        50,
+        235,
+        2960,
+        1505
+      ],
+      "target": 0,
+      "targets": [
+        [
+          522,
+          418,
+          533,
+          542
+        ],
+        [
+          1238,
+          418,
+          584,
+          542
+        ],
+        [
+          1978,
+          418,
+          584,
+          542
+        ]
+      ],
+      "outlines": [
+        [
+          522,
+          418,
+          533,
+          542
+        ]
+      ],
+      "text": [
+        {
+          "requested": "WILD ENCOUNTER",
+          "rendered": "WILD ENCOUNTER",
+          "rect": [
+            100,
+            270,
+            603,
+            68
+          ],
+          "glyphs": [
+            101,
+            281,
+            601,
+            44
+          ],
+          "color": [
+            231,
+            241,
+            249
+          ],
+          "bold": true,
+          "size": 23
+        },
+        {
+          "requested": "TACTICAL LINK  /  SELECT YOUR TARGET",
+          "rendered": "TACTICAL LINK  /  SELECT YOUR TARGET",
+          "rect": [
+            102,
+            348,
+            512,
+            26
+          ],
+          "glyphs": [
+            102,
+            353,
+            512,
+            18
+          ],
+          "color": [
+            67,
+            213,
+            231
+          ],
+          "bold": true,
+          "size": 9
+        },
+        {
+          "requested": "TURN 01",
+          "rendered": "TURN 01",
+          "rect": [
+            2762,
+            292,
+            203,
+            47
+          ],
+          "glyphs": [
+            2762,
+            300,
+            200,
+            30
+          ],
+          "color": [
+            247,
+            199,
+            104
+          ],
+          "bold": true,
+          "size": 16
+        },
+        {
+          "requested": "TARGET",
+          "rendered": "TARGET",
+          "rect": [
+            740,
+            439,
+            101,
+            26
+          ],
+          "glyphs": [
+            740,
+            444,
+            101,
+            16
+          ],
+          "color": [
+            247,
+            199,
+            104
+          ],
+          "bold": true,
+          "size": 9
+        },
+        {
+          "requested": "Paradox Fanglongmon",
+          "rendered": "Paradox Fanglongmon",
+          "rect": [
+            549,
+            498,
+            482,
+            45
+          ],
+          "glyphs": [
+            552,
+            505,
+            476,
+            37
+          ],
+          "color": [
+            255,
+            117,
+            138
+          ],
+          "bold": true,
+          "size": 15
+        },
+        {
+          "requested": "Lv.100 \u00b7 virus / electric",
+          "rendered": "Lv.100 \u00b7 virus / electric",
+          "rect": [
+            629,
+            572,
+            323,
+            33
+          ],
+          "glyphs": [
+            631,
+            577,
+            320,
+            24
+          ],
+          "color": [
+            141,
+            164,
+            185
+          ],
+          "bold": false,
+          "size": 11
+        },
+        {
+          "requested": "Paradox Imperialdramon",
+          "rendered": "Paradox Imperialdramon",
+          "rect": [
+            1263,
+            472,
+            535,
+            45
+          ],
+          "glyphs": [
+            1266,
+            479,
+            529,
+            37
+          ],
+          "color": [
+            255,
+            117,
+            138
+          ],
+          "bold": true,
+          "size": 15
+        },
+        {
+          "requested": "DragonModeBlack",
+          "rendered": "DragonModeBlack",
+          "rect": [
+            1335,
+            522,
+            390,
+            45
+          ],
+          "glyphs": [
+            1338,
+            529,
+            387,
+            37
+          ],
+          "color": [
+            255,
+            117,
+            138
+          ],
+          "bold": true,
+          "size": 15
+        },
+        {
+          "requested": "Lv.100 \u00b7 vaccine / wind",
+          "rendered": "Lv.100 \u00b7 vaccine / wind",
+          "rect": [
+            1368,
+            572,
+            324,
+            33
+          ],
+          "glyphs": [
+            1370,
+            577,
+            320,
+            24
+          ],
+          "color": [
+            141,
+            164,
+            185
+          ],
+          "bold": false,
+          "size": 11
+        },
+        {
+          "requested": "Paradox Imperialdramon",
+          "rendered": "Paradox Imperialdramon",
+          "rect": [
+            2003,
+            472,
+            535,
+            45
+          ],
+          "glyphs": [
+            2006,
+            479,
+            529,
+            37
+          ],
+          "color": [
+            255,
+            117,
+            138
+          ],
+          "bold": true,
+          "size": 15
+        },
+        {
+          "requested": "FighterMode",
+          "rendered": "FighterMode",
+          "rect": [
+            2135,
+            522,
+            271,
+            45
+          ],
+          "glyphs": [
+            2138,
+            529,
+            267,
+            37
+          ],
+          "color": [
+            255,
+            117,
+            138
+          ],
+          "bold": true,
+          "size": 15
+        },
+        {
+          "requested": "Lv.100 \u00b7 virus / water",
+          "rendered": "Lv.100 \u00b7 virus / water",
+          "rect": [
+            2120,
+            572,
+            300,
+            33
+          ],
+          "glyphs": [
+            2122,
+            577,
+            298,
+            24
+          ],
+          "color": [
+            141,
+            164,
+            185
+          ],
+          "bold": false,
+          "size": 11
+        },
+        {
+          "requested": "Fanglongmon",
+          "rendered": "Fanglongmon",
+          "rect": [
+            644,
+            1060,
+            292,
+            45
+          ],
+          "glyphs": [
+            647,
+            1067,
+            286,
+            37
+          ],
+          "color": [
+            231,
+            241,
+            249
+          ],
+          "bold": true,
+          "size": 15
+        },
+        {
+          "requested": "Lv.99 \u00b7 virus / electric",
+          "rendered": "Lv.99 \u00b7 virus / electric",
+          "rect": [
+            638,
+            1110,
+            305,
+            33
+          ],
+          "glyphs": [
+            640,
+            1115,
+            302,
+            24
+          ],
+          "color": [
+            141,
+            164,
+            185
+          ],
+          "bold": false,
+          "size": 11
+        },
+        {
+          "requested": "YOUR TURN",
+          "rendered": "YOUR TURN",
+          "rect": [
+            698,
+            1516,
+            185,
+            33
+          ],
+          "glyphs": [
+            699,
+            1522,
+            182,
+            20
+          ],
+          "color": [
+            190,
+            240,
+            107
+          ],
+          "bold": true,
+          "size": 11
+        },
+        {
+          "requested": "Omnimon",
+          "rendered": "Omnimon",
+          "rect": [
+            1427,
+            1060,
+            207,
+            45
+          ],
+          "glyphs": [
+            1429,
+            1067,
+            202,
+            29
+          ],
+          "color": [
+            231,
+            241,
+            249
+          ],
+          "bold": true,
+          "size": 15
+        },
+        {
+          "requested": "Lv.99 \u00b7 vaccine / light",
+          "rendered": "Lv.99 \u00b7 vaccine / light",
+          "rect": [
+            1379,
+            1110,
+            302,
+            33
+          ],
+          "glyphs": [
+            1381,
+            1115,
+            300,
+            27
+          ],
+          "color": [
+            141,
+            164,
+            185
+          ],
+          "bold": false,
+          "size": 11
+        },
+        {
+          "requested": "Paradox Fanglongmon",
+          "rendered": "Paradox Fanglongmon",
+          "rect": [
+            2029,
+            1060,
+            482,
+            45
+          ],
+          "glyphs": [
+            2032,
+            1067,
+            476,
+            37
+          ],
+          "color": [
+            231,
+            241,
+            249
+          ],
+          "bold": true,
+          "size": 15
+        },
+        {
+          "requested": "Lv.99 \u00b7 virus / electric",
+          "rendered": "Lv.99 \u00b7 virus / electric",
+          "rect": [
+            2118,
+            1110,
+            305,
+            33
+          ],
+          "glyphs": [
+            2120,
+            1115,
+            302,
+            24
+          ],
+          "color": [
+            141,
+            164,
+            185
+          ],
+          "bold": false,
+          "size": 11
+        },
+        {
+          "requested": "Attack",
+          "rendered": "Attack",
+          "rect": [
+            385,
+            1642,
+            131,
+            41
+          ],
+          "glyphs": [
+            385,
+            1648,
+            131,
+            27
+          ],
+          "color": [
+            9,
+            15,
+            27
+          ],
+          "bold": true,
+          "size": 14
+        },
+        {
+          "requested": "Skill \u00b7 SP",
+          "rendered": "Skill \u00b7 SP",
+          "rect": [
+            1096,
+            1642,
+            148,
+            41
+          ],
+          "glyphs": [
+            1098,
+            1648,
+            145,
+            27
+          ],
+          "color": [
+            231,
+            241,
+            249
+          ],
+          "bold": false,
+          "size": 14
+        },
+        {
+          "requested": "Items",
+          "rendered": "Items",
+          "rect": [
+            1841,
+            1642,
+            98,
+            41
+          ],
+          "glyphs": [
+            1844,
+            1649,
+            94,
+            26
+          ],
+          "color": [
+            231,
+            241,
+            249
+          ],
+          "bold": false,
+          "size": 14
+        },
+        {
+          "requested": "Flee",
+          "rendered": "Flee",
+          "rect": [
+            2573,
+            1642,
+            74,
+            41
+          ],
+          "glyphs": [
+            2576,
+            1648,
+            69,
+            27
+          ],
+          "color": [
+            231,
+            241,
+            249
+          ],
+          "bold": false,
+          "size": 14
+        }
+      ],
+      "species": [
+        "Paradox Fanglongmon",
+        "Paradox ImperialdramonDragonModeBlack",
+        "Paradox ImperialdramonFighterMode"
+      ],
+      "file": "fanglongmon_3840x2160_2.5.png",
+      "actions": 16,
+      "fields": [
+        "chat"
+      ],
+      "actions_outside_display": []
+    },
+    {
+      "pixels": [
+        3840,
+        2160
+      ],
+      "ui_scale": 2.5,
+      "viewport": [
+        50,
+        235,
+        2960,
+        1505
+      ],
+      "target": 0,
+      "targets": [
+        [
+          498,
+          418,
+          584,
+          542
+        ],
+        [
+          1238,
+          418,
+          584,
+          542
+        ],
+        [
+          1978,
+          418,
+          584,
+          542
+        ]
+      ],
+      "outlines": [
+        [
+          498,
+          418,
+          584,
+          542
+        ]
+      ],
+      "text": [
+        {
+          "requested": "WILD ENCOUNTER",
+          "rendered": "WILD ENCOUNTER",
+          "rect": [
+            100,
+            270,
+            603,
+            68
+          ],
+          "glyphs": [
+            101,
+            281,
+            601,
+            44
+          ],
+          "color": [
+            231,
+            241,
+            249
+          ],
+          "bold": true,
+          "size": 23
+        },
+        {
+          "requested": "TACTICAL LINK  /  SELECT YOUR TARGET",
+          "rendered": "TACTICAL LINK  /  SELECT YOUR TARGET",
+          "rect": [
+            102,
+            348,
+            512,
+            26
+          ],
+          "glyphs": [
+            102,
+            353,
+            512,
+            18
+          ],
+          "color": [
+            67,
+            213,
+            231
+          ],
+          "bold": true,
+          "size": 9
+        },
+        {
+          "requested": "TURN 01",
+          "rendered": "TURN 01",
+          "rect": [
+            2762,
+            292,
+            203,
+            47
+          ],
+          "glyphs": [
+            2762,
+            300,
+            200,
+            30
+          ],
+          "color": [
+            247,
+            199,
+            104
+          ],
+          "bold": true,
+          "size": 16
+        },
+        {
+          "requested": "TARGET",
+          "rendered": "TARGET",
+          "rect": [
+            740,
+            439,
+            101,
+            26
+          ],
+          "glyphs": [
+            740,
+            444,
+            101,
+            16
+          ],
+          "color": [
+            247,
+            199,
+            104
+          ],
+          "bold": true,
+          "size": 9
+        },
+        {
+          "requested": "Paradox Imperialdramon",
+          "rendered": "Paradox Imperialdramon",
+          "rect": [
+            523,
+            472,
+            535,
+            45
+          ],
+          "glyphs": [
+            526,
+            479,
+            529,
+            37
+          ],
+          "color": [
+            255,
+            117,
+            138
+          ],
+          "bold": true,
+          "size": 15
+        },
+        {
+          "requested": "DragonModeBlack",
+          "rendered": "DragonModeBlack",
+          "rect": [
+            595,
+            522,
+            390,
+            45
+          ],
+          "glyphs": [
+            598,
+            529,
+            387,
+            37
+          ],
+          "color": [
+            255,
+            117,
+            138
+          ],
+          "bold": true,
+          "size": 15
+        },
+        {
+          "requested": "Lv.100 \u00b7 vaccine / wind",
+          "rendered": "Lv.100 \u00b7 vaccine / wind",
+          "rect": [
+            628,
+            572,
+            324,
+            33
+          ],
+          "glyphs": [
+            630,
+            577,
+            320,
+            24
+          ],
+          "color": [
+            141,
+            164,
+            185
+          ],
+          "bold": false,
+          "size": 11
+        },
+        {
+          "requested": "Paradox Imperialdramon",
+          "rendered": "Paradox Imperialdramon",
+          "rect": [
+            1263,
+            472,
+            535,
+            45
+          ],
+          "glyphs": [
+            1266,
+            479,
+            529,
+            37
+          ],
+          "color": [
+            255,
+            117,
+            138
+          ],
+          "bold": true,
+          "size": 15
+        },
+        {
+          "requested": "FighterMode",
+          "rendered": "FighterMode",
+          "rect": [
+            1395,
+            522,
+            271,
+            45
+          ],
+          "glyphs": [
+            1398,
+            529,
+            267,
+            37
+          ],
+          "color": [
+            255,
+            117,
+            138
+          ],
+          "bold": true,
+          "size": 15
+        },
+        {
+          "requested": "Lv.100 \u00b7 virus / water",
+          "rendered": "Lv.100 \u00b7 virus / water",
+          "rect": [
+            1380,
+            572,
+            300,
+            33
+          ],
+          "glyphs": [
+            1382,
+            577,
+            298,
+            24
+          ],
+          "color": [
+            141,
+            164,
+            185
+          ],
+          "bold": false,
+          "size": 11
+        },
+        {
+          "requested": "Paradox Imperialdramon",
+          "rendered": "Paradox Imperialdramon",
+          "rect": [
+            2003,
+            472,
+            535,
+            45
+          ],
+          "glyphs": [
+            2006,
+            479,
+            529,
+            37
+          ],
+          "color": [
+            255,
+            117,
+            138
+          ],
+          "bold": true,
+          "size": 15
+        },
+        {
+          "requested": "PaladinMode",
+          "rendered": "PaladinMode",
+          "rect": [
+            2133,
+            522,
+            275,
+            45
+          ],
+          "glyphs": [
+            2136,
+            529,
+            271,
+            29
+          ],
+          "color": [
+            255,
+            117,
+            138
+          ],
+          "bold": true,
+          "size": 15
+        },
+        {
+          "requested": "Lv.100 \u00b7 data / plant",
+          "rendered": "Lv.100 \u00b7 data / plant",
+          "rect": [
+            2128,
+            572,
+            285,
+            33
+          ],
+          "glyphs": [
+            2130,
+            577,
+            283,
+            27
+          ],
+          "color": [
+            141,
+            164,
+            185
+          ],
+          "bold": false,
+          "size": 11
+        },
+        {
+          "requested": "Fanglongmon",
+          "rendered": "Fanglongmon",
+          "rect": [
+            644,
+            1060,
+            292,
+            45
+          ],
+          "glyphs": [
+            647,
+            1067,
+            286,
+            37
+          ],
+          "color": [
+            231,
+            241,
+            249
+          ],
+          "bold": true,
+          "size": 15
+        },
+        {
+          "requested": "Lv.99 \u00b7 virus / electric",
+          "rendered": "Lv.99 \u00b7 virus / electric",
+          "rect": [
+            638,
+            1110,
+            305,
+            33
+          ],
+          "glyphs": [
+            640,
+            1115,
+            302,
+            24
+          ],
+          "color": [
+            141,
+            164,
+            185
+          ],
+          "bold": false,
+          "size": 11
+        },
+        {
+          "requested": "YOUR TURN",
+          "rendered": "YOUR TURN",
+          "rect": [
+            698,
+            1516,
+            185,
+            33
+          ],
+          "glyphs": [
+            699,
+            1522,
+            182,
+            20
+          ],
+          "color": [
+            190,
+            240,
+            107
+          ],
+          "bold": true,
+          "size": 11
+        },
+        {
+          "requested": "Omnimon",
+          "rendered": "Omnimon",
+          "rect": [
+            1427,
+            1060,
+            207,
+            45
+          ],
+          "glyphs": [
+            1429,
+            1067,
+            202,
+            29
+          ],
+          "color": [
+            231,
+            241,
+            249
+          ],
+          "bold": true,
+          "size": 15
+        },
+        {
+          "requested": "Lv.99 \u00b7 vaccine / light",
+          "rendered": "Lv.99 \u00b7 vaccine / light",
+          "rect": [
+            1379,
+            1110,
+            302,
+            33
+          ],
+          "glyphs": [
+            1381,
+            1115,
+            300,
+            27
+          ],
+          "color": [
+            141,
+            164,
+            185
+          ],
+          "bold": false,
+          "size": 11
+        },
+        {
+          "requested": "Paradox Fanglongmon",
+          "rendered": "Paradox Fanglongmon",
+          "rect": [
+            2029,
+            1060,
+            482,
+            45
+          ],
+          "glyphs": [
+            2032,
+            1067,
+            476,
+            37
+          ],
+          "color": [
+            231,
+            241,
+            249
+          ],
+          "bold": true,
+          "size": 15
+        },
+        {
+          "requested": "Lv.99 \u00b7 virus / electric",
+          "rendered": "Lv.99 \u00b7 virus / electric",
+          "rect": [
+            2118,
+            1110,
+            305,
+            33
+          ],
+          "glyphs": [
+            2120,
+            1115,
+            302,
+            24
+          ],
+          "color": [
+            141,
+            164,
+            185
+          ],
+          "bold": false,
+          "size": 11
+        },
+        {
+          "requested": "Attack",
+          "rendered": "Attack",
+          "rect": [
+            385,
+            1642,
+            131,
+            41
+          ],
+          "glyphs": [
+            385,
+            1648,
+            131,
+            27
+          ],
+          "color": [
+            9,
+            15,
+            27
+          ],
+          "bold": true,
+          "size": 14
+        },
+        {
+          "requested": "Skill \u00b7 SP",
+          "rendered": "Skill \u00b7 SP",
+          "rect": [
+            1096,
+            1642,
+            148,
+            41
+          ],
+          "glyphs": [
+            1098,
+            1648,
+            145,
+            27
+          ],
+          "color": [
+            231,
+            241,
+            249
+          ],
+          "bold": false,
+          "size": 14
+        },
+        {
+          "requested": "Items",
+          "rendered": "Items",
+          "rect": [
+            1841,
+            1642,
+            98,
+            41
+          ],
+          "glyphs": [
+            1844,
+            1649,
+            94,
+            26
+          ],
+          "color": [
+            231,
+            241,
+            249
+          ],
+          "bold": false,
+          "size": 14
+        },
+        {
+          "requested": "Flee",
+          "rendered": "Flee",
+          "rect": [
+            2573,
+            1642,
+            74,
+            41
+          ],
+          "glyphs": [
+            2576,
+            1648,
+            69,
+            27
+          ],
+          "color": [
+            231,
+            241,
+            249
+          ],
+          "bold": false,
+          "size": 14
+        }
+      ],
+      "species": [
+        "Paradox ImperialdramonDragonModeBlack",
+        "Paradox ImperialdramonFighterMode",
+        "Paradox ImperialdramonPaladinMode"
+      ],
+      "file": "longest_3840x2160_2.5.png",
+      "actions": 16,
+      "fields": [
+        "chat"
+      ],
+      "actions_outside_display": []
+    }
+  ]
+}

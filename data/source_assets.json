@@ -125,5 +125,86 @@
     ],
     "use": "Imported complete unique supplied music previews",
     "new_characters_used": false
+  },
+  {
+    "kind": "fanglongmon_v100",
+    "use": "Replacement art for existing normal and Paradox Fanglongmon IDs",
+    "frames": [
+      {
+        "source": "fanglongmon_01_idle.png",
+        "path": "assets/digimon/7 Mega/Fanglongmon/Frames/Fanglongmon_Frame_001.png",
+        "size": 1159447,
+        "sha256": "812515e3e2df3caa05099e6ebe2b0a50d0a17da1a865527441b0a5c33bddc933"
+      },
+      {
+        "source": "fanglongmon_02_idle_part_2.png",
+        "path": "assets/digimon/7 Mega/Fanglongmon/Frames/Fanglongmon_Frame_002.png",
+        "size": 1176614,
+        "sha256": "29930c11c860eee8eaf41ce47e80f8e04dc3f2d0dfd7ba528574a345f143849e"
+      },
+      {
+        "source": "fanglongmon_03_walk_r.png",
+        "path": "assets/digimon/7 Mega/Fanglongmon/Frames/Fanglongmon_Frame_003.png",
+        "size": 1148105,
+        "sha256": "90f39ae11e539a438ac5fbcf3d0f0f994cb90928c1500cb6d97e8dd5f14b4e66"
+      },
+      {
+        "source": "fanglongmon_04_walk_l.png",
+        "path": "assets/digimon/7 Mega/Fanglongmon/Frames/Fanglongmon_Frame_004.png",
+        "size": 1280644,
+        "sha256": "61b2b602ecca1b614f31987bfb75b0e7bde6962b00fe0a510bbb4a24d84a538a"
+      },
+      {
+        "source": "fanglongmon_05_attack_start.png",
+        "path": "assets/digimon/7 Mega/Fanglongmon/Frames/Fanglongmon_Frame_005.png",
+        "size": 1201950,
+        "sha256": "89652dfbb07918243dc87dafc599f217dc2a2b252f35fec0df13d5f14e0e5fd0"
+      },
+      {
+        "source": "fanglongmon_06_attack_part_2.png",
+        "path": "assets/digimon/7 Mega/Fanglongmon/Frames/Fanglongmon_Frame_006.png",
+        "size": 1156216,
+        "sha256": "20d1902594f6ba4c232180b0714dfc96269bda58fd27b47033c7ae57096fc1dd"
+      },
+      {
+        "source": "Fanglongmon_Paradox_01_Idle.png",
+        "path": "assets/digimon/7 Mega/Fanglongmon/Paradox/Frames/Fanglongmon_Paradox_Frame_001.png",
+        "size": 1984062,
+        "sha256": "58d6bf107f608dbec9a5e95f6e1649b710783e64cbf4a0308af3407788f00abf"
+      },
+      {
+        "source": "Fanglongmon_Paradox_02_Idle_Part_2.png",
+        "path": "assets/digimon/7 Mega/Fanglongmon/Paradox/Frames/Fanglongmon_Paradox_Frame_002.png",
+        "size": 1967878,
+        "sha256": "624de84783a536b889182a5fcee7b1420bfdd4e09452f58887c2c37666868d80"
+      },
+      {
+        "source": "Fanglongmon_Paradox_03_Walk_R.png",
+        "path": "assets/digimon/7 Mega/Fanglongmon/Paradox/Frames/Fanglongmon_Paradox_Frame_003.png",
+        "size": 1965910,
+        "sha256": "07d515eb780847f4ef4a801eba0508fc369840f6d4d8535b657168167170062f"
+      },
+      {
+        "source": "Fanglongmon_Paradox_04_Walk_L.png",
+        "path": "assets/digimon/7 Mega/Fanglongmon/Paradox/Frames/Fanglongmon_Paradox_Frame_004.png",
+        "size": 2042482,
+        "sha256": "794611036e5e9e27919cb77936998fd71fe8a4459dca6dfed3b7a0d2d26058d6"
+      },
+      {
+        "source": "Fanglongmon_Paradox_05_Attack_Start.png",
+        "path": "assets/digimon/7 Mega/Fanglongmon/Paradox/Frames/Fanglongmon_Paradox_Frame_005.png",
+        "size": 1980297,
+        "sha256": "f78b567d6bbc9b756cc1dc25198bac8690b2718e664cb3b03df0d8ba060dbd66"
+      },
+      {
+        "source": "Fanglongmon_Paradox_06_Attack_Part_2.png",
+        "path": "assets/digimon/7 Mega/Fanglongmon/Paradox/Frames/Fanglongmon_Paradox_Frame_006.png",
+        "size": 1702977,
+        "sha256": "01212226ffb48d6224431d1b8c55768734cdf6615eeb98880acf74802e8e62d6"
+      }
+    ],
+    "filename": "fanglongmon&ParadoxVariety_6_png_frames_each.rar",
+    "size": 18622103,
+    "sha256": "9af7c226cb1917f38e493091d05adb4b9192b1b968d5d2458ef4e686869f6cae"
   }
 ]

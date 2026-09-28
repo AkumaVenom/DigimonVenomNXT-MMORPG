@@ -1,18 +1,28 @@
-# Tamer rivals and Battle Park — v0.3.1
+# Tamer rivals and Battle Park — v1.0.0
 
 The updated dedicated server runs the rival population and settles every battle.
 The client displays server results, positions and records. Use **R** for Ranked
 Arena (the Battle Park system), **V** for the Rivals Hub, **O** for Bot Activity,
-or click a rival in a level. For the v0.3.1 upgrade from an existing working
-installation, follow `RIVAL_MOVEMENT_UPGRADE.md`; retain the working v0.3.0 setup
-configuration and database without rerunning setup.
+or click a rival in a level. For the current upgrade, follow
+[RELEASE_V100.md](RELEASE_V100.md). Rebuild and deploy both applications while
+preserving the server database and private configuration. Do not rerun fresh
+setup. The population migration is documented in
+[POPULATION_V0123.md](POPULATION_V0123.md).
 
-## The 5,000 rival population
+## The 3,000 rival population
 
-By default, the world creates 5,000 named AI tamers with stable identities and
-saved progress. Initial placement is even across the 254 maps: each starts with
-19 or 20 rivals. Their subsequent locations change as they travel and recover;
-the population is not continuously teleported to maintain an exact per-map count.
+By default, the world creates 3,000 named AI tamers with stable identities and
+saved progress. This is also the maximum supported population. A fresh
+3,000-rival population starts evenly across the current 404 shared maps: each
+starts with 7 or 8 rivals. Retained rivals keep their saved locations and are
+not redistributed by the population reduction. Locations change as rivals
+travel and recover; the population is not continuously teleported to maintain
+an exact per-map count.
+
+Existing configurations above 3,000 are capped automatically. The v0.12.3
+startup migration removes rivals `bot:03001` through `bot:05000` and their live
+profiles while preserving the retained population and human progress. The
+migration guide explains historical ranked records and resumable cleanup.
 
 Each fresh rival receives one ordinary Rookie at a level seeded for its starting
 sector. That initial level is identified separately and is not recorded as earned
@@ -52,12 +62,14 @@ loop along validated segments between scheduled tasks rather than stopping at
 the end of a short path while awaiting another job. The server samples one
 authoritative population for each occupied map; clients interpolate its snapshots
 for smooth display. Tamers stop while occupied with
-other activities. Rivals are server-side actors, not 5,000 fake network clients.
-Only the current field's actors are sent to its players.
+other activities. Rivals are server-side actors, not 3,000 fake network clients.
+Only the current field's actors are sent to its players. World updates use
+negotiated WebSocket compression with compatible clients; all actors and the
+existing 10 Hz update rate are preserved.
 
 Rival progress is saved to the server database. The default checkpoint writes up
-to 100 changed rivals every three seconds; a fully changed 5,000-rival population
-takes approximately 150 seconds to complete a save rotation, depending on load.
+to 100 changed rivals every three seconds; a fully changed 3,000-rival population
+takes approximately 90 seconds to complete a save rotation, depending on load.
 A clean shutdown saves all pending bot progress. An abrupt crash can lose wild
 progress since each rival's last checkpoint. Ranked outcomes and season rewards
 commit immediately; ranked counters reconcile from that ledger on restart.
@@ -114,13 +126,17 @@ matches against rivals also contribute to the head-to-head history. The database
 retains opponent totals; the hub exposes the 100 most recently fought opponents.
 
 Bot Activity displays current phase counts and map distribution, along with
-actual cumulative activity totals: wild and ranked wins/losses, starts, scan
+activity totals for the latest 12 hours: wild and ranked wins/losses, starts, scan
 events and percentage gained, materializations, Paradox materializations, earned
 Battle XP and levels, evolution/de-evolution, party changes, healing, item use,
-purchases, travel, team changes, teams trained and veteran visits. The global detail feed keeps the **latest 100 events**, newest first.
-Older event detail is pruned; aggregate counters remain. A zero counter means
-that action has not yet completed under its required conditions. Battle XP sums
-the base XP awards from wild victories; it does not multiply them by the number
+purchases, travel, team changes, teams trained and veteran visits. The global
+detail feed keeps the **latest 100 events within those 12 hours**, newest first.
+Expired feed entries, minute counters and activity receipts are removed
+automatically. The oldest partial minute is excluded so the counters do not
+include activity older than 12 hours. A zero counter means no retained activity
+of that kind occurred during the window, which also ages while the server is
+stopped. Separate individual rival career counters and earned progress remain.
+Battle XP sums the base XP awards from wild victories; it does not multiply them by the number
 of partners receiving a share.
 
 ## Battle Park format
@@ -204,7 +220,10 @@ turn an unplayed account into a participant. Rewards credit the persistent walle
 automatically after the season closes. Each competitor/season award has a unique
 database record so retries cannot pay twice. If the server was stopped at reset,
 its next startup closes the expired active season and awards it before continuing.
-DigiRubies accumulate in this release; no DigiRuby shop is included.
+Spend DigiRubies on every normal Shop item using the currency selector, or
+open **Ranked Arena / R → DigiRuby Exchange** to exchange them for credits at
+**1 DigiRuby = 100 credits**. See [DIGIRUBY_ECONOMY_V0120.md](DIGIRUBY_ECONOMY_V0120.md)
+for prices and exchange rules.
 
 The database retains compact match outcomes for history and duplicate protection.
 Full animated replays are sent with the live result and are not stored in the
@@ -221,16 +240,20 @@ JSON object. Do not replace the database, host or TLS properties.
 ```json
 "rivals": {
   "enabled": true,
-  "count": 5000,
+  "count": 3000,
   "dwell_min": 300,
   "dwell_max": 900
 }
 ```
 
 The snippet is one property inside the existing object; use commas between it and
-other properties. `count` accepts whole numbers from 0 to 5,000. Setting
-`enabled` to `false` disables roaming simulation. Saved rival data is retained.
-Restart after changes. Keep a stable configuration during a competitive season.
+other properties. `count` accepts whole numbers from 0 to 3,000; larger values
+in older configurations are capped at 3,000. Setting `enabled` to `false`
+disables roaming simulation. Lowering the count or disabling simulation keeps
+the saved data for supported IDs `bot:00001` through `bot:03000`. The separate
+v0.12.3 retirement of IDs 3001–5000 still runs, including when roaming is
+disabled. Restart after changes. Keep a stable configuration during a
+competitive season.
 
 The `ranked` configuration can override the timing/energy/point defaults in
 `venom/server/ranked.py`. These are operator settings, not client controls. Each
@@ -242,7 +265,7 @@ migration, not a configuration edit. Prefer the shipped schedule and record any
 planned rule change before opening a new world.
 
 Use Bot Activity's distribution and activity counts to inspect progress. A
-population of 5,000 is an actor count, not a promise of a particular FPS, network
-capacity or number of simultaneous human connections. Follow `VALIDATION.md` for
-measured checks, and verify sustained operation on the intended Windows/MySQL
+population of 3,000 is an actor count, not a promise of a particular FPS, network
+capacity or number of simultaneous human connections. See the current
+[validation evidence](validation/population_v0123/README.md) for measured checks, and verify sustained operation on the intended Windows/MySQL
 host. Stop the console server cleanly before database backups or upgrades.

@@ -17,7 +17,7 @@ import zipfile
 ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
-BUILD_VERSION = "0.12.0"
+BUILD_VERSION = "1.0.0"
 
 
 def safe_asset(root: Path, name: str) -> Path:
@@ -185,9 +185,17 @@ def build(args) -> None:
                      "REARISE_RULES_RESEARCH.md", "RELEASE_STATUS.md", "DIGIFARM_V060.md", "SEASON_MODE_V070.md", "SEASON_VALIDATION.md", "VALIDATION.md",
                      "RIVALS_BENCHMARK.md", "RIVALS_BENCHMARK.json",
                      "RIVAL_FIX_VALIDATION.json", "RIVAL_TRAINING_VALIDATION.json",
-                     "ADMIN_CONSOLE_V080.md", "STORY_MODE_V090.md", "WORLD_DS_V0100.md", "WORLD_DS_STORY_V0110.md", "DIGIRUBY_ECONOMY_V0120.md",
+                     "ADMIN_CONSOLE_V080.md", "STORY_MODE_V090.md", "WORLD_DS_V0100.md", "WORLD_DS_STORY_V0110.md", "DIGIRUBY_ECONOMY_V0120.md", "RESTART_REPAIR_V0121.md", "BOT_ACTIVITY_V0122.md", "POPULATION_V0123.md", "RELEASE_V100.md", "FANGLONGMON_V100.md",
                      "WORLD_DS_STORY_VALIDATION_V0110.json"):
             shutil.copy2(ROOT / "docs" / name, destination / "docs" / name)
+        copy_tree(ROOT / "docs" / "validation" / "restart_v0121",
+                  destination / "docs" / "validation" / "restart_v0121")
+        copy_tree(ROOT / "docs" / "validation" / "activity_v0122",
+                  destination / "docs" / "validation" / "activity_v0122")
+        copy_tree(ROOT / "docs" / "validation" / "population_v0123",
+                  destination / "docs" / "validation" / "population_v0123")
+        copy_tree(ROOT / "docs" / "validation" / "release_v100",
+                  destination / "docs" / "validation" / "release_v100")
     for name in ("CONTROLS.md", "DISPLAY_UPGRADE.md", "FPS_FIX.md", "FPS_BENCHMARK.json",
                  "UI_UPGRADE.md", "UI_VALIDATION.json", "UI_PERFORMANCE.json",
                  "UI2_UPGRADE.md", "UI2_VALIDATION.json", "UI2_PERFORMANCE.json"):
@@ -231,12 +239,14 @@ def build(args) -> None:
     (client / "READ_ME_FIRST.txt").write_text(
         f"DIGIMON VENOM NXT {BUILD_VERSION} - CLIENT\n\n"
         "Start the game: PLAY_DIGIMON_VENOM_NXT.bat\n"
-        f"Connect to a matching v{BUILD_VERSION} server. Both the client and world server must be updated.\n"
+        f"Connect to the v{BUILD_VERSION} server. Rebuild and deploy BOTH the client and server for the v1.0.0 artwork and content.\n"
         "Existing installation: copy your existing client config folder into this complete new client folder.\n"
+        "New in v1.0.0: blue cyber-grid battle scenery and supplied Fanglongmon / Paradox Fanglongmon animation.\n"
         "Shop / B: pay with credits or DigiRubies for every capsule and DigiMeat.\n"
         "Ranked Arena / R: DigiRuby Exchange gives 100 credits per DigiRuby.\n"
         "Attack is free at 0 SP. The redundant Struggle option has been removed.\n"
-        "See docs/DIGIRUBY_ECONOMY_V0120.md for safe upgrade steps; preserve existing server saves and credentials.\n"
+        "Bot Activity / O: activity counters cover the latest 12 hours; the feed keeps the latest 100 events in that window.\n"
+        "See docs/RELEASE_V100.md; preserve existing server saves and credentials.\n"
         "Keep its client.json and trusted server-ca.pem. Your saved display preferences remain in Local AppData.\n"
         "New installation: extract the host's Public_Player_Connection_Kit.zip INTO this folder, merging config.\n"
         "Built clients need no Python installation or manual Windows certificate trust.\n"
@@ -245,13 +255,15 @@ def build(args) -> None:
         "Season F3 remains a separate private career. Each story keeps its own progress.\n"
         "R: Ranked Arena. V: Rivals Hub. O: Bot Activity. Click a map rival to inspect them.\n"
         "F10: display/audio settings. F11: fullscreen/windowed.\n"
-        "Upgrade steps: docs/DIGIRUBY_ECONOMY_V0120.md. Interface history: docs/UI2_UPGRADE.md. Game rules: docs/RIVALS_AND_RANKED.md.\n",
+        "Upgrade steps: docs/RELEASE_V100.md. Interface history: docs/UI2_UPGRADE.md. Game rules: docs/RIVALS_AND_RANKED.md.\n",
         encoding="utf-8")
     (server / "READ_ME_FIRST.txt").write_text(
         f"DIGIMON VENOM NXT {BUILD_VERSION} - PORTABLE DEDICATED SERVER\n\n"
         "UPGRADING AN EXISTING SERVER\n"
-        "Read docs/DIGIRUBY_ECONOMY_V0120.md first. Stop and back up the complete existing server.\n"
-        "Update both client and server applications; preserve mysql/data, mysql credentials and config.\n"
+        "Read docs/RELEASE_V100.md first. Stop and back up the complete existing server.\n"
+        "Rebuild and deploy BOTH the client and server for the v1.0.0 artwork and content.\n"
+        "Saved-world loading still has no overall startup deadline.\n"
+        "Preserve mysql/data, mysql credentials, config and mysql/runtime.\n"
         "Do not run a fresh database setup or replace your saves for this upgrade.\n\n"
         "FRESH SETUP\n"
         "1. Extract the COMPLETE server folder into a writable directory.\n"
@@ -273,14 +285,14 @@ def build(args) -> None:
         "Setup: 02_SETUP_MYSQL.bat / 03_SETUP_PUBLIC_HOSTING.bat\n"
         "Database status: MYSQL_STATUS.bat. Database logs: mysql/logs.\n"
         "For public hosting, forward only the game TCP port (default 8765).\n"
-        "Default population: 5,000 rivals; edit rivals.count / rivals.enabled in config/server.json.\n",
+        "Default and maximum population: 3,000 rivals. Older counts above 3,000 are capped automatically; lower counts and rivals.enabled remain supported.\n",
         encoding="utf-8")
     metadata = {"version": BUILD_VERSION, "platform": "Windows-x64", "python": platform.python_version(), "assets": verified}
     for directory in (client, server):
         (directory / "build-info.json").write_text(json.dumps(metadata, indent=2) + "\n", encoding="utf-8")
     for directory in (client, server):
         archive(directory, output / f"{directory.name}.zip")
-    print("\nBuild complete. DigiRuby Economy v0.12.0 packages:\n  dist/Windows_Client_x64.zip\n  dist/Windows_Server_x64.zip\nUpdate BOTH the client and world server. Preserve the existing database, credentials and config.\nUpgrade steps: docs/DIGIRUBY_ECONOMY_V0120.md. For a NEW server only: follow PORTABLE_SERVER_README.md.", flush=True)
+    print("\nBuild complete. Digimon Venom NXT v1.0.0 packages:\n  dist/Windows_Client_x64.zip\n  dist/Windows_Server_x64.zip\nRebuild and deploy BOTH the client and server for the v1.0.0 artwork and content. Preserve the database, credentials, config and MySQL runtime.\nUpgrade steps: docs/RELEASE_V100.md. For a NEW server only: follow PORTABLE_SERVER_README.md.", flush=True)
 
 
 def main(argv=None):

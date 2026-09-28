@@ -17,7 +17,7 @@ import tempfile
 import threading
 
 
-SETUP_VERSION = "0.12.0"
+SETUP_VERSION = "1.0.0"
 STAGES = frozenset({
     "validate", "endpoint", "administrator", "create_database", "game_account",
     "grants", "schema", "save_config", "hosting", "verify", "runtime", "initialize", "start", "connect", "provision",

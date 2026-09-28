@@ -70677,6 +70677,36 @@
       "sha256": "9c1f6f091a90e484800821e6e8b72b1353f24b04d44e2f1ad111312f6cfb2081"
     },
     {
+      "path": "assets/digimon/7 Mega/Fanglongmon/Frames/Fanglongmon_Frame_001.png",
+      "size": 1159447,
+      "sha256": "812515e3e2df3caa05099e6ebe2b0a50d0a17da1a865527441b0a5c33bddc933"
+    },
+    {
+      "path": "assets/digimon/7 Mega/Fanglongmon/Frames/Fanglongmon_Frame_002.png",
+      "size": 1176614,
+      "sha256": "29930c11c860eee8eaf41ce47e80f8e04dc3f2d0dfd7ba528574a345f143849e"
+    },
+    {
+      "path": "assets/digimon/7 Mega/Fanglongmon/Frames/Fanglongmon_Frame_003.png",
+      "size": 1148105,
+      "sha256": "90f39ae11e539a438ac5fbcf3d0f0f994cb90928c1500cb6d97e8dd5f14b4e66"
+    },
+    {
+      "path": "assets/digimon/7 Mega/Fanglongmon/Frames/Fanglongmon_Frame_004.png",
+      "size": 1280644,
+      "sha256": "61b2b602ecca1b614f31987bfb75b0e7bde6962b00fe0a510bbb4a24d84a538a"
+    },
+    {
+      "path": "assets/digimon/7 Mega/Fanglongmon/Frames/Fanglongmon_Frame_005.png",
+      "size": 1201950,
+      "sha256": "89652dfbb07918243dc87dafc599f217dc2a2b252f35fec0df13d5f14e0e5fd0"
+    },
+    {
+      "path": "assets/digimon/7 Mega/Fanglongmon/Frames/Fanglongmon_Frame_006.png",
+      "size": 1156216,
+      "sha256": "20d1902594f6ba4c232180b0714dfc96269bda58fd27b47033c7ae57096fc1dd"
+    },
+    {
       "path": "assets/digimon/7 Mega/Fanglongmon/Paradox/Fanglongmon_Paradox_Idle.png",
       "size": 131815,
       "sha256": "e48ead9fd90fe405caa13ff4063a7345e93f8b5c3338d67d355381d8aac1cefc"
@@ -70697,9 +70727,49 @@
       "sha256": "eaec1343342c17db05bcae93ddaf257100b91fd63a606181d14309349257e8a1"
     },
     {
+      "path": "assets/digimon/7 Mega/Fanglongmon/Paradox/Frames/Fanglongmon_Paradox_Frame_001.png",
+      "size": 1984062,
+      "sha256": "58d6bf107f608dbec9a5e95f6e1649b710783e64cbf4a0308af3407788f00abf"
+    },
+    {
+      "path": "assets/digimon/7 Mega/Fanglongmon/Paradox/Frames/Fanglongmon_Paradox_Frame_002.png",
+      "size": 1967878,
+      "sha256": "624de84783a536b889182a5fcee7b1420bfdd4e09452f58887c2c37666868d80"
+    },
+    {
+      "path": "assets/digimon/7 Mega/Fanglongmon/Paradox/Frames/Fanglongmon_Paradox_Frame_003.png",
+      "size": 1965910,
+      "sha256": "07d515eb780847f4ef4a801eba0508fc369840f6d4d8535b657168167170062f"
+    },
+    {
+      "path": "assets/digimon/7 Mega/Fanglongmon/Paradox/Frames/Fanglongmon_Paradox_Frame_004.png",
+      "size": 2042482,
+      "sha256": "794611036e5e9e27919cb77936998fd71fe8a4459dca6dfed3b7a0d2d26058d6"
+    },
+    {
+      "path": "assets/digimon/7 Mega/Fanglongmon/Paradox/Frames/Fanglongmon_Paradox_Frame_005.png",
+      "size": 1980297,
+      "sha256": "f78b567d6bbc9b756cc1dc25198bac8690b2718e664cb3b03df0d8ba060dbd66"
+    },
+    {
+      "path": "assets/digimon/7 Mega/Fanglongmon/Paradox/Frames/Fanglongmon_Paradox_Frame_006.png",
+      "size": 1702977,
+      "sha256": "01212226ffb48d6224431d1b8c55768734cdf6615eeb98880acf74802e8e62d6"
+    },
+    {
+      "path": "assets/digimon/7 Mega/Fanglongmon/Paradox/animation.json",
+      "size": 1319,
+      "sha256": "6cbbb72c41a618463cec624264b2787c8b52fb1921ebc0f58243444b3c783653"
+    },
+    {
       "path": "assets/digimon/7 Mega/Fanglongmon/Paradox/variant.json",
       "size": 741,
       "sha256": "b261e517aab0e9e0b96699fff63ffd749366b508aafa230c1f551903ff3f8be7"
+    },
+    {
+      "path": "assets/digimon/7 Mega/Fanglongmon/animation.json",
+      "size": 1175,
+      "sha256": "5909e92e2896a93d850de1ece53975fbbc51ecae3be0341560b3b9182a1b247c"
     },
     {
       "path": "assets/digimon/7 Mega/Gaiomon/Frames/Gaiomon_Frame_001.png",
@@ -108983,8 +109053,8 @@
     },
     {
       "path": "data/catalog.json",
-      "size": 3316879,
-      "sha256": "399edef93fbceb7bd4fb9d247e713a41a58916d5cf234c32cb9782ee5ee0bb69"
+      "size": 3318403,
+      "sha256": "b58b0e1fffd4e5a454c60268ab97ada07a80f8c74925da1c72bf65b043b0bc4d"
     },
     {
       "path": "data/collision.json",
@@ -109003,8 +109073,8 @@
     },
     {
       "path": "data/source_assets.json",
-      "size": 4382,
-      "sha256": "d0be6e9e355ceee0d371d0b6b43760c3b3593999a0806568a3550595cde6928a"
+      "size": 7990,
+      "sha256": "8b3e5ea444ee235bf0e715057b9e17447a1061538710eca2b0e0360e0a58774c"
     },
     {
       "path": "data/tamers_catalog.json",

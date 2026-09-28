@@ -1,6 +1,83 @@
 # Digimon Venom NXT
 
-**v0.12.0 — Spend DigiRubies in the shop or exchange them for credits.**
+**v1.0.0 — Cyber-blue battles and Fanglongmon artwork.**
+
+The battle scene gains a polished blue cyber-grid background with clear space
+for the combatants and readable battle controls. Corrected target cards size
+their outline around the full name, details, sprite and HP bar with padding;
+long names wrap, and selection stays anchored during attack animation.
+Fanglongmon and Paradox
+Fanglongmon use the supplied six-frame artwork for each form, integrated with
+the existing animation system. Their stable species identities and earned
+ownership, scans and progression carry forward.
+
+The complete game retains both private story campaigns, DigiLab, DigiFarm,
+DigiRuby shopping and exchange, private Season careers and Ranked Arena. The
+**3,000-rival maximum**, **12-hour Bot Activity window**, startup ownership
+repair and compressed world updates remain in place.
+
+Read [docs/RELEASE_V100.md](docs/RELEASE_V100.md) for the current upgrade and
+[docs/FANGLONGMON_V100.md](docs/FANGLONGMON_V100.md) for the artwork and species
+details. **Run BUILD_ALL.bat and deploy BOTH rebuilt Windows applications.**
+If already running the earlier v1.0.0 release, rebuild and redeploy the client
+to receive the corrected target layout; the existing v1.0.0 server can remain.
+Back up the complete stopped server and preserve its database, private
+credentials and configuration. These downloads contain source, not prebuilt
+Windows executables. Earlier upgrade instructions below describe their original
+releases; use the v1.0.0 guide for this update.
+
+**Retained v0.12.3 — 3,000 persistent tamer rivals.**
+
+The default and maximum rival population is **3,000**, down from 5,000.
+Existing settings above 3,000 are capped automatically. The startup migration
+retires the extra 2,000 rivals and removes their saved rival state; the retained
+3,000 and all human players keep their earned game progress. World updates use
+negotiated WebSocket compression while preserving the complete map population
+and update rate. Read [docs/POPULATION_V0123.md](docs/POPULATION_V0123.md) for
+that migration's exact scope and historical measurements. For this release,
+follow the v1.0.0 guide above and update both applications.
+
+**Retained v0.12.2 — Bot Activity shows the latest 12 hours.**
+
+Open **Bot Activity / O** for global activity counters covering the most recent
+**12 hours** and the latest **100 events within that window**. Old activity
+display data and persistence receipts expire automatically. Counter storage
+uses compact minute totals; the oldest partial minute is excluded so counts
+never include activity older than 12 hours.
+
+The first upgrade starts new timestamped global tracking because the previous
+lifetime totals have no timestamps. **Earned partners, XP, scans, currencies,
+story progress, individual rival careers and ranked rewards are preserved.**
+The previous restart repair also remains: **there is no overall startup
+loading deadline**.
+
+Read [docs/BOT_ACTIVITY_V0122.md](docs/BOT_ACTIVITY_V0122.md) for retention details
+and its original upgrade. For the current update use the v1.0.0 guide above.
+The original activity upgrade required both applications for the updated
+display. Preserve `config`, `mysql/data`, private MySQL settings and
+`mysql/runtime`; do not run fresh setup or clear saved progress.
+
+The notes below retain earlier features and their original release context.
+Use the v1.0.0 guide above for the current upgrade.
+
+**Retained v0.12.1 — Persistent-rival startup and restart hotfix.**
+
+The server now keeps its rival ownership lease renewed while restoring saved
+ranked/rival state and loads saved rivals incrementally. **There is no overall
+startup loading deadline.** A large saved population can finish restoring without
+losing its lease merely because startup takes longer than 90 seconds.
+
+This fixes a source failure path consistent with a long pause at “Starting
+ranked seasons and persistent tamer rivals...”. The affected installation's final
+error was not supplied, so the guide also explains which log excerpt to provide
+if another error remains. Existing saves, rivals and rewards are preserved.
+
+Read [docs/RESTART_REPAIR_V0121.md](docs/RESTART_REPAIR_V0121.md) for the original
+repair details and restart checks. That server-only hotfix preserved
+compatibility with v0.12.0 clients. For the current v1.0.0 update, rebuild and
+deploy both applications using the guide above.
+
+**Retained v0.12.0 — Spend DigiRubies in the shop or exchange them for credits.**
 
 Open **Shop / B** and choose **Credits** or **DigiRubies** to buy any capsule or
 DigiMeat. All 19 shop items support both currencies, with clearly displayed
@@ -22,8 +99,8 @@ private MySQL settings, and the existing client/server `config` folders.
 **Do not run fresh database setup.** This is a source release. Build and check
 both Windows x64 applications on the intended Windows machine.
 
-The following sections retain earlier release notes. The v0.12.0 guide above
-contains the current upgrade procedure.
+The v0.12.0 guide describes the economy feature release and its original
+upgrade. For the current update, follow the v1.0.0 guide above.
 
 **Retained v0.11.0 — World DS: Paradox Chronicle, a second private story campaign.**
 
@@ -52,7 +129,7 @@ folders. **Do not run fresh database setup.** This is a source release;
 Windows x64 executables must be built and checked on Windows.
 
 The sections below preserve earlier release notes and their original upgrade
-procedures. Use the v0.12.0 guide above for the current update.
+procedures. Use the v1.0.0 guide above for the current update.
 
 **Retained World DS region v0.10.0 — shared maps, encounters and music.**
 
@@ -120,7 +197,7 @@ Read [docs/ADMIN_CONSOLE_V080.md](docs/ADMIN_CONSOLE_V080.md) for the full comma
 reference, console tiers, hidden password prompts, confirmation rules, and exact
 upgrade procedure. Windows executables must be built on Windows x64.
 
-The following v0.7.0 and earlier notes describe retained features. For the current upgrade, use the v0.12.0 guide linked above.
+The following v0.7.0 and earlier notes describe retained features. For the current upgrade, use the v1.0.0 guide linked above.
 
 **Retained Season Mode v0.7.0 — private, persistent tamer careers.**
 
@@ -135,11 +212,11 @@ The shared world, DigiFarm, persistent rivals and Ranked Arena remain available.
 The v0.7.0 release built on the supplied v0.6.2 High Ping Disconnect Fix source
 and added private career archives without resetting existing character saves.
 Read [docs/SEASON_MODE_V070.md](docs/SEASON_MODE_V070.md) for Season controls,
-rules and save behavior. Its upgrade section is historical; use the v0.12.0
-procedure in the DigiRuby Economy guide for this release.
+rules and save behavior. Its upgrade section is historical; use the v1.0.0
+release guide for the current update.
 
 The following DigiFarm and earlier-release notes describe retained features.
-For the current update, use the v0.12.0 DigiRuby Economy upgrade guide above.
+For the current update, use the v1.0.0 release guide above.
 
 **Retained DigiFarm — native Windows x64 client and dedicated world server.**
 
@@ -186,7 +263,7 @@ This is the **complete source package**, including the game assets and Windows
 MySQL engine. For a new installation, build the Windows applications first, then
 use the generated server folder for play. A new server setup starts with fresh
 accounts and progress; it does not import an older installation. Existing
-portable-baseline players should follow the v0.12.0 DigiRuby Economy upgrade guide to
+portable-baseline players should follow the current Bot Activity guide to
 update both applications while keeping their accounts and progress.
 
 For day-to-day use, run **START_MYSQL.bat**, then
@@ -204,7 +281,7 @@ This is an alpha release, not a finished commercial-scale MMO or a data-exact re
 
 ## Persistent rivals and Battle Park in v0.2.0
 
-The dedicated server now runs a default population of **5,000 persistent AI tamers**. They walk through the shared maps, fight wild Digimon, earn levels and scan data, materialize partners, care for their parties, travel, and compete in ranked battles. Click a rival in the field, press **V** for the Rivals Hub, **R** for Ranked Arena, or **O** for Bot Activity.
+The dedicated server now runs a default population of **3,000 persistent AI tamers**. They walk through the shared maps, fight wild Digimon, earn levels and scan data, materialize partners, care for their parties, travel, and compete in ranked battles. Click a rival in the field, press **V** for the Rivals Hub, **R** for Ranked Arena, or **O** for Bot Activity.
 
 Battle Park adds automatic weekly seasons, current and career records, top-100 ladders and season archives, promotion battles, and DigiRuby rewards. Its points, rewards, stamina and three-active-partner battles are published NXT rules. The mode adapts documented ReArise features; it is not an exact recreation of every ReArise rule. See `docs/RIVALS_AND_RANKED.md` for the complete rules and `docs/REARISE_RULES_RESEARCH.md` for the recovered official references.
 
@@ -275,7 +352,7 @@ Public play uses TLS and MySQL. The public server refuses the development databa
 - A 2.5% chance for an encounter to include a Paradox; Paradox defeats award less scan data than normal defeats.
 - Free DigiLab healing and return to the saved world position; a shop with HP/SP capsules and DigiMeat, each purchasable with credits or DigiRubies.
 - Shared world presence, map-local chat, account authentication, durable progression, per-pixel movement validation and rate limits.
-- 5,000 configurable persistent AI rivals, initially distributed evenly across the maps, with authentic walking frames, continuous server-owned patrols, spaced sector arrivals, real combat/collection progression, repeat team training, party storage, density-aware travel and clickable profiles.
+- 3,000 persistent AI rivals by default and at most, initially distributed evenly across the maps, with authentic walking frames, continuous server-owned patrols, spaced sector arrivals, real combat/collection progression, repeat team training, party storage, density-aware travel and clickable profiles.
 - Ranked auto battles against saved defender teams, weekly UTC seasons, season and career wins/losses, top-100 current/career/archive ladders, earned-grade and placement rewards in a persistent DigiRuby wallet, and a DigiRuby-to-credit exchange.
 - Nearby friendly rival invitations, an accept/decline hub, head-to-head history, and a bot activity screen with cumulative counters and the latest 100 population events.
 - Original-ROM sequence/sample audio rendered into 46 music tracks and 183 sound effects. The renderer approximates some NDS synthesis behavior; it is not a hardware-perfect emulator.

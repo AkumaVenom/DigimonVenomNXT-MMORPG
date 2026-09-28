@@ -1,0 +1,101 @@
+{
+  "fixture": "Synthetic server data for isolated native-App QA; no real account progress.",
+  "captures": [
+    {
+      "file": "battle_960x600.png",
+      "pixels": [
+        960,
+        600
+      ],
+      "ui_scale": 0.75,
+      "actions": 19,
+      "fields": [
+        "chat"
+      ],
+      "actions_outside_display": []
+    },
+    {
+      "file": "ranked_replay_960x600.png",
+      "pixels": [
+        960,
+        600
+      ],
+      "ui_scale": 0.75,
+      "actions": 17,
+      "fields": [],
+      "actions_outside_display": []
+    },
+    {
+      "file": "battle_2047x1155.png",
+      "pixels": [
+        2047,
+        1155
+      ],
+      "ui_scale": 1.25,
+      "actions": 19,
+      "fields": [
+        "chat"
+      ],
+      "actions_outside_display": []
+    },
+    {
+      "file": "ranked_replay_2047x1155.png",
+      "pixels": [
+        2047,
+        1155
+      ],
+      "ui_scale": 1.25,
+      "actions": 17,
+      "fields": [],
+      "actions_outside_display": []
+    },
+    {
+      "file": "battle_1920x1080.png",
+      "pixels": [
+        1920,
+        1080
+      ],
+      "ui_scale": 1.25,
+      "actions": 19,
+      "fields": [
+        "chat"
+      ],
+      "actions_outside_display": []
+    },
+    {
+      "file": "ranked_replay_1920x1080.png",
+      "pixels": [
+        1920,
+        1080
+      ],
+      "ui_scale": 1.25,
+      "actions": 17,
+      "fields": [],
+      "actions_outside_display": []
+    },
+    {
+      "file": "battle_3840x2160.png",
+      "pixels": [
+        3840,
+        2160
+      ],
+      "ui_scale": 2.5,
+      "actions": 19,
+      "fields": [
+        "chat"
+      ],
+      "actions_outside_display": []
+    },
+    {
+      "file": "ranked_replay_3840x2160.png",
+      "pixels": [
+        3840,
+        2160
+      ],
+      "ui_scale": 2.5,
+      "actions": 17,
+      "fields": [],
+      "actions_outside_display": []
+    }
+  ]
+}

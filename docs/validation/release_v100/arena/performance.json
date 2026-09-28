@@ -1,0 +1,176 @@
+{
+  "method": "Real App HUD battle_stage only: one cold build after invalidating the stage key, then 90 warm cached calls measured using time.perf_counter. Same synthetic battle fixture and automatic UI scales as the PNGs. These stage timings are not whole-client FPS; they are local headless software SDL measurements, not Windows or GPU benchmarks.",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+  "python": "3.12.14",
+  "pygame": "2.5.8",
+  "baseline_v0123": [
+    {
+      "size": "960x600",
+      "scale": 0.75,
+      "logical_arena": [
+        20,
+        94,
+        928,
+        538
+      ],
+      "native_arena": [
+        15,
+        70,
+        696,
+        404
+      ],
+      "cold_ms": 0.7049390005704481,
+      "warm_median_ms": 0.04428599913808284,
+      "warm_p95_ms": 0.08744099977775477,
+      "cache_bytes": 1124736
+    },
+    {
+      "size": "2047x1155",
+      "scale": 1.25,
+      "logical_arena": [
+        20,
+        94,
+        1285,
+        662
+      ],
+      "native_arena": [
+        25,
+        118,
+        1606,
+        827
+      ],
+      "cold_ms": 3.1477160009671934,
+      "warm_median_ms": 0.15046599946799688,
+      "warm_p95_ms": 0.2746520003711339,
+      "cache_bytes": 5312648
+    },
+    {
+      "size": "1920x1080",
+      "scale": 1.25,
+      "logical_arena": [
+        20,
+        94,
+        1184,
+        602
+      ],
+      "native_arena": [
+        25,
+        118,
+        1480,
+        752
+      ],
+      "cold_ms": 4.269549001037376,
+      "warm_median_ms": 0.1583674993526074,
+      "warm_p95_ms": 0.23191800028143916,
+      "cache_bytes": 4451840
+    },
+    {
+      "size": "3840x2160",
+      "scale": 2.5,
+      "logical_arena": [
+        20,
+        94,
+        1184,
+        602
+      ],
+      "native_arena": [
+        50,
+        235,
+        2960,
+        1505
+      ],
+      "cold_ms": 6.182881999848178,
+      "warm_median_ms": 1.940543499586056,
+      "warm_p95_ms": 2.209877000495908,
+      "cache_bytes": 17819200
+    }
+  ],
+  "v100": [
+    {
+      "size": "960x600",
+      "scale": 0.75,
+      "logical_arena": [
+        20,
+        94,
+        928,
+        538
+      ],
+      "native_arena": [
+        15,
+        70,
+        696,
+        404
+      ],
+      "cold_ms": 12.229285001012613,
+      "warm_median_ms": 0.044702999730361626,
+      "warm_p95_ms": 0.10511800064705312,
+      "cache_bytes": 1124736
+    },
+    {
+      "size": "2047x1155",
+      "scale": 1.25,
+      "logical_arena": [
+        20,
+        94,
+        1285,
+        662
+      ],
+      "native_arena": [
+        25,
+        118,
+        1606,
+        827
+      ],
+      "cold_ms": 16.96643600007519,
+      "warm_median_ms": 0.1432999997632578,
+      "warm_p95_ms": 0.2714769998419797,
+      "cache_bytes": 5312648
+    },
+    {
+      "size": "1920x1080",
+      "scale": 1.25,
+      "logical_arena": [
+        20,
+        94,
+        1184,
+        602
+      ],
+      "native_arena": [
+        25,
+        118,
+        1480,
+        752
+      ],
+      "cold_ms": 15.694206998887239,
+      "warm_median_ms": 0.15616949985997053,
+      "warm_p95_ms": 0.2464199988025939,
+      "cache_bytes": 4451840
+    },
+    {
+      "size": "3840x2160",
+      "scale": 2.5,
+      "logical_arena": [
+        20,
+        94,
+        1184,
+        602
+      ],
+      "native_arena": [
+        50,
+        235,
+        2960,
+        1505
+      ],
+      "cold_ms": 32.78210500138812,
+      "warm_median_ms": 2.034779499808792,
+      "warm_p95_ms": 2.37506499979645,
+      "cache_bytes": 17819200
+    }
+  ],
+  "source_sha256": {
+    "venom/client/battle_arena.py": "b95fc0dbb199bbe88381d9610ca7d3e64d106932fc056af39d96ec79cf928b29",
+    "venom/client/hud.py": "26f6bd2ae7dc39264a6bcbe9f054deef61fd1c2325bcfd6fd7da9736d7efe63f",
+    "venom/client/community.py": "5cee501e46416fee058d9102d6c833e34d1c7d16614472abc30dfc09e89a2f07",
+    "venom/client/render.py": "58a55386a8677f31c5ceb2506bc18dcf8a5d2376e7d1f9aeea0c48fd1580fa53"
+  }
+}
