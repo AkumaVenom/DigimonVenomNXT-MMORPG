@@ -1,0 +1,101 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Dorugamon_Attack.png": {
+      "source_size": [
+        534,
+        662
+      ],
+      "output_size": [
+        694,
+        822
+      ],
+      "padding": {
+        "left": 80,
+        "top": 80,
+        "right": 80,
+        "bottom": 80
+      },
+      "effect_pixel_unit": 5,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Dorugamon_GetHit.png": {
+      "source_size": [
+        566,
+        710
+      ],
+      "output_size": [
+        726,
+        870
+      ],
+      "padding": {
+        "left": 80,
+        "top": 80,
+        "right": 80,
+        "bottom": 80
+      },
+      "effect_pixel_unit": 5,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Dorugamon_Idle.png": {
+      "source_size": [
+        520,
+        660
+      ],
+      "output_size": [
+        680,
+        820
+      ],
+      "padding": {
+        "left": 80,
+        "top": 80,
+        "right": 80,
+        "bottom": 80
+      },
+      "effect_pixel_unit": 5,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Dorugamon_LLegWalk.png": {
+      "source_size": [
+        500,
+        650
+      ],
+      "output_size": [
+        660,
+        810
+      ],
+      "padding": {
+        "left": 80,
+        "top": 80,
+        "right": 80,
+        "bottom": 80
+      },
+      "effect_pixel_unit": 5,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Dorugamon_RLegWalk.png": {
+      "source_size": [
+        500,
+        650
+      ],
+      "output_size": [
+        660,
+        810
+      ],
+      "padding": {
+        "left": 80,
+        "top": 80,
+        "right": 80,
+        "bottom": 80
+      },
+      "effect_pixel_unit": 5,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

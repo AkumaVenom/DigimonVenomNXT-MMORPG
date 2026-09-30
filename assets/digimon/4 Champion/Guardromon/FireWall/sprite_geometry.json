@@ -1,0 +1,101 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Guardromon_AttackPart1.png": {
+      "source_size": [
+        578,
+        532
+      ],
+      "output_size": [
+        770,
+        724
+      ],
+      "padding": {
+        "left": 96,
+        "top": 96,
+        "right": 96,
+        "bottom": 96
+      },
+      "effect_pixel_unit": 6,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Guardromon_AttackPart2.png": {
+      "source_size": [
+        606,
+        568
+      ],
+      "output_size": [
+        798,
+        760
+      ],
+      "padding": {
+        "left": 96,
+        "top": 96,
+        "right": 96,
+        "bottom": 96
+      },
+      "effect_pixel_unit": 6,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Guardromon_Idle.png": {
+      "source_size": [
+        624,
+        566
+      ],
+      "output_size": [
+        816,
+        758
+      ],
+      "padding": {
+        "left": 96,
+        "top": 96,
+        "right": 96,
+        "bottom": 96
+      },
+      "effect_pixel_unit": 6,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Guardromon_LLegWalk.png": {
+      "source_size": [
+        672,
+        594
+      ],
+      "output_size": [
+        864,
+        786
+      ],
+      "padding": {
+        "left": 96,
+        "top": 96,
+        "right": 96,
+        "bottom": 96
+      },
+      "effect_pixel_unit": 6,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Guardromon_RLegWalk.png": {
+      "source_size": [
+        672,
+        594
+      ],
+      "output_size": [
+        864,
+        786
+      ],
+      "padding": {
+        "left": 96,
+        "top": 96,
+        "right": 96,
+        "bottom": 96
+      },
+      "effect_pixel_unit": 6,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

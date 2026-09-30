@@ -189,6 +189,7 @@ def test_fresh_owned_rookie_can_play_every_badge_and_championship_loop(starter, 
     original_uid = state["party"][0]["uid"]
     route = pilot.main_route()
     for npc_id in route:
+        assert not state.get("permanent_rewards", {}).get("firewall_scan_mastery")
         npc = pilot.challenge(npc_id)
         assert npc["name"] in state["story"]["view"]["objective"], "Journal must name the next accessible tamer"
         if npc.get("role") == "champion":
@@ -215,6 +216,9 @@ def test_fresh_owned_rookie_can_play_every_badge_and_championship_loop(starter, 
     assert len(state["story"]["badges"]) == 8
     assert state["story"]["champion"]["holder_id"] == "player"
     assert state["story"]["champion"]["reigns"] == 1
+    assert state["permanent_rewards"]["firewall_scan_mastery"] is True
+    assert result["scan_mastery_unlocked"] is True
+    assert result["scan_mastery_variety"] == "firewall"
     assert pilot.controls > 25 and pilot.dialogue_pages >= len(route)
     assert state["story"]["stats"]["credits_earned"] > 0
     before = copy.deepcopy(state)
@@ -227,15 +231,20 @@ def test_fresh_owned_rookie_can_play_every_badge_and_championship_loop(starter, 
     pilot.challenge(champion["id"])
     assert pilot.fight()["won"]
     assert state["story"]["champion"]["defenses"] == 1
+    assert state["permanent_rewards"]["firewall_scan_mastery"] is True
+    assert state["story"]["recent"][0]["scan_mastery_unlocked"] is False
     champion = next(npc for npc in state["story"]["view"]["npcs"] if npc["role"] == "champion")
     pilot.challenge(champion["id"])
     assert not pilot.fight(deliberately_lose=True)["won"]
     assert state["story"]["champion"]["status"] == "reclaim"
+    assert state["permanent_rewards"]["firewall_scan_mastery"] is True
     assert state["story"]["champion"]["holder_id"] == champion["id"]
     pilot.challenge(champion["id"])
     assert pilot.fight()["won"]
     assert state["story"]["champion"]["holder_id"] == "player"
     assert state["story"]["champion"]["reigns"] == 2
+    assert state["permanent_rewards"]["firewall_scan_mastery"] is True
+    assert state["story"]["recent"][0]["scan_mastery_unlocked"] is False
     assert len(state["story"]["badges"]) == 8
     restored = json.loads(json.dumps(state))
     engine = GameEngine(ROOT, seed=999)

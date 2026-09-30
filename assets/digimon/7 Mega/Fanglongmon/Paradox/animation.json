@@ -30,5 +30,8 @@
   },
   "source_frame_count": 6,
   "frame_selection": "Six supplied labelled poses: two idle, right/left step, two attack; original PNG bytes preserved",
-  "art_provenance": "User-supplied Fanglongmon and Paradox six-frame pack; v1.0.0"
+  "art_provenance": "User-supplied v1.2.0 Paradox PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained.",
+  "source_art_provenance": "User-supplied Fanglongmon and Paradox six-frame pack; v1.0.0",
+  "source_frame_selection": "Six supplied labelled poses: two idle, right/left step, two attack; original PNG bytes preserved",
+  "paradox_style_profile": "Cyber Paradox — Fanglongmon reference"
 }

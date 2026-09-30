@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Kuramon_Paradox_Idle.png",
+    "walk_left": "Kuramon_Paradox_LLegWalk.png",
+    "walk_right": "Kuramon_Paradox_RLegWalk.png",
+    "attack1": "Kuramon_Paradox_AttackPart1.png",
+    "attack2": "Kuramon_Paradox_AttackPart2.png"
+  },
+  "animations": {
+    "idle": [
+      "Kuramon_Paradox_Idle.png"
+    ],
+    "walk": [
+      "Kuramon_Paradox_Idle.png",
+      "Kuramon_Paradox_LLegWalk.png",
+      "Kuramon_Paradox_Idle.png",
+      "Kuramon_Paradox_RLegWalk.png"
+    ],
+    "attack": [
+      "Kuramon_Paradox_AttackPart1.png",
+      "Kuramon_Paradox_AttackPart2.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 0,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied v1.2.0 Paradox PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained."
+}

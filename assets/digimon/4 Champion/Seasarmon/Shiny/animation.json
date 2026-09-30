@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Frames/Seasarmon_Frame_001.png",
+    "walk_left": "Frames/Seasarmon_Frame_002.png",
+    "walk_right": "Frames/Seasarmon_Frame_003.png",
+    "attack1": "Frames/Seasarmon_Frame_004.png",
+    "attack2": "Frames/Seasarmon_Frame_005.png"
+  },
+  "animations": {
+    "idle": [
+      "Frames/Seasarmon_Frame_001.png",
+      "Frames/Seasarmon_Frame_002.png",
+      "Frames/Seasarmon_Frame_001.png",
+      "Frames/Seasarmon_Frame_003.png"
+    ],
+    "walk": [
+      "Frames/Seasarmon_Frame_001.png",
+      "Frames/Seasarmon_Frame_002.png",
+      "Frames/Seasarmon_Frame_001.png",
+      "Frames/Seasarmon_Frame_003.png"
+    ],
+    "attack": [
+      "Frames/Seasarmon_Frame_004.png",
+      "Frames/Seasarmon_Frame_005.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 20,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied v1.2.0 Shiny PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained."
+}

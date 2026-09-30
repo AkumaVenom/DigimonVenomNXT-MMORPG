@@ -1,0 +1,462 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Frames/MetalMamemon_Frame_001.png": {
+      "source_size": [
+        79,
+        50
+      ],
+      "output_size": [
+        111,
+        82
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/MetalMamemon_Frame_002.png": {
+      "source_size": [
+        79,
+        49
+      ],
+      "output_size": [
+        111,
+        81
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/MetalMamemon_Frame_003.png": {
+      "source_size": [
+        79,
+        48
+      ],
+      "output_size": [
+        111,
+        80
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/MetalMamemon_Frame_004.png": {
+      "source_size": [
+        97,
+        80
+      ],
+      "output_size": [
+        129,
+        112
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/MetalMamemon_Frame_005.png": {
+      "source_size": [
+        80,
+        54
+      ],
+      "output_size": [
+        112,
+        86
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/MetalMamemon_Frame_006.png": {
+      "source_size": [
+        18,
+        19
+      ],
+      "output_size": [
+        26,
+        27
+      ],
+      "padding": {
+        "left": 4,
+        "top": 4,
+        "right": 4,
+        "bottom": 4
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": true
+    },
+    "Frames/MetalMamemon_Frame_007.png": {
+      "source_size": [
+        18,
+        19
+      ],
+      "output_size": [
+        26,
+        27
+      ],
+      "padding": {
+        "left": 4,
+        "top": 4,
+        "right": 4,
+        "bottom": 4
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": true
+    },
+    "Frames/MetalMamemon_Frame_008.png": {
+      "source_size": [
+        20,
+        18
+      ],
+      "output_size": [
+        28,
+        26
+      ],
+      "padding": {
+        "left": 4,
+        "top": 4,
+        "right": 4,
+        "bottom": 4
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": true
+    },
+    "Frames/MetalMamemon_Frame_009.png": {
+      "source_size": [
+        17,
+        17
+      ],
+      "output_size": [
+        25,
+        25
+      ],
+      "padding": {
+        "left": 4,
+        "top": 4,
+        "right": 4,
+        "bottom": 4
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": true
+    },
+    "Frames/MetalMamemon_Frame_010.png": {
+      "source_size": [
+        17,
+        17
+      ],
+      "output_size": [
+        25,
+        25
+      ],
+      "padding": {
+        "left": 4,
+        "top": 4,
+        "right": 4,
+        "bottom": 4
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": true
+    },
+    "Frames/MetalMamemon_Frame_011.png": {
+      "source_size": [
+        20,
+        18
+      ],
+      "output_size": [
+        28,
+        26
+      ],
+      "padding": {
+        "left": 4,
+        "top": 4,
+        "right": 4,
+        "bottom": 4
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": true
+    },
+    "Frames/MetalMamemon_Frame_012.png": {
+      "source_size": [
+        18,
+        19
+      ],
+      "output_size": [
+        26,
+        27
+      ],
+      "padding": {
+        "left": 4,
+        "top": 4,
+        "right": 4,
+        "bottom": 4
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": true
+    },
+    "Frames/MetalMamemon_Frame_013.png": {
+      "source_size": [
+        18,
+        19
+      ],
+      "output_size": [
+        26,
+        27
+      ],
+      "padding": {
+        "left": 4,
+        "top": 4,
+        "right": 4,
+        "bottom": 4
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": true
+    },
+    "Frames/MetalMamemon_Frame_014.png": {
+      "source_size": [
+        20,
+        17
+      ],
+      "output_size": [
+        28,
+        25
+      ],
+      "padding": {
+        "left": 4,
+        "top": 4,
+        "right": 4,
+        "bottom": 4
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": true
+    },
+    "Frames/MetalMamemon_Frame_015.png": {
+      "source_size": [
+        18,
+        16
+      ],
+      "output_size": [
+        26,
+        24
+      ],
+      "padding": {
+        "left": 4,
+        "top": 4,
+        "right": 4,
+        "bottom": 4
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": true
+    },
+    "Frames/MetalMamemon_Frame_016.png": {
+      "source_size": [
+        18,
+        16
+      ],
+      "output_size": [
+        26,
+        24
+      ],
+      "padding": {
+        "left": 4,
+        "top": 4,
+        "right": 4,
+        "bottom": 4
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": true
+    },
+    "Frames/MetalMamemon_Frame_017.png": {
+      "source_size": [
+        20,
+        17
+      ],
+      "output_size": [
+        28,
+        25
+      ],
+      "padding": {
+        "left": 4,
+        "top": 4,
+        "right": 4,
+        "bottom": 4
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": true
+    },
+    "Frames/MetalMamemon_Frame_018.png": {
+      "source_size": [
+        18,
+        20
+      ],
+      "output_size": [
+        26,
+        28
+      ],
+      "padding": {
+        "left": 4,
+        "top": 4,
+        "right": 4,
+        "bottom": 4
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": true
+    },
+    "Frames/MetalMamemon_Frame_019.png": {
+      "source_size": [
+        18,
+        19
+      ],
+      "output_size": [
+        26,
+        27
+      ],
+      "padding": {
+        "left": 4,
+        "top": 4,
+        "right": 4,
+        "bottom": 4
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": true
+    },
+    "Frames/MetalMamemon_Frame_020.png": {
+      "source_size": [
+        17,
+        18
+      ],
+      "output_size": [
+        25,
+        26
+      ],
+      "padding": {
+        "left": 4,
+        "top": 4,
+        "right": 4,
+        "bottom": 4
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": true
+    },
+    "Frames/MetalMamemon_Frame_021.png": {
+      "source_size": [
+        21,
+        17
+      ],
+      "output_size": [
+        53,
+        49
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/MetalMamemon_Frame_022.png": {
+      "source_size": [
+        31,
+        14
+      ],
+      "output_size": [
+        63,
+        46
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/MetalMamemon_Frame_023.png": {
+      "source_size": [
+        23,
+        11
+      ],
+      "output_size": [
+        55,
+        43
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "MetalMamemon_Primary.png": {
+      "source_size": [
+        79,
+        50
+      ],
+      "output_size": [
+        111,
+        82
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

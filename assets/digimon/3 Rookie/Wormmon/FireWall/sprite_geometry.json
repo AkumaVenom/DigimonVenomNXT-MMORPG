@@ -1,0 +1,120 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Wormmon_AttackPart1.png": {
+      "source_size": [
+        556,
+        454
+      ],
+      "output_size": [
+        812,
+        710
+      ],
+      "padding": {
+        "left": 128,
+        "top": 128,
+        "right": 128,
+        "bottom": 128
+      },
+      "effect_pixel_unit": 8,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Wormmon_AttackPart2.png": {
+      "source_size": [
+        636,
+        484
+      ],
+      "output_size": [
+        892,
+        740
+      ],
+      "padding": {
+        "left": 128,
+        "top": 128,
+        "right": 128,
+        "bottom": 128
+      },
+      "effect_pixel_unit": 8,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Wormmon_Extra.png": {
+      "source_size": [
+        636,
+        484
+      ],
+      "output_size": [
+        892,
+        740
+      ],
+      "padding": {
+        "left": 128,
+        "top": 128,
+        "right": 128,
+        "bottom": 128
+      },
+      "effect_pixel_unit": 8,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Wormmon_Idle.png": {
+      "source_size": [
+        696,
+        460
+      ],
+      "output_size": [
+        952,
+        716
+      ],
+      "padding": {
+        "left": 128,
+        "top": 128,
+        "right": 128,
+        "bottom": 128
+      },
+      "effect_pixel_unit": 8,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Wormmon_LLegWalk.png": {
+      "source_size": [
+        756,
+        462
+      ],
+      "output_size": [
+        1012,
+        718
+      ],
+      "padding": {
+        "left": 128,
+        "top": 128,
+        "right": 128,
+        "bottom": 128
+      },
+      "effect_pixel_unit": 8,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Wormmon_RLegWalk.png": {
+      "source_size": [
+        756,
+        462
+      ],
+      "output_size": [
+        1012,
+        718
+      ],
+      "padding": {
+        "left": 128,
+        "top": 128,
+        "right": 128,
+        "bottom": 128
+      },
+      "effect_pixel_unit": 8,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

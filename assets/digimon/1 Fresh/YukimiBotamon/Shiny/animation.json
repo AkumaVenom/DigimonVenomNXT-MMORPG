@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "YukimiBotamon_Idle.png",
+    "walk_left": "YukimiBotamon_LLegWalk.png",
+    "walk_right": "YukimiBotamon_RLegWalk.png",
+    "attack1": "YukimiBotamon_Idle.png",
+    "attack2": "YukimiBotamon_Idle.png"
+  },
+  "animations": {
+    "idle": [
+      "YukimiBotamon_Idle.png"
+    ],
+    "walk": [
+      "YukimiBotamon_Idle.png",
+      "YukimiBotamon_LLegWalk.png",
+      "YukimiBotamon_Idle.png",
+      "YukimiBotamon_RLegWalk.png"
+    ],
+    "attack": [
+      "YukimiBotamon_Idle.png",
+      "YukimiBotamon_Idle.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 0,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied v1.2.0 Shiny PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained."
+}

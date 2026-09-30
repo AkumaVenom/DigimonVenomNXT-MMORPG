@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "BlackAgumon_Paradox_Idle.png",
+    "walk_left": "BlackAgumon_Paradox_LLegWalk.png",
+    "walk_right": "BlackAgumon_Paradox_RLegWalk.png",
+    "attack1": "BlackAgumon_Paradox_AttackPart1.png",
+    "attack2": "BlackAgumon_Paradox_AttackPart2.png"
+  },
+  "animations": {
+    "idle": [
+      "BlackAgumon_Paradox_Idle.png"
+    ],
+    "walk": [
+      "BlackAgumon_Paradox_Idle.png",
+      "BlackAgumon_Paradox_LLegWalk.png",
+      "BlackAgumon_Paradox_Idle.png",
+      "BlackAgumon_Paradox_RLegWalk.png"
+    ],
+    "attack": [
+      "BlackAgumon_Paradox_AttackPart1.png",
+      "BlackAgumon_Paradox_AttackPart2.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 0,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied v1.2.0 Paradox PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained."
+}

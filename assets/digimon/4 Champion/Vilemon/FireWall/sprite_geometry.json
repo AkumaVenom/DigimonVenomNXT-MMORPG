@@ -1,0 +1,386 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Frames/Vilemon_Frame_001.png": {
+      "source_size": [
+        78,
+        80
+      ],
+      "output_size": [
+        110,
+        112
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Vilemon_Frame_002.png": {
+      "source_size": [
+        82,
+        78
+      ],
+      "output_size": [
+        114,
+        110
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Vilemon_Frame_003.png": {
+      "source_size": [
+        82,
+        78
+      ],
+      "output_size": [
+        114,
+        110
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Vilemon_Frame_004.png": {
+      "source_size": [
+        33,
+        35
+      ],
+      "output_size": [
+        65,
+        67
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Vilemon_Frame_005.png": {
+      "source_size": [
+        33,
+        32
+      ],
+      "output_size": [
+        65,
+        64
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Vilemon_Frame_006.png": {
+      "source_size": [
+        33,
+        35
+      ],
+      "output_size": [
+        65,
+        67
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Vilemon_Frame_007.png": {
+      "source_size": [
+        88,
+        88
+      ],
+      "output_size": [
+        120,
+        120
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Vilemon_Frame_008.png": {
+      "source_size": [
+        91,
+        76
+      ],
+      "output_size": [
+        123,
+        108
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Vilemon_Frame_009.png": {
+      "source_size": [
+        30,
+        34
+      ],
+      "output_size": [
+        62,
+        66
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Vilemon_Frame_010.png": {
+      "source_size": [
+        33,
+        35
+      ],
+      "output_size": [
+        65,
+        67
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Vilemon_Frame_011.png": {
+      "source_size": [
+        33,
+        35
+      ],
+      "output_size": [
+        65,
+        67
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Vilemon_Frame_012.png": {
+      "source_size": [
+        33,
+        35
+      ],
+      "output_size": [
+        65,
+        67
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Vilemon_Frame_013.png": {
+      "source_size": [
+        33,
+        32
+      ],
+      "output_size": [
+        65,
+        64
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Vilemon_Frame_014.png": {
+      "source_size": [
+        33,
+        35
+      ],
+      "output_size": [
+        65,
+        67
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Vilemon_Frame_015.png": {
+      "source_size": [
+        32,
+        36
+      ],
+      "output_size": [
+        64,
+        68
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Vilemon_Frame_016.png": {
+      "source_size": [
+        33,
+        33
+      ],
+      "output_size": [
+        65,
+        65
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Vilemon_Frame_017.png": {
+      "source_size": [
+        30,
+        34
+      ],
+      "output_size": [
+        62,
+        66
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Vilemon_Frame_018.png": {
+      "source_size": [
+        33,
+        34
+      ],
+      "output_size": [
+        65,
+        66
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Vilemon_Frame_019.png": {
+      "source_size": [
+        33,
+        34
+      ],
+      "output_size": [
+        65,
+        66
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Vilemon_Primary.png": {
+      "source_size": [
+        78,
+        80
+      ],
+      "output_size": [
+        110,
+        112
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

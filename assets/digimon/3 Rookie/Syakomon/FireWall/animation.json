@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Syakomon_Idle.png",
+    "walk_left": "Syakomon_LLegWalk.png",
+    "walk_right": "Syakomon_RLegWalk.png",
+    "attack1": "Syakomon_AttackPart1.png",
+    "attack2": "Syakomon_AttackPart2.png"
+  },
+  "animations": {
+    "idle": [
+      "Syakomon_Idle.png"
+    ],
+    "walk": [
+      "Syakomon_Idle.png",
+      "Syakomon_LLegWalk.png",
+      "Syakomon_Idle.png",
+      "Syakomon_RLegWalk.png"
+    ],
+    "attack": [
+      "Syakomon_AttackPart1.png",
+      "Syakomon_AttackPart2.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 0,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied FireWall PNG bytes preserved; normal pose selections and mirrors retained. Aura padding is recorded in sprite_geometry.json."
+}

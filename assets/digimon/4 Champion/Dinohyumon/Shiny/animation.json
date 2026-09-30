@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Dinohyumon_Idle.png",
+    "walk_left": "Dinohyumon_LLegWalk.png",
+    "walk_right": "Dinohyumon_RLegWalk.png",
+    "attack1": "Dinohyumon_Idle.png",
+    "attack2": "Dinohyumon_Idle.png"
+  },
+  "animations": {
+    "idle": [
+      "Dinohyumon_Idle.png"
+    ],
+    "walk": [
+      "Dinohyumon_Idle.png",
+      "Dinohyumon_LLegWalk.png",
+      "Dinohyumon_Idle.png",
+      "Dinohyumon_RLegWalk.png"
+    ],
+    "attack": [
+      "Dinohyumon_Idle.png",
+      "Dinohyumon_Idle.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 0,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied v1.2.0 Shiny PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained."
+}

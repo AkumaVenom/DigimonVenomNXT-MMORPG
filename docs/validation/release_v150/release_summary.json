@@ -1,0 +1,65 @@
+{
+  "release": "1.5.0",
+  "baseline": "1.4.0",
+  "status": "passed_after_targeted_fixture_recheck",
+  "full_suite": {
+    "collected": 3757,
+    "passed": 3747,
+    "skipped": 10,
+    "unresolved_failures": 0,
+    "initial_passed": 3745,
+    "initial_failed": 2,
+    "initial_run_seconds": 659.979,
+    "initial_report": "pytest.xml",
+    "recheck_reports": [
+      "QA_activity_recheck.xml",
+      "QA_navigation_recheck.xml"
+    ],
+    "recheck_unique_passed": 23,
+    "resolved_tests": [
+      "tests.test_activity_window_client.ActivityWindowClientTests::test_recent_counter_pages_fit_native_sizes_and_actions_stay_usable",
+      "tests.test_ui_navigation.NativeMenuNavigationTests::test_activity_filters_counters_and_map_navigation_preserve_controls"
+    ],
+    "resolution": "Only two old activity pagination tests changed. They now click every current counter page and check exact counter coverage, the FireWall value, wraparound, text/control bounds at four native resolutions, map navigation, and immutable server data. No production code changed after the full regression began.",
+    "count_note": "Passed is the number of distinct successful tests across the full run and the targeted recheck, not a sum of overlapping runs.",
+    "skip_reasons": {
+      "Set VENOM_TEST_MYSQL_RUNTIME for opt-in Linux/MySQL validation": 1,
+      "Requires a graphical desktop / Xvfb": 9
+    }
+  },
+  "integrity": {
+    "asset_manifest_records_verified": 41180,
+    "supplied_pngs_preserved": 7934,
+    "supplied_files_preserved": 9087,
+    "original_species_preserved": 1506,
+    "firewall_species_added": 502,
+    "total_species": 2008,
+    "public_maps": 500,
+    "old_map_fields_unchanged": true,
+    "original_music_unchanged": true,
+    "report": "baseline_preservation.json"
+  },
+  "gameplay": {
+    "firewall_encounter_chance": 0.007,
+    "base_scan": 5,
+    "mastery_scan_on_eligible_victory": 6,
+    "mastery_campaign": "Dawn Relay",
+    "legacy_champions_auto_migrate": true,
+    "all_species_and_maps_tested": true,
+    "live_websocket_sqlite_tests_passed": 4
+  },
+  "native_previews": {
+    "count": 34,
+    "directory": "ui",
+    "sizes": [
+      "960x600",
+      "1280x800"
+    ]
+  },
+  "target_machine_checks": [
+    "Build and launch Windows executables on Windows x64.",
+    "Exercise native Windows setup dialogs.",
+    "Connect the deployed server to the production MySQL installation.",
+    "Confirm music playback on the destination audio device."
+  ]
+}

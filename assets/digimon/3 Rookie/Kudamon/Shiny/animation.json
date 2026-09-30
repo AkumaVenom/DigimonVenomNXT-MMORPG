@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Kudamon_Idle.png",
+    "walk_left": "Kudamon_LLegWalk.png",
+    "walk_right": "Kudamon_RLegWalk.png",
+    "attack1": "Kudamon_AttackPart1.png",
+    "attack2": "Kudamon_AttackPart2.png"
+  },
+  "animations": {
+    "idle": [
+      "Kudamon_Idle.png"
+    ],
+    "walk": [
+      "Kudamon_Idle.png",
+      "Kudamon_LLegWalk.png",
+      "Kudamon_Idle.png",
+      "Kudamon_RLegWalk.png"
+    ],
+    "attack": [
+      "Kudamon_AttackPart1.png",
+      "Kudamon_AttackPart2.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 0,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied v1.2.0 Shiny PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained."
+}

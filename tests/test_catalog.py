@@ -12,11 +12,19 @@ def test_all_supplied_forms_can_be_encountered():
     reachable=set()
     for normal,paradox in engine._pools.values():
         reachable.update(normal);reachable.update(paradox)
+    for pools in (engine._shiny_pools, engine._firewall_pools):
+        for pool in pools.values():
+            reachable.update(pool)
     assert set(engine.species)==reachable
-    normal=[s for s in engine.species.values() if not s['paradox']]
+    normal=[s for s in engine.species.values() if s['variety']=='normal']
     paradox=[s for s in engine.species.values() if s['paradox']]
-    assert len(normal)==len(paradox)==502
-    assert all(s['base_id'] in engine.species for s in paradox)
+    shiny=[s for s in engine.species.values() if s['shiny']]
+    firewall=[s for s in engine.species.values() if s['firewall']]
+    assert len(normal)==len(paradox)==len(shiny)==len(firewall)==502
+    assert all(s['base_id'] in engine.species for s in paradox+shiny+firewall)
+    for area_id,(normal_pool,_) in engine._pools.items():
+        assert set(engine._shiny_pools[area_id])=={sid+'_shiny' for sid in normal_pool}
+        assert set(engine._firewall_pools[area_id])=={sid+'_firewall' for sid in normal_pool}
 
 
 def test_every_map_has_matching_collision_and_safe_spawn():
@@ -25,8 +33,10 @@ def test_every_map_has_matching_collision_and_safe_spawn():
     world_ds=[m for m in catalog['maps'] if m.get('region_id')=='world_ds']
     assert len(dawn)==254
     assert len(world_ds)==150
-    assert len(catalog['maps'])==404
-    assert len({m['id'] for m in catalog['maps']})==404
+    xros=[m for m in catalog['maps'] if m.get('region_id')=='xros_wars']
+    assert len(xros)==96
+    assert len(catalog['maps'])==500
+    assert len({m['id'] for m in catalog['maps']})==len(catalog['maps'])
     for area in catalog['maps']:
         with Image.open(ROOT/area['path']) as image:
             assert image.size==(area['width'],area['height']),area['id']

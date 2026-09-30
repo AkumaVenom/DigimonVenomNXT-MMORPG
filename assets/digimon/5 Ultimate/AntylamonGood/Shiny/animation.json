@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Frames/AntylamonGood_Frame_001.png",
+    "walk_left": "Frames/AntylamonGood_Frame_002.png",
+    "walk_right": "Frames/AntylamonGood_Frame_003.png",
+    "attack1": "Frames/AntylamonGood_Frame_004.png",
+    "attack2": "Frames/AntylamonGood_Frame_005.png",
+    "front": "AntylamonGood_Primary.png"
+  },
+  "animations": {
+    "idle": [
+      "Frames/AntylamonGood_Frame_001.png",
+      "Frames/AntylamonGood_Frame_002.png",
+      "Frames/AntylamonGood_Frame_001.png",
+      "Frames/AntylamonGood_Frame_003.png"
+    ],
+    "walk": [
+      "Frames/AntylamonGood_Frame_001.png",
+      "Frames/AntylamonGood_Frame_002.png",
+      "Frames/AntylamonGood_Frame_001.png",
+      "Frames/AntylamonGood_Frame_003.png"
+    ],
+    "attack": [
+      "Frames/AntylamonGood_Frame_004.png",
+      "Frames/AntylamonGood_Frame_005.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 19,
+  "frame_selection": "v1.0.1 pose assignments retained; supplied v1.1.0 fixed PNGs replace canonical paths; explicit primary/front portrait when supplied",
+  "art_provenance": "User-supplied v1.2.0 Shiny PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained."
+}

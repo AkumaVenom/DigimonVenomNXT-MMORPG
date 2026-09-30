@@ -1,0 +1,25 @@
+{
+  "variant_id": "shiny_gaomon",
+  "display_name": "Shiny Gaomon",
+  "base_species": "Gaomon",
+  "stage": "3 Rookie",
+  "status": "ready",
+  "style_profile": "Prismatic Shiny \u2014 Gold Stardust v1",
+  "palette": "Cerulean",
+  "target_hue_degrees": 196.0,
+  "source_sprite_count": 6,
+  "shiny_sprite_count": 6,
+  "animation_alignment": "Exact source canvas dimensions and sprite positions retained",
+  "effects": "Warm-gold silhouette glow; restrained ivory/gold four-point sparkles; deterministic frame twinkle",
+  "sprites": [
+    "Gaomon_AttackPart1.png",
+    "Gaomon_AttackPart2.png",
+    "Gaomon_Extra.png",
+    "Gaomon_Idle.png",
+    "Gaomon_LLegWalk.png",
+    "Gaomon_RLegWalk.png"
+  ],
+  "primary_sprite": "3 Rookie/Gaomon/Shiny/Gaomon_Idle.png",
+  "source_primary": "3 Rookie/Gaomon/Gaomon_Idle.png",
+  "materializable": true
+}

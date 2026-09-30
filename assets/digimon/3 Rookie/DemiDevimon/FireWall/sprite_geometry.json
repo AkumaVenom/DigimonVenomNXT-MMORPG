@@ -1,0 +1,120 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "DemiDevimon_AttackPart1.png": {
+      "source_size": [
+        588,
+        454
+      ],
+      "output_size": [
+        844,
+        710
+      ],
+      "padding": {
+        "left": 128,
+        "top": 128,
+        "right": 128,
+        "bottom": 128
+      },
+      "effect_pixel_unit": 8,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "DemiDevimon_AttackPart2.png": {
+      "source_size": [
+        736,
+        594
+      ],
+      "output_size": [
+        992,
+        850
+      ],
+      "padding": {
+        "left": 128,
+        "top": 128,
+        "right": 128,
+        "bottom": 128
+      },
+      "effect_pixel_unit": 8,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "DemiDevimon_Extra.png": {
+      "source_size": [
+        516,
+        512
+      ],
+      "output_size": [
+        772,
+        768
+      ],
+      "padding": {
+        "left": 128,
+        "top": 128,
+        "right": 128,
+        "bottom": 128
+      },
+      "effect_pixel_unit": 8,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "DemiDevimon_Idle.png": {
+      "source_size": [
+        668,
+        570
+      ],
+      "output_size": [
+        924,
+        826
+      ],
+      "padding": {
+        "left": 128,
+        "top": 128,
+        "right": 128,
+        "bottom": 128
+      },
+      "effect_pixel_unit": 8,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "DemiDevimon_LLegWalk.png": {
+      "source_size": [
+        554,
+        544
+      ],
+      "output_size": [
+        810,
+        800
+      ],
+      "padding": {
+        "left": 128,
+        "top": 128,
+        "right": 128,
+        "bottom": 128
+      },
+      "effect_pixel_unit": 8,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "DemiDevimon_RLegWalk.png": {
+      "source_size": [
+        554,
+        544
+      ],
+      "output_size": [
+        810,
+        800
+      ],
+      "padding": {
+        "left": 128,
+        "top": 128,
+        "right": 128,
+        "bottom": 128
+      },
+      "effect_pixel_unit": 8,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

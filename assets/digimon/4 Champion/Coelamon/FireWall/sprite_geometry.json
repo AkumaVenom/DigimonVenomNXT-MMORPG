@@ -1,0 +1,500 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Coelamon_Attack.png": {
+      "source_size": [
+        786,
+        820
+      ],
+      "output_size": [
+        1010,
+        1044
+      ],
+      "padding": {
+        "left": 112,
+        "top": 112,
+        "right": 112,
+        "bottom": 112
+      },
+      "effect_pixel_unit": 7,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Coelamon_GetHit.png": {
+      "source_size": [
+        744,
+        652
+      ],
+      "output_size": [
+        968,
+        876
+      ],
+      "padding": {
+        "left": 112,
+        "top": 112,
+        "right": 112,
+        "bottom": 112
+      },
+      "effect_pixel_unit": 7,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Coelamon_Idle.png": {
+      "source_size": [
+        688,
+        602
+      ],
+      "output_size": [
+        912,
+        826
+      ],
+      "padding": {
+        "left": 112,
+        "top": 112,
+        "right": 112,
+        "bottom": 112
+      },
+      "effect_pixel_unit": 7,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Coelamon_LLegWalk.png": {
+      "source_size": [
+        670,
+        578
+      ],
+      "output_size": [
+        894,
+        802
+      ],
+      "padding": {
+        "left": 112,
+        "top": 112,
+        "right": 112,
+        "bottom": 112
+      },
+      "effect_pixel_unit": 7,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Coelamon_Primary.png": {
+      "source_size": [
+        91,
+        76
+      ],
+      "output_size": [
+        123,
+        108
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Coelamon_RLegWalk.png": {
+      "source_size": [
+        670,
+        578
+      ],
+      "output_size": [
+        894,
+        802
+      ],
+      "padding": {
+        "left": 112,
+        "top": 112,
+        "right": 112,
+        "bottom": 112
+      },
+      "effect_pixel_unit": 7,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Coelamon_Frame_001.png": {
+      "source_size": [
+        91,
+        76
+      ],
+      "output_size": [
+        123,
+        108
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Coelamon_Frame_002.png": {
+      "source_size": [
+        92,
+        77
+      ],
+      "output_size": [
+        124,
+        109
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Coelamon_Frame_003.png": {
+      "source_size": [
+        89,
+        78
+      ],
+      "output_size": [
+        121,
+        110
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Coelamon_Frame_004.png": {
+      "source_size": [
+        97,
+        80
+      ],
+      "output_size": [
+        129,
+        112
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Coelamon_Frame_005.png": {
+      "source_size": [
+        94,
+        109
+      ],
+      "output_size": [
+        126,
+        141
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Coelamon_Frame_006.png": {
+      "source_size": [
+        26,
+        32
+      ],
+      "output_size": [
+        58,
+        64
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Coelamon_Frame_007.png": {
+      "source_size": [
+        27,
+        33
+      ],
+      "output_size": [
+        59,
+        65
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Coelamon_Frame_008.png": {
+      "source_size": [
+        27,
+        33
+      ],
+      "output_size": [
+        59,
+        65
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Coelamon_Frame_009.png": {
+      "source_size": [
+        26,
+        32
+      ],
+      "output_size": [
+        58,
+        64
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Coelamon_Frame_010.png": {
+      "source_size": [
+        25,
+        30
+      ],
+      "output_size": [
+        57,
+        62
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Coelamon_Frame_011.png": {
+      "source_size": [
+        25,
+        30
+      ],
+      "output_size": [
+        57,
+        62
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Coelamon_Frame_012.png": {
+      "source_size": [
+        26,
+        34
+      ],
+      "output_size": [
+        58,
+        66
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Coelamon_Frame_013.png": {
+      "source_size": [
+        26,
+        33
+      ],
+      "output_size": [
+        58,
+        65
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Coelamon_Frame_014.png": {
+      "source_size": [
+        28,
+        34
+      ],
+      "output_size": [
+        60,
+        66
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Coelamon_Frame_015.png": {
+      "source_size": [
+        28,
+        34
+      ],
+      "output_size": [
+        60,
+        66
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Coelamon_Frame_016.png": {
+      "source_size": [
+        26,
+        33
+      ],
+      "output_size": [
+        58,
+        65
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Coelamon_Frame_017.png": {
+      "source_size": [
+        26,
+        34
+      ],
+      "output_size": [
+        58,
+        66
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Coelamon_Frame_018.png": {
+      "source_size": [
+        28,
+        33
+      ],
+      "output_size": [
+        60,
+        65
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Coelamon_Frame_019.png": {
+      "source_size": [
+        25,
+        32
+      ],
+      "output_size": [
+        57,
+        64
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Coelamon_Frame_020.png": {
+      "source_size": [
+        26,
+        31
+      ],
+      "output_size": [
+        58,
+        63
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

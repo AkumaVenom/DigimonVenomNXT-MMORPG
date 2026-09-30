@@ -1,0 +1,78 @@
+{
+  "release": "1.3.0",
+  "maps": {
+    "dawn": 254,
+    "world_ds": 150,
+    "xros_wars": 96,
+    "total": 500,
+    "xros_zones": 14,
+    "levels": [
+      1,
+      99
+    ]
+  },
+  "species": {
+    "normal": 502,
+    "paradox": 502,
+    "shiny": 502,
+    "total": 1506
+  },
+  "new_music": {
+    "recordings": 20,
+    "exploration_tracks": 17,
+    "combat_tracks": 3,
+    "intro_streams": 19,
+    "ogg_files": 39
+  },
+  "focused_checks": {
+    "maps": 196,
+    "audio_and_old_audio": 17,
+    "gameplay_merge_and_ds": 71,
+    "bots_restart_and_community": 64,
+    "client_and_legacy_ui": 32,
+    "live_acceptance_and_replication": 12
+  },
+  "bot_upgrade": {
+    "bots": 3000,
+    "maps": 500,
+    "final_residents_per_map": 6,
+    "fixture": "Mature saved population whose already-owned teams can safely enter all levels. Expansion migration preserves careers and rosters, uses ordinary travel, checks paths and durable restart. Real combat/recruitment/maintenance also covered separately.",
+    "automatic_rewards_or_level_grants": false
+  },
+  "shiny_world_test": {
+    "walk_pixels": 850,
+    "scan_earned": 5,
+    "server_restart_preserved": true
+  },
+  "limitations": [
+    "Windows x64 executable builds require target Windows host.",
+    "Interactive Windows audio-device playback not exercised on Linux.",
+    "Full suite skips host-specific Tk tests without a display and opt-in live MySQL integration."
+  ],
+  "asset_checks": {
+    "files": 31739,
+    "all_existing_assets_preserved": 31399,
+    "new_map_assets": 284,
+    "new_audio_assets": 39
+  },
+  "input_coverage": {
+    "archive_volumes": 20,
+    "source_maps": 196,
+    "playable": 96,
+    "duplicates": 53,
+    "incomplete": 23,
+    "reserved": 24,
+    "source_pngs": 764,
+    "supplied_music_recordings": 20,
+    "supplied_effect_recordings_not_used_as_music": 77
+  },
+  "full_suite": {
+    "tests": 2988,
+    "errors": 0,
+    "failures": 0,
+    "skipped": 10,
+    "passed": 2978,
+    "seconds": 475.443,
+    "command": "python -m pytest -q --junitxml=docs/validation/release_v130/pytest.xml"
+  }
+}

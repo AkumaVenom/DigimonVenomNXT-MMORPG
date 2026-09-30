@@ -1,0 +1,25 @@
+{
+  "variant_id": "shiny_snowgoblimon",
+  "display_name": "Shiny SnowGoblimon",
+  "base_species": "SnowGoblimon",
+  "stage": "3 Rookie",
+  "status": "ready",
+  "style_profile": "Prismatic Shiny \u2014 Gold Stardust v1",
+  "palette": "Prismatic Glacier mint",
+  "target_hue_degrees": 28.5,
+  "source_sprite_count": 6,
+  "shiny_sprite_count": 6,
+  "animation_alignment": "Exact source canvas dimensions and sprite positions retained",
+  "effects": "Warm-gold silhouette glow; restrained ivory/gold four-point sparkles; deterministic frame twinkle",
+  "sprites": [
+    "SnowGoblimon_AttackPart1.png",
+    "SnowGoblimon_AttackPart2.png",
+    "SnowGoblimon_Extra.png",
+    "SnowGoblimon_Idle.png",
+    "SnowGoblimon_LLegWalk.png",
+    "SnowGoblimon_RLegWalk.png"
+  ],
+  "primary_sprite": "3 Rookie/SnowGoblimon/Shiny/SnowGoblimon_Idle.png",
+  "source_primary": "3 Rookie/SnowGoblimon/SnowGoblimon_Idle.png",
+  "materializable": true
+}

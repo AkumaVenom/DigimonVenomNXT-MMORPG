@@ -11,10 +11,10 @@ ROOT_NAMES={'README.md','PORTABLE_SERVER_README.md','pytest.ini','.gitignore'}
 
 def package(output:Path):
     files=[p for name in DIRECTORIES for p in (ROOT/name).rglob('*')
-           if p.is_file() and '__pycache__' not in p.parts and p.suffix!='.pyc']
+           if p.is_file() and not {'__pycache__', '.rsync-tmp'}.intersection(p.parts) and p.suffix!='.pyc']
     # Include only redistributable runtime files, never mysql/data or credentials.
-    files += [p for p in (ROOT/'mysql'/'runtime').rglob('*') if p.is_file()]
-    files += [p for p in (ROOT/'mysql'/'provenance').rglob('*') if p.is_file()]
+    files += [p for p in (ROOT/'mysql'/'runtime').rglob('*') if p.is_file() and '.rsync-tmp' not in p.parts]
+    files += [p for p in (ROOT/'mysql'/'provenance').rglob('*') if p.is_file() and '.rsync-tmp' not in p.parts]
     files += [p for p in (ROOT/'mysql'/'prerequisites').glob('*') if p.is_file() and p.suffix.lower() in {'.bat', '.ps1', '.md', '.txt'}]
     files += [p for p in (ROOT/'mysql').glob('*') if p.is_file() and p.suffix.lower() in {'.md', '.txt'}]
     files += [p for p in ROOT.iterdir() if p.is_file() and

@@ -1,0 +1,25 @@
+{
+  "variant_id": "shiny_chibomon",
+  "display_name": "Shiny Chibomon",
+  "base_species": "Chibomon",
+  "stage": "1 Fresh",
+  "status": "ready",
+  "style_profile": "Prismatic Shiny \u2014 Gold Stardust v1",
+  "palette": "Prismatic Moonlit indigo",
+  "target_hue_degrees": 64.5,
+  "source_sprite_count": 6,
+  "shiny_sprite_count": 6,
+  "animation_alignment": "Exact source canvas dimensions and sprite positions retained",
+  "effects": "Warm-gold silhouette glow; restrained ivory/gold four-point sparkles; deterministic frame twinkle",
+  "sprites": [
+    "Chibomon_AttackPart1.png",
+    "Chibomon_AttackPart2.png",
+    "Chibomon_Extra.png",
+    "Chibomon_Idle.png",
+    "Chibomon_LLegWalk.png",
+    "Chibomon_RLegWalk.png"
+  ],
+  "primary_sprite": "1 Fresh/Chibomon/Shiny/Chibomon_Idle.png",
+  "source_primary": "1 Fresh/Chibomon/Chibomon_Idle.png",
+  "materializable": true
+}

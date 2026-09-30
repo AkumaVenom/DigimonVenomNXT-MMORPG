@@ -1,0 +1,386 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Frames/Parrotmon_Frame_001.png": {
+      "source_size": [
+        86,
+        105
+      ],
+      "output_size": [
+        118,
+        137
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Parrotmon_Frame_002.png": {
+      "source_size": [
+        79,
+        103
+      ],
+      "output_size": [
+        111,
+        135
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Parrotmon_Frame_003.png": {
+      "source_size": [
+        95,
+        107
+      ],
+      "output_size": [
+        127,
+        139
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Parrotmon_Frame_004.png": {
+      "source_size": [
+        31,
+        40
+      ],
+      "output_size": [
+        63,
+        72
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Parrotmon_Frame_005.png": {
+      "source_size": [
+        31,
+        40
+      ],
+      "output_size": [
+        63,
+        72
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Parrotmon_Frame_006.png": {
+      "source_size": [
+        94,
+        120
+      ],
+      "output_size": [
+        126,
+        152
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Parrotmon_Frame_007.png": {
+      "source_size": [
+        29,
+        37
+      ],
+      "output_size": [
+        61,
+        69
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Parrotmon_Frame_008.png": {
+      "source_size": [
+        90,
+        116
+      ],
+      "output_size": [
+        122,
+        148
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Parrotmon_Frame_009.png": {
+      "source_size": [
+        35,
+        34
+      ],
+      "output_size": [
+        67,
+        66
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Parrotmon_Frame_010.png": {
+      "source_size": [
+        33,
+        35
+      ],
+      "output_size": [
+        65,
+        67
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Parrotmon_Frame_011.png": {
+      "source_size": [
+        30,
+        33
+      ],
+      "output_size": [
+        62,
+        65
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Parrotmon_Frame_012.png": {
+      "source_size": [
+        31,
+        40
+      ],
+      "output_size": [
+        63,
+        72
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Parrotmon_Frame_013.png": {
+      "source_size": [
+        31,
+        40
+      ],
+      "output_size": [
+        63,
+        72
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Parrotmon_Frame_014.png": {
+      "source_size": [
+        29,
+        37
+      ],
+      "output_size": [
+        61,
+        69
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Parrotmon_Frame_015.png": {
+      "source_size": [
+        33,
+        32
+      ],
+      "output_size": [
+        65,
+        64
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Parrotmon_Frame_016.png": {
+      "source_size": [
+        33,
+        35
+      ],
+      "output_size": [
+        65,
+        67
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Parrotmon_Frame_017.png": {
+      "source_size": [
+        35,
+        34
+      ],
+      "output_size": [
+        67,
+        66
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Parrotmon_Frame_018.png": {
+      "source_size": [
+        30,
+        33
+      ],
+      "output_size": [
+        62,
+        65
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Parrotmon_Frame_019.png": {
+      "source_size": [
+        30,
+        33
+      ],
+      "output_size": [
+        62,
+        65
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Parrotmon_Primary.png": {
+      "source_size": [
+        86,
+        105
+      ],
+      "output_size": [
+        118,
+        137
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

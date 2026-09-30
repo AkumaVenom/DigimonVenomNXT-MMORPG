@@ -1,0 +1,386 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Frames/Lilamon_Frame_001.png": {
+      "source_size": [
+        64,
+        134
+      ],
+      "output_size": [
+        96,
+        166
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Lilamon_Frame_002.png": {
+      "source_size": [
+        60,
+        131
+      ],
+      "output_size": [
+        92,
+        163
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Lilamon_Frame_003.png": {
+      "source_size": [
+        78,
+        137
+      ],
+      "output_size": [
+        110,
+        169
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Lilamon_Frame_004.png": {
+      "source_size": [
+        24,
+        39
+      ],
+      "output_size": [
+        56,
+        71
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Lilamon_Frame_005.png": {
+      "source_size": [
+        25,
+        39
+      ],
+      "output_size": [
+        57,
+        71
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Lilamon_Frame_006.png": {
+      "source_size": [
+        24,
+        37
+      ],
+      "output_size": [
+        56,
+        69
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Lilamon_Frame_007.png": {
+      "source_size": [
+        24,
+        39
+      ],
+      "output_size": [
+        56,
+        71
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Lilamon_Frame_008.png": {
+      "source_size": [
+        25,
+        40
+      ],
+      "output_size": [
+        57,
+        72
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Lilamon_Frame_009.png": {
+      "source_size": [
+        21,
+        39
+      ],
+      "output_size": [
+        53,
+        71
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Lilamon_Frame_010.png": {
+      "source_size": [
+        25,
+        39
+      ],
+      "output_size": [
+        57,
+        71
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Lilamon_Frame_011.png": {
+      "source_size": [
+        24,
+        39
+      ],
+      "output_size": [
+        56,
+        71
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Lilamon_Frame_012.png": {
+      "source_size": [
+        24,
+        37
+      ],
+      "output_size": [
+        56,
+        69
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Lilamon_Frame_013.png": {
+      "source_size": [
+        76,
+        118
+      ],
+      "output_size": [
+        108,
+        150
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Lilamon_Frame_014.png": {
+      "source_size": [
+        106,
+        104
+      ],
+      "output_size": [
+        138,
+        136
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Lilamon_Frame_015.png": {
+      "source_size": [
+        24,
+        39
+      ],
+      "output_size": [
+        56,
+        71
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Lilamon_Frame_016.png": {
+      "source_size": [
+        21,
+        39
+      ],
+      "output_size": [
+        53,
+        71
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Lilamon_Frame_017.png": {
+      "source_size": [
+        25,
+        40
+      ],
+      "output_size": [
+        57,
+        72
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Lilamon_Frame_018.png": {
+      "source_size": [
+        26,
+        40
+      ],
+      "output_size": [
+        58,
+        72
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Lilamon_Frame_019.png": {
+      "source_size": [
+        20,
+        36
+      ],
+      "output_size": [
+        52,
+        68
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Lilamon_Primary.png": {
+      "source_size": [
+        64,
+        134
+      ],
+      "output_size": [
+        96,
+        166
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

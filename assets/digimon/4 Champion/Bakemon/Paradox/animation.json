@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Bakemon_Paradox_Idle.png",
+    "walk_left": "Bakemon_Paradox_LLegWalk.png",
+    "walk_right": "Bakemon_Paradox_RLegWalk.png",
+    "attack1": "Bakemon_Paradox_AttackPart1.png",
+    "attack2": "Bakemon_Paradox_AttackPart2.png"
+  },
+  "animations": {
+    "idle": [
+      "Bakemon_Paradox_Idle.png"
+    ],
+    "walk": [
+      "Bakemon_Paradox_Idle.png",
+      "Bakemon_Paradox_LLegWalk.png",
+      "Bakemon_Paradox_Idle.png",
+      "Bakemon_Paradox_RLegWalk.png"
+    ],
+    "attack": [
+      "Bakemon_Paradox_AttackPart1.png",
+      "Bakemon_Paradox_AttackPart2.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 0,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied v1.2.0 Paradox PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained."
+}

@@ -1,0 +1,120 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Syakomon_AttackPart1.png": {
+      "source_size": [
+        484,
+        450
+      ],
+      "output_size": [
+        772,
+        738
+      ],
+      "padding": {
+        "left": 144,
+        "top": 144,
+        "right": 144,
+        "bottom": 144
+      },
+      "effect_pixel_unit": 9,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Syakomon_AttackPart2.png": {
+      "source_size": [
+        546,
+        532
+      ],
+      "output_size": [
+        834,
+        820
+      ],
+      "padding": {
+        "left": 144,
+        "top": 144,
+        "right": 144,
+        "bottom": 144
+      },
+      "effect_pixel_unit": 9,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Syakomon_Extra.png": {
+      "source_size": [
+        546,
+        532
+      ],
+      "output_size": [
+        834,
+        820
+      ],
+      "padding": {
+        "left": 144,
+        "top": 144,
+        "right": 144,
+        "bottom": 144
+      },
+      "effect_pixel_unit": 9,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Syakomon_Idle.png": {
+      "source_size": [
+        524,
+        502
+      ],
+      "output_size": [
+        812,
+        790
+      ],
+      "padding": {
+        "left": 144,
+        "top": 144,
+        "right": 144,
+        "bottom": 144
+      },
+      "effect_pixel_unit": 9,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Syakomon_LLegWalk.png": {
+      "source_size": [
+        600,
+        498
+      ],
+      "output_size": [
+        888,
+        786
+      ],
+      "padding": {
+        "left": 144,
+        "top": 144,
+        "right": 144,
+        "bottom": 144
+      },
+      "effect_pixel_unit": 9,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Syakomon_RLegWalk.png": {
+      "source_size": [
+        600,
+        498
+      ],
+      "output_size": [
+        888,
+        786
+      ],
+      "padding": {
+        "left": 144,
+        "top": 144,
+        "right": 144,
+        "bottom": 144
+      },
+      "effect_pixel_unit": 9,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

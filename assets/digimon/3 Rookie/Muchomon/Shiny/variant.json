@@ -1,0 +1,25 @@
+{
+  "variant_id": "shiny_muchomon",
+  "display_name": "Shiny Muchomon",
+  "base_species": "Muchomon",
+  "stage": "3 Rookie",
+  "status": "ready",
+  "style_profile": "Prismatic Shiny \u2014 Gold Stardust v1",
+  "palette": "Cerulean",
+  "target_hue_degrees": 196.0,
+  "source_sprite_count": 6,
+  "shiny_sprite_count": 6,
+  "animation_alignment": "Exact source canvas dimensions and sprite positions retained",
+  "effects": "Warm-gold silhouette glow; restrained ivory/gold four-point sparkles; deterministic frame twinkle",
+  "sprites": [
+    "Muchomon_AttackPart1.png",
+    "Muchomon_AttackPart2.png",
+    "Muchomon_Extra.png",
+    "Muchomon_Idle.png",
+    "Muchomon_LLegWalk.png",
+    "Muchomon_RLegWalk.png"
+  ],
+  "primary_sprite": "3 Rookie/Muchomon/Shiny/Muchomon_Idle.png",
+  "source_primary": "3 Rookie/Muchomon/Muchomon_Idle.png",
+  "materializable": true
+}

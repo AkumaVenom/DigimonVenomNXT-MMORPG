@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Jyarimon_Idle.png",
+    "walk_left": "Jyarimon_LLegWalk.png",
+    "walk_right": "Jyarimon_RLegWalk.png",
+    "attack1": "Jyarimon_Idle.png",
+    "attack2": "Jyarimon_Idle.png"
+  },
+  "animations": {
+    "idle": [
+      "Jyarimon_Idle.png"
+    ],
+    "walk": [
+      "Jyarimon_Idle.png",
+      "Jyarimon_LLegWalk.png",
+      "Jyarimon_Idle.png",
+      "Jyarimon_RLegWalk.png"
+    ],
+    "attack": [
+      "Jyarimon_Idle.png",
+      "Jyarimon_Idle.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 0,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied v1.2.0 Shiny PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained."
+}

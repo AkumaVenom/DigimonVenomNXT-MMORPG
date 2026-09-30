@@ -1,0 +1,22 @@
+{
+  "variant_id": "shiny_punimon",
+  "display_name": "Shiny Punimon",
+  "base_species": "Punimon",
+  "stage": "1 Fresh",
+  "status": "ready",
+  "style_profile": "Prismatic Shiny \u2014 Gold Stardust v1",
+  "palette": "Prismatic Orchid",
+  "target_hue_degrees": 147.5,
+  "source_sprite_count": 3,
+  "shiny_sprite_count": 3,
+  "animation_alignment": "Exact source canvas dimensions and sprite positions retained",
+  "effects": "Warm-gold silhouette glow; restrained ivory/gold four-point sparkles; deterministic frame twinkle",
+  "sprites": [
+    "Punimon_Idle.png",
+    "Punimon_LLegWalk.png",
+    "Punimon_RLegWalk.png"
+  ],
+  "primary_sprite": "1 Fresh/Punimon/Shiny/Punimon_Idle.png",
+  "source_primary": "1 Fresh/Punimon/Punimon_Idle.png",
+  "materializable": true
+}

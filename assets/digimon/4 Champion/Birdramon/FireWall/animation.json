@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Frames/Birdramon_Frame_001.png",
+    "walk_left": "Frames/Birdramon_Frame_002.png",
+    "walk_right": "Frames/Birdramon_Frame_009.png",
+    "attack1": "Frames/Birdramon_Frame_016.png",
+    "attack2": "Frames/Birdramon_Frame_019.png",
+    "front": "Frames/Birdramon_Frame_001.png"
+  },
+  "animations": {
+    "idle": [
+      "Frames/Birdramon_Frame_001.png",
+      "Frames/Birdramon_Frame_002.png",
+      "Frames/Birdramon_Frame_001.png",
+      "Frames/Birdramon_Frame_009.png"
+    ],
+    "walk": [
+      "Frames/Birdramon_Frame_001.png",
+      "Frames/Birdramon_Frame_002.png",
+      "Frames/Birdramon_Frame_001.png",
+      "Frames/Birdramon_Frame_009.png"
+    ],
+    "attack": [
+      "Frames/Birdramon_Frame_016.png",
+      "Frames/Birdramon_Frame_019.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 19,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "FireWall effects applied to supplied source PNGs; original pose, pixel resolution, frame selections and relative references retained. Canvas padding is documented in sprite_geometry.json."
+}

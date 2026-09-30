@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Tsumemon_Paradox_Idle.png",
+    "walk_left": "Tsumemon_Paradox_LLegWalk.png",
+    "walk_right": "Tsumemon_Paradox_RLegWalk.png",
+    "attack1": "Tsumemon_Paradox_AttackPart1.png",
+    "attack2": "Tsumemon_Paradox_AttackPart2.png"
+  },
+  "animations": {
+    "idle": [
+      "Tsumemon_Paradox_Idle.png"
+    ],
+    "walk": [
+      "Tsumemon_Paradox_Idle.png",
+      "Tsumemon_Paradox_LLegWalk.png",
+      "Tsumemon_Paradox_Idle.png",
+      "Tsumemon_Paradox_RLegWalk.png"
+    ],
+    "attack": [
+      "Tsumemon_Paradox_AttackPart1.png",
+      "Tsumemon_Paradox_AttackPart2.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 0,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied v1.2.0 Paradox PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained."
+}

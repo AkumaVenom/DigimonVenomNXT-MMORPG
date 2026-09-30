@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Frames/Kongoumon_Frame_001.png",
+    "walk_left": "Frames/Kongoumon_Frame_002.png",
+    "walk_right": "Frames/Kongoumon_Frame_004.png",
+    "attack1": "Frames/Kongoumon_Frame_013.png",
+    "attack2": "Frames/Kongoumon_Frame_015.png",
+    "front": "Kongoumon_Primary.png"
+  },
+  "animations": {
+    "idle": [
+      "Frames/Kongoumon_Frame_001.png",
+      "Frames/Kongoumon_Frame_002.png",
+      "Frames/Kongoumon_Frame_001.png",
+      "Frames/Kongoumon_Frame_004.png"
+    ],
+    "walk": [
+      "Frames/Kongoumon_Frame_001.png",
+      "Frames/Kongoumon_Frame_002.png",
+      "Frames/Kongoumon_Frame_001.png",
+      "Frames/Kongoumon_Frame_004.png"
+    ],
+    "attack": [
+      "Frames/Kongoumon_Frame_013.png",
+      "Frames/Kongoumon_Frame_015.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 19,
+  "frame_selection": "v1.0.1 pose assignments retained; supplied v1.1.0 fixed PNGs replace canonical paths; explicit primary/front portrait when supplied",
+  "art_provenance": "User-supplied DigimonFixedSpritesFor_v1.1.0.rar; v1.0.1 source overlay; selected PNG bytes preserved exactly"
+}

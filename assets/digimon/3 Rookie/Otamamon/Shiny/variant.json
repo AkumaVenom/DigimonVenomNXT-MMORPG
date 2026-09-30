@@ -1,0 +1,25 @@
+{
+  "variant_id": "shiny_otamamon",
+  "display_name": "Shiny Otamamon",
+  "base_species": "Otamamon",
+  "stage": "3 Rookie",
+  "status": "ready",
+  "style_profile": "Prismatic Shiny \u2014 Gold Stardust v1",
+  "palette": "Glacier mint",
+  "target_hue_degrees": 171.0,
+  "source_sprite_count": 6,
+  "shiny_sprite_count": 6,
+  "animation_alignment": "Exact source canvas dimensions and sprite positions retained",
+  "effects": "Warm-gold silhouette glow; restrained ivory/gold four-point sparkles; deterministic frame twinkle",
+  "sprites": [
+    "Otamamon_AttackPart1.png",
+    "Otamamon_AttackPart2.png",
+    "Otamamon_Extra.png",
+    "Otamamon_Idle.png",
+    "Otamamon_LLegWalk.png",
+    "Otamamon_RLegWalk.png"
+  ],
+  "primary_sprite": "3 Rookie/Otamamon/Shiny/Otamamon_Idle.png",
+  "source_primary": "3 Rookie/Otamamon/Otamamon_Idle.png",
+  "materializable": true
+}

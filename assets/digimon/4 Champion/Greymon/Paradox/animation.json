@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Greymon_Paradox_Idle.png",
+    "walk_left": "Greymon_Paradox_LLegWalk.png",
+    "walk_right": "Greymon_Paradox_RLegWalk.png",
+    "attack1": "Greymon_Paradox_AttackPart1.png",
+    "attack2": "Greymon_Paradox_AttackPart2.png"
+  },
+  "animations": {
+    "idle": [
+      "Greymon_Paradox_Idle.png"
+    ],
+    "walk": [
+      "Greymon_Paradox_Idle.png",
+      "Greymon_Paradox_LLegWalk.png",
+      "Greymon_Paradox_Idle.png",
+      "Greymon_Paradox_RLegWalk.png"
+    ],
+    "attack": [
+      "Greymon_Paradox_AttackPart1.png",
+      "Greymon_Paradox_AttackPart2.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 0,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied v1.2.0 Paradox PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained."
+}

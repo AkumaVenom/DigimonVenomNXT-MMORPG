@@ -1,0 +1,120 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Gigimon_AttackPart1.png": {
+      "source_size": [
+        482,
+        432
+      ],
+      "output_size": [
+        738,
+        688
+      ],
+      "padding": {
+        "left": 128,
+        "top": 128,
+        "right": 128,
+        "bottom": 128
+      },
+      "effect_pixel_unit": 8,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Gigimon_AttackPart2.png": {
+      "source_size": [
+        508,
+        472
+      ],
+      "output_size": [
+        764,
+        728
+      ],
+      "padding": {
+        "left": 128,
+        "top": 128,
+        "right": 128,
+        "bottom": 128
+      },
+      "effect_pixel_unit": 8,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Gigimon_Extra.png": {
+      "source_size": [
+        482,
+        432
+      ],
+      "output_size": [
+        738,
+        688
+      ],
+      "padding": {
+        "left": 128,
+        "top": 128,
+        "right": 128,
+        "bottom": 128
+      },
+      "effect_pixel_unit": 8,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Gigimon_Idle.png": {
+      "source_size": [
+        486,
+        414
+      ],
+      "output_size": [
+        742,
+        670
+      ],
+      "padding": {
+        "left": 128,
+        "top": 128,
+        "right": 128,
+        "bottom": 128
+      },
+      "effect_pixel_unit": 8,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Gigimon_LLegWalk.png": {
+      "source_size": [
+        508,
+        434
+      ],
+      "output_size": [
+        764,
+        690
+      ],
+      "padding": {
+        "left": 128,
+        "top": 128,
+        "right": 128,
+        "bottom": 128
+      },
+      "effect_pixel_unit": 8,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Gigimon_RLegWalk.png": {
+      "source_size": [
+        508,
+        434
+      ],
+      "output_size": [
+        764,
+        690
+      ],
+      "padding": {
+        "left": 128,
+        "top": 128,
+        "right": 128,
+        "bottom": 128
+      },
+      "effect_pixel_unit": 8,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

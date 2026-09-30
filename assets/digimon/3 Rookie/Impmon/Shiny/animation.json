@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Impmon_Idle.png",
+    "walk_left": "Impmon_LLegWalk.png",
+    "walk_right": "Impmon_RLegWalk.png",
+    "attack1": "Impmon_AttackPart1.png",
+    "attack2": "Impmon_AttackPart2.png"
+  },
+  "animations": {
+    "idle": [
+      "Impmon_Idle.png"
+    ],
+    "walk": [
+      "Impmon_Idle.png",
+      "Impmon_LLegWalk.png",
+      "Impmon_Idle.png",
+      "Impmon_RLegWalk.png"
+    ],
+    "attack": [
+      "Impmon_AttackPart1.png",
+      "Impmon_AttackPart2.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 0,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied v1.2.0 Shiny PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained."
+}

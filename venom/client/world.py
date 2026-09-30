@@ -12,6 +12,8 @@ import math
 
 import pygame
 
+from .varieties import shiny_map_available, firewall_map_available, FIREWALL_ORANGE
+from .destinations import WorldScreen
 from .widgets import BG, CYAN, GOLD, LINE, LIME, MUTED, WHITE, panel, text, wrap
 
 
@@ -229,7 +231,7 @@ class WorldRenderer:
         facing_left = (kind != 'tamer' and str(direction).endswith('left')
                        and bool(app.assets.species.get(ident, {}).get('mirrored_frames')))
         source = (app.assets.tamer(ident, direction, moving, app.now, (64, 80)) if kind == 'tamer'
-                  else app.assets.sprite(ident, (58, 64), 'walk' if moving else 'idle', app.now,
+                  else app.assets.world_sprite(ident, (58, 64), 'walk' if moving else 'idle', app.now,
                                          flip=facing_left))
         top = pos.y - 64 * scale
         destination = pygame.Rect(round(pos.x-16*scale), round(top), max(8, round(32*scale)), max(8, round(64*scale)))
@@ -243,6 +245,9 @@ class WorldRenderer:
                 anchor_x = anchor[0] * sprite.get_width() / max(1, native[0])
                 anchor_y = anchor[1] * sprite.get_height() / max(1, native[1])
                 destination = sprite.get_rect(topleft=(round(pos.x - anchor_x), round(pos.y - anchor_y)))
+            elif kind != 'tamer':
+                foot = app.assets.sprite_anchor(ident, sprite, 'walk' if moving else 'idle', app.now, facing_left)
+                destination = sprite.get_rect(topleft=(round(pos.x-foot[0]), round(pos.y-foot[1])))
             else:
                 destination = sprite.get_rect(midbottom=(round(pos.x), round(pos.y)))
             self._surface.blit(sprite, destination)
@@ -330,6 +335,8 @@ class WorldRenderer:
     @staticmethod
     def _story_color(npc):
         status, role = npc.get('status', ''), npc.get('role', '')
+        if npc.get('hacked'):
+            return GOLD
         return (MUTED if status in ('locked', 'unavailable') else LIME if status in ('complete', 'defeated', 'cleared')
                 else GOLD if role in ('warden', 'champion', 'challenger', 'final') else CYAN)
 
@@ -340,11 +347,14 @@ class WorldRenderer:
                  'champion': 'STORY CHAMPION', 'healer': 'PARTNER RECOVERY', 'guide': 'STORY GUIDE',
                  'mentor': 'STORY MENTOR', 'shop': 'SUPPLIES', 'quest': 'STORY QUEST',
                  'final': 'FINAL CONVERGENCE', 'lab': 'DIGILAB', 'farm': 'DIGIFARM'}.get(role, role.replace('_', ' ').upper())
+        label = npc.get('role_label') or label
         if npc.get('display_species') and role == 'warden':
             label = 'PARADOX GUARDIAN'
         if npc.get('level') and role in ('trainer','warden','final'):
             label += f" · Lv.{npc['level']}"
         marker = 'CLEARED' if status in ('complete', 'defeated', 'cleared') else 'LOCKED' if status in ('locked', 'unavailable') else 'REPORT' if status=='turn_in' else '!'
+        if npc.get('hacked'):
+            marker = 'COMPROMISED'
         return f'{marker}  ·  {label}'
 
     def nearest_story_interaction(self):
@@ -374,6 +384,9 @@ class WorldRenderer:
     def _story_exit_requirement(self, gate):
         if gate.get('unlocked'):
             return 'OPEN PATH  ·  E NEARBY'
+        requirement = gate.get('requirement') or gate.get('locked_reason')
+        if requirement:
+            return 'LOCKED  ·  '+str(requirement)
         badge_id = gate.get('requires_badge')
         badges = (self._story_view() or {}).get('badges', [])
         badge = next((row.get('name', 'DigiBadge') for row in badges if row.get('id') == badge_id), 'Next DigiBadge')
@@ -528,13 +541,16 @@ class WorldRenderer:
     def _draw_hud(self, entry, view):
         app = self.app
         story = self._story_view()
+        shiny_available = story is None and shiny_map_available(entry, app.assets.species)
+        firewall_available = story is None and firewall_map_available(entry, app.assets.species)
         hud = pygame.Rect(view.x + 14, view.y + 14, min(430 if story is not None else 390, view.width - 186),
-                          116 if story is not None else 70)
+                          116 if story is not None else 88+21*int(shiny_available)+21*int(firewall_available))
         panel(app.screen, hud, (9, 19, 31), LINE, 9)
         text(app.screen, app.assets, (story.get('map_name') if story is not None else None) or entry.get('name', 'Digital World'),
              (hud.x + 13, hud.y + 11), 19, WHITE, True, hud.width - 26)
         if story is not None:
-            subtitle = (f"WORLD DS  ·  {story.get('badge_count',0)} / {story.get('badge_total',17)} PARADOX CRESTS"
+            subtitle = (f"GHOSTLINE  ·  {story.get('badge_count',0)} / {story.get('badge_total',30)} FIELDS SECURED"
+                        if story.get('campaign_id') == 'xros_ghostline' else f"WORLD DS  ·  {story.get('badge_count',0)} / {story.get('badge_total',17)} PARADOX CRESTS"
                         if story.get('campaign_id') == 'world_ds_paradox' else story.get('chapter_name', 'STORY MODE'))
             text(app.screen, app.assets, subtitle, (hud.x+13, hud.y+39),
                  11, GOLD, True, hud.width-26)
@@ -546,8 +562,21 @@ class WorldRenderer:
             text(app.screen, app.assets, 'WASD / arrows to explore  ·  E to interact', (hud.x+13, hud.bottom-17),
                  10, CYAN, max_width=hud.width-26)
         else:
-            text(app.screen, app.assets, 'WASD / arrows  ·  Mouse wheel to zoom', (hud.x + 13, hud.y + 42),
+            region = dict(WorldScreen.REGIONS).get(WorldScreen.region_id(entry), 'Digital World')
+            text(app.screen, app.assets, f'{region.upper()}  ·  {WorldScreen.level_label(entry)}',
+                 (hud.x+13, hud.y+38), 10, MUTED, True, hud.width-26)
+            text(app.screen, app.assets, 'WASD / arrows  ·  Mouse wheel to zoom', (hud.x + 13, hud.y + 61),
                  12, CYAN, max_width=hud.width - 26)
+            if shiny_available:
+                text(app.screen, app.assets, ('SHINY MASTERY  1% chance · 5% → 6% on wins' if
+                     app.state.get('permanent_rewards', {}).get('shiny_scan_mastery') else
+                     'SHINY  1% chance · +5% scan per defeat'),
+                     (hud.x+13, hud.y+85), 10, GOLD, True, hud.width-26)
+            if firewall_available:
+                text(app.screen, app.assets, ('FIREWALL MASTERY  0.7% · 5% → 6% on wins' if
+                     app.state.get('permanent_rewards', {}).get('firewall_scan_mastery') else
+                     'FIREWALL  0.7% chance · +5% scan per defeat'),
+                     (hud.x+13, hud.y+85+21*int(shiny_available)), 10, FIREWALL_ORANGE, True, hud.width-26)
         self._draw_minimap(entry, pygame.Rect(view.right - 153, view.y + 15, 136, 88))
         controls = pygame.Rect(view.x + 14, view.bottom - 57, 266, 43)
         panel(app.screen, controls, (9, 19, 31), LINE, 9)

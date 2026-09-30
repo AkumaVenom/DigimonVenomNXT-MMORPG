@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Herissmon_Idle.png": {
+      "source_size": [
+        200,
+        200
+      ],
+      "output_size": [
+        232,
+        232
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Herissmon_LLegWalk.png": {
+      "source_size": [
+        240,
+        226
+      ],
+      "output_size": [
+        272,
+        258
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Herissmon_RLegWalk.png": {
+      "source_size": [
+        240,
+        226
+      ],
+      "output_size": [
+        272,
+        258
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

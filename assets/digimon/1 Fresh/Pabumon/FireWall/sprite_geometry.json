@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Pabumon_Idle.png": {
+      "source_size": [
+        384,
+        384
+      ],
+      "output_size": [
+        480,
+        480
+      ],
+      "padding": {
+        "left": 48,
+        "top": 48,
+        "right": 48,
+        "bottom": 48
+      },
+      "effect_pixel_unit": 3,
+      "effect_style": "smooth_cyber_glow",
+      "particle_fragment": false
+    },
+    "Pabumon_LLegWalk.png": {
+      "source_size": [
+        484,
+        403
+      ],
+      "output_size": [
+        580,
+        499
+      ],
+      "padding": {
+        "left": 48,
+        "top": 48,
+        "right": 48,
+        "bottom": 48
+      },
+      "effect_pixel_unit": 3,
+      "effect_style": "smooth_cyber_glow",
+      "particle_fragment": false
+    },
+    "Pabumon_RLegWalk.png": {
+      "source_size": [
+        398,
+        401
+      ],
+      "output_size": [
+        494,
+        497
+      ],
+      "padding": {
+        "left": 48,
+        "top": 48,
+        "right": 48,
+        "bottom": 48
+      },
+      "effect_pixel_unit": 3,
+      "effect_style": "smooth_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

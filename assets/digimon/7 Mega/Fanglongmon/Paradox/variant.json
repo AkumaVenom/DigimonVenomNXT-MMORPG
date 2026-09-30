@@ -8,16 +8,31 @@
   "boss_eligible": true,
   "primary_sprite": "7 Mega/Fanglongmon/Paradox/Fanglongmon_Paradox_Primary.png",
   "source_primary": "7 Mega/Fanglongmon/Fanglongmon_Idle.png",
-  "source_sprite_count": 3,
-  "paradox_sprite_count": 4,
-  "style_profile": "Cyber Paradox Corruption v1",
+  "source_sprite_count": 9,
+  "paradox_sprite_count": 10,
+  "style_profile": "Cyber Paradox — Fanglongmon reference",
   "style_features": [
-    "violet/black data infection",
-    "cyan/magenta chromatic ghosts",
-    "digital displacement",
-    "angular data-void fractures",
-    "circuit cracks",
-    "transparent neon aura"
+    "original colors and shading retained with lifted highlights",
+    "cyan inner aura and violet outer aura",
+    "cyan and magenta contour splitting",
+    "navy angular glitch bands with diagonal hatching",
+    "stable effects coordinated per species",
+    "source poses, dimensions and pixel placement retained",
+    "transparent PNG output"
   ],
-  "animation_alignment": "exact source canvas dimensions preserved"
+  "animation_alignment": "exact source canvas dimensions and source pixel placement preserved",
+  "transformed_sprite_count": 9,
+  "primary_alias_count": 1,
+  "effect_boundary_policy": "effects remain within each original source canvas; no added padding or changed frame origin",
+  "art_provenance": "Scripted restyling of the user-supplied digimon.rar PNGs, guided by the supplied Fanglongmon Paradox reference; source poses and animation sequencing retained.",
+  "source_archive": "digimon.rar",
+  "style_reference": "Fanglongmon_Paradox_Frame_001(1).png",
+  "primary_is_alias": true,
+  "primary_alias_of": "7 Mega/Fanglongmon/Paradox/Fanglongmon_Paradox_Idle.png",
+  "canvas_dimensions": {
+    "320x320": 1,
+    "298x244": 2,
+    "1254x1254": 6
+  },
+  "animation_manifest": "7 Mega/Fanglongmon/Paradox/animation.json"
 }

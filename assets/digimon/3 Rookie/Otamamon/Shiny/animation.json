@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Otamamon_Idle.png",
+    "walk_left": "Otamamon_LLegWalk.png",
+    "walk_right": "Otamamon_RLegWalk.png",
+    "attack1": "Otamamon_AttackPart1.png",
+    "attack2": "Otamamon_AttackPart2.png"
+  },
+  "animations": {
+    "idle": [
+      "Otamamon_Idle.png"
+    ],
+    "walk": [
+      "Otamamon_Idle.png",
+      "Otamamon_LLegWalk.png",
+      "Otamamon_Idle.png",
+      "Otamamon_RLegWalk.png"
+    ],
+    "attack": [
+      "Otamamon_AttackPart1.png",
+      "Otamamon_AttackPart2.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 0,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied v1.2.0 Shiny PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained."
+}

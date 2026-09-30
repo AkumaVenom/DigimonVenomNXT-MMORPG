@@ -1,0 +1,172 @@
+DIGIMON VENOM NXT — v1.0.1 FIXED-SPRITE PATCH QA OUTPUT
+
+See FIXED_SPRITES_V110_QA.md for test scope and environment limitations.
+Unique passing tests: 866 new sprite checks + 540 baseline checks = 1,406.
+The 1,346 baseline subtests are reported separately. Fresh-overlay reruns are not double-counted.
+
+==============================================================================
+BASELINE ARCHIVE CRC VERIFICATION
+==============================================================================
+{
+  "archive": "DigimonVenomNXT.part01.rar",
+  "volumes": 29,
+  "files": 22459,
+  "crc_verified": 22459,
+  "bytes": 1096199429,
+  "elapsed_seconds": 15.75,
+  "failures": []
+}
+
+==============================================================================
+FIXED ARCHIVE CRC VERIFICATION
+==============================================================================
+{
+  "archive": "DigimonFixedSpritesFor_v1.1.0.rar",
+  "volumes": 1,
+  "files": 711,
+  "crc_verified": 711,
+  "bytes": 6372423,
+  "elapsed_seconds": 0.14
+}
+
+==============================================================================
+FIXED SPRITE / MANIFEST VERIFICATION
+==============================================================================
+Verifying 21,954 asset / catalog SHA-256 records...
+Verified 21,954 files (629.9 MiB).
+{
+  "status": "verified",
+  "source_images": 711,
+  "canonical_replacements": 709,
+  "animation_frames": 584,
+  "primary_images": 125,
+  "species": 133,
+  "duplicate_inputs": 2,
+  "catalog_species": 1004,
+  "gameplay_unchanged": true,
+  "unaffected_species_unchanged": 871,
+  "manifest_files": 21954,
+  "manifest_sha256": "c17833be17032c05443e34ae7770f4ea9379f09af46f327180520b8d6de509dc"
+}
+
+==============================================================================
+SPRITE REGRESSION TESTS
+==============================================================================
+........................................................................ [  8%]
+........................................................................ [ 16%]
+........................................................................ [ 24%]
+........................................................................ [ 33%]
+........................................................................ [ 41%]
+........................................................................ [ 49%]
+........................................................................ [ 58%]
+........................................................................ [ 66%]
+........................................................................ [ 74%]
+........................................................................ [ 83%]
+........................................................................ [ 91%]
+........................................................................ [ 99%]
+..                                                                       [100%]
+=========================== short test summary info ============================
+SKIPPED [1] tests/test_fixed_sprites_runtime.py:11: pygame-ce is required for real SDL sprite rendering checks
+866 passed, 1 skipped in 9.70s
+
+==============================================================================
+BASELINE REGRESSION RUN: SUMMARY
+==============================================================================
+SKIPPED [1] ../../baseline/DigimonVenomNXT/tests/test_portable_mysql_live.py:177: Set VENOM_TEST_MYSQL_RUNTIME for opt-in Linux/MySQL validation
+FAILED tests/test_portable_mysql.py::PortableManagerTests::test_foreign_database_identity_is_rejected_and_connection_closed - ModuleNotFoundError: No module named 'pymysql'
+FAILED tests/test_rival_motion_regression.py::test_native_rival_interpolation_drives_real_walking_frames_on_both_clients - ModuleNotFoundError: No module named 'pygame'
+FAILED tests/test_setup_wizard.py::WizardDesktopTests::test_actual_clipboard_paste_preserves_secrets_and_rejects_multiline - _tkinter.TclError: couldn't connect to display ":0"
+FAILED tests/test_setup_wizard.py::WizardDesktopTests::test_busy_operation_prevents_close_and_duplicate_submissions - _tkinter.TclError: couldn't connect to display ":0"
+FAILED tests/test_setup_wizard.py::WizardDesktopTests::test_closing_after_database_does_not_configure_hosting - _tkinter.TclError: couldn't connect to display ":0"
+FAILED tests/test_setup_wizard.py::WizardDesktopTests::test_error_code_stays_visible_and_retry_keeps_game_settings - _tkinter.TclError: couldn't connect to display ":0"
+FAILED tests/test_setup_wizard.py::WizardDesktopTests::test_fresh_install_needs_no_administrator_credentials - _tkinter.TclError: couldn't connect to display ":0"
+FAILED tests/test_setup_wizard.py::WizardDesktopTests::test_full_flow_uses_one_background_worker_and_saved_actual_username - _tkinter.TclError: couldn't connect to display ":0"
+FAILED tests/test_setup_wizard.py::WizardDesktopTests::test_invalid_game_port_does_not_start_hosting_work - _tkinter.TclError: couldn't connect to display ":0"
+FAILED tests/test_setup_wizard.py::WizardDesktopTests::test_portable_database_page_has_no_external_endpoint_controls - _tkinter.TclError: couldn't connect to display ":0"
+FAILED tests/test_setup_wizard.py::WizardDesktopTests::test_small_window_scrolls_and_primary_controls_remain_visible - _tkinter.TclError: couldn't connect to display ":0"
+FAILED tests/test_world_ds_replication.py::WorldDSReplicationTests::test_in_flight_departed_map_frame_is_rejected_by_native_client_after_travel - ModuleNotFoundError: No module named 'pygame'
+12 failed, 531 passed, 1 skipped, 1346 subtests passed in 199.66s (0:03:19)
+
+==============================================================================
+SAME BLOCKED CASES ON THE UNTOUCHED BASELINE
+==============================================================================
+FAILED tests/test_portable_mysql.py::PortableManagerTests::test_foreign_database_identity_is_rejected_and_connection_closed - ModuleNotFoundError: No module named 'pymysql'
+FAILED tests/test_rival_motion_regression.py::test_native_rival_interpolation_drives_real_walking_frames_on_both_clients - ModuleNotFoundError: No module named 'pygame'
+FAILED tests/test_setup_wizard.py::WizardDesktopTests::test_actual_clipboard_paste_preserves_secrets_and_rejects_multiline - _tkinter.TclError: couldn't connect to display ":0"
+FAILED tests/test_setup_wizard.py::WizardDesktopTests::test_busy_operation_prevents_close_and_duplicate_submissions - _tkinter.TclError: couldn't connect to display ":0"
+FAILED tests/test_setup_wizard.py::WizardDesktopTests::test_closing_after_database_does_not_configure_hosting - _tkinter.TclError: couldn't connect to display ":0"
+FAILED tests/test_setup_wizard.py::WizardDesktopTests::test_error_code_stays_visible_and_retry_keeps_game_settings - _tkinter.TclError: couldn't connect to display ":0"
+FAILED tests/test_setup_wizard.py::WizardDesktopTests::test_fresh_install_needs_no_administrator_credentials - _tkinter.TclError: couldn't connect to display ":0"
+FAILED tests/test_setup_wizard.py::WizardDesktopTests::test_full_flow_uses_one_background_worker_and_saved_actual_username - _tkinter.TclError: couldn't connect to display ":0"
+FAILED tests/test_setup_wizard.py::WizardDesktopTests::test_invalid_game_port_does_not_start_hosting_work - _tkinter.TclError: couldn't connect to display ":0"
+FAILED tests/test_setup_wizard.py::WizardDesktopTests::test_portable_database_page_has_no_external_endpoint_controls - _tkinter.TclError: couldn't connect to display ":0"
+FAILED tests/test_setup_wizard.py::WizardDesktopTests::test_small_window_scrolls_and_primary_controls_remain_visible - _tkinter.TclError: couldn't connect to display ":0"
+FAILED tests/test_world_ds_replication.py::WorldDSReplicationTests::test_in_flight_departed_map_frame_is_rejected_by_native_client_after_travel - ModuleNotFoundError: No module named 'pygame'
+12 failed in 0.87s
+
+==============================================================================
+DISPLAY-DEPENDENT CASES RERUN WITH XVFB
+==============================================================================
+.........                                                                [100%]
+9 passed in 1.55s
+
+==============================================================================
+WHOLE-SOURCE ISOLATION AUDIT
+==============================================================================
+{
+  "original_files": 22459,
+  "unchanged_original_files": 21747,
+  "changed_original_files": 712,
+  "expected_sprite_replacements": 709,
+  "other_changed_original_files": [
+    "data/catalog.json",
+    "data/source_assets.json",
+    "data/asset_manifest.json"
+  ],
+  "missing_original_files": [],
+  "unexpected_changed_original_files": [],
+  "paradox_files_checked": 8609,
+  "paradox_files_byte_identical": 8609,
+  "changed_venom_source_files": [],
+  "elapsed_seconds": 5.71
+}
+
+==============================================================================
+FRESH ORIGINAL BASELINE + OVERLAY VERIFICATION
+==============================================================================
+Verifying 21,954 asset / catalog SHA-256 records...
+Verified 21,954 files (629.9 MiB).
+{
+  "status": "verified",
+  "source_images": 711,
+  "canonical_replacements": 709,
+  "animation_frames": 584,
+  "primary_images": 125,
+  "species": 133,
+  "duplicate_inputs": 2,
+  "catalog_species": 1004,
+  "gameplay_unchanged": true,
+  "unaffected_species_unchanged": 871,
+  "manifest_files": 21954,
+  "manifest_sha256": "c17833be17032c05443e34ae7770f4ea9379f09af46f327180520b8d6de509dc"
+}
+
+==============================================================================
+FRESH OVERLAY SPRITE REGRESSION TESTS
+==============================================================================
+........................................................................ [  8%]
+........................................................................ [ 16%]
+........................................................................ [ 24%]
+........................................................................ [ 33%]
+........................................................................ [ 41%]
+........................................................................ [ 49%]
+........................................................................ [ 58%]
+........................................................................ [ 66%]
+........................................................................ [ 74%]
+........................................................................ [ 83%]
+........................................................................ [ 91%]
+........................................................................ [ 99%]
+..                                                                       [100%]
+=========================== short test summary info ============================
+SKIPPED [1] tests/test_fixed_sprites_runtime.py:11: pygame-ce is required for real SDL sprite rendering checks
+866 passed, 1 skipped in 10.81s

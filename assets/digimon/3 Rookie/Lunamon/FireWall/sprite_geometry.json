@@ -1,0 +1,101 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Lunamon_AttackPart1.png": {
+      "source_size": [
+        618,
+        566
+      ],
+      "output_size": [
+        906,
+        854
+      ],
+      "padding": {
+        "left": 144,
+        "top": 144,
+        "right": 144,
+        "bottom": 144
+      },
+      "effect_pixel_unit": 9,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Lunamon_AttackPart2.png": {
+      "source_size": [
+        620,
+        552
+      ],
+      "output_size": [
+        908,
+        840
+      ],
+      "padding": {
+        "left": 144,
+        "top": 144,
+        "right": 144,
+        "bottom": 144
+      },
+      "effect_pixel_unit": 9,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Lunamon_Idle.png": {
+      "source_size": [
+        602,
+        662
+      ],
+      "output_size": [
+        890,
+        950
+      ],
+      "padding": {
+        "left": 144,
+        "top": 144,
+        "right": 144,
+        "bottom": 144
+      },
+      "effect_pixel_unit": 9,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Lunamon_LLegWalk.png": {
+      "source_size": [
+        644,
+        670
+      ],
+      "output_size": [
+        932,
+        958
+      ],
+      "padding": {
+        "left": 144,
+        "top": 144,
+        "right": 144,
+        "bottom": 144
+      },
+      "effect_pixel_unit": 9,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Lunamon_RLegWalk.png": {
+      "source_size": [
+        644,
+        670
+      ],
+      "output_size": [
+        932,
+        958
+      ],
+      "padding": {
+        "left": 144,
+        "top": 144,
+        "right": 144,
+        "bottom": 144
+      },
+      "effect_pixel_unit": 9,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

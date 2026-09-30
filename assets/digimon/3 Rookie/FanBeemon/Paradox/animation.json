@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "FanBeemon_Paradox_Idle.png",
+    "walk_left": "FanBeemon_Paradox_LLegWalk.png",
+    "walk_right": "FanBeemon_Paradox_RLegWalk.png",
+    "attack1": "FanBeemon_Paradox_Idle.png",
+    "attack2": "FanBeemon_Paradox_Idle.png"
+  },
+  "animations": {
+    "idle": [
+      "FanBeemon_Paradox_Idle.png"
+    ],
+    "walk": [
+      "FanBeemon_Paradox_Idle.png",
+      "FanBeemon_Paradox_LLegWalk.png",
+      "FanBeemon_Paradox_Idle.png",
+      "FanBeemon_Paradox_RLegWalk.png"
+    ],
+    "attack": [
+      "FanBeemon_Paradox_Idle.png",
+      "FanBeemon_Paradox_Idle.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 0,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied v1.2.0 Paradox PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained."
+}

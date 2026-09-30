@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "BaoHuckmon_Idle.png": {
+      "source_size": [
+        800,
+        695
+      ],
+      "output_size": [
+        1024,
+        919
+      ],
+      "padding": {
+        "left": 112,
+        "top": 112,
+        "right": 112,
+        "bottom": 112
+      },
+      "effect_pixel_unit": 7,
+      "effect_style": "smooth_cyber_glow",
+      "particle_fragment": false
+    },
+    "BaoHuckmon_LLegWalk.png": {
+      "source_size": [
+        921,
+        756
+      ],
+      "output_size": [
+        1145,
+        980
+      ],
+      "padding": {
+        "left": 112,
+        "top": 112,
+        "right": 112,
+        "bottom": 112
+      },
+      "effect_pixel_unit": 7,
+      "effect_style": "smooth_cyber_glow",
+      "particle_fragment": false
+    },
+    "BaoHuckmon_RLegWalk.png": {
+      "source_size": [
+        921,
+        756
+      ],
+      "output_size": [
+        1145,
+        980
+      ],
+      "padding": {
+        "left": 112,
+        "top": 112,
+        "right": 112,
+        "bottom": 112
+      },
+      "effect_pixel_unit": 7,
+      "effect_style": "smooth_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

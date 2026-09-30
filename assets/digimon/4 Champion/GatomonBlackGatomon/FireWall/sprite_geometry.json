@@ -1,0 +1,101 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Gatomon_Attack.png": {
+      "source_size": [
+        686,
+        774
+      ],
+      "output_size": [
+        1006,
+        1094
+      ],
+      "padding": {
+        "left": 160,
+        "top": 160,
+        "right": 160,
+        "bottom": 160
+      },
+      "effect_pixel_unit": 10,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Gatomon_GetHit.png": {
+      "source_size": [
+        798,
+        792
+      ],
+      "output_size": [
+        1118,
+        1112
+      ],
+      "padding": {
+        "left": 160,
+        "top": 160,
+        "right": 160,
+        "bottom": 160
+      },
+      "effect_pixel_unit": 10,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Gatomon_Idle.png": {
+      "source_size": [
+        700,
+        794
+      ],
+      "output_size": [
+        1020,
+        1114
+      ],
+      "padding": {
+        "left": 160,
+        "top": 160,
+        "right": 160,
+        "bottom": 160
+      },
+      "effect_pixel_unit": 10,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Gatomon_LLegWalk.png": {
+      "source_size": [
+        748,
+        782
+      ],
+      "output_size": [
+        1068,
+        1102
+      ],
+      "padding": {
+        "left": 160,
+        "top": 160,
+        "right": 160,
+        "bottom": 160
+      },
+      "effect_pixel_unit": 10,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Gatomon_RLegWalk.png": {
+      "source_size": [
+        748,
+        782
+      ],
+      "output_size": [
+        1068,
+        1102
+      ],
+      "padding": {
+        "left": 160,
+        "top": 160,
+        "right": 160,
+        "bottom": 160
+      },
+      "effect_pixel_unit": 10,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

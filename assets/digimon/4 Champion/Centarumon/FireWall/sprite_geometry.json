@@ -1,0 +1,405 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Centarumon_Primary.png": {
+      "source_size": [
+        82,
+        120
+      ],
+      "output_size": [
+        114,
+        152
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Centarumon_Frame_001.png": {
+      "source_size": [
+        82,
+        120
+      ],
+      "output_size": [
+        114,
+        152
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Centarumon_Frame_002.png": {
+      "source_size": [
+        82,
+        120
+      ],
+      "output_size": [
+        114,
+        152
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Centarumon_Frame_003.png": {
+      "source_size": [
+        79,
+        120
+      ],
+      "output_size": [
+        111,
+        152
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Centarumon_Frame_004.png": {
+      "source_size": [
+        88,
+        121
+      ],
+      "output_size": [
+        120,
+        153
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Centarumon_Frame_005.png": {
+      "source_size": [
+        90,
+        115
+      ],
+      "output_size": [
+        122,
+        147
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Centarumon_Frame_006.png": {
+      "source_size": [
+        32,
+        32
+      ],
+      "output_size": [
+        64,
+        64
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Centarumon_Frame_007.png": {
+      "source_size": [
+        24,
+        34
+      ],
+      "output_size": [
+        56,
+        66
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Centarumon_Frame_008.png": {
+      "source_size": [
+        24,
+        34
+      ],
+      "output_size": [
+        56,
+        66
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Centarumon_Frame_009.png": {
+      "source_size": [
+        32,
+        32
+      ],
+      "output_size": [
+        64,
+        64
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Centarumon_Frame_010.png": {
+      "source_size": [
+        28,
+        34
+      ],
+      "output_size": [
+        60,
+        66
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Centarumon_Frame_011.png": {
+      "source_size": [
+        28,
+        34
+      ],
+      "output_size": [
+        60,
+        66
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Centarumon_Frame_012.png": {
+      "source_size": [
+        30,
+        35
+      ],
+      "output_size": [
+        62,
+        67
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Centarumon_Frame_013.png": {
+      "source_size": [
+        29,
+        33
+      ],
+      "output_size": [
+        61,
+        65
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Centarumon_Frame_014.png": {
+      "source_size": [
+        29,
+        33
+      ],
+      "output_size": [
+        61,
+        65
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Centarumon_Frame_015.png": {
+      "source_size": [
+        30,
+        35
+      ],
+      "output_size": [
+        62,
+        67
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Centarumon_Frame_016.png": {
+      "source_size": [
+        30,
+        34
+      ],
+      "output_size": [
+        62,
+        66
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Centarumon_Frame_017.png": {
+      "source_size": [
+        30,
+        34
+      ],
+      "output_size": [
+        62,
+        66
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Centarumon_Frame_018.png": {
+      "source_size": [
+        31,
+        42
+      ],
+      "output_size": [
+        63,
+        74
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Centarumon_Frame_019.png": {
+      "source_size": [
+        30,
+        34
+      ],
+      "output_size": [
+        62,
+        66
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Centarumon_Frame_020.png": {
+      "source_size": [
+        29,
+        33
+      ],
+      "output_size": [
+        61,
+        65
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

@@ -1,0 +1,405 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Frames/Woodmon_Frame_001.png": {
+      "source_size": [
+        97,
+        86
+      ],
+      "output_size": [
+        129,
+        118
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Woodmon_Frame_002.png": {
+      "source_size": [
+        93,
+        86
+      ],
+      "output_size": [
+        125,
+        118
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Woodmon_Frame_003.png": {
+      "source_size": [
+        79,
+        86
+      ],
+      "output_size": [
+        111,
+        118
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Woodmon_Frame_004.png": {
+      "source_size": [
+        91,
+        96
+      ],
+      "output_size": [
+        123,
+        128
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Woodmon_Frame_005.png": {
+      "source_size": [
+        88,
+        87
+      ],
+      "output_size": [
+        120,
+        119
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Woodmon_Frame_006.png": {
+      "source_size": [
+        34,
+        34
+      ],
+      "output_size": [
+        66,
+        66
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Woodmon_Frame_007.png": {
+      "source_size": [
+        34,
+        34
+      ],
+      "output_size": [
+        66,
+        66
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Woodmon_Frame_008.png": {
+      "source_size": [
+        33,
+        34
+      ],
+      "output_size": [
+        65,
+        66
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Woodmon_Frame_009.png": {
+      "source_size": [
+        36,
+        34
+      ],
+      "output_size": [
+        68,
+        66
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Woodmon_Frame_010.png": {
+      "source_size": [
+        36,
+        34
+      ],
+      "output_size": [
+        68,
+        66
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Woodmon_Frame_011.png": {
+      "source_size": [
+        33,
+        34
+      ],
+      "output_size": [
+        65,
+        66
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Woodmon_Frame_012.png": {
+      "source_size": [
+        33,
+        34
+      ],
+      "output_size": [
+        65,
+        66
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Woodmon_Frame_013.png": {
+      "source_size": [
+        33,
+        34
+      ],
+      "output_size": [
+        65,
+        66
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Woodmon_Frame_014.png": {
+      "source_size": [
+        35,
+        33
+      ],
+      "output_size": [
+        67,
+        65
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Woodmon_Frame_015.png": {
+      "source_size": [
+        33,
+        34
+      ],
+      "output_size": [
+        65,
+        66
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Woodmon_Frame_016.png": {
+      "source_size": [
+        33,
+        34
+      ],
+      "output_size": [
+        65,
+        66
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Woodmon_Frame_017.png": {
+      "source_size": [
+        35,
+        33
+      ],
+      "output_size": [
+        67,
+        65
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Woodmon_Frame_018.png": {
+      "source_size": [
+        34,
+        35
+      ],
+      "output_size": [
+        66,
+        67
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Woodmon_Frame_019.png": {
+      "source_size": [
+        33,
+        33
+      ],
+      "output_size": [
+        65,
+        65
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Woodmon_Frame_020.png": {
+      "source_size": [
+        35,
+        31
+      ],
+      "output_size": [
+        67,
+        63
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Woodmon_Primary.png": {
+      "source_size": [
+        97,
+        86
+      ],
+      "output_size": [
+        129,
+        118
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

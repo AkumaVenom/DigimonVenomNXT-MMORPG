@@ -17,7 +17,7 @@ from tools.import_assets import animation_override, species_catalog
 from venom.client.assets import Assets
 
 ROOT = Path(__file__).resolve().parents[1]
-FORMS = ('fanglongmon', 'fanglongmon_paradox')
+FORMS = ('fanglongmon', 'fanglongmon_paradox', 'fanglongmon_shiny')
 
 
 @pytest.fixture
@@ -33,7 +33,20 @@ def test_supplied_png_bytes_and_alpha_preserved():
     record = next(entry for entry in sources if entry.get('kind') == 'fanglongmon_v100')
     assert len(record['frames']) == 12
     assert len({frame['sha256'] for frame in record['frames']}) == 12
-    for frame in record['frames']:
+    # v1.2.0 intentionally supersedes the six historic Paradox images. Original
+    # normal art remains byte exact; both rare forms use their new source record.
+    frames = [f for f in record['frames'] if '/Paradox/' not in f['path']]
+    assert len(frames) == 6
+    varieties = json.loads((ROOT / 'data/varieties_v120.json').read_text('utf-8'))
+    catalog = json.loads((ROOT / 'data/catalog.json').read_text('utf-8'))
+    runtime = {path for s in catalog['species'] if s['id'] in FORMS
+               for path in list(s['sprites'].values()) +
+               [p for seq in s['animations'].values() for p in seq]}
+    # The upload also retains unused small source aliases. Check the six large
+    # labelled poses actually rendered by both new varieties here; the complete
+    # source-byte inventory is checked by test_variety_assets_v120.
+    frames += [f for f in varieties['files'] if f['path'] in runtime]
+    for frame in frames:
         path = ROOT / frame['path']
         assert path.stat().st_size == frame['size']
         assert hashlib.sha256(path.read_bytes()).hexdigest() == frame['sha256']
@@ -47,7 +60,7 @@ def test_full_catalog_reimport_retains_labelled_pose_assignments():
     published = json.loads((ROOT / 'data/catalog.json').read_text('utf-8'))['species']
     expected = {entry['id']: entry for entry in published}
     rebuilt = {entry['id']: entry for entry in species_catalog()}
-    assert len(rebuilt) == len(expected) == 1004
+    assert len(rebuilt) == len(expected) == 2008
     for sid in FORMS:
         for key in ('sprites', 'animations', 'mirrored_frames', 'source_frame_count', 'art_provenance'):
             assert rebuilt[sid][key] == expected[sid][key]

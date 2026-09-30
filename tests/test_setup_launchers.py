@@ -46,6 +46,11 @@ def test_windows_build_includes_whole_wizard_and_current_launchers(tmp_path, mon
                     root / "docs" / "validation" / "release_v100")
     shutil.copytree(SOURCE / "docs" / "validation" / "release_v101",
                     root / "docs" / "validation" / "release_v101")
+    shutil.copytree(SOURCE / "docs" / "validation" / "release_v120",
+                    root / "docs" / "validation" / "release_v120")
+    for release in ("release_v130", "release_v140", "release_v150"):
+        shutil.copytree(SOURCE / "docs" / "validation" / release,
+                        root / "docs" / "validation" / release)
     for name in ("01_SETUP_SERVER.bat", "02_SETUP_MYSQL.bat", "03_SETUP_PUBLIC_HOSTING.bat",
                  "_RUN_SETUP.bat", "_RUN_MYSQL.bat", "START_WORLD_SERVER_CONSOLE.bat", "START_MYSQL.bat", "STOP_MYSQL.bat",
                  "MYSQL_STATUS.bat", "STOP_SERVER.bat", "START_SERVER.bat", "PLAY_DIGIMON_VENOM_NXT.bat"):
@@ -106,8 +111,8 @@ def test_windows_build_includes_whole_wizard_and_current_launchers(tmp_path, mon
     assert not (server / "mysql" / "data").exists()
     assert not (server / "mysql" / "credentials.json").exists()
     assert "01_SETUP_SERVER.bat" in (server / "READ_ME_FIRST.txt").read_text()
-    assert json.loads((server / "build-info.json").read_text())["version"] == "1.0.1"
-    assert json.loads((client / "build-info.json").read_text())["version"] == "1.0.1"
+    assert json.loads((server / "build-info.json").read_text())["version"] == "1.5.0"
+    assert json.loads((client / "build-info.json").read_text())["version"] == "1.5.0"
     assert (client / "docs" / "FPS_FIX.md").is_file()
     assert (client / "docs" / "UI_UPGRADE.md").is_file()
     assert (client / "docs" / "UI2_UPGRADE.md").is_file()
@@ -124,6 +129,12 @@ def test_windows_build_includes_whole_wizard_and_current_launchers(tmp_path, mon
         assert (package / "docs" / "RELEASE_V100.md").is_file()
         assert (package / "docs" / "FANGLONGMON_V100.md").is_file()
         assert (package / "docs" / "ABI_DIGIMEAT_V101.md").is_file()
+        assert (package / "docs" / "SUPER_XROS_WARS_V130.md").is_file()
+        assert (package / "docs" / "GHOSTLINE_V140.md").is_file()
+        assert (package / "docs" / "GHOSTLINE_MAP_LAYOUT.md").is_file()
+        assert (package / "docs" / "FIREWALL_V150.md").is_file()
+        evidence = Path("docs/validation/release_v140/content_review.md")
+        assert (package / evidence).read_bytes() == (root / evidence).read_bytes()
         evidence = Path("docs/validation/release_v101/README.md")
         assert (package / evidence).read_bytes() == (root / evidence).read_bytes()
         evidence = Path("docs/validation/release_v100/README.md")
@@ -138,8 +149,8 @@ def test_windows_build_includes_whole_wizard_and_current_launchers(tmp_path, mon
             assert (package / evidence).read_bytes() == (root / evidence).read_bytes()
         assert (package / "docs" / "WORLD_DS_STORY_VALIDATION_V0110.json").is_file()
         assert (package / "docs" / "ADMIN_CONSOLE_V080.md").is_file()
-    assert "Rebuild and deploy BOTH the client and server for v1.0.1 ABI DigiMeat and its server rules" in (client / "READ_ME_FIRST.txt").read_text()
-    assert "Upgrade steps: docs/ABI_DIGIMEAT_V101.md" in (client / "READ_ME_FIRST.txt").read_text()
+    assert "Rebuild and deploy BOTH the client and server for v1.5.0" in (client / "READ_ME_FIRST.txt").read_text()
+    assert "Upgrade steps: docs/FIREWALL_V150.md" in (client / "READ_ME_FIRST.txt").read_text()
     assert "no overall startup deadline" in (server / "READ_ME_FIRST.txt").read_text()
     assert "Preserve mysql/data, mysql credentials, config and mysql/runtime" in (server / "READ_ME_FIRST.txt").read_text()
     assert "Upgrade steps: docs/RIVAL_MOVEMENT_UPGRADE.md" not in (client / "READ_ME_FIRST.txt").read_text()

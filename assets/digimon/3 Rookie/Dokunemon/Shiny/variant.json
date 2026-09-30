@@ -1,0 +1,25 @@
+{
+  "variant_id": "shiny_dokunemon",
+  "display_name": "Shiny Dokunemon",
+  "base_species": "Dokunemon",
+  "stage": "3 Rookie",
+  "status": "ready",
+  "style_profile": "Prismatic Shiny \u2014 Gold Stardust v1",
+  "palette": "Orchid",
+  "target_hue_degrees": 294.0,
+  "source_sprite_count": 6,
+  "shiny_sprite_count": 6,
+  "animation_alignment": "Exact source canvas dimensions and sprite positions retained",
+  "effects": "Warm-gold silhouette glow; restrained ivory/gold four-point sparkles; deterministic frame twinkle",
+  "sprites": [
+    "Dokunemon_AttackPart1.png",
+    "Dokunemon_AttackPart2.png",
+    "Dokunemon_Extra.png",
+    "Dokunemon_Idle.png",
+    "Dokunemon_LLegWalk.png",
+    "Dokunemon_RLegWalk.png"
+  ],
+  "primary_sprite": "3 Rookie/Dokunemon/Shiny/Dokunemon_Idle.png",
+  "source_primary": "3 Rookie/Dokunemon/Dokunemon_Idle.png",
+  "materializable": true
+}

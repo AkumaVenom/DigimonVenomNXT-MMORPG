@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Lobomon_Idle.png": {
+      "source_size": [
+        166,
+        173
+      ],
+      "output_size": [
+        262,
+        269
+      ],
+      "padding": {
+        "left": 48,
+        "top": 48,
+        "right": 48,
+        "bottom": 48
+      },
+      "effect_pixel_unit": 3,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Lobomon_LLegWalk.png": {
+      "source_size": [
+        188,
+        190
+      ],
+      "output_size": [
+        284,
+        286
+      ],
+      "padding": {
+        "left": 48,
+        "top": 48,
+        "right": 48,
+        "bottom": 48
+      },
+      "effect_pixel_unit": 3,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Lobomon_RLegWalk.png": {
+      "source_size": [
+        188,
+        190
+      ],
+      "output_size": [
+        284,
+        286
+      ],
+      "padding": {
+        "left": 48,
+        "top": 48,
+        "right": 48,
+        "bottom": 48
+      },
+      "effect_pixel_unit": 3,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

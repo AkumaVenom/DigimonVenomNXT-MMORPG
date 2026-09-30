@@ -1,0 +1,405 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Aurumon_Primary.png": {
+      "source_size": [
+        68,
+        86
+      ],
+      "output_size": [
+        100,
+        118
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Aurumon_Frame_001.png": {
+      "source_size": [
+        68,
+        86
+      ],
+      "output_size": [
+        100,
+        118
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Aurumon_Frame_002.png": {
+      "source_size": [
+        65,
+        87
+      ],
+      "output_size": [
+        97,
+        119
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Aurumon_Frame_003.png": {
+      "source_size": [
+        63,
+        87
+      ],
+      "output_size": [
+        95,
+        119
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Aurumon_Frame_004.png": {
+      "source_size": [
+        105,
+        82
+      ],
+      "output_size": [
+        137,
+        114
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Aurumon_Frame_005.png": {
+      "source_size": [
+        95,
+        73
+      ],
+      "output_size": [
+        127,
+        105
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Aurumon_Frame_006.png": {
+      "source_size": [
+        25,
+        34
+      ],
+      "output_size": [
+        57,
+        66
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Aurumon_Frame_007.png": {
+      "source_size": [
+        25,
+        34
+      ],
+      "output_size": [
+        57,
+        66
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Aurumon_Frame_008.png": {
+      "source_size": [
+        27,
+        33
+      ],
+      "output_size": [
+        59,
+        65
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Aurumon_Frame_009.png": {
+      "source_size": [
+        27,
+        31
+      ],
+      "output_size": [
+        59,
+        63
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Aurumon_Frame_010.png": {
+      "source_size": [
+        27,
+        31
+      ],
+      "output_size": [
+        59,
+        63
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Aurumon_Frame_011.png": {
+      "source_size": [
+        27,
+        33
+      ],
+      "output_size": [
+        59,
+        65
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Aurumon_Frame_012.png": {
+      "source_size": [
+        26,
+        34
+      ],
+      "output_size": [
+        58,
+        66
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Aurumon_Frame_013.png": {
+      "source_size": [
+        26,
+        34
+      ],
+      "output_size": [
+        58,
+        66
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Aurumon_Frame_014.png": {
+      "source_size": [
+        27,
+        31
+      ],
+      "output_size": [
+        59,
+        63
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Aurumon_Frame_015.png": {
+      "source_size": [
+        27,
+        31
+      ],
+      "output_size": [
+        59,
+        63
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Aurumon_Frame_016.png": {
+      "source_size": [
+        27,
+        31
+      ],
+      "output_size": [
+        59,
+        63
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Aurumon_Frame_017.png": {
+      "source_size": [
+        27,
+        31
+      ],
+      "output_size": [
+        59,
+        63
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Aurumon_Frame_018.png": {
+      "source_size": [
+        28,
+        31
+      ],
+      "output_size": [
+        60,
+        63
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Aurumon_Frame_019.png": {
+      "source_size": [
+        22,
+        35
+      ],
+      "output_size": [
+        54,
+        67
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Aurumon_Frame_020.png": {
+      "source_size": [
+        26,
+        34
+      ],
+      "output_size": [
+        58,
+        66
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "variant_id": "shiny_renamon",
+  "display_name": "Shiny Renamon",
+  "base_species": "Renamon",
+  "stage": "3 Rookie",
+  "status": "ready",
+  "style_profile": "Prismatic Shiny \u2014 Gold Stardust v1",
+  "palette": "Rose quartz",
+  "target_hue_degrees": 326.0,
+  "source_sprite_count": 6,
+  "shiny_sprite_count": 6,
+  "animation_alignment": "Exact source canvas dimensions and sprite positions retained",
+  "effects": "Warm-gold silhouette glow; restrained ivory/gold four-point sparkles; deterministic frame twinkle",
+  "sprites": [
+    "Renamon_AttackPart1.png",
+    "Renamon_AttackPart2.png",
+    "Renamon_Extra.png",
+    "Renamon_Idle.png",
+    "Renamon_LLegWalk.png",
+    "Renamon_RLegWalk.png"
+  ],
+  "primary_sprite": "3 Rookie/Renamon/Shiny/Renamon_Idle.png",
+  "source_primary": "3 Rookie/Renamon/Renamon_Idle.png",
+  "materializable": true
+}

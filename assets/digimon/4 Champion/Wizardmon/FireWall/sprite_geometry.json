@@ -1,0 +1,386 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Frames/Wizardmon_Frame_001.png": {
+      "source_size": [
+        110,
+        102
+      ],
+      "output_size": [
+        142,
+        134
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Wizardmon_Frame_002.png": {
+      "source_size": [
+        106,
+        102
+      ],
+      "output_size": [
+        138,
+        134
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Wizardmon_Frame_003.png": {
+      "source_size": [
+        108,
+        101
+      ],
+      "output_size": [
+        140,
+        133
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Wizardmon_Frame_004.png": {
+      "source_size": [
+        102,
+        130
+      ],
+      "output_size": [
+        134,
+        162
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Wizardmon_Frame_005.png": {
+      "source_size": [
+        100,
+        109
+      ],
+      "output_size": [
+        132,
+        141
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Wizardmon_Frame_006.png": {
+      "source_size": [
+        31,
+        36
+      ],
+      "output_size": [
+        63,
+        68
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Wizardmon_Frame_007.png": {
+      "source_size": [
+        32,
+        35
+      ],
+      "output_size": [
+        64,
+        67
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Wizardmon_Frame_008.png": {
+      "source_size": [
+        29,
+        34
+      ],
+      "output_size": [
+        61,
+        66
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Wizardmon_Frame_009.png": {
+      "source_size": [
+        33,
+        34
+      ],
+      "output_size": [
+        65,
+        66
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Wizardmon_Frame_010.png": {
+      "source_size": [
+        33,
+        34
+      ],
+      "output_size": [
+        65,
+        66
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Wizardmon_Frame_011.png": {
+      "source_size": [
+        29,
+        34
+      ],
+      "output_size": [
+        61,
+        66
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Wizardmon_Frame_012.png": {
+      "source_size": [
+        27,
+        32
+      ],
+      "output_size": [
+        59,
+        64
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Wizardmon_Frame_013.png": {
+      "source_size": [
+        27,
+        32
+      ],
+      "output_size": [
+        59,
+        64
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Wizardmon_Frame_014.png": {
+      "source_size": [
+        24,
+        33
+      ],
+      "output_size": [
+        56,
+        65
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Wizardmon_Frame_015.png": {
+      "source_size": [
+        24,
+        33
+      ],
+      "output_size": [
+        56,
+        65
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Wizardmon_Frame_016.png": {
+      "source_size": [
+        24,
+        33
+      ],
+      "output_size": [
+        56,
+        65
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Wizardmon_Frame_017.png": {
+      "source_size": [
+        24,
+        33
+      ],
+      "output_size": [
+        56,
+        65
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Wizardmon_Frame_018.png": {
+      "source_size": [
+        26,
+        32
+      ],
+      "output_size": [
+        58,
+        64
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Wizardmon_Frame_019.png": {
+      "source_size": [
+        26,
+        32
+      ],
+      "output_size": [
+        58,
+        64
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Wizardmon_Primary.png": {
+      "source_size": [
+        110,
+        102
+      ],
+      "output_size": [
+        142,
+        134
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

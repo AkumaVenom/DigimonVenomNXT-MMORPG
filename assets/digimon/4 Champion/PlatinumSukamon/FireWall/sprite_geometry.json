@@ -1,0 +1,424 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Frames/PlatinumSukamon_Frame_001.png": {
+      "source_size": [
+        106,
+        95
+      ],
+      "output_size": [
+        138,
+        127
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/PlatinumSukamon_Frame_002.png": {
+      "source_size": [
+        106,
+        92
+      ],
+      "output_size": [
+        138,
+        124
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/PlatinumSukamon_Frame_003.png": {
+      "source_size": [
+        102,
+        85
+      ],
+      "output_size": [
+        134,
+        117
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/PlatinumSukamon_Frame_004.png": {
+      "source_size": [
+        29,
+        34
+      ],
+      "output_size": [
+        61,
+        66
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/PlatinumSukamon_Frame_005.png": {
+      "source_size": [
+        106,
+        91
+      ],
+      "output_size": [
+        138,
+        123
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/PlatinumSukamon_Frame_006.png": {
+      "source_size": [
+        108,
+        80
+      ],
+      "output_size": [
+        140,
+        112
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/PlatinumSukamon_Frame_007.png": {
+      "source_size": [
+        27,
+        26
+      ],
+      "output_size": [
+        59,
+        58
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/PlatinumSukamon_Frame_008.png": {
+      "source_size": [
+        27,
+        26
+      ],
+      "output_size": [
+        59,
+        58
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/PlatinumSukamon_Frame_009.png": {
+      "source_size": [
+        28,
+        25
+      ],
+      "output_size": [
+        60,
+        57
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/PlatinumSukamon_Frame_010.png": {
+      "source_size": [
+        28,
+        25
+      ],
+      "output_size": [
+        60,
+        57
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/PlatinumSukamon_Frame_011.png": {
+      "source_size": [
+        27,
+        25
+      ],
+      "output_size": [
+        59,
+        57
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/PlatinumSukamon_Frame_012.png": {
+      "source_size": [
+        27,
+        25
+      ],
+      "output_size": [
+        59,
+        57
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/PlatinumSukamon_Frame_013.png": {
+      "source_size": [
+        27,
+        27
+      ],
+      "output_size": [
+        59,
+        59
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/PlatinumSukamon_Frame_014.png": {
+      "source_size": [
+        27,
+        27
+      ],
+      "output_size": [
+        59,
+        59
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/PlatinumSukamon_Frame_015.png": {
+      "source_size": [
+        27,
+        26
+      ],
+      "output_size": [
+        59,
+        58
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/PlatinumSukamon_Frame_016.png": {
+      "source_size": [
+        27,
+        26
+      ],
+      "output_size": [
+        59,
+        58
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/PlatinumSukamon_Frame_017.png": {
+      "source_size": [
+        29,
+        24
+      ],
+      "output_size": [
+        61,
+        56
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/PlatinumSukamon_Frame_018.png": {
+      "source_size": [
+        29,
+        24
+      ],
+      "output_size": [
+        61,
+        56
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/PlatinumSukamon_Frame_019.png": {
+      "source_size": [
+        34,
+        36
+      ],
+      "output_size": [
+        66,
+        68
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/PlatinumSukamon_Frame_020.png": {
+      "source_size": [
+        32,
+        29
+      ],
+      "output_size": [
+        64,
+        61
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/PlatinumSukamon_Frame_021.png": {
+      "source_size": [
+        32,
+        25
+      ],
+      "output_size": [
+        64,
+        57
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "PlatinumSukamon_Primary.png": {
+      "source_size": [
+        106,
+        95
+      ],
+      "output_size": [
+        138,
+        127
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Kokomon_Idle.png",
+    "walk_left": "Kokomon_LLegWalk.png",
+    "walk_right": "Kokomon_RLegWalk.png",
+    "attack1": "Kokomon_AttackPart1.png",
+    "attack2": "Kokomon_AttackPart2.png"
+  },
+  "animations": {
+    "idle": [
+      "Kokomon_Idle.png"
+    ],
+    "walk": [
+      "Kokomon_Idle.png",
+      "Kokomon_LLegWalk.png",
+      "Kokomon_Idle.png",
+      "Kokomon_RLegWalk.png"
+    ],
+    "attack": [
+      "Kokomon_AttackPart1.png",
+      "Kokomon_AttackPart2.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 0,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied v1.2.0 Shiny PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained."
+}

@@ -1,0 +1,25 @@
+{
+  "variant_id": "shiny_tsunomon",
+  "display_name": "Shiny Tsunomon",
+  "base_species": "Tsunomon",
+  "stage": "2 In Training",
+  "status": "ready",
+  "style_profile": "Prismatic Shiny \u2014 Gold Stardust v1",
+  "palette": "Jade",
+  "target_hue_degrees": 146.0,
+  "source_sprite_count": 6,
+  "shiny_sprite_count": 6,
+  "animation_alignment": "Exact source canvas dimensions and sprite positions retained",
+  "effects": "Warm-gold silhouette glow; restrained ivory/gold four-point sparkles; deterministic frame twinkle",
+  "sprites": [
+    "Tsunomon_AttackPart1.png",
+    "Tsunomon_AttackPart2.png",
+    "Tsunomon_Extra.png",
+    "Tsunomon_Idle.png",
+    "Tsunomon_LLegWalk.png",
+    "Tsunomon_RLegWalk.png"
+  ],
+  "primary_sprite": "2 In Training/Tsunomon/Shiny/Tsunomon_Idle.png",
+  "source_primary": "2 In Training/Tsunomon/Tsunomon_Idle.png",
+  "materializable": true
+}

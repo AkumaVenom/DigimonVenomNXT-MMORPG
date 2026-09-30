@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Dorugamon_Idle.png",
+    "walk_left": "Dorugamon_LLegWalk.png",
+    "walk_right": "Dorugamon_RLegWalk.png",
+    "attack1": "Dorugamon_Attack.png",
+    "attack2": "Dorugamon_Attack.png"
+  },
+  "animations": {
+    "idle": [
+      "Dorugamon_Idle.png"
+    ],
+    "walk": [
+      "Dorugamon_Idle.png",
+      "Dorugamon_LLegWalk.png",
+      "Dorugamon_Idle.png",
+      "Dorugamon_RLegWalk.png"
+    ],
+    "attack": [
+      "Dorugamon_Attack.png",
+      "Dorugamon_Attack.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 0,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied v1.2.0 Shiny PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained."
+}

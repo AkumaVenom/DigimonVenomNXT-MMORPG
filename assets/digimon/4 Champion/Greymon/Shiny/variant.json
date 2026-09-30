@@ -1,0 +1,25 @@
+{
+  "variant_id": "shiny_greymon",
+  "display_name": "Shiny Greymon",
+  "base_species": "Greymon",
+  "stage": "4 Champion",
+  "status": "ready",
+  "style_profile": "Prismatic Shiny \u2014 Gold Stardust v1",
+  "palette": "Royal sapphire",
+  "target_hue_degrees": 218.0,
+  "source_sprite_count": 6,
+  "shiny_sprite_count": 6,
+  "animation_alignment": "Exact source canvas dimensions and sprite positions retained",
+  "effects": "Warm-gold silhouette glow; restrained ivory/gold four-point sparkles; deterministic frame twinkle",
+  "sprites": [
+    "Greymon_AttackPart1.png",
+    "Greymon_AttackPart2.png",
+    "Greymon_Extra.png",
+    "Greymon_Idle.png",
+    "Greymon_LLegWalk.png",
+    "Greymon_RLegWalk.png"
+  ],
+  "primary_sprite": "4 Champion/Greymon/Shiny/Greymon_Idle.png",
+  "source_primary": "4 Champion/Greymon/Greymon_Idle.png",
+  "materializable": true
+}

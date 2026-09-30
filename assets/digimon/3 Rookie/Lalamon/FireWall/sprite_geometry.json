@@ -1,0 +1,101 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Lalamon_AttackPart1.png": {
+      "source_size": [
+        356,
+        334
+      ],
+      "output_size": [
+        580,
+        558
+      ],
+      "padding": {
+        "left": 112,
+        "top": 112,
+        "right": 112,
+        "bottom": 112
+      },
+      "effect_pixel_unit": 7,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Lalamon_AttackPart2.png": {
+      "source_size": [
+        492,
+        442
+      ],
+      "output_size": [
+        716,
+        666
+      ],
+      "padding": {
+        "left": 112,
+        "top": 112,
+        "right": 112,
+        "bottom": 112
+      },
+      "effect_pixel_unit": 7,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Lalamon_Idle.png": {
+      "source_size": [
+        364,
+        506
+      ],
+      "output_size": [
+        588,
+        730
+      ],
+      "padding": {
+        "left": 112,
+        "top": 112,
+        "right": 112,
+        "bottom": 112
+      },
+      "effect_pixel_unit": 7,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Lalamon_LLegWalk.png": {
+      "source_size": [
+        372,
+        464
+      ],
+      "output_size": [
+        596,
+        688
+      ],
+      "padding": {
+        "left": 112,
+        "top": 112,
+        "right": 112,
+        "bottom": 112
+      },
+      "effect_pixel_unit": 7,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Lalamon_RLegWalk.png": {
+      "source_size": [
+        372,
+        464
+      ],
+      "output_size": [
+        596,
+        688
+      ],
+      "padding": {
+        "left": 112,
+        "top": 112,
+        "right": 112,
+        "bottom": 112
+      },
+      "effect_pixel_unit": 7,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

@@ -1,0 +1,405 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "DaemonMantled_Primary.png": {
+      "source_size": [
+        82,
+        121
+      ],
+      "output_size": [
+        114,
+        153
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/DaemonMantled_Frame_001.png": {
+      "source_size": [
+        82,
+        121
+      ],
+      "output_size": [
+        114,
+        153
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/DaemonMantled_Frame_002.png": {
+      "source_size": [
+        75,
+        120
+      ],
+      "output_size": [
+        107,
+        152
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/DaemonMantled_Frame_003.png": {
+      "source_size": [
+        68,
+        119
+      ],
+      "output_size": [
+        100,
+        151
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/DaemonMantled_Frame_004.png": {
+      "source_size": [
+        90,
+        120
+      ],
+      "output_size": [
+        122,
+        152
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/DaemonMantled_Frame_005.png": {
+      "source_size": [
+        63,
+        118
+      ],
+      "output_size": [
+        95,
+        150
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/DaemonMantled_Frame_006.png": {
+      "source_size": [
+        35,
+        43
+      ],
+      "output_size": [
+        67,
+        75
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/DaemonMantled_Frame_007.png": {
+      "source_size": [
+        35,
+        43
+      ],
+      "output_size": [
+        67,
+        75
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/DaemonMantled_Frame_008.png": {
+      "source_size": [
+        32,
+        43
+      ],
+      "output_size": [
+        64,
+        75
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/DaemonMantled_Frame_009.png": {
+      "source_size": [
+        36,
+        42
+      ],
+      "output_size": [
+        68,
+        74
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/DaemonMantled_Frame_010.png": {
+      "source_size": [
+        36,
+        42
+      ],
+      "output_size": [
+        68,
+        74
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/DaemonMantled_Frame_011.png": {
+      "source_size": [
+        32,
+        43
+      ],
+      "output_size": [
+        64,
+        75
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/DaemonMantled_Frame_012.png": {
+      "source_size": [
+        35,
+        43
+      ],
+      "output_size": [
+        67,
+        75
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/DaemonMantled_Frame_013.png": {
+      "source_size": [
+        35,
+        43
+      ],
+      "output_size": [
+        67,
+        75
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/DaemonMantled_Frame_014.png": {
+      "source_size": [
+        33,
+        42
+      ],
+      "output_size": [
+        65,
+        74
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/DaemonMantled_Frame_015.png": {
+      "source_size": [
+        35,
+        43
+      ],
+      "output_size": [
+        67,
+        75
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/DaemonMantled_Frame_016.png": {
+      "source_size": [
+        35,
+        43
+      ],
+      "output_size": [
+        67,
+        75
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/DaemonMantled_Frame_017.png": {
+      "source_size": [
+        33,
+        42
+      ],
+      "output_size": [
+        65,
+        74
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/DaemonMantled_Frame_018.png": {
+      "source_size": [
+        36,
+        48
+      ],
+      "output_size": [
+        68,
+        80
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/DaemonMantled_Frame_019.png": {
+      "source_size": [
+        35,
+        43
+      ],
+      "output_size": [
+        67,
+        75
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/DaemonMantled_Frame_020.png": {
+      "source_size": [
+        33,
+        40
+      ],
+      "output_size": [
+        65,
+        72
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

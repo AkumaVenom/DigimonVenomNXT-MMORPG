@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Punimon_Idle.png": {
+      "source_size": [
+        320,
+        320
+      ],
+      "output_size": [
+        384,
+        384
+      ],
+      "padding": {
+        "left": 32,
+        "top": 32,
+        "right": 32,
+        "bottom": 32
+      },
+      "effect_pixel_unit": 2,
+      "effect_style": "smooth_cyber_glow",
+      "particle_fragment": false
+    },
+    "Punimon_LLegWalk.png": {
+      "source_size": [
+        284,
+        283
+      ],
+      "output_size": [
+        348,
+        347
+      ],
+      "padding": {
+        "left": 32,
+        "top": 32,
+        "right": 32,
+        "bottom": 32
+      },
+      "effect_pixel_unit": 2,
+      "effect_style": "smooth_cyber_glow",
+      "particle_fragment": false
+    },
+    "Punimon_RLegWalk.png": {
+      "source_size": [
+        284,
+        283
+      ],
+      "output_size": [
+        348,
+        347
+      ],
+      "padding": {
+        "left": 32,
+        "top": 32,
+        "right": 32,
+        "bottom": 32
+      },
+      "effect_pixel_unit": 2,
+      "effect_style": "smooth_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

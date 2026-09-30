@@ -1,0 +1,443 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Frames/Knightmon_Frame_001.png": {
+      "source_size": [
+        84,
+        129
+      ],
+      "output_size": [
+        116,
+        161
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Knightmon_Frame_002.png": {
+      "source_size": [
+        86,
+        130
+      ],
+      "output_size": [
+        118,
+        162
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Knightmon_Frame_003.png": {
+      "source_size": [
+        85,
+        131
+      ],
+      "output_size": [
+        117,
+        163
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Knightmon_Frame_004.png": {
+      "source_size": [
+        94,
+        164
+      ],
+      "output_size": [
+        126,
+        196
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Knightmon_Frame_005.png": {
+      "source_size": [
+        87,
+        163
+      ],
+      "output_size": [
+        119,
+        195
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Knightmon_Frame_006.png": {
+      "source_size": [
+        29,
+        44
+      ],
+      "output_size": [
+        61,
+        76
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Knightmon_Frame_007.png": {
+      "source_size": [
+        29,
+        44
+      ],
+      "output_size": [
+        61,
+        76
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Knightmon_Frame_008.png": {
+      "source_size": [
+        32,
+        43
+      ],
+      "output_size": [
+        64,
+        75
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Knightmon_Frame_009.png": {
+      "source_size": [
+        31,
+        43
+      ],
+      "output_size": [
+        63,
+        75
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Knightmon_Frame_010.png": {
+      "source_size": [
+        31,
+        43
+      ],
+      "output_size": [
+        63,
+        75
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Knightmon_Frame_011.png": {
+      "source_size": [
+        32,
+        43
+      ],
+      "output_size": [
+        64,
+        75
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Knightmon_Frame_012.png": {
+      "source_size": [
+        30,
+        44
+      ],
+      "output_size": [
+        62,
+        76
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Knightmon_Frame_013.png": {
+      "source_size": [
+        30,
+        44
+      ],
+      "output_size": [
+        62,
+        76
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Knightmon_Frame_014.png": {
+      "source_size": [
+        29,
+        43
+      ],
+      "output_size": [
+        61,
+        75
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Knightmon_Frame_015.png": {
+      "source_size": [
+        33,
+        43
+      ],
+      "output_size": [
+        65,
+        75
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Knightmon_Frame_016.png": {
+      "source_size": [
+        33,
+        43
+      ],
+      "output_size": [
+        65,
+        75
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Knightmon_Frame_017.png": {
+      "source_size": [
+        29,
+        43
+      ],
+      "output_size": [
+        61,
+        75
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Knightmon_Frame_018.png": {
+      "source_size": [
+        29,
+        42
+      ],
+      "output_size": [
+        61,
+        74
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Knightmon_Frame_019.png": {
+      "source_size": [
+        29,
+        40
+      ],
+      "output_size": [
+        61,
+        72
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Knightmon_Frame_020.png": {
+      "source_size": [
+        29,
+        38
+      ],
+      "output_size": [
+        61,
+        70
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Knightmon_Frame_021.png": {
+      "source_size": [
+        30,
+        17
+      ],
+      "output_size": [
+        62,
+        49
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Knightmon_Frame_022.png": {
+      "source_size": [
+        55,
+        17
+      ],
+      "output_size": [
+        87,
+        49
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Knightmon_Primary.png": {
+      "source_size": [
+        84,
+        129
+      ],
+      "output_size": [
+        116,
+        161
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Frames/Parrotmon_Paradox_Frame_001.png",
+    "walk_left": "Frames/Parrotmon_Paradox_Frame_002.png",
+    "walk_right": "Frames/Parrotmon_Paradox_Frame_003.png",
+    "attack1": "Frames/Parrotmon_Paradox_Frame_006.png",
+    "attack2": "Frames/Parrotmon_Paradox_Frame_008.png"
+  },
+  "animations": {
+    "idle": [
+      "Frames/Parrotmon_Paradox_Frame_001.png",
+      "Frames/Parrotmon_Paradox_Frame_002.png",
+      "Frames/Parrotmon_Paradox_Frame_001.png",
+      "Frames/Parrotmon_Paradox_Frame_003.png"
+    ],
+    "walk": [
+      "Frames/Parrotmon_Paradox_Frame_001.png",
+      "Frames/Parrotmon_Paradox_Frame_002.png",
+      "Frames/Parrotmon_Paradox_Frame_001.png",
+      "Frames/Parrotmon_Paradox_Frame_003.png"
+    ],
+    "attack": [
+      "Frames/Parrotmon_Paradox_Frame_006.png",
+      "Frames/Parrotmon_Paradox_Frame_008.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 19,
+  "frame_selection": "v1.0.1 pose assignments retained; supplied v1.1.0 fixed PNGs replace canonical paths; explicit primary/front portrait when supplied",
+  "art_provenance": "User-supplied v1.2.0 Paradox PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained.",
+  "source_art_provenance": "User-supplied DigimonFixedSpritesFor_v1.1.0.rar; v1.0.1 source overlay; selected PNG bytes preserved exactly",
+  "source_frame_selection": "v1.0.1 pose assignments retained; supplied v1.1.0 fixed PNGs replace canonical paths; explicit primary/front portrait when supplied",
+  "paradox_style_profile": "Cyber Paradox — Fanglongmon reference"
+}

@@ -1,0 +1,101 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Grizzlymon_AttackPart1.png": {
+      "source_size": [
+        544,
+        622
+      ],
+      "output_size": [
+        704,
+        782
+      ],
+      "padding": {
+        "left": 80,
+        "top": 80,
+        "right": 80,
+        "bottom": 80
+      },
+      "effect_pixel_unit": 5,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Grizzlymon_AttackPart2.png": {
+      "source_size": [
+        664,
+        520
+      ],
+      "output_size": [
+        824,
+        680
+      ],
+      "padding": {
+        "left": 80,
+        "top": 80,
+        "right": 80,
+        "bottom": 80
+      },
+      "effect_pixel_unit": 5,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Grizzlymon_Idle.png": {
+      "source_size": [
+        602,
+        546
+      ],
+      "output_size": [
+        762,
+        706
+      ],
+      "padding": {
+        "left": 80,
+        "top": 80,
+        "right": 80,
+        "bottom": 80
+      },
+      "effect_pixel_unit": 5,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Grizzlymon_LLegWalk.png": {
+      "source_size": [
+        596,
+        554
+      ],
+      "output_size": [
+        756,
+        714
+      ],
+      "padding": {
+        "left": 80,
+        "top": 80,
+        "right": 80,
+        "bottom": 80
+      },
+      "effect_pixel_unit": 5,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Grizzlymon_RLegWalk.png": {
+      "source_size": [
+        596,
+        554
+      ],
+      "output_size": [
+        756,
+        714
+      ],
+      "padding": {
+        "left": 80,
+        "top": 80,
+        "right": 80,
+        "bottom": 80
+      },
+      "effect_pixel_unit": 5,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

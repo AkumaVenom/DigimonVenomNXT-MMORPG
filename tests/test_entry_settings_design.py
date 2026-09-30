@@ -87,7 +87,7 @@ class EntrySettingsDesignTests(unittest.TestCase):
         self.app.auth_tab = 'register'
         self.app.open_picker('starter')
         expected = next(s for s in self.app.assets.species.values()
-                        if s.get('stage') == 'rookie' and not s.get('paradox')
+                        if s.get('stage') == 'rookie' and not s.get('paradox') and not s.get('shiny')
                         and s['id'] != self.app.starter)
         self.app.ui.values['search'] = expected['name']
         self.render()

@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Motimon_Idle.png",
+    "walk_left": "Motimon_LLegWalk.png",
+    "walk_right": "Motimon_RLegWalk.png",
+    "attack1": "Motimon_Idle.png",
+    "attack2": "Motimon_Idle.png"
+  },
+  "animations": {
+    "idle": [
+      "Motimon_Idle.png"
+    ],
+    "walk": [
+      "Motimon_Idle.png",
+      "Motimon_LLegWalk.png",
+      "Motimon_Idle.png",
+      "Motimon_RLegWalk.png"
+    ],
+    "attack": [
+      "Motimon_Idle.png",
+      "Motimon_Idle.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 0,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied v1.2.0 Shiny PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained."
+}

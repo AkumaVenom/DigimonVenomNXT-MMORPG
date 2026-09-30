@@ -1,0 +1,405 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Frames/Tankmon_Frame_001.png": {
+      "source_size": [
+        106,
+        90
+      ],
+      "output_size": [
+        138,
+        122
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Tankmon_Frame_002.png": {
+      "source_size": [
+        108,
+        90
+      ],
+      "output_size": [
+        140,
+        122
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Tankmon_Frame_003.png": {
+      "source_size": [
+        105,
+        90
+      ],
+      "output_size": [
+        137,
+        122
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Tankmon_Frame_004.png": {
+      "source_size": [
+        122,
+        129
+      ],
+      "output_size": [
+        154,
+        161
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Tankmon_Frame_005.png": {
+      "source_size": [
+        110,
+        101
+      ],
+      "output_size": [
+        142,
+        133
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Tankmon_Frame_006.png": {
+      "source_size": [
+        34,
+        34
+      ],
+      "output_size": [
+        66,
+        66
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Tankmon_Frame_007.png": {
+      "source_size": [
+        34,
+        34
+      ],
+      "output_size": [
+        66,
+        66
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Tankmon_Frame_008.png": {
+      "source_size": [
+        34,
+        33
+      ],
+      "output_size": [
+        66,
+        65
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Tankmon_Frame_009.png": {
+      "source_size": [
+        34,
+        33
+      ],
+      "output_size": [
+        66,
+        65
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Tankmon_Frame_010.png": {
+      "source_size": [
+        34,
+        33
+      ],
+      "output_size": [
+        66,
+        65
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Tankmon_Frame_011.png": {
+      "source_size": [
+        34,
+        33
+      ],
+      "output_size": [
+        66,
+        65
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Tankmon_Frame_012.png": {
+      "source_size": [
+        34,
+        34
+      ],
+      "output_size": [
+        66,
+        66
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Tankmon_Frame_013.png": {
+      "source_size": [
+        34,
+        34
+      ],
+      "output_size": [
+        66,
+        66
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Tankmon_Frame_014.png": {
+      "source_size": [
+        34,
+        34
+      ],
+      "output_size": [
+        66,
+        66
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Tankmon_Frame_015.png": {
+      "source_size": [
+        34,
+        34
+      ],
+      "output_size": [
+        66,
+        66
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Tankmon_Frame_016.png": {
+      "source_size": [
+        34,
+        34
+      ],
+      "output_size": [
+        66,
+        66
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Tankmon_Frame_017.png": {
+      "source_size": [
+        34,
+        34
+      ],
+      "output_size": [
+        66,
+        66
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Tankmon_Frame_018.png": {
+      "source_size": [
+        35,
+        37
+      ],
+      "output_size": [
+        67,
+        69
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Tankmon_Frame_019.png": {
+      "source_size": [
+        35,
+        34
+      ],
+      "output_size": [
+        67,
+        66
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Tankmon_Frame_020.png": {
+      "source_size": [
+        33,
+        31
+      ],
+      "output_size": [
+        65,
+        63
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Tankmon_Primary.png": {
+      "source_size": [
+        106,
+        90
+      ],
+      "output_size": [
+        138,
+        122
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

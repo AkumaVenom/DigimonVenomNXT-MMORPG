@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Yuramon_Paradox_Idle.png",
+    "walk_left": "Yuramon_Paradox_LLegWalk.png",
+    "walk_right": "Yuramon_Paradox_RLegWalk.png",
+    "attack1": "Yuramon_Paradox_Idle.png",
+    "attack2": "Yuramon_Paradox_Idle.png"
+  },
+  "animations": {
+    "idle": [
+      "Yuramon_Paradox_Idle.png"
+    ],
+    "walk": [
+      "Yuramon_Paradox_Idle.png",
+      "Yuramon_Paradox_LLegWalk.png",
+      "Yuramon_Paradox_Idle.png",
+      "Yuramon_Paradox_RLegWalk.png"
+    ],
+    "attack": [
+      "Yuramon_Paradox_Idle.png",
+      "Yuramon_Paradox_Idle.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 0,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied v1.2.0 Paradox PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained."
+}

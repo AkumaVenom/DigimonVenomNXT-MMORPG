@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Bommon_Paradox_Idle.png",
+    "walk_left": "Bommon_Paradox_LLegWalk.png",
+    "walk_right": "Bommon_Paradox_RLegWalk.png",
+    "attack1": "Bommon_Paradox_AttackPart1.png",
+    "attack2": "Bommon_Paradox_AttackPart2.png"
+  },
+  "animations": {
+    "idle": [
+      "Bommon_Paradox_Idle.png"
+    ],
+    "walk": [
+      "Bommon_Paradox_Idle.png",
+      "Bommon_Paradox_LLegWalk.png",
+      "Bommon_Paradox_Idle.png",
+      "Bommon_Paradox_RLegWalk.png"
+    ],
+    "attack": [
+      "Bommon_Paradox_AttackPart1.png",
+      "Bommon_Paradox_AttackPart2.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 0,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied v1.2.0 Paradox PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained."
+}

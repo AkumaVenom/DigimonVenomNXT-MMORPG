@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Arresterdramon_Idle.png",
+    "walk_left": "Arresterdramon_LLegWalk.png",
+    "walk_right": "Arresterdramon_RLegWalk.png",
+    "attack1": "Arresterdramon_Idle.png",
+    "attack2": "Arresterdramon_Idle.png"
+  },
+  "animations": {
+    "idle": [
+      "Arresterdramon_Idle.png"
+    ],
+    "walk": [
+      "Arresterdramon_Idle.png",
+      "Arresterdramon_LLegWalk.png",
+      "Arresterdramon_Idle.png",
+      "Arresterdramon_RLegWalk.png"
+    ],
+    "attack": [
+      "Arresterdramon_Idle.png",
+      "Arresterdramon_Idle.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 0,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied v1.2.0 Shiny PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained."
+}

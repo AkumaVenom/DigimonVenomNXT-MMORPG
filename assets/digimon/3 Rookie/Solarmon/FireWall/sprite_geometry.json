@@ -1,0 +1,120 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Solarmon_AttackPart1.png": {
+      "source_size": [
+        562,
+        460
+      ],
+      "output_size": [
+        850,
+        748
+      ],
+      "padding": {
+        "left": 144,
+        "top": 144,
+        "right": 144,
+        "bottom": 144
+      },
+      "effect_pixel_unit": 9,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Solarmon_AttackPart2.png": {
+      "source_size": [
+        808,
+        572
+      ],
+      "output_size": [
+        1096,
+        860
+      ],
+      "padding": {
+        "left": 144,
+        "top": 144,
+        "right": 144,
+        "bottom": 144
+      },
+      "effect_pixel_unit": 9,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Solarmon_Extra.png": {
+      "source_size": [
+        808,
+        572
+      ],
+      "output_size": [
+        1096,
+        860
+      ],
+      "padding": {
+        "left": 144,
+        "top": 144,
+        "right": 144,
+        "bottom": 144
+      },
+      "effect_pixel_unit": 9,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Solarmon_Idle.png": {
+      "source_size": [
+        692,
+        462
+      ],
+      "output_size": [
+        980,
+        750
+      ],
+      "padding": {
+        "left": 144,
+        "top": 144,
+        "right": 144,
+        "bottom": 144
+      },
+      "effect_pixel_unit": 9,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Solarmon_LLegWalk.png": {
+      "source_size": [
+        646,
+        446
+      ],
+      "output_size": [
+        934,
+        734
+      ],
+      "padding": {
+        "left": 144,
+        "top": 144,
+        "right": 144,
+        "bottom": 144
+      },
+      "effect_pixel_unit": 9,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Solarmon_RLegWalk.png": {
+      "source_size": [
+        646,
+        446
+      ],
+      "output_size": [
+        934,
+        734
+      ],
+      "padding": {
+        "left": 144,
+        "top": 144,
+        "right": 144,
+        "bottom": 144
+      },
+      "effect_pixel_unit": 9,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

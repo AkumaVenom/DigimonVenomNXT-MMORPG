@@ -1,0 +1,500 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Frames/Lillymon_Frame_001.png": {
+      "source_size": [
+        77,
+        20
+      ],
+      "output_size": [
+        109,
+        52
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Lillymon_Frame_002.png": {
+      "source_size": [
+        68,
+        100
+      ],
+      "output_size": [
+        100,
+        132
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Lillymon_Frame_003.png": {
+      "source_size": [
+        67,
+        100
+      ],
+      "output_size": [
+        99,
+        132
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Lillymon_Frame_004.png": {
+      "source_size": [
+        65,
+        100
+      ],
+      "output_size": [
+        97,
+        132
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Lillymon_Frame_005.png": {
+      "source_size": [
+        25,
+        35
+      ],
+      "output_size": [
+        57,
+        67
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Lillymon_Frame_006.png": {
+      "source_size": [
+        25,
+        35
+      ],
+      "output_size": [
+        57,
+        67
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Lillymon_Frame_007.png": {
+      "source_size": [
+        26,
+        34
+      ],
+      "output_size": [
+        58,
+        66
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Lillymon_Frame_008.png": {
+      "source_size": [
+        26,
+        34
+      ],
+      "output_size": [
+        58,
+        66
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Lillymon_Frame_009.png": {
+      "source_size": [
+        23,
+        33
+      ],
+      "output_size": [
+        55,
+        65
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Lillymon_Frame_010.png": {
+      "source_size": [
+        23,
+        33
+      ],
+      "output_size": [
+        55,
+        65
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Lillymon_Frame_011.png": {
+      "source_size": [
+        24,
+        34
+      ],
+      "output_size": [
+        56,
+        66
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Lillymon_Frame_012.png": {
+      "source_size": [
+        24,
+        34
+      ],
+      "output_size": [
+        56,
+        66
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Lillymon_Frame_013.png": {
+      "source_size": [
+        23,
+        33
+      ],
+      "output_size": [
+        55,
+        65
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Lillymon_Frame_014.png": {
+      "source_size": [
+        25,
+        33
+      ],
+      "output_size": [
+        57,
+        65
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Lillymon_Frame_015.png": {
+      "source_size": [
+        25,
+        33
+      ],
+      "output_size": [
+        57,
+        65
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Lillymon_Frame_016.png": {
+      "source_size": [
+        23,
+        33
+      ],
+      "output_size": [
+        55,
+        65
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Lillymon_Frame_017.png": {
+      "source_size": [
+        29,
+        36
+      ],
+      "output_size": [
+        61,
+        68
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Lillymon_Frame_018.png": {
+      "source_size": [
+        18,
+        30
+      ],
+      "output_size": [
+        50,
+        62
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Lillymon_Frame_019.png": {
+      "source_size": [
+        11,
+        12
+      ],
+      "output_size": [
+        19,
+        20
+      ],
+      "padding": {
+        "left": 4,
+        "top": 4,
+        "right": 4,
+        "bottom": 4
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": true
+    },
+    "Frames/Lillymon_Frame_020.png": {
+      "source_size": [
+        11,
+        12
+      ],
+      "output_size": [
+        19,
+        20
+      ],
+      "padding": {
+        "left": 4,
+        "top": 4,
+        "right": 4,
+        "bottom": 4
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": true
+    },
+    "Frames/Lillymon_Frame_021.png": {
+      "source_size": [
+        8,
+        12
+      ],
+      "output_size": [
+        16,
+        20
+      ],
+      "padding": {
+        "left": 4,
+        "top": 4,
+        "right": 4,
+        "bottom": 4
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": true
+    },
+    "Frames/Lillymon_Frame_022.png": {
+      "source_size": [
+        10,
+        12
+      ],
+      "output_size": [
+        18,
+        20
+      ],
+      "padding": {
+        "left": 4,
+        "top": 4,
+        "right": 4,
+        "bottom": 4
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": true
+    },
+    "Frames/Lillymon_Frame_023.png": {
+      "source_size": [
+        11,
+        10
+      ],
+      "output_size": [
+        19,
+        18
+      ],
+      "padding": {
+        "left": 4,
+        "top": 4,
+        "right": 4,
+        "bottom": 4
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": true
+    },
+    "Frames/Lillymon_Frame_024.png": {
+      "source_size": [
+        14,
+        10
+      ],
+      "output_size": [
+        22,
+        18
+      ],
+      "padding": {
+        "left": 4,
+        "top": 4,
+        "right": 4,
+        "bottom": 4
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": true
+    },
+    "Frames/Lillymon_Frame_025.png": {
+      "source_size": [
+        11,
+        10
+      ],
+      "output_size": [
+        19,
+        18
+      ],
+      "padding": {
+        "left": 4,
+        "top": 4,
+        "right": 4,
+        "bottom": 4
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": true
+    },
+    "Lillymon_Primary.png": {
+      "source_size": [
+        68,
+        100
+      ],
+      "output_size": [
+        100,
+        132
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

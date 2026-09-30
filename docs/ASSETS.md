@@ -4,7 +4,7 @@ This project imports the user's supplied artwork and Dawn ROM. No map, tamer or 
 
 ## Included content
 
-- **1,004 selectable/materializable Digimon records:** 502 normal artwork records and 502 matching Paradox variants. The source pack contains 16,028 PNGs. Agunimon and Shoutmon each appear in two stage directories; both artwork sets are preserved with distinct stage-suffixed IDs. A record is an artwork/form entry, not a claim that there are 502 distinct official Cyber Sleuth species.
+- **1,506 playable Digimon records:** 502 normal, 502 Paradox and 502 Shiny entries. v1.2.0 installs all 16,040 PNGs from the uploaded Cyber Paradox and Shiny pack without modifying their bytes. Existing normal art and its corrected poses are retained. The unused Champion/Shoutmon folder explicitly lacks a 2D source; the playable Rookie Shoutmon is covered. A record is an artwork/form entry, not a claim about the official Cyber Sleuth roster.
 - **64 selectable human tamer appearances:** four protagonist appearances and 60 additional human NPC/guest appearances extracted from the ROM. These contain **2,048 RGBA PNG frames**, eight directions with four-frame walking cycles. Some NPCs reuse diagonal views for cardinal motion, exactly as their original animation tables do. Generic display names are used when identity was not verified.
 - **254 traversable base maps** and **97 foreground overlays**, using all 351 supplied PNGs at their original x2 dimensions. Foreground images are composited over the matching base map and are not selectable empty maps. The map labels identify source indices; canonical location names are not yet mapped.
 - **254 original collision masks**, decoded from the ROM and scaled to the supplied x2 maps. `data/collision.json` preserves each collision reference and verified walkable spawn. See `tools/extract_collision.py` for decoding details.
@@ -35,9 +35,29 @@ The pack's `Frames` directories contain components cut from sprite sheets: large
 
 The base stats, evolution thresholds and uncommon species assignments are explicitly original/provisional balance. A sprite pack and a Dawn ROM do not contain the complete Cyber Sleuth rules/stat tables. The importer applies `GameEngine`'s curated type/attribute overrides, evolution routes and encounter pools before writing the final catalog, keeping the client display consistent with server logic. See `docs/MECHANICS.md`.
 
-## Reimport the user-owned inputs
+## v1.2.0 varieties
 
-Run from the project root with the builder's Python environment (Python 3.11+):
+`tools/import_varieties_v120.py` imports the extracted new `digimon` tree and
+replaces whole variety contents. Its record, `data/varieties_v120.json`, preserves
+source hashes, every installed variety file and the original roster identities.
+All 1,004 playable variety folders have explicit animation sidecars derived from
+the corrected normal poses, including their original mirrored-frame assignments.
+
+Use `python tools/import_varieties_v120.py --verify --decode-images` to check
+coverage, uploaded bytes, frame references and stale-file removal. To reapply the
+same supplied pack, use `--source "C:\Assets\ExtractedPack\digimon"` instead
+of `--verify`. The old `--sprites` ZIP importer is intentionally blocked on a
+v1.2.0 installation because it would replace the new artwork. A plain catalog
+rebuild retains all 1,506 entries and their explicit poses.
+
+The current world roster includes the 254 Dawn maps below and 150 World DS maps;
+see `WORLD_DS_V0100.md` for the expansion import history.
+
+## Historical original-input import
+
+The commands below describe the original baseline import, before v1.2.0.
+Use the variety importer above for the current artwork. Run original imports
+only into a separate source tree with Python 3.11+:
 
 ```bat
 .venv\Scripts\python tools\import_assets.py --sprites "C:\Assets\2D Digimon Assets v7 With Paradox Variants(1).zip" --maps "C:\Assets\DigimonDawnAllLevelMaps(1).7z" --rom "C:\Assets\Digimon World - Dawn (USA)(4).nds" --verify-images

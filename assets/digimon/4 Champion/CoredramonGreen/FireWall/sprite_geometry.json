@@ -1,0 +1,101 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "CoredramonGreen_Attack.png": {
+      "source_size": [
+        786,
+        620
+      ],
+      "output_size": [
+        1298,
+        1132
+      ],
+      "padding": {
+        "left": 256,
+        "top": 256,
+        "right": 256,
+        "bottom": 256
+      },
+      "effect_pixel_unit": 16,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "CoredramonGreen_GetHit.png": {
+      "source_size": [
+        702,
+        616
+      ],
+      "output_size": [
+        1214,
+        1128
+      ],
+      "padding": {
+        "left": 256,
+        "top": 256,
+        "right": 256,
+        "bottom": 256
+      },
+      "effect_pixel_unit": 16,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "CoredramonGreen_Idle.png": {
+      "source_size": [
+        808,
+        656
+      ],
+      "output_size": [
+        1320,
+        1168
+      ],
+      "padding": {
+        "left": 256,
+        "top": 256,
+        "right": 256,
+        "bottom": 256
+      },
+      "effect_pixel_unit": 16,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "CoredramonGreen_LLegWalk.png": {
+      "source_size": [
+        848,
+        738
+      ],
+      "output_size": [
+        1360,
+        1250
+      ],
+      "padding": {
+        "left": 256,
+        "top": 256,
+        "right": 256,
+        "bottom": 256
+      },
+      "effect_pixel_unit": 16,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "CoredramonGreen_RLegWalk.png": {
+      "source_size": [
+        848,
+        738
+      ],
+      "output_size": [
+        1360,
+        1250
+      ],
+      "padding": {
+        "left": 256,
+        "top": 256,
+        "right": 256,
+        "bottom": 256
+      },
+      "effect_pixel_unit": 16,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

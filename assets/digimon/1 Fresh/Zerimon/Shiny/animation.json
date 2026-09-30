@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Zerimon_Idle.png",
+    "walk_left": "Zerimon_LLegWalk.png",
+    "walk_right": "Zerimon_RLegWalk.png",
+    "attack1": "Zerimon_Idle.png",
+    "attack2": "Zerimon_Idle.png"
+  },
+  "animations": {
+    "idle": [
+      "Zerimon_Idle.png"
+    ],
+    "walk": [
+      "Zerimon_Idle.png",
+      "Zerimon_LLegWalk.png",
+      "Zerimon_Idle.png",
+      "Zerimon_RLegWalk.png"
+    ],
+    "attack": [
+      "Zerimon_Idle.png",
+      "Zerimon_Idle.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 0,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied v1.2.0 Shiny PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained."
+}

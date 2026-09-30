@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Frames/Plesiomon_Frame_001.png",
+    "walk_left": "Frames/Plesiomon_Frame_002.png",
+    "walk_right": "Frames/Plesiomon_Frame_003.png",
+    "attack1": "Frames/Plesiomon_Frame_008.png",
+    "attack2": "Frames/Plesiomon_Frame_012.png",
+    "front": "Plesiomon_Primary.png"
+  },
+  "animations": {
+    "idle": [
+      "Frames/Plesiomon_Frame_001.png",
+      "Frames/Plesiomon_Frame_002.png",
+      "Frames/Plesiomon_Frame_001.png",
+      "Frames/Plesiomon_Frame_003.png"
+    ],
+    "walk": [
+      "Frames/Plesiomon_Frame_001.png",
+      "Frames/Plesiomon_Frame_002.png",
+      "Frames/Plesiomon_Frame_001.png",
+      "Frames/Plesiomon_Frame_003.png"
+    ],
+    "attack": [
+      "Frames/Plesiomon_Frame_008.png",
+      "Frames/Plesiomon_Frame_012.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 19,
+  "frame_selection": "v1.0.1 pose assignments retained; supplied v1.1.0 fixed PNGs replace canonical paths; explicit primary/front portrait when supplied",
+  "art_provenance": "User-supplied v1.2.0 Shiny PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained."
+}

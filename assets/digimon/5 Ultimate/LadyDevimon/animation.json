@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "LadyDevimon_Idle.png",
+    "walk_left": "LadyDevimon_LLegWalk.png",
+    "walk_right": "LadyDevimon_Idle.png",
+    "attack1": "LadyDevimon_AttackPart1.png",
+    "attack2": "LadyDevimon_AttackPart2.png",
+    "front": "LadyDevimon_Idle.png"
+  },
+  "animations": {
+    "idle": [
+      "LadyDevimon_Idle.png"
+    ],
+    "walk": [
+      "LadyDevimon_Idle.png",
+      "LadyDevimon_LLegWalk.png",
+      "LadyDevimon_Idle.png",
+      "LadyDevimon_Idle.png"
+    ],
+    "attack": [
+      "LadyDevimon_AttackPart1.png",
+      "LadyDevimon_AttackPart2.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 0,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied original sprite artwork; existing pose assignments retained. FixedSpritesPart2 v1.1.1: supplied RGBA PNG bytes preserved; documented same-pose copies synchronized; see data/fixed_sprites_v111.json."
+}

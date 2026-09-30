@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Zubamon_Idle.png",
+    "walk_left": "Zubamon_LLegWalk.png",
+    "walk_right": "Zubamon_RLegWalk.png",
+    "attack1": "Zubamon_Idle.png",
+    "attack2": "Zubamon_Idle.png"
+  },
+  "animations": {
+    "idle": [
+      "Zubamon_Idle.png"
+    ],
+    "walk": [
+      "Zubamon_Idle.png",
+      "Zubamon_LLegWalk.png",
+      "Zubamon_Idle.png",
+      "Zubamon_RLegWalk.png"
+    ],
+    "attack": [
+      "Zubamon_Idle.png",
+      "Zubamon_Idle.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 0,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied v1.2.0 Shiny PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained."
+}

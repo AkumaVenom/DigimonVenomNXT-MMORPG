@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Frames/Chaosdramon_Frame_001.png",
+    "walk_left": "Frames/Chaosdramon_Frame_002.png",
+    "walk_right": "Frames/Chaosdramon_Frame_003.png",
+    "attack1": "Frames/Chaosdramon_Frame_004.png",
+    "attack2": "Frames/Chaosdramon_Frame_005.png",
+    "front": "Chaosdramon_Primary.png"
+  },
+  "animations": {
+    "idle": [
+      "Frames/Chaosdramon_Frame_001.png",
+      "Frames/Chaosdramon_Frame_002.png",
+      "Frames/Chaosdramon_Frame_001.png",
+      "Frames/Chaosdramon_Frame_003.png"
+    ],
+    "walk": [
+      "Frames/Chaosdramon_Frame_001.png",
+      "Frames/Chaosdramon_Frame_002.png",
+      "Frames/Chaosdramon_Frame_001.png",
+      "Frames/Chaosdramon_Frame_003.png"
+    ],
+    "attack": [
+      "Frames/Chaosdramon_Frame_004.png",
+      "Frames/Chaosdramon_Frame_005.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 19,
+  "frame_selection": "v1.0.1 pose assignments retained; supplied v1.1.0 fixed PNGs replace canonical paths; explicit primary/front portrait when supplied",
+  "art_provenance": "User-supplied v1.2.0 Shiny PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained."
+}

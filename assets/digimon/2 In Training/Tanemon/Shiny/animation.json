@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Tanemon_Idle.png",
+    "walk_left": "Tanemon_LLegWalk.png",
+    "walk_right": "Tanemon_RLegWalk.png",
+    "attack1": "Tanemon_AttackPart1.png",
+    "attack2": "Tanemon_AttackPart2.png"
+  },
+  "animations": {
+    "idle": [
+      "Tanemon_Idle.png"
+    ],
+    "walk": [
+      "Tanemon_Idle.png",
+      "Tanemon_LLegWalk.png",
+      "Tanemon_Idle.png",
+      "Tanemon_RLegWalk.png"
+    ],
+    "attack": [
+      "Tanemon_AttackPart1.png",
+      "Tanemon_AttackPart2.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 0,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied v1.2.0 Shiny PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained."
+}

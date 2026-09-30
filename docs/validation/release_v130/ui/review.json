@@ -1,0 +1,59 @@
+{
+  "release": "1.3.0",
+  "checks": {
+    "tests_passed": 32,
+    "tests_failed": 0,
+    "tests_skipped": 0,
+    "native_render_previews": 10,
+    "native_preview_resolutions": [
+      [
+        960,
+        600
+      ],
+      [
+        1280,
+        800
+      ]
+    ],
+    "interactive_layout_test_resolutions": [
+      [
+        960,
+        600
+      ],
+      [
+        1280,
+        800
+      ],
+      [
+        1920,
+        1080
+      ],
+      [
+        3840,
+        2160
+      ]
+    ],
+    "asset_errors": []
+  },
+  "test_command": "python -m pytest tests/test_xros_client_v130.py tests/test_world_ds_client.py tests/test_shiny_client_v120.py tests/test_story_map_client.py -q",
+  "preview_command": "python tools/preview_xros.py --output docs/validation/release_v130/ui",
+  "visual_review": [
+    "xros_atlas_low_960x600.png",
+    "xros_atlas_high_1280x800.png",
+    "xros_field_low_960x600.png",
+    "xros_field_mid_1280x800.png",
+    "xros_field_high_1280x800.png"
+  ],
+  "verified_behaviors": [
+    "500 maps partitioned as Dawn 254, World DS 150, Super Xros Wars 96",
+    "Independent search, level filters and remembered pages across all three regions",
+    "Cross-region travel retains authoritative server commands and private activity guards",
+    "Current map focus follows Xros travel, including highest level destinations",
+    "All 96 Xros map thumbnails load and retain exact authored wild levels",
+    "Native controls remain within screen bounds at four supported display sizes",
+    "Recent server rival counts display without treating missing data as zero",
+    "Normal habitat previews and Shiny/Paradox encounter rates remain visible",
+    "Field HUD identifies Super Xros Wars and wild levels without private story objectives"
+  ],
+  "preview_data": "All account and rival data in screenshots is explicitly marked synthetic offline QA. Maps and sprites are unmodified release assets; rival positions use production collision-checked navigation."
+}

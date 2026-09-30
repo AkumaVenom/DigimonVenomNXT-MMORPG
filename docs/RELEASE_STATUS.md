@@ -1,4 +1,19 @@
-# Release status — Digimon Venom NXT v1.0.1
+# Release status — Digimon Venom NXT v1.2.0
+
+The current release adds 502 Shiny varieties and replaces all 502 Paradox
+art sets. Shiny scan-capture encounters have a 1% chance in both world-map
+sets and give 5% scan per defeated Shiny. Variety-specific collection, scan
+conversion, evolution, storage and persistence are integrated.
+
+Use [VARIETIES_V120.md](VARIETIES_V120.md) for current upgrade instructions.
+Build and deploy both applications; retain the database, credentials and config.
+This is a source release. Native Windows builds and production playtests remain
+host-side checks. Current automated and visual validation is recorded in
+[validation/release_v120](validation/release_v120/README.md).
+
+The release notes and counts below are historical evidence for prior versions.
+
+## Historical v1.0.1
 
 This source release adds **ABI DigiMeat**, a regular-shop item costing **6,000
 credits or 30 DigiRubies**. Each owned item adds **+1 permanent ABI**, capped at

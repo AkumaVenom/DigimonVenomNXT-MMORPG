@@ -1,0 +1,22 @@
+{
+  "variant_id": "shiny_lobomon",
+  "display_name": "Shiny Lobomon",
+  "base_species": "Lobomon",
+  "stage": "4 Champion",
+  "status": "ready",
+  "style_profile": "Prismatic Shiny \u2014 Gold Stardust v1",
+  "palette": "Jade",
+  "target_hue_degrees": 146.0,
+  "source_sprite_count": 3,
+  "shiny_sprite_count": 3,
+  "animation_alignment": "Exact source canvas dimensions and sprite positions retained",
+  "effects": "Warm-gold silhouette glow; restrained ivory/gold four-point sparkles; deterministic frame twinkle",
+  "sprites": [
+    "Lobomon_Idle.png",
+    "Lobomon_LLegWalk.png",
+    "Lobomon_RLegWalk.png"
+  ],
+  "primary_sprite": "4 Champion/Lobomon/Shiny/Lobomon_Idle.png",
+  "source_primary": "4 Champion/Lobomon/Lobomon_Idle.png",
+  "materializable": true
+}

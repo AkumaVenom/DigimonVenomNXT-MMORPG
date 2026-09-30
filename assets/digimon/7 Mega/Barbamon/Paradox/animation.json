@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Frames/Barbamon_Paradox_Frame_002.png",
+    "walk_left": "Frames/Barbamon_Paradox_Frame_003.png",
+    "walk_right": "Frames/Barbamon_Paradox_Frame_004.png",
+    "attack1": "Frames/Barbamon_Paradox_Frame_005.png",
+    "attack2": "Frames/Barbamon_Paradox_Frame_006.png",
+    "front": "Barbamon_Paradox_Primary.png"
+  },
+  "animations": {
+    "idle": [
+      "Frames/Barbamon_Paradox_Frame_002.png",
+      "Frames/Barbamon_Paradox_Frame_003.png",
+      "Frames/Barbamon_Paradox_Frame_002.png",
+      "Frames/Barbamon_Paradox_Frame_004.png"
+    ],
+    "walk": [
+      "Frames/Barbamon_Paradox_Frame_002.png",
+      "Frames/Barbamon_Paradox_Frame_003.png",
+      "Frames/Barbamon_Paradox_Frame_002.png",
+      "Frames/Barbamon_Paradox_Frame_004.png"
+    ],
+    "attack": [
+      "Frames/Barbamon_Paradox_Frame_005.png",
+      "Frames/Barbamon_Paradox_Frame_006.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 18,
+  "frame_selection": "v1.0.1 pose assignments retained; supplied v1.1.0 fixed PNGs replace canonical paths; explicit primary/front portrait when supplied",
+  "art_provenance": "User-supplied v1.2.0 Paradox PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained.",
+  "source_art_provenance": "User-supplied DigimonFixedSpritesFor_v1.1.0.rar; v1.0.1 source overlay; selected PNG bytes preserved exactly FixedSpritesPart2 v1.1.1: supplied RGBA PNG bytes preserved; documented same-pose copies synchronized; see data/fixed_sprites_v111.json.",
+  "source_frame_selection": "v1.0.1 pose assignments retained; supplied v1.1.0 fixed PNGs replace canonical paths; explicit primary/front portrait when supplied",
+  "paradox_style_profile": "Cyber Paradox — Fanglongmon reference"
+}

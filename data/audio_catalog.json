@@ -1312,6 +1312,916 @@
         "endpoint_taper_ms": 2,
         "missing_instruments": []
       }
+    },
+    {
+      "id": "xros_002_seq_n_01",
+      "region_id": "xros_wars",
+      "path": "assets/audio/xros_wars/xros_002_seq_n_01.ogg",
+      "sha256": "4dfb5505151eb1767ec179042e4e4f654ae3a1ff3b20711cd853de967e8f82d4",
+      "looped": true,
+      "duration": 19.030385487528346,
+      "source": {
+        "file": "002_SEQ_N_01.wav",
+        "sha256": "3e42cf7e9cae5eb7818af16e56253716a546dd0de6574ebe2cfaba05f7feb4ae",
+        "manifest_verified": false,
+        "sequence": "002_SEQ_N_01",
+        "frames": 1882720,
+        "sample_rate": 44100,
+        "loop_start_frame": 1032682,
+        "loop_end_frame_exclusive": 1871922,
+        "loop_metadata": "RIFF smpl; inclusive end converted to exclusive",
+        "frames_after_loop_omitted": 10798
+      },
+      "quality": {
+        "segments": {
+          "loop": {
+            "frames": 839240,
+            "sample_rate": 44100,
+            "channels": 2,
+            "duration": 19.030385487528346,
+            "peak": 0.612847626209259,
+            "rms": 0.12554773688316345
+          },
+          "intro": {
+            "frames": 1032682,
+            "sample_rate": 44100,
+            "channels": 2,
+            "duration": 23.4168253968254,
+            "peak": 0.6148689985275269,
+            "rms": 0.1263372153043747
+          }
+        },
+        "gain": 0.6156363311423886,
+        "target_rms_dbfs": -18,
+        "encoding": "Stereo Ogg Vorbis quality 6; source PCM timing retained"
+      },
+      "intro_path": "assets/audio/xros_wars/xros_002_seq_n_01_intro.ogg",
+      "intro_sha256": "9c54db0ae10652dc23e2be884b8358447e84892a584f818c2e08be5210455194",
+      "intro_duration": 23.4168253968254
+    },
+    {
+      "id": "xros_007_seq_n_07",
+      "region_id": "xros_wars",
+      "path": "assets/audio/xros_wars/xros_007_seq_n_07.ogg",
+      "sha256": "d8631239a0490b97d34c1ec6f1268b9467f53c7fe2d096216473339e3ea1091b",
+      "looped": true,
+      "duration": 51.438866213151925,
+      "source": {
+        "file": "007_SEQ_N_07.wav",
+        "sha256": "b37da2472897dc56e722abc0a131bcb87393a51c506566d1914777044500b43b",
+        "manifest_verified": false,
+        "sequence": "007_SEQ_N_07",
+        "frames": 4539435,
+        "sample_rate": 44100,
+        "loop_start_frame": 2268454,
+        "loop_end_frame_exclusive": 4536908,
+        "loop_metadata": "RIFF smpl; inclusive end converted to exclusive",
+        "frames_after_loop_omitted": 2527
+      },
+      "quality": {
+        "segments": {
+          "loop": {
+            "frames": 2268454,
+            "sample_rate": 44100,
+            "channels": 2,
+            "duration": 51.438866213151925,
+            "peak": 0.5285698175430298,
+            "rms": 0.12604734301567078
+          },
+          "intro": {
+            "frames": 2268454,
+            "sample_rate": 44100,
+            "channels": 2,
+            "duration": 51.438866213151925,
+            "peak": 0.5293232202529907,
+            "rms": 0.12599335610866547
+          }
+        },
+        "gain": 0.49457286895187713,
+        "target_rms_dbfs": -18,
+        "encoding": "Stereo Ogg Vorbis quality 6; source PCM timing retained"
+      },
+      "intro_path": "assets/audio/xros_wars/xros_007_seq_n_07_intro.ogg",
+      "intro_sha256": "e3abfbadc9aebbef955ef76d37859d040e16ea656f41ad1b24e24e3959f98354",
+      "intro_duration": 51.438866213151925
+    },
+    {
+      "id": "xros_008_seq_n_08",
+      "region_id": "xros_wars",
+      "path": "assets/audio/xros_wars/xros_008_seq_n_08.ogg",
+      "sha256": "e92594ab4e638dc3b4a6d76656c16789a7e0860e8cfddc3b66505fc50c6d4b75",
+      "looped": true,
+      "duration": 30.48095238095238,
+      "source": {
+        "file": "008_SEQ_N_08.wav",
+        "sha256": "91e289a3b75f7e24034f9bec656fd43c3fd8130a364818441ad1d70532af40f8",
+        "manifest_verified": false,
+        "sequence": "008_SEQ_N_08",
+        "frames": 2704730,
+        "sample_rate": 44100,
+        "loop_start_frame": 1344209,
+        "loop_end_frame_exclusive": 2688419,
+        "loop_metadata": "RIFF smpl; inclusive end converted to exclusive",
+        "frames_after_loop_omitted": 16311
+      },
+      "quality": {
+        "segments": {
+          "loop": {
+            "frames": 1344210,
+            "sample_rate": 44100,
+            "channels": 2,
+            "duration": 30.48095238095238,
+            "peak": 0.7216878533363342,
+            "rms": 0.1262572556734085
+          },
+          "intro": {
+            "frames": 1344209,
+            "sample_rate": 44100,
+            "channels": 2,
+            "duration": 30.48092970521542,
+            "peak": 0.707738995552063,
+            "rms": 0.12629103660583496
+          }
+        },
+        "gain": 0.6949599191880936,
+        "target_rms_dbfs": -18,
+        "encoding": "Stereo Ogg Vorbis quality 6; source PCM timing retained"
+      },
+      "intro_path": "assets/audio/xros_wars/xros_008_seq_n_08_intro.ogg",
+      "intro_sha256": "c5f6f35b81ad816e315b7ec49f4ec08aaefc16136cbf42a52f8ce026434210a7",
+      "intro_duration": 30.48092970521542
+    },
+    {
+      "id": "xros_012_seq_n_12",
+      "region_id": "xros_wars",
+      "path": "assets/audio/xros_wars/xros_012_seq_n_12.ogg",
+      "sha256": "e8408c2ab030e90e2694d23c106e681cc86cfb11210494309971e73a4bf44740",
+      "looped": true,
+      "duration": 59.09167800453515,
+      "source": {
+        "file": "012_SEQ_N_12.wav",
+        "sha256": "328f51df78eb90d7f5791bc4857b20a67a1f55b7103a233b24a6b3095a1d611c",
+        "manifest_verified": false,
+        "sequence": "012_SEQ_N_12",
+        "frames": 5222683,
+        "sample_rate": 44100,
+        "loop_start_frame": 2605712,
+        "loop_end_frame_exclusive": 5211655,
+        "loop_metadata": "RIFF smpl; inclusive end converted to exclusive",
+        "frames_after_loop_omitted": 11028
+      },
+      "quality": {
+        "segments": {
+          "loop": {
+            "frames": 2605943,
+            "sample_rate": 44100,
+            "channels": 2,
+            "duration": 59.09167800453515,
+            "peak": 0.6569346785545349,
+            "rms": 0.12539242208003998
+          },
+          "intro": {
+            "frames": 2605712,
+            "sample_rate": 44100,
+            "channels": 2,
+            "duration": 59.08643990929705,
+            "peak": 0.6562486886978149,
+            "rms": 0.12564845383167267
+          }
+        },
+        "gain": 0.6471228138219153,
+        "target_rms_dbfs": -18,
+        "encoding": "Stereo Ogg Vorbis quality 6; source PCM timing retained"
+      },
+      "intro_path": "assets/audio/xros_wars/xros_012_seq_n_12_intro.ogg",
+      "intro_sha256": "79fd37fa1c1a82f26948d0bb7f659ec9190dd6eb7faba540ade28cf31027b691",
+      "intro_duration": 59.08643990929705
+    },
+    {
+      "id": "xros_013_seq_n_13",
+      "region_id": "xros_wars",
+      "path": "assets/audio/xros_wars/xros_013_seq_n_13.ogg",
+      "sha256": "ac3c7445dc4ba9810238eadfde1ce59c3a3be0e548ca7c7e89ea7ce123b9fb48",
+      "looped": true,
+      "duration": 135.2445351473923,
+      "source": {
+        "file": "013_SEQ_N_13.wav",
+        "sha256": "4f388a0ab18001e3f7a0890552d3a86cc1ded23d360ca29cf6cced9cf88bfd21",
+        "manifest_verified": false,
+        "sequence": "013_SEQ_N_13",
+        "frames": 11939595,
+        "sample_rate": 44100,
+        "loop_start_frame": 5964054,
+        "loop_end_frame_exclusive": 11928338,
+        "loop_metadata": "RIFF smpl; inclusive end converted to exclusive",
+        "frames_after_loop_omitted": 11257
+      },
+      "quality": {
+        "segments": {
+          "loop": {
+            "frames": 5964284,
+            "sample_rate": 44100,
+            "channels": 2,
+            "duration": 135.2445351473923,
+            "peak": 0.8126456141471863,
+            "rms": 0.12050378322601318
+          },
+          "intro": {
+            "frames": 5964054,
+            "sample_rate": 44100,
+            "channels": 2,
+            "duration": 135.23931972789114,
+            "peak": 0.8163591623306274,
+            "rms": 0.12051262706518173
+          }
+        },
+        "gain": 0.79435247643804,
+        "target_rms_dbfs": -18,
+        "encoding": "Stereo Ogg Vorbis quality 6; source PCM timing retained"
+      },
+      "intro_path": "assets/audio/xros_wars/xros_013_seq_n_13_intro.ogg",
+      "intro_sha256": "4687f68314744db852b35aa9a653f72d5a9e2b975aec5971e9f4b5a7ecb0e9f5",
+      "intro_duration": 135.23931972789114
+    },
+    {
+      "id": "xros_014_seq_n_14",
+      "region_id": "xros_wars",
+      "path": "assets/audio/xros_wars/xros_014_seq_n_14.ogg",
+      "sha256": "0552ff6ca8fc06a751dffbbe74f40148c593685b152f3f948a5d38710570804b",
+      "looped": true,
+      "duration": 9.601156462585035,
+      "source": {
+        "file": "014_SEQ_N_14.wav",
+        "sha256": "bafe7203d6c1ad687ef18773e4dcf26f51b87013e1047dc2c67aebb576c84a0c",
+        "manifest_verified": false,
+        "sequence": "014_SEQ_N_14",
+        "frames": 912987,
+        "sample_rate": 44100,
+        "loop_start_frame": 423411,
+        "loop_end_frame_exclusive": 846822,
+        "loop_metadata": "RIFF smpl; inclusive end converted to exclusive",
+        "frames_after_loop_omitted": 66165
+      },
+      "quality": {
+        "segments": {
+          "loop": {
+            "frames": 423411,
+            "sample_rate": 44100,
+            "channels": 2,
+            "duration": 9.601156462585035,
+            "peak": 0.6637123823165894,
+            "rms": 0.13111838698387146
+          },
+          "intro": {
+            "frames": 423411,
+            "sample_rate": 44100,
+            "channels": 2,
+            "duration": 9.601156462585035,
+            "peak": 0.6707626581192017,
+            "rms": 0.13133323192596436
+          }
+        },
+        "gain": 0.6390865349636032,
+        "target_rms_dbfs": -18,
+        "encoding": "Stereo Ogg Vorbis quality 6; source PCM timing retained"
+      },
+      "intro_path": "assets/audio/xros_wars/xros_014_seq_n_14_intro.ogg",
+      "intro_sha256": "cf749ef627ab31a50adcbc219ce8ef6ab1eb6b4eadff58566dcc0e1de8176ab7",
+      "intro_duration": 9.601156462585035
+    },
+    {
+      "id": "xros_020_seq_u_08",
+      "region_id": "xros_wars",
+      "path": "assets/audio/xros_wars/xros_020_seq_u_08.ogg",
+      "sha256": "c0f815b45268bc5ff2692217f98c2af7f3eebcc8d5262fb400413f0940112f2e",
+      "looped": true,
+      "duration": 44.01009070294785,
+      "source": {
+        "file": "020_SEQ_U_08.wav",
+        "sha256": "b65cf5871c8d5b4382a749b8eda8fcfbca09b7fc443e4e7bfd02645d59add224",
+        "manifest_verified": false,
+        "sequence": "020_SEQ_U_08",
+        "frames": 3888581,
+        "sample_rate": 44100,
+        "loop_start_frame": 1940615,
+        "loop_end_frame_exclusive": 3881460,
+        "loop_metadata": "RIFF smpl; inclusive end converted to exclusive",
+        "frames_after_loop_omitted": 7121
+      },
+      "quality": {
+        "segments": {
+          "loop": {
+            "frames": 1940845,
+            "sample_rate": 44100,
+            "channels": 2,
+            "duration": 44.01009070294785,
+            "peak": 0.8174508810043335,
+            "rms": 0.12569011747837067
+          },
+          "intro": {
+            "frames": 1940615,
+            "sample_rate": 44100,
+            "channels": 2,
+            "duration": 44.004875283446715,
+            "peak": 0.8083703517913818,
+            "rms": 0.1256827861070633
+          }
+        },
+        "gain": 0.7943282347242815,
+        "target_rms_dbfs": -18,
+        "encoding": "Stereo Ogg Vorbis quality 6; source PCM timing retained"
+      },
+      "intro_path": "assets/audio/xros_wars/xros_020_seq_u_08_intro.ogg",
+      "intro_sha256": "6be1c80bd67e7b05945c273334dd436c04c8d036cbee592b0a7adbb5674bfe92",
+      "intro_duration": 44.004875283446715
+    },
+    {
+      "id": "xros_021_seq_u_10",
+      "region_id": "xros_wars",
+      "path": "assets/audio/xros_wars/xros_021_seq_u_10.ogg",
+      "sha256": "fd84a10deb00eb32db16af2145433fd23b6f11046b88595b04f7b131ad8e2687",
+      "looped": true,
+      "duration": 48.271473922902494,
+      "source": {
+        "file": "021_SEQ_U_10.wav",
+        "sha256": "b0f6414e41e9d6c801bde9fbbac4837e91e9226df41715ea53aae92e964ca238",
+        "manifest_verified": false,
+        "sequence": "021_SEQ_U_10",
+        "frames": 4265815,
+        "sample_rate": 44100,
+        "loop_start_frame": 2128772,
+        "loop_end_frame_exclusive": 4257544,
+        "loop_metadata": "RIFF smpl; inclusive end converted to exclusive",
+        "frames_after_loop_omitted": 8271
+      },
+      "quality": {
+        "segments": {
+          "loop": {
+            "frames": 2128772,
+            "sample_rate": 44100,
+            "channels": 2,
+            "duration": 48.271473922902494,
+            "peak": 0.6251662969589233,
+            "rms": 0.12603577971458435
+          },
+          "intro": {
+            "frames": 2128772,
+            "sample_rate": 44100,
+            "channels": 2,
+            "duration": 48.271473922902494,
+            "peak": 0.6249762773513794,
+            "rms": 0.12598800659179688
+          }
+        },
+        "gain": 0.5878196434416337,
+        "target_rms_dbfs": -18,
+        "encoding": "Stereo Ogg Vorbis quality 6; source PCM timing retained"
+      },
+      "intro_path": "assets/audio/xros_wars/xros_021_seq_u_10_intro.ogg",
+      "intro_sha256": "56d79aab9d6877fef1898103c71f6e08b0051fab17ab89678c0b802ece7063d4",
+      "intro_duration": 48.271473922902494
+    },
+    {
+      "id": "xros_022_seq_u_11",
+      "region_id": "xros_wars",
+      "path": "assets/audio/xros_wars/xros_022_seq_u_11.ogg",
+      "sha256": "3c39e33f88a953bcd0dcaecd9c428c581d7000c6b90014d153e9692ad4da2a59",
+      "looped": true,
+      "duration": 48.010997732426304,
+      "source": {
+        "file": "022_SEQ_U_11.wav",
+        "sha256": "fa150a0833e9fc478811c9e4e78df28ea1645511b6afa8ef5934968c3d1b8aff",
+        "manifest_verified": false,
+        "sequence": "022_SEQ_U_11",
+        "frames": 4303492,
+        "sample_rate": 44100,
+        "loop_start_frame": 2117055,
+        "loop_end_frame_exclusive": 4234340,
+        "loop_metadata": "RIFF smpl; inclusive end converted to exclusive",
+        "frames_after_loop_omitted": 69152
+      },
+      "quality": {
+        "segments": {
+          "loop": {
+            "frames": 2117285,
+            "sample_rate": 44100,
+            "channels": 2,
+            "duration": 48.010997732426304,
+            "peak": 0.621147632598877,
+            "rms": 0.12719005346298218
+          },
+          "intro": {
+            "frames": 2117055,
+            "sample_rate": 44100,
+            "channels": 2,
+            "duration": 48.00578231292517,
+            "peak": 0.620759129524231,
+            "rms": 0.12716196477413177
+          }
+        },
+        "gain": 0.5850223452026313,
+        "target_rms_dbfs": -18,
+        "encoding": "Stereo Ogg Vorbis quality 6; source PCM timing retained"
+      },
+      "intro_path": "assets/audio/xros_wars/xros_022_seq_u_11_intro.ogg",
+      "intro_sha256": "2a8997161fb16eb16890f55f7f5f4283406c321d6becbc4f85fef7fcd43e075e",
+      "intro_duration": 48.00578231292517
+    },
+    {
+      "id": "xros_025_seq_u_15",
+      "region_id": "xros_wars",
+      "path": "assets/audio/xros_wars/xros_025_seq_u_15.ogg",
+      "sha256": "5a060b334439bc897a0d18f727de0b9711f94286fd439d46592e14fd4330a96b",
+      "looped": true,
+      "duration": 45.578163265306124,
+      "source": {
+        "file": "025_SEQ_U_15.wav",
+        "sha256": "cb5c843c2d70179e0df8983a32ef472f1d49de613afcf67200a42d19ffeb8fa2",
+        "manifest_verified": false,
+        "sequence": "025_SEQ_U_15",
+        "frames": 4028493,
+        "sample_rate": 44100,
+        "loop_start_frame": 2009996,
+        "loop_end_frame_exclusive": 4019993,
+        "loop_metadata": "RIFF smpl; inclusive end converted to exclusive",
+        "frames_after_loop_omitted": 8500
+      },
+      "quality": {
+        "segments": {
+          "loop": {
+            "frames": 2009997,
+            "sample_rate": 44100,
+            "channels": 2,
+            "duration": 45.578163265306124,
+            "peak": 0.6037682294845581,
+            "rms": 0.12603993713855743
+          },
+          "intro": {
+            "frames": 2009996,
+            "sample_rate": 44100,
+            "channels": 2,
+            "duration": 45.57814058956916,
+            "peak": 0.6089566946029663,
+            "rms": 0.12621958553791046
+          }
+        },
+        "gain": 0.5819501827697723,
+        "target_rms_dbfs": -18,
+        "encoding": "Stereo Ogg Vorbis quality 6; source PCM timing retained"
+      },
+      "intro_path": "assets/audio/xros_wars/xros_025_seq_u_15_intro.ogg",
+      "intro_sha256": "6fce96e5dc1ef38ac73311399cb44222578026536713f6a7bb51e1446deb0e1b",
+      "intro_duration": 45.57814058956916
+    },
+    {
+      "id": "xros_026_seq_u_16",
+      "region_id": "xros_wars",
+      "path": "assets/audio/xros_wars/xros_026_seq_u_16.ogg",
+      "sha256": "90394404e96303996ce72451ecd5d01e0211072457f65d19e96fa3c0c140d083",
+      "looped": true,
+      "duration": 39.00893424036281,
+      "source": {
+        "file": "026_SEQ_U_16.wav",
+        "sha256": "96eb31426337e8f639c829a99ee73454fc4342fa03f11e046176351ac40ced16",
+        "manifest_verified": false,
+        "sequence": "026_SEQ_U_16",
+        "frames": 3455062,
+        "sample_rate": 44100,
+        "loop_start_frame": 1720064,
+        "loop_end_frame_exclusive": 3440358,
+        "loop_metadata": "RIFF smpl; inclusive end converted to exclusive",
+        "frames_after_loop_omitted": 14704
+      },
+      "quality": {
+        "segments": {
+          "loop": {
+            "frames": 1720294,
+            "sample_rate": 44100,
+            "channels": 2,
+            "duration": 39.00893424036281,
+            "peak": 0.6161260604858398,
+            "rms": 0.12611299753189087
+          },
+          "intro": {
+            "frames": 1720064,
+            "sample_rate": 44100,
+            "channels": 2,
+            "duration": 39.00371882086168,
+            "peak": 0.6135528087615967,
+            "rms": 0.12609604001045227
+          }
+        },
+        "gain": 0.563417857491944,
+        "target_rms_dbfs": -18,
+        "encoding": "Stereo Ogg Vorbis quality 6; source PCM timing retained"
+      },
+      "intro_path": "assets/audio/xros_wars/xros_026_seq_u_16_intro.ogg",
+      "intro_sha256": "f30218a90639ec06c05582a5a6d9f31292634c81be1de2c96c4c1ffe829d42f5",
+      "intro_duration": 39.00371882086168
+    },
+    {
+      "id": "xros_027_seq_u_21",
+      "region_id": "xros_wars",
+      "path": "assets/audio/xros_wars/xros_027_seq_u_21.ogg",
+      "sha256": "578b34088635d80d613947db626306cfdabd422983085bd29b537b5acba8bd0d",
+      "looped": true,
+      "duration": 26.49043083900227,
+      "source": {
+        "file": "027_SEQ_U_21.wav",
+        "sha256": "743a27142b963b40b5e6dfaeaed7d9762d7681e02329139ea5a648b07fae6911",
+        "manifest_verified": false,
+        "sequence": "027_SEQ_U_21",
+        "frames": 2337146,
+        "sample_rate": 44100,
+        "loop_start_frame": 1167999,
+        "loop_end_frame_exclusive": 2336227,
+        "loop_metadata": "RIFF smpl; inclusive end converted to exclusive",
+        "frames_after_loop_omitted": 919
+      },
+      "quality": {
+        "segments": {
+          "loop": {
+            "frames": 1168228,
+            "sample_rate": 44100,
+            "channels": 2,
+            "duration": 26.49043083900227,
+            "peak": 0.7808741331100464,
+            "rms": 0.1263161152601242
+          },
+          "intro": {
+            "frames": 1167999,
+            "sample_rate": 44100,
+            "channels": 2,
+            "duration": 26.485238095238095,
+            "peak": 0.7912991046905518,
+            "rms": 0.1264333575963974
+          }
+        },
+        "gain": 0.9244912073128347,
+        "target_rms_dbfs": -18,
+        "encoding": "Stereo Ogg Vorbis quality 6; source PCM timing retained"
+      },
+      "intro_path": "assets/audio/xros_wars/xros_027_seq_u_21_intro.ogg",
+      "intro_sha256": "312e3b2302c94f79c71cca44d89de2740f57d9f8cc5c8809d5040c75006a8534",
+      "intro_duration": 26.485238095238095
+    },
+    {
+      "id": "xros_bm008",
+      "region_id": "xros_wars",
+      "path": "assets/audio/xros_wars/xros_bm008.ogg",
+      "sha256": "a5612ef5e07ea6e95d70909a49c2e4480c5694d62545a9a61591abf9ee67ddda",
+      "looped": true,
+      "duration": 54.866734693877554,
+      "source": {
+        "file": "bm008.wav",
+        "sha256": "9f6652dd56135e3042d35415baa862a28080ab51f6796a3be47f98580977bcc1",
+        "manifest_verified": true,
+        "sequence": "bm008",
+        "frames": 4877153,
+        "sample_rate": 44100,
+        "loop_start_frame": 2457530,
+        "loop_end_frame_exclusive": 4877153,
+        "loop_metadata": "RIFF smpl; inclusive end converted to exclusive",
+        "frames_after_loop_omitted": 0
+      },
+      "quality": {
+        "segments": {
+          "loop": {
+            "frames": 2419623,
+            "sample_rate": 44100,
+            "channels": 2,
+            "duration": 54.866734693877554,
+            "peak": 0.7239874005317688,
+            "rms": 0.1262371987104416
+          },
+          "intro": {
+            "frames": 2457530,
+            "sample_rate": 44100,
+            "channels": 2,
+            "duration": 55.72630385487528,
+            "peak": 0.7767559289932251,
+            "rms": 0.12557871639728546
+          }
+        },
+        "gain": 0.9233717692937008,
+        "target_rms_dbfs": -18,
+        "encoding": "Stereo Ogg Vorbis quality 6; source PCM timing retained"
+      },
+      "intro_path": "assets/audio/xros_wars/xros_bm008_intro.ogg",
+      "intro_sha256": "2c5f949601a28fc4f3dfd2c66464ecbf358bb47524dd8f53931a8ce139d68172",
+      "intro_duration": 55.72630385487528
+    },
+    {
+      "id": "xros_bm009",
+      "region_id": "xros_wars",
+      "path": "assets/audio/xros_wars/xros_bm009.ogg",
+      "sha256": "fb3e1a461d84d7e4c4a0b2a17d9d0276f5bccde59831cf74f5b07054f71b6982",
+      "looped": false,
+      "duration": 64.30639455782313,
+      "source": {
+        "file": "bm009.wav",
+        "sha256": "0058fe7df3fdb940c84c7e7aebb258f03c9e6c8674647110f5fa788ba2f542d0",
+        "manifest_verified": true,
+        "sequence": "bm009",
+        "frames": 2835912,
+        "sample_rate": 44100,
+        "loop_start_frame": null,
+        "loop_end_frame_exclusive": null,
+        "loop_metadata": "one-shot",
+        "frames_after_loop_omitted": 0
+      },
+      "quality": {
+        "segments": {
+          "loop": {
+            "frames": 2835912,
+            "sample_rate": 44100,
+            "channels": 2,
+            "duration": 64.30639455782313,
+            "peak": 0.7958890199661255,
+            "rms": 0.10008746385574341
+          }
+        },
+        "gain": 0.8236100242206517,
+        "target_rms_dbfs": -18,
+        "encoding": "Stereo Ogg Vorbis quality 6; source PCM timing retained"
+      },
+      "continuation_id": "xros_002_seq_n_01"
+    },
+    {
+      "id": "xros_bm010",
+      "region_id": "xros_wars",
+      "path": "assets/audio/xros_wars/xros_bm010.ogg",
+      "sha256": "1cbbd74ed9e2191b199ffafad8feb9d5c70b926db2fa1c66c6ab5eea9c539a05",
+      "looped": true,
+      "duration": 66.01512471655329,
+      "source": {
+        "file": "bm010.wav",
+        "sha256": "31e8d40e23d7bbb922017b5ac454c4adeb7af3b478238e81c4b36ca3dc41eec5",
+        "manifest_verified": true,
+        "sequence": "bm010",
+        "frames": 5855387,
+        "sample_rate": 44100,
+        "loop_start_frame": 2944120,
+        "loop_end_frame_exclusive": 5855387,
+        "loop_metadata": "RIFF smpl; inclusive end converted to exclusive",
+        "frames_after_loop_omitted": 0
+      },
+      "quality": {
+        "segments": {
+          "loop": {
+            "frames": 2911267,
+            "sample_rate": 44100,
+            "channels": 2,
+            "duration": 66.01512471655329,
+            "peak": 0.8056970238685608,
+            "rms": 0.11919228732585907
+          },
+          "intro": {
+            "frames": 2944120,
+            "sample_rate": 44100,
+            "channels": 2,
+            "duration": 66.76009070294785,
+            "peak": 0.8066351413726807,
+            "rms": 0.11875898391008377
+          }
+        },
+        "gain": 1.2696852485583052,
+        "target_rms_dbfs": -18,
+        "encoding": "Stereo Ogg Vorbis quality 6; source PCM timing retained"
+      },
+      "intro_path": "assets/audio/xros_wars/xros_bm010_intro.ogg",
+      "intro_sha256": "a7d0695a97061707dbc9a331c5e1137ad4a0e0acbdbb0065911923baa80af158",
+      "intro_duration": 66.76009070294785
+    },
+    {
+      "id": "xros_bm206",
+      "region_id": "xros_wars",
+      "path": "assets/audio/xros_wars/xros_bm206.ogg",
+      "sha256": "f186c4e612a8a3e255ef04768ff77a8445a9a987bdfd9e5f26974a619e23c672",
+      "looped": true,
+      "duration": 68.58863945578231,
+      "source": {
+        "file": "bm206.wav",
+        "sha256": "0c3dd63f2ca9c04508e2e33b586f87f492a408f858c7bb0a1eb1f0e69c006e2b",
+        "manifest_verified": true,
+        "sequence": "bm206",
+        "frames": 6049288,
+        "sample_rate": 44100,
+        "loop_start_frame": 3024529,
+        "loop_end_frame_exclusive": 6049288,
+        "loop_metadata": "RIFF smpl; inclusive end converted to exclusive",
+        "frames_after_loop_omitted": 0
+      },
+      "quality": {
+        "segments": {
+          "loop": {
+            "frames": 3024759,
+            "sample_rate": 44100,
+            "channels": 2,
+            "duration": 68.58863945578231,
+            "peak": 0.7599994540214539,
+            "rms": 0.12621979415416718
+          },
+          "intro": {
+            "frames": 3024529,
+            "sample_rate": 44100,
+            "channels": 2,
+            "duration": 68.58342403628117,
+            "peak": 0.7378330230712891,
+            "rms": 0.12606261670589447
+          }
+        },
+        "gain": 1.0577430061896895,
+        "target_rms_dbfs": -18,
+        "encoding": "Stereo Ogg Vorbis quality 6; source PCM timing retained"
+      },
+      "intro_path": "assets/audio/xros_wars/xros_bm206_intro.ogg",
+      "intro_sha256": "482614aeb4bda1321136c3ddd0c745b8dc4ecd92e07faff73427bf5c47693033",
+      "intro_duration": 68.58342403628117
+    },
+    {
+      "id": "xros_bm219",
+      "region_id": "xros_wars",
+      "path": "assets/audio/xros_wars/xros_bm219.ogg",
+      "sha256": "b5ff7714634fd29870ba2858a9e0e6067de09a35764454b705b2976c0dadd575",
+      "looped": true,
+      "duration": 48.01102040816327,
+      "source": {
+        "file": "bm219.wav",
+        "sha256": "cbf1304b5dc8217169c3778d8b4315649aac08a4ffcc6a141b9ff1b373e187d6",
+        "manifest_verified": true,
+        "sequence": "bm219",
+        "frames": 4344616,
+        "sample_rate": 44100,
+        "loop_start_frame": 2227330,
+        "loop_end_frame_exclusive": 4344616,
+        "loop_metadata": "RIFF smpl; inclusive end converted to exclusive",
+        "frames_after_loop_omitted": 0
+      },
+      "quality": {
+        "segments": {
+          "loop": {
+            "frames": 2117286,
+            "sample_rate": 44100,
+            "channels": 2,
+            "duration": 48.01102040816327,
+            "peak": 0.7959216833114624,
+            "rms": 0.12075179815292358
+          },
+          "intro": {
+            "frames": 2227330,
+            "sample_rate": 44100,
+            "channels": 2,
+            "duration": 50.506349206349206,
+            "peak": 0.8240221738815308,
+            "rms": 0.11803342401981354
+          }
+        },
+        "gain": 1.1317251878536134,
+        "target_rms_dbfs": -18,
+        "encoding": "Stereo Ogg Vorbis quality 6; source PCM timing retained"
+      },
+      "intro_path": "assets/audio/xros_wars/xros_bm219_intro.ogg",
+      "intro_sha256": "e4ecdabaef180377027e28436da44b36f1df2397693416d55c3586e47d5c28dc",
+      "intro_duration": 50.506349206349206
+    },
+    {
+      "id": "xros_bm300",
+      "region_id": "xros_wars",
+      "path": "assets/audio/xros_wars/xros_bm300.ogg",
+      "sha256": "b3d54cc67bc5b4ff3a33e5d764ba5ebb94526024e88ce552fafbd5351a9d9d6a",
+      "looped": true,
+      "duration": 48.01102040816327,
+      "source": {
+        "file": "bm300.wav",
+        "sha256": "64262c9ed1e7d8ef37f45f6ecde72d711d12aa3577dd5c06d28d0ec60cd73c4b",
+        "manifest_verified": true,
+        "sequence": "bm300",
+        "frames": 4300506,
+        "sample_rate": 44100,
+        "loop_start_frame": 2183220,
+        "loop_end_frame_exclusive": 4300506,
+        "loop_metadata": "RIFF smpl; inclusive end converted to exclusive",
+        "frames_after_loop_omitted": 0
+      },
+      "quality": {
+        "segments": {
+          "loop": {
+            "frames": 2117286,
+            "sample_rate": 44100,
+            "channels": 2,
+            "duration": 48.01102040816327,
+            "peak": 0.712107241153717,
+            "rms": 0.12239672243595123
+          },
+          "intro": {
+            "frames": 2183220,
+            "sample_rate": 44100,
+            "channels": 2,
+            "duration": 49.50612244897959,
+            "peak": 0.7927817106246948,
+            "rms": 0.12216412276029587
+          }
+        },
+        "gain": 0.8057625482291197,
+        "target_rms_dbfs": -18,
+        "encoding": "Stereo Ogg Vorbis quality 6; source PCM timing retained"
+      },
+      "intro_path": "assets/audio/xros_wars/xros_bm300_intro.ogg",
+      "intro_sha256": "19150ff36f7f05daa9c9af790416afb9366e651f8dbcad71d12dd1b6a38c9d69",
+      "intro_duration": 49.50612244897959
+    },
+    {
+      "id": "xros_bm307",
+      "region_id": "xros_wars",
+      "path": "assets/audio/xros_wars/xros_bm307.ogg",
+      "sha256": "57401c9c33dcab39c712e3090198271715329bfa82f966d00a74ebfc93a497d1",
+      "looped": true,
+      "duration": 70.60473922902494,
+      "source": {
+        "file": "bm307.wav",
+        "sha256": "314b0775c692293d514f8563d55084647d9417891013706e209f9c921fbd6ca2",
+        "manifest_verified": true,
+        "sequence": "bm307",
+        "frames": 6573555,
+        "sample_rate": 44100,
+        "loop_start_frame": 3459886,
+        "loop_end_frame_exclusive": 6573555,
+        "loop_metadata": "RIFF smpl; inclusive end converted to exclusive",
+        "frames_after_loop_omitted": 0
+      },
+      "quality": {
+        "segments": {
+          "loop": {
+            "frames": 3113669,
+            "sample_rate": 44100,
+            "channels": 2,
+            "duration": 70.60473922902494,
+            "peak": 0.8103224039077759,
+            "rms": 0.12300244718790054
+          },
+          "intro": {
+            "frames": 3459886,
+            "sample_rate": 44100,
+            "channels": 2,
+            "duration": 78.4554648526077,
+            "peak": 0.7779836654663086,
+            "rms": 0.12274965643882751
+          }
+        },
+        "gain": 0.79435247643804,
+        "target_rms_dbfs": -18,
+        "encoding": "Stereo Ogg Vorbis quality 6; source PCM timing retained"
+      },
+      "intro_path": "assets/audio/xros_wars/xros_bm307_intro.ogg",
+      "intro_sha256": "a16ee89ca8c67a02626b56ccdb72befa67f0acb82f608c4ea3b34a83618f0046",
+      "intro_duration": 78.4554648526077
+    },
+    {
+      "id": "xros_bm608",
+      "region_id": "xros_wars",
+      "path": "assets/audio/xros_wars/xros_bm608.ogg",
+      "sha256": "ae46bbb65d97596e40bce79c1be0219e6cb182007d380be8b0a135e77583baff",
+      "looped": true,
+      "duration": 62.24863945578231,
+      "source": {
+        "file": "bm608.wav",
+        "sha256": "3829b24ff449bc75fe55f6838522d2dfb33842db760032e4a319edfb1ae8cb6a",
+        "manifest_verified": true,
+        "sequence": "bm608",
+        "frames": 5490100,
+        "sample_rate": 44100,
+        "loop_start_frame": 2744935,
+        "loop_end_frame_exclusive": 5490100,
+        "loop_metadata": "RIFF smpl; inclusive end converted to exclusive",
+        "frames_after_loop_omitted": 0
+      },
+      "quality": {
+        "segments": {
+          "loop": {
+            "frames": 2745165,
+            "sample_rate": 44100,
+            "channels": 2,
+            "duration": 62.24863945578231,
+            "peak": 0.805431067943573,
+            "rms": 0.09531556814908981
+          },
+          "intro": {
+            "frames": 2744935,
+            "sample_rate": 44100,
+            "channels": 2,
+            "duration": 62.243424036281176,
+            "peak": 0.8006488680839539,
+            "rms": 0.095237135887146
+          }
+        },
+        "gain": 1.9939135587134407,
+        "target_rms_dbfs": -18,
+        "encoding": "Stereo Ogg Vorbis quality 6; source PCM timing retained"
+      },
+      "intro_path": "assets/audio/xros_wars/xros_bm608_intro.ogg",
+      "intro_sha256": "ef8a182bcc50245516fbe14efc8cdea1e3d4c2444e47df0cadd906aa86e37d0a",
+      "intro_duration": 62.243424036281176
     }
   ],
   "effects": [
@@ -2987,6 +3897,12 @@
       "battle": "ds_bgm03",
       "endgame_battle": "ds_bgm17",
       "victory": "ds_bgm30"
+    },
+    "xros_wars": {
+      "world": "xros_002_seq_n_01",
+      "battle": "xros_bm300",
+      "advanced_battle": "xros_bm307",
+      "endgame_battle": "xros_bm608"
     }
   },
   "region_sources": {
@@ -3020,6 +3936,70 @@
       "preview_accuracy": "Uses supplied approximate software mixes of original samples; no new synthesis. Source previews are not hardware-bit-exact.",
       "assignment_note": "Region, battle and victory assignments are original Venom NXT choices; numeric source names do not identify official map music.",
       "conversion": "Original sequence loop range, 2 ms click-prevention taper, RMS target -18 dBFS bounded by -2 dBFS source peak, stereo Ogg Vorbis quality 6. All outputs decoded and checked for clipping."
+    },
+    "xros_wars": {
+      "manifest_sha256": "fb3983b326e2ae2791ec49dbf1ce81930af96c5b5a6a954f5a945210286454e2",
+      "source_sdat_sha256": "f8152a714a3cfe4b6ade4a4c91fcfaedae1ea10fd8bbe2e850cb2fa5475ce097",
+      "renderer": "DualRip: Nintendo DS driver emulation using original SSEQ, SBNK and SWAR, not generic MIDI instruments",
+      "assignment_note": "Music and battle assignments are original Venom NXT choices; numeric IDs are preserved, not presented as official track or location titles.",
+      "coverage_note": "The supplied manifest describes 62 bm recordings; this upload contains 8 of those and 12 additional SEQ recordings with valid embedded loop metadata. All 20 supplied music recordings are included.",
+      "manifest_recordings_not_supplied": [
+        "bm002.wav",
+        "bm003.wav",
+        "bm004.wav",
+        "bm006.wav",
+        "bm007.wav",
+        "bm104.wav",
+        "bm105.wav",
+        "bm106.wav",
+        "bm109.wav",
+        "bm110.wav",
+        "bm111.wav",
+        "bm112.wav",
+        "bm113.wav",
+        "bm200.wav",
+        "bm203.wav",
+        "bm205.wav",
+        "bm207.wav",
+        "bm208.wav",
+        "bm209.wav",
+        "bm210.wav",
+        "bm211.wav",
+        "bm212.wav",
+        "bm213.wav",
+        "bm214.wav",
+        "bm215.wav",
+        "bm216.wav",
+        "bm217.wav",
+        "bm218.wav",
+        "bm306.wav",
+        "bm308.wav",
+        "bm309.wav",
+        "bm310.wav",
+        "bm311.wav",
+        "bm500.wav",
+        "bm501.wav",
+        "bm502.wav",
+        "bm503.wav",
+        "bm504.wav",
+        "bm505.wav",
+        "bm506.wav",
+        "bm507.wav",
+        "bm508.wav",
+        "bm509.wav",
+        "bm600.wav",
+        "bm601.wav",
+        "bm602.wav",
+        "bm603.wav",
+        "bm604.wav",
+        "bm605.wav",
+        "bm606.wav",
+        "bm607.wav",
+        "bm700.wav",
+        "bm701.wav",
+        "bm800.wav"
+      ],
+      "conversion": "Source intro once, then exact embedded sample loop indefinitely; stereo Ogg Vorbis quality 6 with uniform -18 dBFS RMS gain bounded by -2 dBFS source peak. One-shot arrival composition queues a supplied exploration loop. All streams decoded and verified."
     }
   }
 }

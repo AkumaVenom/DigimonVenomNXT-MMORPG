@@ -1,0 +1,405 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "AncientVolcanomon_Primary.png": {
+      "source_size": [
+        123,
+        160
+      ],
+      "output_size": [
+        155,
+        192
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/AncientVolcanomon_Frame_001.png": {
+      "source_size": [
+        123,
+        160
+      ],
+      "output_size": [
+        155,
+        192
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/AncientVolcanomon_Frame_002.png": {
+      "source_size": [
+        118,
+        151
+      ],
+      "output_size": [
+        150,
+        183
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/AncientVolcanomon_Frame_003.png": {
+      "source_size": [
+        111,
+        145
+      ],
+      "output_size": [
+        143,
+        177
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/AncientVolcanomon_Frame_004.png": {
+      "source_size": [
+        99,
+        162
+      ],
+      "output_size": [
+        131,
+        194
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/AncientVolcanomon_Frame_005.png": {
+      "source_size": [
+        19,
+        17
+      ],
+      "output_size": [
+        27,
+        25
+      ],
+      "padding": {
+        "left": 4,
+        "top": 4,
+        "right": 4,
+        "bottom": 4
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": true
+    },
+    "Frames/AncientVolcanomon_Frame_006.png": {
+      "source_size": [
+        125,
+        124
+      ],
+      "output_size": [
+        157,
+        156
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/AncientVolcanomon_Frame_007.png": {
+      "source_size": [
+        36,
+        59
+      ],
+      "output_size": [
+        68,
+        91
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/AncientVolcanomon_Frame_008.png": {
+      "source_size": [
+        35,
+        52
+      ],
+      "output_size": [
+        67,
+        84
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/AncientVolcanomon_Frame_009.png": {
+      "source_size": [
+        35,
+        52
+      ],
+      "output_size": [
+        67,
+        84
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/AncientVolcanomon_Frame_010.png": {
+      "source_size": [
+        35,
+        50
+      ],
+      "output_size": [
+        67,
+        82
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/AncientVolcanomon_Frame_011.png": {
+      "source_size": [
+        35,
+        50
+      ],
+      "output_size": [
+        67,
+        82
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/AncientVolcanomon_Frame_012.png": {
+      "source_size": [
+        36,
+        46
+      ],
+      "output_size": [
+        68,
+        78
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/AncientVolcanomon_Frame_013.png": {
+      "source_size": [
+        36,
+        46
+      ],
+      "output_size": [
+        68,
+        78
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/AncientVolcanomon_Frame_014.png": {
+      "source_size": [
+        36,
+        49
+      ],
+      "output_size": [
+        68,
+        81
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/AncientVolcanomon_Frame_015.png": {
+      "source_size": [
+        33,
+        48
+      ],
+      "output_size": [
+        65,
+        80
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/AncientVolcanomon_Frame_016.png": {
+      "source_size": [
+        33,
+        48
+      ],
+      "output_size": [
+        65,
+        80
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/AncientVolcanomon_Frame_017.png": {
+      "source_size": [
+        35,
+        44
+      ],
+      "output_size": [
+        67,
+        76
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/AncientVolcanomon_Frame_018.png": {
+      "source_size": [
+        36,
+        46
+      ],
+      "output_size": [
+        68,
+        78
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/AncientVolcanomon_Frame_019.png": {
+      "source_size": [
+        36,
+        46
+      ],
+      "output_size": [
+        68,
+        78
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/AncientVolcanomon_Frame_020.png": {
+      "source_size": [
+        35,
+        44
+      ],
+      "output_size": [
+        67,
+        76
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

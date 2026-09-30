@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "PawnChessmonBlack_Idle.png",
+    "walk_left": "PawnChessmonBlack_LLegWalk.png",
+    "walk_right": "PawnChessmonBlack_RLegWalk.png",
+    "attack1": "PawnChessmonBlack_AttackPart1.png",
+    "attack2": "PawnChessmonBlack_AttackPart2.png"
+  },
+  "animations": {
+    "idle": [
+      "PawnChessmonBlack_Idle.png"
+    ],
+    "walk": [
+      "PawnChessmonBlack_Idle.png",
+      "PawnChessmonBlack_LLegWalk.png",
+      "PawnChessmonBlack_Idle.png",
+      "PawnChessmonBlack_RLegWalk.png"
+    ],
+    "attack": [
+      "PawnChessmonBlack_AttackPart1.png",
+      "PawnChessmonBlack_AttackPart2.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 0,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied v1.2.0 Shiny PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained."
+}

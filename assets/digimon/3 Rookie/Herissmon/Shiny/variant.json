@@ -1,0 +1,22 @@
+{
+  "variant_id": "shiny_herissmon",
+  "display_name": "Shiny Herissmon",
+  "base_species": "Herissmon",
+  "stage": "3 Rookie",
+  "status": "ready",
+  "style_profile": "Prismatic Shiny \u2014 Gold Stardust v1",
+  "palette": "Amethyst",
+  "target_hue_degrees": 270.0,
+  "source_sprite_count": 3,
+  "shiny_sprite_count": 3,
+  "animation_alignment": "Exact source canvas dimensions and sprite positions retained",
+  "effects": "Warm-gold silhouette glow; restrained ivory/gold four-point sparkles; deterministic frame twinkle",
+  "sprites": [
+    "Herissmon_Idle.png",
+    "Herissmon_LLegWalk.png",
+    "Herissmon_RLegWalk.png"
+  ],
+  "primary_sprite": "3 Rookie/Herissmon/Shiny/Herissmon_Idle.png",
+  "source_primary": "3 Rookie/Herissmon/Herissmon_Idle.png",
+  "materializable": true
+}

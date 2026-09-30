@@ -1,0 +1,22 @@
+{
+  "variant_id": "shiny_bukamon",
+  "display_name": "Shiny Bukamon",
+  "base_species": "Bukamon",
+  "stage": "2 In Training",
+  "status": "ready",
+  "style_profile": "Prismatic Shiny \u2014 Gold Stardust v1",
+  "palette": "Cerulean",
+  "target_hue_degrees": 196.0,
+  "source_sprite_count": 3,
+  "shiny_sprite_count": 3,
+  "animation_alignment": "Exact source canvas dimensions and sprite positions retained",
+  "effects": "Warm-gold silhouette glow; restrained ivory/gold four-point sparkles; deterministic frame twinkle",
+  "sprites": [
+    "Bukamon_Idle.png",
+    "Bukamon_LLegWalk.png",
+    "Bukamon_RLegWalk.png"
+  ],
+  "primary_sprite": "2 In Training/Bukamon/Shiny/Bukamon_Idle.png",
+  "source_primary": "2 In Training/Bukamon/Bukamon_Idle.png",
+  "materializable": true
+}

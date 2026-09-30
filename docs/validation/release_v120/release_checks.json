@@ -1,0 +1,57 @@
+{
+  "release": "1.2.0",
+  "python": "3.12.14",
+  "platform": "Linux",
+  "dependencies": {
+    "pytest": "8.3.5",
+    "pygame-ce": "2.5.8",
+    "Pillow": "12.3.0",
+    "websockets": "16.0",
+    "PyMySQL": "1.1.1",
+    "cryptography": "46.0.0"
+  },
+  "catalog": {
+    "normal": 502,
+    "paradox": 502,
+    "shiny": 502,
+    "total": 1506
+  },
+  "world_maps": {
+    "dawn": 254,
+    "world_ds": 150,
+    "total": 404,
+    "shiny_coverage_per_world": 502
+  },
+  "rules": {
+    "shiny_chance_per_wild_battle": 0.01,
+    "shiny_scan_per_defeat": 5,
+    "paradox_chance_per_wild_battle": 0.025
+  },
+  "visual_previews": {
+    "cases": 18,
+    "resolutions": [
+      [
+        960,
+        600
+      ],
+      [
+        1920,
+        1080
+      ]
+    ],
+    "asset_errors": 0,
+    "actions_outside_display": 0
+  },
+  "limits": [
+    "Windows native binaries were not built on this Linux host.",
+    "No production server was deployed.",
+    "Graphical Tk setup-wizard and opt-in live MySQL tests require separate host facilities."
+  ],
+  "automated_suite": {
+    "passed": 2683,
+    "skipped": 10,
+    "failed": 0,
+    "seconds": 373.23,
+    "command": "SDL_VIDEODRIVER=dummy SDL_AUDIODRIVER=dummy PYGAME_HIDE_SUPPORT_PROMPT=1 python -m pytest -q --tb=short"
+  }
+}

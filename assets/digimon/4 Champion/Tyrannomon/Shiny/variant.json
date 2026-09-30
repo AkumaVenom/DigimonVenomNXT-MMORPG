@@ -1,0 +1,25 @@
+{
+  "variant_id": "shiny_tyrannomon",
+  "display_name": "Shiny Tyrannomon",
+  "base_species": "Tyrannomon",
+  "stage": "4 Champion",
+  "status": "ready",
+  "style_profile": "Prismatic Shiny \u2014 Gold Stardust v1",
+  "palette": "Cerulean",
+  "target_hue_degrees": 196.0,
+  "source_sprite_count": 6,
+  "shiny_sprite_count": 6,
+  "animation_alignment": "Exact source canvas dimensions and sprite positions retained",
+  "effects": "Warm-gold silhouette glow; restrained ivory/gold four-point sparkles; deterministic frame twinkle",
+  "sprites": [
+    "Tyrannomon_AttackPart1.png",
+    "Tyrannomon_AttackPart2.png",
+    "Tyrannomon_Extra.png",
+    "Tyrannomon_Idle.png",
+    "Tyrannomon_LLegWalk.png",
+    "Tyrannomon_RLegWalk.png"
+  ],
+  "primary_sprite": "4 Champion/Tyrannomon/Shiny/Tyrannomon_Idle.png",
+  "source_primary": "4 Champion/Tyrannomon/Tyrannomon_Idle.png",
+  "materializable": true
+}

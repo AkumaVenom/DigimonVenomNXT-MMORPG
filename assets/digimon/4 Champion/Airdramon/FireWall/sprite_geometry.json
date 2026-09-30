@@ -1,0 +1,101 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Airdramon_AttackPart1.png": {
+      "source_size": [
+        694,
+        718
+      ],
+      "output_size": [
+        886,
+        910
+      ],
+      "padding": {
+        "left": 96,
+        "top": 96,
+        "right": 96,
+        "bottom": 96
+      },
+      "effect_pixel_unit": 6,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Airdramon_AttackPart2.png": {
+      "source_size": [
+        756,
+        646
+      ],
+      "output_size": [
+        948,
+        838
+      ],
+      "padding": {
+        "left": 96,
+        "top": 96,
+        "right": 96,
+        "bottom": 96
+      },
+      "effect_pixel_unit": 6,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Airdramon_Idle.png": {
+      "source_size": [
+        616,
+        698
+      ],
+      "output_size": [
+        808,
+        890
+      ],
+      "padding": {
+        "left": 96,
+        "top": 96,
+        "right": 96,
+        "bottom": 96
+      },
+      "effect_pixel_unit": 6,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Airdramon_LLegWalk.png": {
+      "source_size": [
+        656,
+        706
+      ],
+      "output_size": [
+        848,
+        898
+      ],
+      "padding": {
+        "left": 96,
+        "top": 96,
+        "right": 96,
+        "bottom": 96
+      },
+      "effect_pixel_unit": 6,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Airdramon_RLegWalk.png": {
+      "source_size": [
+        656,
+        706
+      ],
+      "output_size": [
+        848,
+        898
+      ],
+      "padding": {
+        "left": 96,
+        "top": 96,
+        "right": 96,
+        "bottom": 96
+      },
+      "effect_pixel_unit": 6,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

@@ -1,0 +1,182 @@
+[
+  {
+    "path": "venom/client/assets.py",
+    "change": "modified",
+    "sha256": "13e2816b7076956df1dccc13295259799959788b94dd93fef27c835b5781a86f"
+  },
+  {
+    "path": "venom/client/destinations.py",
+    "change": "modified",
+    "sha256": "ceccd3f4cbb17e7199fcf3c5c14a9354080b4d2f6b5cf87990a9f45c98fcc394"
+  },
+  {
+    "path": "venom/client/varieties.py",
+    "change": "modified",
+    "sha256": "c29b94fc60a175c97d834d6132087d24d4c29c460cdcf24e39c2a01f76609a2a"
+  },
+  {
+    "path": "venom/client/world.py",
+    "change": "modified",
+    "sha256": "e4015ba3593468dd8f242f23c5b057185addd3922eccfaaf22ca7dce79d891b0"
+  },
+  {
+    "path": "venom/common/game.py",
+    "change": "modified",
+    "sha256": "8083fcacc75af3c276dae93e7e9cd4b1011ad08d9564ca740eeabaa5ffead387"
+  },
+  {
+    "path": "venom/server/bots.py",
+    "change": "modified",
+    "sha256": "ab3ac3954540c28fb53297ae8349b11f5fd59e72d9700f7a357c91bddcca9e06"
+  },
+  {
+    "path": "venom/server/main.py",
+    "change": "modified",
+    "sha256": "d3d11bb7af66eeb9f11c63fc3fd4890365a91f2c699d5c6fb2160356e610f5b9"
+  },
+  {
+    "path": "venom/version.py",
+    "change": "modified",
+    "sha256": "7601fcb339b8d4e80496de1e47fbf9e1b0e6d6bad25928d197e23b2cceacaa90"
+  },
+  {
+    "path": "tools/build.py",
+    "change": "modified",
+    "sha256": "1c12c056ed0e4e222532fb3a3a2a0fe5fd074960711d3290a5f4244bf404c43b"
+  },
+  {
+    "path": "tools/fixed_sprites_v111.py",
+    "change": "modified",
+    "sha256": "6021f1b20bcbbc19632d5c248490257674c3d751770b14d95e4624007426d97d"
+  },
+  {
+    "path": "tools/import_assets.py",
+    "change": "modified",
+    "sha256": "0f2e421105557e88eb19e41e95f58a412a21aff3c8f018f90e719a7d0c425f03"
+  },
+  {
+    "path": "tools/import_varieties_v120.py",
+    "change": "modified",
+    "sha256": "b3530068bb4fba2e45de8bd6b4d48696daf456c79b5f541d3899a31fa85e6a7b"
+  },
+  {
+    "path": "tools/import_xros_audio.py",
+    "change": "added",
+    "sha256": "b30a359de4523364b4c09e2f909517f0ca6fe140ab0b980d9ce9f21fce1defe0"
+  },
+  {
+    "path": "tools/import_xros_maps.py",
+    "change": "added",
+    "sha256": "674031d592c0507715242e45e1e656c09126a4ad7c063bdc6f06520ba50a098d"
+  },
+  {
+    "path": "tools/merge_world_ds.py",
+    "change": "modified",
+    "sha256": "198d54a8a114ad182d1dd6196681c88caa66fae56a2fb34ca99f6fa1c1861e73"
+  },
+  {
+    "path": "tools/merge_xros.py",
+    "change": "added",
+    "sha256": "bc5201d6bfbd5fe790eb2ffeab42a3694fb872279b557493a47734f853c42f49"
+  },
+  {
+    "path": "tools/preview_xros.py",
+    "change": "added",
+    "sha256": "c50de3bab1aec6cda9362fa2b0fe0b97967c43531ba1391354763bc2ac8c5b06"
+  },
+  {
+    "path": "tests/test_catalog.py",
+    "change": "modified",
+    "sha256": "96a808ed4ef40ec772024c3a44f1f5e15afb080d2d5eca3f0f134aaafe145b00"
+  },
+  {
+    "path": "tests/test_fixed_sprites_v111.py",
+    "change": "modified",
+    "sha256": "44c46b6607a13a8ed3f88956f87b629ea8567a842a7140246d6dac28c5e86173"
+  },
+  {
+    "path": "tests/test_nds_audio.py",
+    "change": "modified",
+    "sha256": "0e39c6f72b3fde0f43570720dd9e679d9315d7f348068e5d8ce1f5022f7e8816"
+  },
+  {
+    "path": "tests/test_setup_diagnostics.py",
+    "change": "modified",
+    "sha256": "8d366ec4be134139ac1bc29e2dce0765785728a1071411a6f1b472a9db49750c"
+  },
+  {
+    "path": "tests/test_setup_launchers.py",
+    "change": "modified",
+    "sha256": "8a443ef6341421a76a71620a349a5dbca13496ddc238d5881f58e1fa04314105"
+  },
+  {
+    "path": "tests/test_shiny_client_v120.py",
+    "change": "modified",
+    "sha256": "6e03873b86146cd3848ad29a9ca47fa4d79f02c70cdc9a07b348c94118dee0cb"
+  },
+  {
+    "path": "tests/test_variety_assets_v120.py",
+    "change": "modified",
+    "sha256": "6a6ddb4566afcca894c14f0961fa180ed8e6ba90de9e7660c3f1ca110d9f073c"
+  },
+  {
+    "path": "tests/test_world_ds_audio.py",
+    "change": "modified",
+    "sha256": "40924f651c47f6b30c99920ac9aa6943ed49e68615c78552eac123eb7f35bf5b"
+  },
+  {
+    "path": "tests/test_world_ds_client.py",
+    "change": "modified",
+    "sha256": "86f695da23d972eb205fd7bb966fd58387a2f909db92fff903aa1aace0a7d6b5"
+  },
+  {
+    "path": "tests/test_world_ds_engine.py",
+    "change": "modified",
+    "sha256": "22c2a798a079809ce446fa59a2524ca1d069249171881ce81a4e68666a31b2a3"
+  },
+  {
+    "path": "tests/test_world_ds_merge.py",
+    "change": "modified",
+    "sha256": "b9434af7171a7fb493836f9d40ccffc960321f4b80188001301bf2007682595a"
+  },
+  {
+    "path": "tests/test_xros_acceptance.py",
+    "change": "added",
+    "sha256": "ad3bcf84cf3ace1850846073bcf8ba647762bb60e4313e96eaa2ba4ef76c0eb9"
+  },
+  {
+    "path": "tests/test_xros_audio.py",
+    "change": "added",
+    "sha256": "5521c8ca54dd6a054eee01b056c893c882e99424c28a872ae2f5224f5313ec62"
+  },
+  {
+    "path": "tests/test_xros_client_v130.py",
+    "change": "added",
+    "sha256": "8b96b4e7851be213538099d84c9cddea433ec7e8e2dd91609bc40f6f12c4910b"
+  },
+  {
+    "path": "tests/test_xros_gameplay_v130.py",
+    "change": "added",
+    "sha256": "62a9b978569e11bee53f81473eeb72c4250f8086403eacba2409fd5fd333e569"
+  },
+  {
+    "path": "tests/test_xros_maps.py",
+    "change": "added",
+    "sha256": "375dc0903e286f2745eae5c3f475d212958151df2bc8b666bec1a33b95d5a359"
+  },
+  {
+    "path": "tests/test_xros_merge.py",
+    "change": "added",
+    "sha256": "20458f6e82e6849b4672dea9ae7d9fa502b44651a8ae82ff22577378a21c20e2"
+  },
+  {
+    "path": "tests/test_xros_replication.py",
+    "change": "added",
+    "sha256": "32fd507eb1976de1a881c63f037c6aff7679d6160a369f71e6526c9a4f99a70f"
+  },
+  {
+    "path": "tests/test_xros_wars_bots.py",
+    "change": "added",
+    "sha256": "3d343f3356fb522fdad094fd21654577ac549361dbc3d5c74be4ea4337f9a136"
+  }
+]

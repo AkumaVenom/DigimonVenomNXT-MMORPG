@@ -1,0 +1,405 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Frames/Skullknightmon_Frame_001.png": {
+      "source_size": [
+        98,
+        86
+      ],
+      "output_size": [
+        130,
+        118
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Skullknightmon_Frame_002.png": {
+      "source_size": [
+        100,
+        86
+      ],
+      "output_size": [
+        132,
+        118
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Skullknightmon_Frame_003.png": {
+      "source_size": [
+        101,
+        86
+      ],
+      "output_size": [
+        133,
+        118
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Skullknightmon_Frame_004.png": {
+      "source_size": [
+        153,
+        114
+      ],
+      "output_size": [
+        185,
+        146
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Skullknightmon_Frame_005.png": {
+      "source_size": [
+        89,
+        94
+      ],
+      "output_size": [
+        121,
+        126
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Skullknightmon_Frame_006.png": {
+      "source_size": [
+        36,
+        37
+      ],
+      "output_size": [
+        68,
+        69
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Skullknightmon_Frame_007.png": {
+      "source_size": [
+        36,
+        37
+      ],
+      "output_size": [
+        68,
+        69
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Skullknightmon_Frame_008.png": {
+      "source_size": [
+        36,
+        37
+      ],
+      "output_size": [
+        68,
+        69
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Skullknightmon_Frame_009.png": {
+      "source_size": [
+        39,
+        37
+      ],
+      "output_size": [
+        71,
+        69
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Skullknightmon_Frame_010.png": {
+      "source_size": [
+        38,
+        37
+      ],
+      "output_size": [
+        70,
+        69
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Skullknightmon_Frame_011.png": {
+      "source_size": [
+        37,
+        36
+      ],
+      "output_size": [
+        69,
+        68
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Skullknightmon_Frame_012.png": {
+      "source_size": [
+        35,
+        37
+      ],
+      "output_size": [
+        67,
+        69
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Skullknightmon_Frame_013.png": {
+      "source_size": [
+        36,
+        38
+      ],
+      "output_size": [
+        68,
+        70
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Skullknightmon_Frame_014.png": {
+      "source_size": [
+        34,
+        37
+      ],
+      "output_size": [
+        66,
+        69
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Skullknightmon_Frame_015.png": {
+      "source_size": [
+        39,
+        38
+      ],
+      "output_size": [
+        71,
+        70
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Skullknightmon_Frame_016.png": {
+      "source_size": [
+        39,
+        37
+      ],
+      "output_size": [
+        71,
+        69
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Skullknightmon_Frame_017.png": {
+      "source_size": [
+        35,
+        36
+      ],
+      "output_size": [
+        67,
+        68
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Skullknightmon_Frame_018.png": {
+      "source_size": [
+        35,
+        52
+      ],
+      "output_size": [
+        67,
+        84
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Skullknightmon_Frame_019.png": {
+      "source_size": [
+        40,
+        34
+      ],
+      "output_size": [
+        72,
+        66
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Skullknightmon_Frame_020.png": {
+      "source_size": [
+        44,
+        12
+      ],
+      "output_size": [
+        76,
+        44
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Skullknightmon_Primary.png": {
+      "source_size": [
+        98,
+        86
+      ],
+      "output_size": [
+        130,
+        118
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "MetalGreymon_AttackPart1.png": {
+      "source_size": [
+        812,
+        1048
+      ],
+      "output_size": [
+        1036,
+        1272
+      ],
+      "padding": {
+        "left": 112,
+        "top": 112,
+        "right": 112,
+        "bottom": 112
+      },
+      "effect_pixel_unit": 7,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "MetalGreymon_AttackPart2.png": {
+      "source_size": [
+        812,
+        984
+      ],
+      "output_size": [
+        1036,
+        1208
+      ],
+      "padding": {
+        "left": 112,
+        "top": 112,
+        "right": 112,
+        "bottom": 112
+      },
+      "effect_pixel_unit": 7,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "MetalGreymon_Idle.png": {
+      "source_size": [
+        800,
+        870
+      ],
+      "output_size": [
+        1024,
+        1094
+      ],
+      "padding": {
+        "left": 112,
+        "top": 112,
+        "right": 112,
+        "bottom": 112
+      },
+      "effect_pixel_unit": 7,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "MetalGreymon_LLegWalk.png": {
+      "source_size": [
+        802,
+        856
+      ],
+      "output_size": [
+        1026,
+        1080
+      ],
+      "padding": {
+        "left": 112,
+        "top": 112,
+        "right": 112,
+        "bottom": 112
+      },
+      "effect_pixel_unit": 7,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "MetalGreymon_RLegWalk.png": {
+      "source_size": [
+        802,
+        856
+      ],
+      "output_size": [
+        1026,
+        1080
+      ],
+      "padding": {
+        "left": 112,
+        "top": 112,
+        "right": 112,
+        "bottom": 112
+      },
+      "effect_pixel_unit": 7,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

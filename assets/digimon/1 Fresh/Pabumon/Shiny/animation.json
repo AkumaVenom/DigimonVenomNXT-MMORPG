@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Pabumon_Idle.png",
+    "walk_left": "Pabumon_LLegWalk.png",
+    "walk_right": "Pabumon_RLegWalk.png",
+    "attack1": "Pabumon_Idle.png",
+    "attack2": "Pabumon_Idle.png"
+  },
+  "animations": {
+    "idle": [
+      "Pabumon_Idle.png"
+    ],
+    "walk": [
+      "Pabumon_Idle.png",
+      "Pabumon_LLegWalk.png",
+      "Pabumon_Idle.png",
+      "Pabumon_RLegWalk.png"
+    ],
+    "attack": [
+      "Pabumon_Idle.png",
+      "Pabumon_Idle.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 0,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied v1.2.0 Shiny PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained."
+}

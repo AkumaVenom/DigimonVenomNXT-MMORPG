@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Aruraumon_Idle.png",
+    "walk_left": "Aruraumon_LLegWalk.png",
+    "walk_right": "Aruraumon_RLegWalk.png",
+    "attack1": "Aruraumon_AttackPart1.png",
+    "attack2": "Aruraumon_AttackPart2.png"
+  },
+  "animations": {
+    "idle": [
+      "Aruraumon_Idle.png"
+    ],
+    "walk": [
+      "Aruraumon_Idle.png",
+      "Aruraumon_LLegWalk.png",
+      "Aruraumon_Idle.png",
+      "Aruraumon_RLegWalk.png"
+    ],
+    "attack": [
+      "Aruraumon_AttackPart1.png",
+      "Aruraumon_AttackPart2.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 0,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied v1.2.0 Shiny PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained."
+}

@@ -1,0 +1,424 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Frames/RizeGreymon_Frame_001.png": {
+      "source_size": [
+        137,
+        182
+      ],
+      "output_size": [
+        169,
+        214
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/RizeGreymon_Frame_002.png": {
+      "source_size": [
+        138,
+        208
+      ],
+      "output_size": [
+        170,
+        240
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/RizeGreymon_Frame_003.png": {
+      "source_size": [
+        130,
+        184
+      ],
+      "output_size": [
+        162,
+        216
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/RizeGreymon_Frame_004.png": {
+      "source_size": [
+        138,
+        186
+      ],
+      "output_size": [
+        170,
+        218
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/RizeGreymon_Frame_005.png": {
+      "source_size": [
+        164,
+        184
+      ],
+      "output_size": [
+        196,
+        216
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/RizeGreymon_Frame_006.png": {
+      "source_size": [
+        34,
+        44
+      ],
+      "output_size": [
+        66,
+        76
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/RizeGreymon_Frame_007.png": {
+      "source_size": [
+        36,
+        44
+      ],
+      "output_size": [
+        68,
+        76
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/RizeGreymon_Frame_008.png": {
+      "source_size": [
+        36,
+        44
+      ],
+      "output_size": [
+        68,
+        76
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/RizeGreymon_Frame_009.png": {
+      "source_size": [
+        34,
+        44
+      ],
+      "output_size": [
+        66,
+        76
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/RizeGreymon_Frame_010.png": {
+      "source_size": [
+        33,
+        45
+      ],
+      "output_size": [
+        65,
+        77
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/RizeGreymon_Frame_011.png": {
+      "source_size": [
+        33,
+        45
+      ],
+      "output_size": [
+        65,
+        77
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/RizeGreymon_Frame_012.png": {
+      "source_size": [
+        33,
+        46
+      ],
+      "output_size": [
+        65,
+        78
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/RizeGreymon_Frame_013.png": {
+      "source_size": [
+        33,
+        45
+      ],
+      "output_size": [
+        65,
+        77
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/RizeGreymon_Frame_014.png": {
+      "source_size": [
+        33,
+        45
+      ],
+      "output_size": [
+        65,
+        77
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/RizeGreymon_Frame_015.png": {
+      "source_size": [
+        33,
+        45
+      ],
+      "output_size": [
+        65,
+        77
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/RizeGreymon_Frame_016.png": {
+      "source_size": [
+        33,
+        43
+      ],
+      "output_size": [
+        65,
+        75
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/RizeGreymon_Frame_017.png": {
+      "source_size": [
+        33,
+        43
+      ],
+      "output_size": [
+        65,
+        75
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/RizeGreymon_Frame_018.png": {
+      "source_size": [
+        31,
+        44
+      ],
+      "output_size": [
+        63,
+        76
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/RizeGreymon_Frame_019.png": {
+      "source_size": [
+        35,
+        44
+      ],
+      "output_size": [
+        67,
+        76
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/RizeGreymon_Frame_020.png": {
+      "source_size": [
+        35,
+        44
+      ],
+      "output_size": [
+        67,
+        76
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/RizeGreymon_Frame_021.png": {
+      "source_size": [
+        33,
+        32
+      ],
+      "output_size": [
+        65,
+        64
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "RizeGreymon_Primary.png": {
+      "source_size": [
+        137,
+        182
+      ],
+      "output_size": [
+        169,
+        214
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

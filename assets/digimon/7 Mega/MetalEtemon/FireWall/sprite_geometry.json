@@ -1,0 +1,405 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Frames/MetalEtemon_Frame_001.png": {
+      "source_size": [
+        88,
+        112
+      ],
+      "output_size": [
+        120,
+        144
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/MetalEtemon_Frame_002.png": {
+      "source_size": [
+        86,
+        111
+      ],
+      "output_size": [
+        118,
+        143
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/MetalEtemon_Frame_003.png": {
+      "source_size": [
+        85,
+        110
+      ],
+      "output_size": [
+        117,
+        142
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/MetalEtemon_Frame_004.png": {
+      "source_size": [
+        93,
+        139
+      ],
+      "output_size": [
+        125,
+        171
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/MetalEtemon_Frame_005.png": {
+      "source_size": [
+        98,
+        105
+      ],
+      "output_size": [
+        130,
+        137
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/MetalEtemon_Frame_006.png": {
+      "source_size": [
+        31,
+        38
+      ],
+      "output_size": [
+        63,
+        70
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/MetalEtemon_Frame_007.png": {
+      "source_size": [
+        32,
+        41
+      ],
+      "output_size": [
+        64,
+        73
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/MetalEtemon_Frame_008.png": {
+      "source_size": [
+        32,
+        41
+      ],
+      "output_size": [
+        64,
+        73
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/MetalEtemon_Frame_009.png": {
+      "source_size": [
+        31,
+        38
+      ],
+      "output_size": [
+        63,
+        70
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/MetalEtemon_Frame_010.png": {
+      "source_size": [
+        30,
+        39
+      ],
+      "output_size": [
+        62,
+        71
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/MetalEtemon_Frame_011.png": {
+      "source_size": [
+        30,
+        39
+      ],
+      "output_size": [
+        62,
+        71
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/MetalEtemon_Frame_012.png": {
+      "source_size": [
+        30,
+        41
+      ],
+      "output_size": [
+        62,
+        73
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/MetalEtemon_Frame_013.png": {
+      "source_size": [
+        30,
+        41
+      ],
+      "output_size": [
+        62,
+        73
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/MetalEtemon_Frame_014.png": {
+      "source_size": [
+        35,
+        42
+      ],
+      "output_size": [
+        67,
+        74
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/MetalEtemon_Frame_015.png": {
+      "source_size": [
+        36,
+        40
+      ],
+      "output_size": [
+        68,
+        72
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/MetalEtemon_Frame_016.png": {
+      "source_size": [
+        36,
+        40
+      ],
+      "output_size": [
+        68,
+        72
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/MetalEtemon_Frame_017.png": {
+      "source_size": [
+        35,
+        42
+      ],
+      "output_size": [
+        67,
+        74
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/MetalEtemon_Frame_018.png": {
+      "source_size": [
+        35,
+        43
+      ],
+      "output_size": [
+        67,
+        75
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/MetalEtemon_Frame_019.png": {
+      "source_size": [
+        29,
+        39
+      ],
+      "output_size": [
+        61,
+        71
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/MetalEtemon_Frame_020.png": {
+      "source_size": [
+        35,
+        37
+      ],
+      "output_size": [
+        67,
+        69
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "MetalEtemon_Primary.png": {
+      "source_size": [
+        88,
+        112
+      ],
+      "output_size": [
+        120,
+        144
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

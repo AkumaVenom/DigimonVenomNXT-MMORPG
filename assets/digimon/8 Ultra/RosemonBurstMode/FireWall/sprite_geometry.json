@@ -1,0 +1,443 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Frames/RosemonBurstMode_Frame_001.png": {
+      "source_size": [
+        79,
+        113
+      ],
+      "output_size": [
+        111,
+        145
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/RosemonBurstMode_Frame_002.png": {
+      "source_size": [
+        77,
+        112
+      ],
+      "output_size": [
+        109,
+        144
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/RosemonBurstMode_Frame_003.png": {
+      "source_size": [
+        79,
+        113
+      ],
+      "output_size": [
+        111,
+        145
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/RosemonBurstMode_Frame_004.png": {
+      "source_size": [
+        131,
+        133
+      ],
+      "output_size": [
+        163,
+        165
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/RosemonBurstMode_Frame_005.png": {
+      "source_size": [
+        99,
+        108
+      ],
+      "output_size": [
+        131,
+        140
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/RosemonBurstMode_Frame_006.png": {
+      "source_size": [
+        30,
+        43
+      ],
+      "output_size": [
+        62,
+        75
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/RosemonBurstMode_Frame_007.png": {
+      "source_size": [
+        34,
+        42
+      ],
+      "output_size": [
+        66,
+        74
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/RosemonBurstMode_Frame_008.png": {
+      "source_size": [
+        34,
+        42
+      ],
+      "output_size": [
+        66,
+        74
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/RosemonBurstMode_Frame_009.png": {
+      "source_size": [
+        29,
+        43
+      ],
+      "output_size": [
+        61,
+        75
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/RosemonBurstMode_Frame_010.png": {
+      "source_size": [
+        28,
+        42
+      ],
+      "output_size": [
+        60,
+        74
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/RosemonBurstMode_Frame_011.png": {
+      "source_size": [
+        28,
+        42
+      ],
+      "output_size": [
+        60,
+        74
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/RosemonBurstMode_Frame_012.png": {
+      "source_size": [
+        31,
+        41
+      ],
+      "output_size": [
+        63,
+        73
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/RosemonBurstMode_Frame_013.png": {
+      "source_size": [
+        30,
+        41
+      ],
+      "output_size": [
+        62,
+        73
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/RosemonBurstMode_Frame_014.png": {
+      "source_size": [
+        30,
+        41
+      ],
+      "output_size": [
+        62,
+        73
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/RosemonBurstMode_Frame_015.png": {
+      "source_size": [
+        31,
+        41
+      ],
+      "output_size": [
+        63,
+        73
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/RosemonBurstMode_Frame_016.png": {
+      "source_size": [
+        28,
+        42
+      ],
+      "output_size": [
+        60,
+        74
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/RosemonBurstMode_Frame_017.png": {
+      "source_size": [
+        28,
+        42
+      ],
+      "output_size": [
+        60,
+        74
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/RosemonBurstMode_Frame_018.png": {
+      "source_size": [
+        32,
+        44
+      ],
+      "output_size": [
+        64,
+        76
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/RosemonBurstMode_Frame_019.png": {
+      "source_size": [
+        31,
+        43
+      ],
+      "output_size": [
+        63,
+        75
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/RosemonBurstMode_Frame_020.png": {
+      "source_size": [
+        35,
+        31
+      ],
+      "output_size": [
+        67,
+        63
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/RosemonBurstMode_Frame_021.png": {
+      "source_size": [
+        38,
+        19
+      ],
+      "output_size": [
+        70,
+        51
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/RosemonBurstMode_Frame_022.png": {
+      "source_size": [
+        56,
+        19
+      ],
+      "output_size": [
+        88,
+        51
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "RosemonBurstMode_Primary.png": {
+      "source_size": [
+        79,
+        113
+      ],
+      "output_size": [
+        111,
+        145
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

@@ -1,0 +1,367 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Frames/Merukimon_Frame_001.png": {
+      "source_size": [
+        135,
+        175
+      ],
+      "output_size": [
+        167,
+        207
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Merukimon_Frame_002.png": {
+      "source_size": [
+        136,
+        174
+      ],
+      "output_size": [
+        168,
+        206
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Merukimon_Frame_003.png": {
+      "source_size": [
+        137,
+        171
+      ],
+      "output_size": [
+        169,
+        203
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Merukimon_Frame_004.png": {
+      "source_size": [
+        33,
+        32
+      ],
+      "output_size": [
+        65,
+        64
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Merukimon_Frame_005.png": {
+      "source_size": [
+        54,
+        57
+      ],
+      "output_size": [
+        86,
+        89
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Merukimon_Frame_006.png": {
+      "source_size": [
+        54,
+        57
+      ],
+      "output_size": [
+        86,
+        89
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Merukimon_Frame_007.png": {
+      "source_size": [
+        124,
+        209
+      ],
+      "output_size": [
+        156,
+        241
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Merukimon_Frame_008.png": {
+      "source_size": [
+        51,
+        56
+      ],
+      "output_size": [
+        83,
+        88
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Merukimon_Frame_009.png": {
+      "source_size": [
+        55,
+        56
+      ],
+      "output_size": [
+        87,
+        88
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Merukimon_Frame_010.png": {
+      "source_size": [
+        51,
+        56
+      ],
+      "output_size": [
+        83,
+        88
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Merukimon_Frame_011.png": {
+      "source_size": [
+        55,
+        56
+      ],
+      "output_size": [
+        87,
+        88
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Merukimon_Frame_012.png": {
+      "source_size": [
+        134,
+        174
+      ],
+      "output_size": [
+        166,
+        206
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Merukimon_Frame_013.png": {
+      "source_size": [
+        46,
+        57
+      ],
+      "output_size": [
+        78,
+        89
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Merukimon_Frame_014.png": {
+      "source_size": [
+        46,
+        57
+      ],
+      "output_size": [
+        78,
+        89
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Merukimon_Frame_015.png": {
+      "source_size": [
+        45,
+        56
+      ],
+      "output_size": [
+        77,
+        88
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Merukimon_Frame_016.png": {
+      "source_size": [
+        48,
+        56
+      ],
+      "output_size": [
+        80,
+        88
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Merukimon_Frame_017.png": {
+      "source_size": [
+        45,
+        56
+      ],
+      "output_size": [
+        77,
+        88
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Merukimon_Frame_018.png": {
+      "source_size": [
+        48,
+        56
+      ],
+      "output_size": [
+        80,
+        88
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Merukimon_Primary.png": {
+      "source_size": [
+        135,
+        175
+      ],
+      "output_size": [
+        167,
+        207
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

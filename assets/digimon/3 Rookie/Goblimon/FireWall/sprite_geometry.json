@@ -1,0 +1,120 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Goblimon_AttackPart1.png": {
+      "source_size": [
+        554,
+        672
+      ],
+      "output_size": [
+        778,
+        896
+      ],
+      "padding": {
+        "left": 112,
+        "top": 112,
+        "right": 112,
+        "bottom": 112
+      },
+      "effect_pixel_unit": 7,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Goblimon_AttackPart2.png": {
+      "source_size": [
+        788,
+        730
+      ],
+      "output_size": [
+        1012,
+        954
+      ],
+      "padding": {
+        "left": 112,
+        "top": 112,
+        "right": 112,
+        "bottom": 112
+      },
+      "effect_pixel_unit": 7,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Goblimon_Extra.png": {
+      "source_size": [
+        788,
+        730
+      ],
+      "output_size": [
+        1012,
+        954
+      ],
+      "padding": {
+        "left": 112,
+        "top": 112,
+        "right": 112,
+        "bottom": 112
+      },
+      "effect_pixel_unit": 7,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Goblimon_Idle.png": {
+      "source_size": [
+        504,
+        582
+      ],
+      "output_size": [
+        728,
+        806
+      ],
+      "padding": {
+        "left": 112,
+        "top": 112,
+        "right": 112,
+        "bottom": 112
+      },
+      "effect_pixel_unit": 7,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Goblimon_LLegWalk.png": {
+      "source_size": [
+        526,
+        600
+      ],
+      "output_size": [
+        750,
+        824
+      ],
+      "padding": {
+        "left": 112,
+        "top": 112,
+        "right": 112,
+        "bottom": 112
+      },
+      "effect_pixel_unit": 7,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Goblimon_RLegWalk.png": {
+      "source_size": [
+        526,
+        600
+      ],
+      "output_size": [
+        750,
+        824
+      ],
+      "padding": {
+        "left": 112,
+        "top": 112,
+        "right": 112,
+        "bottom": 112
+      },
+      "effect_pixel_unit": 7,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

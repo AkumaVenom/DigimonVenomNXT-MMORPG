@@ -1,0 +1,4000 @@
+{
+  "version": 1,
+  "patch_id": "fixed_sprites_v111_for_v110",
+  "provenance": {
+    "kind": "fixed_sprites_v111",
+    "version": "1.1.1",
+    "target": "Uploaded v1.1.0 sprite-patched source (application identity retained)",
+    "source_archive": "FixedSpritesPart2For_v1.1.1(1).rar",
+    "source_archive_sha256": "f3627c6db49bd30aab9faa608c2bb9aad6842d3bb4accfb5715c145dbf70fcb6",
+    "record": "data/fixed_sprites_v111.json",
+    "source_images": 68,
+    "canonical_replacements": 75,
+    "species": 20,
+    "method": "Byte-exact canonical overwrites, proven same-pose copy synchronization, explicit animation sidecars and manifest SHA-256 updates. No redrawing, re-encoding, rescaling, gameplay changes or Paradox substitutions."
+  },
+  "counts": {
+    "source_images": 68,
+    "canonical_replacements": 75,
+    "direct_replacements": 68,
+    "pose_aliases": 7,
+    "animation_frames": 59,
+    "primary_images": 12,
+    "labelled_poses": 4,
+    "species": 20,
+    "new_sidecars": 15,
+    "superseded_v110_replacements": 14
+  },
+  "baseline": {
+    "application_version": "1.0.1",
+    "catalog_sha256": "95e0911885433c5727445c52130d0350399f3f66a30a8564aa6327a7cf872eb5",
+    "manifest_sha256": "c17833be17032c05443e34ae7770f4ea9379f09af46f327180520b8d6de509dc",
+    "non_art_catalog_sha256": "b8d9926bd6e562287dda787f5f1340defe740b0b7c791cfbd8dfa337e37720bc",
+    "unaffected_species_sha256": "a99c8b6d05573a6719312e092bad9dcd6ed6ce5de96c95fc2c201a2d24c6ade1",
+    "unaffected_species_count": 984,
+    "v110_record_sha256": "cae3ad554a3f44d3f6d4d9c5a3f0151f9ae15f0750d3e4d9bd7d3616699f3bc5",
+    "protected_data": [
+      {
+        "path": "data/audio_catalog.json",
+        "sha256": "bfed3f8ff4318e39597470dffaa208f4d566b9c7162e253789adfebf5b669629"
+      },
+      {
+        "path": "data/collision.json",
+        "sha256": "cde20554cc89b3df35196712c06f1cf639a894d5d55b43bc6658797eeba4dc2c"
+      },
+      {
+        "path": "data/effects_catalog.json",
+        "sha256": "0bb9be793371619b4280ac74d2ec88ad06a39179ca5c05cb9e345a4df161c436"
+      },
+      {
+        "path": "data/fixed_sprites_v110.json",
+        "sha256": "cae3ad554a3f44d3f6d4d9c5a3f0151f9ae15f0750d3e4d9bd7d3616699f3bc5"
+      },
+      {
+        "path": "data/mechanics.json",
+        "sha256": "a09ba7b8fa71357762d6b205da821921c6410539ad21d75b15db8c62d96d878d"
+      },
+      {
+        "path": "data/tamers_catalog.json",
+        "sha256": "e5358aee28d15218aac1311c9c1aa5eaa32f221ec517832dd108d1b930a6cea6"
+      },
+      {
+        "path": "data/ui_assets.json",
+        "sha256": "e5edab90c5ec5fda3b4e197da571ac6af2e919cfe9fa14abe56201e2559e977b"
+      },
+      {
+        "path": "data/ui_audio.json",
+        "sha256": "3ebc6e23988e7f4fc2a2ba150f652cf1ef91011bc80449d7b5596a4aa4984a79"
+      },
+      {
+        "path": "data/world_ds_audio.json",
+        "sha256": "143fc6d7195f8ecfa438954a6cd1a480787193f609416e21ec4f1b4e66e1d91a"
+      },
+      {
+        "path": "data/world_ds_maps.json",
+        "sha256": "cc64bd53062e24f3e9bfe7d41c91495ee74d3f308e9b06377fc5c7fe367dddf8"
+      }
+    ],
+    "runtime_python_files": [
+      {
+        "path": "venom/__init__.py",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "venom/client/__init__.py",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "venom/client/app.py",
+        "sha256": "1084051598f1ed1cf6fb0ebe7a16d21bf9cd851419df63a3f55367d423028096"
+      },
+      {
+        "path": "venom/client/assets.py",
+        "sha256": "93db105eb1d1f7f825e85e0fe221932dbc1fbdc29178222ba8f100c6463b6df3"
+      },
+      {
+        "path": "venom/client/battle_arena.py",
+        "sha256": "b95fc0dbb199bbe88381d9610ca7d3e64d106932fc056af39d96ec79cf928b29"
+      },
+      {
+        "path": "venom/client/battle_layout.py",
+        "sha256": "f3d877d79af47c11ce599a7d6b92476ec3699bdd4b23c6a4f312b40f8249b9d8"
+      },
+      {
+        "path": "venom/client/combat_menu.py",
+        "sha256": "355f29f6a5ee2d339f5f030aef778c76a54c88d8cb2afd285038e48d01f4f3e0"
+      },
+      {
+        "path": "venom/client/community.py",
+        "sha256": "5cee501e46416fee058d9102d6c833e34d1c7d16614472abc30dfc09e89a2f07"
+      },
+      {
+        "path": "venom/client/cyber.py",
+        "sha256": "ac3579f2d9c37141f1bcfb6c0a5b2bbf13962bf53f8ba7849681c104b5ef27f9"
+      },
+      {
+        "path": "venom/client/destinations.py",
+        "sha256": "a10773bebbda09bb0250ce94e248f9ab41f43088b4976679c0055508410e5894"
+      },
+      {
+        "path": "venom/client/digifarm.py",
+        "sha256": "c6831f562d4affac78f3c27cbaf10e18d2fbddec5578dfb646043cbf5987f4e0"
+      },
+      {
+        "path": "venom/client/display.py",
+        "sha256": "f0b01cc9e37afd81d18becad4f0889a182f9a3b390115fab00b668ed6b80d273"
+      },
+      {
+        "path": "venom/client/entry_screen.py",
+        "sha256": "fa955a22948d5f0ba8367ee594afd1e1c12c5eb37c4c1e00c1ccbf5079eeeefe"
+      },
+      {
+        "path": "venom/client/hud.py",
+        "sha256": "023208115595991f05cb7911594c116bf5de127644e24a5f7060a541e825aafd"
+      },
+      {
+        "path": "venom/client/icon.py",
+        "sha256": "7bc7ba2fe633d3c9884ea3e8952a67fdcbebfbecae56301d339e5f894f0e06d5"
+      },
+      {
+        "path": "venom/client/laboratory.py",
+        "sha256": "dd97456b45488827e70f17be0abc98d5f586d39d4a1c929311507ca30616793f"
+      },
+      {
+        "path": "venom/client/main.py",
+        "sha256": "bedf0d81a2a854b7e8443e0706fee4483ccf1f6c549aacb70172a7ed06075448"
+      },
+      {
+        "path": "venom/client/motion.py",
+        "sha256": "81a7121e1447b82f78202aaeb99a44c1b03eaa14cd5502baf8df4570f9736961"
+      },
+      {
+        "path": "venom/client/network.py",
+        "sha256": "4e5d5e4aca04f04d19d3e04abed65b853cee17aff39d11643b89b745c5bcbd75"
+      },
+      {
+        "path": "venom/client/partners.py",
+        "sha256": "65f6498a158a6f9e9d24b80beb4b1041956155f31aaa3f22ea8a8bb5807ab1a8"
+      },
+      {
+        "path": "venom/client/presentation.py",
+        "sha256": "c44fab6f496fe2dc9b01923e55d1b1d5579badf51eeb7ae7244e3f1585205fdf"
+      },
+      {
+        "path": "venom/client/render.py",
+        "sha256": "58a55386a8677f31c5ceb2506bc18dcf8a5d2376e7d1f9aeea0c48fd1580fa53"
+      },
+      {
+        "path": "venom/client/season.py",
+        "sha256": "36ae874944e58364bb108d2c5d0cbbd3b5d65afdfdf7a9bd9bf932f28335e669"
+      },
+      {
+        "path": "venom/client/settings_panel.py",
+        "sha256": "4327e1e24c21d2e18ada1d938e5881fe227de679b6937e2f2ccff52f107a6730"
+      },
+      {
+        "path": "venom/client/shop.py",
+        "sha256": "2c46887c279e85cf2026591dbd900f554c0645cbaab55d1f5c49fed6bc9c08fd"
+      },
+      {
+        "path": "venom/client/story.py",
+        "sha256": "f9827c97e6d213e5777f5d4bfe5f523340cc7373724846ac09f20cd2c92dc2c4"
+      },
+      {
+        "path": "venom/client/widgets.py",
+        "sha256": "cd44d70fa031b8d8718d78f956d162c279dbbe92517e705edaefcd84550f131d"
+      },
+      {
+        "path": "venom/client/world.py",
+        "sha256": "a10799f5642baacec91061898271c6cf2c6c70256251823457c4b3a407e79d00"
+      },
+      {
+        "path": "venom/common/__init__.py",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "venom/common/economy.py",
+        "sha256": "f97dd9618e31a4cf06f937b820b54a893c0312622f75a135028517f42aafb0fe"
+      },
+      {
+        "path": "venom/common/farm.py",
+        "sha256": "66c023f0716d94c2d984391359ec65b344821e8c8403bc22a9c8d5cd33d71722"
+      },
+      {
+        "path": "venom/common/game.py",
+        "sha256": "957184d4a853e0c26d5d7a98b994b4afba6a1e38417be0dc3bc9a9268f9ae125"
+      },
+      {
+        "path": "venom/common/network.py",
+        "sha256": "c64e2419231cdba0036c14361d4873e3e531337a003606ef4db7d494cb702e6a"
+      },
+      {
+        "path": "venom/common/paths.py",
+        "sha256": "22f13018cbc43c7421d7c8434ee5b112214707dace6b4e00efb45f289cd6fb22"
+      },
+      {
+        "path": "venom/common/population.py",
+        "sha256": "c114d7586441a1b79eb9c409e2bc9694bc522b98102060cac414e593832d224e"
+      },
+      {
+        "path": "venom/common/replication.py",
+        "sha256": "9ecea92d25c2d4886f61dfd5d7df385f3dbe1772620fbb753e2c766f22e1a752"
+      },
+      {
+        "path": "venom/common/season.py",
+        "sha256": "6c80913c77f44244c7c6bd2c5246f1f6e0b4695cea31ab9fd01b71ea81687b13"
+      },
+      {
+        "path": "venom/common/story.py",
+        "sha256": "9919884158651255b966dd04f4d2a63e9169b943e02e35851357127d7bfc8901"
+      },
+      {
+        "path": "venom/common/story_content.py",
+        "sha256": "2be9f37df0a8732aaeaf021f64b13ccde40d847873a13471d144385923df4d04"
+      },
+      {
+        "path": "venom/common/world_ds_story_content.py",
+        "sha256": "56d28dba54141cb7d3442c06ea81703b60df3e593aaa787c29d9ce86477c3f6e"
+      },
+      {
+        "path": "venom/server/__init__.py",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "venom/server/activity_window.py",
+        "sha256": "f1ad0aacb7678bc567dce2923317f47acb140d7d8e2df4f931f5fc8d3c060df4"
+      },
+      {
+        "path": "venom/server/admin_commands.py",
+        "sha256": "ab0422a86be1113b1c7cedf1d9fe554e04ca6e02c671379fc0009d13078c193c"
+      },
+      {
+        "path": "venom/server/admin_game.py",
+        "sha256": "904b3cdb74fe51dde85786815d82613d731805a1a8d5a5ecc1b07287d698a36b"
+      },
+      {
+        "path": "venom/server/admin_store.py",
+        "sha256": "9dc742534f689612679060310aabca46ff7ebddac2277476f9e442fa752f6bec"
+      },
+      {
+        "path": "venom/server/bots.py",
+        "sha256": "cde0803cb156e3f92f397122999de467ca1a5910905bff832dbbf02931873e18"
+      },
+      {
+        "path": "venom/server/community.py",
+        "sha256": "58d459fffe918870f681bd97ed565ae3781e9ff28ca8cc474148af233f321df8"
+      },
+      {
+        "path": "venom/server/community_store.py",
+        "sha256": "00f774a1478410ef039b0a747000c90e6847308338a4ae996cd9360974cc7771"
+      },
+      {
+        "path": "venom/server/database.py",
+        "sha256": "05706ac3ab147e8d54329d4ceb660aedf40d81876294e669d84c7e3ebf0dfbe8"
+      },
+      {
+        "path": "venom/server/lifecycle.py",
+        "sha256": "a4f0f76096bd434d600d28faa59efe5937fa5330011decb1d4ea30a4f9c1ae8c"
+      },
+      {
+        "path": "venom/server/local_console.py",
+        "sha256": "e32ded912464a346c942ce47018df27eea14a7dede112dbbe6b032a5ae753e0f"
+      },
+      {
+        "path": "venom/server/main.py",
+        "sha256": "f89f8d14cfdad04fe8e0635eeb15aa37f48f6d661395f7f0d9b1b27919126c27"
+      },
+      {
+        "path": "venom/server/moderation.py",
+        "sha256": "3ec7e1c01e4df04e8df7e11fa46949a6ee6efed96321a8c7a056a7ded6a6138f"
+      },
+      {
+        "path": "venom/server/navigation.py",
+        "sha256": "b42b29b5be0442bbc4d83fbf30c4e89f92d47a62bb8d6629d6d640da48d1109d"
+      },
+      {
+        "path": "venom/server/ranked.py",
+        "sha256": "27bf14185fc6b8e8431f6b300124e48244723c86e960352d939a897766de2c97"
+      },
+      {
+        "path": "venom/version.py",
+        "sha256": "35c141b7578deb692fca9921cca768277b6976fd7e6251a69e09c04e44e16bdb"
+      }
+    ]
+  },
+  "legacy_compatibility": {
+    "previous_record": "data/fixed_sprites_v110.json",
+    "superseded_paths": [
+      "assets/digimon/5 Ultimate/MasterTyrannomon/Frames/MasterTyrannomon_Frame_003.png",
+      "assets/digimon/7 Mega/Barbamon/Barbamon_Primary.png",
+      "assets/digimon/7 Mega/Barbamon/Frames/Barbamon_Frame_002.png",
+      "assets/digimon/7 Mega/Barbamon/Frames/Barbamon_Frame_003.png",
+      "assets/digimon/7 Mega/Barbamon/Frames/Barbamon_Frame_004.png",
+      "assets/digimon/7 Mega/Barbamon/Frames/Barbamon_Frame_005.png",
+      "assets/digimon/7 Mega/Barbamon/Frames/Barbamon_Frame_006.png",
+      "assets/digimon/7 Mega/ImperialdramonFighterMode/Frames/ImperialdramonFighterMode_Frame_001.png",
+      "assets/digimon/7 Mega/ImperialdramonFighterMode/ImperialdramonFighterMode_Primary.png",
+      "assets/digimon/7 Mega/Skullknightmon/Frames/Skullknightmon_Frame_001.png",
+      "assets/digimon/7 Mega/Skullknightmon/Frames/Skullknightmon_Frame_003.png",
+      "assets/digimon/7 Mega/Skullknightmon/Frames/Skullknightmon_Frame_004.png",
+      "assets/digimon/7 Mega/Skullknightmon/Frames/Skullknightmon_Frame_005.png",
+      "assets/digimon/7 Mega/Skullknightmon/Skullknightmon_Primary.png"
+    ],
+    "retained_replacements": 695,
+    "unaffected_by_either_pack_count": 856,
+    "unaffected_by_either_pack_sha256": "d45736b38efc5655b66ecb5f6ca664889c283ac71bda2db86baafec48b9fd29e"
+  },
+  "filename_normalization": {
+    "suffix_removed": "-transparent",
+    "explicit_name_corrections": {
+      "Barbamon_Frame_002-.png": "Barbamon_Frame_002.png"
+    }
+  },
+  "inputs": [
+    {
+      "source": "Aquilamon_Frame_001.png",
+      "path": "assets/digimon/4 Champion/Aquilamon/Frames/Aquilamon_Frame_001.png",
+      "species_id": "aquilamon",
+      "size": 3973,
+      "sha256": "e0fac71bdbbec323298cb7dbf456a393fec19bd6b4ec178e84f2a55a088f278a",
+      "dimensions": [
+        103,
+        106
+      ],
+      "rgba_sha256": "369b8fe3f69cb885417be42444ce21162db2927025670f16389fb3662b86e0d8"
+    },
+    {
+      "source": "Aquilamon_Frame_002.png",
+      "path": "assets/digimon/4 Champion/Aquilamon/Frames/Aquilamon_Frame_002.png",
+      "species_id": "aquilamon",
+      "size": 3558,
+      "sha256": "6a519bb0a204626613cf0644b4104b5ced7402b147c009e15c009684e08995e2",
+      "dimensions": [
+        130,
+        91
+      ],
+      "rgba_sha256": "6fc49d5581bcdd489c6a9eb1084bcc07ad5f5dfefc68091c5efa6236d74f16ca"
+    },
+    {
+      "source": "Aquilamon_Frame_003.png",
+      "path": "assets/digimon/4 Champion/Aquilamon/Frames/Aquilamon_Frame_003.png",
+      "species_id": "aquilamon",
+      "size": 3293,
+      "sha256": "fcc801cd9b02f01a12a544793652dd2615e7aa5ae2c49e9c234fc60666e1f70a",
+      "dimensions": [
+        126,
+        68
+      ],
+      "rgba_sha256": "3336f1cc42537a4a6d2b13fbbb92afcab3e179c8f551d88b319b1ce93aa4a900"
+    },
+    {
+      "source": "Aquilamon_Frame_007.png",
+      "path": "assets/digimon/4 Champion/Aquilamon/Frames/Aquilamon_Frame_007.png",
+      "species_id": "aquilamon",
+      "size": 3591,
+      "sha256": "70185c70c67fb51a76b8ad10b9b473ff2a58ba872f46290b6114ab428b3fa003",
+      "dimensions": [
+        103,
+        99
+      ],
+      "rgba_sha256": "cf9aaf56fa46188caf74b75dbc78500017f4d02fbd6c9ef24bc2bf6f5f033249"
+    },
+    {
+      "source": "Aquilamon_Frame_008.png",
+      "path": "assets/digimon/4 Champion/Aquilamon/Frames/Aquilamon_Frame_008.png",
+      "species_id": "aquilamon",
+      "size": 2993,
+      "sha256": "ba4ae3798a49c0c4004785cbce0892211dce3b0fb592d44282cad95439213df2",
+      "dimensions": [
+        126,
+        68
+      ],
+      "rgba_sha256": "496fd2dddb45cbeea44cdfe6fdf15c7dcbe2c6ee9c2436f12e8c5834c31b9f2e"
+    },
+    {
+      "source": "Barbamon_Frame_002-.png",
+      "path": "assets/digimon/7 Mega/Barbamon/Frames/Barbamon_Frame_002.png",
+      "species_id": "barbamon",
+      "size": 35876,
+      "sha256": "6ddaaf419f1f40cecb5f3e7f2baa09c6906f54aff36165f82f6359d5bfcd1480",
+      "dimensions": [
+        174,
+        154
+      ],
+      "rgba_sha256": "dde5178ff53dd0604c72002338649986cb31b5df0cbe86ff4e58bcdd9bffa3b6"
+    },
+    {
+      "source": "Barbamon_Frame_003-transparent.png",
+      "path": "assets/digimon/7 Mega/Barbamon/Frames/Barbamon_Frame_003.png",
+      "species_id": "barbamon",
+      "size": 30699,
+      "sha256": "8e41d90cd914337cf366f44d735349f2a0dc666c897ecd3316ff85883901ccf2",
+      "dimensions": [
+        136,
+        158
+      ],
+      "rgba_sha256": "f5781191b39343deb51356c9de11111cf97a8f07006241c7d05a55aa13bfa67e"
+    },
+    {
+      "source": "Barbamon_Frame_004-transparent.png",
+      "path": "assets/digimon/7 Mega/Barbamon/Frames/Barbamon_Frame_004.png",
+      "species_id": "barbamon",
+      "size": 35142,
+      "sha256": "5b3ff1dca4a8b45e6d1cc0a11d2af8f93a67c169ae4baa62fdb122c5895ed1ee",
+      "dimensions": [
+        173,
+        158
+      ],
+      "rgba_sha256": "bc7ad7b0cdf5101f0649440df58f3a183994fb0ca42d7507a6aa2455adade7fc"
+    },
+    {
+      "source": "Barbamon_Frame_005-transparent.png",
+      "path": "assets/digimon/7 Mega/Barbamon/Frames/Barbamon_Frame_005.png",
+      "species_id": "barbamon",
+      "size": 35755,
+      "sha256": "5b036adb4a71d35e5ef13840c148bd7fcb9ab67c0d5ca2ca0b01159a1c85bdb6",
+      "dimensions": [
+        174,
+        152
+      ],
+      "rgba_sha256": "99760f1cc60f36149d91ebe984748970376572a943ee84d03ce0cd5bcf414a92"
+    },
+    {
+      "source": "Barbamon_Frame_006-transparent.png",
+      "path": "assets/digimon/7 Mega/Barbamon/Frames/Barbamon_Frame_006.png",
+      "species_id": "barbamon",
+      "size": 29716,
+      "sha256": "0663a263a993856e2bd35ca0d1c96a0effe469d4ca96fc41d3c85d2e6e35ffda",
+      "dimensions": [
+        156,
+        154
+      ],
+      "rgba_sha256": "79179c4fea86b2817515d40cc5fcb011b69de20b86bb3f73fc68fc999632ac06"
+    },
+    {
+      "source": "Birdramon_Frame_002-transparent.png",
+      "path": "assets/digimon/4 Champion/Birdramon/Frames/Birdramon_Frame_002.png",
+      "species_id": "birdramon",
+      "size": 4680,
+      "sha256": "cef454a18b71d96c8e5e96d252bd47754a071f0f9504fe1ecc07b0ae5fe55352",
+      "dimensions": [
+        123,
+        87
+      ],
+      "rgba_sha256": "82d60a291af273e54152446ac47a144a157e65331383a30c9875150fb40b38f3"
+    },
+    {
+      "source": "Birdramon_Frame_009-transparent.png",
+      "path": "assets/digimon/4 Champion/Birdramon/Frames/Birdramon_Frame_009.png",
+      "species_id": "birdramon",
+      "size": 4404,
+      "sha256": "e8e489908154fa936cd82cb09d536c28a714664c54a6e04872b0070b0949e469",
+      "dimensions": [
+        76,
+        127
+      ],
+      "rgba_sha256": "4eab9ffaceeacc6741fed94bdf53a92bdd7049d4b65daa947c704dd6525fa258"
+    },
+    {
+      "source": "Birdramon_Frame_016-transparent.png",
+      "path": "assets/digimon/4 Champion/Birdramon/Frames/Birdramon_Frame_016.png",
+      "species_id": "birdramon",
+      "size": 4456,
+      "sha256": "61eb5831d6f1c345f52d90c205fe8913e9f63f0996ec07e67fd467aa2426a80f",
+      "dimensions": [
+        103,
+        115
+      ],
+      "rgba_sha256": "294e6521033496549cfa215894e9b845806692010ce19e34f70480120f13270e"
+    },
+    {
+      "source": "Birdramon_Frame_019-transparent.png",
+      "path": "assets/digimon/4 Champion/Birdramon/Frames/Birdramon_Frame_019.png",
+      "species_id": "birdramon",
+      "size": 3456,
+      "sha256": "52f877783e3675a46503c0056021ac219b7fc307bf11254cd3681a3f4b102ab5",
+      "dimensions": [
+        68,
+        107
+      ],
+      "rgba_sha256": "92a4ac39e8a70ec50d35a20fc7ac626370d66a8ce7e3ba986149fa6595c38500"
+    },
+    {
+      "source": "Chaosmon_Frame_001-transparent.png",
+      "path": "assets/digimon/7 Mega/Chaosmon/Frames/Chaosmon_Frame_001.png",
+      "species_id": "chaosmon",
+      "size": 7867,
+      "sha256": "4ad09f2aeb3a5c2bd1ab9a3f388956cc75db90acc635a1c47e3372ef01215f3d",
+      "dimensions": [
+        110,
+        149
+      ],
+      "rgba_sha256": "ddbf69696a1d09d4cffd528ed4581a769d229ac5c3baed5a03ad1654743f3f0a"
+    },
+    {
+      "source": "Chaosmon_Frame_002-transparent.png",
+      "path": "assets/digimon/7 Mega/Chaosmon/Frames/Chaosmon_Frame_002.png",
+      "species_id": "chaosmon",
+      "size": 7785,
+      "sha256": "9a48f1a0da1f7ef0a7cc2360aa0e9b8846585039d84d4a769245deaa17d3fc86",
+      "dimensions": [
+        111,
+        147
+      ],
+      "rgba_sha256": "8749eb1dd5cf756a5d87e9363c27be35275d18740b84f83800fa5ecc40ffc2fc"
+    },
+    {
+      "source": "Chaosmon_Frame_003-transparent.png",
+      "path": "assets/digimon/7 Mega/Chaosmon/Frames/Chaosmon_Frame_003.png",
+      "species_id": "chaosmon",
+      "size": 7779,
+      "sha256": "157474e6d878376f8e6f5208de2680a30c16248672b0bafad9a9a36291970e2b",
+      "dimensions": [
+        109,
+        147
+      ],
+      "rgba_sha256": "5242622be9a5f04e57dabf4f48ef777d7555110a471947b4e466988ac2af14e7"
+    },
+    {
+      "source": "Chaosmon_Frame_004-transparent.png",
+      "path": "assets/digimon/7 Mega/Chaosmon/Frames/Chaosmon_Frame_004.png",
+      "species_id": "chaosmon",
+      "size": 8373,
+      "sha256": "b0d77ad1fd63d8039f601031c4dbda318cec1073845e4063c47573df8e54967e",
+      "dimensions": [
+        128,
+        194
+      ],
+      "rgba_sha256": "73f527a901d36bef72df7212966deea89e3ec7a3438398952686cec5a3a6c126"
+    },
+    {
+      "source": "Chaosmon_Frame_005-transparent.png",
+      "path": "assets/digimon/7 Mega/Chaosmon/Frames/Chaosmon_Frame_005.png",
+      "species_id": "chaosmon",
+      "size": 7782,
+      "sha256": "a9d4a41a7b856ea0dca438343f0ff89ef338ef298cbe1292eb91ff239af0fa55",
+      "dimensions": [
+        167,
+        170
+      ],
+      "rgba_sha256": "c75ba7e8b142c37570b729c22dc383c9e8a59e700074031603050833355c6d5a"
+    },
+    {
+      "source": "Chaosmon_Primary-transparent.png",
+      "path": "assets/digimon/7 Mega/Chaosmon/Chaosmon_Primary.png",
+      "species_id": "chaosmon",
+      "size": 7867,
+      "sha256": "4ad09f2aeb3a5c2bd1ab9a3f388956cc75db90acc635a1c47e3372ef01215f3d",
+      "dimensions": [
+        110,
+        149
+      ],
+      "rgba_sha256": "ddbf69696a1d09d4cffd528ed4581a769d229ac5c3baed5a03ad1654743f3f0a"
+    },
+    {
+      "source": "Crowmon_Frame_003-transparent.png",
+      "path": "assets/digimon/5 Ultimate/Crowmon/Frames/Crowmon_Frame_003.png",
+      "species_id": "crowmon",
+      "size": 4693,
+      "sha256": "5e758035a74b1f1e01c13d5fed29fdcd9757c5c8bf1a19ce4e69d445f067c97f",
+      "dimensions": [
+        80,
+        112
+      ],
+      "rgba_sha256": "dd9cb5f52568832ad4949fb1bf3175ee1dd1c08c7aff66944ed97be9c26deac0"
+    },
+    {
+      "source": "Crowmon_Frame_004-transparent.png",
+      "path": "assets/digimon/5 Ultimate/Crowmon/Frames/Crowmon_Frame_004.png",
+      "species_id": "crowmon",
+      "size": 7516,
+      "sha256": "5003fca7be12662fe36ed3bab9e7fc4cf50729ed63554570f0c45a9ce7ac6bbd",
+      "dimensions": [
+        103,
+        194
+      ],
+      "rgba_sha256": "f7c445aae7eec0a880fe09c0b78b51d374fb1de4a31d8b37f29bf24f37a13f73"
+    },
+    {
+      "source": "Crowmon_Frame_005-transparent.png",
+      "path": "assets/digimon/5 Ultimate/Crowmon/Frames/Crowmon_Frame_005.png",
+      "species_id": "crowmon",
+      "size": 7500,
+      "sha256": "160895b6f9b154638c6da0eaf815e37e0b09e8998c8f5632697f6fd806dc08ca",
+      "dimensions": [
+        130,
+        164
+      ],
+      "rgba_sha256": "2bf14b5cdb5cb94dd499eb3ba49adcad0592d4ea8ac485d1eea20af393ca1516"
+    },
+    {
+      "source": "GallantmonCrimsonMode_Frame_002.png",
+      "path": "assets/digimon/7 Mega/GallantmonCrimsonMode/Frames/GallantmonCrimsonMode_Frame_002.png",
+      "species_id": "gallantmoncrimsonmode",
+      "size": 9466,
+      "sha256": "587f2652966471c3d2971f605646b27d6ecc48cd9ae9b30e1cfcd30e52b1c15a",
+      "dimensions": [
+        148,
+        139
+      ],
+      "rgba_sha256": "d880af13a3aca12cb1735b9ca63500cbf6b3acf6361cfe8a71cffa4e4e476e32"
+    },
+    {
+      "source": "GallantmonCrimsonMode_Frame_003.png",
+      "path": "assets/digimon/7 Mega/GallantmonCrimsonMode/Frames/GallantmonCrimsonMode_Frame_003.png",
+      "species_id": "gallantmoncrimsonmode",
+      "size": 9281,
+      "sha256": "50c611a55ec85a8fb6b28cebce530818f0c152b72a374e59acc2c4d70739c230",
+      "dimensions": [
+        147,
+        139
+      ],
+      "rgba_sha256": "e87b9db247febac249b023b5660dadc05d663fd3204e039e6e26df64f449edb4"
+    },
+    {
+      "source": "ImperialdramonFighterMode_Frame_001.png",
+      "path": "assets/digimon/7 Mega/ImperialdramonFighterMode/Frames/ImperialdramonFighterMode_Frame_001.png",
+      "species_id": "imperialdramonfightermode",
+      "size": 7389,
+      "sha256": "ad2c78f4d5af85c0ecfc08e39bc4f63254f6cc41e0e276dd4bc23461a0965a85",
+      "dimensions": [
+        113,
+        150
+      ],
+      "rgba_sha256": "5e7af2e56b078e7fafc19c6033d51f0f5dfadcd1df600d46037ecfca7fac5511"
+    },
+    {
+      "source": "KingChessmon_Frame_003-transparent.png",
+      "path": "assets/digimon/7 Mega/KingChessmon/Frames/KingChessmon_Frame_003.png",
+      "species_id": "kingchessmon",
+      "size": 4503,
+      "sha256": "68e1899f1e99cacbcdc18a8cb60ebbdd0eb0cc1284db61f717d132d7287e3e59",
+      "dimensions": [
+        97,
+        104
+      ],
+      "rgba_sha256": "d2e067b1c4a72bf3429d502371ddb7c0e825db995d98b0cae2f9003821a31be4"
+    },
+    {
+      "source": "Knightmon_Frame_001-transparent.png",
+      "path": "assets/digimon/5 Ultimate/Knightmon/Frames/Knightmon_Frame_001.png",
+      "species_id": "knightmon",
+      "size": 5203,
+      "sha256": "39e71f13b6f02b16790a370490c04fdd102fe358fc5ac06b630744371b418e28",
+      "dimensions": [
+        84,
+        129
+      ],
+      "rgba_sha256": "a4b371b6b5e472b540d55cde1b8eee15ae61b896f2bea25eb0a6965f988c677d"
+    },
+    {
+      "source": "Knightmon_Frame_002-transparent.png",
+      "path": "assets/digimon/5 Ultimate/Knightmon/Frames/Knightmon_Frame_002.png",
+      "species_id": "knightmon",
+      "size": 5250,
+      "sha256": "0e425b437fbd2354445fab80c0444794605c9f9377fa5bc0774eda12cd3296e1",
+      "dimensions": [
+        86,
+        130
+      ],
+      "rgba_sha256": "8281872825fa2c4c901abd812fb29b91b2e51752a7fd513b9a54e2f518d009f6"
+    },
+    {
+      "source": "Knightmon_Frame_003-transparent.png",
+      "path": "assets/digimon/5 Ultimate/Knightmon/Frames/Knightmon_Frame_003.png",
+      "species_id": "knightmon",
+      "size": 5213,
+      "sha256": "5dc8742e5e059a182a4bc41bdf8afcdb96bd9af147aa1ea5f2f29cdb07a88226",
+      "dimensions": [
+        85,
+        131
+      ],
+      "rgba_sha256": "7753180af9f1e00bbbad2406b6fd3ae9e35e477b8d2ffdf97f6802896c5c0edb"
+    },
+    {
+      "source": "Knightmon_Frame_005-transparent.png",
+      "path": "assets/digimon/5 Ultimate/Knightmon/Frames/Knightmon_Frame_005.png",
+      "species_id": "knightmon",
+      "size": 5417,
+      "sha256": "6422af4d99c6a8ee4ce65e9f47a02c2eb9df973b206800036d2d2c65db890fd9",
+      "dimensions": [
+        87,
+        163
+      ],
+      "rgba_sha256": "a142af45eb80647c0b06abcbe8090c74feaf70adad480d61a9835b0ea9c79c84"
+    },
+    {
+      "source": "LadyDevimon_AttackPart1-transparent.png",
+      "path": "assets/digimon/5 Ultimate/LadyDevimon/LadyDevimon_AttackPart1.png",
+      "species_id": "ladydevimon",
+      "size": 20848,
+      "sha256": "dab83bd16aed69c1e7416c9b2311eff5de00b28a5d3a908b11b113bad1a205d1",
+      "dimensions": [
+        556,
+        758
+      ],
+      "rgba_sha256": "03c9ef28c50e7b26e81eb36d150af32e716fd4a2168d6e63c8aa7e657d71246e"
+    },
+    {
+      "source": "LadyDevimon_Idle-transparent.png",
+      "path": "assets/digimon/5 Ultimate/LadyDevimon/LadyDevimon_Idle.png",
+      "species_id": "ladydevimon",
+      "size": 25682,
+      "sha256": "1b04647dad37dcf2d45414d71768f65c9f199028ec1b14b2666ff11805eb4cc5",
+      "dimensions": [
+        542,
+        794
+      ],
+      "rgba_sha256": "d1c34b0f5f18953abdf5eacb0d12e373dd7879e07b8f744d9d3e6c80fcfe969c"
+    },
+    {
+      "source": "LadyDevimon_LLegWalk-transparent.png",
+      "path": "assets/digimon/5 Ultimate/LadyDevimon/LadyDevimon_LLegWalk.png",
+      "species_id": "ladydevimon",
+      "size": 22795,
+      "sha256": "e3076f23636525e84d2e0fc94ca2580f061c793cf8dc671a729fe5bcade955ad",
+      "dimensions": [
+        526,
+        762
+      ],
+      "rgba_sha256": "0e4f610c497601abf11cc140850529b528a326db5eaeddb29a9c8c6e5e3d66e1"
+    },
+    {
+      "source": "Leopardmon_Frame_001-transparent.png",
+      "path": "assets/digimon/7 Mega/Leopardmon/Frames/Leopardmon_Frame_001.png",
+      "species_id": "leopardmon",
+      "size": 5089,
+      "sha256": "e3e0573d428e1beafbb363ae3e7653b468c218a6c0cfb60386b2c8dda3ddb000",
+      "dimensions": [
+        94,
+        125
+      ],
+      "rgba_sha256": "f9c68ce6d846bd53c98141aaca10cb3f7b9abce90b06031dd944a3e1621f800b"
+    },
+    {
+      "source": "Leopardmon_Frame_002-transparent.png",
+      "path": "assets/digimon/7 Mega/Leopardmon/Frames/Leopardmon_Frame_002.png",
+      "species_id": "leopardmon",
+      "size": 5069,
+      "sha256": "35c687738f06512528ec7fbe63aaa6bd5358566fd47ec61057c4d3b666834950",
+      "dimensions": [
+        94,
+        125
+      ],
+      "rgba_sha256": "a87280a6d9e2e416c3899425b152fc617a62499b84213330504cb42482f30f77"
+    },
+    {
+      "source": "Leopardmon_Frame_003-transparent.png",
+      "path": "assets/digimon/7 Mega/Leopardmon/Frames/Leopardmon_Frame_003.png",
+      "species_id": "leopardmon",
+      "size": 4983,
+      "sha256": "31b01ee8fc32d175683042a308f96f9c392eef49c30f95f34ff3c61e809a1fcb",
+      "dimensions": [
+        91,
+        125
+      ],
+      "rgba_sha256": "f00d728dde0accb4697265ec1f64cd2354d8d40306f02985701c489e73c419d4"
+    },
+    {
+      "source": "Leopardmon_Frame_004-transparent.png",
+      "path": "assets/digimon/7 Mega/Leopardmon/Frames/Leopardmon_Frame_004.png",
+      "species_id": "leopardmon",
+      "size": 4782,
+      "sha256": "53cb0a867b9502d9ef04e1b192cb5daabc122bafc33f4b0a43b2c37ff3f01afb",
+      "dimensions": [
+        129,
+        126
+      ],
+      "rgba_sha256": "60c65ce14942ec554ab580b10d6d8270ed9766fe6c2f30169c12c673ca0ae3a1"
+    },
+    {
+      "source": "Lilamon_Frame_001-transparent.png",
+      "path": "assets/digimon/5 Ultimate/Lilamon/Frames/Lilamon_Frame_001.png",
+      "species_id": "lilamon",
+      "size": 4329,
+      "sha256": "70fc7f53537ef316c7eafd8f7e21be317ffaff82c00b8dd0dc76f06deff7f86a",
+      "dimensions": [
+        64,
+        134
+      ],
+      "rgba_sha256": "d5698aad6700e469b0e1d55acf54db019be9843caebd2b9201b06fdd8063ce06"
+    },
+    {
+      "source": "Lilamon_Frame_002-transparent.png",
+      "path": "assets/digimon/5 Ultimate/Lilamon/Frames/Lilamon_Frame_002.png",
+      "species_id": "lilamon",
+      "size": 3888,
+      "sha256": "284b1b2c5edd87b8c693fba337ff88642ca86d4e0e02716078404751ba8608ba",
+      "dimensions": [
+        60,
+        131
+      ],
+      "rgba_sha256": "050cf751d7764a8d858c20679014bf2617fce1c83495d9f2a6db1dc0d999b61c"
+    },
+    {
+      "source": "Lilamon_Frame_003-transparent.png",
+      "path": "assets/digimon/5 Ultimate/Lilamon/Frames/Lilamon_Frame_003.png",
+      "species_id": "lilamon",
+      "size": 4402,
+      "sha256": "fbd8cfdceab35f0eab602aa35153bcc9492e5742b9cbfd72adf4b531195feb02",
+      "dimensions": [
+        78,
+        137
+      ],
+      "rgba_sha256": "f709c5f575f84f9312aa3e09ff8cb473c2938002ec83798177e1501a41669dd7"
+    },
+    {
+      "source": "LucemonChaosMode_Frame_013.png",
+      "path": "assets/digimon/5 Ultimate/LucemonChaosMode/Frames/LucemonChaosMode_Frame_013.png",
+      "species_id": "lucemonchaosmode",
+      "size": 15363,
+      "sha256": "cab43b5f1f71d376efc49f455907aedfe88b3aa21ad23bef0ac3dc301e0458ef",
+      "dimensions": [
+        174,
+        245
+      ],
+      "rgba_sha256": "21eb67b445eacb910565ed75d6156fe881a1abfa7eb7e1a4494508015bfe8fdd"
+    },
+    {
+      "source": "LucemonChaosMode_Frame_014.png",
+      "path": "assets/digimon/5 Ultimate/LucemonChaosMode/Frames/LucemonChaosMode_Frame_014.png",
+      "species_id": "lucemonchaosmode",
+      "size": 15108,
+      "sha256": "f1a29648268d0d4e41a0e65c891aa091c4b291f473ac16d3324691298cbd5226",
+      "dimensions": [
+        177,
+        238
+      ],
+      "rgba_sha256": "b2caa554a784b943f342b830500aced13c1ab918d9b8ed95c0825b96aa3bd511"
+    },
+    {
+      "source": "LucemonChaosMode_Frame_015.png",
+      "path": "assets/digimon/5 Ultimate/LucemonChaosMode/Frames/LucemonChaosMode_Frame_015.png",
+      "species_id": "lucemonchaosmode",
+      "size": 15577,
+      "sha256": "53f5ee9162bb85fb054719371287630273b527d7290b698903d1e9d21ae47e3b",
+      "dimensions": [
+        173,
+        253
+      ],
+      "rgba_sha256": "54d82e1a32e164cf886b2d31ad5cd720f03b1b2ff0f4d283bdbfb5e04753d668"
+    },
+    {
+      "source": "LucemonChaosMode_Frame_016.png",
+      "path": "assets/digimon/5 Ultimate/LucemonChaosMode/Frames/LucemonChaosMode_Frame_016.png",
+      "species_id": "lucemonchaosmode",
+      "size": 14299,
+      "sha256": "cc18258704c20648ee0885f6c30a5d78f9bd8fad597c9119c5a78ba51a77ae3d",
+      "dimensions": [
+        164,
+        250
+      ],
+      "rgba_sha256": "1b5f73a4f2e86ecb534ab80e4408e479c1ae4f1145fa82b38a6340515c129cf7"
+    },
+    {
+      "source": "LucemonChaosMode_Frame_017.png",
+      "path": "assets/digimon/5 Ultimate/LucemonChaosMode/Frames/LucemonChaosMode_Frame_017.png",
+      "species_id": "lucemonchaosmode",
+      "size": 13132,
+      "sha256": "e1fa501a51d2446aa36336d19a5e7ede5057fb989a9a937153698ec4756cf60e",
+      "dimensions": [
+        172,
+        217
+      ],
+      "rgba_sha256": "c6ea2ed6865bb18111734706b426e77ef2e7aa2826d23cabd332c4e2c3fd6340"
+    },
+    {
+      "source": "LucemonChaosMode_Primary.png",
+      "path": "assets/digimon/5 Ultimate/LucemonChaosMode/LucemonChaosMode_Primary.png",
+      "species_id": "lucemonchaosmode",
+      "size": 15363,
+      "sha256": "cab43b5f1f71d376efc49f455907aedfe88b3aa21ad23bef0ac3dc301e0458ef",
+      "dimensions": [
+        174,
+        245
+      ],
+      "rgba_sha256": "21eb67b445eacb910565ed75d6156fe881a1abfa7eb7e1a4494508015bfe8fdd"
+    },
+    {
+      "source": "MachGaogamon_Frame_001-transparent.png",
+      "path": "assets/digimon/5 Ultimate/MachGaogamon/Frames/MachGaogamon_Frame_001.png",
+      "species_id": "machgaogamon",
+      "size": 9576,
+      "sha256": "551f2d7b6a2de0b8d10d062186bb93d45d5bb81eeb8aade7929564eb98c6c2c9",
+      "dimensions": [
+        121,
+        140
+      ],
+      "rgba_sha256": "529a7db4112926d45a0d95734b865ddaa9f2c42fcfd74ce69c897b1510449ef0"
+    },
+    {
+      "source": "MachGaogamon_Frame_002-transparent.png",
+      "path": "assets/digimon/5 Ultimate/MachGaogamon/Frames/MachGaogamon_Frame_002.png",
+      "species_id": "machgaogamon",
+      "size": 9533,
+      "sha256": "e86934bde2e87029190d1148741f51c432fd327bb84635b22261c47d8c7d744c",
+      "dimensions": [
+        108,
+        139
+      ],
+      "rgba_sha256": "c29767dc6be54d7b6d7b8fa30352c5345992ee502df464e34fb1e41ec2c4fa2d"
+    },
+    {
+      "source": "MachGaogamon_Frame_003-transparent.png",
+      "path": "assets/digimon/5 Ultimate/MachGaogamon/Frames/MachGaogamon_Frame_003.png",
+      "species_id": "machgaogamon",
+      "size": 9376,
+      "sha256": "47903330b87c576076228ba30d4e51a0de17bc1802c92b015508525ddeae7f67",
+      "dimensions": [
+        110,
+        136
+      ],
+      "rgba_sha256": "712ce640845c0224c32c29a6399bbe65405162ebeab2302327b0fdbb462ec84d"
+    },
+    {
+      "source": "MachGaogamon_Frame_004-transparent.png",
+      "path": "assets/digimon/5 Ultimate/MachGaogamon/Frames/MachGaogamon_Frame_004.png",
+      "species_id": "machgaogamon",
+      "size": 9140,
+      "sha256": "6758057b31cf1672d1aae514752721e4e597403de851a6795c56524b8727d293",
+      "dimensions": [
+        148,
+        125
+      ],
+      "rgba_sha256": "18e0545592733aa2e11e2ccadf5aa6ec03c69f49a6d7510bbfe74b370d873180"
+    },
+    {
+      "source": "MachGaogamon_Frame_005-transparent.png",
+      "path": "assets/digimon/5 Ultimate/MachGaogamon/Frames/MachGaogamon_Frame_005.png",
+      "species_id": "machgaogamon",
+      "size": 9288,
+      "sha256": "193c50a3288aeb52c76331f77ba65577d6351fd674d126c3ec1a874e1f57bfe1",
+      "dimensions": [
+        108,
+        136
+      ],
+      "rgba_sha256": "5e7d5ed0f73d9e4ec2148bf56bcdc80808c38d8acc8b370de3d2fd5217e3158e"
+    },
+    {
+      "source": "MachGaogamon_Primary-transparent.png",
+      "path": "assets/digimon/5 Ultimate/MachGaogamon/MachGaogamon_Primary.png",
+      "species_id": "machgaogamon",
+      "size": 9576,
+      "sha256": "551f2d7b6a2de0b8d10d062186bb93d45d5bb81eeb8aade7929564eb98c6c2c9",
+      "dimensions": [
+        121,
+        140
+      ],
+      "rgba_sha256": "529a7db4112926d45a0d95734b865ddaa9f2c42fcfd74ce69c897b1510449ef0"
+    },
+    {
+      "source": "MasterTyrannomon_Frame_003.png",
+      "path": "assets/digimon/5 Ultimate/MasterTyrannomon/Frames/MasterTyrannomon_Frame_003.png",
+      "species_id": "mastertyrannomon",
+      "size": 23111,
+      "sha256": "daf5bd3ee14d03a7aadf4cd18f3d924fd1a0f757d8aa5a410f0d02d90c3035d5",
+      "dimensions": [
+        120,
+        120
+      ],
+      "rgba_sha256": "d58cfc0670466fafe5f564a6656d23cc4d2fc97287f66178c6e4aaa3c9aecc34"
+    },
+    {
+      "source": "MetalSeadramon_Frame_004.png",
+      "path": "assets/digimon/7 Mega/MetalSeadramon/Frames/MetalSeadramon_Frame_004.png",
+      "species_id": "metalseadramon",
+      "size": 9780,
+      "sha256": "a4bf0d10abbf4e63c44b6c905899bb4ce61dfb0a112bfe51687220c35706c87c",
+      "dimensions": [
+        110,
+        164
+      ],
+      "rgba_sha256": "0f33781cc159fb6128b92dc69af81d2478b8013c9ba4721297c045e0192dd48d"
+    },
+    {
+      "source": "Palmon_Idle.png",
+      "path": "assets/digimon/3 Rookie/Palmon/Palmon_Idle.png",
+      "species_id": "palmon",
+      "size": 9124,
+      "sha256": "9a98a58025611c027d213103c595ca7772f26df3e363e6773c17ee4f62d4af6b",
+      "dimensions": [
+        788,
+        840
+      ],
+      "rgba_sha256": "1feea15bce4fb34769caceac785b4500fa291d438ca3405e50eed32af4d29403"
+    },
+    {
+      "source": "Shawjamon_Frame_001-transparent.png",
+      "path": "assets/digimon/5 Ultimate/Shawjamon/Frames/Shawjamon_Frame_001.png",
+      "species_id": "shawjamon",
+      "size": 5371,
+      "sha256": "806e60cebc423661530f09621703a581b48c1293dedd7ac95be46bf3d6acb9dc",
+      "dimensions": [
+        120,
+        113
+      ],
+      "rgba_sha256": "59c9a85aaf95777a6a63255ef5900bda733ff8b4409918feb0dfb8a56cd319aa"
+    },
+    {
+      "source": "Shawjamon_Frame_002-transparent.png",
+      "path": "assets/digimon/5 Ultimate/Shawjamon/Frames/Shawjamon_Frame_002.png",
+      "species_id": "shawjamon",
+      "size": 5429,
+      "sha256": "dbe6a4e345f24b89e4d72838076194a58e4b486696eb042129ae3dc18c46206c",
+      "dimensions": [
+        122,
+        113
+      ],
+      "rgba_sha256": "87613a2a5890d2ab3ec57a5a4254982386f3dad86cb3c5a25eef67a7543bd513"
+    },
+    {
+      "source": "Shawjamon_Frame_003-transparent.png",
+      "path": "assets/digimon/5 Ultimate/Shawjamon/Frames/Shawjamon_Frame_003.png",
+      "species_id": "shawjamon",
+      "size": 5474,
+      "sha256": "da85041ae7a2a0a56e5b3e810aed96741d6b54f949babc30cc1df2c86614350e",
+      "dimensions": [
+        120,
+        113
+      ],
+      "rgba_sha256": "f84fb8712af64fe7c4d63508fe2ddee20e138078cc435423c41738ee14bf7033"
+    },
+    {
+      "source": "Shawjamon_Primary-transparent.png",
+      "path": "assets/digimon/5 Ultimate/Shawjamon/Shawjamon_Primary.png",
+      "species_id": "shawjamon",
+      "size": 5371,
+      "sha256": "806e60cebc423661530f09621703a581b48c1293dedd7ac95be46bf3d6acb9dc",
+      "dimensions": [
+        120,
+        113
+      ],
+      "rgba_sha256": "59c9a85aaf95777a6a63255ef5900bda733ff8b4409918feb0dfb8a56cd319aa"
+    },
+    {
+      "source": "Skullknightmon_Frame_003.png",
+      "path": "assets/digimon/7 Mega/Skullknightmon/Frames/Skullknightmon_Frame_003.png",
+      "species_id": "skullknightmon",
+      "size": 12844,
+      "sha256": "f0bf2f2a3a8d17375f0e3ede8200effbb7e4892664d4a4911cb4250f382c4a1a",
+      "dimensions": [
+        101,
+        86
+      ],
+      "rgba_sha256": "fa932431e9bc7a2bf4de9abac25a025defeeb7c599f7c977d5e3632236f6e9cf"
+    },
+    {
+      "source": "Skullknightmon_Frame_004.png",
+      "path": "assets/digimon/7 Mega/Skullknightmon/Frames/Skullknightmon_Frame_004.png",
+      "species_id": "skullknightmon",
+      "size": 20611,
+      "sha256": "43f299fb62666be416dcf295d950f82f6be64a5f613b15c755af5d69b0180257",
+      "dimensions": [
+        153,
+        114
+      ],
+      "rgba_sha256": "4819a722ec936bb477b7eefa42a201692728041aa3ecb6608d091eded13df36b"
+    },
+    {
+      "source": "Skullknightmon_Frame_005.png",
+      "path": "assets/digimon/7 Mega/Skullknightmon/Frames/Skullknightmon_Frame_005.png",
+      "species_id": "skullknightmon",
+      "size": 12478,
+      "sha256": "9646b6ad83176c4fc8b695492e8cbefb5cc41b9f9643e6cc803cf6aedf1000a7",
+      "dimensions": [
+        89,
+        94
+      ],
+      "rgba_sha256": "dbcc31b581f9a6d65fe5f042de6d0aa26b5781aee770309682a9f9c796b22b3e"
+    },
+    {
+      "source": "Skullknightmon_Primary.png",
+      "path": "assets/digimon/7 Mega/Skullknightmon/Skullknightmon_Primary.png",
+      "species_id": "skullknightmon",
+      "size": 12995,
+      "sha256": "0c9726c0f0aa2c20fc30c41a45eb1cba9e5e9eae65b594fc0f2ab34b5a93728c",
+      "dimensions": [
+        98,
+        86
+      ],
+      "rgba_sha256": "4663d046d0cb2e6accfdd2d91542b90ca85fed52ac7449d8eef7e4f66ce2a91e"
+    },
+    {
+      "source": "Taomon_Frame_002-transparent.png",
+      "path": "assets/digimon/5 Ultimate/Taomon/Frames/Taomon_Frame_002.png",
+      "species_id": "taomon",
+      "size": 3985,
+      "sha256": "44fab53a41637cbc3e8e49355d8f1ce083f1f179917d0a5d8f65b0e7ea453b7b",
+      "dimensions": [
+        87,
+        99
+      ],
+      "rgba_sha256": "00c0a3ac1b1ce25a90ca6e99149bab22e5edc18920d577cdf7d7100ec71bc6b9"
+    },
+    {
+      "source": "Taomon_Frame_003-transparent.png",
+      "path": "assets/digimon/5 Ultimate/Taomon/Frames/Taomon_Frame_003.png",
+      "species_id": "taomon",
+      "size": 3874,
+      "sha256": "f60976f4568bc116c5a61f19b6315763ac6208e8893b5bfdb21284387a8b047e",
+      "dimensions": [
+        84,
+        100
+      ],
+      "rgba_sha256": "7ae334cc96d016302ec263073662c264fc1a0962bbfebb3dafbbfae72123d45e"
+    },
+    {
+      "source": "Taomon_Frame_004-transparent.png",
+      "path": "assets/digimon/5 Ultimate/Taomon/Frames/Taomon_Frame_004.png",
+      "species_id": "taomon",
+      "size": 3982,
+      "sha256": "88c6bf6ff266050286236d242664dc38531101bb2a9cba882999985d8c5aa5e7",
+      "dimensions": [
+        84,
+        98
+      ],
+      "rgba_sha256": "6c0713926b4a5db23116da68e5e826f65598380c30b34142f973ce408c6cba81"
+    },
+    {
+      "source": "Taomon_Primary-transparent.png",
+      "path": "assets/digimon/5 Ultimate/Taomon/Taomon_Primary.png",
+      "species_id": "taomon",
+      "size": 3985,
+      "sha256": "44fab53a41637cbc3e8e49355d8f1ce083f1f179917d0a5d8f65b0e7ea453b7b",
+      "dimensions": [
+        87,
+        99
+      ],
+      "rgba_sha256": "00c0a3ac1b1ce25a90ca6e99149bab22e5edc18920d577cdf7d7100ec71bc6b9"
+    }
+  ],
+  "replacements": [
+    {
+      "source": "Palmon_Idle.png",
+      "path": "assets/digimon/3 Rookie/Palmon/Palmon_Idle.png",
+      "species_id": "palmon",
+      "kind": "pose",
+      "mapping": "direct",
+      "size": 9124,
+      "sha256": "9a98a58025611c027d213103c595ca7772f26df3e363e6773c17ee4f62d4af6b",
+      "dimensions": [
+        788,
+        840
+      ],
+      "rgba_sha256": "1feea15bce4fb34769caceac785b4500fa291d438ca3405e50eed32af4d29403",
+      "original_sha256": "4e0b14e66cfb45357b43ba97a64fb4e0ea85a5ade56d874bee4d306916675bd1",
+      "original_dimensions": [
+        788,
+        840
+      ]
+    },
+    {
+      "source": "Aquilamon_Frame_001.png",
+      "path": "assets/digimon/4 Champion/Aquilamon/Aquilamon_Primary.png",
+      "species_id": "aquilamon",
+      "kind": "primary",
+      "mapping": "pose_alias",
+      "equivalent_to": "assets/digimon/4 Champion/Aquilamon/Frames/Aquilamon_Frame_001.png",
+      "equivalence": {
+        "basis": "baseline_rgba_identity",
+        "dimensions": [
+          103,
+          106
+        ],
+        "rgba_sha256": "d30ff3bd5110745dcb9df45b795e3ac66ac487b17b1774a00ce102f7e6e21207"
+      },
+      "size": 3973,
+      "sha256": "e0fac71bdbbec323298cb7dbf456a393fec19bd6b4ec178e84f2a55a088f278a",
+      "dimensions": [
+        103,
+        106
+      ],
+      "rgba_sha256": "369b8fe3f69cb885417be42444ce21162db2927025670f16389fb3662b86e0d8",
+      "original_sha256": "5a9a83ca3ce2f9aa9ca4e4759479016d115c9cd679f790ca9e7cd7c4bd67272d",
+      "original_dimensions": [
+        103,
+        106
+      ]
+    },
+    {
+      "source": "Aquilamon_Frame_001.png",
+      "path": "assets/digimon/4 Champion/Aquilamon/Frames/Aquilamon_Frame_001.png",
+      "species_id": "aquilamon",
+      "kind": "frame",
+      "mapping": "direct",
+      "size": 3973,
+      "sha256": "e0fac71bdbbec323298cb7dbf456a393fec19bd6b4ec178e84f2a55a088f278a",
+      "dimensions": [
+        103,
+        106
+      ],
+      "rgba_sha256": "369b8fe3f69cb885417be42444ce21162db2927025670f16389fb3662b86e0d8",
+      "original_sha256": "5a9a83ca3ce2f9aa9ca4e4759479016d115c9cd679f790ca9e7cd7c4bd67272d",
+      "original_dimensions": [
+        103,
+        106
+      ]
+    },
+    {
+      "source": "Aquilamon_Frame_002.png",
+      "path": "assets/digimon/4 Champion/Aquilamon/Frames/Aquilamon_Frame_002.png",
+      "species_id": "aquilamon",
+      "kind": "frame",
+      "mapping": "direct",
+      "size": 3558,
+      "sha256": "6a519bb0a204626613cf0644b4104b5ced7402b147c009e15c009684e08995e2",
+      "dimensions": [
+        130,
+        91
+      ],
+      "rgba_sha256": "6fc49d5581bcdd489c6a9eb1084bcc07ad5f5dfefc68091c5efa6236d74f16ca",
+      "original_sha256": "14be530ddaebc6e606e60ccbee56463ab6ba6c8919cfb77db75cefbb13c12186",
+      "original_dimensions": [
+        130,
+        91
+      ]
+    },
+    {
+      "source": "Aquilamon_Frame_003.png",
+      "path": "assets/digimon/4 Champion/Aquilamon/Frames/Aquilamon_Frame_003.png",
+      "species_id": "aquilamon",
+      "kind": "frame",
+      "mapping": "direct",
+      "size": 3293,
+      "sha256": "fcc801cd9b02f01a12a544793652dd2615e7aa5ae2c49e9c234fc60666e1f70a",
+      "dimensions": [
+        126,
+        68
+      ],
+      "rgba_sha256": "3336f1cc42537a4a6d2b13fbbb92afcab3e179c8f551d88b319b1ce93aa4a900",
+      "original_sha256": "a8383cd3c8396a1a68723745fb3f4abf39df99f1fa8fb2e43281f89aaa5e3a45",
+      "original_dimensions": [
+        126,
+        68
+      ]
+    },
+    {
+      "source": "Aquilamon_Frame_007.png",
+      "path": "assets/digimon/4 Champion/Aquilamon/Frames/Aquilamon_Frame_007.png",
+      "species_id": "aquilamon",
+      "kind": "frame",
+      "mapping": "direct",
+      "size": 3591,
+      "sha256": "70185c70c67fb51a76b8ad10b9b473ff2a58ba872f46290b6114ab428b3fa003",
+      "dimensions": [
+        103,
+        99
+      ],
+      "rgba_sha256": "cf9aaf56fa46188caf74b75dbc78500017f4d02fbd6c9ef24bc2bf6f5f033249",
+      "original_sha256": "97187d11dc245351df7c51d389d0ece2957597019decfff88101fe679668b0b1",
+      "original_dimensions": [
+        103,
+        99
+      ]
+    },
+    {
+      "source": "Aquilamon_Frame_008.png",
+      "path": "assets/digimon/4 Champion/Aquilamon/Frames/Aquilamon_Frame_008.png",
+      "species_id": "aquilamon",
+      "kind": "frame",
+      "mapping": "direct",
+      "size": 2993,
+      "sha256": "ba4ae3798a49c0c4004785cbce0892211dce3b0fb592d44282cad95439213df2",
+      "dimensions": [
+        126,
+        68
+      ],
+      "rgba_sha256": "496fd2dddb45cbeea44cdfe6fdf15c7dcbe2c6ee9c2436f12e8c5834c31b9f2e",
+      "original_sha256": "aa7620ad1efb80e14a99eb839665507d40ac2f4929efcb4e3a2bea681d2b2509",
+      "original_dimensions": [
+        126,
+        68
+      ]
+    },
+    {
+      "source": "Birdramon_Frame_002-transparent.png",
+      "path": "assets/digimon/4 Champion/Birdramon/Frames/Birdramon_Frame_002.png",
+      "species_id": "birdramon",
+      "kind": "frame",
+      "mapping": "direct",
+      "size": 4680,
+      "sha256": "cef454a18b71d96c8e5e96d252bd47754a071f0f9504fe1ecc07b0ae5fe55352",
+      "dimensions": [
+        123,
+        87
+      ],
+      "rgba_sha256": "82d60a291af273e54152446ac47a144a157e65331383a30c9875150fb40b38f3",
+      "original_sha256": "05c1e5a531b4228391f0ba000941c358e512da00bbbe51d2f42df81ed34a586c",
+      "original_dimensions": [
+        123,
+        87
+      ]
+    },
+    {
+      "source": "Birdramon_Frame_009-transparent.png",
+      "path": "assets/digimon/4 Champion/Birdramon/Frames/Birdramon_Frame_009.png",
+      "species_id": "birdramon",
+      "kind": "frame",
+      "mapping": "direct",
+      "size": 4404,
+      "sha256": "e8e489908154fa936cd82cb09d536c28a714664c54a6e04872b0070b0949e469",
+      "dimensions": [
+        76,
+        127
+      ],
+      "rgba_sha256": "4eab9ffaceeacc6741fed94bdf53a92bdd7049d4b65daa947c704dd6525fa258",
+      "original_sha256": "a762a3d9f240fcf5e15b3fa5156f53ef39d86cf6b8bdeadc449ea51e6a9284e3",
+      "original_dimensions": [
+        76,
+        127
+      ]
+    },
+    {
+      "source": "Birdramon_Frame_016-transparent.png",
+      "path": "assets/digimon/4 Champion/Birdramon/Frames/Birdramon_Frame_016.png",
+      "species_id": "birdramon",
+      "kind": "frame",
+      "mapping": "direct",
+      "size": 4456,
+      "sha256": "61eb5831d6f1c345f52d90c205fe8913e9f63f0996ec07e67fd467aa2426a80f",
+      "dimensions": [
+        103,
+        115
+      ],
+      "rgba_sha256": "294e6521033496549cfa215894e9b845806692010ce19e34f70480120f13270e",
+      "original_sha256": "dd3a2393847c34f2ca42e605c4ed008d41acee4a485821b8f0ba76e24db46296",
+      "original_dimensions": [
+        103,
+        115
+      ]
+    },
+    {
+      "source": "Birdramon_Frame_019-transparent.png",
+      "path": "assets/digimon/4 Champion/Birdramon/Frames/Birdramon_Frame_019.png",
+      "species_id": "birdramon",
+      "kind": "frame",
+      "mapping": "direct",
+      "size": 3456,
+      "sha256": "52f877783e3675a46503c0056021ac219b7fc307bf11254cd3681a3f4b102ab5",
+      "dimensions": [
+        68,
+        107
+      ],
+      "rgba_sha256": "92a4ac39e8a70ec50d35a20fc7ac626370d66a8ce7e3ba986149fa6595c38500",
+      "original_sha256": "79a32323ec286a8e165675e0eea48346af55e5382ea67bb608c8c790a872f17e",
+      "original_dimensions": [
+        68,
+        107
+      ]
+    },
+    {
+      "source": "Crowmon_Frame_003-transparent.png",
+      "path": "assets/digimon/5 Ultimate/Crowmon/Frames/Crowmon_Frame_003.png",
+      "species_id": "crowmon",
+      "kind": "frame",
+      "mapping": "direct",
+      "size": 4693,
+      "sha256": "5e758035a74b1f1e01c13d5fed29fdcd9757c5c8bf1a19ce4e69d445f067c97f",
+      "dimensions": [
+        80,
+        112
+      ],
+      "rgba_sha256": "dd9cb5f52568832ad4949fb1bf3175ee1dd1c08c7aff66944ed97be9c26deac0",
+      "original_sha256": "0777d66e93258bf7b18c7fc8bd5f52c109fa91776c2408bc624149a26efaaefa",
+      "original_dimensions": [
+        80,
+        112
+      ]
+    },
+    {
+      "source": "Crowmon_Frame_004-transparent.png",
+      "path": "assets/digimon/5 Ultimate/Crowmon/Frames/Crowmon_Frame_004.png",
+      "species_id": "crowmon",
+      "kind": "frame",
+      "mapping": "direct",
+      "size": 7516,
+      "sha256": "5003fca7be12662fe36ed3bab9e7fc4cf50729ed63554570f0c45a9ce7ac6bbd",
+      "dimensions": [
+        103,
+        194
+      ],
+      "rgba_sha256": "f7c445aae7eec0a880fe09c0b78b51d374fb1de4a31d8b37f29bf24f37a13f73",
+      "original_sha256": "27faad54f4e6deae56f0a86a595f3159753ae18893817f12affea35b94ce9f40",
+      "original_dimensions": [
+        103,
+        194
+      ]
+    },
+    {
+      "source": "Crowmon_Frame_005-transparent.png",
+      "path": "assets/digimon/5 Ultimate/Crowmon/Frames/Crowmon_Frame_005.png",
+      "species_id": "crowmon",
+      "kind": "frame",
+      "mapping": "direct",
+      "size": 7500,
+      "sha256": "160895b6f9b154638c6da0eaf815e37e0b09e8998c8f5632697f6fd806dc08ca",
+      "dimensions": [
+        130,
+        164
+      ],
+      "rgba_sha256": "2bf14b5cdb5cb94dd499eb3ba49adcad0592d4ea8ac485d1eea20af393ca1516",
+      "original_sha256": "240aca94f077647f9857f61497142fb191b180c6e183019c8850fe056c821b90",
+      "original_dimensions": [
+        130,
+        164
+      ]
+    },
+    {
+      "source": "Knightmon_Frame_001-transparent.png",
+      "path": "assets/digimon/5 Ultimate/Knightmon/Frames/Knightmon_Frame_001.png",
+      "species_id": "knightmon",
+      "kind": "frame",
+      "mapping": "direct",
+      "size": 5203,
+      "sha256": "39e71f13b6f02b16790a370490c04fdd102fe358fc5ac06b630744371b418e28",
+      "dimensions": [
+        84,
+        129
+      ],
+      "rgba_sha256": "a4b371b6b5e472b540d55cde1b8eee15ae61b896f2bea25eb0a6965f988c677d",
+      "original_sha256": "7ece307155d03b33f8e18393df660f3cb624f0829b9d2a28fbea46af0f89c6ba",
+      "original_dimensions": [
+        84,
+        129
+      ]
+    },
+    {
+      "source": "Knightmon_Frame_002-transparent.png",
+      "path": "assets/digimon/5 Ultimate/Knightmon/Frames/Knightmon_Frame_002.png",
+      "species_id": "knightmon",
+      "kind": "frame",
+      "mapping": "direct",
+      "size": 5250,
+      "sha256": "0e425b437fbd2354445fab80c0444794605c9f9377fa5bc0774eda12cd3296e1",
+      "dimensions": [
+        86,
+        130
+      ],
+      "rgba_sha256": "8281872825fa2c4c901abd812fb29b91b2e51752a7fd513b9a54e2f518d009f6",
+      "original_sha256": "c8418426711c56c80aae0ecfed32242600e41e418cd4a2af9fc0ba50b1542adb",
+      "original_dimensions": [
+        86,
+        130
+      ]
+    },
+    {
+      "source": "Knightmon_Frame_003-transparent.png",
+      "path": "assets/digimon/5 Ultimate/Knightmon/Frames/Knightmon_Frame_003.png",
+      "species_id": "knightmon",
+      "kind": "frame",
+      "mapping": "direct",
+      "size": 5213,
+      "sha256": "5dc8742e5e059a182a4bc41bdf8afcdb96bd9af147aa1ea5f2f29cdb07a88226",
+      "dimensions": [
+        85,
+        131
+      ],
+      "rgba_sha256": "7753180af9f1e00bbbad2406b6fd3ae9e35e477b8d2ffdf97f6802896c5c0edb",
+      "original_sha256": "c280ecf83ed40ec97146466ee8a41c5d994d4047b430d0437c99b4ea3d2a7696",
+      "original_dimensions": [
+        85,
+        131
+      ]
+    },
+    {
+      "source": "Knightmon_Frame_005-transparent.png",
+      "path": "assets/digimon/5 Ultimate/Knightmon/Frames/Knightmon_Frame_005.png",
+      "species_id": "knightmon",
+      "kind": "frame",
+      "mapping": "direct",
+      "size": 5417,
+      "sha256": "6422af4d99c6a8ee4ce65e9f47a02c2eb9df973b206800036d2d2c65db890fd9",
+      "dimensions": [
+        87,
+        163
+      ],
+      "rgba_sha256": "a142af45eb80647c0b06abcbe8090c74feaf70adad480d61a9835b0ea9c79c84",
+      "original_sha256": "c17dee6ba9a04735e4b0f813ff2df28253b2e16d2272df7e6d6d5c9d7010f2b9",
+      "original_dimensions": [
+        87,
+        163
+      ]
+    },
+    {
+      "source": "Knightmon_Frame_001-transparent.png",
+      "path": "assets/digimon/5 Ultimate/Knightmon/Knightmon_Primary.png",
+      "species_id": "knightmon",
+      "kind": "primary",
+      "mapping": "pose_alias",
+      "equivalent_to": "assets/digimon/5 Ultimate/Knightmon/Frames/Knightmon_Frame_001.png",
+      "equivalence": {
+        "basis": "baseline_rgba_identity",
+        "dimensions": [
+          84,
+          129
+        ],
+        "rgba_sha256": "7d9ab375ff43ea7316295d72a3f18f1c2d040f3246e31a2cd6a17ac9ebb4325b"
+      },
+      "size": 5203,
+      "sha256": "39e71f13b6f02b16790a370490c04fdd102fe358fc5ac06b630744371b418e28",
+      "dimensions": [
+        84,
+        129
+      ],
+      "rgba_sha256": "a4b371b6b5e472b540d55cde1b8eee15ae61b896f2bea25eb0a6965f988c677d",
+      "original_sha256": "7ece307155d03b33f8e18393df660f3cb624f0829b9d2a28fbea46af0f89c6ba",
+      "original_dimensions": [
+        84,
+        129
+      ]
+    },
+    {
+      "source": "LadyDevimon_AttackPart1-transparent.png",
+      "path": "assets/digimon/5 Ultimate/LadyDevimon/LadyDevimon_AttackPart1.png",
+      "species_id": "ladydevimon",
+      "kind": "pose",
+      "mapping": "direct",
+      "size": 20848,
+      "sha256": "dab83bd16aed69c1e7416c9b2311eff5de00b28a5d3a908b11b113bad1a205d1",
+      "dimensions": [
+        556,
+        758
+      ],
+      "rgba_sha256": "03c9ef28c50e7b26e81eb36d150af32e716fd4a2168d6e63c8aa7e657d71246e",
+      "original_sha256": "d751c8831f682fc59ec988d227464648456565313d397b761a795b0769afb828",
+      "original_dimensions": [
+        556,
+        758
+      ]
+    },
+    {
+      "source": "LadyDevimon_Idle-transparent.png",
+      "path": "assets/digimon/5 Ultimate/LadyDevimon/LadyDevimon_Idle.png",
+      "species_id": "ladydevimon",
+      "kind": "pose",
+      "mapping": "direct",
+      "size": 25682,
+      "sha256": "1b04647dad37dcf2d45414d71768f65c9f199028ec1b14b2666ff11805eb4cc5",
+      "dimensions": [
+        542,
+        794
+      ],
+      "rgba_sha256": "d1c34b0f5f18953abdf5eacb0d12e373dd7879e07b8f744d9d3e6c80fcfe969c",
+      "original_sha256": "fd9cacf2ef9b83b8faa9fe52ae12c73a93d558df724d05966be7eaf73fb7475f",
+      "original_dimensions": [
+        542,
+        794
+      ]
+    },
+    {
+      "source": "LadyDevimon_LLegWalk-transparent.png",
+      "path": "assets/digimon/5 Ultimate/LadyDevimon/LadyDevimon_LLegWalk.png",
+      "species_id": "ladydevimon",
+      "kind": "pose",
+      "mapping": "direct",
+      "size": 22795,
+      "sha256": "e3076f23636525e84d2e0fc94ca2580f061c793cf8dc671a729fe5bcade955ad",
+      "dimensions": [
+        526,
+        762
+      ],
+      "rgba_sha256": "0e4f610c497601abf11cc140850529b528a326db5eaeddb29a9c8c6e5e3d66e1",
+      "original_sha256": "3673e9f77af4a8ab42b005431c8c28455a2b911b6978dc7cadb046938b4faf09",
+      "original_dimensions": [
+        526,
+        762
+      ]
+    },
+    {
+      "source": "Lilamon_Frame_001-transparent.png",
+      "path": "assets/digimon/5 Ultimate/Lilamon/Frames/Lilamon_Frame_001.png",
+      "species_id": "lilamon",
+      "kind": "frame",
+      "mapping": "direct",
+      "size": 4329,
+      "sha256": "70fc7f53537ef316c7eafd8f7e21be317ffaff82c00b8dd0dc76f06deff7f86a",
+      "dimensions": [
+        64,
+        134
+      ],
+      "rgba_sha256": "d5698aad6700e469b0e1d55acf54db019be9843caebd2b9201b06fdd8063ce06",
+      "original_sha256": "ca1e91ac485610c7088c496376d5db8934124471d1f45a39c6bfb931ea1d2235",
+      "original_dimensions": [
+        64,
+        134
+      ]
+    },
+    {
+      "source": "Lilamon_Frame_002-transparent.png",
+      "path": "assets/digimon/5 Ultimate/Lilamon/Frames/Lilamon_Frame_002.png",
+      "species_id": "lilamon",
+      "kind": "frame",
+      "mapping": "direct",
+      "size": 3888,
+      "sha256": "284b1b2c5edd87b8c693fba337ff88642ca86d4e0e02716078404751ba8608ba",
+      "dimensions": [
+        60,
+        131
+      ],
+      "rgba_sha256": "050cf751d7764a8d858c20679014bf2617fce1c83495d9f2a6db1dc0d999b61c",
+      "original_sha256": "f1dc408159a0d00e50863b3d975ad314fb341ac869d4b4d1ed50a804237a85e5",
+      "original_dimensions": [
+        60,
+        131
+      ]
+    },
+    {
+      "source": "Lilamon_Frame_003-transparent.png",
+      "path": "assets/digimon/5 Ultimate/Lilamon/Frames/Lilamon_Frame_003.png",
+      "species_id": "lilamon",
+      "kind": "frame",
+      "mapping": "direct",
+      "size": 4402,
+      "sha256": "fbd8cfdceab35f0eab602aa35153bcc9492e5742b9cbfd72adf4b531195feb02",
+      "dimensions": [
+        78,
+        137
+      ],
+      "rgba_sha256": "f709c5f575f84f9312aa3e09ff8cb473c2938002ec83798177e1501a41669dd7",
+      "original_sha256": "8bc3ebda613e8306c5f790b602f55228788dc6896656d8b5d4ab8427c2e796b4",
+      "original_dimensions": [
+        78,
+        137
+      ]
+    },
+    {
+      "source": "Lilamon_Frame_001-transparent.png",
+      "path": "assets/digimon/5 Ultimate/Lilamon/Lilamon_Primary.png",
+      "species_id": "lilamon",
+      "kind": "primary",
+      "mapping": "pose_alias",
+      "equivalent_to": "assets/digimon/5 Ultimate/Lilamon/Frames/Lilamon_Frame_001.png",
+      "equivalence": {
+        "basis": "baseline_rgba_identity",
+        "dimensions": [
+          64,
+          134
+        ],
+        "rgba_sha256": "893d4ab2e87c7470df559a822f979386e20123ba5b0e0ab6e47537eeb50614e5"
+      },
+      "size": 4329,
+      "sha256": "70fc7f53537ef316c7eafd8f7e21be317ffaff82c00b8dd0dc76f06deff7f86a",
+      "dimensions": [
+        64,
+        134
+      ],
+      "rgba_sha256": "d5698aad6700e469b0e1d55acf54db019be9843caebd2b9201b06fdd8063ce06",
+      "original_sha256": "ca1e91ac485610c7088c496376d5db8934124471d1f45a39c6bfb931ea1d2235",
+      "original_dimensions": [
+        64,
+        134
+      ]
+    },
+    {
+      "source": "LucemonChaosMode_Frame_013.png",
+      "path": "assets/digimon/5 Ultimate/LucemonChaosMode/Frames/LucemonChaosMode_Frame_013.png",
+      "species_id": "lucemonchaosmode",
+      "kind": "frame",
+      "mapping": "direct",
+      "size": 15363,
+      "sha256": "cab43b5f1f71d376efc49f455907aedfe88b3aa21ad23bef0ac3dc301e0458ef",
+      "dimensions": [
+        174,
+        245
+      ],
+      "rgba_sha256": "21eb67b445eacb910565ed75d6156fe881a1abfa7eb7e1a4494508015bfe8fdd",
+      "original_sha256": "927a88eaffb19a23ce6b18e10f618a0ec2448a4f92888aa47e9b6aca0f627298",
+      "original_dimensions": [
+        174,
+        245
+      ]
+    },
+    {
+      "source": "LucemonChaosMode_Frame_014.png",
+      "path": "assets/digimon/5 Ultimate/LucemonChaosMode/Frames/LucemonChaosMode_Frame_014.png",
+      "species_id": "lucemonchaosmode",
+      "kind": "frame",
+      "mapping": "direct",
+      "size": 15108,
+      "sha256": "f1a29648268d0d4e41a0e65c891aa091c4b291f473ac16d3324691298cbd5226",
+      "dimensions": [
+        177,
+        238
+      ],
+      "rgba_sha256": "b2caa554a784b943f342b830500aced13c1ab918d9b8ed95c0825b96aa3bd511",
+      "original_sha256": "04b33d1342a387cc47bde158c2059c2dbb4505e0e28e7d9b3fd829e7ea034d53",
+      "original_dimensions": [
+        177,
+        238
+      ]
+    },
+    {
+      "source": "LucemonChaosMode_Frame_015.png",
+      "path": "assets/digimon/5 Ultimate/LucemonChaosMode/Frames/LucemonChaosMode_Frame_015.png",
+      "species_id": "lucemonchaosmode",
+      "kind": "frame",
+      "mapping": "direct",
+      "size": 15577,
+      "sha256": "53f5ee9162bb85fb054719371287630273b527d7290b698903d1e9d21ae47e3b",
+      "dimensions": [
+        173,
+        253
+      ],
+      "rgba_sha256": "54d82e1a32e164cf886b2d31ad5cd720f03b1b2ff0f4d283bdbfb5e04753d668",
+      "original_sha256": "0ceb2702c36f091ac2c613040f1c6bd243f15100e5ab8ceca2b6327979cbad49",
+      "original_dimensions": [
+        173,
+        253
+      ]
+    },
+    {
+      "source": "LucemonChaosMode_Frame_016.png",
+      "path": "assets/digimon/5 Ultimate/LucemonChaosMode/Frames/LucemonChaosMode_Frame_016.png",
+      "species_id": "lucemonchaosmode",
+      "kind": "frame",
+      "mapping": "direct",
+      "size": 14299,
+      "sha256": "cc18258704c20648ee0885f6c30a5d78f9bd8fad597c9119c5a78ba51a77ae3d",
+      "dimensions": [
+        164,
+        250
+      ],
+      "rgba_sha256": "1b5f73a4f2e86ecb534ab80e4408e479c1ae4f1145fa82b38a6340515c129cf7",
+      "original_sha256": "1d54df849582fc8ea0203b4335e1a481f34f96550f24a20cea8a4ac8574fa02c",
+      "original_dimensions": [
+        164,
+        250
+      ]
+    },
+    {
+      "source": "LucemonChaosMode_Frame_017.png",
+      "path": "assets/digimon/5 Ultimate/LucemonChaosMode/Frames/LucemonChaosMode_Frame_017.png",
+      "species_id": "lucemonchaosmode",
+      "kind": "frame",
+      "mapping": "direct",
+      "size": 13132,
+      "sha256": "e1fa501a51d2446aa36336d19a5e7ede5057fb989a9a937153698ec4756cf60e",
+      "dimensions": [
+        172,
+        217
+      ],
+      "rgba_sha256": "c6ea2ed6865bb18111734706b426e77ef2e7aa2826d23cabd332c4e2c3fd6340",
+      "original_sha256": "17df87349830034902025ea1645e23b706895d5e7b7791b7a2a29d21584ab857",
+      "original_dimensions": [
+        172,
+        217
+      ]
+    },
+    {
+      "source": "LucemonChaosMode_Primary.png",
+      "path": "assets/digimon/5 Ultimate/LucemonChaosMode/LucemonChaosMode_Primary.png",
+      "species_id": "lucemonchaosmode",
+      "kind": "primary",
+      "mapping": "direct",
+      "size": 15363,
+      "sha256": "cab43b5f1f71d376efc49f455907aedfe88b3aa21ad23bef0ac3dc301e0458ef",
+      "dimensions": [
+        174,
+        245
+      ],
+      "rgba_sha256": "21eb67b445eacb910565ed75d6156fe881a1abfa7eb7e1a4494508015bfe8fdd",
+      "original_sha256": "927a88eaffb19a23ce6b18e10f618a0ec2448a4f92888aa47e9b6aca0f627298",
+      "original_dimensions": [
+        174,
+        245
+      ]
+    },
+    {
+      "source": "MachGaogamon_Frame_001-transparent.png",
+      "path": "assets/digimon/5 Ultimate/MachGaogamon/Frames/MachGaogamon_Frame_001.png",
+      "species_id": "machgaogamon",
+      "kind": "frame",
+      "mapping": "direct",
+      "size": 9576,
+      "sha256": "551f2d7b6a2de0b8d10d062186bb93d45d5bb81eeb8aade7929564eb98c6c2c9",
+      "dimensions": [
+        121,
+        140
+      ],
+      "rgba_sha256": "529a7db4112926d45a0d95734b865ddaa9f2c42fcfd74ce69c897b1510449ef0",
+      "original_sha256": "8d66ea5f59d94ab532d25e45a8d39c47246d4bb6db0faeef8bf10afa9a72f158",
+      "original_dimensions": [
+        121,
+        140
+      ]
+    },
+    {
+      "source": "MachGaogamon_Frame_002-transparent.png",
+      "path": "assets/digimon/5 Ultimate/MachGaogamon/Frames/MachGaogamon_Frame_002.png",
+      "species_id": "machgaogamon",
+      "kind": "frame",
+      "mapping": "direct",
+      "size": 9533,
+      "sha256": "e86934bde2e87029190d1148741f51c432fd327bb84635b22261c47d8c7d744c",
+      "dimensions": [
+        108,
+        139
+      ],
+      "rgba_sha256": "c29767dc6be54d7b6d7b8fa30352c5345992ee502df464e34fb1e41ec2c4fa2d",
+      "original_sha256": "2520a3b14145a335decca8b82bb745cce7ab5071e79ed7ed51880976fffeae14",
+      "original_dimensions": [
+        108,
+        139
+      ]
+    },
+    {
+      "source": "MachGaogamon_Frame_003-transparent.png",
+      "path": "assets/digimon/5 Ultimate/MachGaogamon/Frames/MachGaogamon_Frame_003.png",
+      "species_id": "machgaogamon",
+      "kind": "frame",
+      "mapping": "direct",
+      "size": 9376,
+      "sha256": "47903330b87c576076228ba30d4e51a0de17bc1802c92b015508525ddeae7f67",
+      "dimensions": [
+        110,
+        136
+      ],
+      "rgba_sha256": "712ce640845c0224c32c29a6399bbe65405162ebeab2302327b0fdbb462ec84d",
+      "original_sha256": "eeea8c6e0e00fde8f881df061c35ec78c6483381ef24be413184e6195bd38891",
+      "original_dimensions": [
+        110,
+        136
+      ]
+    },
+    {
+      "source": "MachGaogamon_Frame_004-transparent.png",
+      "path": "assets/digimon/5 Ultimate/MachGaogamon/Frames/MachGaogamon_Frame_004.png",
+      "species_id": "machgaogamon",
+      "kind": "frame",
+      "mapping": "direct",
+      "size": 9140,
+      "sha256": "6758057b31cf1672d1aae514752721e4e597403de851a6795c56524b8727d293",
+      "dimensions": [
+        148,
+        125
+      ],
+      "rgba_sha256": "18e0545592733aa2e11e2ccadf5aa6ec03c69f49a6d7510bbfe74b370d873180",
+      "original_sha256": "07f63ce58df9453cfcd6f104b3a72dd18f17b60cb3ee1152774bf1b92650f58f",
+      "original_dimensions": [
+        148,
+        125
+      ]
+    },
+    {
+      "source": "MachGaogamon_Frame_005-transparent.png",
+      "path": "assets/digimon/5 Ultimate/MachGaogamon/Frames/MachGaogamon_Frame_005.png",
+      "species_id": "machgaogamon",
+      "kind": "frame",
+      "mapping": "direct",
+      "size": 9288,
+      "sha256": "193c50a3288aeb52c76331f77ba65577d6351fd674d126c3ec1a874e1f57bfe1",
+      "dimensions": [
+        108,
+        136
+      ],
+      "rgba_sha256": "5e7d5ed0f73d9e4ec2148bf56bcdc80808c38d8acc8b370de3d2fd5217e3158e",
+      "original_sha256": "10505556a708cf6f7e28d18dd81fdf278a4f0cb520acd7e3dc2f7a73db54b38f",
+      "original_dimensions": [
+        108,
+        136
+      ]
+    },
+    {
+      "source": "MachGaogamon_Primary-transparent.png",
+      "path": "assets/digimon/5 Ultimate/MachGaogamon/MachGaogamon_Primary.png",
+      "species_id": "machgaogamon",
+      "kind": "primary",
+      "mapping": "direct",
+      "size": 9576,
+      "sha256": "551f2d7b6a2de0b8d10d062186bb93d45d5bb81eeb8aade7929564eb98c6c2c9",
+      "dimensions": [
+        121,
+        140
+      ],
+      "rgba_sha256": "529a7db4112926d45a0d95734b865ddaa9f2c42fcfd74ce69c897b1510449ef0",
+      "original_sha256": "8d66ea5f59d94ab532d25e45a8d39c47246d4bb6db0faeef8bf10afa9a72f158",
+      "original_dimensions": [
+        121,
+        140
+      ]
+    },
+    {
+      "source": "MasterTyrannomon_Frame_003.png",
+      "path": "assets/digimon/5 Ultimate/MasterTyrannomon/Frames/MasterTyrannomon_Frame_003.png",
+      "species_id": "mastertyrannomon",
+      "kind": "frame",
+      "mapping": "direct",
+      "size": 23111,
+      "sha256": "daf5bd3ee14d03a7aadf4cd18f3d924fd1a0f757d8aa5a410f0d02d90c3035d5",
+      "dimensions": [
+        120,
+        120
+      ],
+      "rgba_sha256": "d58cfc0670466fafe5f564a6656d23cc4d2fc97287f66178c6e4aaa3c9aecc34",
+      "original_sha256": "d0915bf9699156720c0185a30d0a5e2490929045a483a1e9835416fc453ffd3a",
+      "original_dimensions": [
+        120,
+        120
+      ]
+    },
+    {
+      "source": "Shawjamon_Frame_001-transparent.png",
+      "path": "assets/digimon/5 Ultimate/Shawjamon/Frames/Shawjamon_Frame_001.png",
+      "species_id": "shawjamon",
+      "kind": "frame",
+      "mapping": "direct",
+      "size": 5371,
+      "sha256": "806e60cebc423661530f09621703a581b48c1293dedd7ac95be46bf3d6acb9dc",
+      "dimensions": [
+        120,
+        113
+      ],
+      "rgba_sha256": "59c9a85aaf95777a6a63255ef5900bda733ff8b4409918feb0dfb8a56cd319aa",
+      "original_sha256": "de6f92294cb41c88edc29d4579a3788442a6efa32e94c77c191195514b46905c",
+      "original_dimensions": [
+        120,
+        113
+      ]
+    },
+    {
+      "source": "Shawjamon_Frame_002-transparent.png",
+      "path": "assets/digimon/5 Ultimate/Shawjamon/Frames/Shawjamon_Frame_002.png",
+      "species_id": "shawjamon",
+      "kind": "frame",
+      "mapping": "direct",
+      "size": 5429,
+      "sha256": "dbe6a4e345f24b89e4d72838076194a58e4b486696eb042129ae3dc18c46206c",
+      "dimensions": [
+        122,
+        113
+      ],
+      "rgba_sha256": "87613a2a5890d2ab3ec57a5a4254982386f3dad86cb3c5a25eef67a7543bd513",
+      "original_sha256": "6fec2c8fa61e3606f8da387a82dcdc9e99df7e88ebb21ead84922c1d62c8d51b",
+      "original_dimensions": [
+        122,
+        113
+      ]
+    },
+    {
+      "source": "Shawjamon_Frame_003-transparent.png",
+      "path": "assets/digimon/5 Ultimate/Shawjamon/Frames/Shawjamon_Frame_003.png",
+      "species_id": "shawjamon",
+      "kind": "frame",
+      "mapping": "direct",
+      "size": 5474,
+      "sha256": "da85041ae7a2a0a56e5b3e810aed96741d6b54f949babc30cc1df2c86614350e",
+      "dimensions": [
+        120,
+        113
+      ],
+      "rgba_sha256": "f84fb8712af64fe7c4d63508fe2ddee20e138078cc435423c41738ee14bf7033",
+      "original_sha256": "c3a116ea4ee90ac5f6cf93477ee0a5d60648ab744be261b98c5e8dc76debadab",
+      "original_dimensions": [
+        120,
+        113
+      ]
+    },
+    {
+      "source": "Shawjamon_Primary-transparent.png",
+      "path": "assets/digimon/5 Ultimate/Shawjamon/Shawjamon_Primary.png",
+      "species_id": "shawjamon",
+      "kind": "primary",
+      "mapping": "direct",
+      "size": 5371,
+      "sha256": "806e60cebc423661530f09621703a581b48c1293dedd7ac95be46bf3d6acb9dc",
+      "dimensions": [
+        120,
+        113
+      ],
+      "rgba_sha256": "59c9a85aaf95777a6a63255ef5900bda733ff8b4409918feb0dfb8a56cd319aa",
+      "original_sha256": "de6f92294cb41c88edc29d4579a3788442a6efa32e94c77c191195514b46905c",
+      "original_dimensions": [
+        120,
+        113
+      ]
+    },
+    {
+      "source": "Taomon_Frame_002-transparent.png",
+      "path": "assets/digimon/5 Ultimate/Taomon/Frames/Taomon_Frame_002.png",
+      "species_id": "taomon",
+      "kind": "frame",
+      "mapping": "direct",
+      "size": 3985,
+      "sha256": "44fab53a41637cbc3e8e49355d8f1ce083f1f179917d0a5d8f65b0e7ea453b7b",
+      "dimensions": [
+        87,
+        99
+      ],
+      "rgba_sha256": "00c0a3ac1b1ce25a90ca6e99149bab22e5edc18920d577cdf7d7100ec71bc6b9",
+      "original_sha256": "df47aec65a89050b53d4b949e25ffb0a6812df3d20234ba7e09f88781ee96afa",
+      "original_dimensions": [
+        87,
+        99
+      ]
+    },
+    {
+      "source": "Taomon_Frame_003-transparent.png",
+      "path": "assets/digimon/5 Ultimate/Taomon/Frames/Taomon_Frame_003.png",
+      "species_id": "taomon",
+      "kind": "frame",
+      "mapping": "direct",
+      "size": 3874,
+      "sha256": "f60976f4568bc116c5a61f19b6315763ac6208e8893b5bfdb21284387a8b047e",
+      "dimensions": [
+        84,
+        100
+      ],
+      "rgba_sha256": "7ae334cc96d016302ec263073662c264fc1a0962bbfebb3dafbbfae72123d45e",
+      "original_sha256": "5423506673adfd9a2db9387debf8805b2524b512c776d2130fe2ce78950fbff6",
+      "original_dimensions": [
+        84,
+        100
+      ]
+    },
+    {
+      "source": "Taomon_Frame_004-transparent.png",
+      "path": "assets/digimon/5 Ultimate/Taomon/Frames/Taomon_Frame_004.png",
+      "species_id": "taomon",
+      "kind": "frame",
+      "mapping": "direct",
+      "size": 3982,
+      "sha256": "88c6bf6ff266050286236d242664dc38531101bb2a9cba882999985d8c5aa5e7",
+      "dimensions": [
+        84,
+        98
+      ],
+      "rgba_sha256": "6c0713926b4a5db23116da68e5e826f65598380c30b34142f973ce408c6cba81",
+      "original_sha256": "8857f49a15dbc6488921049c4d0ba3883c330a3d3cec57a1107a3f5e1c55aa0a",
+      "original_dimensions": [
+        84,
+        98
+      ]
+    },
+    {
+      "source": "Taomon_Primary-transparent.png",
+      "path": "assets/digimon/5 Ultimate/Taomon/Taomon_Primary.png",
+      "species_id": "taomon",
+      "kind": "primary",
+      "mapping": "direct",
+      "size": 3985,
+      "sha256": "44fab53a41637cbc3e8e49355d8f1ce083f1f179917d0a5d8f65b0e7ea453b7b",
+      "dimensions": [
+        87,
+        99
+      ],
+      "rgba_sha256": "00c0a3ac1b1ce25a90ca6e99149bab22e5edc18920d577cdf7d7100ec71bc6b9",
+      "original_sha256": "df47aec65a89050b53d4b949e25ffb0a6812df3d20234ba7e09f88781ee96afa",
+      "original_dimensions": [
+        87,
+        99
+      ]
+    },
+    {
+      "source": "Barbamon_Frame_002-.png",
+      "path": "assets/digimon/7 Mega/Barbamon/Barbamon_Primary.png",
+      "species_id": "barbamon",
+      "kind": "primary",
+      "mapping": "pose_alias",
+      "equivalent_to": "assets/digimon/7 Mega/Barbamon/Frames/Barbamon_Frame_002.png",
+      "equivalence": {
+        "basis": "v110_original_byte_identity",
+        "record": "data/fixed_sprites_v110.json",
+        "original_sha256": "63611dadf2b79e35076ac4103e7e98e4e0f59ff9ef3eebc21b1eee3cf26533d6"
+      },
+      "size": 35876,
+      "sha256": "6ddaaf419f1f40cecb5f3e7f2baa09c6906f54aff36165f82f6359d5bfcd1480",
+      "dimensions": [
+        174,
+        154
+      ],
+      "rgba_sha256": "dde5178ff53dd0604c72002338649986cb31b5df0cbe86ff4e58bcdd9bffa3b6",
+      "original_sha256": "76051153b56aa4220c86c2713b5a82215de2f17f6626194dc06bc5e5ffe114fb",
+      "original_dimensions": [
+        174,
+        154
+      ]
+    },
+    {
+      "source": "Barbamon_Frame_002-.png",
+      "path": "assets/digimon/7 Mega/Barbamon/Frames/Barbamon_Frame_002.png",
+      "species_id": "barbamon",
+      "kind": "frame",
+      "mapping": "direct",
+      "size": 35876,
+      "sha256": "6ddaaf419f1f40cecb5f3e7f2baa09c6906f54aff36165f82f6359d5bfcd1480",
+      "dimensions": [
+        174,
+        154
+      ],
+      "rgba_sha256": "dde5178ff53dd0604c72002338649986cb31b5df0cbe86ff4e58bcdd9bffa3b6",
+      "original_sha256": "e90b85716fbba49ce83a6403879969c7ad7ab220a20ce288ec54a6b27623c44d",
+      "original_dimensions": [
+        174,
+        154
+      ]
+    },
+    {
+      "source": "Barbamon_Frame_003-transparent.png",
+      "path": "assets/digimon/7 Mega/Barbamon/Frames/Barbamon_Frame_003.png",
+      "species_id": "barbamon",
+      "kind": "frame",
+      "mapping": "direct",
+      "size": 30699,
+      "sha256": "8e41d90cd914337cf366f44d735349f2a0dc666c897ecd3316ff85883901ccf2",
+      "dimensions": [
+        136,
+        158
+      ],
+      "rgba_sha256": "f5781191b39343deb51356c9de11111cf97a8f07006241c7d05a55aa13bfa67e",
+      "original_sha256": "3e2c76f67a617508d5f22e32f0a0df534ef1802449bf861c68999886e36c88d1",
+      "original_dimensions": [
+        136,
+        158
+      ]
+    },
+    {
+      "source": "Barbamon_Frame_004-transparent.png",
+      "path": "assets/digimon/7 Mega/Barbamon/Frames/Barbamon_Frame_004.png",
+      "species_id": "barbamon",
+      "kind": "frame",
+      "mapping": "direct",
+      "size": 35142,
+      "sha256": "5b3ff1dca4a8b45e6d1cc0a11d2af8f93a67c169ae4baa62fdb122c5895ed1ee",
+      "dimensions": [
+        173,
+        158
+      ],
+      "rgba_sha256": "bc7ad7b0cdf5101f0649440df58f3a183994fb0ca42d7507a6aa2455adade7fc",
+      "original_sha256": "a61cbe7f48efe06b835d5c2ec555401d31b96c17840965d18791981dccdaed98",
+      "original_dimensions": [
+        173,
+        158
+      ]
+    },
+    {
+      "source": "Barbamon_Frame_005-transparent.png",
+      "path": "assets/digimon/7 Mega/Barbamon/Frames/Barbamon_Frame_005.png",
+      "species_id": "barbamon",
+      "kind": "frame",
+      "mapping": "direct",
+      "size": 35755,
+      "sha256": "5b036adb4a71d35e5ef13840c148bd7fcb9ab67c0d5ca2ca0b01159a1c85bdb6",
+      "dimensions": [
+        174,
+        152
+      ],
+      "rgba_sha256": "99760f1cc60f36149d91ebe984748970376572a943ee84d03ce0cd5bcf414a92",
+      "original_sha256": "9c11ee68f02f226412e32c5efd193cafb8f0f70286fd0559cb5af6630349d458",
+      "original_dimensions": [
+        174,
+        152
+      ]
+    },
+    {
+      "source": "Barbamon_Frame_006-transparent.png",
+      "path": "assets/digimon/7 Mega/Barbamon/Frames/Barbamon_Frame_006.png",
+      "species_id": "barbamon",
+      "kind": "frame",
+      "mapping": "direct",
+      "size": 29716,
+      "sha256": "0663a263a993856e2bd35ca0d1c96a0effe469d4ca96fc41d3c85d2e6e35ffda",
+      "dimensions": [
+        156,
+        154
+      ],
+      "rgba_sha256": "79179c4fea86b2817515d40cc5fcb011b69de20b86bb3f73fc68fc999632ac06",
+      "original_sha256": "01df403c4f7bea6b59915291e8b03e1e0a0a6268d6511d047696b9d2ed2ee56b",
+      "original_dimensions": [
+        156,
+        154
+      ]
+    },
+    {
+      "source": "Chaosmon_Primary-transparent.png",
+      "path": "assets/digimon/7 Mega/Chaosmon/Chaosmon_Primary.png",
+      "species_id": "chaosmon",
+      "kind": "primary",
+      "mapping": "direct",
+      "size": 7867,
+      "sha256": "4ad09f2aeb3a5c2bd1ab9a3f388956cc75db90acc635a1c47e3372ef01215f3d",
+      "dimensions": [
+        110,
+        149
+      ],
+      "rgba_sha256": "ddbf69696a1d09d4cffd528ed4581a769d229ac5c3baed5a03ad1654743f3f0a",
+      "original_sha256": "59fc57955171d3fd9c19e50b8c1a2bf1990388883cc36f011e409b00a35b59f0",
+      "original_dimensions": [
+        110,
+        149
+      ]
+    },
+    {
+      "source": "Chaosmon_Frame_001-transparent.png",
+      "path": "assets/digimon/7 Mega/Chaosmon/Frames/Chaosmon_Frame_001.png",
+      "species_id": "chaosmon",
+      "kind": "frame",
+      "mapping": "direct",
+      "size": 7867,
+      "sha256": "4ad09f2aeb3a5c2bd1ab9a3f388956cc75db90acc635a1c47e3372ef01215f3d",
+      "dimensions": [
+        110,
+        149
+      ],
+      "rgba_sha256": "ddbf69696a1d09d4cffd528ed4581a769d229ac5c3baed5a03ad1654743f3f0a",
+      "original_sha256": "59fc57955171d3fd9c19e50b8c1a2bf1990388883cc36f011e409b00a35b59f0",
+      "original_dimensions": [
+        110,
+        149
+      ]
+    },
+    {
+      "source": "Chaosmon_Frame_002-transparent.png",
+      "path": "assets/digimon/7 Mega/Chaosmon/Frames/Chaosmon_Frame_002.png",
+      "species_id": "chaosmon",
+      "kind": "frame",
+      "mapping": "direct",
+      "size": 7785,
+      "sha256": "9a48f1a0da1f7ef0a7cc2360aa0e9b8846585039d84d4a769245deaa17d3fc86",
+      "dimensions": [
+        111,
+        147
+      ],
+      "rgba_sha256": "8749eb1dd5cf756a5d87e9363c27be35275d18740b84f83800fa5ecc40ffc2fc",
+      "original_sha256": "585a1cb587434e044c15b6114f464d46c6a10863624f37a3c5196bc2993db4d1",
+      "original_dimensions": [
+        111,
+        147
+      ]
+    },
+    {
+      "source": "Chaosmon_Frame_003-transparent.png",
+      "path": "assets/digimon/7 Mega/Chaosmon/Frames/Chaosmon_Frame_003.png",
+      "species_id": "chaosmon",
+      "kind": "frame",
+      "mapping": "direct",
+      "size": 7779,
+      "sha256": "157474e6d878376f8e6f5208de2680a30c16248672b0bafad9a9a36291970e2b",
+      "dimensions": [
+        109,
+        147
+      ],
+      "rgba_sha256": "5242622be9a5f04e57dabf4f48ef777d7555110a471947b4e466988ac2af14e7",
+      "original_sha256": "e8cfbcf973edc28902f3a8917aee488bbc43b71181e2f0b3bfa37e1403ba8ec5",
+      "original_dimensions": [
+        109,
+        147
+      ]
+    },
+    {
+      "source": "Chaosmon_Frame_004-transparent.png",
+      "path": "assets/digimon/7 Mega/Chaosmon/Frames/Chaosmon_Frame_004.png",
+      "species_id": "chaosmon",
+      "kind": "frame",
+      "mapping": "direct",
+      "size": 8373,
+      "sha256": "b0d77ad1fd63d8039f601031c4dbda318cec1073845e4063c47573df8e54967e",
+      "dimensions": [
+        128,
+        194
+      ],
+      "rgba_sha256": "73f527a901d36bef72df7212966deea89e3ec7a3438398952686cec5a3a6c126",
+      "original_sha256": "ddd4b2d39385cd1ab47def504f0516ea4f8c1e3d232f30ba58411847c873cb23",
+      "original_dimensions": [
+        128,
+        194
+      ]
+    },
+    {
+      "source": "Chaosmon_Frame_005-transparent.png",
+      "path": "assets/digimon/7 Mega/Chaosmon/Frames/Chaosmon_Frame_005.png",
+      "species_id": "chaosmon",
+      "kind": "frame",
+      "mapping": "direct",
+      "size": 7782,
+      "sha256": "a9d4a41a7b856ea0dca438343f0ff89ef338ef298cbe1292eb91ff239af0fa55",
+      "dimensions": [
+        167,
+        170
+      ],
+      "rgba_sha256": "c75ba7e8b142c37570b729c22dc383c9e8a59e700074031603050833355c6d5a",
+      "original_sha256": "9897a9c21fab1383100265e591a9f24a47caaf5e09b3799bc5d4e803e852e575",
+      "original_dimensions": [
+        167,
+        170
+      ]
+    },
+    {
+      "source": "GallantmonCrimsonMode_Frame_002.png",
+      "path": "assets/digimon/7 Mega/GallantmonCrimsonMode/Frames/GallantmonCrimsonMode_Frame_002.png",
+      "species_id": "gallantmoncrimsonmode",
+      "kind": "frame",
+      "mapping": "direct",
+      "size": 9466,
+      "sha256": "587f2652966471c3d2971f605646b27d6ecc48cd9ae9b30e1cfcd30e52b1c15a",
+      "dimensions": [
+        148,
+        139
+      ],
+      "rgba_sha256": "d880af13a3aca12cb1735b9ca63500cbf6b3acf6361cfe8a71cffa4e4e476e32",
+      "original_sha256": "0a70bef3385d8fd36077c59a0ff913bede06de20e6efb509b4bacca402ac6568",
+      "original_dimensions": [
+        148,
+        139
+      ]
+    },
+    {
+      "source": "GallantmonCrimsonMode_Frame_003.png",
+      "path": "assets/digimon/7 Mega/GallantmonCrimsonMode/Frames/GallantmonCrimsonMode_Frame_003.png",
+      "species_id": "gallantmoncrimsonmode",
+      "kind": "frame",
+      "mapping": "direct",
+      "size": 9281,
+      "sha256": "50c611a55ec85a8fb6b28cebce530818f0c152b72a374e59acc2c4d70739c230",
+      "dimensions": [
+        147,
+        139
+      ],
+      "rgba_sha256": "e87b9db247febac249b023b5660dadc05d663fd3204e039e6e26df64f449edb4",
+      "original_sha256": "7e012383a94d780b70e1b1664210d893d3a3fbf17fca5c93c555ce49f54d732a",
+      "original_dimensions": [
+        147,
+        139
+      ]
+    },
+    {
+      "source": "ImperialdramonFighterMode_Frame_001.png",
+      "path": "assets/digimon/7 Mega/ImperialdramonFighterMode/Frames/ImperialdramonFighterMode_Frame_001.png",
+      "species_id": "imperialdramonfightermode",
+      "kind": "frame",
+      "mapping": "direct",
+      "size": 7389,
+      "sha256": "ad2c78f4d5af85c0ecfc08e39bc4f63254f6cc41e0e276dd4bc23461a0965a85",
+      "dimensions": [
+        113,
+        150
+      ],
+      "rgba_sha256": "5e7af2e56b078e7fafc19c6033d51f0f5dfadcd1df600d46037ecfca7fac5511",
+      "original_sha256": "75386a7055be57a113ea679b44e536a87d3bac7ce794e97fb8aea2d849a0f16f",
+      "original_dimensions": [
+        113,
+        150
+      ]
+    },
+    {
+      "source": "ImperialdramonFighterMode_Frame_001.png",
+      "path": "assets/digimon/7 Mega/ImperialdramonFighterMode/ImperialdramonFighterMode_Primary.png",
+      "species_id": "imperialdramonfightermode",
+      "kind": "primary",
+      "mapping": "pose_alias",
+      "equivalent_to": "assets/digimon/7 Mega/ImperialdramonFighterMode/Frames/ImperialdramonFighterMode_Frame_001.png",
+      "equivalence": {
+        "basis": "baseline_rgba_identity",
+        "dimensions": [
+          113,
+          150
+        ],
+        "rgba_sha256": "6445b19fcd79163acc05f406cf891e8a0a1c70ddf2c39f3190e1935a368cd3dc"
+      },
+      "size": 7389,
+      "sha256": "ad2c78f4d5af85c0ecfc08e39bc4f63254f6cc41e0e276dd4bc23461a0965a85",
+      "dimensions": [
+        113,
+        150
+      ],
+      "rgba_sha256": "5e7af2e56b078e7fafc19c6033d51f0f5dfadcd1df600d46037ecfca7fac5511",
+      "original_sha256": "75386a7055be57a113ea679b44e536a87d3bac7ce794e97fb8aea2d849a0f16f",
+      "original_dimensions": [
+        113,
+        150
+      ]
+    },
+    {
+      "source": "KingChessmon_Frame_003-transparent.png",
+      "path": "assets/digimon/7 Mega/KingChessmon/Frames/KingChessmon_Frame_003.png",
+      "species_id": "kingchessmon",
+      "kind": "frame",
+      "mapping": "direct",
+      "size": 4503,
+      "sha256": "68e1899f1e99cacbcdc18a8cb60ebbdd0eb0cc1284db61f717d132d7287e3e59",
+      "dimensions": [
+        97,
+        104
+      ],
+      "rgba_sha256": "d2e067b1c4a72bf3429d502371ddb7c0e825db995d98b0cae2f9003821a31be4",
+      "original_sha256": "73f08a7ca67383e04e81ec1c7cdbc2d64bc2434a3c6db1bda8ee9b7b6416e249",
+      "original_dimensions": [
+        97,
+        104
+      ]
+    },
+    {
+      "source": "Leopardmon_Frame_001-transparent.png",
+      "path": "assets/digimon/7 Mega/Leopardmon/Frames/Leopardmon_Frame_001.png",
+      "species_id": "leopardmon",
+      "kind": "frame",
+      "mapping": "direct",
+      "size": 5089,
+      "sha256": "e3e0573d428e1beafbb363ae3e7653b468c218a6c0cfb60386b2c8dda3ddb000",
+      "dimensions": [
+        94,
+        125
+      ],
+      "rgba_sha256": "f9c68ce6d846bd53c98141aaca10cb3f7b9abce90b06031dd944a3e1621f800b",
+      "original_sha256": "771403bb15f8e23d0c007293ad8d470096bb56c52b2ab6de4cc730639ad5ca81",
+      "original_dimensions": [
+        94,
+        125
+      ]
+    },
+    {
+      "source": "Leopardmon_Frame_002-transparent.png",
+      "path": "assets/digimon/7 Mega/Leopardmon/Frames/Leopardmon_Frame_002.png",
+      "species_id": "leopardmon",
+      "kind": "frame",
+      "mapping": "direct",
+      "size": 5069,
+      "sha256": "35c687738f06512528ec7fbe63aaa6bd5358566fd47ec61057c4d3b666834950",
+      "dimensions": [
+        94,
+        125
+      ],
+      "rgba_sha256": "a87280a6d9e2e416c3899425b152fc617a62499b84213330504cb42482f30f77",
+      "original_sha256": "a24239d9fcb28bff219e73cf0dcf0cafdc305707854b577d554dbe4fdf84d8a6",
+      "original_dimensions": [
+        94,
+        125
+      ]
+    },
+    {
+      "source": "Leopardmon_Frame_003-transparent.png",
+      "path": "assets/digimon/7 Mega/Leopardmon/Frames/Leopardmon_Frame_003.png",
+      "species_id": "leopardmon",
+      "kind": "frame",
+      "mapping": "direct",
+      "size": 4983,
+      "sha256": "31b01ee8fc32d175683042a308f96f9c392eef49c30f95f34ff3c61e809a1fcb",
+      "dimensions": [
+        91,
+        125
+      ],
+      "rgba_sha256": "f00d728dde0accb4697265ec1f64cd2354d8d40306f02985701c489e73c419d4",
+      "original_sha256": "593f852b3e9f6bc65531e6a48eff971f18b422868e96a5c2163f0f172d8e0d7e",
+      "original_dimensions": [
+        91,
+        125
+      ]
+    },
+    {
+      "source": "Leopardmon_Frame_004-transparent.png",
+      "path": "assets/digimon/7 Mega/Leopardmon/Frames/Leopardmon_Frame_004.png",
+      "species_id": "leopardmon",
+      "kind": "frame",
+      "mapping": "direct",
+      "size": 4782,
+      "sha256": "53cb0a867b9502d9ef04e1b192cb5daabc122bafc33f4b0a43b2c37ff3f01afb",
+      "dimensions": [
+        129,
+        126
+      ],
+      "rgba_sha256": "60c65ce14942ec554ab580b10d6d8270ed9766fe6c2f30169c12c673ca0ae3a1",
+      "original_sha256": "4f51fa9f1e42c091e2ae77ad4a6064e922b2763b092956a228699019957bdc03",
+      "original_dimensions": [
+        129,
+        126
+      ]
+    },
+    {
+      "source": "Leopardmon_Frame_001-transparent.png",
+      "path": "assets/digimon/7 Mega/Leopardmon/Leopardmon_Primary.png",
+      "species_id": "leopardmon",
+      "kind": "primary",
+      "mapping": "pose_alias",
+      "equivalent_to": "assets/digimon/7 Mega/Leopardmon/Frames/Leopardmon_Frame_001.png",
+      "equivalence": {
+        "basis": "baseline_rgba_identity",
+        "dimensions": [
+          94,
+          125
+        ],
+        "rgba_sha256": "1721c9bd3fdf2f5a7f535a63cc281e72fde8c059b9685b6bcd61579b5f0ac055"
+      },
+      "size": 5089,
+      "sha256": "e3e0573d428e1beafbb363ae3e7653b468c218a6c0cfb60386b2c8dda3ddb000",
+      "dimensions": [
+        94,
+        125
+      ],
+      "rgba_sha256": "f9c68ce6d846bd53c98141aaca10cb3f7b9abce90b06031dd944a3e1621f800b",
+      "original_sha256": "771403bb15f8e23d0c007293ad8d470096bb56c52b2ab6de4cc730639ad5ca81",
+      "original_dimensions": [
+        94,
+        125
+      ]
+    },
+    {
+      "source": "MetalSeadramon_Frame_004.png",
+      "path": "assets/digimon/7 Mega/MetalSeadramon/Frames/MetalSeadramon_Frame_004.png",
+      "species_id": "metalseadramon",
+      "kind": "frame",
+      "mapping": "direct",
+      "size": 9780,
+      "sha256": "a4bf0d10abbf4e63c44b6c905899bb4ce61dfb0a112bfe51687220c35706c87c",
+      "dimensions": [
+        110,
+        164
+      ],
+      "rgba_sha256": "0f33781cc159fb6128b92dc69af81d2478b8013c9ba4721297c045e0192dd48d",
+      "original_sha256": "2cf4134027f700ef94b9bce1cdbc6bd43569d3812e65697e0481148c4aecb675",
+      "original_dimensions": [
+        110,
+        164
+      ]
+    },
+    {
+      "source": "Skullknightmon_Primary.png",
+      "path": "assets/digimon/7 Mega/Skullknightmon/Frames/Skullknightmon_Frame_001.png",
+      "species_id": "skullknightmon",
+      "kind": "frame",
+      "mapping": "pose_alias",
+      "equivalent_to": "assets/digimon/7 Mega/Skullknightmon/Skullknightmon_Primary.png",
+      "equivalence": {
+        "basis": "v110_original_byte_identity",
+        "record": "data/fixed_sprites_v110.json",
+        "original_sha256": "931851843050808aeaa43b199f5e4ce027761a88bcdadef491e01b6973634c36"
+      },
+      "size": 12995,
+      "sha256": "0c9726c0f0aa2c20fc30c41a45eb1cba9e5e9eae65b594fc0f2ab34b5a93728c",
+      "dimensions": [
+        98,
+        86
+      ],
+      "rgba_sha256": "4663d046d0cb2e6accfdd2d91542b90ca85fed52ac7449d8eef7e4f66ce2a91e",
+      "original_sha256": "4849dd24914e5baa2ec206dedd65c4855ec8de6f8a6e8f349ba43afd80ca19eb",
+      "original_dimensions": [
+        98,
+        86
+      ]
+    },
+    {
+      "source": "Skullknightmon_Frame_003.png",
+      "path": "assets/digimon/7 Mega/Skullknightmon/Frames/Skullknightmon_Frame_003.png",
+      "species_id": "skullknightmon",
+      "kind": "frame",
+      "mapping": "direct",
+      "size": 12844,
+      "sha256": "f0bf2f2a3a8d17375f0e3ede8200effbb7e4892664d4a4911cb4250f382c4a1a",
+      "dimensions": [
+        101,
+        86
+      ],
+      "rgba_sha256": "fa932431e9bc7a2bf4de9abac25a025defeeb7c599f7c977d5e3632236f6e9cf",
+      "original_sha256": "9a521497c766860d2fbe82036b6ba7b68f0f13d3cd8f0b8b0a3745f4db2768d3",
+      "original_dimensions": [
+        101,
+        86
+      ]
+    },
+    {
+      "source": "Skullknightmon_Frame_004.png",
+      "path": "assets/digimon/7 Mega/Skullknightmon/Frames/Skullknightmon_Frame_004.png",
+      "species_id": "skullknightmon",
+      "kind": "frame",
+      "mapping": "direct",
+      "size": 20611,
+      "sha256": "43f299fb62666be416dcf295d950f82f6be64a5f613b15c755af5d69b0180257",
+      "dimensions": [
+        153,
+        114
+      ],
+      "rgba_sha256": "4819a722ec936bb477b7eefa42a201692728041aa3ecb6608d091eded13df36b",
+      "original_sha256": "e22cfbed628073874d27595c31a8b992c296e0597b1eab64048ff99145763684",
+      "original_dimensions": [
+        153,
+        114
+      ]
+    },
+    {
+      "source": "Skullknightmon_Frame_005.png",
+      "path": "assets/digimon/7 Mega/Skullknightmon/Frames/Skullknightmon_Frame_005.png",
+      "species_id": "skullknightmon",
+      "kind": "frame",
+      "mapping": "direct",
+      "size": 12478,
+      "sha256": "9646b6ad83176c4fc8b695492e8cbefb5cc41b9f9643e6cc803cf6aedf1000a7",
+      "dimensions": [
+        89,
+        94
+      ],
+      "rgba_sha256": "dbcc31b581f9a6d65fe5f042de6d0aa26b5781aee770309682a9f9c796b22b3e",
+      "original_sha256": "f39159035834065dc3ff78b5787714046daada8936f905cb5bd0a40906d24738",
+      "original_dimensions": [
+        89,
+        94
+      ]
+    },
+    {
+      "source": "Skullknightmon_Primary.png",
+      "path": "assets/digimon/7 Mega/Skullknightmon/Skullknightmon_Primary.png",
+      "species_id": "skullknightmon",
+      "kind": "primary",
+      "mapping": "direct",
+      "size": 12995,
+      "sha256": "0c9726c0f0aa2c20fc30c41a45eb1cba9e5e9eae65b594fc0f2ab34b5a93728c",
+      "dimensions": [
+        98,
+        86
+      ],
+      "rgba_sha256": "4663d046d0cb2e6accfdd2d91542b90ca85fed52ac7449d8eef7e4f66ce2a91e",
+      "original_sha256": "a136296d3f8f784055d72ce361017c1dbaac89ba6fce2ee23cd4511f9beecb84",
+      "original_dimensions": [
+        98,
+        86
+      ]
+    }
+  ],
+  "species": [
+    {
+      "id": "aquilamon",
+      "directory": "assets/digimon/4 Champion/Aquilamon",
+      "sidecar": "assets/digimon/4 Champion/Aquilamon/animation.json",
+      "had_sidecar": false,
+      "before_art": {
+        "sprites": {
+          "idle": "assets/digimon/4 Champion/Aquilamon/Frames/Aquilamon_Frame_001.png",
+          "walk_left": "assets/digimon/4 Champion/Aquilamon/Frames/Aquilamon_Frame_002.png",
+          "walk_right": "assets/digimon/4 Champion/Aquilamon/Frames/Aquilamon_Frame_003.png",
+          "attack1": "assets/digimon/4 Champion/Aquilamon/Frames/Aquilamon_Frame_007.png",
+          "attack2": "assets/digimon/4 Champion/Aquilamon/Frames/Aquilamon_Frame_008.png"
+        },
+        "animations": {
+          "idle": [
+            "assets/digimon/4 Champion/Aquilamon/Frames/Aquilamon_Frame_001.png",
+            "assets/digimon/4 Champion/Aquilamon/Frames/Aquilamon_Frame_002.png",
+            "assets/digimon/4 Champion/Aquilamon/Frames/Aquilamon_Frame_001.png",
+            "assets/digimon/4 Champion/Aquilamon/Frames/Aquilamon_Frame_003.png"
+          ],
+          "walk": [
+            "assets/digimon/4 Champion/Aquilamon/Frames/Aquilamon_Frame_001.png",
+            "assets/digimon/4 Champion/Aquilamon/Frames/Aquilamon_Frame_002.png",
+            "assets/digimon/4 Champion/Aquilamon/Frames/Aquilamon_Frame_001.png",
+            "assets/digimon/4 Champion/Aquilamon/Frames/Aquilamon_Frame_003.png"
+          ],
+          "attack": [
+            "assets/digimon/4 Champion/Aquilamon/Frames/Aquilamon_Frame_007.png",
+            "assets/digimon/4 Champion/Aquilamon/Frames/Aquilamon_Frame_008.png"
+          ]
+        },
+        "source_frame_count": 23,
+        "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded"
+      },
+      "animation": {
+        "version": 1,
+        "sprites": {
+          "idle": "Frames/Aquilamon_Frame_001.png",
+          "walk_left": "Frames/Aquilamon_Frame_002.png",
+          "walk_right": "Frames/Aquilamon_Frame_003.png",
+          "attack1": "Frames/Aquilamon_Frame_007.png",
+          "attack2": "Frames/Aquilamon_Frame_008.png",
+          "front": "Aquilamon_Primary.png"
+        },
+        "animations": {
+          "idle": [
+            "Frames/Aquilamon_Frame_001.png",
+            "Frames/Aquilamon_Frame_002.png",
+            "Frames/Aquilamon_Frame_001.png",
+            "Frames/Aquilamon_Frame_003.png"
+          ],
+          "walk": [
+            "Frames/Aquilamon_Frame_001.png",
+            "Frames/Aquilamon_Frame_002.png",
+            "Frames/Aquilamon_Frame_001.png",
+            "Frames/Aquilamon_Frame_003.png"
+          ],
+          "attack": [
+            "Frames/Aquilamon_Frame_007.png",
+            "Frames/Aquilamon_Frame_008.png"
+          ]
+        },
+        "mirrored_frames": {},
+        "source_frame_count": 23,
+        "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+        "art_provenance": "User-supplied original sprite artwork; existing pose assignments retained. FixedSpritesPart2 v1.1.1: supplied RGBA PNG bytes preserved; documented same-pose copies synchronized; see data/fixed_sprites_v111.json."
+      }
+    },
+    {
+      "id": "barbamon",
+      "directory": "assets/digimon/7 Mega/Barbamon",
+      "sidecar": "assets/digimon/7 Mega/Barbamon/animation.json",
+      "had_sidecar": true,
+      "before_art": {
+        "sprites": {
+          "idle": "assets/digimon/7 Mega/Barbamon/Frames/Barbamon_Frame_002.png",
+          "walk_left": "assets/digimon/7 Mega/Barbamon/Frames/Barbamon_Frame_003.png",
+          "walk_right": "assets/digimon/7 Mega/Barbamon/Frames/Barbamon_Frame_004.png",
+          "attack1": "assets/digimon/7 Mega/Barbamon/Frames/Barbamon_Frame_005.png",
+          "attack2": "assets/digimon/7 Mega/Barbamon/Frames/Barbamon_Frame_006.png",
+          "front": "assets/digimon/7 Mega/Barbamon/Barbamon_Primary.png"
+        },
+        "animations": {
+          "idle": [
+            "assets/digimon/7 Mega/Barbamon/Frames/Barbamon_Frame_002.png",
+            "assets/digimon/7 Mega/Barbamon/Frames/Barbamon_Frame_003.png",
+            "assets/digimon/7 Mega/Barbamon/Frames/Barbamon_Frame_002.png",
+            "assets/digimon/7 Mega/Barbamon/Frames/Barbamon_Frame_004.png"
+          ],
+          "walk": [
+            "assets/digimon/7 Mega/Barbamon/Frames/Barbamon_Frame_002.png",
+            "assets/digimon/7 Mega/Barbamon/Frames/Barbamon_Frame_003.png",
+            "assets/digimon/7 Mega/Barbamon/Frames/Barbamon_Frame_002.png",
+            "assets/digimon/7 Mega/Barbamon/Frames/Barbamon_Frame_004.png"
+          ],
+          "attack": [
+            "assets/digimon/7 Mega/Barbamon/Frames/Barbamon_Frame_005.png",
+            "assets/digimon/7 Mega/Barbamon/Frames/Barbamon_Frame_006.png"
+          ]
+        },
+        "mirrored_frames": {},
+        "source_frame_count": 18,
+        "frame_selection": "v1.0.1 pose assignments retained; supplied v1.1.0 fixed PNGs replace canonical paths; explicit primary/front portrait when supplied",
+        "art_provenance": "User-supplied DigimonFixedSpritesFor_v1.1.0.rar; v1.0.1 source overlay; selected PNG bytes preserved exactly"
+      },
+      "animation": {
+        "version": 1,
+        "sprites": {
+          "idle": "Frames/Barbamon_Frame_002.png",
+          "walk_left": "Frames/Barbamon_Frame_003.png",
+          "walk_right": "Frames/Barbamon_Frame_004.png",
+          "attack1": "Frames/Barbamon_Frame_005.png",
+          "attack2": "Frames/Barbamon_Frame_006.png",
+          "front": "Barbamon_Primary.png"
+        },
+        "animations": {
+          "idle": [
+            "Frames/Barbamon_Frame_002.png",
+            "Frames/Barbamon_Frame_003.png",
+            "Frames/Barbamon_Frame_002.png",
+            "Frames/Barbamon_Frame_004.png"
+          ],
+          "walk": [
+            "Frames/Barbamon_Frame_002.png",
+            "Frames/Barbamon_Frame_003.png",
+            "Frames/Barbamon_Frame_002.png",
+            "Frames/Barbamon_Frame_004.png"
+          ],
+          "attack": [
+            "Frames/Barbamon_Frame_005.png",
+            "Frames/Barbamon_Frame_006.png"
+          ]
+        },
+        "mirrored_frames": {},
+        "source_frame_count": 18,
+        "frame_selection": "v1.0.1 pose assignments retained; supplied v1.1.0 fixed PNGs replace canonical paths; explicit primary/front portrait when supplied",
+        "art_provenance": "User-supplied DigimonFixedSpritesFor_v1.1.0.rar; v1.0.1 source overlay; selected PNG bytes preserved exactly FixedSpritesPart2 v1.1.1: supplied RGBA PNG bytes preserved; documented same-pose copies synchronized; see data/fixed_sprites_v111.json."
+      }
+    },
+    {
+      "id": "birdramon",
+      "directory": "assets/digimon/4 Champion/Birdramon",
+      "sidecar": "assets/digimon/4 Champion/Birdramon/animation.json",
+      "had_sidecar": false,
+      "before_art": {
+        "sprites": {
+          "idle": "assets/digimon/4 Champion/Birdramon/Frames/Birdramon_Frame_001.png",
+          "walk_left": "assets/digimon/4 Champion/Birdramon/Frames/Birdramon_Frame_002.png",
+          "walk_right": "assets/digimon/4 Champion/Birdramon/Frames/Birdramon_Frame_009.png",
+          "attack1": "assets/digimon/4 Champion/Birdramon/Frames/Birdramon_Frame_016.png",
+          "attack2": "assets/digimon/4 Champion/Birdramon/Frames/Birdramon_Frame_019.png"
+        },
+        "animations": {
+          "idle": [
+            "assets/digimon/4 Champion/Birdramon/Frames/Birdramon_Frame_001.png",
+            "assets/digimon/4 Champion/Birdramon/Frames/Birdramon_Frame_002.png",
+            "assets/digimon/4 Champion/Birdramon/Frames/Birdramon_Frame_001.png",
+            "assets/digimon/4 Champion/Birdramon/Frames/Birdramon_Frame_009.png"
+          ],
+          "walk": [
+            "assets/digimon/4 Champion/Birdramon/Frames/Birdramon_Frame_001.png",
+            "assets/digimon/4 Champion/Birdramon/Frames/Birdramon_Frame_002.png",
+            "assets/digimon/4 Champion/Birdramon/Frames/Birdramon_Frame_001.png",
+            "assets/digimon/4 Champion/Birdramon/Frames/Birdramon_Frame_009.png"
+          ],
+          "attack": [
+            "assets/digimon/4 Champion/Birdramon/Frames/Birdramon_Frame_016.png",
+            "assets/digimon/4 Champion/Birdramon/Frames/Birdramon_Frame_019.png"
+          ]
+        },
+        "source_frame_count": 19,
+        "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded"
+      },
+      "animation": {
+        "version": 1,
+        "sprites": {
+          "idle": "Frames/Birdramon_Frame_001.png",
+          "walk_left": "Frames/Birdramon_Frame_002.png",
+          "walk_right": "Frames/Birdramon_Frame_009.png",
+          "attack1": "Frames/Birdramon_Frame_016.png",
+          "attack2": "Frames/Birdramon_Frame_019.png",
+          "front": "Frames/Birdramon_Frame_001.png"
+        },
+        "animations": {
+          "idle": [
+            "Frames/Birdramon_Frame_001.png",
+            "Frames/Birdramon_Frame_002.png",
+            "Frames/Birdramon_Frame_001.png",
+            "Frames/Birdramon_Frame_009.png"
+          ],
+          "walk": [
+            "Frames/Birdramon_Frame_001.png",
+            "Frames/Birdramon_Frame_002.png",
+            "Frames/Birdramon_Frame_001.png",
+            "Frames/Birdramon_Frame_009.png"
+          ],
+          "attack": [
+            "Frames/Birdramon_Frame_016.png",
+            "Frames/Birdramon_Frame_019.png"
+          ]
+        },
+        "mirrored_frames": {},
+        "source_frame_count": 19,
+        "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+        "art_provenance": "User-supplied original sprite artwork; existing pose assignments retained. FixedSpritesPart2 v1.1.1: supplied RGBA PNG bytes preserved; documented same-pose copies synchronized; see data/fixed_sprites_v111.json."
+      }
+    },
+    {
+      "id": "chaosmon",
+      "directory": "assets/digimon/7 Mega/Chaosmon",
+      "sidecar": "assets/digimon/7 Mega/Chaosmon/animation.json",
+      "had_sidecar": false,
+      "before_art": {
+        "sprites": {
+          "idle": "assets/digimon/7 Mega/Chaosmon/Frames/Chaosmon_Frame_001.png",
+          "walk_left": "assets/digimon/7 Mega/Chaosmon/Frames/Chaosmon_Frame_002.png",
+          "walk_right": "assets/digimon/7 Mega/Chaosmon/Frames/Chaosmon_Frame_003.png",
+          "attack1": "assets/digimon/7 Mega/Chaosmon/Frames/Chaosmon_Frame_004.png",
+          "attack2": "assets/digimon/7 Mega/Chaosmon/Frames/Chaosmon_Frame_005.png"
+        },
+        "animations": {
+          "idle": [
+            "assets/digimon/7 Mega/Chaosmon/Frames/Chaosmon_Frame_001.png",
+            "assets/digimon/7 Mega/Chaosmon/Frames/Chaosmon_Frame_002.png",
+            "assets/digimon/7 Mega/Chaosmon/Frames/Chaosmon_Frame_001.png",
+            "assets/digimon/7 Mega/Chaosmon/Frames/Chaosmon_Frame_003.png"
+          ],
+          "walk": [
+            "assets/digimon/7 Mega/Chaosmon/Frames/Chaosmon_Frame_001.png",
+            "assets/digimon/7 Mega/Chaosmon/Frames/Chaosmon_Frame_002.png",
+            "assets/digimon/7 Mega/Chaosmon/Frames/Chaosmon_Frame_001.png",
+            "assets/digimon/7 Mega/Chaosmon/Frames/Chaosmon_Frame_003.png"
+          ],
+          "attack": [
+            "assets/digimon/7 Mega/Chaosmon/Frames/Chaosmon_Frame_004.png",
+            "assets/digimon/7 Mega/Chaosmon/Frames/Chaosmon_Frame_005.png"
+          ]
+        },
+        "source_frame_count": 22,
+        "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded"
+      },
+      "animation": {
+        "version": 1,
+        "sprites": {
+          "idle": "Frames/Chaosmon_Frame_001.png",
+          "walk_left": "Frames/Chaosmon_Frame_002.png",
+          "walk_right": "Frames/Chaosmon_Frame_003.png",
+          "attack1": "Frames/Chaosmon_Frame_004.png",
+          "attack2": "Frames/Chaosmon_Frame_005.png",
+          "front": "Chaosmon_Primary.png"
+        },
+        "animations": {
+          "idle": [
+            "Frames/Chaosmon_Frame_001.png",
+            "Frames/Chaosmon_Frame_002.png",
+            "Frames/Chaosmon_Frame_001.png",
+            "Frames/Chaosmon_Frame_003.png"
+          ],
+          "walk": [
+            "Frames/Chaosmon_Frame_001.png",
+            "Frames/Chaosmon_Frame_002.png",
+            "Frames/Chaosmon_Frame_001.png",
+            "Frames/Chaosmon_Frame_003.png"
+          ],
+          "attack": [
+            "Frames/Chaosmon_Frame_004.png",
+            "Frames/Chaosmon_Frame_005.png"
+          ]
+        },
+        "mirrored_frames": {},
+        "source_frame_count": 22,
+        "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+        "art_provenance": "User-supplied original sprite artwork; existing pose assignments retained. FixedSpritesPart2 v1.1.1: supplied RGBA PNG bytes preserved; documented same-pose copies synchronized; see data/fixed_sprites_v111.json."
+      }
+    },
+    {
+      "id": "crowmon",
+      "directory": "assets/digimon/5 Ultimate/Crowmon",
+      "sidecar": "assets/digimon/5 Ultimate/Crowmon/animation.json",
+      "had_sidecar": false,
+      "before_art": {
+        "sprites": {
+          "idle": "assets/digimon/5 Ultimate/Crowmon/Frames/Crowmon_Frame_001.png",
+          "walk_left": "assets/digimon/5 Ultimate/Crowmon/Frames/Crowmon_Frame_002.png",
+          "walk_right": "assets/digimon/5 Ultimate/Crowmon/Frames/Crowmon_Frame_003.png",
+          "attack1": "assets/digimon/5 Ultimate/Crowmon/Frames/Crowmon_Frame_004.png",
+          "attack2": "assets/digimon/5 Ultimate/Crowmon/Frames/Crowmon_Frame_005.png"
+        },
+        "animations": {
+          "idle": [
+            "assets/digimon/5 Ultimate/Crowmon/Frames/Crowmon_Frame_001.png",
+            "assets/digimon/5 Ultimate/Crowmon/Frames/Crowmon_Frame_002.png",
+            "assets/digimon/5 Ultimate/Crowmon/Frames/Crowmon_Frame_001.png",
+            "assets/digimon/5 Ultimate/Crowmon/Frames/Crowmon_Frame_003.png"
+          ],
+          "walk": [
+            "assets/digimon/5 Ultimate/Crowmon/Frames/Crowmon_Frame_001.png",
+            "assets/digimon/5 Ultimate/Crowmon/Frames/Crowmon_Frame_002.png",
+            "assets/digimon/5 Ultimate/Crowmon/Frames/Crowmon_Frame_001.png",
+            "assets/digimon/5 Ultimate/Crowmon/Frames/Crowmon_Frame_003.png"
+          ],
+          "attack": [
+            "assets/digimon/5 Ultimate/Crowmon/Frames/Crowmon_Frame_004.png",
+            "assets/digimon/5 Ultimate/Crowmon/Frames/Crowmon_Frame_005.png"
+          ]
+        },
+        "source_frame_count": 21,
+        "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded"
+      },
+      "animation": {
+        "version": 1,
+        "sprites": {
+          "idle": "Frames/Crowmon_Frame_001.png",
+          "walk_left": "Frames/Crowmon_Frame_002.png",
+          "walk_right": "Frames/Crowmon_Frame_003.png",
+          "attack1": "Frames/Crowmon_Frame_004.png",
+          "attack2": "Frames/Crowmon_Frame_005.png",
+          "front": "Frames/Crowmon_Frame_001.png"
+        },
+        "animations": {
+          "idle": [
+            "Frames/Crowmon_Frame_001.png",
+            "Frames/Crowmon_Frame_002.png",
+            "Frames/Crowmon_Frame_001.png",
+            "Frames/Crowmon_Frame_003.png"
+          ],
+          "walk": [
+            "Frames/Crowmon_Frame_001.png",
+            "Frames/Crowmon_Frame_002.png",
+            "Frames/Crowmon_Frame_001.png",
+            "Frames/Crowmon_Frame_003.png"
+          ],
+          "attack": [
+            "Frames/Crowmon_Frame_004.png",
+            "Frames/Crowmon_Frame_005.png"
+          ]
+        },
+        "mirrored_frames": {},
+        "source_frame_count": 21,
+        "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+        "art_provenance": "User-supplied original sprite artwork; existing pose assignments retained. FixedSpritesPart2 v1.1.1: supplied RGBA PNG bytes preserved; documented same-pose copies synchronized; see data/fixed_sprites_v111.json."
+      }
+    },
+    {
+      "id": "gallantmoncrimsonmode",
+      "directory": "assets/digimon/7 Mega/GallantmonCrimsonMode",
+      "sidecar": "assets/digimon/7 Mega/GallantmonCrimsonMode/animation.json",
+      "had_sidecar": false,
+      "before_art": {
+        "sprites": {
+          "idle": "assets/digimon/7 Mega/GallantmonCrimsonMode/Frames/GallantmonCrimsonMode_Frame_001.png",
+          "walk_left": "assets/digimon/7 Mega/GallantmonCrimsonMode/Frames/GallantmonCrimsonMode_Frame_002.png",
+          "walk_right": "assets/digimon/7 Mega/GallantmonCrimsonMode/Frames/GallantmonCrimsonMode_Frame_003.png",
+          "attack1": "assets/digimon/7 Mega/GallantmonCrimsonMode/Frames/GallantmonCrimsonMode_Frame_004.png",
+          "attack2": "assets/digimon/7 Mega/GallantmonCrimsonMode/Frames/GallantmonCrimsonMode_Frame_005.png"
+        },
+        "animations": {
+          "idle": [
+            "assets/digimon/7 Mega/GallantmonCrimsonMode/Frames/GallantmonCrimsonMode_Frame_001.png",
+            "assets/digimon/7 Mega/GallantmonCrimsonMode/Frames/GallantmonCrimsonMode_Frame_002.png",
+            "assets/digimon/7 Mega/GallantmonCrimsonMode/Frames/GallantmonCrimsonMode_Frame_001.png",
+            "assets/digimon/7 Mega/GallantmonCrimsonMode/Frames/GallantmonCrimsonMode_Frame_003.png"
+          ],
+          "walk": [
+            "assets/digimon/7 Mega/GallantmonCrimsonMode/Frames/GallantmonCrimsonMode_Frame_001.png",
+            "assets/digimon/7 Mega/GallantmonCrimsonMode/Frames/GallantmonCrimsonMode_Frame_002.png",
+            "assets/digimon/7 Mega/GallantmonCrimsonMode/Frames/GallantmonCrimsonMode_Frame_001.png",
+            "assets/digimon/7 Mega/GallantmonCrimsonMode/Frames/GallantmonCrimsonMode_Frame_003.png"
+          ],
+          "attack": [
+            "assets/digimon/7 Mega/GallantmonCrimsonMode/Frames/GallantmonCrimsonMode_Frame_004.png",
+            "assets/digimon/7 Mega/GallantmonCrimsonMode/Frames/GallantmonCrimsonMode_Frame_005.png"
+          ]
+        },
+        "source_frame_count": 23,
+        "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded"
+      },
+      "animation": {
+        "version": 1,
+        "sprites": {
+          "idle": "Frames/GallantmonCrimsonMode_Frame_001.png",
+          "walk_left": "Frames/GallantmonCrimsonMode_Frame_002.png",
+          "walk_right": "Frames/GallantmonCrimsonMode_Frame_003.png",
+          "attack1": "Frames/GallantmonCrimsonMode_Frame_004.png",
+          "attack2": "Frames/GallantmonCrimsonMode_Frame_005.png",
+          "front": "Frames/GallantmonCrimsonMode_Frame_001.png"
+        },
+        "animations": {
+          "idle": [
+            "Frames/GallantmonCrimsonMode_Frame_001.png",
+            "Frames/GallantmonCrimsonMode_Frame_002.png",
+            "Frames/GallantmonCrimsonMode_Frame_001.png",
+            "Frames/GallantmonCrimsonMode_Frame_003.png"
+          ],
+          "walk": [
+            "Frames/GallantmonCrimsonMode_Frame_001.png",
+            "Frames/GallantmonCrimsonMode_Frame_002.png",
+            "Frames/GallantmonCrimsonMode_Frame_001.png",
+            "Frames/GallantmonCrimsonMode_Frame_003.png"
+          ],
+          "attack": [
+            "Frames/GallantmonCrimsonMode_Frame_004.png",
+            "Frames/GallantmonCrimsonMode_Frame_005.png"
+          ]
+        },
+        "mirrored_frames": {},
+        "source_frame_count": 23,
+        "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+        "art_provenance": "User-supplied original sprite artwork; existing pose assignments retained. FixedSpritesPart2 v1.1.1: supplied RGBA PNG bytes preserved; documented same-pose copies synchronized; see data/fixed_sprites_v111.json."
+      }
+    },
+    {
+      "id": "imperialdramonfightermode",
+      "directory": "assets/digimon/7 Mega/ImperialdramonFighterMode",
+      "sidecar": "assets/digimon/7 Mega/ImperialdramonFighterMode/animation.json",
+      "had_sidecar": true,
+      "before_art": {
+        "sprites": {
+          "idle": "assets/digimon/7 Mega/ImperialdramonFighterMode/Frames/ImperialdramonFighterMode_Frame_001.png",
+          "walk_left": "assets/digimon/7 Mega/ImperialdramonFighterMode/Frames/ImperialdramonFighterMode_Frame_002.png",
+          "walk_right": "assets/digimon/7 Mega/ImperialdramonFighterMode/Frames/ImperialdramonFighterMode_Frame_003.png",
+          "attack1": "assets/digimon/7 Mega/ImperialdramonFighterMode/Frames/ImperialdramonFighterMode_Frame_004.png",
+          "attack2": "assets/digimon/7 Mega/ImperialdramonFighterMode/Frames/ImperialdramonFighterMode_Frame_005.png",
+          "front": "assets/digimon/7 Mega/ImperialdramonFighterMode/ImperialdramonFighterMode_Primary.png"
+        },
+        "animations": {
+          "idle": [
+            "assets/digimon/7 Mega/ImperialdramonFighterMode/Frames/ImperialdramonFighterMode_Frame_001.png",
+            "assets/digimon/7 Mega/ImperialdramonFighterMode/Frames/ImperialdramonFighterMode_Frame_002.png",
+            "assets/digimon/7 Mega/ImperialdramonFighterMode/Frames/ImperialdramonFighterMode_Frame_001.png",
+            "assets/digimon/7 Mega/ImperialdramonFighterMode/Frames/ImperialdramonFighterMode_Frame_003.png"
+          ],
+          "walk": [
+            "assets/digimon/7 Mega/ImperialdramonFighterMode/Frames/ImperialdramonFighterMode_Frame_001.png",
+            "assets/digimon/7 Mega/ImperialdramonFighterMode/Frames/ImperialdramonFighterMode_Frame_002.png",
+            "assets/digimon/7 Mega/ImperialdramonFighterMode/Frames/ImperialdramonFighterMode_Frame_001.png",
+            "assets/digimon/7 Mega/ImperialdramonFighterMode/Frames/ImperialdramonFighterMode_Frame_003.png"
+          ],
+          "attack": [
+            "assets/digimon/7 Mega/ImperialdramonFighterMode/Frames/ImperialdramonFighterMode_Frame_004.png",
+            "assets/digimon/7 Mega/ImperialdramonFighterMode/Frames/ImperialdramonFighterMode_Frame_005.png"
+          ]
+        },
+        "mirrored_frames": {},
+        "source_frame_count": 22,
+        "frame_selection": "v1.0.1 pose assignments retained; supplied v1.1.0 fixed PNGs replace canonical paths; explicit primary/front portrait when supplied",
+        "art_provenance": "User-supplied DigimonFixedSpritesFor_v1.1.0.rar; v1.0.1 source overlay; selected PNG bytes preserved exactly"
+      },
+      "animation": {
+        "version": 1,
+        "sprites": {
+          "idle": "Frames/ImperialdramonFighterMode_Frame_001.png",
+          "walk_left": "Frames/ImperialdramonFighterMode_Frame_002.png",
+          "walk_right": "Frames/ImperialdramonFighterMode_Frame_003.png",
+          "attack1": "Frames/ImperialdramonFighterMode_Frame_004.png",
+          "attack2": "Frames/ImperialdramonFighterMode_Frame_005.png",
+          "front": "ImperialdramonFighterMode_Primary.png"
+        },
+        "animations": {
+          "idle": [
+            "Frames/ImperialdramonFighterMode_Frame_001.png",
+            "Frames/ImperialdramonFighterMode_Frame_002.png",
+            "Frames/ImperialdramonFighterMode_Frame_001.png",
+            "Frames/ImperialdramonFighterMode_Frame_003.png"
+          ],
+          "walk": [
+            "Frames/ImperialdramonFighterMode_Frame_001.png",
+            "Frames/ImperialdramonFighterMode_Frame_002.png",
+            "Frames/ImperialdramonFighterMode_Frame_001.png",
+            "Frames/ImperialdramonFighterMode_Frame_003.png"
+          ],
+          "attack": [
+            "Frames/ImperialdramonFighterMode_Frame_004.png",
+            "Frames/ImperialdramonFighterMode_Frame_005.png"
+          ]
+        },
+        "mirrored_frames": {},
+        "source_frame_count": 22,
+        "frame_selection": "v1.0.1 pose assignments retained; supplied v1.1.0 fixed PNGs replace canonical paths; explicit primary/front portrait when supplied",
+        "art_provenance": "User-supplied DigimonFixedSpritesFor_v1.1.0.rar; v1.0.1 source overlay; selected PNG bytes preserved exactly FixedSpritesPart2 v1.1.1: supplied RGBA PNG bytes preserved; documented same-pose copies synchronized; see data/fixed_sprites_v111.json."
+      }
+    },
+    {
+      "id": "kingchessmon",
+      "directory": "assets/digimon/7 Mega/KingChessmon",
+      "sidecar": "assets/digimon/7 Mega/KingChessmon/animation.json",
+      "had_sidecar": false,
+      "before_art": {
+        "sprites": {
+          "idle": "assets/digimon/7 Mega/KingChessmon/Frames/KingChessmon_Frame_001.png",
+          "walk_left": "assets/digimon/7 Mega/KingChessmon/Frames/KingChessmon_Frame_002.png",
+          "walk_right": "assets/digimon/7 Mega/KingChessmon/Frames/KingChessmon_Frame_003.png",
+          "attack1": "assets/digimon/7 Mega/KingChessmon/Frames/KingChessmon_Frame_004.png",
+          "attack2": "assets/digimon/7 Mega/KingChessmon/Frames/KingChessmon_Frame_005.png"
+        },
+        "animations": {
+          "idle": [
+            "assets/digimon/7 Mega/KingChessmon/Frames/KingChessmon_Frame_001.png",
+            "assets/digimon/7 Mega/KingChessmon/Frames/KingChessmon_Frame_002.png",
+            "assets/digimon/7 Mega/KingChessmon/Frames/KingChessmon_Frame_001.png",
+            "assets/digimon/7 Mega/KingChessmon/Frames/KingChessmon_Frame_003.png"
+          ],
+          "walk": [
+            "assets/digimon/7 Mega/KingChessmon/Frames/KingChessmon_Frame_001.png",
+            "assets/digimon/7 Mega/KingChessmon/Frames/KingChessmon_Frame_002.png",
+            "assets/digimon/7 Mega/KingChessmon/Frames/KingChessmon_Frame_001.png",
+            "assets/digimon/7 Mega/KingChessmon/Frames/KingChessmon_Frame_003.png"
+          ],
+          "attack": [
+            "assets/digimon/7 Mega/KingChessmon/Frames/KingChessmon_Frame_004.png",
+            "assets/digimon/7 Mega/KingChessmon/Frames/KingChessmon_Frame_005.png"
+          ]
+        },
+        "source_frame_count": 23,
+        "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded"
+      },
+      "animation": {
+        "version": 1,
+        "sprites": {
+          "idle": "Frames/KingChessmon_Frame_001.png",
+          "walk_left": "Frames/KingChessmon_Frame_002.png",
+          "walk_right": "Frames/KingChessmon_Frame_003.png",
+          "attack1": "Frames/KingChessmon_Frame_004.png",
+          "attack2": "Frames/KingChessmon_Frame_005.png",
+          "front": "Frames/KingChessmon_Frame_001.png"
+        },
+        "animations": {
+          "idle": [
+            "Frames/KingChessmon_Frame_001.png",
+            "Frames/KingChessmon_Frame_002.png",
+            "Frames/KingChessmon_Frame_001.png",
+            "Frames/KingChessmon_Frame_003.png"
+          ],
+          "walk": [
+            "Frames/KingChessmon_Frame_001.png",
+            "Frames/KingChessmon_Frame_002.png",
+            "Frames/KingChessmon_Frame_001.png",
+            "Frames/KingChessmon_Frame_003.png"
+          ],
+          "attack": [
+            "Frames/KingChessmon_Frame_004.png",
+            "Frames/KingChessmon_Frame_005.png"
+          ]
+        },
+        "mirrored_frames": {},
+        "source_frame_count": 23,
+        "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+        "art_provenance": "User-supplied original sprite artwork; existing pose assignments retained. FixedSpritesPart2 v1.1.1: supplied RGBA PNG bytes preserved; documented same-pose copies synchronized; see data/fixed_sprites_v111.json."
+      }
+    },
+    {
+      "id": "knightmon",
+      "directory": "assets/digimon/5 Ultimate/Knightmon",
+      "sidecar": "assets/digimon/5 Ultimate/Knightmon/animation.json",
+      "had_sidecar": false,
+      "before_art": {
+        "sprites": {
+          "idle": "assets/digimon/5 Ultimate/Knightmon/Frames/Knightmon_Frame_001.png",
+          "walk_left": "assets/digimon/5 Ultimate/Knightmon/Frames/Knightmon_Frame_002.png",
+          "walk_right": "assets/digimon/5 Ultimate/Knightmon/Frames/Knightmon_Frame_003.png",
+          "attack1": "assets/digimon/5 Ultimate/Knightmon/Frames/Knightmon_Frame_004.png",
+          "attack2": "assets/digimon/5 Ultimate/Knightmon/Frames/Knightmon_Frame_005.png"
+        },
+        "animations": {
+          "idle": [
+            "assets/digimon/5 Ultimate/Knightmon/Frames/Knightmon_Frame_001.png",
+            "assets/digimon/5 Ultimate/Knightmon/Frames/Knightmon_Frame_002.png",
+            "assets/digimon/5 Ultimate/Knightmon/Frames/Knightmon_Frame_001.png",
+            "assets/digimon/5 Ultimate/Knightmon/Frames/Knightmon_Frame_003.png"
+          ],
+          "walk": [
+            "assets/digimon/5 Ultimate/Knightmon/Frames/Knightmon_Frame_001.png",
+            "assets/digimon/5 Ultimate/Knightmon/Frames/Knightmon_Frame_002.png",
+            "assets/digimon/5 Ultimate/Knightmon/Frames/Knightmon_Frame_001.png",
+            "assets/digimon/5 Ultimate/Knightmon/Frames/Knightmon_Frame_003.png"
+          ],
+          "attack": [
+            "assets/digimon/5 Ultimate/Knightmon/Frames/Knightmon_Frame_004.png",
+            "assets/digimon/5 Ultimate/Knightmon/Frames/Knightmon_Frame_005.png"
+          ]
+        },
+        "source_frame_count": 22,
+        "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded"
+      },
+      "animation": {
+        "version": 1,
+        "sprites": {
+          "idle": "Frames/Knightmon_Frame_001.png",
+          "walk_left": "Frames/Knightmon_Frame_002.png",
+          "walk_right": "Frames/Knightmon_Frame_003.png",
+          "attack1": "Frames/Knightmon_Frame_004.png",
+          "attack2": "Frames/Knightmon_Frame_005.png",
+          "front": "Knightmon_Primary.png"
+        },
+        "animations": {
+          "idle": [
+            "Frames/Knightmon_Frame_001.png",
+            "Frames/Knightmon_Frame_002.png",
+            "Frames/Knightmon_Frame_001.png",
+            "Frames/Knightmon_Frame_003.png"
+          ],
+          "walk": [
+            "Frames/Knightmon_Frame_001.png",
+            "Frames/Knightmon_Frame_002.png",
+            "Frames/Knightmon_Frame_001.png",
+            "Frames/Knightmon_Frame_003.png"
+          ],
+          "attack": [
+            "Frames/Knightmon_Frame_004.png",
+            "Frames/Knightmon_Frame_005.png"
+          ]
+        },
+        "mirrored_frames": {},
+        "source_frame_count": 22,
+        "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+        "art_provenance": "User-supplied original sprite artwork; existing pose assignments retained. FixedSpritesPart2 v1.1.1: supplied RGBA PNG bytes preserved; documented same-pose copies synchronized; see data/fixed_sprites_v111.json."
+      }
+    },
+    {
+      "id": "ladydevimon",
+      "directory": "assets/digimon/5 Ultimate/LadyDevimon",
+      "sidecar": "assets/digimon/5 Ultimate/LadyDevimon/animation.json",
+      "had_sidecar": false,
+      "before_art": {
+        "sprites": {
+          "idle": "assets/digimon/5 Ultimate/LadyDevimon/LadyDevimon_Idle.png",
+          "walk_left": "assets/digimon/5 Ultimate/LadyDevimon/LadyDevimon_LLegWalk.png",
+          "walk_right": "assets/digimon/5 Ultimate/LadyDevimon/LadyDevimon_Idle.png",
+          "attack1": "assets/digimon/5 Ultimate/LadyDevimon/LadyDevimon_AttackPart1.png",
+          "attack2": "assets/digimon/5 Ultimate/LadyDevimon/LadyDevimon_AttackPart2.png"
+        },
+        "animations": {
+          "idle": [
+            "assets/digimon/5 Ultimate/LadyDevimon/LadyDevimon_Idle.png"
+          ],
+          "walk": [
+            "assets/digimon/5 Ultimate/LadyDevimon/LadyDevimon_Idle.png",
+            "assets/digimon/5 Ultimate/LadyDevimon/LadyDevimon_LLegWalk.png",
+            "assets/digimon/5 Ultimate/LadyDevimon/LadyDevimon_Idle.png",
+            "assets/digimon/5 Ultimate/LadyDevimon/LadyDevimon_Idle.png"
+          ],
+          "attack": [
+            "assets/digimon/5 Ultimate/LadyDevimon/LadyDevimon_AttackPart1.png",
+            "assets/digimon/5 Ultimate/LadyDevimon/LadyDevimon_AttackPart2.png"
+          ]
+        },
+        "source_frame_count": 0,
+        "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded"
+      },
+      "animation": {
+        "version": 1,
+        "sprites": {
+          "idle": "LadyDevimon_Idle.png",
+          "walk_left": "LadyDevimon_LLegWalk.png",
+          "walk_right": "LadyDevimon_Idle.png",
+          "attack1": "LadyDevimon_AttackPart1.png",
+          "attack2": "LadyDevimon_AttackPart2.png",
+          "front": "LadyDevimon_Idle.png"
+        },
+        "animations": {
+          "idle": [
+            "LadyDevimon_Idle.png"
+          ],
+          "walk": [
+            "LadyDevimon_Idle.png",
+            "LadyDevimon_LLegWalk.png",
+            "LadyDevimon_Idle.png",
+            "LadyDevimon_Idle.png"
+          ],
+          "attack": [
+            "LadyDevimon_AttackPart1.png",
+            "LadyDevimon_AttackPart2.png"
+          ]
+        },
+        "mirrored_frames": {},
+        "source_frame_count": 0,
+        "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+        "art_provenance": "User-supplied original sprite artwork; existing pose assignments retained. FixedSpritesPart2 v1.1.1: supplied RGBA PNG bytes preserved; documented same-pose copies synchronized; see data/fixed_sprites_v111.json."
+      }
+    },
+    {
+      "id": "leopardmon",
+      "directory": "assets/digimon/7 Mega/Leopardmon",
+      "sidecar": "assets/digimon/7 Mega/Leopardmon/animation.json",
+      "had_sidecar": false,
+      "before_art": {
+        "sprites": {
+          "idle": "assets/digimon/7 Mega/Leopardmon/Frames/Leopardmon_Frame_001.png",
+          "walk_left": "assets/digimon/7 Mega/Leopardmon/Frames/Leopardmon_Frame_002.png",
+          "walk_right": "assets/digimon/7 Mega/Leopardmon/Frames/Leopardmon_Frame_003.png",
+          "attack1": "assets/digimon/7 Mega/Leopardmon/Frames/Leopardmon_Frame_004.png",
+          "attack2": "assets/digimon/7 Mega/Leopardmon/Frames/Leopardmon_Frame_005.png"
+        },
+        "animations": {
+          "idle": [
+            "assets/digimon/7 Mega/Leopardmon/Frames/Leopardmon_Frame_001.png",
+            "assets/digimon/7 Mega/Leopardmon/Frames/Leopardmon_Frame_002.png",
+            "assets/digimon/7 Mega/Leopardmon/Frames/Leopardmon_Frame_001.png",
+            "assets/digimon/7 Mega/Leopardmon/Frames/Leopardmon_Frame_003.png"
+          ],
+          "walk": [
+            "assets/digimon/7 Mega/Leopardmon/Frames/Leopardmon_Frame_001.png",
+            "assets/digimon/7 Mega/Leopardmon/Frames/Leopardmon_Frame_002.png",
+            "assets/digimon/7 Mega/Leopardmon/Frames/Leopardmon_Frame_001.png",
+            "assets/digimon/7 Mega/Leopardmon/Frames/Leopardmon_Frame_003.png"
+          ],
+          "attack": [
+            "assets/digimon/7 Mega/Leopardmon/Frames/Leopardmon_Frame_004.png",
+            "assets/digimon/7 Mega/Leopardmon/Frames/Leopardmon_Frame_005.png"
+          ]
+        },
+        "source_frame_count": 22,
+        "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded"
+      },
+      "animation": {
+        "version": 1,
+        "sprites": {
+          "idle": "Frames/Leopardmon_Frame_001.png",
+          "walk_left": "Frames/Leopardmon_Frame_002.png",
+          "walk_right": "Frames/Leopardmon_Frame_003.png",
+          "attack1": "Frames/Leopardmon_Frame_004.png",
+          "attack2": "Frames/Leopardmon_Frame_005.png",
+          "front": "Leopardmon_Primary.png"
+        },
+        "animations": {
+          "idle": [
+            "Frames/Leopardmon_Frame_001.png",
+            "Frames/Leopardmon_Frame_002.png",
+            "Frames/Leopardmon_Frame_001.png",
+            "Frames/Leopardmon_Frame_003.png"
+          ],
+          "walk": [
+            "Frames/Leopardmon_Frame_001.png",
+            "Frames/Leopardmon_Frame_002.png",
+            "Frames/Leopardmon_Frame_001.png",
+            "Frames/Leopardmon_Frame_003.png"
+          ],
+          "attack": [
+            "Frames/Leopardmon_Frame_004.png",
+            "Frames/Leopardmon_Frame_005.png"
+          ]
+        },
+        "mirrored_frames": {},
+        "source_frame_count": 22,
+        "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+        "art_provenance": "User-supplied original sprite artwork; existing pose assignments retained. FixedSpritesPart2 v1.1.1: supplied RGBA PNG bytes preserved; documented same-pose copies synchronized; see data/fixed_sprites_v111.json."
+      }
+    },
+    {
+      "id": "lilamon",
+      "directory": "assets/digimon/5 Ultimate/Lilamon",
+      "sidecar": "assets/digimon/5 Ultimate/Lilamon/animation.json",
+      "had_sidecar": false,
+      "before_art": {
+        "sprites": {
+          "idle": "assets/digimon/5 Ultimate/Lilamon/Frames/Lilamon_Frame_001.png",
+          "walk_left": "assets/digimon/5 Ultimate/Lilamon/Frames/Lilamon_Frame_002.png",
+          "walk_right": "assets/digimon/5 Ultimate/Lilamon/Frames/Lilamon_Frame_003.png",
+          "attack1": "assets/digimon/5 Ultimate/Lilamon/Frames/Lilamon_Frame_013.png",
+          "attack2": "assets/digimon/5 Ultimate/Lilamon/Frames/Lilamon_Frame_014.png"
+        },
+        "animations": {
+          "idle": [
+            "assets/digimon/5 Ultimate/Lilamon/Frames/Lilamon_Frame_001.png",
+            "assets/digimon/5 Ultimate/Lilamon/Frames/Lilamon_Frame_002.png",
+            "assets/digimon/5 Ultimate/Lilamon/Frames/Lilamon_Frame_001.png",
+            "assets/digimon/5 Ultimate/Lilamon/Frames/Lilamon_Frame_003.png"
+          ],
+          "walk": [
+            "assets/digimon/5 Ultimate/Lilamon/Frames/Lilamon_Frame_001.png",
+            "assets/digimon/5 Ultimate/Lilamon/Frames/Lilamon_Frame_002.png",
+            "assets/digimon/5 Ultimate/Lilamon/Frames/Lilamon_Frame_001.png",
+            "assets/digimon/5 Ultimate/Lilamon/Frames/Lilamon_Frame_003.png"
+          ],
+          "attack": [
+            "assets/digimon/5 Ultimate/Lilamon/Frames/Lilamon_Frame_013.png",
+            "assets/digimon/5 Ultimate/Lilamon/Frames/Lilamon_Frame_014.png"
+          ]
+        },
+        "source_frame_count": 19,
+        "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded"
+      },
+      "animation": {
+        "version": 1,
+        "sprites": {
+          "idle": "Frames/Lilamon_Frame_001.png",
+          "walk_left": "Frames/Lilamon_Frame_002.png",
+          "walk_right": "Frames/Lilamon_Frame_003.png",
+          "attack1": "Frames/Lilamon_Frame_013.png",
+          "attack2": "Frames/Lilamon_Frame_014.png",
+          "front": "Lilamon_Primary.png"
+        },
+        "animations": {
+          "idle": [
+            "Frames/Lilamon_Frame_001.png",
+            "Frames/Lilamon_Frame_002.png",
+            "Frames/Lilamon_Frame_001.png",
+            "Frames/Lilamon_Frame_003.png"
+          ],
+          "walk": [
+            "Frames/Lilamon_Frame_001.png",
+            "Frames/Lilamon_Frame_002.png",
+            "Frames/Lilamon_Frame_001.png",
+            "Frames/Lilamon_Frame_003.png"
+          ],
+          "attack": [
+            "Frames/Lilamon_Frame_013.png",
+            "Frames/Lilamon_Frame_014.png"
+          ]
+        },
+        "mirrored_frames": {},
+        "source_frame_count": 19,
+        "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+        "art_provenance": "User-supplied original sprite artwork; existing pose assignments retained. FixedSpritesPart2 v1.1.1: supplied RGBA PNG bytes preserved; documented same-pose copies synchronized; see data/fixed_sprites_v111.json."
+      }
+    },
+    {
+      "id": "lucemonchaosmode",
+      "directory": "assets/digimon/5 Ultimate/LucemonChaosMode",
+      "sidecar": "assets/digimon/5 Ultimate/LucemonChaosMode/animation.json",
+      "had_sidecar": false,
+      "before_art": {
+        "sprites": {
+          "idle": "assets/digimon/5 Ultimate/LucemonChaosMode/Frames/LucemonChaosMode_Frame_013.png",
+          "walk_left": "assets/digimon/5 Ultimate/LucemonChaosMode/Frames/LucemonChaosMode_Frame_014.png",
+          "walk_right": "assets/digimon/5 Ultimate/LucemonChaosMode/Frames/LucemonChaosMode_Frame_015.png",
+          "attack1": "assets/digimon/5 Ultimate/LucemonChaosMode/Frames/LucemonChaosMode_Frame_016.png",
+          "attack2": "assets/digimon/5 Ultimate/LucemonChaosMode/Frames/LucemonChaosMode_Frame_017.png"
+        },
+        "animations": {
+          "idle": [
+            "assets/digimon/5 Ultimate/LucemonChaosMode/Frames/LucemonChaosMode_Frame_013.png",
+            "assets/digimon/5 Ultimate/LucemonChaosMode/Frames/LucemonChaosMode_Frame_014.png",
+            "assets/digimon/5 Ultimate/LucemonChaosMode/Frames/LucemonChaosMode_Frame_013.png",
+            "assets/digimon/5 Ultimate/LucemonChaosMode/Frames/LucemonChaosMode_Frame_015.png"
+          ],
+          "walk": [
+            "assets/digimon/5 Ultimate/LucemonChaosMode/Frames/LucemonChaosMode_Frame_013.png",
+            "assets/digimon/5 Ultimate/LucemonChaosMode/Frames/LucemonChaosMode_Frame_014.png",
+            "assets/digimon/5 Ultimate/LucemonChaosMode/Frames/LucemonChaosMode_Frame_013.png",
+            "assets/digimon/5 Ultimate/LucemonChaosMode/Frames/LucemonChaosMode_Frame_015.png"
+          ],
+          "attack": [
+            "assets/digimon/5 Ultimate/LucemonChaosMode/Frames/LucemonChaosMode_Frame_016.png",
+            "assets/digimon/5 Ultimate/LucemonChaosMode/Frames/LucemonChaosMode_Frame_017.png"
+          ]
+        },
+        "source_frame_count": 17,
+        "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded"
+      },
+      "animation": {
+        "version": 1,
+        "sprites": {
+          "idle": "Frames/LucemonChaosMode_Frame_013.png",
+          "walk_left": "Frames/LucemonChaosMode_Frame_014.png",
+          "walk_right": "Frames/LucemonChaosMode_Frame_015.png",
+          "attack1": "Frames/LucemonChaosMode_Frame_016.png",
+          "attack2": "Frames/LucemonChaosMode_Frame_017.png",
+          "front": "LucemonChaosMode_Primary.png"
+        },
+        "animations": {
+          "idle": [
+            "Frames/LucemonChaosMode_Frame_013.png",
+            "Frames/LucemonChaosMode_Frame_014.png",
+            "Frames/LucemonChaosMode_Frame_013.png",
+            "Frames/LucemonChaosMode_Frame_015.png"
+          ],
+          "walk": [
+            "Frames/LucemonChaosMode_Frame_013.png",
+            "Frames/LucemonChaosMode_Frame_014.png",
+            "Frames/LucemonChaosMode_Frame_013.png",
+            "Frames/LucemonChaosMode_Frame_015.png"
+          ],
+          "attack": [
+            "Frames/LucemonChaosMode_Frame_016.png",
+            "Frames/LucemonChaosMode_Frame_017.png"
+          ]
+        },
+        "mirrored_frames": {},
+        "source_frame_count": 17,
+        "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+        "art_provenance": "User-supplied original sprite artwork; existing pose assignments retained. FixedSpritesPart2 v1.1.1: supplied RGBA PNG bytes preserved; documented same-pose copies synchronized; see data/fixed_sprites_v111.json."
+      }
+    },
+    {
+      "id": "machgaogamon",
+      "directory": "assets/digimon/5 Ultimate/MachGaogamon",
+      "sidecar": "assets/digimon/5 Ultimate/MachGaogamon/animation.json",
+      "had_sidecar": false,
+      "before_art": {
+        "sprites": {
+          "idle": "assets/digimon/5 Ultimate/MachGaogamon/Frames/MachGaogamon_Frame_001.png",
+          "walk_left": "assets/digimon/5 Ultimate/MachGaogamon/Frames/MachGaogamon_Frame_002.png",
+          "walk_right": "assets/digimon/5 Ultimate/MachGaogamon/Frames/MachGaogamon_Frame_003.png",
+          "attack1": "assets/digimon/5 Ultimate/MachGaogamon/Frames/MachGaogamon_Frame_004.png",
+          "attack2": "assets/digimon/5 Ultimate/MachGaogamon/Frames/MachGaogamon_Frame_005.png"
+        },
+        "animations": {
+          "idle": [
+            "assets/digimon/5 Ultimate/MachGaogamon/Frames/MachGaogamon_Frame_001.png",
+            "assets/digimon/5 Ultimate/MachGaogamon/Frames/MachGaogamon_Frame_002.png",
+            "assets/digimon/5 Ultimate/MachGaogamon/Frames/MachGaogamon_Frame_001.png",
+            "assets/digimon/5 Ultimate/MachGaogamon/Frames/MachGaogamon_Frame_003.png"
+          ],
+          "walk": [
+            "assets/digimon/5 Ultimate/MachGaogamon/Frames/MachGaogamon_Frame_001.png",
+            "assets/digimon/5 Ultimate/MachGaogamon/Frames/MachGaogamon_Frame_002.png",
+            "assets/digimon/5 Ultimate/MachGaogamon/Frames/MachGaogamon_Frame_001.png",
+            "assets/digimon/5 Ultimate/MachGaogamon/Frames/MachGaogamon_Frame_003.png"
+          ],
+          "attack": [
+            "assets/digimon/5 Ultimate/MachGaogamon/Frames/MachGaogamon_Frame_004.png",
+            "assets/digimon/5 Ultimate/MachGaogamon/Frames/MachGaogamon_Frame_005.png"
+          ]
+        },
+        "source_frame_count": 22,
+        "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded"
+      },
+      "animation": {
+        "version": 1,
+        "sprites": {
+          "idle": "Frames/MachGaogamon_Frame_001.png",
+          "walk_left": "Frames/MachGaogamon_Frame_002.png",
+          "walk_right": "Frames/MachGaogamon_Frame_003.png",
+          "attack1": "Frames/MachGaogamon_Frame_004.png",
+          "attack2": "Frames/MachGaogamon_Frame_005.png",
+          "front": "MachGaogamon_Primary.png"
+        },
+        "animations": {
+          "idle": [
+            "Frames/MachGaogamon_Frame_001.png",
+            "Frames/MachGaogamon_Frame_002.png",
+            "Frames/MachGaogamon_Frame_001.png",
+            "Frames/MachGaogamon_Frame_003.png"
+          ],
+          "walk": [
+            "Frames/MachGaogamon_Frame_001.png",
+            "Frames/MachGaogamon_Frame_002.png",
+            "Frames/MachGaogamon_Frame_001.png",
+            "Frames/MachGaogamon_Frame_003.png"
+          ],
+          "attack": [
+            "Frames/MachGaogamon_Frame_004.png",
+            "Frames/MachGaogamon_Frame_005.png"
+          ]
+        },
+        "mirrored_frames": {},
+        "source_frame_count": 22,
+        "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+        "art_provenance": "User-supplied original sprite artwork; existing pose assignments retained. FixedSpritesPart2 v1.1.1: supplied RGBA PNG bytes preserved; documented same-pose copies synchronized; see data/fixed_sprites_v111.json."
+      }
+    },
+    {
+      "id": "mastertyrannomon",
+      "directory": "assets/digimon/5 Ultimate/MasterTyrannomon",
+      "sidecar": "assets/digimon/5 Ultimate/MasterTyrannomon/animation.json",
+      "had_sidecar": true,
+      "before_art": {
+        "sprites": {
+          "idle": "assets/digimon/5 Ultimate/MasterTyrannomon/Frames/MasterTyrannomon_Frame_001.png",
+          "walk_left": "assets/digimon/5 Ultimate/MasterTyrannomon/Frames/MasterTyrannomon_Frame_002.png",
+          "walk_right": "assets/digimon/5 Ultimate/MasterTyrannomon/Frames/MasterTyrannomon_Frame_003.png",
+          "attack1": "assets/digimon/5 Ultimate/MasterTyrannomon/Frames/MasterTyrannomon_Frame_004.png",
+          "attack2": "assets/digimon/5 Ultimate/MasterTyrannomon/Frames/MasterTyrannomon_Frame_005.png",
+          "front": "assets/digimon/5 Ultimate/MasterTyrannomon/MasterTyrannomon_Primary.png"
+        },
+        "animations": {
+          "idle": [
+            "assets/digimon/5 Ultimate/MasterTyrannomon/Frames/MasterTyrannomon_Frame_001.png",
+            "assets/digimon/5 Ultimate/MasterTyrannomon/Frames/MasterTyrannomon_Frame_002.png",
+            "assets/digimon/5 Ultimate/MasterTyrannomon/Frames/MasterTyrannomon_Frame_001.png",
+            "assets/digimon/5 Ultimate/MasterTyrannomon/Frames/MasterTyrannomon_Frame_003.png"
+          ],
+          "walk": [
+            "assets/digimon/5 Ultimate/MasterTyrannomon/Frames/MasterTyrannomon_Frame_001.png",
+            "assets/digimon/5 Ultimate/MasterTyrannomon/Frames/MasterTyrannomon_Frame_002.png",
+            "assets/digimon/5 Ultimate/MasterTyrannomon/Frames/MasterTyrannomon_Frame_001.png",
+            "assets/digimon/5 Ultimate/MasterTyrannomon/Frames/MasterTyrannomon_Frame_003.png"
+          ],
+          "attack": [
+            "assets/digimon/5 Ultimate/MasterTyrannomon/Frames/MasterTyrannomon_Frame_004.png",
+            "assets/digimon/5 Ultimate/MasterTyrannomon/Frames/MasterTyrannomon_Frame_005.png"
+          ]
+        },
+        "mirrored_frames": {},
+        "source_frame_count": 20,
+        "frame_selection": "v1.0.1 pose assignments retained; supplied v1.1.0 fixed PNGs replace canonical paths; explicit primary/front portrait when supplied",
+        "art_provenance": "User-supplied DigimonFixedSpritesFor_v1.1.0.rar; v1.0.1 source overlay; selected PNG bytes preserved exactly"
+      },
+      "animation": {
+        "version": 1,
+        "sprites": {
+          "idle": "Frames/MasterTyrannomon_Frame_001.png",
+          "walk_left": "Frames/MasterTyrannomon_Frame_002.png",
+          "walk_right": "Frames/MasterTyrannomon_Frame_003.png",
+          "attack1": "Frames/MasterTyrannomon_Frame_004.png",
+          "attack2": "Frames/MasterTyrannomon_Frame_005.png",
+          "front": "MasterTyrannomon_Primary.png"
+        },
+        "animations": {
+          "idle": [
+            "Frames/MasterTyrannomon_Frame_001.png",
+            "Frames/MasterTyrannomon_Frame_002.png",
+            "Frames/MasterTyrannomon_Frame_001.png",
+            "Frames/MasterTyrannomon_Frame_003.png"
+          ],
+          "walk": [
+            "Frames/MasterTyrannomon_Frame_001.png",
+            "Frames/MasterTyrannomon_Frame_002.png",
+            "Frames/MasterTyrannomon_Frame_001.png",
+            "Frames/MasterTyrannomon_Frame_003.png"
+          ],
+          "attack": [
+            "Frames/MasterTyrannomon_Frame_004.png",
+            "Frames/MasterTyrannomon_Frame_005.png"
+          ]
+        },
+        "mirrored_frames": {},
+        "source_frame_count": 20,
+        "frame_selection": "v1.0.1 pose assignments retained; supplied v1.1.0 fixed PNGs replace canonical paths; explicit primary/front portrait when supplied",
+        "art_provenance": "User-supplied DigimonFixedSpritesFor_v1.1.0.rar; v1.0.1 source overlay; selected PNG bytes preserved exactly FixedSpritesPart2 v1.1.1: supplied RGBA PNG bytes preserved; documented same-pose copies synchronized; see data/fixed_sprites_v111.json."
+      }
+    },
+    {
+      "id": "metalseadramon",
+      "directory": "assets/digimon/7 Mega/MetalSeadramon",
+      "sidecar": "assets/digimon/7 Mega/MetalSeadramon/animation.json",
+      "had_sidecar": true,
+      "before_art": {
+        "sprites": {
+          "idle": "assets/digimon/7 Mega/MetalSeadramon/Frames/MetalSeadramon_Frame_001.png",
+          "walk_left": "assets/digimon/7 Mega/MetalSeadramon/Frames/MetalSeadramon_Frame_003.png",
+          "walk_right": "assets/digimon/7 Mega/MetalSeadramon/Frames/MetalSeadramon_Frame_004.png",
+          "attack1": "assets/digimon/7 Mega/MetalSeadramon/Frames/MetalSeadramon_Frame_017.png",
+          "attack2": "assets/digimon/7 Mega/MetalSeadramon/Frames/MetalSeadramon_Frame_021.png",
+          "front": "assets/digimon/7 Mega/MetalSeadramon/MetalSeadramon_Primary.png"
+        },
+        "animations": {
+          "idle": [
+            "assets/digimon/7 Mega/MetalSeadramon/Frames/MetalSeadramon_Frame_001.png",
+            "assets/digimon/7 Mega/MetalSeadramon/Frames/MetalSeadramon_Frame_003.png",
+            "assets/digimon/7 Mega/MetalSeadramon/Frames/MetalSeadramon_Frame_001.png",
+            "assets/digimon/7 Mega/MetalSeadramon/Frames/MetalSeadramon_Frame_004.png"
+          ],
+          "walk": [
+            "assets/digimon/7 Mega/MetalSeadramon/Frames/MetalSeadramon_Frame_001.png",
+            "assets/digimon/7 Mega/MetalSeadramon/Frames/MetalSeadramon_Frame_003.png",
+            "assets/digimon/7 Mega/MetalSeadramon/Frames/MetalSeadramon_Frame_001.png",
+            "assets/digimon/7 Mega/MetalSeadramon/Frames/MetalSeadramon_Frame_004.png"
+          ],
+          "attack": [
+            "assets/digimon/7 Mega/MetalSeadramon/Frames/MetalSeadramon_Frame_017.png",
+            "assets/digimon/7 Mega/MetalSeadramon/Frames/MetalSeadramon_Frame_021.png"
+          ]
+        },
+        "mirrored_frames": {},
+        "source_frame_count": 22,
+        "frame_selection": "v1.0.1 pose assignments retained; supplied v1.1.0 fixed PNGs replace canonical paths; explicit primary/front portrait when supplied",
+        "art_provenance": "User-supplied DigimonFixedSpritesFor_v1.1.0.rar; v1.0.1 source overlay; selected PNG bytes preserved exactly"
+      },
+      "animation": {
+        "version": 1,
+        "sprites": {
+          "idle": "Frames/MetalSeadramon_Frame_001.png",
+          "walk_left": "Frames/MetalSeadramon_Frame_003.png",
+          "walk_right": "Frames/MetalSeadramon_Frame_004.png",
+          "attack1": "Frames/MetalSeadramon_Frame_017.png",
+          "attack2": "Frames/MetalSeadramon_Frame_021.png",
+          "front": "MetalSeadramon_Primary.png"
+        },
+        "animations": {
+          "idle": [
+            "Frames/MetalSeadramon_Frame_001.png",
+            "Frames/MetalSeadramon_Frame_003.png",
+            "Frames/MetalSeadramon_Frame_001.png",
+            "Frames/MetalSeadramon_Frame_004.png"
+          ],
+          "walk": [
+            "Frames/MetalSeadramon_Frame_001.png",
+            "Frames/MetalSeadramon_Frame_003.png",
+            "Frames/MetalSeadramon_Frame_001.png",
+            "Frames/MetalSeadramon_Frame_004.png"
+          ],
+          "attack": [
+            "Frames/MetalSeadramon_Frame_017.png",
+            "Frames/MetalSeadramon_Frame_021.png"
+          ]
+        },
+        "mirrored_frames": {},
+        "source_frame_count": 22,
+        "frame_selection": "v1.0.1 pose assignments retained; supplied v1.1.0 fixed PNGs replace canonical paths; explicit primary/front portrait when supplied",
+        "art_provenance": "User-supplied DigimonFixedSpritesFor_v1.1.0.rar; v1.0.1 source overlay; selected PNG bytes preserved exactly FixedSpritesPart2 v1.1.1: supplied RGBA PNG bytes preserved; documented same-pose copies synchronized; see data/fixed_sprites_v111.json."
+      }
+    },
+    {
+      "id": "palmon",
+      "directory": "assets/digimon/3 Rookie/Palmon",
+      "sidecar": "assets/digimon/3 Rookie/Palmon/animation.json",
+      "had_sidecar": false,
+      "before_art": {
+        "sprites": {
+          "idle": "assets/digimon/3 Rookie/Palmon/Palmon_Idle.png",
+          "walk_left": "assets/digimon/3 Rookie/Palmon/Palmon_LLegWalk.png",
+          "walk_right": "assets/digimon/3 Rookie/Palmon/Palmon_RLegWalk.png",
+          "attack1": "assets/digimon/3 Rookie/Palmon/Palmon_AttackPart1.png",
+          "attack2": "assets/digimon/3 Rookie/Palmon/Palmon_AttackPart2.png"
+        },
+        "animations": {
+          "idle": [
+            "assets/digimon/3 Rookie/Palmon/Palmon_Idle.png"
+          ],
+          "walk": [
+            "assets/digimon/3 Rookie/Palmon/Palmon_Idle.png",
+            "assets/digimon/3 Rookie/Palmon/Palmon_LLegWalk.png",
+            "assets/digimon/3 Rookie/Palmon/Palmon_Idle.png",
+            "assets/digimon/3 Rookie/Palmon/Palmon_RLegWalk.png"
+          ],
+          "attack": [
+            "assets/digimon/3 Rookie/Palmon/Palmon_AttackPart1.png",
+            "assets/digimon/3 Rookie/Palmon/Palmon_AttackPart2.png"
+          ]
+        },
+        "source_frame_count": 0,
+        "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded"
+      },
+      "animation": {
+        "version": 1,
+        "sprites": {
+          "idle": "Palmon_Idle.png",
+          "walk_left": "Palmon_LLegWalk.png",
+          "walk_right": "Palmon_RLegWalk.png",
+          "attack1": "Palmon_AttackPart1.png",
+          "attack2": "Palmon_AttackPart2.png",
+          "front": "Palmon_Idle.png"
+        },
+        "animations": {
+          "idle": [
+            "Palmon_Idle.png"
+          ],
+          "walk": [
+            "Palmon_Idle.png",
+            "Palmon_LLegWalk.png",
+            "Palmon_Idle.png",
+            "Palmon_RLegWalk.png"
+          ],
+          "attack": [
+            "Palmon_AttackPart1.png",
+            "Palmon_AttackPart2.png"
+          ]
+        },
+        "mirrored_frames": {},
+        "source_frame_count": 0,
+        "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+        "art_provenance": "User-supplied original sprite artwork; existing pose assignments retained. FixedSpritesPart2 v1.1.1: supplied RGBA PNG bytes preserved; documented same-pose copies synchronized; see data/fixed_sprites_v111.json."
+      }
+    },
+    {
+      "id": "shawjamon",
+      "directory": "assets/digimon/5 Ultimate/Shawjamon",
+      "sidecar": "assets/digimon/5 Ultimate/Shawjamon/animation.json",
+      "had_sidecar": false,
+      "before_art": {
+        "sprites": {
+          "idle": "assets/digimon/5 Ultimate/Shawjamon/Frames/Shawjamon_Frame_001.png",
+          "walk_left": "assets/digimon/5 Ultimate/Shawjamon/Frames/Shawjamon_Frame_002.png",
+          "walk_right": "assets/digimon/5 Ultimate/Shawjamon/Frames/Shawjamon_Frame_003.png",
+          "attack1": "assets/digimon/5 Ultimate/Shawjamon/Frames/Shawjamon_Frame_004.png",
+          "attack2": "assets/digimon/5 Ultimate/Shawjamon/Frames/Shawjamon_Frame_005.png"
+        },
+        "animations": {
+          "idle": [
+            "assets/digimon/5 Ultimate/Shawjamon/Frames/Shawjamon_Frame_001.png",
+            "assets/digimon/5 Ultimate/Shawjamon/Frames/Shawjamon_Frame_002.png",
+            "assets/digimon/5 Ultimate/Shawjamon/Frames/Shawjamon_Frame_001.png",
+            "assets/digimon/5 Ultimate/Shawjamon/Frames/Shawjamon_Frame_003.png"
+          ],
+          "walk": [
+            "assets/digimon/5 Ultimate/Shawjamon/Frames/Shawjamon_Frame_001.png",
+            "assets/digimon/5 Ultimate/Shawjamon/Frames/Shawjamon_Frame_002.png",
+            "assets/digimon/5 Ultimate/Shawjamon/Frames/Shawjamon_Frame_001.png",
+            "assets/digimon/5 Ultimate/Shawjamon/Frames/Shawjamon_Frame_003.png"
+          ],
+          "attack": [
+            "assets/digimon/5 Ultimate/Shawjamon/Frames/Shawjamon_Frame_004.png",
+            "assets/digimon/5 Ultimate/Shawjamon/Frames/Shawjamon_Frame_005.png"
+          ]
+        },
+        "source_frame_count": 23,
+        "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded"
+      },
+      "animation": {
+        "version": 1,
+        "sprites": {
+          "idle": "Frames/Shawjamon_Frame_001.png",
+          "walk_left": "Frames/Shawjamon_Frame_002.png",
+          "walk_right": "Frames/Shawjamon_Frame_003.png",
+          "attack1": "Frames/Shawjamon_Frame_004.png",
+          "attack2": "Frames/Shawjamon_Frame_005.png",
+          "front": "Shawjamon_Primary.png"
+        },
+        "animations": {
+          "idle": [
+            "Frames/Shawjamon_Frame_001.png",
+            "Frames/Shawjamon_Frame_002.png",
+            "Frames/Shawjamon_Frame_001.png",
+            "Frames/Shawjamon_Frame_003.png"
+          ],
+          "walk": [
+            "Frames/Shawjamon_Frame_001.png",
+            "Frames/Shawjamon_Frame_002.png",
+            "Frames/Shawjamon_Frame_001.png",
+            "Frames/Shawjamon_Frame_003.png"
+          ],
+          "attack": [
+            "Frames/Shawjamon_Frame_004.png",
+            "Frames/Shawjamon_Frame_005.png"
+          ]
+        },
+        "mirrored_frames": {},
+        "source_frame_count": 23,
+        "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+        "art_provenance": "User-supplied original sprite artwork; existing pose assignments retained. FixedSpritesPart2 v1.1.1: supplied RGBA PNG bytes preserved; documented same-pose copies synchronized; see data/fixed_sprites_v111.json."
+      }
+    },
+    {
+      "id": "skullknightmon",
+      "directory": "assets/digimon/7 Mega/Skullknightmon",
+      "sidecar": "assets/digimon/7 Mega/Skullknightmon/animation.json",
+      "had_sidecar": true,
+      "before_art": {
+        "sprites": {
+          "idle": "assets/digimon/7 Mega/Skullknightmon/Frames/Skullknightmon_Frame_001.png",
+          "walk_left": "assets/digimon/7 Mega/Skullknightmon/Frames/Skullknightmon_Frame_002.png",
+          "walk_right": "assets/digimon/7 Mega/Skullknightmon/Frames/Skullknightmon_Frame_003.png",
+          "attack1": "assets/digimon/7 Mega/Skullknightmon/Frames/Skullknightmon_Frame_004.png",
+          "attack2": "assets/digimon/7 Mega/Skullknightmon/Frames/Skullknightmon_Frame_005.png",
+          "front": "assets/digimon/7 Mega/Skullknightmon/Skullknightmon_Primary.png"
+        },
+        "animations": {
+          "idle": [
+            "assets/digimon/7 Mega/Skullknightmon/Frames/Skullknightmon_Frame_001.png",
+            "assets/digimon/7 Mega/Skullknightmon/Frames/Skullknightmon_Frame_002.png",
+            "assets/digimon/7 Mega/Skullknightmon/Frames/Skullknightmon_Frame_001.png",
+            "assets/digimon/7 Mega/Skullknightmon/Frames/Skullknightmon_Frame_003.png"
+          ],
+          "walk": [
+            "assets/digimon/7 Mega/Skullknightmon/Frames/Skullknightmon_Frame_001.png",
+            "assets/digimon/7 Mega/Skullknightmon/Frames/Skullknightmon_Frame_002.png",
+            "assets/digimon/7 Mega/Skullknightmon/Frames/Skullknightmon_Frame_001.png",
+            "assets/digimon/7 Mega/Skullknightmon/Frames/Skullknightmon_Frame_003.png"
+          ],
+          "attack": [
+            "assets/digimon/7 Mega/Skullknightmon/Frames/Skullknightmon_Frame_004.png",
+            "assets/digimon/7 Mega/Skullknightmon/Frames/Skullknightmon_Frame_005.png"
+          ]
+        },
+        "mirrored_frames": {},
+        "source_frame_count": 20,
+        "frame_selection": "v1.0.1 pose assignments retained; supplied v1.1.0 fixed PNGs replace canonical paths; explicit primary/front portrait when supplied",
+        "art_provenance": "User-supplied DigimonFixedSpritesFor_v1.1.0.rar; v1.0.1 source overlay; selected PNG bytes preserved exactly"
+      },
+      "animation": {
+        "version": 1,
+        "sprites": {
+          "idle": "Frames/Skullknightmon_Frame_001.png",
+          "walk_left": "Frames/Skullknightmon_Frame_002.png",
+          "walk_right": "Frames/Skullknightmon_Frame_003.png",
+          "attack1": "Frames/Skullknightmon_Frame_004.png",
+          "attack2": "Frames/Skullknightmon_Frame_005.png",
+          "front": "Skullknightmon_Primary.png"
+        },
+        "animations": {
+          "idle": [
+            "Frames/Skullknightmon_Frame_001.png",
+            "Frames/Skullknightmon_Frame_002.png",
+            "Frames/Skullknightmon_Frame_001.png",
+            "Frames/Skullknightmon_Frame_003.png"
+          ],
+          "walk": [
+            "Frames/Skullknightmon_Frame_001.png",
+            "Frames/Skullknightmon_Frame_002.png",
+            "Frames/Skullknightmon_Frame_001.png",
+            "Frames/Skullknightmon_Frame_003.png"
+          ],
+          "attack": [
+            "Frames/Skullknightmon_Frame_004.png",
+            "Frames/Skullknightmon_Frame_005.png"
+          ]
+        },
+        "mirrored_frames": {},
+        "source_frame_count": 20,
+        "frame_selection": "v1.0.1 pose assignments retained; supplied v1.1.0 fixed PNGs replace canonical paths; explicit primary/front portrait when supplied",
+        "art_provenance": "User-supplied DigimonFixedSpritesFor_v1.1.0.rar; v1.0.1 source overlay; selected PNG bytes preserved exactly FixedSpritesPart2 v1.1.1: supplied RGBA PNG bytes preserved; documented same-pose copies synchronized; see data/fixed_sprites_v111.json."
+      }
+    },
+    {
+      "id": "taomon",
+      "directory": "assets/digimon/5 Ultimate/Taomon",
+      "sidecar": "assets/digimon/5 Ultimate/Taomon/animation.json",
+      "had_sidecar": false,
+      "before_art": {
+        "sprites": {
+          "idle": "assets/digimon/5 Ultimate/Taomon/Frames/Taomon_Frame_002.png",
+          "walk_left": "assets/digimon/5 Ultimate/Taomon/Frames/Taomon_Frame_003.png",
+          "walk_right": "assets/digimon/5 Ultimate/Taomon/Frames/Taomon_Frame_004.png",
+          "attack1": "assets/digimon/5 Ultimate/Taomon/Frames/Taomon_Frame_005.png",
+          "attack2": "assets/digimon/5 Ultimate/Taomon/Frames/Taomon_Frame_006.png"
+        },
+        "animations": {
+          "idle": [
+            "assets/digimon/5 Ultimate/Taomon/Frames/Taomon_Frame_002.png",
+            "assets/digimon/5 Ultimate/Taomon/Frames/Taomon_Frame_003.png",
+            "assets/digimon/5 Ultimate/Taomon/Frames/Taomon_Frame_002.png",
+            "assets/digimon/5 Ultimate/Taomon/Frames/Taomon_Frame_004.png"
+          ],
+          "walk": [
+            "assets/digimon/5 Ultimate/Taomon/Frames/Taomon_Frame_002.png",
+            "assets/digimon/5 Ultimate/Taomon/Frames/Taomon_Frame_003.png",
+            "assets/digimon/5 Ultimate/Taomon/Frames/Taomon_Frame_002.png",
+            "assets/digimon/5 Ultimate/Taomon/Frames/Taomon_Frame_004.png"
+          ],
+          "attack": [
+            "assets/digimon/5 Ultimate/Taomon/Frames/Taomon_Frame_005.png",
+            "assets/digimon/5 Ultimate/Taomon/Frames/Taomon_Frame_006.png"
+          ]
+        },
+        "source_frame_count": 21,
+        "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded"
+      },
+      "animation": {
+        "version": 1,
+        "sprites": {
+          "idle": "Frames/Taomon_Frame_002.png",
+          "walk_left": "Frames/Taomon_Frame_003.png",
+          "walk_right": "Frames/Taomon_Frame_004.png",
+          "attack1": "Frames/Taomon_Frame_005.png",
+          "attack2": "Frames/Taomon_Frame_006.png",
+          "front": "Taomon_Primary.png"
+        },
+        "animations": {
+          "idle": [
+            "Frames/Taomon_Frame_002.png",
+            "Frames/Taomon_Frame_003.png",
+            "Frames/Taomon_Frame_002.png",
+            "Frames/Taomon_Frame_004.png"
+          ],
+          "walk": [
+            "Frames/Taomon_Frame_002.png",
+            "Frames/Taomon_Frame_003.png",
+            "Frames/Taomon_Frame_002.png",
+            "Frames/Taomon_Frame_004.png"
+          ],
+          "attack": [
+            "Frames/Taomon_Frame_005.png",
+            "Frames/Taomon_Frame_006.png"
+          ]
+        },
+        "mirrored_frames": {},
+        "source_frame_count": 21,
+        "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+        "art_provenance": "User-supplied original sprite artwork; existing pose assignments retained. FixedSpritesPart2 v1.1.1: supplied RGBA PNG bytes preserved; documented same-pose copies synchronized; see data/fixed_sprites_v111.json."
+      }
+    }
+  ]
+}

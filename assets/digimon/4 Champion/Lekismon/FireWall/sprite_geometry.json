@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Lekismon_Idle.png": {
+      "source_size": [
+        538,
+        904
+      ],
+      "output_size": [
+        762,
+        1128
+      ],
+      "padding": {
+        "left": 112,
+        "top": 112,
+        "right": 112,
+        "bottom": 112
+      },
+      "effect_pixel_unit": 7,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Lekismon_LLegWalk.png": {
+      "source_size": [
+        574,
+        920
+      ],
+      "output_size": [
+        798,
+        1144
+      ],
+      "padding": {
+        "left": 112,
+        "top": 112,
+        "right": 112,
+        "bottom": 112
+      },
+      "effect_pixel_unit": 7,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Lekismon_RLegWalk.png": {
+      "source_size": [
+        574,
+        920
+      ],
+      "output_size": [
+        798,
+        1144
+      ],
+      "padding": {
+        "left": 112,
+        "top": 112,
+        "right": 112,
+        "bottom": 112
+      },
+      "effect_pixel_unit": 7,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

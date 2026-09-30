@@ -10,6 +10,7 @@ import pygame
 from .assets import Assets, Audio
 from .network import Connection
 from .widgets import *
+from .varieties import normal_rookie, variety_of, name_color, FIREWALL_ORANGE
 from .render import NativeCanvas, draw
 from .display import DisplayManager
 from .world import WorldRenderer
@@ -82,7 +83,7 @@ class App:
         self.requests = {}
         self.connection = None
         self.tamer = next(iter(self.assets.tamers), '')
-        rookies = [s for s in self.assets.species.values() if s.get('stage') == 'rookie' and not s.get('paradox')]
+        rookies = [s for s in self.assets.species.values() if normal_rookie(s)]
         self.starter = next((s['id'] for s in rookies if s['name'].lower() == 'agumon'), rookies[0]['id'] if rookies else '')
         self.auth_picker = None
         self.detail_species = None
@@ -126,7 +127,7 @@ class App:
     def make_demo(self):
         species = list(self.assets.species.values())
         preferred = [self.assets.species[self.starter]] if self.starter else []
-        preferred += [s for s in species if s.get('stage') == 'rookie' and not s.get('paradox') and s['id'] != self.starter][:2]
+        preferred += [s for s in species if normal_rookie(s) and s['id'] != self.starter][:2]
         def mon(entry, index):
             stats = entry.get('base_stats', {})
             return {'uid': f'preview-{index}', 'species_id': entry['id'], 'name': entry['name'], 'level': 12,
@@ -156,6 +157,11 @@ class App:
                 and payload.get('campaign_id') == 'world_ds_paradox'
                 and features is not None and 'world_ds_story' not in features):
             self.toast('This server needs the v0.11.0 story update. Update both the server and client to play Paradox Chronicle.', GOLD)
+            return
+        if (op == 'story' and payload.get('action') == 'enter'
+                and payload.get('campaign_id') == 'xros_ghostline'
+                and features is not None and 'ghostline_story' not in features):
+            self.toast('Update both server and client to v1.4.0 to play Super Xros: Ghostline.', GOLD)
             return
         battle = (self.state or {}).get('battle') or {}
         in_season = bool((self.state or {}).get('in_season'))
@@ -390,6 +396,12 @@ class App:
                         self.ui.values['password'] = ''
                         self.menu = None
                         self.log('Connected. Home / F2 for DigiFarm • WASD to move • E for encounters • F1 for DigiLab.', CYAN)
+                        self.log('Shiny Mastery: 1% chance · 5% scan per defeat +1% on a wild win.' if
+                                 state.get('permanent_rewards', {}).get('shiny_scan_mastery') else
+                                 'World-map wild encounters: 1% Shiny chance. Defeat a Shiny for +5% of its own scan data.', GOLD)
+                        self.log('FireWall Mastery: 0.7% chance · 5% scan per defeat +1% on a wild win.' if
+                                 state.get('permanent_rewards', {}).get('firewall_scan_mastery') else
+                                 'FireWall: the rarest variety at 0.7%. Defeat one for +5% of its own scan data.', FIREWALL_ORANGE)
                     if request != 'ping':
                         cue = {'materialize': 'scan_complete', 'evolve': 'evolution_complete',
                                'shop': 'purchase'}.get(request)
@@ -983,8 +995,25 @@ class App:
         season_battle = bool(battle.get('season') or battle.get('kind') == 'season')
         story_battle = battle.get('kind') == 'story'
         heading = 'STORY TRAINING' if battle.get('story_training') else ('STORY · '+str(battle.get('opponent_name') or battle.get('tamer_name') or 'TAMER CHALLENGE')) if story_battle else 'SEASON MATCH' if season_battle else 'WILD ENCOUNTER'
-        text(self.screen, self.assets, heading, (view.x+20, view.y+14), 23, WHITE, True)
-        text(self.screen, self.assets, 'YOUR LIVE MATCH  /  NO FLEEING  /  SELECT YOUR TARGET' if season_battle or story_battle and not battle.get('story_training') else 'TACTICAL LINK  /  SELECT YOUR TARGET', (view.x+21, view.y+45), 9, CYAN, True)
+        shiny_encounter = (not season_battle and (not story_battle or battle.get('story_training'))
+                           and any(variety_of(mon, self.assets.species) == 'shiny' for mon in enemies))
+        firewall_encounter = (not season_battle and (not story_battle or battle.get('story_training'))
+                              and any(variety_of(mon, self.assets.species) == 'firewall' for mon in enemies))
+        if firewall_encounter:
+            heading = 'FIREWALL ENCOUNTER'
+        elif shiny_encounter:
+            heading = 'SHINY ENCOUNTER'
+        encounter_color = FIREWALL_ORANGE if firewall_encounter else GOLD if shiny_encounter else WHITE
+        text(self.screen, self.assets, heading, (view.x+20, view.y+14), 23, encounter_color, True, view.width-138)
+        guidance = ('FIREWALL MASTERY  /  +5% SCAN PER DEFEAT · +1% ON VICTORY' if firewall_encounter and
+                    self.state.get('permanent_rewards', {}).get('firewall_scan_mastery') else
+                    'RAREST VARIETY  /  +5% FIREWALL SCAN PER DEFEAT' if firewall_encounter else
+                    'SHINY MASTERY  /  +5% SCAN PER DEFEAT · +1% ON VICTORY' if shiny_encounter and
+                    self.state.get('permanent_rewards', {}).get('shiny_scan_mastery') else
+                    'RARE VARIETY  /  +5% SHINY SCAN PER DEFEAT' if shiny_encounter else
+                    'YOUR LIVE MATCH  /  NO FLEEING  /  SELECT YOUR TARGET' if season_battle or story_battle and not battle.get('story_training') else
+                    'TACTICAL LINK  /  SELECT YOUR TARGET')
+        text(self.screen, self.assets, guidance, (view.x+21, view.y+45), 11, FIREWALL_ORANGE if firewall_encounter else GOLD if shiny_encounter else CYAN, True, view.width-42)
         text(self.screen, self.assets, f"TURN {battle.get('turn', 1):02}", (view.right-99, view.y+23), 16, GOLD, True)
         from .battle_layout import layout_row
         actor = battle.get('actor', 0)
@@ -1019,13 +1048,15 @@ class App:
                     draw.rect(self.screen, GOLD, card.rect, 2, border_radius=13)
                     text(self.screen, self.assets, 'TARGET', card.badge_center, 9, GOLD, True, center=True)
                 sprite = self.assets.sprite(mon['species_id'], size, 'attack' if attacking else 'idle', self.now)
-                draw.ellipse(self.screen, (13, 53, 64) if side=='player' else (52, 29, 55), (int(pos.x)-62, int(pos.y)-7, 124, 24))
+                foot = self.assets.sprite_anchor(mon['species_id'], sprite, 'attack' if attacking else 'idle', self.now)
+                shadow_y = pos.y-(sprite.get_height()-foot[1]) if sprite else pos.y
+                draw.ellipse(self.screen, (13, 53, 64) if side=='player' else (52, 29, 55), (int(pos.x)-62, int(shadow_y)-7, 124, 24))
                 if sprite:
                     copy = sprite.copy() if mon.get('hp', 0)<=0 else sprite
                     if mon.get('hp', 0)<=0: copy.set_alpha(75)
                     self.screen.blit(copy, copy.get_rect(midbottom=(int(pos.x), int(pos.y))))
                 for value, center, font_size, bold, role in card.labels:
-                    color = (RED if side=='enemy' else WHITE) if role=='name' else MUTED
+                    color = name_color(mon, self.assets.species, RED if side=='enemy' else WHITE) if role=='name' else MUTED
                     text(self.screen, self.assets, value, center, font_size, color, bold, center=True)
                 bar(self.screen, card.hp_rect, mon.get('hp', 0), mon.get('max_hp', 1), RED if side=='enemy' else LIME)
                 if side=='player':

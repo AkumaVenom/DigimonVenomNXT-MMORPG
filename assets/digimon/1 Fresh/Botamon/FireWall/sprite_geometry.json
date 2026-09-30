@@ -1,0 +1,120 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Botamon_AttackPart1.png": {
+      "source_size": [
+        442,
+        384
+      ],
+      "output_size": [
+        762,
+        704
+      ],
+      "padding": {
+        "left": 160,
+        "top": 160,
+        "right": 160,
+        "bottom": 160
+      },
+      "effect_pixel_unit": 10,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Botamon_AttackPart2.png": {
+      "source_size": [
+        430,
+        392
+      ],
+      "output_size": [
+        750,
+        712
+      ],
+      "padding": {
+        "left": 160,
+        "top": 160,
+        "right": 160,
+        "bottom": 160
+      },
+      "effect_pixel_unit": 10,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Botamon_Extra.png": {
+      "source_size": [
+        442,
+        384
+      ],
+      "output_size": [
+        762,
+        704
+      ],
+      "padding": {
+        "left": 160,
+        "top": 160,
+        "right": 160,
+        "bottom": 160
+      },
+      "effect_pixel_unit": 10,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Botamon_Idle.png": {
+      "source_size": [
+        420,
+        358
+      ],
+      "output_size": [
+        740,
+        678
+      ],
+      "padding": {
+        "left": 160,
+        "top": 160,
+        "right": 160,
+        "bottom": 160
+      },
+      "effect_pixel_unit": 10,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Botamon_LLegWalk.png": {
+      "source_size": [
+        422,
+        382
+      ],
+      "output_size": [
+        742,
+        702
+      ],
+      "padding": {
+        "left": 160,
+        "top": 160,
+        "right": 160,
+        "bottom": 160
+      },
+      "effect_pixel_unit": 10,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Botamon_RLegWalk.png": {
+      "source_size": [
+        422,
+        382
+      ],
+      "output_size": [
+        742,
+        702
+      ],
+      "padding": {
+        "left": 160,
+        "top": 160,
+        "right": 160,
+        "bottom": 160
+      },
+      "effect_pixel_unit": 10,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

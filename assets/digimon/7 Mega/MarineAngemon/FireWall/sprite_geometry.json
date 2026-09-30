@@ -1,0 +1,519 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Frames/MarineAngemon_Frame_001.png": {
+      "source_size": [
+        98,
+        57
+      ],
+      "output_size": [
+        130,
+        89
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/MarineAngemon_Frame_002.png": {
+      "source_size": [
+        100,
+        56
+      ],
+      "output_size": [
+        132,
+        88
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/MarineAngemon_Frame_003.png": {
+      "source_size": [
+        98,
+        57
+      ],
+      "output_size": [
+        130,
+        89
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/MarineAngemon_Frame_004.png": {
+      "source_size": [
+        76,
+        57
+      ],
+      "output_size": [
+        108,
+        89
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/MarineAngemon_Frame_005.png": {
+      "source_size": [
+        58,
+        62
+      ],
+      "output_size": [
+        90,
+        94
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/MarineAngemon_Frame_006.png": {
+      "source_size": [
+        32,
+        33
+      ],
+      "output_size": [
+        64,
+        65
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/MarineAngemon_Frame_007.png": {
+      "source_size": [
+        20,
+        30
+      ],
+      "output_size": [
+        52,
+        62
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/MarineAngemon_Frame_008.png": {
+      "source_size": [
+        24,
+        29
+      ],
+      "output_size": [
+        56,
+        61
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/MarineAngemon_Frame_009.png": {
+      "source_size": [
+        34,
+        29
+      ],
+      "output_size": [
+        66,
+        61
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/MarineAngemon_Frame_010.png": {
+      "source_size": [
+        34,
+        29
+      ],
+      "output_size": [
+        66,
+        61
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/MarineAngemon_Frame_011.png": {
+      "source_size": [
+        24,
+        29
+      ],
+      "output_size": [
+        56,
+        61
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/MarineAngemon_Frame_012.png": {
+      "source_size": [
+        26,
+        28
+      ],
+      "output_size": [
+        58,
+        60
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/MarineAngemon_Frame_013.png": {
+      "source_size": [
+        26,
+        28
+      ],
+      "output_size": [
+        58,
+        60
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/MarineAngemon_Frame_014.png": {
+      "source_size": [
+        28,
+        29
+      ],
+      "output_size": [
+        60,
+        61
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/MarineAngemon_Frame_015.png": {
+      "source_size": [
+        28,
+        29
+      ],
+      "output_size": [
+        60,
+        61
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/MarineAngemon_Frame_016.png": {
+      "source_size": [
+        25,
+        28
+      ],
+      "output_size": [
+        57,
+        60
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/MarineAngemon_Frame_017.png": {
+      "source_size": [
+        23,
+        28
+      ],
+      "output_size": [
+        55,
+        60
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/MarineAngemon_Frame_018.png": {
+      "source_size": [
+        23,
+        28
+      ],
+      "output_size": [
+        55,
+        60
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/MarineAngemon_Frame_019.png": {
+      "source_size": [
+        25,
+        28
+      ],
+      "output_size": [
+        57,
+        60
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/MarineAngemon_Frame_020.png": {
+      "source_size": [
+        11,
+        12
+      ],
+      "output_size": [
+        19,
+        20
+      ],
+      "padding": {
+        "left": 4,
+        "top": 4,
+        "right": 4,
+        "bottom": 4
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": true
+    },
+    "Frames/MarineAngemon_Frame_021.png": {
+      "source_size": [
+        11,
+        12
+      ],
+      "output_size": [
+        19,
+        20
+      ],
+      "padding": {
+        "left": 4,
+        "top": 4,
+        "right": 4,
+        "bottom": 4
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": true
+    },
+    "Frames/MarineAngemon_Frame_022.png": {
+      "source_size": [
+        8,
+        12
+      ],
+      "output_size": [
+        16,
+        20
+      ],
+      "padding": {
+        "left": 4,
+        "top": 4,
+        "right": 4,
+        "bottom": 4
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": true
+    },
+    "Frames/MarineAngemon_Frame_023.png": {
+      "source_size": [
+        10,
+        12
+      ],
+      "output_size": [
+        18,
+        20
+      ],
+      "padding": {
+        "left": 4,
+        "top": 4,
+        "right": 4,
+        "bottom": 4
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": true
+    },
+    "Frames/MarineAngemon_Frame_024.png": {
+      "source_size": [
+        11,
+        10
+      ],
+      "output_size": [
+        19,
+        18
+      ],
+      "padding": {
+        "left": 4,
+        "top": 4,
+        "right": 4,
+        "bottom": 4
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": true
+    },
+    "Frames/MarineAngemon_Frame_025.png": {
+      "source_size": [
+        14,
+        10
+      ],
+      "output_size": [
+        22,
+        18
+      ],
+      "padding": {
+        "left": 4,
+        "top": 4,
+        "right": 4,
+        "bottom": 4
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": true
+    },
+    "Frames/MarineAngemon_Frame_026.png": {
+      "source_size": [
+        11,
+        10
+      ],
+      "output_size": [
+        19,
+        18
+      ],
+      "padding": {
+        "left": 4,
+        "top": 4,
+        "right": 4,
+        "bottom": 4
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": true
+    },
+    "MarineAngemon_Primary.png": {
+      "source_size": [
+        98,
+        57
+      ],
+      "output_size": [
+        130,
+        89
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

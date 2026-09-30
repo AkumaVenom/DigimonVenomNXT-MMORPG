@@ -1,0 +1,342 @@
+[
+  {
+    "file": "firewall_01_scan_gallery_960x600.png",
+    "resolution": [
+      960,
+      600
+    ],
+    "phase": "01_scan_gallery",
+    "asset_errors": [],
+    "staged_qa_profile": true
+  },
+  {
+    "file": "firewall_02_scan_mastery_960x600.png",
+    "resolution": [
+      960,
+      600
+    ],
+    "phase": "02_scan_mastery",
+    "asset_errors": [],
+    "staged_qa_profile": true
+  },
+  {
+    "file": "firewall_03_large_art_dex_960x600.png",
+    "resolution": [
+      960,
+      600
+    ],
+    "phase": "03_large_art_dex",
+    "asset_errors": [],
+    "staged_qa_profile": true
+  },
+  {
+    "file": "firewall_04_atlas_960x600.png",
+    "resolution": [
+      960,
+      600
+    ],
+    "phase": "04_atlas",
+    "asset_errors": [],
+    "staged_qa_profile": true
+  },
+  {
+    "file": "firewall_05_world_idle_960x600.png",
+    "resolution": [
+      960,
+      600
+    ],
+    "phase": "05_world_idle",
+    "asset_errors": [],
+    "staged_qa_profile": true
+  },
+  {
+    "file": "firewall_06_world_walk_960x600.png",
+    "resolution": [
+      960,
+      600
+    ],
+    "phase": "06_world_walk",
+    "asset_errors": [],
+    "staged_qa_profile": true
+  },
+  {
+    "file": "firewall_07_battle_long_names_960x600.png",
+    "resolution": [
+      960,
+      600
+    ],
+    "phase": "07_battle_long_names",
+    "asset_errors": [],
+    "staged_qa_profile": true
+  },
+  {
+    "file": "firewall_08_battle_base_scan_960x600.png",
+    "resolution": [
+      960,
+      600
+    ],
+    "phase": "08_battle_base_scan",
+    "asset_errors": [],
+    "staged_qa_profile": true
+  },
+  {
+    "file": "firewall_09_partner_roster_960x600.png",
+    "resolution": [
+      960,
+      600
+    ],
+    "phase": "09_partner_roster",
+    "asset_errors": [],
+    "staged_qa_profile": true
+  },
+  {
+    "file": "firewall_10_evolution_960x600.png",
+    "resolution": [
+      960,
+      600
+    ],
+    "phase": "10_evolution",
+    "asset_errors": [],
+    "staged_qa_profile": true
+  },
+  {
+    "file": "firewall_11_storage_960x600.png",
+    "resolution": [
+      960,
+      600
+    ],
+    "phase": "11_storage",
+    "asset_errors": [],
+    "staged_qa_profile": true
+  },
+  {
+    "file": "firewall_12_farm_960x600.png",
+    "resolution": [
+      960,
+      600
+    ],
+    "phase": "12_farm",
+    "asset_errors": [],
+    "staged_qa_profile": true
+  },
+  {
+    "file": "firewall_13_campaign_chooser_960x600.png",
+    "resolution": [
+      960,
+      600
+    ],
+    "phase": "13_campaign_chooser",
+    "asset_errors": [],
+    "staged_qa_profile": true
+  },
+  {
+    "file": "firewall_14_dawn_reward_locked_960x600.png",
+    "resolution": [
+      960,
+      600
+    ],
+    "phase": "14_dawn_reward_locked",
+    "asset_errors": [],
+    "staged_qa_profile": true
+  },
+  {
+    "file": "firewall_15_dawn_mastery_960x600.png",
+    "resolution": [
+      960,
+      600
+    ],
+    "phase": "15_dawn_mastery",
+    "asset_errors": [],
+    "staged_qa_profile": true
+  },
+  {
+    "file": "firewall_16_mastery_after_title_loss_960x600.png",
+    "resolution": [
+      960,
+      600
+    ],
+    "phase": "16_mastery_after_title_loss",
+    "asset_errors": [],
+    "staged_qa_profile": true
+  },
+  {
+    "file": "firewall_17_first_championship_reward_960x600.png",
+    "resolution": [
+      960,
+      600
+    ],
+    "phase": "17_first_championship_reward",
+    "asset_errors": [],
+    "staged_qa_profile": true
+  },
+  {
+    "file": "firewall_01_scan_gallery_1280x800.png",
+    "resolution": [
+      1280,
+      800
+    ],
+    "phase": "01_scan_gallery",
+    "asset_errors": [],
+    "staged_qa_profile": true
+  },
+  {
+    "file": "firewall_02_scan_mastery_1280x800.png",
+    "resolution": [
+      1280,
+      800
+    ],
+    "phase": "02_scan_mastery",
+    "asset_errors": [],
+    "staged_qa_profile": true
+  },
+  {
+    "file": "firewall_03_large_art_dex_1280x800.png",
+    "resolution": [
+      1280,
+      800
+    ],
+    "phase": "03_large_art_dex",
+    "asset_errors": [],
+    "staged_qa_profile": true
+  },
+  {
+    "file": "firewall_04_atlas_1280x800.png",
+    "resolution": [
+      1280,
+      800
+    ],
+    "phase": "04_atlas",
+    "asset_errors": [],
+    "staged_qa_profile": true
+  },
+  {
+    "file": "firewall_05_world_idle_1280x800.png",
+    "resolution": [
+      1280,
+      800
+    ],
+    "phase": "05_world_idle",
+    "asset_errors": [],
+    "staged_qa_profile": true
+  },
+  {
+    "file": "firewall_06_world_walk_1280x800.png",
+    "resolution": [
+      1280,
+      800
+    ],
+    "phase": "06_world_walk",
+    "asset_errors": [],
+    "staged_qa_profile": true
+  },
+  {
+    "file": "firewall_07_battle_long_names_1280x800.png",
+    "resolution": [
+      1280,
+      800
+    ],
+    "phase": "07_battle_long_names",
+    "asset_errors": [],
+    "staged_qa_profile": true
+  },
+  {
+    "file": "firewall_08_battle_base_scan_1280x800.png",
+    "resolution": [
+      1280,
+      800
+    ],
+    "phase": "08_battle_base_scan",
+    "asset_errors": [],
+    "staged_qa_profile": true
+  },
+  {
+    "file": "firewall_09_partner_roster_1280x800.png",
+    "resolution": [
+      1280,
+      800
+    ],
+    "phase": "09_partner_roster",
+    "asset_errors": [],
+    "staged_qa_profile": true
+  },
+  {
+    "file": "firewall_10_evolution_1280x800.png",
+    "resolution": [
+      1280,
+      800
+    ],
+    "phase": "10_evolution",
+    "asset_errors": [],
+    "staged_qa_profile": true
+  },
+  {
+    "file": "firewall_11_storage_1280x800.png",
+    "resolution": [
+      1280,
+      800
+    ],
+    "phase": "11_storage",
+    "asset_errors": [],
+    "staged_qa_profile": true
+  },
+  {
+    "file": "firewall_12_farm_1280x800.png",
+    "resolution": [
+      1280,
+      800
+    ],
+    "phase": "12_farm",
+    "asset_errors": [],
+    "staged_qa_profile": true
+  },
+  {
+    "file": "firewall_13_campaign_chooser_1280x800.png",
+    "resolution": [
+      1280,
+      800
+    ],
+    "phase": "13_campaign_chooser",
+    "asset_errors": [],
+    "staged_qa_profile": true
+  },
+  {
+    "file": "firewall_14_dawn_reward_locked_1280x800.png",
+    "resolution": [
+      1280,
+      800
+    ],
+    "phase": "14_dawn_reward_locked",
+    "asset_errors": [],
+    "staged_qa_profile": true
+  },
+  {
+    "file": "firewall_15_dawn_mastery_1280x800.png",
+    "resolution": [
+      1280,
+      800
+    ],
+    "phase": "15_dawn_mastery",
+    "asset_errors": [],
+    "staged_qa_profile": true
+  },
+  {
+    "file": "firewall_16_mastery_after_title_loss_1280x800.png",
+    "resolution": [
+      1280,
+      800
+    ],
+    "phase": "16_mastery_after_title_loss",
+    "asset_errors": [],
+    "staged_qa_profile": true
+  },
+  {
+    "file": "firewall_17_first_championship_reward_1280x800.png",
+    "resolution": [
+      1280,
+      800
+    ],
+    "phase": "17_first_championship_reward",
+    "asset_errors": [],
+    "staged_qa_profile": true
+  }
+]

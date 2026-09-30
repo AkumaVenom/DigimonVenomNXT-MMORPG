@@ -285,9 +285,10 @@ FINAL = {
     "mentor": [
         "All eight relays are speaking. HUSH is listening rather than locking the doors. There is only one part of your journey I cannot guide: the championship itself.",
         "Marshal Vale guards the Crown Concourse qualifier. Nox has earned his place in the final trial at Crown Terminal. Beat both, then challenge Aster for the story championship.",
-        "Winning will not end this place. As champion you can accept new defenses whenever you choose. If you lose the title, heal your team and challenge to win it back. Your badges and journey remain yours.",
+        "Your first championship victory earns permanent FireWall Scan Mastery: +20% scan gain on FireWall wild battle victories, raising the usual 5% to 6%. It stays with you throughout the world and your private field training.",
+        "Winning will not end this place. As champion you can accept new defenses whenever you choose. If you lose the title, heal your team and challenge to win it back. Your badges, journey, and FireWall Scan Mastery remain yours.",
     ],
-    "resolved": "The crown is yours to defend, not yours to hide away. The next challenger is ready whenever you are. This is your private story championship; every defense writes another page.",
+    "resolved": "The crown is yours to defend, not yours to hide away. Your permanent FireWall Scan Mastery now raises wild victory scan gains from 5% to 6%, even if the title changes hands. The next challenger is ready whenever you are; every defense writes another page.",
     "clinic": "Before a qualifier, after a defense, or on the road back to the crown: the clinic is here for you.",
     "shop": "The championship is a long conversation. Bring HP and SP capsules, and choose the techniques you want every partner to carry into it.",
     "trials": (
@@ -301,7 +302,7 @@ FINAL = {
                "We both earned this room. Take the time you need, then let's finish our final trial."),
         _trial("Champion Aster", 2, (("apollomon", 96), ("omnimon", 96), ("alphamon", 95)),
                "I asked HUSH to protect everyone and forgot to ask what everyone wanted. You restored the voices I should have listened to. Now earn the right to carry this championship forward.",
-               "The crown passes to you. Not because your journey is over, but because another tamer's challenge should always have an answer. Defend it proudly; if you lose it, return proudly too.",
+               "The crown passes to you. Another tamer's challenge should always have an answer. The restored relays also grant you permanent FireWall Scan Mastery: +20% scan gain on FireWall wild victories, from 5% to 6%. Defend the crown proudly; if you lose it, return proudly too. Your mastery is yours for good.",
                "A championship loss is never the end of a tamer's story. Your trials remain complete. Heal your partners, and I will accept your next challenge."),
     ),
 }
@@ -456,6 +457,7 @@ def build_content(engine) -> dict:
     result = {"id": CAMPAIGN_ID, "name": CAMPAIGN_NAME, "version": 1,
               "regions": regions, "maps": maps, "npcs": npcs, "challengers": challengers,
               "champion_id": "citadel_champion", "start_map": regions[0]["maps"][0],
-              "introduction": "Restore eight relays. Earn eight DigiBadges. Carry your partners to a championship that always welcomes another challenge."}
+              "completion_reward": {"flag": "firewall_scan_mastery", "variety": "firewall", "scan_bonus_percent": 20},
+              "introduction": "Restore eight relays. Earn eight DigiBadges. Win the championship for permanent +20% FireWall scan gain on wild battle victories (5% to 6%), then defend a crown that always welcomes another challenge."}
     engine._story_content = result
     return result

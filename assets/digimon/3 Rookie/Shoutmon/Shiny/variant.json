@@ -1,0 +1,22 @@
+{
+  "variant_id": "shiny_shoutmon",
+  "display_name": "Shiny Shoutmon",
+  "base_species": "Shoutmon",
+  "stage": "3 Rookie",
+  "status": "ready",
+  "style_profile": "Prismatic Shiny \u2014 Gold Stardust v1",
+  "palette": "Cerulean",
+  "target_hue_degrees": 196.0,
+  "source_sprite_count": 3,
+  "shiny_sprite_count": 3,
+  "animation_alignment": "Exact source canvas dimensions and sprite positions retained",
+  "effects": "Warm-gold silhouette glow; restrained ivory/gold four-point sparkles; deterministic frame twinkle",
+  "sprites": [
+    "Shoutmon_Idle.png",
+    "Shoutmon_LLegWalk.png",
+    "Shoutmon_RLegWalk.png"
+  ],
+  "primary_sprite": "3 Rookie/Shoutmon/Shiny/Shoutmon_Idle.png",
+  "source_primary": "3 Rookie/Shoutmon/Shoutmon_Idle.png",
+  "materializable": true
+}

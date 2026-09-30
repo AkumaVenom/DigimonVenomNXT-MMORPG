@@ -1,0 +1,386 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Ebonwumon_Primary.png": {
+      "source_size": [
+        126,
+        152
+      ],
+      "output_size": [
+        158,
+        184
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Ebonwumon_Frame_001.png": {
+      "source_size": [
+        126,
+        152
+      ],
+      "output_size": [
+        158,
+        184
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Ebonwumon_Frame_002.png": {
+      "source_size": [
+        126,
+        151
+      ],
+      "output_size": [
+        158,
+        183
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Ebonwumon_Frame_003.png": {
+      "source_size": [
+        128,
+        150
+      ],
+      "output_size": [
+        160,
+        182
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Ebonwumon_Frame_004.png": {
+      "source_size": [
+        125,
+        156
+      ],
+      "output_size": [
+        157,
+        188
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Ebonwumon_Frame_005.png": {
+      "source_size": [
+        131,
+        139
+      ],
+      "output_size": [
+        163,
+        171
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Ebonwumon_Frame_006.png": {
+      "source_size": [
+        35,
+        48
+      ],
+      "output_size": [
+        67,
+        80
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Ebonwumon_Frame_007.png": {
+      "source_size": [
+        35,
+        46
+      ],
+      "output_size": [
+        67,
+        78
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Ebonwumon_Frame_008.png": {
+      "source_size": [
+        35,
+        46
+      ],
+      "output_size": [
+        67,
+        78
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Ebonwumon_Frame_009.png": {
+      "source_size": [
+        35,
+        44
+      ],
+      "output_size": [
+        67,
+        76
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Ebonwumon_Frame_010.png": {
+      "source_size": [
+        36,
+        47
+      ],
+      "output_size": [
+        68,
+        79
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Ebonwumon_Frame_011.png": {
+      "source_size": [
+        36,
+        47
+      ],
+      "output_size": [
+        68,
+        79
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Ebonwumon_Frame_012.png": {
+      "source_size": [
+        35,
+        44
+      ],
+      "output_size": [
+        67,
+        76
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Ebonwumon_Frame_013.png": {
+      "source_size": [
+        35,
+        45
+      ],
+      "output_size": [
+        67,
+        77
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Ebonwumon_Frame_014.png": {
+      "source_size": [
+        36,
+        44
+      ],
+      "output_size": [
+        68,
+        76
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Ebonwumon_Frame_015.png": {
+      "source_size": [
+        36,
+        44
+      ],
+      "output_size": [
+        68,
+        76
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Ebonwumon_Frame_016.png": {
+      "source_size": [
+        36,
+        43
+      ],
+      "output_size": [
+        68,
+        75
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Ebonwumon_Frame_017.png": {
+      "source_size": [
+        36,
+        45
+      ],
+      "output_size": [
+        68,
+        77
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Ebonwumon_Frame_018.png": {
+      "source_size": [
+        36,
+        45
+      ],
+      "output_size": [
+        68,
+        77
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Ebonwumon_Frame_019.png": {
+      "source_size": [
+        36,
+        43
+      ],
+      "output_size": [
+        68,
+        75
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Penguinmon_Idle.png",
+    "walk_left": "Penguinmon_LLegWalk.png",
+    "walk_right": "Penguinmon_RLegWalk.png",
+    "attack1": "Penguinmon_AttackPart1.png",
+    "attack2": "Penguinmon_AttackPart2.png"
+  },
+  "animations": {
+    "idle": [
+      "Penguinmon_Idle.png"
+    ],
+    "walk": [
+      "Penguinmon_Idle.png",
+      "Penguinmon_LLegWalk.png",
+      "Penguinmon_Idle.png",
+      "Penguinmon_RLegWalk.png"
+    ],
+    "attack": [
+      "Penguinmon_AttackPart1.png",
+      "Penguinmon_AttackPart2.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 0,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied v1.2.0 Shiny PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained."
+}

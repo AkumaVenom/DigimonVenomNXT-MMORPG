@@ -1,0 +1,101 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Gaogamon_Attack.png": {
+      "source_size": [
+        832,
+        932
+      ],
+      "output_size": [
+        992,
+        1092
+      ],
+      "padding": {
+        "left": 80,
+        "top": 80,
+        "right": 80,
+        "bottom": 80
+      },
+      "effect_pixel_unit": 5,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Gaogamon_GetHit.png": {
+      "source_size": [
+        730,
+        1072
+      ],
+      "output_size": [
+        890,
+        1232
+      ],
+      "padding": {
+        "left": 80,
+        "top": 80,
+        "right": 80,
+        "bottom": 80
+      },
+      "effect_pixel_unit": 5,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Gaogamon_Idle.png": {
+      "source_size": [
+        772,
+        768
+      ],
+      "output_size": [
+        932,
+        928
+      ],
+      "padding": {
+        "left": 80,
+        "top": 80,
+        "right": 80,
+        "bottom": 80
+      },
+      "effect_pixel_unit": 5,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Gaogamon_LLegWalk.png": {
+      "source_size": [
+        748,
+        768
+      ],
+      "output_size": [
+        908,
+        928
+      ],
+      "padding": {
+        "left": 80,
+        "top": 80,
+        "right": 80,
+        "bottom": 80
+      },
+      "effect_pixel_unit": 5,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Gaogamon_RLegWalk.png": {
+      "source_size": [
+        748,
+        768
+      ],
+      "output_size": [
+        908,
+        928
+      ],
+      "padding": {
+        "left": 80,
+        "top": 80,
+        "right": 80,
+        "bottom": 80
+      },
+      "effect_pixel_unit": 5,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

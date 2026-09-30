@@ -1,0 +1,101 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Growlmon_AttackPart1.png": {
+      "source_size": [
+        638,
+        664
+      ],
+      "output_size": [
+        830,
+        856
+      ],
+      "padding": {
+        "left": 96,
+        "top": 96,
+        "right": 96,
+        "bottom": 96
+      },
+      "effect_pixel_unit": 6,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Growlmon_AttackPart2.png": {
+      "source_size": [
+        582,
+        542
+      ],
+      "output_size": [
+        774,
+        734
+      ],
+      "padding": {
+        "left": 96,
+        "top": 96,
+        "right": 96,
+        "bottom": 96
+      },
+      "effect_pixel_unit": 6,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Growlmon_Idle.png": {
+      "source_size": [
+        532,
+        600
+      ],
+      "output_size": [
+        724,
+        792
+      ],
+      "padding": {
+        "left": 96,
+        "top": 96,
+        "right": 96,
+        "bottom": 96
+      },
+      "effect_pixel_unit": 6,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Growlmon_LLegWalk.png": {
+      "source_size": [
+        572,
+        592
+      ],
+      "output_size": [
+        764,
+        784
+      ],
+      "padding": {
+        "left": 96,
+        "top": 96,
+        "right": 96,
+        "bottom": 96
+      },
+      "effect_pixel_unit": 6,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Growlmon_RLegWalk.png": {
+      "source_size": [
+        572,
+        592
+      ],
+      "output_size": [
+        764,
+        784
+      ],
+      "padding": {
+        "left": 96,
+        "top": 96,
+        "right": 96,
+        "bottom": 96
+      },
+      "effect_pixel_unit": 6,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

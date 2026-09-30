@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Frames/GallantmonCrimsonMode_Frame_001.png",
+    "walk_left": "Frames/GallantmonCrimsonMode_Frame_002.png",
+    "walk_right": "Frames/GallantmonCrimsonMode_Frame_003.png",
+    "attack1": "Frames/GallantmonCrimsonMode_Frame_004.png",
+    "attack2": "Frames/GallantmonCrimsonMode_Frame_005.png",
+    "front": "Frames/GallantmonCrimsonMode_Frame_001.png"
+  },
+  "animations": {
+    "idle": [
+      "Frames/GallantmonCrimsonMode_Frame_001.png",
+      "Frames/GallantmonCrimsonMode_Frame_002.png",
+      "Frames/GallantmonCrimsonMode_Frame_001.png",
+      "Frames/GallantmonCrimsonMode_Frame_003.png"
+    ],
+    "walk": [
+      "Frames/GallantmonCrimsonMode_Frame_001.png",
+      "Frames/GallantmonCrimsonMode_Frame_002.png",
+      "Frames/GallantmonCrimsonMode_Frame_001.png",
+      "Frames/GallantmonCrimsonMode_Frame_003.png"
+    ],
+    "attack": [
+      "Frames/GallantmonCrimsonMode_Frame_004.png",
+      "Frames/GallantmonCrimsonMode_Frame_005.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 23,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied original sprite artwork; existing pose assignments retained. FixedSpritesPart2 v1.1.1: supplied RGBA PNG bytes preserved; documented same-pose copies synchronized; see data/fixed_sprites_v111.json."
+}

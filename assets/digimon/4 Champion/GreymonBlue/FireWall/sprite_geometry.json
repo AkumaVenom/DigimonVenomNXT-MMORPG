@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "GreymonBlue_Idle.png": {
+      "source_size": [
+        153,
+        144
+      ],
+      "output_size": [
+        249,
+        240
+      ],
+      "padding": {
+        "left": 48,
+        "top": 48,
+        "right": 48,
+        "bottom": 48
+      },
+      "effect_pixel_unit": 3,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "GreymonBlue_LLegWalk.png": {
+      "source_size": [
+        191,
+        167
+      ],
+      "output_size": [
+        287,
+        263
+      ],
+      "padding": {
+        "left": 48,
+        "top": 48,
+        "right": 48,
+        "bottom": 48
+      },
+      "effect_pixel_unit": 3,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "GreymonBlue_RLegWalk.png": {
+      "source_size": [
+        191,
+        167
+      ],
+      "output_size": [
+        287,
+        263
+      ],
+      "padding": {
+        "left": 48,
+        "top": 48,
+        "right": 48,
+        "bottom": 48
+      },
+      "effect_pixel_unit": 3,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

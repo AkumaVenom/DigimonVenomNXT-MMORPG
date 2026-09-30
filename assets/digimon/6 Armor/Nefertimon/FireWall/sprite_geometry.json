@@ -1,0 +1,386 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Frames/Nefertimon_Frame_001.png": {
+      "source_size": [
+        112,
+        110
+      ],
+      "output_size": [
+        144,
+        142
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Nefertimon_Frame_002.png": {
+      "source_size": [
+        121,
+        109
+      ],
+      "output_size": [
+        153,
+        141
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Nefertimon_Frame_003.png": {
+      "source_size": [
+        118,
+        109
+      ],
+      "output_size": [
+        150,
+        141
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Nefertimon_Frame_004.png": {
+      "source_size": [
+        117,
+        115
+      ],
+      "output_size": [
+        149,
+        147
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Nefertimon_Frame_005.png": {
+      "source_size": [
+        108,
+        125
+      ],
+      "output_size": [
+        140,
+        157
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Nefertimon_Frame_006.png": {
+      "source_size": [
+        35,
+        54
+      ],
+      "output_size": [
+        67,
+        86
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Nefertimon_Frame_007.png": {
+      "source_size": [
+        34,
+        50
+      ],
+      "output_size": [
+        66,
+        82
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Nefertimon_Frame_008.png": {
+      "source_size": [
+        34,
+        51
+      ],
+      "output_size": [
+        66,
+        83
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Nefertimon_Frame_009.png": {
+      "source_size": [
+        34,
+        51
+      ],
+      "output_size": [
+        66,
+        83
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Nefertimon_Frame_010.png": {
+      "source_size": [
+        36,
+        49
+      ],
+      "output_size": [
+        68,
+        81
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Nefertimon_Frame_011.png": {
+      "source_size": [
+        31,
+        52
+      ],
+      "output_size": [
+        63,
+        84
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Nefertimon_Frame_012.png": {
+      "source_size": [
+        31,
+        52
+      ],
+      "output_size": [
+        63,
+        84
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Nefertimon_Frame_013.png": {
+      "source_size": [
+        36,
+        49
+      ],
+      "output_size": [
+        68,
+        81
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Nefertimon_Frame_014.png": {
+      "source_size": [
+        34,
+        49
+      ],
+      "output_size": [
+        66,
+        81
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Nefertimon_Frame_015.png": {
+      "source_size": [
+        34,
+        49
+      ],
+      "output_size": [
+        66,
+        81
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Nefertimon_Frame_016.png": {
+      "source_size": [
+        36,
+        50
+      ],
+      "output_size": [
+        68,
+        82
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Nefertimon_Frame_017.png": {
+      "source_size": [
+        33,
+        48
+      ],
+      "output_size": [
+        65,
+        80
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Nefertimon_Frame_018.png": {
+      "source_size": [
+        33,
+        48
+      ],
+      "output_size": [
+        65,
+        80
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Nefertimon_Frame_019.png": {
+      "source_size": [
+        36,
+        50
+      ],
+      "output_size": [
+        68,
+        82
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Nefertimon_Primary.png": {
+      "source_size": [
+        112,
+        110
+      ],
+      "output_size": [
+        144,
+        142
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

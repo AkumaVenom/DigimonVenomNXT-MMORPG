@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "BaoHuckmon_Idle.png",
+    "walk_left": "BaoHuckmon_LLegWalk.png",
+    "walk_right": "BaoHuckmon_RLegWalk.png",
+    "attack1": "BaoHuckmon_Idle.png",
+    "attack2": "BaoHuckmon_Idle.png"
+  },
+  "animations": {
+    "idle": [
+      "BaoHuckmon_Idle.png"
+    ],
+    "walk": [
+      "BaoHuckmon_Idle.png",
+      "BaoHuckmon_LLegWalk.png",
+      "BaoHuckmon_Idle.png",
+      "BaoHuckmon_RLegWalk.png"
+    ],
+    "attack": [
+      "BaoHuckmon_Idle.png",
+      "BaoHuckmon_Idle.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 0,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied v1.2.0 Shiny PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained."
+}

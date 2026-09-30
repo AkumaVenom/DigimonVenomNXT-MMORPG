@@ -1,0 +1,122 @@
+[
+  {
+    "file": "xros_atlas_low_960x600.png",
+    "map_id": "xros_027",
+    "map_name": "Verdant Crossing 01",
+    "level_range": [
+      1,
+      3
+    ],
+    "resolution": "960x600",
+    "synthetic_account_and_rivals": true,
+    "asset_errors": []
+  },
+  {
+    "file": "xros_atlas_high_960x600.png",
+    "map_id": "xros_177",
+    "map_name": "Xros Core 03",
+    "level_range": [
+      97,
+      99
+    ],
+    "resolution": "960x600",
+    "synthetic_account_and_rivals": true,
+    "asset_errors": []
+  },
+  {
+    "file": "xros_field_low_960x600.png",
+    "map_id": "xros_027",
+    "map_name": "Verdant Crossing 01",
+    "level_range": [
+      1,
+      3
+    ],
+    "resolution": "960x600",
+    "synthetic_account_and_rivals": true,
+    "asset_errors": []
+  },
+  {
+    "file": "xros_field_mid_960x600.png",
+    "map_id": "xros_140",
+    "map_name": "Cloudspire Cliffs 07",
+    "level_range": [
+      58,
+      62
+    ],
+    "resolution": "960x600",
+    "synthetic_account_and_rivals": true,
+    "asset_errors": []
+  },
+  {
+    "file": "xros_field_high_960x600.png",
+    "map_id": "xros_177",
+    "map_name": "Xros Core 03",
+    "level_range": [
+      97,
+      99
+    ],
+    "resolution": "960x600",
+    "synthetic_account_and_rivals": true,
+    "asset_errors": []
+  },
+  {
+    "file": "xros_atlas_low_1280x800.png",
+    "map_id": "xros_027",
+    "map_name": "Verdant Crossing 01",
+    "level_range": [
+      1,
+      3
+    ],
+    "resolution": "1280x800",
+    "synthetic_account_and_rivals": true,
+    "asset_errors": []
+  },
+  {
+    "file": "xros_atlas_high_1280x800.png",
+    "map_id": "xros_177",
+    "map_name": "Xros Core 03",
+    "level_range": [
+      97,
+      99
+    ],
+    "resolution": "1280x800",
+    "synthetic_account_and_rivals": true,
+    "asset_errors": []
+  },
+  {
+    "file": "xros_field_low_1280x800.png",
+    "map_id": "xros_027",
+    "map_name": "Verdant Crossing 01",
+    "level_range": [
+      1,
+      3
+    ],
+    "resolution": "1280x800",
+    "synthetic_account_and_rivals": true,
+    "asset_errors": []
+  },
+  {
+    "file": "xros_field_mid_1280x800.png",
+    "map_id": "xros_140",
+    "map_name": "Cloudspire Cliffs 07",
+    "level_range": [
+      58,
+      62
+    ],
+    "resolution": "1280x800",
+    "synthetic_account_and_rivals": true,
+    "asset_errors": []
+  },
+  {
+    "file": "xros_field_high_1280x800.png",
+    "map_id": "xros_177",
+    "map_name": "Xros Core 03",
+    "level_range": [
+      97,
+      99
+    ],
+    "resolution": "1280x800",
+    "synthetic_account_and_rivals": true,
+    "asset_errors": []
+  }
+]

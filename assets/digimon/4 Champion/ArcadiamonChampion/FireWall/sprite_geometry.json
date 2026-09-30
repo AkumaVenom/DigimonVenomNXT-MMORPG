@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "ArcadiamonChampion_Idle.png": {
+      "source_size": [
+        1000,
+        1000
+      ],
+      "output_size": [
+        1256,
+        1256
+      ],
+      "padding": {
+        "left": 128,
+        "top": 128,
+        "right": 128,
+        "bottom": 128
+      },
+      "effect_pixel_unit": 8,
+      "effect_style": "smooth_cyber_glow",
+      "particle_fragment": false
+    },
+    "ArcadiamonChampion_LLegWalk.png": {
+      "source_size": [
+        1178,
+        1087
+      ],
+      "output_size": [
+        1434,
+        1343
+      ],
+      "padding": {
+        "left": 128,
+        "top": 128,
+        "right": 128,
+        "bottom": 128
+      },
+      "effect_pixel_unit": 8,
+      "effect_style": "smooth_cyber_glow",
+      "particle_fragment": false
+    },
+    "ArcadiamonChampion_RLegWalk.png": {
+      "source_size": [
+        1178,
+        1087
+      ],
+      "output_size": [
+        1434,
+        1343
+      ],
+      "padding": {
+        "left": 128,
+        "top": 128,
+        "right": 128,
+        "bottom": 128
+      },
+      "effect_pixel_unit": 8,
+      "effect_style": "smooth_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

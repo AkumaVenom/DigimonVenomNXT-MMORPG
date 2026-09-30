@@ -1,0 +1,405 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Drimogemon_Primary.png": {
+      "source_size": [
+        125,
+        82
+      ],
+      "output_size": [
+        157,
+        114
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Drimogemon_Frame_001.png": {
+      "source_size": [
+        125,
+        82
+      ],
+      "output_size": [
+        157,
+        114
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Drimogemon_Frame_002.png": {
+      "source_size": [
+        127,
+        82
+      ],
+      "output_size": [
+        159,
+        114
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Drimogemon_Frame_003.png": {
+      "source_size": [
+        125,
+        81
+      ],
+      "output_size": [
+        157,
+        113
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Drimogemon_Frame_004.png": {
+      "source_size": [
+        109,
+        99
+      ],
+      "output_size": [
+        141,
+        131
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Drimogemon_Frame_005.png": {
+      "source_size": [
+        109,
+        88
+      ],
+      "output_size": [
+        141,
+        120
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Drimogemon_Frame_006.png": {
+      "source_size": [
+        32,
+        29
+      ],
+      "output_size": [
+        64,
+        61
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Drimogemon_Frame_007.png": {
+      "source_size": [
+        32,
+        29
+      ],
+      "output_size": [
+        64,
+        61
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Drimogemon_Frame_008.png": {
+      "source_size": [
+        33,
+        29
+      ],
+      "output_size": [
+        65,
+        61
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Drimogemon_Frame_009.png": {
+      "source_size": [
+        32,
+        30
+      ],
+      "output_size": [
+        64,
+        62
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Drimogemon_Frame_010.png": {
+      "source_size": [
+        32,
+        30
+      ],
+      "output_size": [
+        64,
+        62
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Drimogemon_Frame_011.png": {
+      "source_size": [
+        33,
+        29
+      ],
+      "output_size": [
+        65,
+        61
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Drimogemon_Frame_012.png": {
+      "source_size": [
+        33,
+        29
+      ],
+      "output_size": [
+        65,
+        61
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Drimogemon_Frame_013.png": {
+      "source_size": [
+        33,
+        29
+      ],
+      "output_size": [
+        65,
+        61
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Drimogemon_Frame_014.png": {
+      "source_size": [
+        34,
+        29
+      ],
+      "output_size": [
+        66,
+        61
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Drimogemon_Frame_015.png": {
+      "source_size": [
+        33,
+        27
+      ],
+      "output_size": [
+        65,
+        59
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Drimogemon_Frame_016.png": {
+      "source_size": [
+        33,
+        27
+      ],
+      "output_size": [
+        65,
+        59
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Drimogemon_Frame_017.png": {
+      "source_size": [
+        34,
+        29
+      ],
+      "output_size": [
+        66,
+        61
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Drimogemon_Frame_018.png": {
+      "source_size": [
+        35,
+        29
+      ],
+      "output_size": [
+        67,
+        61
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Drimogemon_Frame_019.png": {
+      "source_size": [
+        32,
+        27
+      ],
+      "output_size": [
+        64,
+        59
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Drimogemon_Frame_020.png": {
+      "source_size": [
+        32,
+        26
+      ],
+      "output_size": [
+        64,
+        58
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

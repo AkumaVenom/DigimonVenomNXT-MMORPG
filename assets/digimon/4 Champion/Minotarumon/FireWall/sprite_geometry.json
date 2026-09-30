@@ -1,0 +1,405 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Frames/Minotarumon_Frame_001.png": {
+      "source_size": [
+        111,
+        137
+      ],
+      "output_size": [
+        143,
+        169
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Minotarumon_Frame_002.png": {
+      "source_size": [
+        113,
+        135
+      ],
+      "output_size": [
+        145,
+        167
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Minotarumon_Frame_003.png": {
+      "source_size": [
+        111,
+        131
+      ],
+      "output_size": [
+        143,
+        163
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Minotarumon_Frame_004.png": {
+      "source_size": [
+        109,
+        145
+      ],
+      "output_size": [
+        141,
+        177
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Minotarumon_Frame_005.png": {
+      "source_size": [
+        114,
+        141
+      ],
+      "output_size": [
+        146,
+        173
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Minotarumon_Frame_006.png": {
+      "source_size": [
+        32,
+        41
+      ],
+      "output_size": [
+        64,
+        73
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Minotarumon_Frame_007.png": {
+      "source_size": [
+        32,
+        41
+      ],
+      "output_size": [
+        64,
+        73
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Minotarumon_Frame_008.png": {
+      "source_size": [
+        30,
+        41
+      ],
+      "output_size": [
+        62,
+        73
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Minotarumon_Frame_009.png": {
+      "source_size": [
+        36,
+        43
+      ],
+      "output_size": [
+        68,
+        75
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Minotarumon_Frame_010.png": {
+      "source_size": [
+        36,
+        43
+      ],
+      "output_size": [
+        68,
+        75
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Minotarumon_Frame_011.png": {
+      "source_size": [
+        30,
+        41
+      ],
+      "output_size": [
+        62,
+        73
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Minotarumon_Frame_012.png": {
+      "source_size": [
+        33,
+        42
+      ],
+      "output_size": [
+        65,
+        74
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Minotarumon_Frame_013.png": {
+      "source_size": [
+        33,
+        42
+      ],
+      "output_size": [
+        65,
+        74
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Minotarumon_Frame_014.png": {
+      "source_size": [
+        34,
+        43
+      ],
+      "output_size": [
+        66,
+        75
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Minotarumon_Frame_015.png": {
+      "source_size": [
+        30,
+        42
+      ],
+      "output_size": [
+        62,
+        74
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Minotarumon_Frame_016.png": {
+      "source_size": [
+        30,
+        42
+      ],
+      "output_size": [
+        62,
+        74
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Minotarumon_Frame_017.png": {
+      "source_size": [
+        34,
+        43
+      ],
+      "output_size": [
+        66,
+        75
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Minotarumon_Frame_018.png": {
+      "source_size": [
+        33,
+        42
+      ],
+      "output_size": [
+        65,
+        74
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Minotarumon_Frame_019.png": {
+      "source_size": [
+        33,
+        40
+      ],
+      "output_size": [
+        65,
+        72
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Minotarumon_Frame_020.png": {
+      "source_size": [
+        33,
+        38
+      ],
+      "output_size": [
+        65,
+        70
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Minotarumon_Primary.png": {
+      "source_size": [
+        111,
+        137
+      ],
+      "output_size": [
+        143,
+        169
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

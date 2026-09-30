@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Chuumon_Idle.png",
+    "walk_left": "Chuumon_LLegWalk.png",
+    "walk_right": "Chuumon_RLegWalk.png",
+    "attack1": "Chuumon_Idle.png",
+    "attack2": "Chuumon_Idle.png"
+  },
+  "animations": {
+    "idle": [
+      "Chuumon_Idle.png"
+    ],
+    "walk": [
+      "Chuumon_Idle.png",
+      "Chuumon_LLegWalk.png",
+      "Chuumon_Idle.png",
+      "Chuumon_RLegWalk.png"
+    ],
+    "attack": [
+      "Chuumon_Idle.png",
+      "Chuumon_Idle.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 0,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied v1.2.0 Shiny PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained."
+}

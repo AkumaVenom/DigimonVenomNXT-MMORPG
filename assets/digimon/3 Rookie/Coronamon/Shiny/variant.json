@@ -1,0 +1,25 @@
+{
+  "variant_id": "shiny_coronamon",
+  "display_name": "Shiny Coronamon",
+  "base_species": "Coronamon",
+  "stage": "3 Rookie",
+  "status": "ready",
+  "style_profile": "Prismatic Shiny \u2014 Gold Stardust v1",
+  "palette": "Jade",
+  "target_hue_degrees": 146.0,
+  "source_sprite_count": 6,
+  "shiny_sprite_count": 6,
+  "animation_alignment": "Exact source canvas dimensions and sprite positions retained",
+  "effects": "Warm-gold silhouette glow; restrained ivory/gold four-point sparkles; deterministic frame twinkle",
+  "sprites": [
+    "Coronamon_AttackPart1.png",
+    "Coronamon_AttackPart2.png",
+    "Coronamon_Extra.png",
+    "Coronamon_Idle.png",
+    "Coronamon_LLegWalk.png",
+    "Coronamon_RLegWalk.png"
+  ],
+  "primary_sprite": "3 Rookie/Coronamon/Shiny/Coronamon_Idle.png",
+  "source_primary": "3 Rookie/Coronamon/Coronamon_Idle.png",
+  "materializable": true
+}

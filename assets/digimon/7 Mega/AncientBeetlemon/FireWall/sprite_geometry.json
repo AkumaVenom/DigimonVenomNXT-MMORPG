@@ -1,0 +1,443 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "AncientBeetlemon_Primary.png": {
+      "source_size": [
+        126,
+        151
+      ],
+      "output_size": [
+        158,
+        183
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/AncientBeetlemon_Frame_001.png": {
+      "source_size": [
+        126,
+        151
+      ],
+      "output_size": [
+        158,
+        183
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/AncientBeetlemon_Frame_002.png": {
+      "source_size": [
+        132,
+        135
+      ],
+      "output_size": [
+        164,
+        167
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/AncientBeetlemon_Frame_003.png": {
+      "source_size": [
+        136,
+        122
+      ],
+      "output_size": [
+        168,
+        154
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/AncientBeetlemon_Frame_004.png": {
+      "source_size": [
+        143,
+        127
+      ],
+      "output_size": [
+        175,
+        159
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/AncientBeetlemon_Frame_005.png": {
+      "source_size": [
+        146,
+        132
+      ],
+      "output_size": [
+        178,
+        164
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/AncientBeetlemon_Frame_006.png": {
+      "source_size": [
+        35,
+        47
+      ],
+      "output_size": [
+        67,
+        79
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/AncientBeetlemon_Frame_007.png": {
+      "source_size": [
+        35,
+        41
+      ],
+      "output_size": [
+        67,
+        73
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/AncientBeetlemon_Frame_008.png": {
+      "source_size": [
+        35,
+        41
+      ],
+      "output_size": [
+        67,
+        73
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/AncientBeetlemon_Frame_009.png": {
+      "source_size": [
+        35,
+        41
+      ],
+      "output_size": [
+        67,
+        73
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/AncientBeetlemon_Frame_010.png": {
+      "source_size": [
+        35,
+        41
+      ],
+      "output_size": [
+        67,
+        73
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/AncientBeetlemon_Frame_011.png": {
+      "source_size": [
+        35,
+        41
+      ],
+      "output_size": [
+        67,
+        73
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/AncientBeetlemon_Frame_012.png": {
+      "source_size": [
+        36,
+        41
+      ],
+      "output_size": [
+        68,
+        73
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/AncientBeetlemon_Frame_013.png": {
+      "source_size": [
+        36,
+        41
+      ],
+      "output_size": [
+        68,
+        73
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/AncientBeetlemon_Frame_014.png": {
+      "source_size": [
+        28,
+        14
+      ],
+      "output_size": [
+        60,
+        46
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/AncientBeetlemon_Frame_015.png": {
+      "source_size": [
+        24,
+        18
+      ],
+      "output_size": [
+        56,
+        50
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/AncientBeetlemon_Frame_016.png": {
+      "source_size": [
+        35,
+        40
+      ],
+      "output_size": [
+        67,
+        72
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/AncientBeetlemon_Frame_017.png": {
+      "source_size": [
+        35,
+        40
+      ],
+      "output_size": [
+        67,
+        72
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/AncientBeetlemon_Frame_018.png": {
+      "source_size": [
+        36,
+        39
+      ],
+      "output_size": [
+        68,
+        71
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/AncientBeetlemon_Frame_019.png": {
+      "source_size": [
+        36,
+        39
+      ],
+      "output_size": [
+        68,
+        71
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/AncientBeetlemon_Frame_020.png": {
+      "source_size": [
+        35,
+        40
+      ],
+      "output_size": [
+        67,
+        72
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/AncientBeetlemon_Frame_021.png": {
+      "source_size": [
+        35,
+        40
+      ],
+      "output_size": [
+        67,
+        72
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/AncientBeetlemon_Frame_022.png": {
+      "source_size": [
+        32,
+        14
+      ],
+      "output_size": [
+        64,
+        46
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

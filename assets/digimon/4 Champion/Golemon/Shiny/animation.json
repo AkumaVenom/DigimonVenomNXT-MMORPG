@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Golemon_Idle.png",
+    "walk_left": "Golemon_LLegWalk.png",
+    "walk_right": "Golemon_RLegWalk.png",
+    "attack1": "Golemon_AttackPart1.png",
+    "attack2": "Golemon_AttackPart2.png"
+  },
+  "animations": {
+    "idle": [
+      "Golemon_Idle.png"
+    ],
+    "walk": [
+      "Golemon_Idle.png",
+      "Golemon_LLegWalk.png",
+      "Golemon_Idle.png",
+      "Golemon_RLegWalk.png"
+    ],
+    "attack": [
+      "Golemon_AttackPart1.png",
+      "Golemon_AttackPart2.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 0,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied v1.2.0 Shiny PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained."
+}

@@ -64,7 +64,9 @@ class WorldDSAudioRoutingTests(unittest.TestCase):
         self.ui = json.loads((ROOT/'data/ui_audio.json').read_text())
         catalog = json.loads((ROOT/'data/catalog.json').read_text())
         self.legacy = [track for track in catalog['audio']['music']
-                       if not track.get('id', '').startswith('ds_')]
+                       if track.get('region_id', 'dawn') == 'dawn'
+                       and not track.get('id', '').startswith(('ds_', 'xros_'))]
+        self.assertEqual(len(self.legacy), 46)
         # Simulate the merged catalog even when tested before an asset rebuild.
         catalog['audio']['music'] = self.legacy + self.region['music']
         maps = {f'dawn_{i}': {} for i in range(64)}

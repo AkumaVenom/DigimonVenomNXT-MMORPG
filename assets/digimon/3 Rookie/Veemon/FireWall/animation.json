@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Veemon_Idle.png",
+    "walk_left": "Veemon_LLegWalk.png",
+    "walk_right": "Veemon_RLegWalk.png",
+    "attack1": "Veemon_AttackPart1.png",
+    "attack2": "Veemon_AttackPart2.png"
+  },
+  "animations": {
+    "idle": [
+      "Veemon_Idle.png"
+    ],
+    "walk": [
+      "Veemon_Idle.png",
+      "Veemon_LLegWalk.png",
+      "Veemon_Idle.png",
+      "Veemon_RLegWalk.png"
+    ],
+    "attack": [
+      "Veemon_AttackPart1.png",
+      "Veemon_AttackPart2.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 0,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied FireWall PNG bytes preserved; normal pose selections and mirrors retained. Aura padding is recorded in sprite_geometry.json."
+}

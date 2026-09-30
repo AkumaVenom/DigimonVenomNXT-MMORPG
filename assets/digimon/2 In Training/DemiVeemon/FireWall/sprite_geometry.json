@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "DemiVeemon_Idle.png": {
+      "source_size": [
+        174,
+        200
+      ],
+      "output_size": [
+        206,
+        232
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "DemiVeemon_LLegWalk.png": {
+      "source_size": [
+        195,
+        219
+      ],
+      "output_size": [
+        227,
+        251
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "DemiVeemon_RLegWalk.png": {
+      "source_size": [
+        195,
+        219
+      ],
+      "output_size": [
+        227,
+        251
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

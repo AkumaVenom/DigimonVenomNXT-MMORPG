@@ -1,0 +1,25 @@
+{
+  "variant_id": "shiny_tapirmon",
+  "display_name": "Shiny Tapirmon",
+  "base_species": "Tapirmon",
+  "stage": "3 Rookie",
+  "status": "ready",
+  "style_profile": "Prismatic Shiny \u2014 Gold Stardust v1",
+  "palette": "Jade",
+  "target_hue_degrees": 146.0,
+  "source_sprite_count": 6,
+  "shiny_sprite_count": 6,
+  "animation_alignment": "Exact source canvas dimensions and sprite positions retained",
+  "effects": "Warm-gold silhouette glow; restrained ivory/gold four-point sparkles; deterministic frame twinkle",
+  "sprites": [
+    "Tapirmon_AttackPart1.png",
+    "Tapirmon_AttackPart2.png",
+    "Tapirmon_Extra.png",
+    "Tapirmon_Idle.png",
+    "Tapirmon_LLegWalk.png",
+    "Tapirmon_RLegWalk.png"
+  ],
+  "primary_sprite": "3 Rookie/Tapirmon/Shiny/Tapirmon_Idle.png",
+  "source_primary": "3 Rookie/Tapirmon/Tapirmon_Idle.png",
+  "materializable": true
+}

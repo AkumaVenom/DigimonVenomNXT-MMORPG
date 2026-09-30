@@ -1,0 +1,101 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Armadillomon_Attack.png": {
+      "source_size": [
+        492,
+        460
+      ],
+      "output_size": [
+        748,
+        716
+      ],
+      "padding": {
+        "left": 128,
+        "top": 128,
+        "right": 128,
+        "bottom": 128
+      },
+      "effect_pixel_unit": 8,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Armadillomon_Extra.png": {
+      "source_size": [
+        492,
+        460
+      ],
+      "output_size": [
+        748,
+        716
+      ],
+      "padding": {
+        "left": 128,
+        "top": 128,
+        "right": 128,
+        "bottom": 128
+      },
+      "effect_pixel_unit": 8,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Armadillomon_Idle.png": {
+      "source_size": [
+        556,
+        460
+      ],
+      "output_size": [
+        812,
+        716
+      ],
+      "padding": {
+        "left": 128,
+        "top": 128,
+        "right": 128,
+        "bottom": 128
+      },
+      "effect_pixel_unit": 8,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Armadillomon_LLegWalk.png": {
+      "source_size": [
+        554,
+        466
+      ],
+      "output_size": [
+        810,
+        722
+      ],
+      "padding": {
+        "left": 128,
+        "top": 128,
+        "right": 128,
+        "bottom": 128
+      },
+      "effect_pixel_unit": 8,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Armadillomon_RLegWalk.png": {
+      "source_size": [
+        554,
+        466
+      ],
+      "output_size": [
+        810,
+        722
+      ],
+      "padding": {
+        "left": 128,
+        "top": 128,
+        "right": 128,
+        "bottom": 128
+      },
+      "effect_pixel_unit": 8,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

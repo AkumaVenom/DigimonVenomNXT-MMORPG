@@ -1,0 +1,101 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Icemon_AttackPart1.png": {
+      "source_size": [
+        504,
+        458
+      ],
+      "output_size": [
+        792,
+        746
+      ],
+      "padding": {
+        "left": 144,
+        "top": 144,
+        "right": 144,
+        "bottom": 144
+      },
+      "effect_pixel_unit": 9,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Icemon_AttackPart2.png": {
+      "source_size": [
+        582,
+        486
+      ],
+      "output_size": [
+        870,
+        774
+      ],
+      "padding": {
+        "left": 144,
+        "top": 144,
+        "right": 144,
+        "bottom": 144
+      },
+      "effect_pixel_unit": 9,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Icemon_Idle.png": {
+      "source_size": [
+        336,
+        548
+      ],
+      "output_size": [
+        624,
+        836
+      ],
+      "padding": {
+        "left": 144,
+        "top": 144,
+        "right": 144,
+        "bottom": 144
+      },
+      "effect_pixel_unit": 9,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Icemon_LLegWalk.png": {
+      "source_size": [
+        354,
+        536
+      ],
+      "output_size": [
+        642,
+        824
+      ],
+      "padding": {
+        "left": 144,
+        "top": 144,
+        "right": 144,
+        "bottom": 144
+      },
+      "effect_pixel_unit": 9,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Icemon_RLegWalk.png": {
+      "source_size": [
+        354,
+        536
+      ],
+      "output_size": [
+        642,
+        824
+      ],
+      "padding": {
+        "left": 144,
+        "top": 144,
+        "right": 144,
+        "bottom": 144
+      },
+      "effect_pixel_unit": 9,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

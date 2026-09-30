@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Frames/MachGaogamon_Frame_001.png",
+    "walk_left": "Frames/MachGaogamon_Frame_002.png",
+    "walk_right": "Frames/MachGaogamon_Frame_003.png",
+    "attack1": "Frames/MachGaogamon_Frame_004.png",
+    "attack2": "Frames/MachGaogamon_Frame_005.png",
+    "front": "MachGaogamon_Primary.png"
+  },
+  "animations": {
+    "idle": [
+      "Frames/MachGaogamon_Frame_001.png",
+      "Frames/MachGaogamon_Frame_002.png",
+      "Frames/MachGaogamon_Frame_001.png",
+      "Frames/MachGaogamon_Frame_003.png"
+    ],
+    "walk": [
+      "Frames/MachGaogamon_Frame_001.png",
+      "Frames/MachGaogamon_Frame_002.png",
+      "Frames/MachGaogamon_Frame_001.png",
+      "Frames/MachGaogamon_Frame_003.png"
+    ],
+    "attack": [
+      "Frames/MachGaogamon_Frame_004.png",
+      "Frames/MachGaogamon_Frame_005.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 22,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "FireWall effects applied to supplied source PNGs; original pose, pixel resolution, frame selections and relative references retained. Canvas padding is documented in sprite_geometry.json."
+}

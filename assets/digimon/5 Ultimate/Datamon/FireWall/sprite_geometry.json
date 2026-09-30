@@ -1,0 +1,424 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Datamon_Primary.png": {
+      "source_size": [
+        96,
+        47
+      ],
+      "output_size": [
+        128,
+        79
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Datamon_Frame_001.png": {
+      "source_size": [
+        96,
+        47
+      ],
+      "output_size": [
+        128,
+        79
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Datamon_Frame_002.png": {
+      "source_size": [
+        96,
+        48
+      ],
+      "output_size": [
+        128,
+        80
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Datamon_Frame_003.png": {
+      "source_size": [
+        92,
+        48
+      ],
+      "output_size": [
+        124,
+        80
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Datamon_Frame_004.png": {
+      "source_size": [
+        89,
+        66
+      ],
+      "output_size": [
+        121,
+        98
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Datamon_Frame_005.png": {
+      "source_size": [
+        91,
+        52
+      ],
+      "output_size": [
+        123,
+        84
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Datamon_Frame_006.png": {
+      "source_size": [
+        26,
+        26
+      ],
+      "output_size": [
+        58,
+        58
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Datamon_Frame_007.png": {
+      "source_size": [
+        26,
+        26
+      ],
+      "output_size": [
+        58,
+        58
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Datamon_Frame_008.png": {
+      "source_size": [
+        18,
+        26
+      ],
+      "output_size": [
+        50,
+        58
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Datamon_Frame_009.png": {
+      "source_size": [
+        31,
+        27
+      ],
+      "output_size": [
+        63,
+        59
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Datamon_Frame_010.png": {
+      "source_size": [
+        31,
+        27
+      ],
+      "output_size": [
+        63,
+        59
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Datamon_Frame_011.png": {
+      "source_size": [
+        18,
+        26
+      ],
+      "output_size": [
+        50,
+        58
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Datamon_Frame_012.png": {
+      "source_size": [
+        26,
+        27
+      ],
+      "output_size": [
+        58,
+        59
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Datamon_Frame_013.png": {
+      "source_size": [
+        26,
+        27
+      ],
+      "output_size": [
+        58,
+        59
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Datamon_Frame_014.png": {
+      "source_size": [
+        20,
+        24
+      ],
+      "output_size": [
+        52,
+        56
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Datamon_Frame_015.png": {
+      "source_size": [
+        33,
+        26
+      ],
+      "output_size": [
+        65,
+        58
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Datamon_Frame_016.png": {
+      "source_size": [
+        33,
+        26
+      ],
+      "output_size": [
+        65,
+        58
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Datamon_Frame_017.png": {
+      "source_size": [
+        20,
+        24
+      ],
+      "output_size": [
+        52,
+        56
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Datamon_Frame_018.png": {
+      "source_size": [
+        33,
+        30
+      ],
+      "output_size": [
+        65,
+        62
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Datamon_Frame_019.png": {
+      "source_size": [
+        29,
+        25
+      ],
+      "output_size": [
+        61,
+        57
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Datamon_Frame_020.png": {
+      "source_size": [
+        29,
+        24
+      ],
+      "output_size": [
+        61,
+        56
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Datamon_Frame_021.png": {
+      "source_size": [
+        22,
+        11
+      ],
+      "output_size": [
+        54,
+        43
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

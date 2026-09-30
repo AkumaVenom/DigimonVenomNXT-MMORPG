@@ -1,0 +1,120 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Kapurimon_AttackPart1.png": {
+      "source_size": [
+        520,
+        422
+      ],
+      "output_size": [
+        840,
+        742
+      ],
+      "padding": {
+        "left": 160,
+        "top": 160,
+        "right": 160,
+        "bottom": 160
+      },
+      "effect_pixel_unit": 10,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Kapurimon_AttackPart2.png": {
+      "source_size": [
+        582,
+        432
+      ],
+      "output_size": [
+        902,
+        752
+      ],
+      "padding": {
+        "left": 160,
+        "top": 160,
+        "right": 160,
+        "bottom": 160
+      },
+      "effect_pixel_unit": 10,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Kapurimon_Extra.png": {
+      "source_size": [
+        520,
+        422
+      ],
+      "output_size": [
+        840,
+        742
+      ],
+      "padding": {
+        "left": 160,
+        "top": 160,
+        "right": 160,
+        "bottom": 160
+      },
+      "effect_pixel_unit": 10,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Kapurimon_Idle.png": {
+      "source_size": [
+        494,
+        416
+      ],
+      "output_size": [
+        814,
+        736
+      ],
+      "padding": {
+        "left": 160,
+        "top": 160,
+        "right": 160,
+        "bottom": 160
+      },
+      "effect_pixel_unit": 10,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Kapurimon_LLegWalk.png": {
+      "source_size": [
+        522,
+        390
+      ],
+      "output_size": [
+        842,
+        710
+      ],
+      "padding": {
+        "left": 160,
+        "top": 160,
+        "right": 160,
+        "bottom": 160
+      },
+      "effect_pixel_unit": 10,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Kapurimon_RLegWalk.png": {
+      "source_size": [
+        522,
+        390
+      ],
+      "output_size": [
+        842,
+        710
+      ],
+      "padding": {
+        "left": 160,
+        "top": 160,
+        "right": 160,
+        "bottom": 160
+      },
+      "effect_pixel_unit": 10,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

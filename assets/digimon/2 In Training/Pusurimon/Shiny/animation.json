@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Pusurimon_Idle.png",
+    "walk_left": "Pusurimon_LLegWalk.png",
+    "walk_right": "Pusurimon_RLegWalk.png",
+    "attack1": "Pusurimon_Idle.png",
+    "attack2": "Pusurimon_Idle.png"
+  },
+  "animations": {
+    "idle": [
+      "Pusurimon_Idle.png"
+    ],
+    "walk": [
+      "Pusurimon_Idle.png",
+      "Pusurimon_LLegWalk.png",
+      "Pusurimon_Idle.png",
+      "Pusurimon_RLegWalk.png"
+    ],
+    "attack": [
+      "Pusurimon_Idle.png",
+      "Pusurimon_Idle.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 0,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied v1.2.0 Shiny PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained."
+}

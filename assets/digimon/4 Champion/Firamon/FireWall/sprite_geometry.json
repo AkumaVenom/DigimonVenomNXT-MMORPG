@@ -1,0 +1,424 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Firamon_Primary.png": {
+      "source_size": [
+        120,
+        123
+      ],
+      "output_size": [
+        152,
+        155
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Firamon_Frame_001.png": {
+      "source_size": [
+        120,
+        123
+      ],
+      "output_size": [
+        152,
+        155
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Firamon_Frame_002.png": {
+      "source_size": [
+        125,
+        122
+      ],
+      "output_size": [
+        157,
+        154
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Firamon_Frame_003.png": {
+      "source_size": [
+        118,
+        120
+      ],
+      "output_size": [
+        150,
+        152
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Firamon_Frame_004.png": {
+      "source_size": [
+        132,
+        127
+      ],
+      "output_size": [
+        164,
+        159
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Firamon_Frame_005.png": {
+      "source_size": [
+        122,
+        112
+      ],
+      "output_size": [
+        154,
+        144
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Firamon_Frame_006.png": {
+      "source_size": [
+        33,
+        39
+      ],
+      "output_size": [
+        65,
+        71
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Firamon_Frame_007.png": {
+      "source_size": [
+        33,
+        39
+      ],
+      "output_size": [
+        65,
+        71
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Firamon_Frame_008.png": {
+      "source_size": [
+        34,
+        37
+      ],
+      "output_size": [
+        66,
+        69
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Firamon_Frame_009.png": {
+      "source_size": [
+        34,
+        37
+      ],
+      "output_size": [
+        66,
+        69
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Firamon_Frame_010.png": {
+      "source_size": [
+        32,
+        35
+      ],
+      "output_size": [
+        64,
+        67
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Firamon_Frame_011.png": {
+      "source_size": [
+        32,
+        35
+      ],
+      "output_size": [
+        64,
+        67
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Firamon_Frame_012.png": {
+      "source_size": [
+        33,
+        37
+      ],
+      "output_size": [
+        65,
+        69
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Firamon_Frame_013.png": {
+      "source_size": [
+        35,
+        35
+      ],
+      "output_size": [
+        67,
+        67
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Firamon_Frame_014.png": {
+      "source_size": [
+        35,
+        35
+      ],
+      "output_size": [
+        67,
+        67
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Firamon_Frame_015.png": {
+      "source_size": [
+        33,
+        37
+      ],
+      "output_size": [
+        65,
+        69
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Firamon_Frame_016.png": {
+      "source_size": [
+        33,
+        36
+      ],
+      "output_size": [
+        65,
+        68
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Firamon_Frame_017.png": {
+      "source_size": [
+        33,
+        36
+      ],
+      "output_size": [
+        65,
+        68
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Firamon_Frame_018.png": {
+      "source_size": [
+        35,
+        36
+      ],
+      "output_size": [
+        67,
+        68
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Firamon_Frame_019.png": {
+      "source_size": [
+        35,
+        36
+      ],
+      "output_size": [
+        67,
+        68
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Firamon_Frame_020.png": {
+      "source_size": [
+        35,
+        38
+      ],
+      "output_size": [
+        67,
+        70
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Firamon_Frame_021.png": {
+      "source_size": [
+        25,
+        12
+      ],
+      "output_size": [
+        57,
+        44
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

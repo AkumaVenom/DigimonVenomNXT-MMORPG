@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Frames/KingChessmon_Paradox_Frame_001.png",
+    "walk_left": "Frames/KingChessmon_Paradox_Frame_002.png",
+    "walk_right": "Frames/KingChessmon_Paradox_Frame_003.png",
+    "attack1": "Frames/KingChessmon_Paradox_Frame_004.png",
+    "attack2": "Frames/KingChessmon_Paradox_Frame_005.png",
+    "front": "Frames/KingChessmon_Paradox_Frame_001.png"
+  },
+  "animations": {
+    "idle": [
+      "Frames/KingChessmon_Paradox_Frame_001.png",
+      "Frames/KingChessmon_Paradox_Frame_002.png",
+      "Frames/KingChessmon_Paradox_Frame_001.png",
+      "Frames/KingChessmon_Paradox_Frame_003.png"
+    ],
+    "walk": [
+      "Frames/KingChessmon_Paradox_Frame_001.png",
+      "Frames/KingChessmon_Paradox_Frame_002.png",
+      "Frames/KingChessmon_Paradox_Frame_001.png",
+      "Frames/KingChessmon_Paradox_Frame_003.png"
+    ],
+    "attack": [
+      "Frames/KingChessmon_Paradox_Frame_004.png",
+      "Frames/KingChessmon_Paradox_Frame_005.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 23,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied v1.2.0 Paradox PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained.",
+  "source_art_provenance": "User-supplied original sprite artwork; existing pose assignments retained. FixedSpritesPart2 v1.1.1: supplied RGBA PNG bytes preserved; documented same-pose copies synchronized; see data/fixed_sprites_v111.json.",
+  "source_frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "paradox_style_profile": "Cyber Paradox — Fanglongmon reference"
+}

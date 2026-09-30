@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Kuwagamon_Paradox_Idle.png",
+    "walk_left": "Kuwagamon_Paradox_LLegWalk.png",
+    "walk_right": "Kuwagamon_Paradox_RLegWalk.png",
+    "attack1": "Kuwagamon_Paradox_AttackPart1.png",
+    "attack2": "Kuwagamon_Paradox_AttackPart2.png"
+  },
+  "animations": {
+    "idle": [
+      "Kuwagamon_Paradox_Idle.png"
+    ],
+    "walk": [
+      "Kuwagamon_Paradox_Idle.png",
+      "Kuwagamon_Paradox_LLegWalk.png",
+      "Kuwagamon_Paradox_Idle.png",
+      "Kuwagamon_Paradox_RLegWalk.png"
+    ],
+    "attack": [
+      "Kuwagamon_Paradox_AttackPart1.png",
+      "Kuwagamon_Paradox_AttackPart2.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 0,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied v1.2.0 Paradox PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained."
+}

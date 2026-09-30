@@ -1,0 +1,424 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Frames/Geremon_Frame_001.png": {
+      "source_size": [
+        53,
+        74
+      ],
+      "output_size": [
+        85,
+        106
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Geremon_Frame_002.png": {
+      "source_size": [
+        57,
+        73
+      ],
+      "output_size": [
+        89,
+        105
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Geremon_Frame_003.png": {
+      "source_size": [
+        58,
+        70
+      ],
+      "output_size": [
+        90,
+        102
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Geremon_Frame_004.png": {
+      "source_size": [
+        70,
+        75
+      ],
+      "output_size": [
+        102,
+        107
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Geremon_Frame_005.png": {
+      "source_size": [
+        68,
+        66
+      ],
+      "output_size": [
+        100,
+        98
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Geremon_Frame_006.png": {
+      "source_size": [
+        21,
+        27
+      ],
+      "output_size": [
+        53,
+        59
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Geremon_Frame_007.png": {
+      "source_size": [
+        23,
+        27
+      ],
+      "output_size": [
+        55,
+        59
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Geremon_Frame_008.png": {
+      "source_size": [
+        25,
+        27
+      ],
+      "output_size": [
+        57,
+        59
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Geremon_Frame_009.png": {
+      "source_size": [
+        25,
+        27
+      ],
+      "output_size": [
+        57,
+        59
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Geremon_Frame_010.png": {
+      "source_size": [
+        27,
+        26
+      ],
+      "output_size": [
+        59,
+        58
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Geremon_Frame_011.png": {
+      "source_size": [
+        27,
+        26
+      ],
+      "output_size": [
+        59,
+        58
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Geremon_Frame_012.png": {
+      "source_size": [
+        23,
+        26
+      ],
+      "output_size": [
+        55,
+        58
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Geremon_Frame_013.png": {
+      "source_size": [
+        23,
+        26
+      ],
+      "output_size": [
+        55,
+        58
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Geremon_Frame_014.png": {
+      "source_size": [
+        25,
+        27
+      ],
+      "output_size": [
+        57,
+        59
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Geremon_Frame_015.png": {
+      "source_size": [
+        25,
+        27
+      ],
+      "output_size": [
+        57,
+        59
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Geremon_Frame_016.png": {
+      "source_size": [
+        25,
+        27
+      ],
+      "output_size": [
+        57,
+        59
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Geremon_Frame_017.png": {
+      "source_size": [
+        27,
+        27
+      ],
+      "output_size": [
+        59,
+        59
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Geremon_Frame_018.png": {
+      "source_size": [
+        27,
+        28
+      ],
+      "output_size": [
+        59,
+        60
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Geremon_Frame_019.png": {
+      "source_size": [
+        27,
+        28
+      ],
+      "output_size": [
+        59,
+        60
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Geremon_Frame_020.png": {
+      "source_size": [
+        27,
+        25
+      ],
+      "output_size": [
+        59,
+        57
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Geremon_Frame_021.png": {
+      "source_size": [
+        22,
+        11
+      ],
+      "output_size": [
+        54,
+        43
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Geremon_Primary.png": {
+      "source_size": [
+        53,
+        74
+      ],
+      "output_size": [
+        85,
+        106
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

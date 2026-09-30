@@ -1,0 +1,101 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Mushroomon_AttackPart1.png": {
+      "source_size": [
+        626,
+        492
+      ],
+      "output_size": [
+        882,
+        748
+      ],
+      "padding": {
+        "left": 128,
+        "top": 128,
+        "right": 128,
+        "bottom": 128
+      },
+      "effect_pixel_unit": 8,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Mushroomon_AttackPart2.png": {
+      "source_size": [
+        516,
+        544
+      ],
+      "output_size": [
+        772,
+        800
+      ],
+      "padding": {
+        "left": 128,
+        "top": 128,
+        "right": 128,
+        "bottom": 128
+      },
+      "effect_pixel_unit": 8,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Mushroomon_Extra.png": {
+      "source_size": [
+        516,
+        544
+      ],
+      "output_size": [
+        772,
+        800
+      ],
+      "padding": {
+        "left": 128,
+        "top": 128,
+        "right": 128,
+        "bottom": 128
+      },
+      "effect_pixel_unit": 8,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Mushroomon_Idle.png": {
+      "source_size": [
+        514,
+        492
+      ],
+      "output_size": [
+        770,
+        748
+      ],
+      "padding": {
+        "left": 128,
+        "top": 128,
+        "right": 128,
+        "bottom": 128
+      },
+      "effect_pixel_unit": 8,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Mushroomon_LLegWalk.png": {
+      "source_size": [
+        524,
+        496
+      ],
+      "output_size": [
+        780,
+        752
+      ],
+      "padding": {
+        "left": 128,
+        "top": 128,
+        "right": 128,
+        "bottom": 128
+      },
+      "effect_pixel_unit": 8,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

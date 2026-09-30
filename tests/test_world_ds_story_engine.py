@@ -228,7 +228,9 @@ def test_final_requires_all_unique_crests_and_reward_is_permanent_once(game):
     command(engine, state, "return")
     enter(engine, state, DAWN)
     assert state["permanent_rewards"]["paradox_scan_mastery"] is True
-    assert state["story"]["view"]["scan_bonus"] == 20
+    assert state["story"]["view"]["scan_bonus"] == 0
+    assert state["story"]["view"]["firewall_scan_bonus"] == 0
+    assert state["story"]["view"]["paradox_scan_bonus"] == 20
 
 
 def test_battle_binding_cannot_be_transferred_between_campaign_profiles(game):

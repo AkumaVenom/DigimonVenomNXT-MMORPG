@@ -1,0 +1,443 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Frames/Reppamon_Frame_001.png": {
+      "source_size": [
+        99,
+        139
+      ],
+      "output_size": [
+        131,
+        171
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Reppamon_Frame_002.png": {
+      "source_size": [
+        110,
+        139
+      ],
+      "output_size": [
+        142,
+        171
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Reppamon_Frame_003.png": {
+      "source_size": [
+        36,
+        35
+      ],
+      "output_size": [
+        68,
+        67
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Reppamon_Frame_004.png": {
+      "source_size": [
+        93,
+        137
+      ],
+      "output_size": [
+        125,
+        169
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Reppamon_Frame_005.png": {
+      "source_size": [
+        35,
+        35
+      ],
+      "output_size": [
+        67,
+        67
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Reppamon_Frame_006.png": {
+      "source_size": [
+        34,
+        45
+      ],
+      "output_size": [
+        66,
+        77
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Reppamon_Frame_007.png": {
+      "source_size": [
+        35,
+        44
+      ],
+      "output_size": [
+        67,
+        76
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Reppamon_Frame_008.png": {
+      "source_size": [
+        34,
+        18
+      ],
+      "output_size": [
+        66,
+        50
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Reppamon_Frame_009.png": {
+      "source_size": [
+        114,
+        115
+      ],
+      "output_size": [
+        146,
+        147
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Reppamon_Frame_010.png": {
+      "source_size": [
+        117,
+        169
+      ],
+      "output_size": [
+        149,
+        201
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Reppamon_Frame_011.png": {
+      "source_size": [
+        34,
+        44
+      ],
+      "output_size": [
+        66,
+        76
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Reppamon_Frame_012.png": {
+      "source_size": [
+        35,
+        44
+      ],
+      "output_size": [
+        67,
+        76
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Reppamon_Frame_013.png": {
+      "source_size": [
+        34,
+        44
+      ],
+      "output_size": [
+        66,
+        76
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Reppamon_Frame_014.png": {
+      "source_size": [
+        35,
+        44
+      ],
+      "output_size": [
+        67,
+        76
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Reppamon_Frame_015.png": {
+      "source_size": [
+        35,
+        41
+      ],
+      "output_size": [
+        67,
+        73
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Reppamon_Frame_016.png": {
+      "source_size": [
+        35,
+        41
+      ],
+      "output_size": [
+        67,
+        73
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Reppamon_Frame_017.png": {
+      "source_size": [
+        35,
+        45
+      ],
+      "output_size": [
+        67,
+        77
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Reppamon_Frame_018.png": {
+      "source_size": [
+        35,
+        45
+      ],
+      "output_size": [
+        67,
+        77
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Reppamon_Frame_019.png": {
+      "source_size": [
+        34,
+        44
+      ],
+      "output_size": [
+        66,
+        76
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Reppamon_Frame_020.png": {
+      "source_size": [
+        34,
+        44
+      ],
+      "output_size": [
+        66,
+        76
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Reppamon_Frame_021.png": {
+      "source_size": [
+        36,
+        42
+      ],
+      "output_size": [
+        68,
+        74
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Reppamon_Frame_022.png": {
+      "source_size": [
+        36,
+        42
+      ],
+      "output_size": [
+        68,
+        74
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Reppamon_Primary.png": {
+      "source_size": [
+        99,
+        139
+      ],
+      "output_size": [
+        131,
+        171
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Coronamon_Idle.png",
+    "walk_left": "Coronamon_LLegWalk.png",
+    "walk_right": "Coronamon_RLegWalk.png",
+    "attack1": "Coronamon_AttackPart1.png",
+    "attack2": "Coronamon_AttackPart2.png"
+  },
+  "animations": {
+    "idle": [
+      "Coronamon_Idle.png"
+    ],
+    "walk": [
+      "Coronamon_Idle.png",
+      "Coronamon_LLegWalk.png",
+      "Coronamon_Idle.png",
+      "Coronamon_RLegWalk.png"
+    ],
+    "attack": [
+      "Coronamon_AttackPart1.png",
+      "Coronamon_AttackPart2.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 0,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied v1.2.0 Shiny PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained."
+}

@@ -1,0 +1,21 @@
+{
+  "variant_id": "shiny_agunimon",
+  "display_name": "Shiny Agunimon",
+  "base_species": "Agunimon",
+  "stage": "4 Champion",
+  "status": "ready",
+  "style_profile": "Prismatic Shiny \u2014 Gold Stardust v1",
+  "palette": "Orchid",
+  "target_hue_degrees": 294.0,
+  "source_sprite_count": 2,
+  "shiny_sprite_count": 2,
+  "animation_alignment": "Exact source canvas dimensions and sprite positions retained",
+  "effects": "Warm-gold silhouette glow; restrained ivory/gold four-point sparkles; deterministic frame twinkle",
+  "sprites": [
+    "Agunimon_Idle.png",
+    "Agunimon_LLegWalk.png"
+  ],
+  "primary_sprite": "4 Champion/Agunimon/Shiny/Agunimon_Idle.png",
+  "source_primary": "4 Champion/Agunimon/Agunimon_Idle.png",
+  "materializable": true
+}

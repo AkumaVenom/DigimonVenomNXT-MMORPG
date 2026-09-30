@@ -38,11 +38,13 @@ def merge_catalog(catalog: dict, root: Path = ROOT) -> dict:
         row.setdefault('region_id', 'dawn')
     result['maps'] = retained + copy.deepcopy(maps)
     region = expansion.get('region', {})
+    other_regions = [row for row in result.get('world_regions', [])
+                     if row.get('id') not in {'dawn', 'world_ds'}]
     result['world_regions'] = [
         {'id': 'dawn', 'name': 'Digimon World Dawn',
          'description': 'The original Dawn sectors and their established encounters.'},
         {'id': 'world_ds', 'name': 'Digimon World DS',
-         'description': region.get('description', 'New field routes, wild partners and roaming tamers.')}]
+         'description': region.get('description', 'New field routes, wild partners and roaming tamers.')}] + other_regions
     if audio_path.is_file():
         ds_audio = json.loads(audio_path.read_text(encoding='utf-8'))
         audio = result.setdefault('audio', {})

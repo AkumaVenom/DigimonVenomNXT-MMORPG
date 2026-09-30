@@ -1,0 +1,24 @@
+{
+  "variant_id": "shiny_guardromon",
+  "display_name": "Shiny Guardromon",
+  "base_species": "Guardromon",
+  "stage": "4 Champion",
+  "status": "ready",
+  "style_profile": "Prismatic Shiny \u2014 Gold Stardust v1",
+  "palette": "Cerulean",
+  "target_hue_degrees": 196.0,
+  "source_sprite_count": 5,
+  "shiny_sprite_count": 5,
+  "animation_alignment": "Exact source canvas dimensions and sprite positions retained",
+  "effects": "Warm-gold silhouette glow; restrained ivory/gold four-point sparkles; deterministic frame twinkle",
+  "sprites": [
+    "Guardromon_AttackPart1.png",
+    "Guardromon_AttackPart2.png",
+    "Guardromon_Idle.png",
+    "Guardromon_LLegWalk.png",
+    "Guardromon_RLegWalk.png"
+  ],
+  "primary_sprite": "4 Champion/Guardromon/Shiny/Guardromon_Idle.png",
+  "source_primary": "4 Champion/Guardromon/Guardromon_Idle.png",
+  "materializable": true
+}

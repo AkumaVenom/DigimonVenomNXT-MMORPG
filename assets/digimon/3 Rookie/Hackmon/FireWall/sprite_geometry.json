@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Hackmon_Idle.png": {
+      "source_size": [
+        383,
+        324
+      ],
+      "output_size": [
+        479,
+        420
+      ],
+      "padding": {
+        "left": 48,
+        "top": 48,
+        "right": 48,
+        "bottom": 48
+      },
+      "effect_pixel_unit": 3,
+      "effect_style": "smooth_cyber_glow",
+      "particle_fragment": false
+    },
+    "Hackmon_LLegWalk.png": {
+      "source_size": [
+        449,
+        367
+      ],
+      "output_size": [
+        545,
+        463
+      ],
+      "padding": {
+        "left": 48,
+        "top": 48,
+        "right": 48,
+        "bottom": 48
+      },
+      "effect_pixel_unit": 3,
+      "effect_style": "smooth_cyber_glow",
+      "particle_fragment": false
+    },
+    "Hackmon_RLegWalk.png": {
+      "source_size": [
+        449,
+        367
+      ],
+      "output_size": [
+        545,
+        463
+      ],
+      "padding": {
+        "left": 48,
+        "top": 48,
+        "right": 48,
+        "bottom": 48
+      },
+      "effect_pixel_unit": 3,
+      "effect_style": "smooth_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

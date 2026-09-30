@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Terriermon_Idle.png": {
+      "source_size": [
+        1024,
+        714
+      ],
+      "output_size": [
+        1216,
+        906
+      ],
+      "padding": {
+        "left": 96,
+        "top": 96,
+        "right": 96,
+        "bottom": 96
+      },
+      "effect_pixel_unit": 6,
+      "effect_style": "smooth_cyber_glow",
+      "particle_fragment": false
+    },
+    "Terriermon_LLegWalk.png": {
+      "source_size": [
+        1188,
+        782
+      ],
+      "output_size": [
+        1380,
+        974
+      ],
+      "padding": {
+        "left": 96,
+        "top": 96,
+        "right": 96,
+        "bottom": 96
+      },
+      "effect_pixel_unit": 6,
+      "effect_style": "smooth_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

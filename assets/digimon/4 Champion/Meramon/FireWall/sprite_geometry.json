@@ -1,0 +1,101 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Meramon_AttackPart1.png": {
+      "source_size": [
+        394,
+        426
+      ],
+      "output_size": [
+        522,
+        554
+      ],
+      "padding": {
+        "left": 64,
+        "top": 64,
+        "right": 64,
+        "bottom": 64
+      },
+      "effect_pixel_unit": 4,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Meramon_AttackPart2.png": {
+      "source_size": [
+        416,
+        420
+      ],
+      "output_size": [
+        544,
+        548
+      ],
+      "padding": {
+        "left": 64,
+        "top": 64,
+        "right": 64,
+        "bottom": 64
+      },
+      "effect_pixel_unit": 4,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Meramon_Idle.png": {
+      "source_size": [
+        382,
+        462
+      ],
+      "output_size": [
+        510,
+        590
+      ],
+      "padding": {
+        "left": 64,
+        "top": 64,
+        "right": 64,
+        "bottom": 64
+      },
+      "effect_pixel_unit": 4,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Meramon_LLegWalk.png": {
+      "source_size": [
+        392,
+        468
+      ],
+      "output_size": [
+        520,
+        596
+      ],
+      "padding": {
+        "left": 64,
+        "top": 64,
+        "right": 64,
+        "bottom": 64
+      },
+      "effect_pixel_unit": 4,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Meramon_RLegWalk.png": {
+      "source_size": [
+        443,
+        506
+      ],
+      "output_size": [
+        571,
+        634
+      ],
+      "padding": {
+        "left": 64,
+        "top": 64,
+        "right": 64,
+        "bottom": 64
+      },
+      "effect_pixel_unit": 4,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

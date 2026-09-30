@@ -1,0 +1,101 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "ExVeemon_Attack.png": {
+      "source_size": [
+        716,
+        808
+      ],
+      "output_size": [
+        940,
+        1032
+      ],
+      "padding": {
+        "left": 112,
+        "top": 112,
+        "right": 112,
+        "bottom": 112
+      },
+      "effect_pixel_unit": 7,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "ExVeemon_GetHit.png": {
+      "source_size": [
+        628,
+        702
+      ],
+      "output_size": [
+        852,
+        926
+      ],
+      "padding": {
+        "left": 112,
+        "top": 112,
+        "right": 112,
+        "bottom": 112
+      },
+      "effect_pixel_unit": 7,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "ExVeemon_Idle.png": {
+      "source_size": [
+        678,
+        750
+      ],
+      "output_size": [
+        902,
+        974
+      ],
+      "padding": {
+        "left": 112,
+        "top": 112,
+        "right": 112,
+        "bottom": 112
+      },
+      "effect_pixel_unit": 7,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "ExVeemon_LLegWalk.png": {
+      "source_size": [
+        714,
+        732
+      ],
+      "output_size": [
+        938,
+        956
+      ],
+      "padding": {
+        "left": 112,
+        "top": 112,
+        "right": 112,
+        "bottom": 112
+      },
+      "effect_pixel_unit": 7,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "ExVeemon_RLegWalk.png": {
+      "source_size": [
+        714,
+        732
+      ],
+      "output_size": [
+        938,
+        956
+      ],
+      "padding": {
+        "left": 112,
+        "top": 112,
+        "right": 112,
+        "bottom": 112
+      },
+      "effect_pixel_unit": 7,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

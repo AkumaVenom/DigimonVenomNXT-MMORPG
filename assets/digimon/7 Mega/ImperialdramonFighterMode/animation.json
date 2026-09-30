@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Frames/ImperialdramonFighterMode_Frame_001.png",
+    "walk_left": "Frames/ImperialdramonFighterMode_Frame_002.png",
+    "walk_right": "Frames/ImperialdramonFighterMode_Frame_003.png",
+    "attack1": "Frames/ImperialdramonFighterMode_Frame_004.png",
+    "attack2": "Frames/ImperialdramonFighterMode_Frame_005.png",
+    "front": "ImperialdramonFighterMode_Primary.png"
+  },
+  "animations": {
+    "idle": [
+      "Frames/ImperialdramonFighterMode_Frame_001.png",
+      "Frames/ImperialdramonFighterMode_Frame_002.png",
+      "Frames/ImperialdramonFighterMode_Frame_001.png",
+      "Frames/ImperialdramonFighterMode_Frame_003.png"
+    ],
+    "walk": [
+      "Frames/ImperialdramonFighterMode_Frame_001.png",
+      "Frames/ImperialdramonFighterMode_Frame_002.png",
+      "Frames/ImperialdramonFighterMode_Frame_001.png",
+      "Frames/ImperialdramonFighterMode_Frame_003.png"
+    ],
+    "attack": [
+      "Frames/ImperialdramonFighterMode_Frame_004.png",
+      "Frames/ImperialdramonFighterMode_Frame_005.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 22,
+  "frame_selection": "v1.0.1 pose assignments retained; supplied v1.1.0 fixed PNGs replace canonical paths; explicit primary/front portrait when supplied",
+  "art_provenance": "User-supplied DigimonFixedSpritesFor_v1.1.0.rar; v1.0.1 source overlay; selected PNG bytes preserved exactly FixedSpritesPart2 v1.1.1: supplied RGBA PNG bytes preserved; documented same-pose copies synchronized; see data/fixed_sprites_v111.json."
+}

@@ -1,0 +1,22 @@
+{
+  "variant_id": "shiny_yukimibotamon",
+  "display_name": "Shiny YukimiBotamon",
+  "base_species": "YukimiBotamon",
+  "stage": "1 Fresh",
+  "status": "ready",
+  "style_profile": "Prismatic Shiny \u2014 Gold Stardust v1",
+  "palette": "Jade",
+  "target_hue_degrees": 146.0,
+  "source_sprite_count": 3,
+  "shiny_sprite_count": 3,
+  "animation_alignment": "Exact source canvas dimensions and sprite positions retained",
+  "effects": "Warm-gold silhouette glow; restrained ivory/gold four-point sparkles; deterministic frame twinkle",
+  "sprites": [
+    "YukimiBotamon_Idle.png",
+    "YukimiBotamon_LLegWalk.png",
+    "YukimiBotamon_RLegWalk.png"
+  ],
+  "primary_sprite": "1 Fresh/YukimiBotamon/Shiny/YukimiBotamon_Idle.png",
+  "source_primary": "1 Fresh/YukimiBotamon/YukimiBotamon_Idle.png",
+  "materializable": true
+}

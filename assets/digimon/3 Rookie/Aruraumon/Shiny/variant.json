@@ -1,0 +1,25 @@
+{
+  "variant_id": "shiny_aruraumon",
+  "display_name": "Shiny Aruraumon",
+  "base_species": "Aruraumon",
+  "stage": "3 Rookie",
+  "status": "ready",
+  "style_profile": "Prismatic Shiny \u2014 Gold Stardust v1",
+  "palette": "Cerulean",
+  "target_hue_degrees": 196.0,
+  "source_sprite_count": 6,
+  "shiny_sprite_count": 6,
+  "animation_alignment": "Exact source canvas dimensions and sprite positions retained",
+  "effects": "Warm-gold silhouette glow; restrained ivory/gold four-point sparkles; deterministic frame twinkle",
+  "sprites": [
+    "Aruraumon_AttackPart1.png",
+    "Aruraumon_AttackPart2.png",
+    "Aruraumon_Extra.png",
+    "Aruraumon_Idle.png",
+    "Aruraumon_LLegWalk.png",
+    "Aruraumon_RLegWalk.png"
+  ],
+  "primary_sprite": "3 Rookie/Aruraumon/Shiny/Aruraumon_Idle.png",
+  "source_primary": "3 Rookie/Aruraumon/Aruraumon_Idle.png",
+  "materializable": true
+}

@@ -1,0 +1,405 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Agunimon_Primary.png": {
+      "source_size": [
+        91,
+        115
+      ],
+      "output_size": [
+        123,
+        147
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Agunimon_Frame_001.png": {
+      "source_size": [
+        91,
+        115
+      ],
+      "output_size": [
+        123,
+        147
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Agunimon_Frame_002.png": {
+      "source_size": [
+        91,
+        114
+      ],
+      "output_size": [
+        123,
+        146
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Agunimon_Frame_003.png": {
+      "source_size": [
+        91,
+        111
+      ],
+      "output_size": [
+        123,
+        143
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Agunimon_Frame_004.png": {
+      "source_size": [
+        71,
+        117
+      ],
+      "output_size": [
+        103,
+        149
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Agunimon_Frame_005.png": {
+      "source_size": [
+        12,
+        14
+      ],
+      "output_size": [
+        20,
+        22
+      ],
+      "padding": {
+        "left": 4,
+        "top": 4,
+        "right": 4,
+        "bottom": 4
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": true
+    },
+    "Frames/Agunimon_Frame_006.png": {
+      "source_size": [
+        86,
+        96
+      ],
+      "output_size": [
+        118,
+        128
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Agunimon_Frame_007.png": {
+      "source_size": [
+        30,
+        47
+      ],
+      "output_size": [
+        62,
+        79
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Agunimon_Frame_008.png": {
+      "source_size": [
+        30,
+        47
+      ],
+      "output_size": [
+        62,
+        79
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Agunimon_Frame_009.png": {
+      "source_size": [
+        35,
+        48
+      ],
+      "output_size": [
+        67,
+        80
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Agunimon_Frame_010.png": {
+      "source_size": [
+        33,
+        46
+      ],
+      "output_size": [
+        65,
+        78
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Agunimon_Frame_011.png": {
+      "source_size": [
+        33,
+        46
+      ],
+      "output_size": [
+        65,
+        78
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Agunimon_Frame_012.png": {
+      "source_size": [
+        35,
+        48
+      ],
+      "output_size": [
+        67,
+        80
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Agunimon_Frame_013.png": {
+      "source_size": [
+        28,
+        48
+      ],
+      "output_size": [
+        60,
+        80
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Agunimon_Frame_014.png": {
+      "source_size": [
+        28,
+        48
+      ],
+      "output_size": [
+        60,
+        80
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Agunimon_Frame_015.png": {
+      "source_size": [
+        31,
+        48
+      ],
+      "output_size": [
+        63,
+        80
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Agunimon_Frame_016.png": {
+      "source_size": [
+        34,
+        49
+      ],
+      "output_size": [
+        66,
+        81
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Agunimon_Frame_017.png": {
+      "source_size": [
+        34,
+        49
+      ],
+      "output_size": [
+        66,
+        81
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Agunimon_Frame_018.png": {
+      "source_size": [
+        31,
+        48
+      ],
+      "output_size": [
+        63,
+        80
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Agunimon_Frame_019.png": {
+      "source_size": [
+        33,
+        54
+      ],
+      "output_size": [
+        65,
+        86
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Agunimon_Frame_020.png": {
+      "source_size": [
+        31,
+        45
+      ],
+      "output_size": [
+        63,
+        77
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

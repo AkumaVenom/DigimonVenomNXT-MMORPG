@@ -1,0 +1,54 @@
+{
+  "release": "1.5.0",
+  "status": "focused_checks_passed",
+  "independent_baseline": "User-confirmed v1.4.0 source; fingerprints captured before FireWall changes",
+  "verified_contracts": [
+    "All 1,506 original Normal/Paradox/Shiny catalog entries remain exactly identical.",
+    "All 500 original map fields, all tamer data and audio data remain exactly identical; firewall_encounters is the only additional map field.",
+    "Normal, Paradox and Shiny habitat fingerprints remain identical; every FireWall habitat is the matching normal habitat with canonical FireWall IDs.",
+    "Every one of the 502 FireWall families preserves Normal balance, evolution requirements and variety-specific evolution/de-evolution routes.",
+    "Real owned FireWall partner identities, levels, stats, farm bonuses, storage and resources survive entry/exit, DigiLab/DigiFarm visits and reload in all three private campaigns.",
+    "Three original fresh-Rookie Dawn Relay campaign playthroughs now assert first-championship mastery and permanence across defense, title loss and reclaim.",
+    "Historical artwork reapplication remains byte-idempotent. Tampering is rejected even after recomputing both newer preservation records.",
+    "Complete long enemy names, metadata, target highlights and animation anchors fit all tested native DPI/resolution cases, including orange FireWall labels."
+  ],
+  "focused_runs": [
+    {
+      "report": "QA_acceptance.xml",
+      "passed": 178,
+      "failed": 0,
+      "seconds": 50.77
+    },
+    {
+      "report": "QA_manifest_boundary.xml",
+      "passed": 68,
+      "failed": 0,
+      "seconds": 68.09
+    },
+    {
+      "report": "QA_battle_bounds.xml",
+      "passed": 18,
+      "failed": 0,
+      "seconds": 1.864
+    }
+  ],
+  "count_note": "Focused runs overlap. The final release-wide test report supplies the authoritative unique test count.",
+  "visual_review": {
+    "resolution": "960x600",
+    "states": [
+      "FireWall scan mastery",
+      "World atlas",
+      "Long-name FireWall battle",
+      "First Dawn championship reward"
+    ],
+    "result": "Art, rate labels, reward text, action controls and modal bounds inspected; no issue found."
+  },
+  "legacy_test_updates": [
+    "Exact full catalog counts are 2,008 while historical 1,506/1,004 preservation assertions remain scoped to their original records.",
+    "World habitat eligibility explicitly covers the new fourth variety; old rarity intervals remain intact and FireWall occupies the newly assigned interval.",
+    "Dawn view scan_bonus now represents its FireWall reward; separate Paradox/Shiny view fields retain independent entitlements.",
+    "Minimal art-reapplication fixtures include the new required preservation record without pretending to be a complete media installation.",
+    "Battle layout probes now recognize FireWall orange and the actual longest FireWall name while retaining exact untruncated names, color, spacing, click targets and native bounds assertions."
+  ],
+  "outstanding_issues": []
+}

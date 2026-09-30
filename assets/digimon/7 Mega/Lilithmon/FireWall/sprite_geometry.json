@@ -1,0 +1,348 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Frames/Lilithmon_Frame_001.png": {
+      "source_size": [
+        132,
+        209
+      ],
+      "output_size": [
+        164,
+        241
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Lilithmon_Frame_002.png": {
+      "source_size": [
+        142,
+        210
+      ],
+      "output_size": [
+        174,
+        242
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Lilithmon_Frame_003.png": {
+      "source_size": [
+        152,
+        212
+      ],
+      "output_size": [
+        184,
+        244
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Lilithmon_Frame_004.png": {
+      "source_size": [
+        136,
+        212
+      ],
+      "output_size": [
+        168,
+        244
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Lilithmon_Frame_005.png": {
+      "source_size": [
+        159,
+        197
+      ],
+      "output_size": [
+        191,
+        229
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Lilithmon_Frame_006.png": {
+      "source_size": [
+        51,
+        50
+      ],
+      "output_size": [
+        83,
+        82
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Lilithmon_Frame_007.png": {
+      "source_size": [
+        51,
+        50
+      ],
+      "output_size": [
+        83,
+        82
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Lilithmon_Frame_008.png": {
+      "source_size": [
+        44,
+        50
+      ],
+      "output_size": [
+        76,
+        82
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Lilithmon_Frame_009.png": {
+      "source_size": [
+        44,
+        52
+      ],
+      "output_size": [
+        76,
+        84
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Lilithmon_Frame_010.png": {
+      "source_size": [
+        44,
+        50
+      ],
+      "output_size": [
+        76,
+        82
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Lilithmon_Frame_011.png": {
+      "source_size": [
+        44,
+        52
+      ],
+      "output_size": [
+        76,
+        84
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Lilithmon_Frame_012.png": {
+      "source_size": [
+        43,
+        52
+      ],
+      "output_size": [
+        75,
+        84
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Lilithmon_Frame_013.png": {
+      "source_size": [
+        43,
+        52
+      ],
+      "output_size": [
+        75,
+        84
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Lilithmon_Frame_014.png": {
+      "source_size": [
+        45,
+        50
+      ],
+      "output_size": [
+        77,
+        82
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Lilithmon_Frame_015.png": {
+      "source_size": [
+        45,
+        50
+      ],
+      "output_size": [
+        77,
+        82
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Lilithmon_Frame_016.png": {
+      "source_size": [
+        50,
+        49
+      ],
+      "output_size": [
+        82,
+        81
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Lilithmon_Frame_017.png": {
+      "source_size": [
+        50,
+        49
+      ],
+      "output_size": [
+        82,
+        81
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Lilithmon_Primary.png": {
+      "source_size": [
+        132,
+        209
+      ],
+      "output_size": [
+        164,
+        241
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

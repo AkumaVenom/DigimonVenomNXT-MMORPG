@@ -1,0 +1,24 @@
+{
+  "variant_id": "shiny_frigimon",
+  "display_name": "Shiny Frigimon",
+  "base_species": "Frigimon",
+  "stage": "4 Champion",
+  "status": "ready",
+  "style_profile": "Prismatic Shiny \u2014 Gold Stardust v1",
+  "palette": "Copper rose",
+  "target_hue_degrees": 15.0,
+  "source_sprite_count": 5,
+  "shiny_sprite_count": 5,
+  "animation_alignment": "Exact source canvas dimensions and sprite positions retained",
+  "effects": "Warm-gold silhouette glow; restrained ivory/gold four-point sparkles; deterministic frame twinkle",
+  "sprites": [
+    "Frigimon_Attack.png",
+    "Frigimon_GetHit.png",
+    "Frigimon_Idle.png",
+    "Frigimon_LLegWalk.png",
+    "Frigimon_RLegWalk.png"
+  ],
+  "primary_sprite": "4 Champion/Frigimon/Shiny/Frigimon_Idle.png",
+  "source_primary": "4 Champion/Frigimon/Frigimon_Idle.png",
+  "materializable": true
+}

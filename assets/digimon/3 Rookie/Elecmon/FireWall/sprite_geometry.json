@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Elecmon_Idle.png": {
+      "source_size": [
+        640,
+        640
+      ],
+      "output_size": [
+        832,
+        832
+      ],
+      "padding": {
+        "left": 96,
+        "top": 96,
+        "right": 96,
+        "bottom": 96
+      },
+      "effect_pixel_unit": 6,
+      "effect_style": "smooth_cyber_glow",
+      "particle_fragment": false
+    },
+    "Elecmon_LLegWalk.png": {
+      "source_size": [
+        725,
+        696
+      ],
+      "output_size": [
+        917,
+        888
+      ],
+      "padding": {
+        "left": 96,
+        "top": 96,
+        "right": 96,
+        "bottom": 96
+      },
+      "effect_pixel_unit": 6,
+      "effect_style": "smooth_cyber_glow",
+      "particle_fragment": false
+    },
+    "Elecmon_RLegWalk.png": {
+      "source_size": [
+        725,
+        696
+      ],
+      "output_size": [
+        917,
+        888
+      ],
+      "padding": {
+        "left": 96,
+        "top": 96,
+        "right": 96,
+        "bottom": 96
+      },
+      "effect_pixel_unit": 6,
+      "effect_style": "smooth_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

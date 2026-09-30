@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Meramon_Idle.png",
+    "walk_left": "Meramon_LLegWalk.png",
+    "walk_right": "Meramon_RLegWalk.png",
+    "attack1": "Meramon_AttackPart1.png",
+    "attack2": "Meramon_AttackPart2.png"
+  },
+  "animations": {
+    "idle": [
+      "Meramon_Idle.png"
+    ],
+    "walk": [
+      "Meramon_Idle.png",
+      "Meramon_LLegWalk.png",
+      "Meramon_Idle.png",
+      "Meramon_RLegWalk.png"
+    ],
+    "attack": [
+      "Meramon_AttackPart1.png",
+      "Meramon_AttackPart2.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 0,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied v1.2.0 Shiny PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained."
+}

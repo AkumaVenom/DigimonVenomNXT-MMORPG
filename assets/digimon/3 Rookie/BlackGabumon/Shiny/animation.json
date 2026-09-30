@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "BlackGabumon_Idle.png",
+    "walk_left": "BlackGabumon_LLegWalk.png",
+    "walk_right": "BlackGabumon_RLegWalk.png",
+    "attack1": "BlackGabumon_Idle.png",
+    "attack2": "BlackGabumon_Idle.png"
+  },
+  "animations": {
+    "idle": [
+      "BlackGabumon_Idle.png"
+    ],
+    "walk": [
+      "BlackGabumon_Idle.png",
+      "BlackGabumon_LLegWalk.png",
+      "BlackGabumon_Idle.png",
+      "BlackGabumon_RLegWalk.png"
+    ],
+    "attack": [
+      "BlackGabumon_Idle.png",
+      "BlackGabumon_Idle.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 0,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied v1.2.0 Shiny PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained."
+}

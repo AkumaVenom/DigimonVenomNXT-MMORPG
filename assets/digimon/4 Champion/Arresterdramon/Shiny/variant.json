@@ -1,0 +1,22 @@
+{
+  "variant_id": "shiny_arresterdramon",
+  "display_name": "Shiny Arresterdramon",
+  "base_species": "Arresterdramon",
+  "stage": "4 Champion",
+  "status": "ready",
+  "style_profile": "Prismatic Shiny \u2014 Gold Stardust v1",
+  "palette": "Royal sapphire",
+  "target_hue_degrees": 218.0,
+  "source_sprite_count": 3,
+  "shiny_sprite_count": 3,
+  "animation_alignment": "Exact source canvas dimensions and sprite positions retained",
+  "effects": "Warm-gold silhouette glow; restrained ivory/gold four-point sparkles; deterministic frame twinkle",
+  "sprites": [
+    "Arresterdramon_Idle.png",
+    "Arresterdramon_LLegWalk.png",
+    "Arresterdramon_RLegWalk.png"
+  ],
+  "primary_sprite": "4 Champion/Arresterdramon/Shiny/Arresterdramon_Idle.png",
+  "source_primary": "4 Champion/Arresterdramon/Arresterdramon_Idle.png",
+  "materializable": true
+}

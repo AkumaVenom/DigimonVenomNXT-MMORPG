@@ -1,0 +1,28 @@
+{
+  "variant_id": "shiny_fanglongmon",
+  "display_name": "Shiny Fanglongmon",
+  "base_species": "Fanglongmon",
+  "stage": "7 Mega",
+  "status": "ready",
+  "style_profile": "Prismatic Shiny \u2014 Gold Stardust v1",
+  "palette": "Amethyst",
+  "target_hue_degrees": 274.0,
+  "source_sprite_count": 9,
+  "shiny_sprite_count": 9,
+  "animation_alignment": "Exact source canvas dimensions and sprite positions retained",
+  "effects": "Warm-gold silhouette glow; restrained ivory/gold four-point sparkles; deterministic frame twinkle",
+  "sprites": [
+    "Fanglongmon_Idle.png",
+    "Fanglongmon_LLegWalk.png",
+    "Fanglongmon_RLegWalk.png",
+    "Frames/Fanglongmon_Frame_001.png",
+    "Frames/Fanglongmon_Frame_002.png",
+    "Frames/Fanglongmon_Frame_003.png",
+    "Frames/Fanglongmon_Frame_004.png",
+    "Frames/Fanglongmon_Frame_005.png",
+    "Frames/Fanglongmon_Frame_006.png"
+  ],
+  "primary_sprite": "7 Mega/Fanglongmon/Shiny/Frames/Fanglongmon_Frame_001.png",
+  "source_primary": "7 Mega/Fanglongmon/Frames/Fanglongmon_Frame_001.png",
+  "materializable": true
+}

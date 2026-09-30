@@ -1,0 +1,101 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Frigimon_Attack.png": {
+      "source_size": [
+        524,
+        560
+      ],
+      "output_size": [
+        748,
+        784
+      ],
+      "padding": {
+        "left": 112,
+        "top": 112,
+        "right": 112,
+        "bottom": 112
+      },
+      "effect_pixel_unit": 7,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frigimon_GetHit.png": {
+      "source_size": [
+        506,
+        582
+      ],
+      "output_size": [
+        730,
+        806
+      ],
+      "padding": {
+        "left": 112,
+        "top": 112,
+        "right": 112,
+        "bottom": 112
+      },
+      "effect_pixel_unit": 7,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frigimon_Idle.png": {
+      "source_size": [
+        404,
+        546
+      ],
+      "output_size": [
+        628,
+        770
+      ],
+      "padding": {
+        "left": 112,
+        "top": 112,
+        "right": 112,
+        "bottom": 112
+      },
+      "effect_pixel_unit": 7,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frigimon_LLegWalk.png": {
+      "source_size": [
+        416,
+        552
+      ],
+      "output_size": [
+        640,
+        776
+      ],
+      "padding": {
+        "left": 112,
+        "top": 112,
+        "right": 112,
+        "bottom": 112
+      },
+      "effect_pixel_unit": 7,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frigimon_RLegWalk.png": {
+      "source_size": [
+        416,
+        552
+      ],
+      "output_size": [
+        640,
+        776
+      ],
+      "padding": {
+        "left": 112,
+        "top": 112,
+        "right": 112,
+        "bottom": 112
+      },
+      "effect_pixel_unit": 7,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

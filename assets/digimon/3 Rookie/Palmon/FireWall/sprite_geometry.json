@@ -1,0 +1,120 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Palmon_AttackPart1.png": {
+      "source_size": [
+        794,
+        890
+      ],
+      "output_size": [
+        1210,
+        1306
+      ],
+      "padding": {
+        "left": 208,
+        "top": 208,
+        "right": 208,
+        "bottom": 208
+      },
+      "effect_pixel_unit": 13,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Palmon_AttackPart2.png": {
+      "source_size": [
+        798,
+        894
+      ],
+      "output_size": [
+        1214,
+        1310
+      ],
+      "padding": {
+        "left": 208,
+        "top": 208,
+        "right": 208,
+        "bottom": 208
+      },
+      "effect_pixel_unit": 13,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Palmon_Extra.png": {
+      "source_size": [
+        794,
+        890
+      ],
+      "output_size": [
+        1210,
+        1306
+      ],
+      "padding": {
+        "left": 208,
+        "top": 208,
+        "right": 208,
+        "bottom": 208
+      },
+      "effect_pixel_unit": 13,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Palmon_Idle.png": {
+      "source_size": [
+        788,
+        840
+      ],
+      "output_size": [
+        1204,
+        1256
+      ],
+      "padding": {
+        "left": 208,
+        "top": 208,
+        "right": 208,
+        "bottom": 208
+      },
+      "effect_pixel_unit": 13,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Palmon_LLegWalk.png": {
+      "source_size": [
+        786,
+        850
+      ],
+      "output_size": [
+        1202,
+        1266
+      ],
+      "padding": {
+        "left": 208,
+        "top": 208,
+        "right": 208,
+        "bottom": 208
+      },
+      "effect_pixel_unit": 13,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Palmon_RLegWalk.png": {
+      "source_size": [
+        786,
+        850
+      ],
+      "output_size": [
+        1202,
+        1266
+      ],
+      "padding": {
+        "left": 208,
+        "top": 208,
+        "right": 208,
+        "bottom": 208
+      },
+      "effect_pixel_unit": 13,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

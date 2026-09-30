@@ -22,6 +22,14 @@ Use **Create account**, enter a username of 3–24 ASCII letters, numbers or und
 
 The client reads `config/client.json` and trusts only the bundled `config/server-ca.pem` while checking the server hostname. Install your administrator's public player kit before connecting. The server uses its configured MySQL password; players do not need database credentials or to install a certificate into Windows. **Reconnect** retries the configured server. **Exit** returns to sign in; closing the window closes the game.
 
+## Shiny collection in v1.2.0
+
+World-map wild encounters have a 1% Shiny chance per battle. Defeating a Shiny
+adds 5 percentage points to its own scan record. In DigiDex or Scan & materialize,
+cycle the variety filter to **Shiny**; gold badges and names identify these forms.
+Convert at 100% in the DigiLab or DigiFarm. Shiny identity stays through evolution,
+party/storage moves and saves. Normal and Paradox scans remain separate.
+
 ## In the field
 
 | Control | Action |

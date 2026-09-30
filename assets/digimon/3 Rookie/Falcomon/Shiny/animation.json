@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Falcomon_Idle.png",
+    "walk_left": "Falcomon_LLegWalk.png",
+    "walk_right": "Falcomon_RLegWalk.png",
+    "attack1": "Falcomon_AttackPart1.png",
+    "attack2": "Falcomon_AttackPart2.png"
+  },
+  "animations": {
+    "idle": [
+      "Falcomon_Idle.png"
+    ],
+    "walk": [
+      "Falcomon_Idle.png",
+      "Falcomon_LLegWalk.png",
+      "Falcomon_Idle.png",
+      "Falcomon_RLegWalk.png"
+    ],
+    "attack": [
+      "Falcomon_AttackPart1.png",
+      "Falcomon_AttackPart2.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 0,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied v1.2.0 Shiny PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained."
+}

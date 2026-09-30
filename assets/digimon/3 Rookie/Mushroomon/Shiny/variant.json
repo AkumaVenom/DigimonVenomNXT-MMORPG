@@ -1,0 +1,24 @@
+{
+  "variant_id": "shiny_mushroomon",
+  "display_name": "Shiny Mushroomon",
+  "base_species": "Mushroomon",
+  "stage": "3 Rookie",
+  "status": "ready",
+  "style_profile": "Prismatic Shiny \u2014 Gold Stardust v1",
+  "palette": "Amethyst",
+  "target_hue_degrees": 270.0,
+  "source_sprite_count": 5,
+  "shiny_sprite_count": 5,
+  "animation_alignment": "Exact source canvas dimensions and sprite positions retained",
+  "effects": "Warm-gold silhouette glow; restrained ivory/gold four-point sparkles; deterministic frame twinkle",
+  "sprites": [
+    "Mushroomon_AttackPart1.png",
+    "Mushroomon_AttackPart2.png",
+    "Mushroomon_Extra.png",
+    "Mushroomon_Idle.png",
+    "Mushroomon_LLegWalk.png"
+  ],
+  "primary_sprite": "3 Rookie/Mushroomon/Shiny/Mushroomon_Idle.png",
+  "source_primary": "3 Rookie/Mushroomon/Mushroomon_Idle.png",
+  "materializable": true
+}

@@ -1,0 +1,443 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Frames/Puppetmon_Frame_001.png": {
+      "source_size": [
+        115,
+        112
+      ],
+      "output_size": [
+        147,
+        144
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Puppetmon_Frame_002.png": {
+      "source_size": [
+        36,
+        35
+      ],
+      "output_size": [
+        68,
+        67
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Puppetmon_Frame_003.png": {
+      "source_size": [
+        115,
+        112
+      ],
+      "output_size": [
+        147,
+        144
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Puppetmon_Frame_004.png": {
+      "source_size": [
+        116,
+        112
+      ],
+      "output_size": [
+        148,
+        144
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Puppetmon_Frame_005.png": {
+      "source_size": [
+        28,
+        36
+      ],
+      "output_size": [
+        60,
+        68
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Puppetmon_Frame_006.png": {
+      "source_size": [
+        28,
+        39
+      ],
+      "output_size": [
+        60,
+        71
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Puppetmon_Frame_007.png": {
+      "source_size": [
+        28,
+        37
+      ],
+      "output_size": [
+        60,
+        69
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Puppetmon_Frame_008.png": {
+      "source_size": [
+        28,
+        15
+      ],
+      "output_size": [
+        60,
+        47
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Puppetmon_Frame_009.png": {
+      "source_size": [
+        74,
+        131
+      ],
+      "output_size": [
+        106,
+        163
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Puppetmon_Frame_010.png": {
+      "source_size": [
+        28,
+        39
+      ],
+      "output_size": [
+        60,
+        71
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Puppetmon_Frame_011.png": {
+      "source_size": [
+        28,
+        39
+      ],
+      "output_size": [
+        60,
+        71
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Puppetmon_Frame_012.png": {
+      "source_size": [
+        28,
+        37
+      ],
+      "output_size": [
+        60,
+        69
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Puppetmon_Frame_013.png": {
+      "source_size": [
+        28,
+        37
+      ],
+      "output_size": [
+        60,
+        69
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Puppetmon_Frame_014.png": {
+      "source_size": [
+        28,
+        37
+      ],
+      "output_size": [
+        60,
+        69
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Puppetmon_Frame_015.png": {
+      "source_size": [
+        28,
+        37
+      ],
+      "output_size": [
+        60,
+        69
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Puppetmon_Frame_016.png": {
+      "source_size": [
+        122,
+        118
+      ],
+      "output_size": [
+        154,
+        150
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Puppetmon_Frame_017.png": {
+      "source_size": [
+        28,
+        39
+      ],
+      "output_size": [
+        60,
+        71
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Puppetmon_Frame_018.png": {
+      "source_size": [
+        28,
+        39
+      ],
+      "output_size": [
+        60,
+        71
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Puppetmon_Frame_019.png": {
+      "source_size": [
+        29,
+        37
+      ],
+      "output_size": [
+        61,
+        69
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Puppetmon_Frame_020.png": {
+      "source_size": [
+        28,
+        37
+      ],
+      "output_size": [
+        60,
+        69
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Puppetmon_Frame_021.png": {
+      "source_size": [
+        29,
+        37
+      ],
+      "output_size": [
+        61,
+        69
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Puppetmon_Frame_022.png": {
+      "source_size": [
+        28,
+        37
+      ],
+      "output_size": [
+        60,
+        69
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Puppetmon_Primary.png": {
+      "source_size": [
+        115,
+        112
+      ],
+      "output_size": [
+        147,
+        144
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

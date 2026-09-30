@@ -1,0 +1,386 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Frames/WaruSeadramon_Frame_001.png": {
+      "source_size": [
+        101,
+        104
+      ],
+      "output_size": [
+        133,
+        136
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/WaruSeadramon_Frame_002.png": {
+      "source_size": [
+        102,
+        103
+      ],
+      "output_size": [
+        134,
+        135
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/WaruSeadramon_Frame_003.png": {
+      "source_size": [
+        105,
+        98
+      ],
+      "output_size": [
+        137,
+        130
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/WaruSeadramon_Frame_004.png": {
+      "source_size": [
+        72,
+        132
+      ],
+      "output_size": [
+        104,
+        164
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/WaruSeadramon_Frame_005.png": {
+      "source_size": [
+        91,
+        121
+      ],
+      "output_size": [
+        123,
+        153
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/WaruSeadramon_Frame_006.png": {
+      "source_size": [
+        36,
+        51
+      ],
+      "output_size": [
+        68,
+        83
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/WaruSeadramon_Frame_007.png": {
+      "source_size": [
+        36,
+        51
+      ],
+      "output_size": [
+        68,
+        83
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/WaruSeadramon_Frame_008.png": {
+      "source_size": [
+        36,
+        47
+      ],
+      "output_size": [
+        68,
+        79
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/WaruSeadramon_Frame_009.png": {
+      "source_size": [
+        36,
+        47
+      ],
+      "output_size": [
+        68,
+        79
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/WaruSeadramon_Frame_010.png": {
+      "source_size": [
+        36,
+        47
+      ],
+      "output_size": [
+        68,
+        79
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/WaruSeadramon_Frame_011.png": {
+      "source_size": [
+        36,
+        47
+      ],
+      "output_size": [
+        68,
+        79
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/WaruSeadramon_Frame_012.png": {
+      "source_size": [
+        35,
+        48
+      ],
+      "output_size": [
+        67,
+        80
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/WaruSeadramon_Frame_013.png": {
+      "source_size": [
+        35,
+        48
+      ],
+      "output_size": [
+        67,
+        80
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/WaruSeadramon_Frame_014.png": {
+      "source_size": [
+        35,
+        47
+      ],
+      "output_size": [
+        67,
+        79
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/WaruSeadramon_Frame_015.png": {
+      "source_size": [
+        35,
+        47
+      ],
+      "output_size": [
+        67,
+        79
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/WaruSeadramon_Frame_016.png": {
+      "source_size": [
+        35,
+        47
+      ],
+      "output_size": [
+        67,
+        79
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/WaruSeadramon_Frame_017.png": {
+      "source_size": [
+        35,
+        47
+      ],
+      "output_size": [
+        67,
+        79
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/WaruSeadramon_Frame_018.png": {
+      "source_size": [
+        33,
+        52
+      ],
+      "output_size": [
+        65,
+        84
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/WaruSeadramon_Frame_019.png": {
+      "source_size": [
+        34,
+        43
+      ],
+      "output_size": [
+        66,
+        75
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "WaruSeadramon_Primary.png": {
+      "source_size": [
+        101,
+        104
+      ],
+      "output_size": [
+        133,
+        136
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

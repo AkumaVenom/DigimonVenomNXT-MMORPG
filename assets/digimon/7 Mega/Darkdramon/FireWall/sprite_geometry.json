@@ -1,0 +1,500 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Darkdramon_Primary.png": {
+      "source_size": [
+        96,
+        125
+      ],
+      "output_size": [
+        128,
+        157
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Darkdramon_Frame_001.png": {
+      "source_size": [
+        96,
+        125
+      ],
+      "output_size": [
+        128,
+        157
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Darkdramon_Frame_002.png": {
+      "source_size": [
+        88,
+        124
+      ],
+      "output_size": [
+        120,
+        156
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Darkdramon_Frame_003.png": {
+      "source_size": [
+        89,
+        121
+      ],
+      "output_size": [
+        121,
+        153
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Darkdramon_Frame_004.png": {
+      "source_size": [
+        132,
+        131
+      ],
+      "output_size": [
+        164,
+        163
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Darkdramon_Frame_005.png": {
+      "source_size": [
+        132,
+        132
+      ],
+      "output_size": [
+        164,
+        164
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Darkdramon_Frame_006.png": {
+      "source_size": [
+        34,
+        45
+      ],
+      "output_size": [
+        66,
+        77
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Darkdramon_Frame_007.png": {
+      "source_size": [
+        34,
+        43
+      ],
+      "output_size": [
+        66,
+        75
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Darkdramon_Frame_008.png": {
+      "source_size": [
+        34,
+        43
+      ],
+      "output_size": [
+        66,
+        75
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Darkdramon_Frame_009.png": {
+      "source_size": [
+        34,
+        45
+      ],
+      "output_size": [
+        66,
+        77
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Darkdramon_Frame_010.png": {
+      "source_size": [
+        33,
+        43
+      ],
+      "output_size": [
+        65,
+        75
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Darkdramon_Frame_011.png": {
+      "source_size": [
+        33,
+        43
+      ],
+      "output_size": [
+        65,
+        75
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Darkdramon_Frame_012.png": {
+      "source_size": [
+        33,
+        45
+      ],
+      "output_size": [
+        65,
+        77
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Darkdramon_Frame_013.png": {
+      "source_size": [
+        33,
+        43
+      ],
+      "output_size": [
+        65,
+        75
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Darkdramon_Frame_014.png": {
+      "source_size": [
+        31,
+        43
+      ],
+      "output_size": [
+        63,
+        75
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Darkdramon_Frame_015.png": {
+      "source_size": [
+        31,
+        43
+      ],
+      "output_size": [
+        63,
+        75
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Darkdramon_Frame_016.png": {
+      "source_size": [
+        33,
+        43
+      ],
+      "output_size": [
+        65,
+        75
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Darkdramon_Frame_017.png": {
+      "source_size": [
+        33,
+        45
+      ],
+      "output_size": [
+        65,
+        77
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Darkdramon_Frame_018.png": {
+      "source_size": [
+        36,
+        50
+      ],
+      "output_size": [
+        68,
+        82
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Darkdramon_Frame_019.png": {
+      "source_size": [
+        32,
+        19
+      ],
+      "output_size": [
+        64,
+        51
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Darkdramon_Frame_020.png": {
+      "source_size": [
+        55,
+        19
+      ],
+      "output_size": [
+        87,
+        51
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Darkdramon_Frame_021.png": {
+      "source_size": [
+        33,
+        46
+      ],
+      "output_size": [
+        65,
+        78
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Darkdramon_Frame_022.png": {
+      "source_size": [
+        30,
+        36
+      ],
+      "output_size": [
+        62,
+        68
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Darkdramon_Frame_023.png": {
+      "source_size": [
+        38,
+        37
+      ],
+      "output_size": [
+        70,
+        69
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Darkdramon_Frame_024.png": {
+      "source_size": [
+        22,
+        14
+      ],
+      "output_size": [
+        54,
+        46
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Darkdramon_Frame_025.png": {
+      "source_size": [
+        25,
+        11
+      ],
+      "output_size": [
+        57,
+        43
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

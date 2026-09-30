@@ -1,0 +1,101 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Golemon_AttackPart1.png": {
+      "source_size": [
+        594,
+        648
+      ],
+      "output_size": [
+        786,
+        840
+      ],
+      "padding": {
+        "left": 96,
+        "top": 96,
+        "right": 96,
+        "bottom": 96
+      },
+      "effect_pixel_unit": 6,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Golemon_AttackPart2.png": {
+      "source_size": [
+        610,
+        586
+      ],
+      "output_size": [
+        802,
+        778
+      ],
+      "padding": {
+        "left": 96,
+        "top": 96,
+        "right": 96,
+        "bottom": 96
+      },
+      "effect_pixel_unit": 6,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Golemon_Idle.png": {
+      "source_size": [
+        552,
+        620
+      ],
+      "output_size": [
+        744,
+        812
+      ],
+      "padding": {
+        "left": 96,
+        "top": 96,
+        "right": 96,
+        "bottom": 96
+      },
+      "effect_pixel_unit": 6,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Golemon_LLegWalk.png": {
+      "source_size": [
+        556,
+        606
+      ],
+      "output_size": [
+        748,
+        798
+      ],
+      "padding": {
+        "left": 96,
+        "top": 96,
+        "right": 96,
+        "bottom": 96
+      },
+      "effect_pixel_unit": 6,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Golemon_RLegWalk.png": {
+      "source_size": [
+        556,
+        606
+      ],
+      "output_size": [
+        748,
+        798
+      ],
+      "padding": {
+        "left": 96,
+        "top": 96,
+        "right": 96,
+        "bottom": 96
+      },
+      "effect_pixel_unit": 6,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

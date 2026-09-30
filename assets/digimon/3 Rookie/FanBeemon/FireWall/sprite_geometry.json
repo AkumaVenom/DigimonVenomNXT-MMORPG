@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "FanBeemon_Idle.png": {
+      "source_size": [
+        500,
+        500
+      ],
+      "output_size": [
+        628,
+        628
+      ],
+      "padding": {
+        "left": 64,
+        "top": 64,
+        "right": 64,
+        "bottom": 64
+      },
+      "effect_pixel_unit": 4,
+      "effect_style": "smooth_cyber_glow",
+      "particle_fragment": false
+    },
+    "FanBeemon_LLegWalk.png": {
+      "source_size": [
+        565,
+        513
+      ],
+      "output_size": [
+        693,
+        641
+      ],
+      "padding": {
+        "left": 64,
+        "top": 64,
+        "right": 64,
+        "bottom": 64
+      },
+      "effect_pixel_unit": 4,
+      "effect_style": "smooth_cyber_glow",
+      "particle_fragment": false
+    },
+    "FanBeemon_RLegWalk.png": {
+      "source_size": [
+        565,
+        513
+      ],
+      "output_size": [
+        693,
+        641
+      ],
+      "padding": {
+        "left": 64,
+        "top": 64,
+        "right": 64,
+        "bottom": 64
+      },
+      "effect_pixel_unit": 4,
+      "effect_style": "smooth_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

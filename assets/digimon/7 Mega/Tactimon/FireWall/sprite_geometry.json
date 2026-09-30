@@ -1,0 +1,405 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Frames/Tactimon_Frame_001.png": {
+      "source_size": [
+        157,
+        190
+      ],
+      "output_size": [
+        189,
+        222
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Tactimon_Frame_002.png": {
+      "source_size": [
+        157,
+        190
+      ],
+      "output_size": [
+        189,
+        222
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Tactimon_Frame_003.png": {
+      "source_size": [
+        158,
+        190
+      ],
+      "output_size": [
+        190,
+        222
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Tactimon_Frame_004.png": {
+      "source_size": [
+        167,
+        144
+      ],
+      "output_size": [
+        199,
+        176
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Tactimon_Frame_005.png": {
+      "source_size": [
+        204,
+        150
+      ],
+      "output_size": [
+        236,
+        182
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Tactimon_Frame_006.png": {
+      "source_size": [
+        38,
+        60
+      ],
+      "output_size": [
+        70,
+        92
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Tactimon_Frame_007.png": {
+      "source_size": [
+        40,
+        54
+      ],
+      "output_size": [
+        72,
+        86
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Tactimon_Frame_008.png": {
+      "source_size": [
+        38,
+        54
+      ],
+      "output_size": [
+        70,
+        86
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Tactimon_Frame_009.png": {
+      "source_size": [
+        38,
+        52
+      ],
+      "output_size": [
+        70,
+        84
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Tactimon_Frame_010.png": {
+      "source_size": [
+        38,
+        52
+      ],
+      "output_size": [
+        70,
+        84
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Tactimon_Frame_011.png": {
+      "source_size": [
+        38,
+        51
+      ],
+      "output_size": [
+        70,
+        83
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Tactimon_Frame_012.png": {
+      "source_size": [
+        37,
+        52
+      ],
+      "output_size": [
+        69,
+        84
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Tactimon_Frame_013.png": {
+      "source_size": [
+        39,
+        52
+      ],
+      "output_size": [
+        71,
+        84
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Tactimon_Frame_014.png": {
+      "source_size": [
+        33,
+        56
+      ],
+      "output_size": [
+        65,
+        88
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Tactimon_Frame_015.png": {
+      "source_size": [
+        34,
+        56
+      ],
+      "output_size": [
+        66,
+        88
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Tactimon_Frame_016.png": {
+      "source_size": [
+        36,
+        56
+      ],
+      "output_size": [
+        68,
+        88
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Tactimon_Frame_017.png": {
+      "source_size": [
+        33,
+        52
+      ],
+      "output_size": [
+        65,
+        84
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Tactimon_Frame_018.png": {
+      "source_size": [
+        36,
+        56
+      ],
+      "output_size": [
+        68,
+        88
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Tactimon_Frame_019.png": {
+      "source_size": [
+        33,
+        51
+      ],
+      "output_size": [
+        65,
+        83
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Tactimon_Frame_020.png": {
+      "source_size": [
+        45,
+        13
+      ],
+      "output_size": [
+        77,
+        45
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Tactimon_Primary.png": {
+      "source_size": [
+        157,
+        190
+      ],
+      "output_size": [
+        189,
+        222
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

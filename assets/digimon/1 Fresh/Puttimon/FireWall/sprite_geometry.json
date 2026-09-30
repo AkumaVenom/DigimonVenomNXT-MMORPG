@@ -1,0 +1,120 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Puttimon_AttackPart1.png": {
+      "source_size": [
+        578,
+        524
+      ],
+      "output_size": [
+        1058,
+        1004
+      ],
+      "padding": {
+        "left": 240,
+        "top": 240,
+        "right": 240,
+        "bottom": 240
+      },
+      "effect_pixel_unit": 15,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Puttimon_AttackPart2.png": {
+      "source_size": [
+        784,
+        618
+      ],
+      "output_size": [
+        1264,
+        1098
+      ],
+      "padding": {
+        "left": 240,
+        "top": 240,
+        "right": 240,
+        "bottom": 240
+      },
+      "effect_pixel_unit": 15,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Puttimon_Extra.png": {
+      "source_size": [
+        578,
+        524
+      ],
+      "output_size": [
+        1058,
+        1004
+      ],
+      "padding": {
+        "left": 240,
+        "top": 240,
+        "right": 240,
+        "bottom": 240
+      },
+      "effect_pixel_unit": 15,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Puttimon_Idle.png": {
+      "source_size": [
+        686,
+        526
+      ],
+      "output_size": [
+        1166,
+        1006
+      ],
+      "padding": {
+        "left": 240,
+        "top": 240,
+        "right": 240,
+        "bottom": 240
+      },
+      "effect_pixel_unit": 15,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Puttimon_LLegWalk.png": {
+      "source_size": [
+        708,
+        536
+      ],
+      "output_size": [
+        1188,
+        1016
+      ],
+      "padding": {
+        "left": 240,
+        "top": 240,
+        "right": 240,
+        "bottom": 240
+      },
+      "effect_pixel_unit": 15,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Puttimon_RLegWalk.png": {
+      "source_size": [
+        708,
+        536
+      ],
+      "output_size": [
+        1188,
+        1016
+      ],
+      "padding": {
+        "left": 240,
+        "top": 240,
+        "right": 240,
+        "bottom": 240
+      },
+      "effect_pixel_unit": 15,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Hackmon_Paradox_Idle.png",
+    "walk_left": "Hackmon_Paradox_LLegWalk.png",
+    "walk_right": "Hackmon_Paradox_RLegWalk.png",
+    "attack1": "Hackmon_Paradox_Idle.png",
+    "attack2": "Hackmon_Paradox_Idle.png"
+  },
+  "animations": {
+    "idle": [
+      "Hackmon_Paradox_Idle.png"
+    ],
+    "walk": [
+      "Hackmon_Paradox_Idle.png",
+      "Hackmon_Paradox_LLegWalk.png",
+      "Hackmon_Paradox_Idle.png",
+      "Hackmon_Paradox_RLegWalk.png"
+    ],
+    "attack": [
+      "Hackmon_Paradox_Idle.png",
+      "Hackmon_Paradox_Idle.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 0,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied v1.2.0 Paradox PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained."
+}

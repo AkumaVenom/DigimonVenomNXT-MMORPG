@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Lavorvomon_Idle.png": {
+      "source_size": [
+        950,
+        678
+      ],
+      "output_size": [
+        1206,
+        934
+      ],
+      "padding": {
+        "left": 128,
+        "top": 128,
+        "right": 128,
+        "bottom": 128
+      },
+      "effect_pixel_unit": 8,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Lavorvomon_LLegWalk.png": {
+      "source_size": [
+        1089,
+        766
+      ],
+      "output_size": [
+        1345,
+        1022
+      ],
+      "padding": {
+        "left": 128,
+        "top": 128,
+        "right": 128,
+        "bottom": 128
+      },
+      "effect_pixel_unit": 8,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Lavorvomon_RLegWalk.png": {
+      "source_size": [
+        1089,
+        766
+      ],
+      "output_size": [
+        1345,
+        1022
+      ],
+      "padding": {
+        "left": 128,
+        "top": 128,
+        "right": 128,
+        "bottom": 128
+      },
+      "effect_pixel_unit": 8,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

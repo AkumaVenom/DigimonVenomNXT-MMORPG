@@ -12,6 +12,8 @@ import pygame
 
 from venom.common.game import FARM_CAPACITY
 from .render import draw
+from .battle_layout import wrapped_lines
+from .varieties import VARIETIES, VARIETY_NAMES, variety_of, name_color, scan_hint as variety_scan_hint, FIREWALL_ORANGE
 from .widgets import text, bar, WHITE, MUTED, CYAN, LIME, GOLD
 
 
@@ -117,7 +119,7 @@ class LaboratoryScreen:
         portrait = pygame.Rect(rect.x+9, rect.y+29, max(42, rect.width//3), max(24, rect.height-42))
         _sprite(app, mon.get('species_id'), portrait)
         x, width = portrait.right+8, rect.right-portrait.right-19
-        text(app.screen, app.assets, mon.get('name', 'Partner'), (x, rect.y+32), 14, WHITE, True, width)
+        text(app.screen, app.assets, mon.get('name', 'Partner'), (x, rect.y+32), 14, name_color(mon, app.assets.species, WHITE), True, width)
         for offset, resource, color in ((0, 'hp', LIME), (34, 'sp', CYAN)):
             y = rect.bottom-66+offset
             current, maximum = mon.get(resource, 0), mon.get('max_'+resource, 0)
@@ -151,7 +153,7 @@ class ScanScreen:
         self.filter('stage', self._stages[(index+1) % len(self._stages)])
 
     def cycle_variant(self):
-        options = ('all', 'normal', 'paradox')
+        options = VARIETIES
         self.filter('variant', options[(options.index(self.variant)+1) % len(options)])
 
     def entries(self):
@@ -175,7 +177,7 @@ class ScanScreen:
         self._entries = [entry for entry in species.values()
                          if (not query or query in (entry['name']+' '+entry.get('stage', '')+' '+entry.get('type', '')+' '+entry.get('attribute', '')).lower())
                          and (self.stage == 'all' or self.stage == entry.get('stage'))
-                         and (self.variant == 'all' or bool(entry.get('paradox')) == (self.variant == 'paradox'))
+                         and (self.variant == 'all' or variety_of(entry) == self.variant)
                          and (not self.ready_only or scans.get(entry['id'], 0) >= 100)]
         self._entries.sort(key=lambda entry: (-scans.get(entry['id'], 0), entry['name']))
         return self._entries
@@ -186,7 +188,7 @@ class ScanScreen:
         theme = 'scan' if app.menu == 'scan' else 'dex'
         title = 'Scan & materialize.' if theme == 'scan' else 'Every form. A new possibility.'
         body = art.shell(rect, theme, title,
-                         'Defeat wild Digimon to recover scan data. Reconstruct a new level 1 partner at 100% or more.',
+                         'Normal, Paradox, Shiny and FireWall each have separate scans. Reconstruct a level 1 partner at 100%.',
                          'DIGILAB  /  RECONSTRUCTION' if theme == 'scan' else 'DIGIDEX  /  SPECIES LIBRARY',
                          header_height=128)
         for index, (label, menu) in enumerate((('Scan & materialize', 'scan'), ('DigiDex', 'dex'), ('DigiLab', 'lab'))):
@@ -206,7 +208,7 @@ class ScanScreen:
                 'All stages  ›' if self.stage == 'all' else self.stage.replace('_', ' ').title()+'  ›',
                 self.cycle_stage, theme, selected=self.stage != 'all')
         _button(app, (x+control_w, filters.y+6, control_w-7, 34),
-                {'all': 'All variants  ›', 'normal': 'Normal  ›', 'paradox': 'Paradox  ›'}[self.variant],
+                'All variants  ›' if self.variant == 'all' else VARIETY_NAMES[self.variant]+'  ›',
                 self.cycle_variant, theme, selected=self.variant != 'all')
         _button(app, (x+control_w*2, filters.y+6, control_w-7, 34), 'Ready 100%+',
                 lambda: self.filter('ready_only', not self.ready_only), theme, selected=self.ready_only)
@@ -221,9 +223,7 @@ class ScanScreen:
         page = app.scroll
         text(app.screen, app.assets, f'{len(entries):,} forms  /  Page {page+1} of {pages}',
              (body.x, filters.bottom+11), 10, MUTED)
-        scan_hint = ('Paradox Mastery: +20% scan on wild victories' if
-                     app.state.get('permanent_rewards', {}).get('paradox_scan_mastery') else
-                     '100% unlocks reconstruction  ·  200% gives 5 ABI')
+        scan_hint = variety_scan_hint(self.variant, state)
         text(app.screen, app.assets, scan_hint,
              (body.right-344, filters.bottom+11), 10, art.colors(theme)['accent'], max_width=344)
         cw, ch = (body.width-(cols-1)*12)//cols, (gallery_h-(rows-1)*12)//rows
@@ -254,20 +254,36 @@ class ScanScreen:
         scans = (app.state or {}).get('scan', {})
         percentage = scans.get(entry['id'], 0)
         ready = percentage >= 100
-        accent = GOLD if entry.get('paradox') else art.colors(theme)['accent']
+        variety = variety_of(entry)
+        accent = FIREWALL_ORANGE if variety == 'firewall' else GOLD if variety in ('paradox', 'shiny') else art.colors(theme)['accent']
         art.card(rect, theme, accent=ready)
         text(app.screen, app.assets, entry.get('stage', 'Unknown').replace('_', ' ').upper(),
              (rect.x+13, rect.y+12), 9, accent, True, rect.width-24)
-        if entry.get('paradox'):
-            art.badge((rect.right-78, rect.y+29, 65, 19), 'PARADOX', theme)
-        image_bottom = rect.bottom-132
+        if variety != 'normal':
+            art.badge((rect.right-88, rect.y+29, 75, 19), variety.upper(), theme, accent=accent)
+        if variety in ('shiny', 'firewall'):
+            draw.line(app.screen, accent, (rect.x+12, rect.y+1), (rect.right-13, rect.y+1), 2)
+        image_bottom = rect.bottom-147
         image_top = rect.y+37
         art_h = max(30, image_bottom-image_top)
         draw.ellipse(app.screen, (10, 25, 38), (rect.x+22, image_bottom-16, rect.width-44, 18))
         draw.ellipse(app.screen, (40, 81, 94), (rect.x+22, image_bottom-16, rect.width-44, 18), 1)
         _sprite(app, entry['id'], pygame.Rect(rect.x+22, image_top, rect.width-44, art_h))
+        # Wrap long source names at word/camel-case boundaries, including the
+        # variety prefix, so related modes can be distinguished in the gallery.
+        scale = getattr(app.screen, 'scale', 1.)
+        font_size = 14
+        lines = wrapped_lines(app.assets.font(max(1, round(font_size*scale)), True),
+                              entry['name'], (rect.width-26)*scale)
+        if len(lines)>2:
+            font_size = 12
+            lines = wrapped_lines(app.assets.font(max(1, round(font_size*scale)), True),
+                                  entry['name'], (rect.width-26)*scale)
+        for index, line in enumerate(lines):
+            text(app.screen, app.assets, line,
+                 (rect.x+13, rect.bottom-139+(2-len(lines))*8+index*17), font_size,
+                 name_color(entry, app.assets.species, WHITE), True, rect.width-26)
         y = rect.bottom-120
-        text(app.screen, app.assets, entry['name'], (rect.x+13, y), 16, WHITE, True, rect.width-26)
         text(app.screen, app.assets, f'{entry.get("type", "?").title()}  /  {entry.get("attribute", "?").title()}',
              (rect.x+13, y+25), 10, MUTED, max_width=rect.width-26)
         bar(app.screen, pygame.Rect(rect.x+13, y+46, rect.width-26, 5), percentage, 200, accent)

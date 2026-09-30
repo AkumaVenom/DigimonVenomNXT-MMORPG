@@ -1,0 +1,120 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Tsukaimon_AttackPart1.png": {
+      "source_size": [
+        566,
+        462
+      ],
+      "output_size": [
+        854,
+        750
+      ],
+      "padding": {
+        "left": 144,
+        "top": 144,
+        "right": 144,
+        "bottom": 144
+      },
+      "effect_pixel_unit": 9,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Tsukaimon_AttackPart2.png": {
+      "source_size": [
+        556,
+        470
+      ],
+      "output_size": [
+        844,
+        758
+      ],
+      "padding": {
+        "left": 144,
+        "top": 144,
+        "right": 144,
+        "bottom": 144
+      },
+      "effect_pixel_unit": 9,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Tsukaimon_Extra.png": {
+      "source_size": [
+        556,
+        470
+      ],
+      "output_size": [
+        844,
+        758
+      ],
+      "padding": {
+        "left": 144,
+        "top": 144,
+        "right": 144,
+        "bottom": 144
+      },
+      "effect_pixel_unit": 9,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Tsukaimon_Idle.png": {
+      "source_size": [
+        598,
+        436
+      ],
+      "output_size": [
+        886,
+        724
+      ],
+      "padding": {
+        "left": 144,
+        "top": 144,
+        "right": 144,
+        "bottom": 144
+      },
+      "effect_pixel_unit": 9,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Tsukaimon_LLegWalk.png": {
+      "source_size": [
+        354,
+        378
+      ],
+      "output_size": [
+        642,
+        666
+      ],
+      "padding": {
+        "left": 144,
+        "top": 144,
+        "right": 144,
+        "bottom": 144
+      },
+      "effect_pixel_unit": 9,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Tsukaimon_RLegWalk.png": {
+      "source_size": [
+        502,
+        444
+      ],
+      "output_size": [
+        790,
+        732
+      ],
+      "padding": {
+        "left": 144,
+        "top": 144,
+        "right": 144,
+        "bottom": 144
+      },
+      "effect_pixel_unit": 9,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

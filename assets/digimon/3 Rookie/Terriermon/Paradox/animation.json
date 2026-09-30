@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Terriermon_Paradox_Idle.png",
+    "walk_left": "Terriermon_Paradox_LLegWalk.png",
+    "walk_right": "Terriermon_Paradox_Idle.png",
+    "attack1": "Terriermon_Paradox_Idle.png",
+    "attack2": "Terriermon_Paradox_Idle.png"
+  },
+  "animations": {
+    "idle": [
+      "Terriermon_Paradox_Idle.png"
+    ],
+    "walk": [
+      "Terriermon_Paradox_Idle.png",
+      "Terriermon_Paradox_LLegWalk.png",
+      "Terriermon_Paradox_Idle.png",
+      "Terriermon_Paradox_Idle.png"
+    ],
+    "attack": [
+      "Terriermon_Paradox_Idle.png",
+      "Terriermon_Paradox_Idle.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 0,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied v1.2.0 Paradox PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained."
+}

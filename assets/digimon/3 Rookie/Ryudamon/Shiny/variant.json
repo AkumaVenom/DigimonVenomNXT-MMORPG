@@ -1,0 +1,22 @@
+{
+  "variant_id": "shiny_ryudamon",
+  "display_name": "Shiny Ryudamon",
+  "base_species": "Ryudamon",
+  "stage": "3 Rookie",
+  "status": "ready",
+  "style_profile": "Prismatic Shiny \u2014 Gold Stardust v1",
+  "palette": "Cerulean",
+  "target_hue_degrees": 196.0,
+  "source_sprite_count": 3,
+  "shiny_sprite_count": 3,
+  "animation_alignment": "Exact source canvas dimensions and sprite positions retained",
+  "effects": "Warm-gold silhouette glow; restrained ivory/gold four-point sparkles; deterministic frame twinkle",
+  "sprites": [
+    "Ryudamon_Idle.png",
+    "Ryudamon_LLegWalk.png",
+    "Ryudamon_RLegWalk.png"
+  ],
+  "primary_sprite": "3 Rookie/Ryudamon/Shiny/Ryudamon_Idle.png",
+  "source_primary": "3 Rookie/Ryudamon/Ryudamon_Idle.png",
+  "materializable": true
+}

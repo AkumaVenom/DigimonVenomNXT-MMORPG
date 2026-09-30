@@ -1,0 +1,24 @@
+{
+  "variant_id": "firewall_magnamon",
+  "display_name": "FireWall Magnamon",
+  "base_species": "Magnamon",
+  "stage": "6 Armor",
+  "status": "ready",
+  "materializable": true,
+  "primary_sprite": "6 Armor/Magnamon/FireWall/Magnamon_Primary.png",
+  "source_primary": "6 Armor/Magnamon/Magnamon_Primary.png",
+  "source_sprite_count": 21,
+  "firewall_sprite_count": 21,
+  "style_profile": "FireWall Ember Circuit v1",
+  "style_features": [
+    "red-orange silhouette aura",
+    "warm ember palette with preserved dark outlines",
+    "circle-slash firewall sigils",
+    "angular cyber circuits",
+    "golden pixel sparks",
+    "transparent background"
+  ],
+  "animation_alignment": "Original pixels and pose preserved at native resolution; added margins recorded in sprite_geometry.json. Subtract padding.left/top to retain original draw origin.",
+  "geometry_manifest": "sprite_geometry.json",
+  "animation_manifest": "animation.json"
+}

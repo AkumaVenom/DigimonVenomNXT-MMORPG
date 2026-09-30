@@ -373,7 +373,7 @@ class WorldServer:
         try:
             await self.send(ws, {"op": "hello", "version": VERSION,
                 "game": "Digimon Venom NXT", "tick_hz": 10, "movement_speed": MOVE_SPEED,
-                "features": ["digifarm", "season", "story", "world_ds_story", "server_notices", "player_titles"] + (["ranked", "rivals", "bot_activity"] if self.community else []) + (["digiruby_economy"] if self.economy_enabled() else []),
+                "features": ["digifarm", "season", "story", "world_ds_story", "ghostline_story", "server_notices", "player_titles", "shiny_varieties", "firewall_varieties", "xros_wars"] + (["ranked", "rivals", "bot_activity"] if self.community else []) + (["digiruby_economy"] if self.economy_enabled() else []),
                 "registration": self.config.get("allow_registration", True)})
             while not self.stopping:
                 try:

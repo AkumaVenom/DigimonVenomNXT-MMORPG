@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Floramon_Idle.png",
+    "walk_left": "Floramon_LLegWalk.png",
+    "walk_right": "Floramon_RLegWalk.png",
+    "attack1": "Floramon_AttackPart1.png",
+    "attack2": "Floramon_AttackPart2.png"
+  },
+  "animations": {
+    "idle": [
+      "Floramon_Idle.png"
+    ],
+    "walk": [
+      "Floramon_Idle.png",
+      "Floramon_LLegWalk.png",
+      "Floramon_Idle.png",
+      "Floramon_RLegWalk.png"
+    ],
+    "attack": [
+      "Floramon_AttackPart1.png",
+      "Floramon_AttackPart2.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 0,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied FireWall PNG bytes preserved; normal pose selections and mirrors retained. Aura padding is recorded in sprite_geometry.json."
+}

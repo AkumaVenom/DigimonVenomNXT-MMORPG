@@ -10,14 +10,38 @@
   "source_primary": "7 Mega/Merukimon/Merukimon_Primary.png",
   "source_sprite_count": 19,
   "paradox_sprite_count": 19,
-  "style_profile": "Cyber Paradox Corruption v1",
+  "style_profile": "Cyber Paradox — Fanglongmon reference",
   "style_features": [
-    "violet/black data infection",
-    "cyan/magenta chromatic ghosts",
-    "digital displacement",
-    "angular data-void fractures",
-    "circuit cracks",
-    "transparent neon aura"
+    "original colors and shading retained with lifted highlights",
+    "cyan inner aura and violet outer aura",
+    "cyan and magenta contour splitting",
+    "navy angular glitch bands with diagonal hatching",
+    "stable effects coordinated per species",
+    "source poses, dimensions and pixel placement retained",
+    "transparent PNG output"
   ],
-  "animation_alignment": "exact source canvas dimensions preserved"
+  "animation_alignment": "exact source canvas dimensions and source pixel placement preserved",
+  "transformed_sprite_count": 19,
+  "primary_alias_count": 0,
+  "effect_boundary_policy": "effects remain within each original source canvas; no added padding or changed frame origin",
+  "art_provenance": "Scripted restyling of the user-supplied digimon.rar PNGs, guided by the supplied Fanglongmon Paradox reference; source poses and animation sequencing retained.",
+  "source_archive": "digimon.rar",
+  "style_reference": "Fanglongmon_Paradox_Frame_001(1).png",
+  "primary_is_alias": false,
+  "primary_alias_of": null,
+  "canvas_dimensions": {
+    "135x175": 2,
+    "136x174": 1,
+    "137x171": 1,
+    "33x32": 1,
+    "54x57": 2,
+    "124x209": 1,
+    "51x56": 2,
+    "55x56": 2,
+    "134x174": 1,
+    "46x57": 2,
+    "45x56": 2,
+    "48x56": 2
+  },
+  "animation_manifest": "7 Mega/Merukimon/Paradox/animation.json"
 }

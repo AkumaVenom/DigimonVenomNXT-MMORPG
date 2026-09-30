@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Chibomon_Paradox_Idle.png",
+    "walk_left": "Chibomon_Paradox_LLegWalk.png",
+    "walk_right": "Chibomon_Paradox_RLegWalk.png",
+    "attack1": "Chibomon_Paradox_AttackPart1.png",
+    "attack2": "Chibomon_Paradox_AttackPart2.png"
+  },
+  "animations": {
+    "idle": [
+      "Chibomon_Paradox_Idle.png"
+    ],
+    "walk": [
+      "Chibomon_Paradox_Idle.png",
+      "Chibomon_Paradox_LLegWalk.png",
+      "Chibomon_Paradox_Idle.png",
+      "Chibomon_Paradox_RLegWalk.png"
+    ],
+    "attack": [
+      "Chibomon_Paradox_AttackPart1.png",
+      "Chibomon_Paradox_AttackPart2.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 0,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied v1.2.0 Paradox PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained."
+}

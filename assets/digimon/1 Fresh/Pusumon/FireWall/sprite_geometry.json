@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Pusumon_Idle.png": {
+      "source_size": [
+        320,
+        320
+      ],
+      "output_size": [
+        416,
+        416
+      ],
+      "padding": {
+        "left": 48,
+        "top": 48,
+        "right": 48,
+        "bottom": 48
+      },
+      "effect_pixel_unit": 3,
+      "effect_style": "smooth_cyber_glow",
+      "particle_fragment": false
+    },
+    "Pusumon_LLegWalk.png": {
+      "source_size": [
+        371,
+        353
+      ],
+      "output_size": [
+        467,
+        449
+      ],
+      "padding": {
+        "left": 48,
+        "top": 48,
+        "right": 48,
+        "bottom": 48
+      },
+      "effect_pixel_unit": 3,
+      "effect_style": "smooth_cyber_glow",
+      "particle_fragment": false
+    },
+    "Pusumon_RLegWalk.png": {
+      "source_size": [
+        371,
+        353
+      ],
+      "output_size": [
+        467,
+        449
+      ],
+      "padding": {
+        "left": 48,
+        "top": 48,
+        "right": 48,
+        "bottom": 48
+      },
+      "effect_pixel_unit": 3,
+      "effect_style": "smooth_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

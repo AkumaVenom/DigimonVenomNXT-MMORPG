@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "GumDramon_Idle.png": {
+      "source_size": [
+        390,
+        649
+      ],
+      "output_size": [
+        518,
+        777
+      ],
+      "padding": {
+        "left": 64,
+        "top": 64,
+        "right": 64,
+        "bottom": 64
+      },
+      "effect_pixel_unit": 4,
+      "effect_style": "smooth_cyber_glow",
+      "particle_fragment": false
+    },
+    "GumDramon_LLegWalk.png": {
+      "source_size": [
+        479,
+        705
+      ],
+      "output_size": [
+        607,
+        833
+      ],
+      "padding": {
+        "left": 64,
+        "top": 64,
+        "right": 64,
+        "bottom": 64
+      },
+      "effect_pixel_unit": 4,
+      "effect_style": "smooth_cyber_glow",
+      "particle_fragment": false
+    },
+    "GumDramon_RLegWalk.png": {
+      "source_size": [
+        479,
+        705
+      ],
+      "output_size": [
+        607,
+        833
+      ],
+      "padding": {
+        "left": 64,
+        "top": 64,
+        "right": 64,
+        "bottom": 64
+      },
+      "effect_pixel_unit": 4,
+      "effect_style": "smooth_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

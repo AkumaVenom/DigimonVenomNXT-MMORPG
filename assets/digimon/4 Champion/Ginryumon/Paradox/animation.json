@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Ginryumon_Paradox_Idle.png",
+    "walk_left": "Ginryumon_Paradox_LLegWalk.png",
+    "walk_right": "Ginryumon_Paradox_Idle.png",
+    "attack1": "Ginryumon_Paradox_AttackPart1.png",
+    "attack2": "Ginryumon_Paradox_AttackPart2.png"
+  },
+  "animations": {
+    "idle": [
+      "Ginryumon_Paradox_Idle.png"
+    ],
+    "walk": [
+      "Ginryumon_Paradox_Idle.png",
+      "Ginryumon_Paradox_LLegWalk.png",
+      "Ginryumon_Paradox_Idle.png",
+      "Ginryumon_Paradox_Idle.png"
+    ],
+    "attack": [
+      "Ginryumon_Paradox_AttackPart1.png",
+      "Ginryumon_Paradox_AttackPart2.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 0,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied v1.2.0 Paradox PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained."
+}

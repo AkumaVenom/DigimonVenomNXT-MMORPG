@@ -1,0 +1,386 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Frames/HiAndromon_Frame_001.png": {
+      "source_size": [
+        71,
+        128
+      ],
+      "output_size": [
+        103,
+        160
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/HiAndromon_Frame_002.png": {
+      "source_size": [
+        74,
+        129
+      ],
+      "output_size": [
+        106,
+        161
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/HiAndromon_Frame_003.png": {
+      "source_size": [
+        76,
+        129
+      ],
+      "output_size": [
+        108,
+        161
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/HiAndromon_Frame_004.png": {
+      "source_size": [
+        88,
+        128
+      ],
+      "output_size": [
+        120,
+        160
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/HiAndromon_Frame_005.png": {
+      "source_size": [
+        107,
+        119
+      ],
+      "output_size": [
+        139,
+        151
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/HiAndromon_Frame_006.png": {
+      "source_size": [
+        30,
+        36
+      ],
+      "output_size": [
+        62,
+        68
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/HiAndromon_Frame_007.png": {
+      "source_size": [
+        30,
+        52
+      ],
+      "output_size": [
+        62,
+        84
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/HiAndromon_Frame_008.png": {
+      "source_size": [
+        28,
+        43
+      ],
+      "output_size": [
+        60,
+        75
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/HiAndromon_Frame_009.png": {
+      "source_size": [
+        28,
+        43
+      ],
+      "output_size": [
+        60,
+        75
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/HiAndromon_Frame_010.png": {
+      "source_size": [
+        25,
+        43
+      ],
+      "output_size": [
+        57,
+        75
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/HiAndromon_Frame_011.png": {
+      "source_size": [
+        25,
+        43
+      ],
+      "output_size": [
+        57,
+        75
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/HiAndromon_Frame_012.png": {
+      "source_size": [
+        28,
+        40
+      ],
+      "output_size": [
+        60,
+        72
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/HiAndromon_Frame_013.png": {
+      "source_size": [
+        28,
+        40
+      ],
+      "output_size": [
+        60,
+        72
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/HiAndromon_Frame_014.png": {
+      "source_size": [
+        30,
+        43
+      ],
+      "output_size": [
+        62,
+        75
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/HiAndromon_Frame_015.png": {
+      "source_size": [
+        30,
+        43
+      ],
+      "output_size": [
+        62,
+        75
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/HiAndromon_Frame_016.png": {
+      "source_size": [
+        25,
+        43
+      ],
+      "output_size": [
+        57,
+        75
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/HiAndromon_Frame_017.png": {
+      "source_size": [
+        25,
+        43
+      ],
+      "output_size": [
+        57,
+        75
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/HiAndromon_Frame_018.png": {
+      "source_size": [
+        26,
+        42
+      ],
+      "output_size": [
+        58,
+        74
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/HiAndromon_Frame_019.png": {
+      "source_size": [
+        26,
+        42
+      ],
+      "output_size": [
+        58,
+        74
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "HiAndromon_Primary.png": {
+      "source_size": [
+        71,
+        128
+      ],
+      "output_size": [
+        103,
+        160
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

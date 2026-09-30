@@ -1,0 +1,24 @@
+{
+  "variant_id": "shiny_bakemon",
+  "display_name": "Shiny Bakemon",
+  "base_species": "Bakemon",
+  "stage": "4 Champion",
+  "status": "ready",
+  "style_profile": "Prismatic Shiny \u2014 Gold Stardust v1",
+  "palette": "Jade",
+  "target_hue_degrees": 146.0,
+  "source_sprite_count": 5,
+  "shiny_sprite_count": 5,
+  "animation_alignment": "Exact source canvas dimensions and sprite positions retained",
+  "effects": "Warm-gold silhouette glow; restrained ivory/gold four-point sparkles; deterministic frame twinkle",
+  "sprites": [
+    "Bakemon_AttackPart1.png",
+    "Bakemon_AttackPart2.png",
+    "Bakemon_Idle.png",
+    "Bakemon_LLegWalk.png",
+    "Bakemon_RLegWalk.png"
+  ],
+  "primary_sprite": "4 Champion/Bakemon/Shiny/Bakemon_Idle.png",
+  "source_primary": "4 Champion/Bakemon/Bakemon_Idle.png",
+  "materializable": true
+}

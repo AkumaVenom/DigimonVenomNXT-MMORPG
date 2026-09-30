@@ -1,0 +1,25 @@
+{
+  "variant_id": "shiny_dorimon",
+  "display_name": "Shiny Dorimon",
+  "base_species": "Dorimon",
+  "stage": "2 In Training",
+  "status": "ready",
+  "style_profile": "Prismatic Shiny \u2014 Gold Stardust v1",
+  "palette": "Prismatic Royal sapphire",
+  "target_hue_degrees": 44.5,
+  "source_sprite_count": 6,
+  "shiny_sprite_count": 6,
+  "animation_alignment": "Exact source canvas dimensions and sprite positions retained",
+  "effects": "Warm-gold silhouette glow; restrained ivory/gold four-point sparkles; deterministic frame twinkle",
+  "sprites": [
+    "Dorimon_AttackPart1.png",
+    "Dorimon_AttackPart2.png",
+    "Dorimon_Extra.png",
+    "Dorimon_Idle.png",
+    "Dorimon_LLegWalk.png",
+    "Dorimon_RLegWalk.png"
+  ],
+  "primary_sprite": "2 In Training/Dorimon/Shiny/Dorimon_Idle.png",
+  "source_primary": "2 In Training/Dorimon/Dorimon_Idle.png",
+  "materializable": true
+}

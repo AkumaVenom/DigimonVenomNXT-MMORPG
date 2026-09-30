@@ -1,0 +1,101 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Kuwagamon_AttackPart1.png": {
+      "source_size": [
+        752,
+        594
+      ],
+      "output_size": [
+        912,
+        754
+      ],
+      "padding": {
+        "left": 80,
+        "top": 80,
+        "right": 80,
+        "bottom": 80
+      },
+      "effect_pixel_unit": 5,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Kuwagamon_AttackPart2.png": {
+      "source_size": [
+        810,
+        548
+      ],
+      "output_size": [
+        970,
+        708
+      ],
+      "padding": {
+        "left": 80,
+        "top": 80,
+        "right": 80,
+        "bottom": 80
+      },
+      "effect_pixel_unit": 5,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Kuwagamon_Idle.png": {
+      "source_size": [
+        754,
+        590
+      ],
+      "output_size": [
+        914,
+        750
+      ],
+      "padding": {
+        "left": 80,
+        "top": 80,
+        "right": 80,
+        "bottom": 80
+      },
+      "effect_pixel_unit": 5,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Kuwagamon_LLegWalk.png": {
+      "source_size": [
+        740,
+        592
+      ],
+      "output_size": [
+        900,
+        752
+      ],
+      "padding": {
+        "left": 80,
+        "top": 80,
+        "right": 80,
+        "bottom": 80
+      },
+      "effect_pixel_unit": 5,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Kuwagamon_RLegWalk.png": {
+      "source_size": [
+        740,
+        592
+      ],
+      "output_size": [
+        900,
+        752
+      ],
+      "padding": {
+        "left": 80,
+        "top": 80,
+        "right": 80,
+        "bottom": 80
+      },
+      "effect_pixel_unit": 5,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Frames/AlforceVeedramon_Frame_001.png",
+    "walk_left": "Frames/AlforceVeedramon_Frame_002.png",
+    "walk_right": "Frames/AlforceVeedramon_Frame_003.png",
+    "attack1": "Frames/AlforceVeedramon_Frame_004.png",
+    "attack2": "Frames/AlforceVeedramon_Frame_005.png",
+    "front": "AlforceVeedramon_Primary.png"
+  },
+  "animations": {
+    "idle": [
+      "Frames/AlforceVeedramon_Frame_001.png",
+      "Frames/AlforceVeedramon_Frame_002.png",
+      "Frames/AlforceVeedramon_Frame_001.png",
+      "Frames/AlforceVeedramon_Frame_003.png"
+    ],
+    "walk": [
+      "Frames/AlforceVeedramon_Frame_001.png",
+      "Frames/AlforceVeedramon_Frame_002.png",
+      "Frames/AlforceVeedramon_Frame_001.png",
+      "Frames/AlforceVeedramon_Frame_003.png"
+    ],
+    "attack": [
+      "Frames/AlforceVeedramon_Frame_004.png",
+      "Frames/AlforceVeedramon_Frame_005.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 21,
+  "frame_selection": "v1.0.1 pose assignments retained; supplied v1.1.0 fixed PNGs replace canonical paths; explicit primary/front portrait when supplied",
+  "art_provenance": "User-supplied DigimonFixedSpritesFor_v1.1.0.rar; v1.0.1 source overlay; selected PNG bytes preserved exactly"
+}

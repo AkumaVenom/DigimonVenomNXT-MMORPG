@@ -1,0 +1,443 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Frames/MachGaogamon_Frame_001.png": {
+      "source_size": [
+        121,
+        140
+      ],
+      "output_size": [
+        153,
+        172
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/MachGaogamon_Frame_002.png": {
+      "source_size": [
+        108,
+        139
+      ],
+      "output_size": [
+        140,
+        171
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/MachGaogamon_Frame_003.png": {
+      "source_size": [
+        110,
+        136
+      ],
+      "output_size": [
+        142,
+        168
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/MachGaogamon_Frame_004.png": {
+      "source_size": [
+        148,
+        125
+      ],
+      "output_size": [
+        180,
+        157
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/MachGaogamon_Frame_005.png": {
+      "source_size": [
+        108,
+        136
+      ],
+      "output_size": [
+        140,
+        168
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/MachGaogamon_Frame_006.png": {
+      "source_size": [
+        30,
+        40
+      ],
+      "output_size": [
+        62,
+        72
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/MachGaogamon_Frame_007.png": {
+      "source_size": [
+        30,
+        40
+      ],
+      "output_size": [
+        62,
+        72
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/MachGaogamon_Frame_008.png": {
+      "source_size": [
+        30,
+        40
+      ],
+      "output_size": [
+        62,
+        72
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/MachGaogamon_Frame_009.png": {
+      "source_size": [
+        31,
+        41
+      ],
+      "output_size": [
+        63,
+        73
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/MachGaogamon_Frame_010.png": {
+      "source_size": [
+        31,
+        41
+      ],
+      "output_size": [
+        63,
+        73
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/MachGaogamon_Frame_011.png": {
+      "source_size": [
+        30,
+        40
+      ],
+      "output_size": [
+        62,
+        72
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/MachGaogamon_Frame_012.png": {
+      "source_size": [
+        34,
+        40
+      ],
+      "output_size": [
+        66,
+        72
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/MachGaogamon_Frame_013.png": {
+      "source_size": [
+        34,
+        40
+      ],
+      "output_size": [
+        66,
+        72
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/MachGaogamon_Frame_014.png": {
+      "source_size": [
+        30,
+        40
+      ],
+      "output_size": [
+        62,
+        72
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/MachGaogamon_Frame_015.png": {
+      "source_size": [
+        30,
+        40
+      ],
+      "output_size": [
+        62,
+        72
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/MachGaogamon_Frame_016.png": {
+      "source_size": [
+        29,
+        39
+      ],
+      "output_size": [
+        61,
+        71
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/MachGaogamon_Frame_017.png": {
+      "source_size": [
+        29,
+        39
+      ],
+      "output_size": [
+        61,
+        71
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/MachGaogamon_Frame_018.png": {
+      "source_size": [
+        31,
+        46
+      ],
+      "output_size": [
+        63,
+        78
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/MachGaogamon_Frame_019.png": {
+      "source_size": [
+        30,
+        41
+      ],
+      "output_size": [
+        62,
+        73
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/MachGaogamon_Frame_020.png": {
+      "source_size": [
+        22,
+        14
+      ],
+      "output_size": [
+        54,
+        46
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/MachGaogamon_Frame_021.png": {
+      "source_size": [
+        31,
+        35
+      ],
+      "output_size": [
+        63,
+        67
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/MachGaogamon_Frame_022.png": {
+      "source_size": [
+        25,
+        11
+      ],
+      "output_size": [
+        57,
+        43
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "MachGaogamon_Primary.png": {
+      "source_size": [
+        121,
+        140
+      ],
+      "output_size": [
+        153,
+        172
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

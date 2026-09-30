@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Elecmon_Paradox_Idle.png",
+    "walk_left": "Elecmon_Paradox_LLegWalk.png",
+    "walk_right": "Elecmon_Paradox_RLegWalk.png",
+    "attack1": "Elecmon_Paradox_Idle.png",
+    "attack2": "Elecmon_Paradox_Idle.png"
+  },
+  "animations": {
+    "idle": [
+      "Elecmon_Paradox_Idle.png"
+    ],
+    "walk": [
+      "Elecmon_Paradox_Idle.png",
+      "Elecmon_Paradox_LLegWalk.png",
+      "Elecmon_Paradox_Idle.png",
+      "Elecmon_Paradox_RLegWalk.png"
+    ],
+    "attack": [
+      "Elecmon_Paradox_Idle.png",
+      "Elecmon_Paradox_Idle.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 0,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied v1.2.0 Paradox PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained."
+}

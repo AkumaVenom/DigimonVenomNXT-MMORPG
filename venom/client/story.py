@@ -4,6 +4,7 @@ import math
 import pygame
 from .render import draw
 from .widgets import text, wrap, panel, WHITE, MUTED, GOLD
+from .varieties import FIREWALL_ORANGE
 
 ACCENT = (115, 230, 224)
 BADGE_COLORS = ((106,232,177),(112,210,250),(255,183,102),(177,146,255),
@@ -21,6 +22,7 @@ class StoryScreen:
         self.tab, self.page, self.result = 'quest', 0, None
         self.pending_journal = False
         self.npc_page = 0
+        self.dialogue_key, self.dialogue_read_page = None, 0
 
     @property
     def data(self):
@@ -47,15 +49,25 @@ class StoryScreen:
         return self.data.get('campaign_id', ((self.app.state or {}).get('story') or {}).get('campaign_id')) == 'world_ds_paradox'
 
     @property
+    def ghostline(self):
+        return self.data.get('campaign_id', ((self.app.state or {}).get('story') or {}).get('campaign_id')) == 'xros_ghostline'
+
+    @property
     def title(self):
-        return 'PARADOX CHRONICLE' if self.paradox else 'DAWN RELAY'
+        return 'SUPER XROS: GHOSTLINE' if self.ghostline else 'PARADOX CHRONICLE' if self.paradox else 'DAWN RELAY'
+
+    @property
+    def collection_name(self):
+        return 'fields secured' if self.ghostline else 'Paradox Crests' if self.paradox else 'DigiBadges'
 
     @property
     def badge_total(self):
-        return int(self.data.get('badge_total', 17 if self.paradox else 8))
+        return int(self.data.get('badge_total', 30 if self.ghostline else 17 if self.paradox else 8))
 
     @property
     def tabs(self):
+        if self.ghostline:
+            return (('quest', 'Current lead'), ('atlas', 'Ghostline routes'), ('badges', 'Case evidence'), ('league', 'Case file'))
         return (('quest','Journey'),('atlas','World DS atlas'),('badges','Paradox Crests'),('league','Convergence')) if self.paradox else self.TABS
 
     def toggle(self):
@@ -97,6 +109,11 @@ class StoryScreen:
             if self.app.now >= self.app.battle_until:
                 self.dismiss_result()
             return
+        if self.dialogue:
+            pages = self.dialogue_text_pages()
+            if self.dialogue_read_page < len(pages)-1:
+                self.turn_dialogue_page(self.dialogue_read_page+1)
+                return
         choices = (self.dialogue or {}).get('choices', [])
         if any(row.get('id') == 'next' for row in choices):
             self.choose('next')
@@ -151,6 +168,8 @@ class StoryScreen:
             self.app.animations.clear()
             self.app.audio.cue('story_enter' if state.get('in_story') else 'back',now=self.app.now)
         old = ((previous.get('story') or {}).get('view') or {})
+        if old.get('map_id') != self.data.get('map_id'):
+            self.npc_page = 0
         if old.get('dialogue') != self.data.get('dialogue'):
             self.app.ui.focus = None
             self.app.ui.actions, self.app.ui.fields = [], []
@@ -273,8 +292,8 @@ class StoryScreen:
             return
         data = self.data
         body = self.app.presentation.shell(rect,'story',self.title,
-            f"{data.get('chapter_name','Your journey')}  /  {self.badge_count} of {self.badge_total} {'Paradox Crests' if self.paradox else 'DigiBadges'}",
-            'WORLD DS  /  YOUR PRIVATE ADVENTURE' if self.paradox else 'STORY MODE  /  YOUR PRIVATE ADVENTURE',header_height=128)
+            f"{data.get('chapter_name','Your journey')}  /  {self.badge_count} of {self.badge_total} {self.collection_name}",
+            'SUPER XROS  /  YOUR PRIVATE INVESTIGATION' if self.ghostline else 'WORLD DS  /  YOUR PRIVATE ADVENTURE' if self.paradox else 'STORY MODE  /  YOUR PRIVATE ADVENTURE',header_height=128)
         back_label = 'Back to DigiLab' if self.app.state.get('in_lab') else 'Back to DigiFarm' if self.app.state.get('in_farm') else 'Back to the field'
         self.button((rect.right-362,rect.y+67,140,32),back_label,self.app.close_menu)
         self.button((rect.right-211,rect.y+67,185,32),'Save & Return to MMO',lambda:self.command('return'),disabled=self.app.action_pending)
@@ -288,38 +307,43 @@ class StoryScreen:
 
     def draw_entry(self,rect):
         body = self.app.presentation.shell(rect,'story','CHOOSE YOUR STORY',
-            'Two adventures. Your partners. Progress saved separately.','PRIVATE STORY MODES',header_height=128)
+            'Three adventures. Your partners. Each journey saved separately.','PRIVATE STORY MODES',header_height=128)
         self.button((rect.right-175,rect.y+66,148,34),'Back to the world',self.app.close_menu)
         profiles = dict((self.app.state or {}).get('story_campaigns') or {})
         active = (self.app.state or {}).get('story') or {}
         if active:
             profiles[active.get('campaign_id','dawn_relay')] = active
-        width = (body.width-16)//2
+        width = (body.width-28)//3
         campaigns = (
             ('dawn_relay','DAWN RELAY','The championship awaits',
              'Explore the Dawn regions, meet their tamers and earn eight DigiBadges. Win the championship, then defend your crown.',
              '8 DigiBadges  ·  A living championship','DigiBadges',8),
             ('world_ds_paradox','WORLD DS','Paradox Chronicle',
              'Begin at a safe World DS hub. Restore 17 fields through quests, tamer duels and Paradox guardians. Gather every Crest to summon the final trio.',
-             '18 maps  ·  Lv.10–100  ·  17 Paradox Crests','Paradox Crests',17))
+             '18 maps  ·  Lv.10–100  ·  17 Paradox Crests','Paradox Crests',17),
+            ('xros_ghostline','SUPER XROS','Ghostline',
+             'Follow a trail of compromised tamers through a secret cyber network. Meet your contacts, recover evidence and uncover the hacker behind it all.',
+             '31 maps  ·  Safe hub + 30 story fields','fields secured',30))
         for i,(ident,kicker,title,description,detail,badge_name,total) in enumerate(campaigns):
-            cell = pygame.Rect(body.x+i*(width+16),body.y,width,body.height-43)
-            self.card(cell, i==1)
+            cell = pygame.Rect(body.x+i*(width+14),body.y,width,body.height-43)
+            self.card(cell, i==2)
             self.write(kicker,(cell.x+25,cell.y+24),11,ACCENT,True)
-            self.write(title,(cell.x+24,cell.y+51),26,WHITE,True,cell.width-48)
+            self.write(title,(cell.x+24,cell.y+51),22,WHITE,True,cell.width-48)
             self.write(detail,(cell.x+25,cell.y+98),12,GOLD,True,cell.width-50)
-            wrap(self.app.screen,self.app.assets,description,(cell.x+25,cell.y+134),cell.width-50,17,MUTED,5)
-            reward = 'Permanent +20% scan gain on wild Paradox wins' if i else 'A championship career with repeat title defenses'
+            wrap(self.app.screen,self.app.assets,description,(cell.x+25,cell.y+134),cell.width-50,16,MUTED,6)
+            reward = ('Permanent +20% scan gain on wild Shiny wins (5% → 6%)' if i==2 else
+                      'Permanent +20% scan gain on wild Paradox wins (5% → 6%)' if i else
+                      'Permanent +20% scan gain on wild FireWall wins (5% → 6%)')
             self.write('COMPLETION REWARD',(cell.x+25,cell.bottom-151),10,ACCENT,True)
             wrap(self.app.screen,self.app.assets,reward,(cell.x+25,cell.bottom-128),cell.width-50,14,WHITE,2)
             profile = profiles.get(ident) or {}
             earned = len(profile.get('badges') or [])
-            self.write(f'{earned} / {total} {badge_name} collected' if profile else 'A new adventure is ready',
+            self.write(f'{earned} / {total} {badge_name}'+('' if i==2 else ' collected') if profile else 'A new adventure is ready',
                        (cell.x+25,cell.bottom-83),11,MUTED,width=cell.width-50)
-            label = ('Continue ' if profile else 'Begin ')+('Dawn Relay' if not i else 'Paradox Chronicle')
+            label = ('Continue ' if profile else 'Begin ')+('Ghostline' if i==2 else 'Dawn Relay' if not i else 'Paradox Chronicle')
             self.button((cell.x+24,cell.bottom-57,cell.width-48,38),label,
                         lambda c=ident:self.command('enter',campaign_id=c),primary=True,disabled=self.app.action_pending)
-        self.write('Shared partners, evolution, items, credits, DigiLab and DigiFarm. Choose either story whenever you return to the MMO.',
+        self.write('Shared partners, evolution, items, credits, DigiLab and DigiFarm. Choose any story whenever you return to the MMO.',
                    (body.centerx,body.bottom-17),11,MUTED,width=body.width-12,center=True)
 
     def draw_quest(self,rect):
@@ -347,6 +371,8 @@ class StoryScreen:
             self.write(npc.get('name','Tamer'),(cell.x+61,cell.y+8),14,WHITE,True,cell.width-167)
             status = {'ready':'Quest available','active':'Quest in progress','turn_in':'Ready to report',
                       'complete':'Complete','cleared':'Cleared','locked':'Not ready yet','service':'Here to help'}.get(npc.get('status'),npc.get('status',npc.get('role','Story character')).replace('_',' ').title())
+            if self.ghostline and npc.get('hacked'):
+                status = 'Compromised signal · Trace secured'
             self.write(status,(cell.x+61,cell.y+31),11,ACCENT,width=cell.width-167)
             near = not (app.state.get('in_lab') or app.state.get('in_farm')) and math.hypot(float(npc.get('x',0))-app.position.x,float(npc.get('y',0))-app.position.y)<=data.get('talk_radius',128)
             self.button((cell.right-89,cell.y+11,77,32),'Talk' if near else 'Find',
@@ -372,7 +398,7 @@ class StoryScreen:
         wrap(app.screen,app.assets,hint,(aside.x+19,aside.bottom-65),aside.width-38,11,MUTED,3)
 
     def draw_atlas(self,rect):
-        rect, chapters = self.paged(rect,self.data.get('chapters',[]),9,'Maps' if self.paradox else 'Regions')
+        rect, chapters = self.paged(rect,self.data.get('chapters',[]),9,'Maps' if self.paradox or self.ghostline else 'Regions')
         gap = 11
         width,height = (rect.width-gap*2)//3,(rect.height-gap*2)//3
         for slot,(i,chapter) in enumerate(chapters):
@@ -381,7 +407,7 @@ class StoryScreen:
             unlocked = chapter.get('unlocked',False)
             self.write(f"{'✓' if chapter.get('complete') else str(i+1).zfill(2)}  {chapter.get('name','Region')}",
                        (cell.x+15,cell.y+12),15,ACCENT if unlocked else MUTED,True,cell.width-30)
-            level = 'SAFE HUB · No battles' if chapter.get('hub') or self.paradox and i==0 else f"Recommended Lv.{chapter.get('level','?')}"
+            level = 'SAFE HUB · No battles' if chapter.get('hub') or (self.paradox or self.ghostline) and i==0 else f"Recommended Lv.{chapter.get('level','?')}"
             self.write(f"{level}  ·  {'OPEN' if unlocked else 'LOCKED'}",
                        (cell.x+15,cell.y+39),10,MUTED,width=cell.width-30)
             maps = chapter.get('maps') or [{'id':chapter.get('map_id'),'name':'Travel to region','unlocked':unlocked}]
@@ -391,14 +417,18 @@ class StoryScreen:
                             lambda c=chapter,m=location:self.command('travel',chapter=c['index'],map_id=m['id']),
                             disabled=not unlocked or not location.get('unlocked',unlocked) or self.app.action_pending,
                             selected=bool(location.get('active')))
-            if self.paradox:
+            if self.ghostline:
+                requirement = ('Services and your first contact' if i==0 else 'Field secured · portal open' if chapter.get('complete')
+                               else chapter.get('requirement') or ('Follow the current lead' if unlocked else 'Complete the preceding field'))
+                self.write(requirement,(cell.x+15,cell.bottom-20),10,ACCENT if chapter.get('complete') else MUTED,width=cell.width-30)
+            elif self.paradox:
                 requirement = 'Services and story introduction' if i==0 else 'Crest secured' if chapter.get('complete') else 'Quest → Tamer → Paradox guardian'
                 self.write(requirement,(cell.x+15,cell.bottom-20),10,ACCENT if chapter.get('complete') else MUTED,width=cell.width-30)
 
     def draw_badges(self,rect):
         badges,chapters = self.data.get('badges',[]),self.data.get('chapters',[])
-        if self.paradox:
-            grid, records = self.paged(rect,badges,9,'Crests')
+        if self.paradox or self.ghostline:
+            grid, records = self.paged(rect,badges,9,'Evidence' if self.ghostline else 'Crests')
             gap = 11
             width,height = (grid.width-gap*2)//3,(grid.height-gap*2)//3
             for slot,(i,record) in enumerate(records):
@@ -406,15 +436,15 @@ class StoryScreen:
                 cell = pygame.Rect(grid.x+(slot%3)*(width+gap),grid.y+(slot//3)*(height+gap),width,height)
                 self.card(cell,won)
                 self.badge((cell.x+41,cell.y+49),i,won,27)
-                self.write(f'CREST {i+1:02d}  /  '+('EARNED' if won else 'NOT YET EARNED'),
+                self.write(f"{'FILE' if self.ghostline else 'CREST'} {i+1:02d}  /  "+('EARNED' if won else 'NOT YET EARNED'),
                            (cell.x+82,cell.y+16),10,self.badge_color(i) if won else MUTED,True,cell.width-94)
-                wrap(self.app.screen,self.app.assets,record.get('name',f'Paradox Crest {i+1}'),
+                wrap(self.app.screen,self.app.assets,record.get('name',f'Evidence file {i+1}' if self.ghostline else f'Paradox Crest {i+1}'),
                      (cell.x+82,cell.y+40),cell.width-94,14,WHITE if won else MUTED,2)
                 chapter_index = record.get('chapter',i+1)
                 chapter = next((row for row in chapters if row.get('index')==chapter_index),{})
-                self.write(chapter.get('name',record.get('map_name','World DS field')),
+                self.write(chapter.get('name',record.get('map_name','Ghostline field' if self.ghostline else 'World DS field')),
                            (cell.x+14,cell.bottom-35),11,MUTED,width=cell.width-28)
-                self.write('Permanently collected' if won else 'Finish the local quest and defeat its guardian',
+                self.write('Evidence secured' if won and self.ghostline else 'Continue the investigation to reveal this file' if self.ghostline else 'Permanently collected' if won else 'Finish the local quest and defeat its guardian',
                            (cell.x+14,cell.bottom-18),9,ACCENT if won else MUTED,width=cell.width-28)
             return
         gap = 13
@@ -433,6 +463,9 @@ class StoryScreen:
                 self.write(chapters[i].get('name',''),(cell.centerx,cell.bottom-24),11,MUTED,width=cell.width-20,center=True)
 
     def draw_league(self,rect):
+        if self.ghostline:
+            self.draw_case_file(rect)
+            return
         if self.paradox:
             self.draw_convergence(rect)
             return
@@ -445,8 +478,14 @@ class StoryScreen:
         self.write(str(champ.get('holder') or 'The reigning champion'),(left.centerx,left.y+177),24,WHITE,True,left.width-44,True)
         self.write(str(champ.get('status') or 'Earn all 8 DigiBadges').replace('_',' ').title(),
                    (left.centerx,left.y+216),14,GOLD,True,left.width-44,True)
-        wrap(app.screen,app.assets,'The championship continues after your first victory. Defend your crown against new challengers, or reclaim it after a defeat.',
-             (left.x+24,left.y+260),left.width-48,14,MUTED,5)
+        wrap(app.screen,app.assets,'Defend your crown against new challengers, or reclaim it after a defeat.',
+             (left.x+24,left.y+253),left.width-48,13,MUTED,3)
+        mastery = bool(data.get('firewall_scan_bonus', data.get('scan_bonus', 0)))
+        self.write('+20% FIREWALL SCAN', (left.x+24,left.bottom-147),18,FIREWALL_ORANGE,True,left.width-48)
+        self.write('PERMANENT · UNLOCKED' if mastery else 'FIRST CHAMPIONSHIP VICTORY',
+                   (left.x+24,left.bottom-119),10,ACCENT,True,left.width-48)
+        self.write('Wild wins: 5% → 6% scan · 0.7% encounters',
+                   (left.x+24,left.bottom-97),11,MUTED,width=left.width-48)
         self.button((left.x+24,left.bottom-62,left.width-48,36),'Open championship region',
                     lambda:self.command('travel',chapter=8),disabled=self.badge_count<8 or app.action_pending)
         right = pygame.Rect(left.right+15,rect.y,rect.width-left.width-15,rect.height)
@@ -513,6 +552,96 @@ class StoryScreen:
         wrap(app.screen,app.assets,'Earn 20% more scan progress from every wild Paradox battle you win. The bonus stays active after returning to the MMO.',
              (reward.x+17,reward.y+83),reward.width-34,12,MUTED,3)
 
+    def draw_case_file(self, rect):
+        """Only display intel supplied by the current private story view."""
+        data, app = self.data, self.app
+        complete, revealed = bool(data.get('completed')), bool(data.get('revealed'))
+        left = pygame.Rect(rect.x, rect.y, int(rect.width*.41), rect.height)
+        right = pygame.Rect(left.right+14, rect.y, rect.width-left.width-14, rect.height)
+        self.card(left, complete)
+        self.card(right)
+        self.write('GHOSTLINE  /  CASE STATUS', (left.x+23, left.y+22), 11, ACCENT, True)
+        self.write('Network secured' if complete else 'Target identified' if revealed else 'Investigation active',
+                   (left.x+23, left.y+59), 25, WHITE, True, left.width-46)
+        self.write(f'{self.badge_count} / {self.badge_total} FIELDS SECURED',
+                   (left.x+23, left.y+103), 13, GOLD, True, left.width-46)
+        progress = pygame.Rect(left.x+23, left.y+134, left.width-46, 9)
+        draw.rect(app.screen, (30,49,63), progress, border_radius=4)
+        fill = progress.copy()
+        fill.width = round(progress.width*min(1,self.badge_count/max(1,self.badge_total)))
+        if fill.width:
+            draw.rect(app.screen, GOLD if complete else ACCENT, fill, border_radius=4)
+        self.write('CURRENT LEAD' if not complete else 'AFTER THE CASE',
+                   (left.x+23, left.y+172), 10, ACCENT, True)
+        message = ('The hostile network is dismantled. Completed routes and your hub services remain available. Your reward stays with you in every world.'
+                   if complete else data.get('objective', 'Speak with your contacts and follow the evidence.'))
+        wrap(app.screen, app.assets, message, (left.x+23,left.y+202), left.width-46, 17, WHITE, 6)
+        self.write('31 MAPS  /  1 SAFE HUB + 30 STORY FIELDS',
+                   (left.x+23,left.bottom-99),10,MUTED,True,left.width-46)
+        if complete:
+            label, action, disabled = 'Return to the safe hub', lambda:self.command('travel',chapter=0), app.action_pending
+        elif revealed and data.get('final_map_id'):
+            unlocked = any(row.get('index') == 30 and row.get('unlocked') for row in data.get('chapters', []))
+            label, action, disabled = 'Open final node', lambda:self.command('travel',chapter=30,map_id=data['final_map_id']), not unlocked or app.action_pending
+        else:
+            label, action, disabled = 'Return to your current lead', app.close_menu, app.action_pending
+        self.button((left.x+23,left.bottom-61,left.width-46,37),label,action,disabled=disabled,primary=True)
+        self.write('PERMANENT COMPLETION REWARD', (right.x+23,right.y+22),11,ACCENT,True,right.width-46)
+        self.write('+20% SHINY SCAN', (right.x+23,right.y+57),26,GOLD,True,right.width-46)
+        self.write('UNLOCKED' if data.get('shiny_scan_bonus',data.get('scan_bonus',0)) else 'AWAITING CASE COMPLETION',
+                   (right.x+24,right.y+100),10,ACCENT,True,right.width-48)
+        wrap(app.screen,app.assets,'Wild Shiny victories award 20% more scan progress: the usual 5% becomes 6%. The 1% encounter chance stays the same.',
+             (right.x+23,right.y+130),right.width-46,14,MUTED,3)
+        top = right.y+232
+        draw.line(app.screen,(42,73,90),(right.x+23,top-14),(right.right-23,top-14),1)
+        self.write('CASE CLOSED' if complete else 'CONFIRMED INTEL' if revealed else 'ENCRYPTED CASE FILE',
+                   (right.x+23,top),11,ACCENT,True,right.width-46)
+        team = data.get('final_team') or []
+        if revealed and not complete and data.get('final_name'):
+            self.write(data['final_name'],(right.x+23,top+29),19,WHITE,True,right.width-46)
+            for i, member in enumerate(team[:3]):
+                y=top+67+i*49
+                sprite=app.assets.sprite(member.get('species_id',''),(43,42),now=app.now)
+                if sprite: app.screen.blit(sprite,sprite.get_rect(center=(right.x+46,y+19)))
+                self.write(member.get('name','Unknown partner'),(right.x+79,y+1),13,WHITE,True,right.width-102)
+                self.write(f"Lv.{member.get('level',100)}",(right.x+79,y+23),10,GOLD)
+        else:
+            message = ('Your investigation is complete. Shiny Scan Mastery is permanent and does not need to be equipped.' if complete else
+                       'New routes and evidence decrypt as you complete quests. Future case details stay sealed until you discover them.')
+            wrap(app.screen,app.assets,message,(right.x+23,top+35),right.width-46,16,WHITE,4)
+            self.write('Private progress  ·  Your own partners at their real stats',
+                       (right.x+23,right.bottom-29),10,MUTED,width=right.width-46)
+
+    def dialogue_text_pages(self):
+        """Paginate long authored lines without dropping words or server choices."""
+        data = self.dialogue or {}
+        key = (data.get('token'), data.get('text'))
+        if self.dialogue_key != key:
+            self.dialogue_key, self.dialogue_read_page = key, 0
+        width = max(100, self.app.screen.get_width()-262)
+        scale = getattr(self.app.screen, 'scale', 1)
+        font = self.app.assets.font(max(1,round(17*scale)))
+        lines = []
+        for paragraph in str(data.get('text','')).splitlines() or ['']:
+            line = ''
+            for word in paragraph.split():
+                candidate = (line+' '+word).strip()
+                if line and font.size(candidate)[0] > width*scale:
+                    lines.append(line)
+                    line = word
+                else:
+                    line = candidate
+            lines.append(line)
+        pages = [lines[i:i+6] for i in range(0,len(lines),6)] or [[]]
+        self.dialogue_read_page = min(self.dialogue_read_page, len(pages)-1)
+        return pages
+
+    def turn_dialogue_page(self, page):
+        pages = self.dialogue_text_pages()
+        self.dialogue_read_page = max(0,min(page,len(pages)-1))
+        self.app.ui.actions, self.app.ui.fields = [], []
+        self.app.audio.cue('tab',now=self.app.now)
+
     def draw_feed(self,rect):
         rect = pygame.Rect(rect)
         self.card(rect)
@@ -532,10 +661,19 @@ class StoryScreen:
             return
         app,data = self.app,self.dialogue
         w,h = app.screen.get_size()
-        choices = data.get('choices',[])
+        pages = self.dialogue_text_pages()
+        lines = pages[self.dialogue_read_page]
+        more_text = self.dialogue_read_page < len(pages)-1
+        choices = [] if more_text else data.get('choices',[])
+        if more_text:
+            choices = [dict(id='__read_more',label='Read more  →')]
+            if any(row.get('id') == 'leave' for row in data.get('choices', [])):
+                choices.append(dict(id='leave',label='Talk later'))
+        if self.dialogue_read_page:
+            choices = [dict(id='__read_back',label='←  Previous text')] + list(choices)
         columns = min(3,max(1,len(choices)))
         rows = max(1,math.ceil(len(choices)/columns))
-        height = 254+(rows-1)*41
+        height = max(254,142+len(lines)*24)+(rows-1)*41
         rect = pygame.Rect(37,h-height-30,w-74,height)
         # Covered map characters and navigation never receive a choice click.
         app.ui.actions,app.ui.fields = [],[]
@@ -555,13 +693,17 @@ class StoryScreen:
                 app.presentation.image(portrait.inflate(-27,-24),frames[0])
         x = portrait.right+24
         self.write(data.get('name','Story character'),(x,rect.y+23),21,ACCENT,True,rect.width-405)
-        self.write(self.title,(rect.right-204,rect.y+30),9,MUTED,True,width=180)
-        wrap(app.screen,app.assets,data.get('text',''),(x,rect.y+65),rect.right-x-28,17,WHITE,5)
+        self.write('SECURE TRANSMISSION' if data.get('transmission') else self.title,(rect.right-204,rect.y+30),9,MUTED,True,width=180)
+        for i,line in enumerate(lines):
+            self.write(line,(x,rect.y+65+i*24),17,WHITE)
         width = min(267,(rect.width-190-(columns-1)*10)//columns)
         for i,choice in enumerate(choices):
             self.button((x+(i%columns)*(width+10),rect.bottom-55-(rows-1)*41+(i//columns)*41,width,35),choice.get('label','Continue'),
-                        lambda c=choice['id']:self.choose(c),primary=choice.get('id') in ('next','challenge','accept_quest','complete_quest'),disabled=app.action_pending)
-        self.write(f"{int(data.get('page',1))} / {max(1,int(data.get('pages',1)))}",(portrait.centerx,rect.bottom-36),11,MUTED,center=True)
+                        lambda c=choice['id']:self.turn_dialogue_page(self.dialogue_read_page+(1 if c=='__read_more' else -1)) if c in ('__read_more','__read_back') else self.choose(c),primary=choice.get('id') in ('__read_more','next','challenge','accept_quest','complete_quest'),disabled=app.action_pending)
+        page_label = f"{int(data.get('page',1))} / {max(1,int(data.get('pages',1)))}"
+        if len(pages)>1:
+            page_label += f' · {self.dialogue_read_page+1}/{len(pages)}'
+        self.write(page_label,(portrait.centerx,rect.bottom-36),11,MUTED,center=True)
 
     def dismiss_result(self,journal=False):
         self.result = None
@@ -597,8 +739,8 @@ class StoryScreen:
         panel(app.screen,rect,(10,25,42),GOLD if result.get('won') else ACCENT,15)
         won,badge = result.get('won'),result.get('badge')
         champion = result.get('role')=='champion'
-        finale = self.paradox and result.get('role')=='final'
-        title = ('PARADOX CREST EARNED' if self.paradox else 'DIGIBADGE EARNED') if badge else 'PARADOX CHRONICLE COMPLETE' if finale and won else 'CHAMPIONSHIP VICTORY' if champion and won else 'STORY VICTORY' if won else 'YOUR JOURNEY CONTINUES'
+        finale = (self.paradox or self.ghostline) and result.get('role')=='final'
+        title = 'GHOSTLINE COMPLETE' if self.ghostline and finale and won else ('EVIDENCE SECURED' if self.ghostline else 'PARADOX CREST EARNED' if self.paradox else 'DIGIBADGE EARNED') if badge else 'PARADOX CHRONICLE COMPLETE' if finale and won else 'CHAMPIONSHIP VICTORY' if champion and won else 'STORY VICTORY' if won else 'YOUR JOURNEY CONTINUES'
         self.write(title,(rect.centerx,rect.y+32),13,GOLD if won else ACCENT,True,center=True)
         if badge:
             badge_index = next((i for i,row in enumerate(self.data.get('badges',[])) if row.get('id')==badge.get('id')),int(badge.get('chapter',0)))
@@ -611,16 +753,19 @@ class StoryScreen:
                 sprite = app.assets.tamer(app.state.get('tamer',app.tamer),'down',False,app.now,(78,96))
                 if sprite:
                     app.screen.blit(sprite,sprite.get_rect(center=(rect.centerx,rect.y+110)))
-            heading = 'The Convergence is restored' if finale and won else 'Your title is yours to defend' if champion and won else result.get('opponent','Story battle')
+            heading = 'The network is free' if self.ghostline and finale and won else 'The Convergence is restored' if finale and won else 'Your title is yours to defend' if champion and won else result.get('opponent','Story battle')
         self.write(heading,(rect.centerx,rect.y+172),27,WHITE,True,rect.width-58,True)
         self.write(f"+{result.get('credits',0):,} credits  ·  Partners recovered" if won else 'Progress saved  ·  Partners recovered  ·  Ready to try again',
                    (rect.centerx,rect.y+216),13,GOLD if won else ACCENT,True,rect.width-50,True)
-        narrative = result.get('narrative') or ('A new challenge awaits your team.' if won else 'Every tamer faces setbacks. Prepare your partners and return when you are ready.')
+        narrative = result.get('narrative') or ('The root session is closed. Your allies can rebuild the network, and Shiny Scan Mastery is yours to keep.' if self.ghostline and finale and won else 'A new challenge awaits your team.' if won else 'Every tamer faces setbacks. Prepare your partners and return when you are ready.')
         self.excerpt(narrative,(rect.x+35,rect.y+251),rect.width-70,16,2)
         items = result.get('items') or []
         if finale and won:
-            self.write('PERMANENT REWARD  /  +20% scan gain on every wild Paradox win',
+            self.write('PERMANENT REWARD  /  +20% scan gain on every wild '+('Shiny' if self.ghostline else 'Paradox')+' win',
                        (rect.x+35,rect.y+310),13,GOLD,True,width=rect.width-70)
+        elif champion and won:
+            self.write(('PERMANENT REWARD UNLOCKED' if result.get('scan_mastery_unlocked') else 'PERMANENT MASTERY ACTIVE')+'  /  FireWall scan: 5% → 6% on wild wins',
+                       (rect.x+35,rect.y+310),12,FIREWALL_ORANGE,True,width=rect.width-70)
         elif items:
             self.write('SUPPLIES  /  '+'  ·  '.join(f"{row['name']} ×{row['quantity']}" for row in items),
                        (rect.x+35,rect.y+310),11,GOLD,width=rect.width-70)

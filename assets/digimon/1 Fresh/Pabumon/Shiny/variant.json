@@ -1,0 +1,22 @@
+{
+  "variant_id": "shiny_pabumon",
+  "display_name": "Shiny Pabumon",
+  "base_species": "Pabumon",
+  "stage": "1 Fresh",
+  "status": "ready",
+  "style_profile": "Prismatic Shiny \u2014 Gold Stardust v1",
+  "palette": "Cerulean",
+  "target_hue_degrees": 196.0,
+  "source_sprite_count": 3,
+  "shiny_sprite_count": 3,
+  "animation_alignment": "Exact source canvas dimensions and sprite positions retained",
+  "effects": "Warm-gold silhouette glow; restrained ivory/gold four-point sparkles; deterministic frame twinkle",
+  "sprites": [
+    "Pabumon_Idle.png",
+    "Pabumon_LLegWalk.png",
+    "Pabumon_RLegWalk.png"
+  ],
+  "primary_sprite": "1 Fresh/Pabumon/Shiny/Pabumon_Idle.png",
+  "source_primary": "1 Fresh/Pabumon/Pabumon_Idle.png",
+  "materializable": true
+}

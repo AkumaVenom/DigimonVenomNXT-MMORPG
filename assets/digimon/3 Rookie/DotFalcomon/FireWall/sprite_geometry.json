@@ -1,0 +1,120 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "DotFalcomon_AttackPart1.png": {
+      "source_size": [
+        440,
+        402
+      ],
+      "output_size": [
+        824,
+        786
+      ],
+      "padding": {
+        "left": 192,
+        "top": 192,
+        "right": 192,
+        "bottom": 192
+      },
+      "effect_pixel_unit": 12,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "DotFalcomon_AttackPart2.png": {
+      "source_size": [
+        336,
+        376
+      ],
+      "output_size": [
+        656,
+        696
+      ],
+      "padding": {
+        "left": 160,
+        "top": 160,
+        "right": 160,
+        "bottom": 160
+      },
+      "effect_pixel_unit": 10,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "DotFalcomon_Extra.png": {
+      "source_size": [
+        336,
+        376
+      ],
+      "output_size": [
+        656,
+        696
+      ],
+      "padding": {
+        "left": 160,
+        "top": 160,
+        "right": 160,
+        "bottom": 160
+      },
+      "effect_pixel_unit": 10,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "DotFalcomon_Idle.png": {
+      "source_size": [
+        408,
+        386
+      ],
+      "output_size": [
+        792,
+        770
+      ],
+      "padding": {
+        "left": 192,
+        "top": 192,
+        "right": 192,
+        "bottom": 192
+      },
+      "effect_pixel_unit": 12,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "DotFalcomon_LLegWalk.png": {
+      "source_size": [
+        386,
+        364
+      ],
+      "output_size": [
+        770,
+        748
+      ],
+      "padding": {
+        "left": 192,
+        "top": 192,
+        "right": 192,
+        "bottom": 192
+      },
+      "effect_pixel_unit": 12,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "DotFalcomon_RLegWalk.png": {
+      "source_size": [
+        386,
+        364
+      ],
+      "output_size": [
+        770,
+        748
+      ],
+      "padding": {
+        "left": 192,
+        "top": 192,
+        "right": 192,
+        "bottom": 192
+      },
+      "effect_pixel_unit": 12,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

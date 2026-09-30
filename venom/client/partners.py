@@ -5,6 +5,7 @@ import math
 import pygame
 
 from venom.common.game import FARM_CAPACITY
+from .varieties import variety_of, name_color, VARIETY_NAMES
 from .render import draw
 from .widgets import text, bar, wrap, WHITE, CYAN, LIME, GOLD, RED
 
@@ -176,7 +177,7 @@ class PartnerScreen:
             image_height = max(42, min(104, card.height-99))
             self._portrait(member.get('species_id'), (card.x+18, card.y+34, card.width-36, image_height))
             text(app.screen, app.assets, member.get('name', 'Partner'), (card.centerx, card.bottom-49), 16,
-                 WHITE, True, card.width-22, True)
+                 name_color(member, app.assets.species, WHITE), True, card.width-22, True)
             text(app.screen, app.assets, f"Lv.{member.get('level', 1)}  ·  {member.get('hp', 0)}/{member.get('max_hp', 0)} HP",
                  (card.centerx, card.bottom-25), 10, p['muted'], False, card.width-20, True)
             app.ui.actions.append((card, lambda i=index: self.select(i)))
@@ -185,14 +186,14 @@ class PartnerScreen:
         app, art = self.app, self.app.presentation
         p = art.colors(self.theme)
         index = app.selected_party
-        text(app.screen, app.assets, 'PARTNER DOSSIER', (rect.x+20, rect.y+17), 10, p['accent'], True)
+        text(app.screen, app.assets, VARIETY_NAMES[variety_of(mon, app.assets.species)].upper()+' PARTNER' if variety_of(mon, app.assets.species) != 'normal' else 'PARTNER DOSSIER', (rect.x+20, rect.y+17), 10, name_color(mon, app.assets.species, p['accent']), True)
         text(app.screen, app.assets, f"Lv.{mon.get('level', 1):02d}", (rect.right-78, rect.y+13), 24, WHITE, True)
         bottom = rect.y+min(170, max(122, rect.height-277))
         draw.ellipse(app.screen, p['line'], (rect.centerx-92, bottom-19, 184, 29), 1)
         draw.ellipse(app.screen, p['glow'], (rect.centerx-72, bottom-15, 144, 21))
         self._portrait(mon.get('species_id'), (rect.x+40, rect.y+42, rect.width-80, bottom-rect.y-42))
         text(app.screen, app.assets, mon.get('name', 'Partner'), (rect.centerx, bottom+22), 27,
-             WHITE, True, rect.width-35, True)
+             name_color(mon, app.assets.species, WHITE), True, rect.width-35, True)
         species = app.assets.species.get(mon.get('species_id'), {})
         info = f"{species.get('stage', '').replace('_', ' ').title()}  ·  {mon.get('type', species.get('type', '?')).title()}  /  {mon.get('attribute', species.get('attribute', '?')).title()}"
         text(app.screen, app.assets, info, (rect.centerx, bottom+49), 11, p['muted'], max_width=rect.width-35, center=True)
@@ -238,7 +239,7 @@ class PartnerScreen:
         width = min(86, (rect.width-385)//6)
         start = rect.right-14-len(party)*(width+7)
         text(app.screen, app.assets, mon.get('name', 'Partner'), (rect.x+100, rect.y+17), 21,
-             WHITE, True, max(150, start-rect.x-115))
+             name_color(mon, app.assets.species, WHITE), True, max(150, start-rect.x-115))
         text(app.screen, app.assets, f"Lv.{mon.get('level', 1)}  ·  ABI {mon.get('abi', 0)}  ·  CAM {mon.get('cam', 0)}%",
              (rect.x+101, rect.y+49), 11, p['muted'], max_width=260)
         for index, member in enumerate(party):
@@ -334,7 +335,7 @@ class PartnerScreen:
         draw.ellipse(app.screen, p['line'], (rect.centerx-67, image_y+image_height-7, 134, 15), 1)
         self._portrait(route.get('to'), (rect.x+45, image_y, rect.width-90, image_height))
         text(app.screen, app.assets, route.get('name', route.get('to', '?')), (rect.x+16, name_y),
-             21, WHITE, True, rect.width-32)
+             21, name_color({'species_id': route.get('to')}, app.assets.species, WHITE), True, rect.width-32)
         gain = (5+mon.get('level', 1)//5) if down else (2+mon.get('level', 1)//10)
         abi = min(200, mon.get('abi', 0)+gain)
         species = app.assets.species.get(route.get('to'), {})
@@ -366,7 +367,7 @@ class PartnerScreen:
         compact = rect.height < 320
         wrap(app.screen, app.assets, 'A new form. The same partner.', (rect.x+20, rect.y+47),
              rect.width-40, 16 if compact else 24, WHITE, 2)
-        facts = [('01', 'Level resets to 1', 'Train your new form from the beginning.'),
+        facts = [('01', 'Level resets to 1', VARIETY_NAMES[variety_of(mon, app.assets.species)]+' variety stays through evolution.' if variety_of(mon, app.assets.species) != 'normal' else 'Train your new form from the beginning.'),
                  ('02', 'CAM is retained', f"Your bond stays at {mon.get('cam', 0)}%."),
                  ('03', 'ABI grows with you', 'ABI DigiMeat also adds +1 permanently.')]
         top = rect.y+(82 if compact else 115)
@@ -425,7 +426,7 @@ class PartnerScreen:
             image_height = max(35, card.height-93)
             self._portrait(mon.get('species_id'), (card.x+14, card.y+30, min(95, card.width//3), image_height))
             x = card.x+min(118, card.width//3+23)
-            text(app.screen, app.assets, mon.get('name', 'Partner'), (x, card.y+41), 18, WHITE, True, card.right-x-14)
+            text(app.screen, app.assets, mon.get('name', 'Partner'), (x, card.y+41), 18, name_color(mon, app.assets.species, WHITE), True, card.right-x-14)
             text(app.screen, app.assets, f"ABI {mon.get('abi', 0)}  ·  CAM {mon.get('cam', 0)}%", (x, card.y+69),
                  10, p['muted'], max_width=card.right-x-14)
             button_width = (card.width-36)//2

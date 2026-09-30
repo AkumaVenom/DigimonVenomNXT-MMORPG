@@ -1,0 +1,500 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Craniamon_Primary.png": {
+      "source_size": [
+        108,
+        191
+      ],
+      "output_size": [
+        140,
+        223
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Craniamon_Frame_001.png": {
+      "source_size": [
+        108,
+        191
+      ],
+      "output_size": [
+        140,
+        223
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Craniamon_Frame_002.png": {
+      "source_size": [
+        108,
+        191
+      ],
+      "output_size": [
+        140,
+        223
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Craniamon_Frame_003.png": {
+      "source_size": [
+        108,
+        191
+      ],
+      "output_size": [
+        140,
+        223
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Craniamon_Frame_004.png": {
+      "source_size": [
+        158,
+        136
+      ],
+      "output_size": [
+        190,
+        168
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Craniamon_Frame_005.png": {
+      "source_size": [
+        121,
+        122
+      ],
+      "output_size": [
+        153,
+        154
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Craniamon_Frame_006.png": {
+      "source_size": [
+        32,
+        54
+      ],
+      "output_size": [
+        64,
+        86
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Craniamon_Frame_007.png": {
+      "source_size": [
+        30,
+        52
+      ],
+      "output_size": [
+        62,
+        84
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Craniamon_Frame_008.png": {
+      "source_size": [
+        32,
+        54
+      ],
+      "output_size": [
+        64,
+        86
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Craniamon_Frame_009.png": {
+      "source_size": [
+        34,
+        52
+      ],
+      "output_size": [
+        66,
+        84
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Craniamon_Frame_010.png": {
+      "source_size": [
+        30,
+        52
+      ],
+      "output_size": [
+        62,
+        84
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Craniamon_Frame_011.png": {
+      "source_size": [
+        32,
+        48
+      ],
+      "output_size": [
+        64,
+        80
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Craniamon_Frame_012.png": {
+      "source_size": [
+        32,
+        48
+      ],
+      "output_size": [
+        64,
+        80
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Craniamon_Frame_013.png": {
+      "source_size": [
+        28,
+        18
+      ],
+      "output_size": [
+        60,
+        50
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Craniamon_Frame_014.png": {
+      "source_size": [
+        28,
+        14
+      ],
+      "output_size": [
+        60,
+        46
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Craniamon_Frame_015.png": {
+      "source_size": [
+        19,
+        14
+      ],
+      "output_size": [
+        51,
+        46
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Craniamon_Frame_016.png": {
+      "source_size": [
+        29,
+        55
+      ],
+      "output_size": [
+        61,
+        87
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Craniamon_Frame_017.png": {
+      "source_size": [
+        25,
+        53
+      ],
+      "output_size": [
+        57,
+        85
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Craniamon_Frame_018.png": {
+      "source_size": [
+        29,
+        55
+      ],
+      "output_size": [
+        61,
+        87
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Craniamon_Frame_019.png": {
+      "source_size": [
+        34,
+        52
+      ],
+      "output_size": [
+        66,
+        84
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Craniamon_Frame_020.png": {
+      "source_size": [
+        25,
+        53
+      ],
+      "output_size": [
+        57,
+        85
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Craniamon_Frame_021.png": {
+      "source_size": [
+        29,
+        53
+      ],
+      "output_size": [
+        61,
+        85
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Craniamon_Frame_022.png": {
+      "source_size": [
+        14,
+        19
+      ],
+      "output_size": [
+        22,
+        27
+      ],
+      "padding": {
+        "left": 4,
+        "top": 4,
+        "right": 4,
+        "bottom": 4
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": true
+    },
+    "Frames/Craniamon_Frame_023.png": {
+      "source_size": [
+        29,
+        53
+      ],
+      "output_size": [
+        61,
+        85
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Craniamon_Frame_024.png": {
+      "source_size": [
+        24,
+        18
+      ],
+      "output_size": [
+        56,
+        50
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Craniamon_Frame_025.png": {
+      "source_size": [
+        32,
+        14
+      ],
+      "output_size": [
+        64,
+        46
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

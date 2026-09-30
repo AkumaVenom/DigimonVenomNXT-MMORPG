@@ -1,0 +1,101 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Gekomon_Attack.png": {
+      "source_size": [
+        520,
+        870
+      ],
+      "output_size": [
+        808,
+        1158
+      ],
+      "padding": {
+        "left": 144,
+        "top": 144,
+        "right": 144,
+        "bottom": 144
+      },
+      "effect_pixel_unit": 9,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Gekomon_GetHit.png": {
+      "source_size": [
+        486,
+        814
+      ],
+      "output_size": [
+        774,
+        1102
+      ],
+      "padding": {
+        "left": 144,
+        "top": 144,
+        "right": 144,
+        "bottom": 144
+      },
+      "effect_pixel_unit": 9,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Gekomon_Idle.png": {
+      "source_size": [
+        436,
+        806
+      ],
+      "output_size": [
+        724,
+        1094
+      ],
+      "padding": {
+        "left": 144,
+        "top": 144,
+        "right": 144,
+        "bottom": 144
+      },
+      "effect_pixel_unit": 9,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Gekomon_LLegWalk.png": {
+      "source_size": [
+        628,
+        794
+      ],
+      "output_size": [
+        916,
+        1082
+      ],
+      "padding": {
+        "left": 144,
+        "top": 144,
+        "right": 144,
+        "bottom": 144
+      },
+      "effect_pixel_unit": 9,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Gekomon_RLegWalk.png": {
+      "source_size": [
+        743,
+        863
+      ],
+      "output_size": [
+        1031,
+        1151
+      ],
+      "padding": {
+        "left": 144,
+        "top": 144,
+        "right": 144,
+        "bottom": 144
+      },
+      "effect_pixel_unit": 9,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

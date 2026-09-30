@@ -1,0 +1,82 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Gizamon_AttackPart1.png": {
+      "source_size": [
+        572,
+        566
+      ],
+      "output_size": [
+        828,
+        822
+      ],
+      "padding": {
+        "left": 128,
+        "top": 128,
+        "right": 128,
+        "bottom": 128
+      },
+      "effect_pixel_unit": 8,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Gizamon_AttackPart2.png": {
+      "source_size": [
+        652,
+        596
+      ],
+      "output_size": [
+        908,
+        852
+      ],
+      "padding": {
+        "left": 128,
+        "top": 128,
+        "right": 128,
+        "bottom": 128
+      },
+      "effect_pixel_unit": 8,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Gizamon_Extra.png": {
+      "source_size": [
+        572,
+        566
+      ],
+      "output_size": [
+        828,
+        822
+      ],
+      "padding": {
+        "left": 128,
+        "top": 128,
+        "right": 128,
+        "bottom": 128
+      },
+      "effect_pixel_unit": 8,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Gizamon_Idle.png": {
+      "source_size": [
+        532,
+        610
+      ],
+      "output_size": [
+        788,
+        866
+      ],
+      "padding": {
+        "left": 128,
+        "top": 128,
+        "right": 128,
+        "bottom": 128
+      },
+      "effect_pixel_unit": 8,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

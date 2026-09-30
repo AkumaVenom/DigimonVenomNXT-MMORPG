@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Frames/Flymon_Frame_002.png",
+    "walk_left": "Frames/Flymon_Frame_003.png",
+    "walk_right": "Frames/Flymon_Frame_004.png",
+    "attack1": "Frames/Flymon_Frame_007.png",
+    "attack2": "Frames/Flymon_Frame_008.png"
+  },
+  "animations": {
+    "idle": [
+      "Frames/Flymon_Frame_002.png",
+      "Frames/Flymon_Frame_003.png",
+      "Frames/Flymon_Frame_002.png",
+      "Frames/Flymon_Frame_004.png"
+    ],
+    "walk": [
+      "Frames/Flymon_Frame_002.png",
+      "Frames/Flymon_Frame_003.png",
+      "Frames/Flymon_Frame_002.png",
+      "Frames/Flymon_Frame_004.png"
+    ],
+    "attack": [
+      "Frames/Flymon_Frame_007.png",
+      "Frames/Flymon_Frame_008.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 23,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied v1.2.0 Shiny PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained."
+}

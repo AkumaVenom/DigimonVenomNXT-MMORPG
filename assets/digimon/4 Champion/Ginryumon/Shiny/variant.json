@@ -1,0 +1,23 @@
+{
+  "variant_id": "shiny_ginryumon",
+  "display_name": "Shiny Ginryumon",
+  "base_species": "Ginryumon",
+  "stage": "4 Champion",
+  "status": "ready",
+  "style_profile": "Prismatic Shiny \u2014 Gold Stardust v1",
+  "palette": "Glacier mint",
+  "target_hue_degrees": 171.0,
+  "source_sprite_count": 4,
+  "shiny_sprite_count": 4,
+  "animation_alignment": "Exact source canvas dimensions and sprite positions retained",
+  "effects": "Warm-gold silhouette glow; restrained ivory/gold four-point sparkles; deterministic frame twinkle",
+  "sprites": [
+    "Ginryumon_AttackPart1.png",
+    "Ginryumon_AttackPart2.png",
+    "Ginryumon_Idle.png",
+    "Ginryumon_LLegWalk.png"
+  ],
+  "primary_sprite": "4 Champion/Ginryumon/Shiny/Ginryumon_Idle.png",
+  "source_primary": "4 Champion/Ginryumon/Ginryumon_Idle.png",
+  "materializable": true
+}

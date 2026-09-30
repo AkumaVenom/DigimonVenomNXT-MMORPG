@@ -1,0 +1,120 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "MetalGarurumon_AttackPart1.png": {
+      "source_size": [
+        634,
+        654
+      ],
+      "output_size": [
+        762,
+        782
+      ],
+      "padding": {
+        "left": 64,
+        "top": 64,
+        "right": 64,
+        "bottom": 64
+      },
+      "effect_pixel_unit": 4,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "MetalGarurumon_AttackPart2.png": {
+      "source_size": [
+        658,
+        562
+      ],
+      "output_size": [
+        786,
+        690
+      ],
+      "padding": {
+        "left": 64,
+        "top": 64,
+        "right": 64,
+        "bottom": 64
+      },
+      "effect_pixel_unit": 4,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "MetalGarurumon_Extra.png": {
+      "source_size": [
+        658,
+        562
+      ],
+      "output_size": [
+        786,
+        690
+      ],
+      "padding": {
+        "left": 64,
+        "top": 64,
+        "right": 64,
+        "bottom": 64
+      },
+      "effect_pixel_unit": 4,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "MetalGarurumon_Idle.png": {
+      "source_size": [
+        518,
+        568
+      ],
+      "output_size": [
+        646,
+        696
+      ],
+      "padding": {
+        "left": 64,
+        "top": 64,
+        "right": 64,
+        "bottom": 64
+      },
+      "effect_pixel_unit": 4,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "MetalGarurumon_LLegWalk.png": {
+      "source_size": [
+        522,
+        570
+      ],
+      "output_size": [
+        650,
+        698
+      ],
+      "padding": {
+        "left": 64,
+        "top": 64,
+        "right": 64,
+        "bottom": 64
+      },
+      "effect_pixel_unit": 4,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "MetalGarurumon_RLegWalk.png": {
+      "source_size": [
+        522,
+        570
+      ],
+      "output_size": [
+        650,
+        698
+      ],
+      "padding": {
+        "left": 64,
+        "top": 64,
+        "right": 64,
+        "bottom": 64
+      },
+      "effect_pixel_unit": 4,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

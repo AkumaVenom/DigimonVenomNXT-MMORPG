@@ -1,0 +1,120 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Chibomon_AttackPart1.png": {
+      "source_size": [
+        444,
+        480
+      ],
+      "output_size": [
+        860,
+        896
+      ],
+      "padding": {
+        "left": 208,
+        "top": 208,
+        "right": 208,
+        "bottom": 208
+      },
+      "effect_pixel_unit": 13,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Chibomon_AttackPart2.png": {
+      "source_size": [
+        442,
+        484
+      ],
+      "output_size": [
+        858,
+        900
+      ],
+      "padding": {
+        "left": 208,
+        "top": 208,
+        "right": 208,
+        "bottom": 208
+      },
+      "effect_pixel_unit": 13,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Chibomon_Extra.png": {
+      "source_size": [
+        444,
+        480
+      ],
+      "output_size": [
+        860,
+        896
+      ],
+      "padding": {
+        "left": 208,
+        "top": 208,
+        "right": 208,
+        "bottom": 208
+      },
+      "effect_pixel_unit": 13,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Chibomon_Idle.png": {
+      "source_size": [
+        442,
+        484
+      ],
+      "output_size": [
+        858,
+        900
+      ],
+      "padding": {
+        "left": 208,
+        "top": 208,
+        "right": 208,
+        "bottom": 208
+      },
+      "effect_pixel_unit": 13,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Chibomon_LLegWalk.png": {
+      "source_size": [
+        440,
+        482
+      ],
+      "output_size": [
+        856,
+        898
+      ],
+      "padding": {
+        "left": 208,
+        "top": 208,
+        "right": 208,
+        "bottom": 208
+      },
+      "effect_pixel_unit": 13,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Chibomon_RLegWalk.png": {
+      "source_size": [
+        440,
+        482
+      ],
+      "output_size": [
+        856,
+        898
+      ],
+      "padding": {
+        "left": 208,
+        "top": 208,
+        "right": 208,
+        "bottom": 208
+      },
+      "effect_pixel_unit": 13,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

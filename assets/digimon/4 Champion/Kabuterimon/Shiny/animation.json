@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Kabuterimon_Idle.png",
+    "walk_left": "Kabuterimon_LLegWalk.png",
+    "walk_right": "Kabuterimon_RLegWalk.png",
+    "attack1": "Kabuterimon_AttackPart1.png",
+    "attack2": "Kabuterimon_AttackPart2.png"
+  },
+  "animations": {
+    "idle": [
+      "Kabuterimon_Idle.png"
+    ],
+    "walk": [
+      "Kabuterimon_Idle.png",
+      "Kabuterimon_LLegWalk.png",
+      "Kabuterimon_Idle.png",
+      "Kabuterimon_RLegWalk.png"
+    ],
+    "attack": [
+      "Kabuterimon_AttackPart1.png",
+      "Kabuterimon_AttackPart2.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 0,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied v1.2.0 Shiny PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained."
+}

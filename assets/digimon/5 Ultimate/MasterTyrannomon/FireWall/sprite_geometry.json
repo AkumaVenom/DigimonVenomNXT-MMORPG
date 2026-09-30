@@ -1,0 +1,405 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Frames/MasterTyrannomon_Frame_001.png": {
+      "source_size": [
+        115,
+        123
+      ],
+      "output_size": [
+        147,
+        155
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/MasterTyrannomon_Frame_002.png": {
+      "source_size": [
+        119,
+        122
+      ],
+      "output_size": [
+        151,
+        154
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/MasterTyrannomon_Frame_003.png": {
+      "source_size": [
+        120,
+        120
+      ],
+      "output_size": [
+        152,
+        152
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/MasterTyrannomon_Frame_004.png": {
+      "source_size": [
+        125,
+        126
+      ],
+      "output_size": [
+        157,
+        158
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/MasterTyrannomon_Frame_005.png": {
+      "source_size": [
+        135,
+        125
+      ],
+      "output_size": [
+        167,
+        157
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/MasterTyrannomon_Frame_006.png": {
+      "source_size": [
+        37,
+        50
+      ],
+      "output_size": [
+        69,
+        82
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/MasterTyrannomon_Frame_007.png": {
+      "source_size": [
+        38,
+        50
+      ],
+      "output_size": [
+        70,
+        82
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/MasterTyrannomon_Frame_008.png": {
+      "source_size": [
+        38,
+        50
+      ],
+      "output_size": [
+        70,
+        82
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/MasterTyrannomon_Frame_009.png": {
+      "source_size": [
+        37,
+        50
+      ],
+      "output_size": [
+        69,
+        82
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/MasterTyrannomon_Frame_010.png": {
+      "source_size": [
+        36,
+        47
+      ],
+      "output_size": [
+        68,
+        79
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/MasterTyrannomon_Frame_011.png": {
+      "source_size": [
+        37,
+        45
+      ],
+      "output_size": [
+        69,
+        77
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/MasterTyrannomon_Frame_012.png": {
+      "source_size": [
+        37,
+        44
+      ],
+      "output_size": [
+        69,
+        76
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/MasterTyrannomon_Frame_013.png": {
+      "source_size": [
+        38,
+        44
+      ],
+      "output_size": [
+        70,
+        76
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/MasterTyrannomon_Frame_014.png": {
+      "source_size": [
+        39,
+        46
+      ],
+      "output_size": [
+        71,
+        78
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/MasterTyrannomon_Frame_015.png": {
+      "source_size": [
+        37,
+        46
+      ],
+      "output_size": [
+        69,
+        78
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/MasterTyrannomon_Frame_016.png": {
+      "source_size": [
+        38,
+        43
+      ],
+      "output_size": [
+        70,
+        75
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/MasterTyrannomon_Frame_017.png": {
+      "source_size": [
+        36,
+        44
+      ],
+      "output_size": [
+        68,
+        76
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/MasterTyrannomon_Frame_018.png": {
+      "source_size": [
+        37,
+        44
+      ],
+      "output_size": [
+        69,
+        76
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/MasterTyrannomon_Frame_019.png": {
+      "source_size": [
+        37,
+        44
+      ],
+      "output_size": [
+        69,
+        76
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/MasterTyrannomon_Frame_020.png": {
+      "source_size": [
+        53,
+        13
+      ],
+      "output_size": [
+        85,
+        45
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "MasterTyrannomon_Primary.png": {
+      "source_size": [
+        115,
+        123
+      ],
+      "output_size": [
+        147,
+        155
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

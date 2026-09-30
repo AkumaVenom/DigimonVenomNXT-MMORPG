@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Vorvomon_Idle.png": {
+      "source_size": [
+        600,
+        576
+      ],
+      "output_size": [
+        760,
+        736
+      ],
+      "padding": {
+        "left": 80,
+        "top": 80,
+        "right": 80,
+        "bottom": 80
+      },
+      "effect_pixel_unit": 5,
+      "effect_style": "smooth_cyber_glow",
+      "particle_fragment": false
+    },
+    "Vorvomon_LLegWalk.png": {
+      "source_size": [
+        687,
+        590
+      ],
+      "output_size": [
+        847,
+        750
+      ],
+      "padding": {
+        "left": 80,
+        "top": 80,
+        "right": 80,
+        "bottom": 80
+      },
+      "effect_pixel_unit": 5,
+      "effect_style": "smooth_cyber_glow",
+      "particle_fragment": false
+    },
+    "Vorvomon_RLegWalk.png": {
+      "source_size": [
+        687,
+        590
+      ],
+      "output_size": [
+        847,
+        750
+      ],
+      "padding": {
+        "left": 80,
+        "top": 80,
+        "right": 80,
+        "bottom": 80
+      },
+      "effect_pixel_unit": 5,
+      "effect_style": "smooth_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

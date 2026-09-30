@@ -1,0 +1,120 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "SnowGoblimon_AttackPart1.png": {
+      "source_size": [
+        556,
+        612
+      ],
+      "output_size": [
+        748,
+        804
+      ],
+      "padding": {
+        "left": 96,
+        "top": 96,
+        "right": 96,
+        "bottom": 96
+      },
+      "effect_pixel_unit": 6,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "SnowGoblimon_AttackPart2.png": {
+      "source_size": [
+        720,
+        610
+      ],
+      "output_size": [
+        912,
+        802
+      ],
+      "padding": {
+        "left": 96,
+        "top": 96,
+        "right": 96,
+        "bottom": 96
+      },
+      "effect_pixel_unit": 6,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "SnowGoblimon_Extra.png": {
+      "source_size": [
+        720,
+        610
+      ],
+      "output_size": [
+        912,
+        802
+      ],
+      "padding": {
+        "left": 96,
+        "top": 96,
+        "right": 96,
+        "bottom": 96
+      },
+      "effect_pixel_unit": 6,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "SnowGoblimon_Idle.png": {
+      "source_size": [
+        446,
+        532
+      ],
+      "output_size": [
+        638,
+        724
+      ],
+      "padding": {
+        "left": 96,
+        "top": 96,
+        "right": 96,
+        "bottom": 96
+      },
+      "effect_pixel_unit": 6,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "SnowGoblimon_LLegWalk.png": {
+      "source_size": [
+        466,
+        536
+      ],
+      "output_size": [
+        658,
+        728
+      ],
+      "padding": {
+        "left": 96,
+        "top": 96,
+        "right": 96,
+        "bottom": 96
+      },
+      "effect_pixel_unit": 6,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "SnowGoblimon_RLegWalk.png": {
+      "source_size": [
+        466,
+        536
+      ],
+      "output_size": [
+        658,
+        728
+      ],
+      "padding": {
+        "left": 96,
+        "top": 96,
+        "right": 96,
+        "bottom": 96
+      },
+      "effect_pixel_unit": 6,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

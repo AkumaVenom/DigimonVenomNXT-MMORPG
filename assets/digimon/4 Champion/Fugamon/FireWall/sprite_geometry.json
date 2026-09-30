@@ -1,0 +1,101 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Fugamon_Attack.png": {
+      "source_size": [
+        532,
+        576
+      ],
+      "output_size": [
+        724,
+        768
+      ],
+      "padding": {
+        "left": 96,
+        "top": 96,
+        "right": 96,
+        "bottom": 96
+      },
+      "effect_pixel_unit": 6,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Fugamon_GetHit.png": {
+      "source_size": [
+        560,
+        576
+      ],
+      "output_size": [
+        752,
+        768
+      ],
+      "padding": {
+        "left": 96,
+        "top": 96,
+        "right": 96,
+        "bottom": 96
+      },
+      "effect_pixel_unit": 6,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Fugamon_Idle.png": {
+      "source_size": [
+        570,
+        502
+      ],
+      "output_size": [
+        762,
+        694
+      ],
+      "padding": {
+        "left": 96,
+        "top": 96,
+        "right": 96,
+        "bottom": 96
+      },
+      "effect_pixel_unit": 6,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Fugamon_LLegWalk.png": {
+      "source_size": [
+        566,
+        502
+      ],
+      "output_size": [
+        758,
+        694
+      ],
+      "padding": {
+        "left": 96,
+        "top": 96,
+        "right": 96,
+        "bottom": 96
+      },
+      "effect_pixel_unit": 6,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Fugamon_RLegWalk.png": {
+      "source_size": [
+        658,
+        559
+      ],
+      "output_size": [
+        850,
+        751
+      ],
+      "padding": {
+        "left": 96,
+        "top": 96,
+        "right": 96,
+        "bottom": 96
+      },
+      "effect_pixel_unit": 6,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

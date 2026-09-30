@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Frames/Daemon_Frame_001.png",
+    "walk_left": "Frames/Daemon_Frame_002.png",
+    "walk_right": "Frames/Daemon_Frame_003.png",
+    "attack1": "Frames/Daemon_Frame_004.png",
+    "attack2": "Frames/Daemon_Frame_001.png",
+    "front": "Daemon_Primary.png"
+  },
+  "animations": {
+    "idle": [
+      "Frames/Daemon_Frame_001.png",
+      "Frames/Daemon_Frame_002.png",
+      "Frames/Daemon_Frame_001.png",
+      "Frames/Daemon_Frame_003.png"
+    ],
+    "walk": [
+      "Frames/Daemon_Frame_001.png",
+      "Frames/Daemon_Frame_002.png",
+      "Frames/Daemon_Frame_001.png",
+      "Frames/Daemon_Frame_003.png"
+    ],
+    "attack": [
+      "Frames/Daemon_Frame_004.png",
+      "Frames/Daemon_Frame_001.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 16,
+  "frame_selection": "Four supplied corrected combat poses: 001 idle, 002/003 alternating steps, 004 attack and 001 recovery; cropped 003 is no longer excluded",
+  "art_provenance": "User-supplied DigimonFixedSpritesFor_v1.1.0.rar; v1.0.1 source overlay; selected PNG bytes preserved exactly"
+}

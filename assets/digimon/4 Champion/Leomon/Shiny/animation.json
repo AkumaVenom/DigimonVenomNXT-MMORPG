@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Leomon_Idle.png",
+    "walk_left": "Leomon_LLegWalk.png",
+    "walk_right": "Leomon_RLegWalk.png",
+    "attack1": "Leomon_AttackPart1.png",
+    "attack2": "Leomon_AttackPart2.png"
+  },
+  "animations": {
+    "idle": [
+      "Leomon_Idle.png"
+    ],
+    "walk": [
+      "Leomon_Idle.png",
+      "Leomon_LLegWalk.png",
+      "Leomon_Idle.png",
+      "Leomon_RLegWalk.png"
+    ],
+    "attack": [
+      "Leomon_AttackPart1.png",
+      "Leomon_AttackPart2.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 0,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied v1.2.0 Shiny PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained."
+}

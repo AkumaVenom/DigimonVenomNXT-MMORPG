@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Yuramon_Idle.png",
+    "walk_left": "Yuramon_LLegWalk.png",
+    "walk_right": "Yuramon_RLegWalk.png",
+    "attack1": "Yuramon_Idle.png",
+    "attack2": "Yuramon_Idle.png"
+  },
+  "animations": {
+    "idle": [
+      "Yuramon_Idle.png"
+    ],
+    "walk": [
+      "Yuramon_Idle.png",
+      "Yuramon_LLegWalk.png",
+      "Yuramon_Idle.png",
+      "Yuramon_RLegWalk.png"
+    ],
+    "attack": [
+      "Yuramon_Idle.png",
+      "Yuramon_Idle.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 0,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied FireWall PNG bytes preserved; normal pose selections and mirrors retained. Aura padding is recorded in sprite_geometry.json."
+}

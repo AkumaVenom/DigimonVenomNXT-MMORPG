@@ -1,0 +1,329 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "DotMirageGaogamon_Primary.png": {
+      "source_size": [
+        50,
+        52
+      ],
+      "output_size": [
+        114,
+        116
+      ],
+      "padding": {
+        "left": 32,
+        "top": 32,
+        "right": 32,
+        "bottom": 32
+      },
+      "effect_pixel_unit": 2,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/DotMirageGaogamon_Frame_001.png": {
+      "source_size": [
+        50,
+        52
+      ],
+      "output_size": [
+        114,
+        116
+      ],
+      "padding": {
+        "left": 32,
+        "top": 32,
+        "right": 32,
+        "bottom": 32
+      },
+      "effect_pixel_unit": 2,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/DotMirageGaogamon_Frame_002.png": {
+      "source_size": [
+        42,
+        52
+      ],
+      "output_size": [
+        74,
+        84
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/DotMirageGaogamon_Frame_003.png": {
+      "source_size": [
+        48,
+        52
+      ],
+      "output_size": [
+        112,
+        116
+      ],
+      "padding": {
+        "left": 32,
+        "top": 32,
+        "right": 32,
+        "bottom": 32
+      },
+      "effect_pixel_unit": 2,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/DotMirageGaogamon_Frame_004.png": {
+      "source_size": [
+        50,
+        52
+      ],
+      "output_size": [
+        114,
+        116
+      ],
+      "padding": {
+        "left": 32,
+        "top": 32,
+        "right": 32,
+        "bottom": 32
+      },
+      "effect_pixel_unit": 2,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/DotMirageGaogamon_Frame_005.png": {
+      "source_size": [
+        52,
+        42
+      ],
+      "output_size": [
+        84,
+        74
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/DotMirageGaogamon_Frame_006.png": {
+      "source_size": [
+        26,
+        28
+      ],
+      "output_size": [
+        58,
+        60
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/DotMirageGaogamon_Frame_007.png": {
+      "source_size": [
+        24,
+        27
+      ],
+      "output_size": [
+        56,
+        59
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/DotMirageGaogamon_Frame_008.png": {
+      "source_size": [
+        28,
+        27
+      ],
+      "output_size": [
+        60,
+        59
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/DotMirageGaogamon_Frame_009.png": {
+      "source_size": [
+        26,
+        28
+      ],
+      "output_size": [
+        58,
+        60
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/DotMirageGaogamon_Frame_010.png": {
+      "source_size": [
+        28,
+        27
+      ],
+      "output_size": [
+        60,
+        59
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/DotMirageGaogamon_Frame_011.png": {
+      "source_size": [
+        24,
+        27
+      ],
+      "output_size": [
+        56,
+        59
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/DotMirageGaogamon_Frame_012.png": {
+      "source_size": [
+        24,
+        34
+      ],
+      "output_size": [
+        56,
+        66
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/DotMirageGaogamon_Frame_013.png": {
+      "source_size": [
+        28,
+        27
+      ],
+      "output_size": [
+        60,
+        59
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/DotMirageGaogamon_Frame_014.png": {
+      "source_size": [
+        17,
+        14
+      ],
+      "output_size": [
+        25,
+        22
+      ],
+      "padding": {
+        "left": 4,
+        "top": 4,
+        "right": 4,
+        "bottom": 4
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": true
+    },
+    "Frames/DotMirageGaogamon_Frame_015.png": {
+      "source_size": [
+        25,
+        12
+      ],
+      "output_size": [
+        57,
+        44
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/DotMirageGaogamon_Frame_016.png": {
+      "source_size": [
+        19,
+        9
+      ],
+      "output_size": [
+        51,
+        41
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

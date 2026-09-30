@@ -1,0 +1,22 @@
+{
+  "variant_id": "shiny_zerimon",
+  "display_name": "Shiny Zerimon",
+  "base_species": "Zerimon",
+  "stage": "1 Fresh",
+  "status": "ready",
+  "style_profile": "Prismatic Shiny \u2014 Gold Stardust v1",
+  "palette": "Rose quartz",
+  "target_hue_degrees": 325.0,
+  "source_sprite_count": 3,
+  "shiny_sprite_count": 3,
+  "animation_alignment": "Exact source canvas dimensions and sprite positions retained",
+  "effects": "Warm-gold silhouette glow; restrained ivory/gold four-point sparkles; deterministic frame twinkle",
+  "sprites": [
+    "Zerimon_Idle.png",
+    "Zerimon_LLegWalk.png",
+    "Zerimon_RLegWalk.png"
+  ],
+  "primary_sprite": "1 Fresh/Zerimon/Shiny/Zerimon_Idle.png",
+  "source_primary": "1 Fresh/Zerimon/Zerimon_Idle.png",
+  "materializable": true
+}

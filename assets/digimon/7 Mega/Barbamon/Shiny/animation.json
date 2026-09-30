@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Frames/Barbamon_Frame_002.png",
+    "walk_left": "Frames/Barbamon_Frame_003.png",
+    "walk_right": "Frames/Barbamon_Frame_004.png",
+    "attack1": "Frames/Barbamon_Frame_005.png",
+    "attack2": "Frames/Barbamon_Frame_006.png",
+    "front": "Barbamon_Primary.png"
+  },
+  "animations": {
+    "idle": [
+      "Frames/Barbamon_Frame_002.png",
+      "Frames/Barbamon_Frame_003.png",
+      "Frames/Barbamon_Frame_002.png",
+      "Frames/Barbamon_Frame_004.png"
+    ],
+    "walk": [
+      "Frames/Barbamon_Frame_002.png",
+      "Frames/Barbamon_Frame_003.png",
+      "Frames/Barbamon_Frame_002.png",
+      "Frames/Barbamon_Frame_004.png"
+    ],
+    "attack": [
+      "Frames/Barbamon_Frame_005.png",
+      "Frames/Barbamon_Frame_006.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 18,
+  "frame_selection": "v1.0.1 pose assignments retained; supplied v1.1.0 fixed PNGs replace canonical paths; explicit primary/front portrait when supplied",
+  "art_provenance": "User-supplied v1.2.0 Shiny PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained."
+}

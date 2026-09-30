@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Wormmon_Paradox_Idle.png",
+    "walk_left": "Wormmon_Paradox_LLegWalk.png",
+    "walk_right": "Wormmon_Paradox_RLegWalk.png",
+    "attack1": "Wormmon_Paradox_AttackPart1.png",
+    "attack2": "Wormmon_Paradox_AttackPart2.png"
+  },
+  "animations": {
+    "idle": [
+      "Wormmon_Paradox_Idle.png"
+    ],
+    "walk": [
+      "Wormmon_Paradox_Idle.png",
+      "Wormmon_Paradox_LLegWalk.png",
+      "Wormmon_Paradox_Idle.png",
+      "Wormmon_Paradox_RLegWalk.png"
+    ],
+    "attack": [
+      "Wormmon_Paradox_AttackPart1.png",
+      "Wormmon_Paradox_AttackPart2.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 0,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied v1.2.0 Paradox PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained."
+}

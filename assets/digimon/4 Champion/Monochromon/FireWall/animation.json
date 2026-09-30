@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Frames/Monochromon_Frame_001.png",
+    "walk_left": "Frames/Monochromon_Frame_002.png",
+    "walk_right": "Frames/Monochromon_Frame_003.png",
+    "attack1": "Frames/Monochromon_Frame_004.png",
+    "attack2": "Frames/Monochromon_Frame_005.png"
+  },
+  "animations": {
+    "idle": [
+      "Frames/Monochromon_Frame_001.png",
+      "Frames/Monochromon_Frame_002.png",
+      "Frames/Monochromon_Frame_001.png",
+      "Frames/Monochromon_Frame_003.png"
+    ],
+    "walk": [
+      "Frames/Monochromon_Frame_001.png",
+      "Frames/Monochromon_Frame_002.png",
+      "Frames/Monochromon_Frame_001.png",
+      "Frames/Monochromon_Frame_003.png"
+    ],
+    "attack": [
+      "Frames/Monochromon_Frame_004.png",
+      "Frames/Monochromon_Frame_005.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 20,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied FireWall PNG bytes preserved; normal pose selections and mirrors retained. Aura padding is recorded in sprite_geometry.json."
+}

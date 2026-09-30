@@ -1,0 +1,24 @@
+{
+  "variant_id": "shiny_metalgreymon",
+  "display_name": "Shiny MetalGreymon",
+  "base_species": "MetalGreymon",
+  "stage": "5 Ultimate",
+  "status": "ready",
+  "style_profile": "Prismatic Shiny \u2014 Gold Stardust v1",
+  "palette": "Jade",
+  "target_hue_degrees": 146.0,
+  "source_sprite_count": 5,
+  "shiny_sprite_count": 5,
+  "animation_alignment": "Exact source canvas dimensions and sprite positions retained",
+  "effects": "Warm-gold silhouette glow; restrained ivory/gold four-point sparkles; deterministic frame twinkle",
+  "sprites": [
+    "MetalGreymon_AttackPart1.png",
+    "MetalGreymon_AttackPart2.png",
+    "MetalGreymon_Idle.png",
+    "MetalGreymon_LLegWalk.png",
+    "MetalGreymon_RLegWalk.png"
+  ],
+  "primary_sprite": "5 Ultimate/MetalGreymon/Shiny/MetalGreymon_Idle.png",
+  "source_primary": "5 Ultimate/MetalGreymon/MetalGreymon_Idle.png",
+  "materializable": true
+}

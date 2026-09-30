@@ -1,0 +1,500 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Flamedramon_Primary.png": {
+      "source_size": [
+        61,
+        99
+      ],
+      "output_size": [
+        93,
+        131
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Flamedramon_Frame_001.png": {
+      "source_size": [
+        61,
+        99
+      ],
+      "output_size": [
+        93,
+        131
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Flamedramon_Frame_002.png": {
+      "source_size": [
+        60,
+        96
+      ],
+      "output_size": [
+        92,
+        128
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Flamedramon_Frame_003.png": {
+      "source_size": [
+        61,
+        93
+      ],
+      "output_size": [
+        93,
+        125
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Flamedramon_Frame_004.png": {
+      "source_size": [
+        60,
+        74
+      ],
+      "output_size": [
+        92,
+        106
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Flamedramon_Frame_005.png": {
+      "source_size": [
+        58,
+        72
+      ],
+      "output_size": [
+        90,
+        104
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Flamedramon_Frame_006.png": {
+      "source_size": [
+        31,
+        39
+      ],
+      "output_size": [
+        63,
+        71
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Flamedramon_Frame_007.png": {
+      "source_size": [
+        31,
+        39
+      ],
+      "output_size": [
+        63,
+        71
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Flamedramon_Frame_008.png": {
+      "source_size": [
+        30,
+        39
+      ],
+      "output_size": [
+        62,
+        71
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Flamedramon_Frame_009.png": {
+      "source_size": [
+        29,
+        40
+      ],
+      "output_size": [
+        61,
+        72
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Flamedramon_Frame_010.png": {
+      "source_size": [
+        29,
+        40
+      ],
+      "output_size": [
+        61,
+        72
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Flamedramon_Frame_011.png": {
+      "source_size": [
+        30,
+        39
+      ],
+      "output_size": [
+        62,
+        71
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Flamedramon_Frame_012.png": {
+      "source_size": [
+        29,
+        40
+      ],
+      "output_size": [
+        61,
+        72
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Flamedramon_Frame_013.png": {
+      "source_size": [
+        29,
+        40
+      ],
+      "output_size": [
+        61,
+        72
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Flamedramon_Frame_014.png": {
+      "source_size": [
+        33,
+        41
+      ],
+      "output_size": [
+        65,
+        73
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Flamedramon_Frame_015.png": {
+      "source_size": [
+        30,
+        39
+      ],
+      "output_size": [
+        62,
+        71
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Flamedramon_Frame_016.png": {
+      "source_size": [
+        30,
+        39
+      ],
+      "output_size": [
+        62,
+        71
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Flamedramon_Frame_017.png": {
+      "source_size": [
+        33,
+        41
+      ],
+      "output_size": [
+        65,
+        73
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Flamedramon_Frame_018.png": {
+      "source_size": [
+        36,
+        42
+      ],
+      "output_size": [
+        68,
+        74
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Flamedramon_Frame_019.png": {
+      "source_size": [
+        30,
+        39
+      ],
+      "output_size": [
+        62,
+        71
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Flamedramon_Frame_020.png": {
+      "source_size": [
+        35,
+        32
+      ],
+      "output_size": [
+        67,
+        64
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Flamedramon_Frame_021.png": {
+      "source_size": [
+        16,
+        16
+      ],
+      "output_size": [
+        24,
+        24
+      ],
+      "padding": {
+        "left": 4,
+        "top": 4,
+        "right": 4,
+        "bottom": 4
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": true
+    },
+    "Frames/Flamedramon_Frame_022.png": {
+      "source_size": [
+        15,
+        16
+      ],
+      "output_size": [
+        23,
+        24
+      ],
+      "padding": {
+        "left": 4,
+        "top": 4,
+        "right": 4,
+        "bottom": 4
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": true
+    },
+    "Frames/Flamedramon_Frame_023.png": {
+      "source_size": [
+        14,
+        16
+      ],
+      "output_size": [
+        22,
+        24
+      ],
+      "padding": {
+        "left": 4,
+        "top": 4,
+        "right": 4,
+        "bottom": 4
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": true
+    },
+    "Frames/Flamedramon_Frame_024.png": {
+      "source_size": [
+        26,
+        12
+      ],
+      "output_size": [
+        58,
+        44
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Flamedramon_Frame_025.png": {
+      "source_size": [
+        28,
+        12
+      ],
+      "output_size": [
+        60,
+        44
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

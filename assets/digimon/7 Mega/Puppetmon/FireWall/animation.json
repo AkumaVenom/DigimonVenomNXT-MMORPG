@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Frames/Puppetmon_Frame_001.png",
+    "walk_left": "Frames/Puppetmon_Frame_003.png",
+    "walk_right": "Frames/Puppetmon_Frame_004.png",
+    "attack1": "Frames/Puppetmon_Frame_009.png",
+    "attack2": "Frames/Puppetmon_Frame_016.png"
+  },
+  "animations": {
+    "idle": [
+      "Frames/Puppetmon_Frame_001.png",
+      "Frames/Puppetmon_Frame_003.png",
+      "Frames/Puppetmon_Frame_001.png",
+      "Frames/Puppetmon_Frame_004.png"
+    ],
+    "walk": [
+      "Frames/Puppetmon_Frame_001.png",
+      "Frames/Puppetmon_Frame_003.png",
+      "Frames/Puppetmon_Frame_001.png",
+      "Frames/Puppetmon_Frame_004.png"
+    ],
+    "attack": [
+      "Frames/Puppetmon_Frame_009.png",
+      "Frames/Puppetmon_Frame_016.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 22,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied FireWall PNG bytes preserved; normal pose selections and mirrors retained. Aura padding is recorded in sprite_geometry.json."
+}

@@ -1,0 +1,25 @@
+{
+  "variant_id": "shiny_kunemon",
+  "display_name": "Shiny Kunemon",
+  "base_species": "Kunemon",
+  "stage": "3 Rookie",
+  "status": "ready",
+  "style_profile": "Prismatic Shiny \u2014 Gold Stardust v1",
+  "palette": "Orchid",
+  "target_hue_degrees": 294.0,
+  "source_sprite_count": 6,
+  "shiny_sprite_count": 6,
+  "animation_alignment": "Exact source canvas dimensions and sprite positions retained",
+  "effects": "Warm-gold silhouette glow; restrained ivory/gold four-point sparkles; deterministic frame twinkle",
+  "sprites": [
+    "Kunemon_AttackPart1.png",
+    "Kunemon_AttackPart2.png",
+    "Kunemon_Extra.png",
+    "Kunemon_Idle.png",
+    "Kunemon_LLegWalk.png",
+    "Kunemon_RLegWalk.png"
+  ],
+  "primary_sprite": "3 Rookie/Kunemon/Shiny/Kunemon_Idle.png",
+  "source_primary": "3 Rookie/Kunemon/Kunemon_Idle.png",
+  "materializable": true
+}

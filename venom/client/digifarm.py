@@ -9,6 +9,7 @@ import hashlib
 import math
 import pygame
 
+from .varieties import name_color
 from .render import draw
 from .world import MapCamera, WorldRenderer, _zoom, player_title
 from .widgets import text, bar, wrap, panel, WHITE, MUTED, CYAN, LIME, GOLD, RED
@@ -296,7 +297,7 @@ class DigiFarmScreen(WorldRenderer):
             species = app.assets.species.get(ident, {})
             motion = 'walk' if moving and 'walk' in species.get('animations', {}) else 'idle'
             size = (round(resident_size), round(resident_size)) if kind == 'resident' else (58, 64)
-            source = app.assets.sprite(ident, size, motion=motion,
+            source = app.assets.world_sprite(ident, size, motion=motion,
                                       now=self.age if kind == 'resident' else app.now, flip=flip)
             actor_scale = scale if kind == 'resident' else scale*self.COMPANION_SCALE
         destination = pygame.Rect(round(point.x-20*scale), round(point.y-100*scale),
@@ -310,6 +311,10 @@ class DigiFarmScreen(WorldRenderer):
                 destination = sprite.get_rect(topleft=(
                     round(point.x-anchor[0]*sprite.get_width()/max(1, native[0])),
                     round(point.y-anchor[1]*sprite.get_height()/max(1, native[1]))))
+            elif kind != 'tamer':
+                foot = app.assets.sprite_anchor(ident, sprite, motion,
+                                                self.age if kind == 'resident' else app.now, flip)
+                destination = sprite.get_rect(topleft=(round(point.x-foot[0]), round(point.y-foot[1])))
             else:
                 destination = sprite.get_rect(midbottom=(round(point.x), round(point.y)))
             self._surface.blit(sprite, destination)
@@ -324,7 +329,7 @@ class DigiFarmScreen(WorldRenderer):
                 if selected or hit.collidepoint(app.ui.mouse):
                     label_point = self._logical_point((point.x, point.y))
                     text(app.screen, app.assets, mon.get('name', 'Partner'),
-                         (label_point[0], label_point[1]+12), 11, WHITE, True,
+                         (label_point[0], label_point[1]+12), 11, name_color(mon, app.assets.species, WHITE), True,
                          170, True, outline=(10, 38, 38), outline_width=2)
         elif kind == 'tamer':
             self.player_rect = visible if visible.width and visible.height else None
@@ -387,7 +392,7 @@ class DigiFarmScreen(WorldRenderer):
             image = app.assets.sprite(mon.get('species_id'), (38, 37), now=app.now)
             if image:
                 app.screen.blit(image, image.get_rect(center=(row.x+26, row.centery)))
-            text(app.screen, app.assets, mon.get('name', 'Partner'), (row.x+51, row.y+6), 12, WHITE, True, row.width-61)
+            text(app.screen, app.assets, mon.get('name', 'Partner'), (row.x+51, row.y+6), 12, name_color(mon, app.assets.species, WHITE), True, row.width-61)
             text(app.screen, app.assets, f"Lv.{mon.get('level',1)}  ·  ABI {mon.get('abi',0)}  ·  CAM {mon.get('cam',0)}%", (row.x+51, row.y+25), 9, MUTED)
             app.ui.actions.append((row, lambda uid=mon['uid']: self.select(uid)))
         if not entries:
@@ -420,7 +425,7 @@ class DigiFarmScreen(WorldRenderer):
         image = app.assets.sprite(mon.get('species_id'), (142, 116), now=app.now)
         if image:
             app.screen.blit(image, image.get_rect(midbottom=(left.centerx, left.y+130)))
-        text(app.screen, app.assets, mon.get('name', 'Partner'), (left.centerx, left.y+150), 20, WHITE, True, left.width-30, True)
+        text(app.screen, app.assets, mon.get('name', 'Partner'), (left.centerx, left.y+150), 20, name_color(mon, app.assets.species, WHITE), True, left.width-30, True)
         text(app.screen, app.assets, f"Lv.{mon.get('level',1)}  /  Farm resident", (left.centerx, left.y+178), 11, MUTED, center=True)
         for column, (resource, maximum, color) in enumerate((('cam', 100, ACCENT), ('abi', 200, GOLD))):
             x = left.x+20+column*140

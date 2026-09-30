@@ -1,0 +1,25 @@
+{
+  "variant_id": "shiny_palmon",
+  "display_name": "Shiny Palmon",
+  "base_species": "Palmon",
+  "stage": "3 Rookie",
+  "status": "ready",
+  "style_profile": "Prismatic Shiny \u2014 Gold Stardust v1",
+  "palette": "Cerulean",
+  "target_hue_degrees": 192.0,
+  "source_sprite_count": 6,
+  "shiny_sprite_count": 6,
+  "animation_alignment": "Exact source canvas dimensions and sprite positions retained",
+  "effects": "Warm-gold silhouette glow; restrained ivory/gold four-point sparkles; deterministic frame twinkle",
+  "sprites": [
+    "Palmon_AttackPart1.png",
+    "Palmon_AttackPart2.png",
+    "Palmon_Extra.png",
+    "Palmon_Idle.png",
+    "Palmon_LLegWalk.png",
+    "Palmon_RLegWalk.png"
+  ],
+  "primary_sprite": "3 Rookie/Palmon/Shiny/Palmon_Idle.png",
+  "source_primary": "3 Rookie/Palmon/Palmon_Idle.png",
+  "materializable": true
+}

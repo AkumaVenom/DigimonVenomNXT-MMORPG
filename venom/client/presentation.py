@@ -383,9 +383,11 @@ class Presentation:
             text(self.screen, self.app.assets, detail, (rect.x+16, rect.bottom-22), 10,
                  p['muted'], False, rect.width-32)
 
-    def badge(self, rect, label, theme='rivals'):
+    def badge(self, rect, label, theme='rivals', *, accent=None):
         rect = pygame.Rect(rect)
         p = colors(theme)
+        if accent is not None:
+            p['accent'] = accent
         draw.rect(self.screen, _mix(p['accent'], p['ink'], .85), rect, border_radius=4)
         draw.rect(self.screen, _mix(p['accent'], p['ink'], .56), rect, 1, border_radius=4)
         text(self.screen, self.app.assets, label, rect.center, 10, p['accent'], True,

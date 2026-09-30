@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Seadramon_Idle.png",
+    "walk_left": "Seadramon_LLegWalk.png",
+    "walk_right": "Seadramon_RLegWalk.png",
+    "attack1": "Seadramon_AttackPart1.png",
+    "attack2": "Seadramon_AttackPart2.png"
+  },
+  "animations": {
+    "idle": [
+      "Seadramon_Idle.png"
+    ],
+    "walk": [
+      "Seadramon_Idle.png",
+      "Seadramon_LLegWalk.png",
+      "Seadramon_Idle.png",
+      "Seadramon_RLegWalk.png"
+    ],
+    "attack": [
+      "Seadramon_AttackPart1.png",
+      "Seadramon_AttackPart2.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 0,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied v1.2.0 Shiny PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained."
+}

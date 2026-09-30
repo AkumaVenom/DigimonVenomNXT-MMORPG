@@ -1,0 +1,31 @@
+{
+  "variant_id": "shiny_raremon",
+  "display_name": "Shiny Raremon",
+  "base_species": "Raremon",
+  "stage": "4 Champion",
+  "status": "ready",
+  "style_profile": "Prismatic Shiny \u2014 Gold Stardust v1",
+  "palette": "Copper rose",
+  "target_hue_degrees": 15.0,
+  "source_sprite_count": 12,
+  "shiny_sprite_count": 12,
+  "animation_alignment": "Exact source canvas dimensions and sprite positions retained",
+  "effects": "Warm-gold silhouette glow; restrained ivory/gold four-point sparkles; deterministic frame twinkle",
+  "sprites": [
+    "Frames/Raremon_Frame_001.png",
+    "Frames/Raremon_Frame_002.png",
+    "Frames/Raremon_Frame_003.png",
+    "Frames/Raremon_Frame_004.png",
+    "Frames/Raremon_Frame_005.png",
+    "Frames/Raremon_Frame_006.png",
+    "Frames/Raremon_Frame_007.png",
+    "Frames/Raremon_Frame_008.png",
+    "Frames/Raremon_Frame_009.png",
+    "Frames/Raremon_Frame_010.png",
+    "Frames/Raremon_Frame_011.png",
+    "Raremon_Primary.png"
+  ],
+  "primary_sprite": "4 Champion/Raremon/Shiny/Raremon_Primary.png",
+  "source_primary": "4 Champion/Raremon/Raremon_Primary.png",
+  "materializable": true
+}

@@ -1,0 +1,405 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Frames/ShogunGekomon_Frame_001.png": {
+      "source_size": [
+        129,
+        155
+      ],
+      "output_size": [
+        161,
+        187
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/ShogunGekomon_Frame_002.png": {
+      "source_size": [
+        142,
+        153
+      ],
+      "output_size": [
+        174,
+        185
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/ShogunGekomon_Frame_003.png": {
+      "source_size": [
+        154,
+        146
+      ],
+      "output_size": [
+        186,
+        178
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/ShogunGekomon_Frame_004.png": {
+      "source_size": [
+        150,
+        160
+      ],
+      "output_size": [
+        182,
+        192
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/ShogunGekomon_Frame_005.png": {
+      "source_size": [
+        155,
+        158
+      ],
+      "output_size": [
+        187,
+        190
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/ShogunGekomon_Frame_006.png": {
+      "source_size": [
+        34,
+        50
+      ],
+      "output_size": [
+        66,
+        82
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/ShogunGekomon_Frame_007.png": {
+      "source_size": [
+        34,
+        50
+      ],
+      "output_size": [
+        66,
+        82
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/ShogunGekomon_Frame_008.png": {
+      "source_size": [
+        36,
+        49
+      ],
+      "output_size": [
+        68,
+        81
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/ShogunGekomon_Frame_009.png": {
+      "source_size": [
+        36,
+        45
+      ],
+      "output_size": [
+        68,
+        77
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/ShogunGekomon_Frame_010.png": {
+      "source_size": [
+        36,
+        45
+      ],
+      "output_size": [
+        68,
+        77
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/ShogunGekomon_Frame_011.png": {
+      "source_size": [
+        36,
+        49
+      ],
+      "output_size": [
+        68,
+        81
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/ShogunGekomon_Frame_012.png": {
+      "source_size": [
+        34,
+        50
+      ],
+      "output_size": [
+        66,
+        82
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/ShogunGekomon_Frame_013.png": {
+      "source_size": [
+        34,
+        50
+      ],
+      "output_size": [
+        66,
+        82
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/ShogunGekomon_Frame_014.png": {
+      "source_size": [
+        35,
+        49
+      ],
+      "output_size": [
+        67,
+        81
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/ShogunGekomon_Frame_015.png": {
+      "source_size": [
+        36,
+        47
+      ],
+      "output_size": [
+        68,
+        79
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/ShogunGekomon_Frame_016.png": {
+      "source_size": [
+        36,
+        47
+      ],
+      "output_size": [
+        68,
+        79
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/ShogunGekomon_Frame_017.png": {
+      "source_size": [
+        35,
+        49
+      ],
+      "output_size": [
+        67,
+        81
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/ShogunGekomon_Frame_018.png": {
+      "source_size": [
+        35,
+        51
+      ],
+      "output_size": [
+        67,
+        83
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/ShogunGekomon_Frame_019.png": {
+      "source_size": [
+        34,
+        48
+      ],
+      "output_size": [
+        66,
+        80
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/ShogunGekomon_Frame_020.png": {
+      "source_size": [
+        34,
+        46
+      ],
+      "output_size": [
+        66,
+        78
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "ShogunGekomon_Primary.png": {
+      "source_size": [
+        129,
+        155
+      ],
+      "output_size": [
+        161,
+        187
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

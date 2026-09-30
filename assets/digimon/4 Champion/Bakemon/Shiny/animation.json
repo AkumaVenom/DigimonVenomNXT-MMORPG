@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Bakemon_Idle.png",
+    "walk_left": "Bakemon_LLegWalk.png",
+    "walk_right": "Bakemon_RLegWalk.png",
+    "attack1": "Bakemon_AttackPart1.png",
+    "attack2": "Bakemon_AttackPart2.png"
+  },
+  "animations": {
+    "idle": [
+      "Bakemon_Idle.png"
+    ],
+    "walk": [
+      "Bakemon_Idle.png",
+      "Bakemon_LLegWalk.png",
+      "Bakemon_Idle.png",
+      "Bakemon_RLegWalk.png"
+    ],
+    "attack": [
+      "Bakemon_AttackPart1.png",
+      "Bakemon_AttackPart2.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 0,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied v1.2.0 Shiny PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained."
+}

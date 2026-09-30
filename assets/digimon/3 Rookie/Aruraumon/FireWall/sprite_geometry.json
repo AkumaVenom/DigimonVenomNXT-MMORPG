@@ -1,0 +1,120 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Aruraumon_AttackPart1.png": {
+      "source_size": [
+        636,
+        620
+      ],
+      "output_size": [
+        956,
+        940
+      ],
+      "padding": {
+        "left": 160,
+        "top": 160,
+        "right": 160,
+        "bottom": 160
+      },
+      "effect_pixel_unit": 10,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Aruraumon_AttackPart2.png": {
+      "source_size": [
+        682,
+        724
+      ],
+      "output_size": [
+        1002,
+        1044
+      ],
+      "padding": {
+        "left": 160,
+        "top": 160,
+        "right": 160,
+        "bottom": 160
+      },
+      "effect_pixel_unit": 10,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Aruraumon_Extra.png": {
+      "source_size": [
+        682,
+        724
+      ],
+      "output_size": [
+        1002,
+        1044
+      ],
+      "padding": {
+        "left": 160,
+        "top": 160,
+        "right": 160,
+        "bottom": 160
+      },
+      "effect_pixel_unit": 10,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Aruraumon_Idle.png": {
+      "source_size": [
+        498,
+        646
+      ],
+      "output_size": [
+        818,
+        966
+      ],
+      "padding": {
+        "left": 160,
+        "top": 160,
+        "right": 160,
+        "bottom": 160
+      },
+      "effect_pixel_unit": 10,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Aruraumon_LLegWalk.png": {
+      "source_size": [
+        492,
+        626
+      ],
+      "output_size": [
+        812,
+        946
+      ],
+      "padding": {
+        "left": 160,
+        "top": 160,
+        "right": 160,
+        "bottom": 160
+      },
+      "effect_pixel_unit": 10,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Aruraumon_RLegWalk.png": {
+      "source_size": [
+        492,
+        626
+      ],
+      "output_size": [
+        812,
+        946
+      ],
+      "padding": {
+        "left": 160,
+        "top": 160,
+        "right": 160,
+        "bottom": 160
+      },
+      "effect_pixel_unit": 10,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

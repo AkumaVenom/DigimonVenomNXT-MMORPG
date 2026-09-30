@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Arresterdramon_Idle.png": {
+      "source_size": [
+        630,
+        630
+      ],
+      "output_size": [
+        822,
+        822
+      ],
+      "padding": {
+        "left": 96,
+        "top": 96,
+        "right": 96,
+        "bottom": 96
+      },
+      "effect_pixel_unit": 6,
+      "effect_style": "smooth_cyber_glow",
+      "particle_fragment": false
+    },
+    "Arresterdramon_LLegWalk.png": {
+      "source_size": [
+        767,
+        693
+      ],
+      "output_size": [
+        959,
+        885
+      ],
+      "padding": {
+        "left": 96,
+        "top": 96,
+        "right": 96,
+        "bottom": 96
+      },
+      "effect_pixel_unit": 6,
+      "effect_style": "smooth_cyber_glow",
+      "particle_fragment": false
+    },
+    "Arresterdramon_RLegWalk.png": {
+      "source_size": [
+        767,
+        693
+      ],
+      "output_size": [
+        959,
+        885
+      ],
+      "padding": {
+        "left": 96,
+        "top": 96,
+        "right": 96,
+        "bottom": 96
+      },
+      "effect_pixel_unit": 6,
+      "effect_style": "smooth_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

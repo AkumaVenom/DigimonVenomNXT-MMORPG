@@ -1,0 +1,405 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Frames/GhoulmonBlack_Frame_001.png": {
+      "source_size": [
+        152,
+        128
+      ],
+      "output_size": [
+        184,
+        160
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/GhoulmonBlack_Frame_002.png": {
+      "source_size": [
+        154,
+        128
+      ],
+      "output_size": [
+        186,
+        160
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/GhoulmonBlack_Frame_003.png": {
+      "source_size": [
+        146,
+        128
+      ],
+      "output_size": [
+        178,
+        160
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/GhoulmonBlack_Frame_004.png": {
+      "source_size": [
+        162,
+        162
+      ],
+      "output_size": [
+        194,
+        194
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/GhoulmonBlack_Frame_005.png": {
+      "source_size": [
+        123,
+        130
+      ],
+      "output_size": [
+        155,
+        162
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/GhoulmonBlack_Frame_006.png": {
+      "source_size": [
+        34,
+        35
+      ],
+      "output_size": [
+        66,
+        67
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/GhoulmonBlack_Frame_007.png": {
+      "source_size": [
+        34,
+        35
+      ],
+      "output_size": [
+        66,
+        67
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/GhoulmonBlack_Frame_008.png": {
+      "source_size": [
+        34,
+        38
+      ],
+      "output_size": [
+        66,
+        70
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/GhoulmonBlack_Frame_009.png": {
+      "source_size": [
+        30,
+        35
+      ],
+      "output_size": [
+        62,
+        67
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/GhoulmonBlack_Frame_010.png": {
+      "source_size": [
+        30,
+        35
+      ],
+      "output_size": [
+        62,
+        67
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/GhoulmonBlack_Frame_011.png": {
+      "source_size": [
+        34,
+        38
+      ],
+      "output_size": [
+        66,
+        70
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/GhoulmonBlack_Frame_012.png": {
+      "source_size": [
+        34,
+        37
+      ],
+      "output_size": [
+        66,
+        69
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/GhoulmonBlack_Frame_013.png": {
+      "source_size": [
+        34,
+        37
+      ],
+      "output_size": [
+        66,
+        69
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/GhoulmonBlack_Frame_014.png": {
+      "source_size": [
+        33,
+        39
+      ],
+      "output_size": [
+        65,
+        71
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/GhoulmonBlack_Frame_015.png": {
+      "source_size": [
+        34,
+        35
+      ],
+      "output_size": [
+        66,
+        67
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/GhoulmonBlack_Frame_016.png": {
+      "source_size": [
+        34,
+        35
+      ],
+      "output_size": [
+        66,
+        67
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/GhoulmonBlack_Frame_017.png": {
+      "source_size": [
+        33,
+        39
+      ],
+      "output_size": [
+        65,
+        71
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/GhoulmonBlack_Frame_018.png": {
+      "source_size": [
+        34,
+        37
+      ],
+      "output_size": [
+        66,
+        69
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/GhoulmonBlack_Frame_019.png": {
+      "source_size": [
+        33,
+        33
+      ],
+      "output_size": [
+        65,
+        65
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/GhoulmonBlack_Frame_020.png": {
+      "source_size": [
+        35,
+        28
+      ],
+      "output_size": [
+        67,
+        60
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "GhoulmonBlack_Primary.png": {
+      "source_size": [
+        152,
+        128
+      ],
+      "output_size": [
+        184,
+        160
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

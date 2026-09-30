@@ -1,0 +1,120 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "BlackAgumon_AttackPart1.png": {
+      "source_size": [
+        494,
+        528
+      ],
+      "output_size": [
+        718,
+        752
+      ],
+      "padding": {
+        "left": 112,
+        "top": 112,
+        "right": 112,
+        "bottom": 112
+      },
+      "effect_pixel_unit": 7,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "BlackAgumon_AttackPart2.png": {
+      "source_size": [
+        540,
+        520
+      ],
+      "output_size": [
+        764,
+        744
+      ],
+      "padding": {
+        "left": 112,
+        "top": 112,
+        "right": 112,
+        "bottom": 112
+      },
+      "effect_pixel_unit": 7,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "BlackAgumon_Extra.png": {
+      "source_size": [
+        540,
+        520
+      ],
+      "output_size": [
+        764,
+        744
+      ],
+      "padding": {
+        "left": 112,
+        "top": 112,
+        "right": 112,
+        "bottom": 112
+      },
+      "effect_pixel_unit": 7,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "BlackAgumon_Idle.png": {
+      "source_size": [
+        346,
+        446
+      ],
+      "output_size": [
+        570,
+        670
+      ],
+      "padding": {
+        "left": 112,
+        "top": 112,
+        "right": 112,
+        "bottom": 112
+      },
+      "effect_pixel_unit": 7,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "BlackAgumon_LLegWalk.png": {
+      "source_size": [
+        350,
+        468
+      ],
+      "output_size": [
+        574,
+        692
+      ],
+      "padding": {
+        "left": 112,
+        "top": 112,
+        "right": 112,
+        "bottom": 112
+      },
+      "effect_pixel_unit": 7,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "BlackAgumon_RLegWalk.png": {
+      "source_size": [
+        350,
+        468
+      ],
+      "output_size": [
+        574,
+        692
+      ],
+      "padding": {
+        "left": 112,
+        "top": 112,
+        "right": 112,
+        "bottom": 112
+      },
+      "effect_pixel_unit": 7,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

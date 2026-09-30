@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Nyaromon_Idle.png": {
+      "source_size": [
+        900,
+        869
+      ],
+      "output_size": [
+        1156,
+        1125
+      ],
+      "padding": {
+        "left": 128,
+        "top": 128,
+        "right": 128,
+        "bottom": 128
+      },
+      "effect_pixel_unit": 8,
+      "effect_style": "smooth_cyber_glow",
+      "particle_fragment": false
+    },
+    "Nyaromon_LLegWalk.png": {
+      "source_size": [
+        1001,
+        941
+      ],
+      "output_size": [
+        1257,
+        1197
+      ],
+      "padding": {
+        "left": 128,
+        "top": 128,
+        "right": 128,
+        "bottom": 128
+      },
+      "effect_pixel_unit": 8,
+      "effect_style": "smooth_cyber_glow",
+      "particle_fragment": false
+    },
+    "Nyaromon_RLegWalk.png": {
+      "source_size": [
+        1001,
+        941
+      ],
+      "output_size": [
+        1257,
+        1197
+      ],
+      "padding": {
+        "left": 128,
+        "top": 128,
+        "right": 128,
+        "bottom": 128
+      },
+      "effect_pixel_unit": 8,
+      "effect_style": "smooth_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

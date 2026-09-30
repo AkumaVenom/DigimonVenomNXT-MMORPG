@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Dorimon_Idle.png",
+    "walk_left": "Dorimon_LLegWalk.png",
+    "walk_right": "Dorimon_RLegWalk.png",
+    "attack1": "Dorimon_AttackPart1.png",
+    "attack2": "Dorimon_AttackPart2.png"
+  },
+  "animations": {
+    "idle": [
+      "Dorimon_Idle.png"
+    ],
+    "walk": [
+      "Dorimon_Idle.png",
+      "Dorimon_LLegWalk.png",
+      "Dorimon_Idle.png",
+      "Dorimon_RLegWalk.png"
+    ],
+    "attack": [
+      "Dorimon_AttackPart1.png",
+      "Dorimon_AttackPart2.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 0,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied FireWall PNG bytes preserved; normal pose selections and mirrors retained. Aura padding is recorded in sprite_geometry.json."
+}

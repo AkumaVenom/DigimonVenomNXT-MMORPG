@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "DemiVeemon_Idle.png",
+    "walk_left": "DemiVeemon_LLegWalk.png",
+    "walk_right": "DemiVeemon_RLegWalk.png",
+    "attack1": "DemiVeemon_Idle.png",
+    "attack2": "DemiVeemon_Idle.png"
+  },
+  "animations": {
+    "idle": [
+      "DemiVeemon_Idle.png"
+    ],
+    "walk": [
+      "DemiVeemon_Idle.png",
+      "DemiVeemon_LLegWalk.png",
+      "DemiVeemon_Idle.png",
+      "DemiVeemon_RLegWalk.png"
+    ],
+    "attack": [
+      "DemiVeemon_Idle.png",
+      "DemiVeemon_Idle.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 0,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied v1.2.0 Shiny PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained."
+}

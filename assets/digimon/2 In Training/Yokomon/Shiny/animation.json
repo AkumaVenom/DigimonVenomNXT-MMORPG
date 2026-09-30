@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Yokomon_Idle.png",
+    "walk_left": "Yokomon_LLegWalk.png",
+    "walk_right": "Yokomon_RLegWalk.png",
+    "attack1": "Yokomon_Idle.png",
+    "attack2": "Yokomon_Idle.png"
+  },
+  "animations": {
+    "idle": [
+      "Yokomon_Idle.png"
+    ],
+    "walk": [
+      "Yokomon_Idle.png",
+      "Yokomon_LLegWalk.png",
+      "Yokomon_Idle.png",
+      "Yokomon_RLegWalk.png"
+    ],
+    "attack": [
+      "Yokomon_Idle.png",
+      "Yokomon_Idle.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 0,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied v1.2.0 Shiny PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained."
+}

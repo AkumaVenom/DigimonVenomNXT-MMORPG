@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Gaogamon_Idle.png",
+    "walk_left": "Gaogamon_LLegWalk.png",
+    "walk_right": "Gaogamon_RLegWalk.png",
+    "attack1": "Gaogamon_Attack.png",
+    "attack2": "Gaogamon_Attack.png"
+  },
+  "animations": {
+    "idle": [
+      "Gaogamon_Idle.png"
+    ],
+    "walk": [
+      "Gaogamon_Idle.png",
+      "Gaogamon_LLegWalk.png",
+      "Gaogamon_Idle.png",
+      "Gaogamon_RLegWalk.png"
+    ],
+    "attack": [
+      "Gaogamon_Attack.png",
+      "Gaogamon_Attack.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 0,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied v1.2.0 Shiny PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained."
+}

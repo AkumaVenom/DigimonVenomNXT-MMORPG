@@ -1,0 +1,22 @@
+{
+  "variant_id": "shiny_fanbeemon",
+  "display_name": "Shiny FanBeemon",
+  "base_species": "FanBeemon",
+  "stage": "3 Rookie",
+  "status": "ready",
+  "style_profile": "Prismatic Shiny \u2014 Gold Stardust v1",
+  "palette": "Royal sapphire",
+  "target_hue_degrees": 218.0,
+  "source_sprite_count": 3,
+  "shiny_sprite_count": 3,
+  "animation_alignment": "Exact source canvas dimensions and sprite positions retained",
+  "effects": "Warm-gold silhouette glow; restrained ivory/gold four-point sparkles; deterministic frame twinkle",
+  "sprites": [
+    "FanBeemon_Idle.png",
+    "FanBeemon_LLegWalk.png",
+    "FanBeemon_RLegWalk.png"
+  ],
+  "primary_sprite": "3 Rookie/FanBeemon/Shiny/FanBeemon_Idle.png",
+  "source_primary": "3 Rookie/FanBeemon/FanBeemon_Idle.png",
+  "materializable": true
+}

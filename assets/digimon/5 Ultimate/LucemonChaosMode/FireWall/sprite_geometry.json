@@ -1,0 +1,348 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Frames/LucemonChaosMode_Frame_001.png": {
+      "source_size": [
+        45,
+        49
+      ],
+      "output_size": [
+        77,
+        81
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/LucemonChaosMode_Frame_002.png": {
+      "source_size": [
+        44,
+        48
+      ],
+      "output_size": [
+        76,
+        80
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/LucemonChaosMode_Frame_003.png": {
+      "source_size": [
+        46,
+        47
+      ],
+      "output_size": [
+        78,
+        79
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/LucemonChaosMode_Frame_004.png": {
+      "source_size": [
+        46,
+        47
+      ],
+      "output_size": [
+        78,
+        79
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/LucemonChaosMode_Frame_005.png": {
+      "source_size": [
+        45,
+        49
+      ],
+      "output_size": [
+        77,
+        81
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/LucemonChaosMode_Frame_006.png": {
+      "source_size": [
+        44,
+        50
+      ],
+      "output_size": [
+        76,
+        82
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/LucemonChaosMode_Frame_007.png": {
+      "source_size": [
+        46,
+        47
+      ],
+      "output_size": [
+        78,
+        79
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/LucemonChaosMode_Frame_008.png": {
+      "source_size": [
+        45,
+        49
+      ],
+      "output_size": [
+        77,
+        81
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/LucemonChaosMode_Frame_009.png": {
+      "source_size": [
+        46,
+        47
+      ],
+      "output_size": [
+        78,
+        79
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/LucemonChaosMode_Frame_010.png": {
+      "source_size": [
+        44,
+        48
+      ],
+      "output_size": [
+        76,
+        80
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/LucemonChaosMode_Frame_011.png": {
+      "source_size": [
+        45,
+        49
+      ],
+      "output_size": [
+        77,
+        81
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/LucemonChaosMode_Frame_012.png": {
+      "source_size": [
+        44,
+        50
+      ],
+      "output_size": [
+        76,
+        82
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/LucemonChaosMode_Frame_013.png": {
+      "source_size": [
+        174,
+        245
+      ],
+      "output_size": [
+        238,
+        309
+      ],
+      "padding": {
+        "left": 32,
+        "top": 32,
+        "right": 32,
+        "bottom": 32
+      },
+      "effect_pixel_unit": 2,
+      "effect_style": "smooth_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/LucemonChaosMode_Frame_014.png": {
+      "source_size": [
+        177,
+        238
+      ],
+      "output_size": [
+        209,
+        270
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/LucemonChaosMode_Frame_015.png": {
+      "source_size": [
+        173,
+        253
+      ],
+      "output_size": [
+        237,
+        317
+      ],
+      "padding": {
+        "left": 32,
+        "top": 32,
+        "right": 32,
+        "bottom": 32
+      },
+      "effect_pixel_unit": 2,
+      "effect_style": "smooth_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/LucemonChaosMode_Frame_016.png": {
+      "source_size": [
+        164,
+        250
+      ],
+      "output_size": [
+        228,
+        314
+      ],
+      "padding": {
+        "left": 32,
+        "top": 32,
+        "right": 32,
+        "bottom": 32
+      },
+      "effect_pixel_unit": 2,
+      "effect_style": "smooth_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/LucemonChaosMode_Frame_017.png": {
+      "source_size": [
+        172,
+        217
+      ],
+      "output_size": [
+        204,
+        249
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "LucemonChaosMode_Primary.png": {
+      "source_size": [
+        174,
+        245
+      ],
+      "output_size": [
+        238,
+        309
+      ],
+      "padding": {
+        "left": 32,
+        "top": 32,
+        "right": 32,
+        "bottom": 32
+      },
+      "effect_pixel_unit": 2,
+      "effect_style": "smooth_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

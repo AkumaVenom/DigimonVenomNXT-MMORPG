@@ -1,0 +1,386 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "AncientSphinxmon_Primary.png": {
+      "source_size": [
+        121,
+        157
+      ],
+      "output_size": [
+        153,
+        189
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/AncientSphinxmon_Frame_001.png": {
+      "source_size": [
+        121,
+        157
+      ],
+      "output_size": [
+        153,
+        189
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/AncientSphinxmon_Frame_002.png": {
+      "source_size": [
+        121,
+        155
+      ],
+      "output_size": [
+        153,
+        187
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/AncientSphinxmon_Frame_003.png": {
+      "source_size": [
+        123,
+        154
+      ],
+      "output_size": [
+        155,
+        186
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/AncientSphinxmon_Frame_004.png": {
+      "source_size": [
+        116,
+        149
+      ],
+      "output_size": [
+        148,
+        181
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/AncientSphinxmon_Frame_005.png": {
+      "source_size": [
+        92,
+        141
+      ],
+      "output_size": [
+        124,
+        173
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/AncientSphinxmon_Frame_006.png": {
+      "source_size": [
+        35,
+        47
+      ],
+      "output_size": [
+        67,
+        79
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/AncientSphinxmon_Frame_007.png": {
+      "source_size": [
+        34,
+        46
+      ],
+      "output_size": [
+        66,
+        78
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/AncientSphinxmon_Frame_008.png": {
+      "source_size": [
+        34,
+        46
+      ],
+      "output_size": [
+        66,
+        78
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/AncientSphinxmon_Frame_009.png": {
+      "source_size": [
+        35,
+        47
+      ],
+      "output_size": [
+        67,
+        79
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/AncientSphinxmon_Frame_010.png": {
+      "source_size": [
+        35,
+        43
+      ],
+      "output_size": [
+        67,
+        75
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/AncientSphinxmon_Frame_011.png": {
+      "source_size": [
+        35,
+        43
+      ],
+      "output_size": [
+        67,
+        75
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/AncientSphinxmon_Frame_012.png": {
+      "source_size": [
+        35,
+        47
+      ],
+      "output_size": [
+        67,
+        79
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/AncientSphinxmon_Frame_013.png": {
+      "source_size": [
+        35,
+        44
+      ],
+      "output_size": [
+        67,
+        76
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/AncientSphinxmon_Frame_014.png": {
+      "source_size": [
+        31,
+        46
+      ],
+      "output_size": [
+        63,
+        78
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/AncientSphinxmon_Frame_015.png": {
+      "source_size": [
+        31,
+        46
+      ],
+      "output_size": [
+        63,
+        78
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/AncientSphinxmon_Frame_016.png": {
+      "source_size": [
+        33,
+        45
+      ],
+      "output_size": [
+        65,
+        77
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/AncientSphinxmon_Frame_017.png": {
+      "source_size": [
+        32,
+        47
+      ],
+      "output_size": [
+        64,
+        79
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/AncientSphinxmon_Frame_018.png": {
+      "source_size": [
+        32,
+        47
+      ],
+      "output_size": [
+        64,
+        79
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/AncientSphinxmon_Frame_019.png": {
+      "source_size": [
+        33,
+        45
+      ],
+      "output_size": [
+        65,
+        77
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

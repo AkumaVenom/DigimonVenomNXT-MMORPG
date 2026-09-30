@@ -122,6 +122,46 @@ class Assets:
         source = self.image(path)
         return self.fit(source, box, key=key, flip=flip) if source else None
 
+    def sprite_anchor(self, species_id, surface, motion='idle', now=0., flip=False):
+        """Locate the original partner's feet within an aura-padded frame.
+
+        Artwork remains intact. Fixed UI portraits fit the complete supplied
+        canvas; open-world companions can retain their ordinary body size.
+        """
+        if surface is None:
+            return (0, 0)
+        entry = self.species.get(species_id, {})
+        path = self.sprite_path(species_id, motion, now)
+        mirrored = entry.get('mirrored_frames', {}).get(path) if flip else None
+        if mirrored:
+            path, flip = mirrored, False
+        geometry = entry.get('sprite_geometry', {}).get(path, {})
+        size = geometry.get('source_size')
+        output = geometry.get('output_size')
+        if not size or not output or min(output) <= 0:
+            return (surface.get_width()/2, surface.get_height())
+        padding = geometry.get('padding', {})
+        x = padding.get('left', 0)+size[0]/2
+        y = padding.get('top', 0)+size[1]
+        if flip:
+            x = output[0]-x
+        return (x*surface.get_width()/output[0], y*surface.get_height()/output[1])
+
+    def world_sprite(self, species_id, box, motion='idle', now=0., flip=False):
+        """Size the body like its normal form and leave room for its aura."""
+        entry = self.species.get(species_id, {})
+        path = self.sprite_path(species_id, motion, now)
+        if flip:
+            path = entry.get('mirrored_frames', {}).get(path, path)
+        geometry = entry.get('sprite_geometry', {}).get(path, {})
+        size = geometry.get('source_size')
+        output = geometry.get('output_size')
+        if size and output and min(size) > 0:
+            factor = min(box[0]/size[0], box[1]/size[1])
+            factor = max(1, int(factor)) if factor >= 1 else factor
+            box = (max(1, round(output[0]*factor)), max(1, round(output[1]*factor)))
+        return self.sprite(species_id, box, motion, now, flip)
+
     def fit(self, source, box, key=None, flip=False):
         if source is None:
             return None
@@ -202,8 +242,8 @@ class Audio:
         # Appending another region must not change Dawn's established rotation.
         self._world_tracks = [track for track in self._tracks
                               if not isinstance(track, dict) or
-                              (track.get('region_id') != 'world_ds' and
-                               not str(track.get('id', '')).startswith('ds_'))]
+                              (track.get('region_id') not in ('world_ds', 'xros_wars') and
+                               not str(track.get('id', '')).startswith(('ds_', 'xros_')))]
         self._world_ds_tracks, self._world_ds_scenes = {}, {}
         self._world_ds_result = None
         self._play_once_paths = set()
@@ -218,6 +258,19 @@ class Audio:
         except (OSError, ValueError, TypeError):
             # Older/custom asset packs retain their existing score.
             pass
+        self._xros_tracks, self._xros_scenes = {}, {}
+        try:
+            region_audio = json.loads((self.assets.root/'data/xros_audio.json').read_text('utf-8'))
+            self._xros_tracks = {track['id']: track for track in region_audio.get('music', [])
+                                 if isinstance(track, dict) and track.get('id') and track.get('path')}
+            self._xros_scenes = region_audio.get('scene_tracks', {})
+            self._tracks_by_id.update(self._xros_tracks)
+            self._play_once_paths.update(track['path'] for track in self._xros_tracks.values()
+                                         if not track.get('looped', True))
+        except (OSError, ValueError, TypeError):
+            pass
+        self._tracks_by_path = {track['path']: track for track in self._tracks_by_id.values()
+                                if isinstance(track, dict) and track.get('path')}
         self._scene_tracks = info.get('scene_tracks', {})
         self._map_indices = {map_id: index for index, map_id in enumerate(self.assets.maps)}
         self._music_context = None
@@ -271,10 +324,21 @@ class Audio:
         self._pending_track = None
         self._music_gain = 1.
         try:
-            pygame.mixer.music.load(str(self.assets.root/path))
+            recording = self._tracks_by_path.get(path, {})
+            intro = recording.get('intro_path')
+            pygame.mixer.music.load(str(self.assets.root/(intro or path)))
             self._apply_music_volume()
             once = path in self._play_once_paths
-            pygame.mixer.music.play(0 if once else -1, fade_ms=25 if once else self.FADE_IN_MS)
+            pygame.mixer.music.play(0 if once or intro else -1,
+                                    fade_ms=25 if once else self.FADE_IN_MS)
+            if intro:
+                # SDL streams the original intro once, then the exact embedded
+                # repeating range indefinitely without frame-timed restarts.
+                pygame.mixer.music.queue(str(self.assets.root/path), loops=-1)
+            elif recording.get('continuation_id'):
+                continuation = self._tracks_by_id.get(recording['continuation_id'])
+                if continuation:
+                    pygame.mixer.music.queue(str(self.assets.root/continuation['path']), loops=-1)
             self.track = path
         except (pygame.error, OSError):
             # Do not retry missing/corrupt optional art every rendered frame.
@@ -315,15 +379,22 @@ class Audio:
                                 else 'warden' if role in ('warden', 'leader') else 'tamer')
         map_entry = self.assets.maps.get(map_id, {})
         ds_story = in_story and story_campaign == 'world_ds_paradox'
+        xros_story = in_story and story_campaign == 'xros_ghostline'
         world_ds = (map_entry.get('region_id') == 'world_ds' and
                     not (in_story or in_season or in_farm or in_lab or replay))
+        xros_world = (map_entry.get('region_id') == 'xros_wars' and
+                      not (in_story or in_season or in_farm or in_lab or replay))
         scene = ('world_ds_final' if battle and ds_story and role == 'final'
                  else 'world_ds_battle' if battle and ds_story
+                 else 'xros_final' if battle and xros_story and role == 'final'
+                 else 'xros_battle' if battle and xros_story
                  else story_combat if battle and story_battle
-                 else 'world_ds_battle' if battle and world_ds else 'battle' if battle
+                 else 'world_ds_battle' if battle and world_ds
+                 else 'xros_battle' if battle and xros_world else 'battle' if battle
+                 else 'xros_world' if xros_story and screen in ('story','story_results') and not (in_lab or in_farm)
                  else screen if screen in self._screen_tracks or screen in self.STORY_TRACKS
                  else 'farm' if in_farm else 'digilab' if in_lab
-                 else 'world_ds_world' if ds_story else 'story_world' if in_story
+                 else 'world_ds_world' if ds_story else 'xros_world' if xros_story else 'story_world' if in_story
                  else 'title' if map_id is None else 'world')
         if self._world_ds_result and (now >= self._world_ds_result['until'] or
                                       map_id != self._world_ds_result['map_id'] or battle or
@@ -331,8 +402,10 @@ class Audio:
             self._world_ds_result = None
         if scene == 'world' and world_ds:
             scene = 'world_ds_victory' if self._world_ds_result else 'world_ds_world'
+        if scene == 'world' and xros_world:
+            scene = 'xros_world'
         region = story_region if story_region is not None else map_id
-        context = (scene, map_id if scene == 'world' or scene.startswith('world_ds_')
+        context = (scene, map_id if scene == 'world' or scene.startswith(('world_ds_', 'xros_'))
                    else region if scene == 'story_world' else None)
         if context == self._music_context:
             self._advance_transition(now)
@@ -340,7 +413,15 @@ class Audio:
         self._music_context = context
         tracks = self._tracks
         track = self._screen_tracks.get(scene)
-        if scene.startswith('world_ds_'):
+        if scene.startswith('xros_'):
+            identifier = (self._xros_scenes.get('endgame_battle') if scene == 'xros_final'
+                          else map_entry.get('battle_music_id' if battle else 'music_id'))
+            fallback = self._xros_scenes.get('battle' if battle else 'world')
+            track = self._xros_tracks.get(identifier) or self._xros_tracks.get(fallback)
+            if not track:
+                track = self._tracks_by_id.get(self._scene_tracks.get('battle' if battle else 'world'),
+                                                self._world_tracks[0] if self._world_tracks else None)
+        elif scene.startswith('world_ds_'):
             identifier = (map_entry.get('music_id') if scene == 'world_ds_world' else
                           map_entry.get('battle_music_id') if scene == 'world_ds_battle' else
                           self._world_ds_scenes.get('endgame_battle') if scene == 'world_ds_final' else

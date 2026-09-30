@@ -1,0 +1,22 @@
+{
+  "variant_id": "shiny_yokomon",
+  "display_name": "Shiny Yokomon",
+  "base_species": "Yokomon",
+  "stage": "2 In Training",
+  "status": "ready",
+  "style_profile": "Prismatic Shiny \u2014 Gold Stardust v1",
+  "palette": "Coral ruby",
+  "target_hue_degrees": 348.0,
+  "source_sprite_count": 3,
+  "shiny_sprite_count": 3,
+  "animation_alignment": "Exact source canvas dimensions and sprite positions retained",
+  "effects": "Warm-gold silhouette glow; restrained ivory/gold four-point sparkles; deterministic frame twinkle",
+  "sprites": [
+    "Yokomon_Idle.png",
+    "Yokomon_LLegWalk.png",
+    "Yokomon_RLegWalk.png"
+  ],
+  "primary_sprite": "2 In Training/Yokomon/Shiny/Yokomon_Idle.png",
+  "source_primary": "2 In Training/Yokomon/Yokomon_Idle.png",
+  "materializable": true
+}

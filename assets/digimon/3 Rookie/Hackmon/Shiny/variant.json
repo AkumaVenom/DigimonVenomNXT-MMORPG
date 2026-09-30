@@ -1,0 +1,22 @@
+{
+  "variant_id": "shiny_hackmon",
+  "display_name": "Shiny Hackmon",
+  "base_species": "Hackmon",
+  "stage": "3 Rookie",
+  "status": "ready",
+  "style_profile": "Prismatic Shiny \u2014 Gold Stardust v1",
+  "palette": "Royal sapphire",
+  "target_hue_degrees": 218.0,
+  "source_sprite_count": 3,
+  "shiny_sprite_count": 3,
+  "animation_alignment": "Exact source canvas dimensions and sprite positions retained",
+  "effects": "Warm-gold silhouette glow; restrained ivory/gold four-point sparkles; deterministic frame twinkle",
+  "sprites": [
+    "Hackmon_Idle.png",
+    "Hackmon_LLegWalk.png",
+    "Hackmon_RLegWalk.png"
+  ],
+  "primary_sprite": "3 Rookie/Hackmon/Shiny/Hackmon_Idle.png",
+  "source_primary": "3 Rookie/Hackmon/Hackmon_Idle.png",
+  "materializable": true
+}

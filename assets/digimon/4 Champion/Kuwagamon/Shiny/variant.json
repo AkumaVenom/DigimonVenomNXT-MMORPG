@@ -1,0 +1,24 @@
+{
+  "variant_id": "shiny_kuwagamon",
+  "display_name": "Shiny Kuwagamon",
+  "base_species": "Kuwagamon",
+  "stage": "4 Champion",
+  "status": "ready",
+  "style_profile": "Prismatic Shiny \u2014 Gold Stardust v1",
+  "palette": "Cerulean",
+  "target_hue_degrees": 196.0,
+  "source_sprite_count": 5,
+  "shiny_sprite_count": 5,
+  "animation_alignment": "Exact source canvas dimensions and sprite positions retained",
+  "effects": "Warm-gold silhouette glow; restrained ivory/gold four-point sparkles; deterministic frame twinkle",
+  "sprites": [
+    "Kuwagamon_AttackPart1.png",
+    "Kuwagamon_AttackPart2.png",
+    "Kuwagamon_Idle.png",
+    "Kuwagamon_LLegWalk.png",
+    "Kuwagamon_RLegWalk.png"
+  ],
+  "primary_sprite": "4 Champion/Kuwagamon/Shiny/Kuwagamon_Idle.png",
+  "source_primary": "4 Champion/Kuwagamon/Kuwagamon_Idle.png",
+  "materializable": true
+}

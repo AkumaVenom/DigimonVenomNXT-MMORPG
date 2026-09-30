@@ -1,0 +1,120 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Angemon_AttackPart1.png": {
+      "source_size": [
+        428,
+        476
+      ],
+      "output_size": [
+        556,
+        604
+      ],
+      "padding": {
+        "left": 64,
+        "top": 64,
+        "right": 64,
+        "bottom": 64
+      },
+      "effect_pixel_unit": 4,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Angemon_AttackPart2.png": {
+      "source_size": [
+        416,
+        490
+      ],
+      "output_size": [
+        544,
+        618
+      ],
+      "padding": {
+        "left": 64,
+        "top": 64,
+        "right": 64,
+        "bottom": 64
+      },
+      "effect_pixel_unit": 4,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Angemon_Extra.png": {
+      "source_size": [
+        416,
+        490
+      ],
+      "output_size": [
+        544,
+        618
+      ],
+      "padding": {
+        "left": 64,
+        "top": 64,
+        "right": 64,
+        "bottom": 64
+      },
+      "effect_pixel_unit": 4,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Angemon_Idle.png": {
+      "source_size": [
+        374,
+        534
+      ],
+      "output_size": [
+        502,
+        662
+      ],
+      "padding": {
+        "left": 64,
+        "top": 64,
+        "right": 64,
+        "bottom": 64
+      },
+      "effect_pixel_unit": 4,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Angemon_LLegWalk.png": {
+      "source_size": [
+        388,
+        526
+      ],
+      "output_size": [
+        516,
+        654
+      ],
+      "padding": {
+        "left": 64,
+        "top": 64,
+        "right": 64,
+        "bottom": 64
+      },
+      "effect_pixel_unit": 4,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Angemon_RLegWalk.png": {
+      "source_size": [
+        388,
+        526
+      ],
+      "output_size": [
+        516,
+        654
+      ],
+      "padding": {
+        "left": 64,
+        "top": 64,
+        "right": 64,
+        "bottom": 64
+      },
+      "effect_pixel_unit": 4,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

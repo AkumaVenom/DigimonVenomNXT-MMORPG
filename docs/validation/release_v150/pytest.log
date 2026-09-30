@@ -1,0 +1,124 @@
+........................................................................ [  1%]
+......F................................................................. [  3%]
+........................................................................ [  5%]
+........................................................................ [  7%]
+........................................................................ [  9%]
+........................................................................ [ 11%]
+........................................................................ [ 13%]
+........................................................................ [ 15%]
+........................................................................ [ 17%]
+........................................................................ [ 19%]
+........................................................................ [ 21%]
+........................................................................ [ 22%]
+........................................................................ [ 24%]
+........................................................................ [ 26%]
+........................................................................ [ 28%]
+........................................................................ [ 30%]
+........................................................................ [ 32%]
+........................................................................ [ 34%]
+........................................................................ [ 36%]
+........................................................................ [ 38%]
+........................................................................ [ 40%]
+........................................................................ [ 42%]
+........................................................................ [ 44%]
+........................................................................ [ 45%]
+........................................................................ [ 47%]
+........................................................................ [ 49%]
+........................................................................ [ 51%]
+........................................................................ [ 53%]
+........................................................................ [ 55%]
+........................................................................ [ 57%]
+........................................................................ [ 59%]
+........................................................................ [ 61%]
+...........................s............................................ [ 63%]
+........................................................................ [ 65%]
+.......................................................sssssssss........ [ 67%]
+........................................................................ [ 68%]
+........................................................................ [ 70%]
+........................................................................ [ 72%]
+...............................F........................................ [ 74%]
+........................................................................ [ 76%]
+........................................................................ [ 78%]
+........................................................................ [ 80%]
+........................................................................ [ 82%]
+........................................................................ [ 84%]
+........................................................................ [ 86%]
+........................................................................ [ 88%]
+........................................................................ [ 90%]
+........................................................................ [ 91%]
+........................................................................ [ 93%]
+........................................................................ [ 95%]
+........................................................................ [ 97%]
+........................................................................ [ 99%]
+.............                                                            [100%]
+=================================== FAILURES ===================================
+_ ActivityWindowClientTests.test_recent_counter_pages_fit_native_sizes_and_actions_stay_usable _
+
+self = <test_activity_window_client.ActivityWindowClientTests testMethod=test_recent_counter_pages_fit_native_sizes_and_actions_stay_usable>
+
+    def test_recent_counter_pages_fit_native_sizes_and_actions_stay_usable(self):
+        before = copy.deepcopy(self.app.community.data)
+        for size in ((1024, 720), (1180, 800), (2047, 1149), (3840, 2160)):
+            self.app.screen = NativeCanvas(pygame.display.set_mode(size), effective_ui_scale(size))
+            self.app.ui.screen = self.app.screen
+            for page in (0, 1):
+                with self.subTest(size=size, page=page):
+                    self.app.community.stats_page = page
+                    labels = self.draw()
+                    self.assertIn('LAST 12 HOURS', labels)
+                    self.assertIn('Latest 100 events within the last 12 hours.', labels)
+                    self.assertNotIn('WORLD TOTALS', labels)
+                    self.assertTrue(all('New tracking:' not in label for label in labels))
+                    bounds = self.app.screen.get_rect()
+                    for label, area in self.labels:
+                        self.assertTrue(bounds.contains(area), (label, area, bounds))
+                    for area, _ in self.app.ui.actions:
+                        self.assertTrue(bounds.contains(area), (area, bounds))
+                    toggle = 'More counters' if page == 0 else 'Main counters'
+>                   self.click(toggle)
+
+../../xros_release/DigimonVenomNXT/tests/test_activity_window_client.py:72: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <test_activity_window_client.ActivityWindowClientTests testMethod=test_recent_counter_pages_fit_native_sizes_and_actions_stay_usable>
+label = 'More counters'
+
+    def click(self, label):
+>       area = next(rect for name, rect in self.buttons if name == label)
+E       StopIteration
+
+../../xros_release/DigimonVenomNXT/tests/test_activity_window_client.py:49: StopIteration
+_ NativeMenuNavigationTests.test_activity_filters_counters_and_map_navigation_preserve_controls _
+
+self = <test_ui_navigation.NativeMenuNavigationTests testMethod=test_activity_filters_counters_and_map_navigation_preserve_controls>
+
+    def test_activity_filters_counters_and_map_navigation_preserve_controls(self):
+        self.render('activity')
+        for label in ('Wild', 'Ranked', 'Progress', 'Travel', 'All'):
+            self.click(label)
+            self.assertEqual(self.app.community.activity_filter, label)
+            self.render()
+>       self.click('More counters')
+
+../../xros_release/DigimonVenomNXT/tests/test_ui_navigation.py:149: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../../xros_release/DigimonVenomNXT/tests/test_ui_navigation.py:47: in click
+    rect, options = self.control(*labels, index=index)
+../../xros_release/DigimonVenomNXT/tests/test_ui_navigation.py:43: in control
+    self.assertGreater(len(found), index, f'Missing controls {labels}; saw {[b[0] for b in self.buttons]}')
+E   AssertionError: 0 not greater than 0 : Missing controls ('More counters',); saw ['Home · DigiFarm', 'DigiDex', 'Partners', 'Shop', 'Worlds', 'Settings', 'DigiLab  F1', '♪', 'Exit', 'Ranked Arena  R', 'Rivals Hub  V', 'Bot Activity  O', 'Season Mode  F3', 'Story Mode  F4', 'Server notices  0', 'Recent activity', 'Map population', 'Refresh', 'Field  Esc', 'Counters 1 / 3  ·  Next', 'All', 'Wild', 'Ranked', 'Progress', 'Travel']
+- generated xml file: /workspace/scratch/c55bcc9d101c/firewall_release/DigimonVenomNXT/docs/validation/release_v150/pytest.xml -
+=========================== short test summary info ============================
+SKIPPED [1] ../../xros_release/DigimonVenomNXT/tests/test_portable_mysql_live.py:177: Set VENOM_TEST_MYSQL_RUNTIME for opt-in Linux/MySQL validation
+SKIPPED [1] ../../xros_release/DigimonVenomNXT/tests/test_setup_wizard.py:167: Requires a graphical desktop / Xvfb
+SKIPPED [1] ../../xros_release/DigimonVenomNXT/tests/test_setup_wizard.py:145: Requires a graphical desktop / Xvfb
+SKIPPED [1] ../../xros_release/DigimonVenomNXT/tests/test_setup_wizard.py:158: Requires a graphical desktop / Xvfb
+SKIPPED [1] ../../xros_release/DigimonVenomNXT/tests/test_setup_wizard.py:130: Requires a graphical desktop / Xvfb
+SKIPPED [1] ../../xros_release/DigimonVenomNXT/tests/test_setup_wizard.py:105: Requires a graphical desktop / Xvfb
+SKIPPED [1] ../../xros_release/DigimonVenomNXT/tests/test_setup_wizard.py:111: Requires a graphical desktop / Xvfb
+SKIPPED [1] ../../xros_release/DigimonVenomNXT/tests/test_setup_wizard.py:201: Requires a graphical desktop / Xvfb
+SKIPPED [1] ../../xros_release/DigimonVenomNXT/tests/test_setup_wizard.py:183: Requires a graphical desktop / Xvfb
+SKIPPED [1] ../../xros_release/DigimonVenomNXT/tests/test_setup_wizard.py:190: Requires a graphical desktop / Xvfb
+FAILED tests/test_activity_window_client.py::ActivityWindowClientTests::test_recent_counter_pages_fit_native_sizes_and_actions_stay_usable
+FAILED tests/test_ui_navigation.py::NativeMenuNavigationTests::test_activity_filters_counters_and_map_navigation_preserve_controls
+2 failed, 3745 passed, 10 skipped in 660.02s (0:11:00)

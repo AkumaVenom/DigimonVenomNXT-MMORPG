@@ -1,0 +1,120 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Seadramon_AttackPart1.png": {
+      "source_size": [
+        482,
+        616
+      ],
+      "output_size": [
+        642,
+        776
+      ],
+      "padding": {
+        "left": 80,
+        "top": 80,
+        "right": 80,
+        "bottom": 80
+      },
+      "effect_pixel_unit": 5,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Seadramon_AttackPart2.png": {
+      "source_size": [
+        526,
+        462
+      ],
+      "output_size": [
+        686,
+        622
+      ],
+      "padding": {
+        "left": 80,
+        "top": 80,
+        "right": 80,
+        "bottom": 80
+      },
+      "effect_pixel_unit": 5,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Seadramon_Extra.png": {
+      "source_size": [
+        526,
+        462
+      ],
+      "output_size": [
+        686,
+        622
+      ],
+      "padding": {
+        "left": 80,
+        "top": 80,
+        "right": 80,
+        "bottom": 80
+      },
+      "effect_pixel_unit": 5,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Seadramon_Idle.png": {
+      "source_size": [
+        448,
+        416
+      ],
+      "output_size": [
+        608,
+        576
+      ],
+      "padding": {
+        "left": 80,
+        "top": 80,
+        "right": 80,
+        "bottom": 80
+      },
+      "effect_pixel_unit": 5,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Seadramon_LLegWalk.png": {
+      "source_size": [
+        440,
+        450
+      ],
+      "output_size": [
+        600,
+        610
+      ],
+      "padding": {
+        "left": 80,
+        "top": 80,
+        "right": 80,
+        "bottom": 80
+      },
+      "effect_pixel_unit": 5,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Seadramon_RLegWalk.png": {
+      "source_size": [
+        440,
+        450
+      ],
+      "output_size": [
+        600,
+        610
+      ],
+      "padding": {
+        "left": 80,
+        "top": 80,
+        "right": 80,
+        "bottom": 80
+      },
+      "effect_pixel_unit": 5,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

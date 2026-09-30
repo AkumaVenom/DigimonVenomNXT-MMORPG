@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Garurumon_Idle.png",
+    "walk_left": "Garurumon_LLegWalk.png",
+    "walk_right": "Garurumon_RLegWalk.png",
+    "attack1": "Garurumon_AttackPart1.png",
+    "attack2": "Garurumon_AttackPart2.png"
+  },
+  "animations": {
+    "idle": [
+      "Garurumon_Idle.png"
+    ],
+    "walk": [
+      "Garurumon_Idle.png",
+      "Garurumon_LLegWalk.png",
+      "Garurumon_Idle.png",
+      "Garurumon_RLegWalk.png"
+    ],
+    "attack": [
+      "Garurumon_AttackPart1.png",
+      "Garurumon_AttackPart2.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 0,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied v1.2.0 Shiny PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained."
+}

@@ -56,6 +56,8 @@ COMMANDS = {
     'setcam': Command('GAME_MASTER', '/setcam <player> <partner> <0-100>', 'Set CAM friendship.', 3),
     'setfriendshiplevel': Command('GAME_MASTER', '/setfriendshiplevel <player> <partner> <0-100>', 'Alias for Digimon CAM friendship.', 3),
     'setparadox': Command('GAME_MASTER', '/setparadox <player> <partner> <true|false>', 'Switch to the actual catalog counterpart, if one exists.', 3),
+    'setshiny': Command('GAME_MASTER', '/setshiny <player> <partner> <true|false>', 'Switch to the actual Shiny catalog counterpart, if one exists.', 3),
+    'setfirewall': Command('GAME_MASTER', '/setfirewall <player> <partner> <true|false>', 'Switch to the actual FireWall catalog counterpart, if one exists.', 3),
     'clonedigimon': Command('DEVELOPER', '/clonedigimon <player> <partner>', 'Clone a partner for testing with a new unique identity.', 2),
     'giveitem': Command('GAME_MASTER', '/giveitem <player> <item> <amount>', 'Add a valid item without exceeding its cap.', 3),
     'removeitem': Command('GAME_MASTER', '/removeitem <player> <item> <amount>', 'Remove a valid item without negative quantities.', 3),
@@ -90,7 +92,7 @@ COMMANDS = {
 }
 READ_GAME = {'digimon', 'team', 'bag', 'money', 'balance'}
 WRITE_GAME = {'givedigimon', 'removedigimon', 'heal', 'evolve', 'devolve', 'setlevel', 'setexp',
-              'setabi', 'setcam', 'setfriendshiplevel', 'setparadox', 'clonedigimon', 'giveitem',
+              'setabi', 'setcam', 'setfriendshiplevel', 'setparadox', 'setshiny', 'setfirewall', 'clonedigimon', 'giveitem',
               'removeitem', 'setitem', 'givemoney', 'removemoney', 'setmoney', 'teleportplayer', 'spawn'}
 
 

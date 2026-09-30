@@ -1,0 +1,29 @@
+{
+  "variant_id": "shiny_devimonicedevimon",
+  "display_name": "Shiny DevimonIceDevimon",
+  "base_species": "DevimonIceDevimon",
+  "stage": "4 Champion",
+  "status": "ready",
+  "style_profile": "Prismatic Shiny \u2014 Gold Stardust v1",
+  "palette": "Prismatic Royal sapphire",
+  "target_hue_degrees": 44.5,
+  "source_sprite_count": 10,
+  "shiny_sprite_count": 10,
+  "animation_alignment": "Exact source canvas dimensions and sprite positions retained",
+  "effects": "Warm-gold silhouette glow; restrained ivory/gold four-point sparkles; deterministic frame twinkle",
+  "sprites": [
+    "Devimon_AttackPart1.png",
+    "Devimon_AttackPart2.png",
+    "Devimon_Idle.png",
+    "Devimon_LLegWalk.png",
+    "Devimon_RLegWalk.png",
+    "IceDevimon_Attack.png",
+    "IceDevimon_GetHit.png",
+    "IceDevimon_Idle.png",
+    "IceDevimon_LLegWalk.png",
+    "IceDevimon_RLegWalk.png"
+  ],
+  "primary_sprite": "4 Champion/DevimonIceDevimon/Shiny/Devimon_Idle.png",
+  "source_primary": "4 Champion/DevimonIceDevimon/Devimon_Idle.png",
+  "materializable": true
+}

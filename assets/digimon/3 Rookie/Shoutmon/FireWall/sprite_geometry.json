@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Shoutmon_Idle.png": {
+      "source_size": [
+        600,
+        532
+      ],
+      "output_size": [
+        760,
+        692
+      ],
+      "padding": {
+        "left": 80,
+        "top": 80,
+        "right": 80,
+        "bottom": 80
+      },
+      "effect_pixel_unit": 5,
+      "effect_style": "smooth_cyber_glow",
+      "particle_fragment": false
+    },
+    "Shoutmon_LLegWalk.png": {
+      "source_size": [
+        674,
+        622
+      ],
+      "output_size": [
+        834,
+        782
+      ],
+      "padding": {
+        "left": 80,
+        "top": 80,
+        "right": 80,
+        "bottom": 80
+      },
+      "effect_pixel_unit": 5,
+      "effect_style": "smooth_cyber_glow",
+      "particle_fragment": false
+    },
+    "Shoutmon_RLegWalk.png": {
+      "source_size": [
+        674,
+        622
+      ],
+      "output_size": [
+        834,
+        782
+      ],
+      "padding": {
+        "left": 80,
+        "top": 80,
+        "right": 80,
+        "bottom": 80
+      },
+      "effect_pixel_unit": 5,
+      "effect_style": "smooth_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

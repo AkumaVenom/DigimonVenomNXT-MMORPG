@@ -1,0 +1,24 @@
+{
+  "variant_id": "shiny_fugamon",
+  "display_name": "Shiny Fugamon",
+  "base_species": "Fugamon",
+  "stage": "4 Champion",
+  "status": "ready",
+  "style_profile": "Prismatic Shiny \u2014 Gold Stardust v1",
+  "palette": "Royal sapphire",
+  "target_hue_degrees": 218.0,
+  "source_sprite_count": 5,
+  "shiny_sprite_count": 5,
+  "animation_alignment": "Exact source canvas dimensions and sprite positions retained",
+  "effects": "Warm-gold silhouette glow; restrained ivory/gold four-point sparkles; deterministic frame twinkle",
+  "sprites": [
+    "Fugamon_Attack.png",
+    "Fugamon_GetHit.png",
+    "Fugamon_Idle.png",
+    "Fugamon_LLegWalk.png",
+    "Fugamon_RLegWalk.png"
+  ],
+  "primary_sprite": "4 Champion/Fugamon/Shiny/Fugamon_Idle.png",
+  "source_primary": "4 Champion/Fugamon/Fugamon_Idle.png",
+  "materializable": true
+}

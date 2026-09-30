@@ -1,0 +1,246 @@
+[
+  {
+    "file": "shiny_scan_960x600.png",
+    "pixels": [
+      960,
+      600
+    ],
+    "ui_scale": 0.75,
+    "actions": 28,
+    "fields": [
+      "search"
+    ],
+    "actions_outside_display": [],
+    "asset_errors": []
+  },
+  {
+    "file": "shiny_dex_960x600.png",
+    "pixels": [
+      960,
+      600
+    ],
+    "ui_scale": 0.75,
+    "actions": 24,
+    "fields": [
+      "search"
+    ],
+    "actions_outside_display": [],
+    "asset_errors": []
+  },
+  {
+    "file": "shiny_battle_960x600.png",
+    "pixels": [
+      960,
+      600
+    ],
+    "ui_scale": 0.75,
+    "actions": 19,
+    "fields": [
+      "chat"
+    ],
+    "actions_outside_display": [],
+    "asset_errors": []
+  },
+  {
+    "file": "shiny_roster_960x600.png",
+    "pixels": [
+      960,
+      600
+    ],
+    "ui_scale": 0.75,
+    "actions": 27,
+    "fields": [],
+    "actions_outside_display": [],
+    "asset_errors": []
+  },
+  {
+    "file": "shiny_storage_960x600.png",
+    "pixels": [
+      960,
+      600
+    ],
+    "ui_scale": 0.75,
+    "actions": 34,
+    "fields": [
+      "bank_search"
+    ],
+    "actions_outside_display": [],
+    "asset_errors": []
+  },
+  {
+    "file": "shiny_evolution_960x600.png",
+    "pixels": [
+      960,
+      600
+    ],
+    "ui_scale": 0.75,
+    "actions": 33,
+    "fields": [],
+    "actions_outside_display": [],
+    "asset_errors": []
+  },
+  {
+    "file": "shiny_farm_960x600.png",
+    "pixels": [
+      960,
+      600
+    ],
+    "ui_scale": 0.75,
+    "actions": 36,
+    "fields": [
+      "farm_search"
+    ],
+    "actions_outside_display": [],
+    "asset_errors": []
+  },
+  {
+    "file": "shiny_maps_960x600.png",
+    "pixels": [
+      960,
+      600
+    ],
+    "ui_scale": 0.75,
+    "actions": 29,
+    "fields": [
+      "world_search"
+    ],
+    "actions_outside_display": [],
+    "asset_errors": []
+  },
+  {
+    "file": "paradox_dex_960x600.png",
+    "pixels": [
+      960,
+      600
+    ],
+    "ui_scale": 0.75,
+    "actions": 24,
+    "fields": [
+      "search"
+    ],
+    "actions_outside_display": [],
+    "asset_errors": []
+  },
+  {
+    "file": "shiny_scan_1920x1080.png",
+    "pixels": [
+      1920,
+      1080
+    ],
+    "ui_scale": 1.25,
+    "actions": 29,
+    "fields": [
+      "search"
+    ],
+    "actions_outside_display": [],
+    "asset_errors": []
+  },
+  {
+    "file": "shiny_dex_1920x1080.png",
+    "pixels": [
+      1920,
+      1080
+    ],
+    "ui_scale": 1.25,
+    "actions": 24,
+    "fields": [
+      "search"
+    ],
+    "actions_outside_display": [],
+    "asset_errors": []
+  },
+  {
+    "file": "shiny_battle_1920x1080.png",
+    "pixels": [
+      1920,
+      1080
+    ],
+    "ui_scale": 1.25,
+    "actions": 19,
+    "fields": [
+      "chat"
+    ],
+    "actions_outside_display": [],
+    "asset_errors": []
+  },
+  {
+    "file": "shiny_roster_1920x1080.png",
+    "pixels": [
+      1920,
+      1080
+    ],
+    "ui_scale": 1.25,
+    "actions": 27,
+    "fields": [],
+    "actions_outside_display": [],
+    "asset_errors": []
+  },
+  {
+    "file": "shiny_storage_1920x1080.png",
+    "pixels": [
+      1920,
+      1080
+    ],
+    "ui_scale": 1.25,
+    "actions": 34,
+    "fields": [
+      "bank_search"
+    ],
+    "actions_outside_display": [],
+    "asset_errors": []
+  },
+  {
+    "file": "shiny_evolution_1920x1080.png",
+    "pixels": [
+      1920,
+      1080
+    ],
+    "ui_scale": 1.25,
+    "actions": 33,
+    "fields": [],
+    "actions_outside_display": [],
+    "asset_errors": []
+  },
+  {
+    "file": "shiny_farm_1920x1080.png",
+    "pixels": [
+      1920,
+      1080
+    ],
+    "ui_scale": 1.25,
+    "actions": 36,
+    "fields": [
+      "farm_search"
+    ],
+    "actions_outside_display": [],
+    "asset_errors": []
+  },
+  {
+    "file": "shiny_maps_1920x1080.png",
+    "pixels": [
+      1920,
+      1080
+    ],
+    "ui_scale": 1.25,
+    "actions": 29,
+    "fields": [
+      "world_search"
+    ],
+    "actions_outside_display": [],
+    "asset_errors": []
+  },
+  {
+    "file": "paradox_dex_1920x1080.png",
+    "pixels": [
+      1920,
+      1080
+    ],
+    "ui_scale": 1.25,
+    "actions": 24,
+    "fields": [
+      "search"
+    ],
+    "actions_outside_display": [],
+    "asset_errors": []
+  }
+]

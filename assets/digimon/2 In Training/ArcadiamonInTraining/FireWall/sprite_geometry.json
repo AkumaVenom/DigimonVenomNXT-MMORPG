@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "ArcadiamonInTraining_Idle.png": {
+      "source_size": [
+        1000,
+        858
+      ],
+      "output_size": [
+        1192,
+        1050
+      ],
+      "padding": {
+        "left": 96,
+        "top": 96,
+        "right": 96,
+        "bottom": 96
+      },
+      "effect_pixel_unit": 6,
+      "effect_style": "smooth_cyber_glow",
+      "particle_fragment": false
+    },
+    "ArcadiamonInTraining_LLegWalk.png": {
+      "source_size": [
+        1335,
+        996
+      ],
+      "output_size": [
+        1527,
+        1188
+      ],
+      "padding": {
+        "left": 96,
+        "top": 96,
+        "right": 96,
+        "bottom": 96
+      },
+      "effect_pixel_unit": 6,
+      "effect_style": "smooth_cyber_glow",
+      "particle_fragment": false
+    },
+    "ArcadiamonInTraining_RLegWalk.png": {
+      "source_size": [
+        1335,
+        996
+      ],
+      "output_size": [
+        1527,
+        1188
+      ],
+      "padding": {
+        "left": 96,
+        "top": 96,
+        "right": 96,
+        "bottom": 96
+      },
+      "effect_pixel_unit": 6,
+      "effect_style": "smooth_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

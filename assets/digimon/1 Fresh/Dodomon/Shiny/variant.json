@@ -1,0 +1,22 @@
+{
+  "variant_id": "shiny_dodomon",
+  "display_name": "Shiny Dodomon",
+  "base_species": "Dodomon",
+  "stage": "1 Fresh",
+  "status": "ready",
+  "style_profile": "Prismatic Shiny \u2014 Gold Stardust v1",
+  "palette": "Prismatic Royal sapphire",
+  "target_hue_degrees": 39.5,
+  "source_sprite_count": 3,
+  "shiny_sprite_count": 3,
+  "animation_alignment": "Exact source canvas dimensions and sprite positions retained",
+  "effects": "Warm-gold silhouette glow; restrained ivory/gold four-point sparkles; deterministic frame twinkle",
+  "sprites": [
+    "Dodomon_Idle.png",
+    "Dodomon_LLegWalk.png",
+    "Dodomon_RLegWalk.png"
+  ],
+  "primary_sprite": "1 Fresh/Dodomon/Shiny/Dodomon_Idle.png",
+  "source_primary": "1 Fresh/Dodomon/Dodomon_Idle.png",
+  "materializable": true
+}

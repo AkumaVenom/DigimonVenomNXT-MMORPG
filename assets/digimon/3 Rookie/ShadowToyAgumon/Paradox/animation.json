@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "ShadowToyAgumon_Paradox_Idle.png",
+    "walk_left": "ShadowToyAgumon_Paradox_LLegWalk.png",
+    "walk_right": "ShadowToyAgumon_Paradox_RLegWalk.png",
+    "attack1": "ShadowToyAgumon_Paradox_AttackPart1.png",
+    "attack2": "ShadowToyAgumon_Paradox_AttackPart2.png"
+  },
+  "animations": {
+    "idle": [
+      "ShadowToyAgumon_Paradox_Idle.png"
+    ],
+    "walk": [
+      "ShadowToyAgumon_Paradox_Idle.png",
+      "ShadowToyAgumon_Paradox_LLegWalk.png",
+      "ShadowToyAgumon_Paradox_Idle.png",
+      "ShadowToyAgumon_Paradox_RLegWalk.png"
+    ],
+    "attack": [
+      "ShadowToyAgumon_Paradox_AttackPart1.png",
+      "ShadowToyAgumon_Paradox_AttackPart2.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 0,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied v1.2.0 Paradox PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained."
+}

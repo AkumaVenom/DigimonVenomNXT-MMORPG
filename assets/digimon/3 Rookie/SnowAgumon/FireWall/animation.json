@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "SnowAgumon_Idle.png",
+    "walk_left": "SnowAgumon_LLegWalk.png",
+    "walk_right": "SnowAgumon_RLegWalk.png",
+    "attack1": "SnowAgumon_AttackPart1.png",
+    "attack2": "SnowAgumon_AttackPart2.png"
+  },
+  "animations": {
+    "idle": [
+      "SnowAgumon_Idle.png"
+    ],
+    "walk": [
+      "SnowAgumon_Idle.png",
+      "SnowAgumon_LLegWalk.png",
+      "SnowAgumon_Idle.png",
+      "SnowAgumon_RLegWalk.png"
+    ],
+    "attack": [
+      "SnowAgumon_AttackPart1.png",
+      "SnowAgumon_AttackPart2.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 0,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied FireWall PNG bytes preserved; normal pose selections and mirrors retained. Aura padding is recorded in sprite_geometry.json."
+}

@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Cyclonemon_Paradox_Idle.png",
+    "walk_left": "Cyclonemon_Paradox_LLegWalk.png",
+    "walk_right": "Cyclonemon_Paradox_Idle.png",
+    "attack1": "Cyclonemon_Paradox_Idle.png",
+    "attack2": "Cyclonemon_Paradox_Idle.png"
+  },
+  "animations": {
+    "idle": [
+      "Cyclonemon_Paradox_Idle.png"
+    ],
+    "walk": [
+      "Cyclonemon_Paradox_Idle.png",
+      "Cyclonemon_Paradox_LLegWalk.png",
+      "Cyclonemon_Paradox_Idle.png",
+      "Cyclonemon_Paradox_Idle.png"
+    ],
+    "attack": [
+      "Cyclonemon_Paradox_Idle.png",
+      "Cyclonemon_Paradox_Idle.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 0,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied v1.2.0 Paradox PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained."
+}

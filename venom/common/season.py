@@ -115,7 +115,8 @@ def create_career(state: dict, species: dict, tamers: dict, starters: list[str])
               "recent_reigns": [], "title_events": []}
     rng = _rng(season, "roster")
     tamer_ids = sorted(tamers)
-    partner_ids = sorted(starters)
+    partner_ids = sorted(sid for sid in starters if not species[sid].get("paradox")
+                         and not species[sid].get("shiny") and not species[sid].get("firewall"))
     human_level = max(1, sum(m["level"] for m in state["party"][:3]) // len(state["party"][:3]))
     for index, name in enumerate((state["username"],) + NAMES):
         is_player = index == 0
@@ -223,6 +224,8 @@ def _develop(row: dict, species: dict, rng: random.Random, news: list[str]) -> N
         source = species[partner["species_id"]]
         routes = [r for r in source.get("evolutions", []) if r.get("to") in species
                   and not species[r["to"]].get("paradox")
+                  and not species[r["to"]].get("shiny")
+                  and not species[r["to"]].get("firewall")
                   and int(r.get("level", 15)) <= partner["level"]]
         # NPC training is persistent; a partner can advance form at most once a quarter.
         if routes and row["development"] % 12 == 0:

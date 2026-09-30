@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Pichimon_Idle.png",
+    "walk_left": "Pichimon_LLegWalk.png",
+    "walk_right": "Pichimon_RLegWalk.png",
+    "attack1": "Pichimon_Idle.png",
+    "attack2": "Pichimon_Idle.png"
+  },
+  "animations": {
+    "idle": [
+      "Pichimon_Idle.png"
+    ],
+    "walk": [
+      "Pichimon_Idle.png",
+      "Pichimon_LLegWalk.png",
+      "Pichimon_Idle.png",
+      "Pichimon_RLegWalk.png"
+    ],
+    "attack": [
+      "Pichimon_Idle.png",
+      "Pichimon_Idle.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 0,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied v1.2.0 Shiny PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained."
+}

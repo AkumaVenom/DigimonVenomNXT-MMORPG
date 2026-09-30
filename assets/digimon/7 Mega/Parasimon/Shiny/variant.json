@@ -1,0 +1,32 @@
+{
+  "variant_id": "shiny_parasimon",
+  "display_name": "Shiny Parasimon",
+  "base_species": "Parasimon",
+  "stage": "7 Mega",
+  "status": "ready",
+  "style_profile": "Prismatic Shiny \u2014 Gold Stardust v1",
+  "palette": "Prismatic Rose quartz",
+  "target_hue_degrees": 151.5,
+  "source_sprite_count": 13,
+  "shiny_sprite_count": 13,
+  "animation_alignment": "Exact source canvas dimensions and sprite positions retained",
+  "effects": "Warm-gold silhouette glow; restrained ivory/gold four-point sparkles; deterministic frame twinkle",
+  "sprites": [
+    "Frames/Parasimon_Frame_001.png",
+    "Frames/Parasimon_Frame_002.png",
+    "Frames/Parasimon_Frame_003.png",
+    "Frames/Parasimon_Frame_004.png",
+    "Frames/Parasimon_Frame_005.png",
+    "Frames/Parasimon_Frame_006.png",
+    "Frames/Parasimon_Frame_007.png",
+    "Frames/Parasimon_Frame_008.png",
+    "Frames/Parasimon_Frame_009.png",
+    "Frames/Parasimon_Frame_010.png",
+    "Frames/Parasimon_Frame_011.png",
+    "Frames/Parasimon_Frame_012.png",
+    "Parasimon_Primary.png"
+  ],
+  "primary_sprite": "7 Mega/Parasimon/Shiny/Parasimon_Primary.png",
+  "source_primary": "7 Mega/Parasimon/Parasimon_Primary.png",
+  "materializable": true
+}

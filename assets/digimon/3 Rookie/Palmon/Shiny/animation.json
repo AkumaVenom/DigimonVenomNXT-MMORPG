@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Palmon_Idle.png",
+    "walk_left": "Palmon_LLegWalk.png",
+    "walk_right": "Palmon_RLegWalk.png",
+    "attack1": "Palmon_AttackPart1.png",
+    "attack2": "Palmon_AttackPart2.png",
+    "front": "Palmon_Idle.png"
+  },
+  "animations": {
+    "idle": [
+      "Palmon_Idle.png"
+    ],
+    "walk": [
+      "Palmon_Idle.png",
+      "Palmon_LLegWalk.png",
+      "Palmon_Idle.png",
+      "Palmon_RLegWalk.png"
+    ],
+    "attack": [
+      "Palmon_AttackPart1.png",
+      "Palmon_AttackPart2.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 0,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied v1.2.0 Shiny PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained."
+}

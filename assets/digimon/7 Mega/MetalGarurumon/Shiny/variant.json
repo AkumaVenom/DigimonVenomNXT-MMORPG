@@ -1,0 +1,25 @@
+{
+  "variant_id": "shiny_metalgarurumon",
+  "display_name": "Shiny MetalGarurumon",
+  "base_species": "MetalGarurumon",
+  "stage": "7 Mega",
+  "status": "ready",
+  "style_profile": "Prismatic Shiny \u2014 Gold Stardust v1",
+  "palette": "Copper rose",
+  "target_hue_degrees": 22.0,
+  "source_sprite_count": 6,
+  "shiny_sprite_count": 6,
+  "animation_alignment": "Exact source canvas dimensions and sprite positions retained",
+  "effects": "Warm-gold silhouette glow; restrained ivory/gold four-point sparkles; deterministic frame twinkle",
+  "sprites": [
+    "MetalGarurumon_AttackPart1.png",
+    "MetalGarurumon_AttackPart2.png",
+    "MetalGarurumon_Extra.png",
+    "MetalGarurumon_Idle.png",
+    "MetalGarurumon_LLegWalk.png",
+    "MetalGarurumon_RLegWalk.png"
+  ],
+  "primary_sprite": "7 Mega/MetalGarurumon/Shiny/MetalGarurumon_Idle.png",
+  "source_primary": "7 Mega/MetalGarurumon/MetalGarurumon_Idle.png",
+  "materializable": true
+}

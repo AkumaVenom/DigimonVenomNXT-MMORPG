@@ -51,13 +51,20 @@ class ActivityWindowClientTests(unittest.TestCase):
             pygame.MOUSEBUTTONDOWN, button=1, pos=self.app.screen.to_physical_point(area.center))))
 
     def test_recent_counter_pages_fit_native_sizes_and_actions_stay_usable(self):
+        self.app.community.data['activity']['counters']['firewall_materialized'] = 8472
         before = copy.deepcopy(self.app.community.data)
+        counters = self.app.community.COUNTERS
+        pages = (len(counters)+11)//12
+        self.assertIn(('firewall_materialized', 'FireWall created'), counters)
+        self.assertGreaterEqual(pages, 3)
         for size in ((1024, 720), (1180, 800), (2047, 1149), (3840, 2160)):
             self.app.screen = NativeCanvas(pygame.display.set_mode(size), effective_ui_scale(size))
             self.app.ui.screen = self.app.screen
-            for page in (0, 1):
+            self.app.community.stats_page = 0
+            seen = set()
+            for page in range(pages):
                 with self.subTest(size=size, page=page):
-                    self.app.community.stats_page = page
+                    self.assertEqual(self.app.community.stats_page, page)
                     labels = self.draw()
                     self.assertIn('LAST 12 HOURS', labels)
                     self.assertIn('Latest 100 events within the last 12 hours.', labels)
@@ -68,9 +75,19 @@ class ActivityWindowClientTests(unittest.TestCase):
                         self.assertTrue(bounds.contains(area), (label, area, bounds))
                     for area, _ in self.app.ui.actions:
                         self.assertTrue(bounds.contains(area), (area, bounds))
-                    toggle = 'More counters' if page == 0 else 'Main counters'
-                    self.click(toggle)
-                    self.assertEqual(self.app.community.stats_page, 1-page)
+                    expected = {label.upper() for _, label in counters[page*12:(page+1)*12]}
+                    actual = {label for label in labels if label in {name.upper() for _, name in counters}}
+                    self.assertEqual(actual, expected)
+                    seen.update(actual)
+                    if 'FIREWALL CREATED' in actual:
+                        position = labels.index('FIREWALL CREATED')
+                        self.assertEqual(labels[position+1], '8,472')
+                    for label in ('All', 'Wild', 'Ranked', 'Progress', 'Travel'):
+                        self.assertIn(label, [name for name, _ in self.buttons])
+                    self.click(f'Counters {page+1} / {pages}  ·  Next')
+                    self.assertEqual(self.app.community.stats_page, (page+1)%pages)
+            self.assertEqual(seen, {label.upper() for _, label in counters})
+            self.assertEqual(self.app.community.stats_page, 0)
         self.assertEqual(self.app.community.data, before)
         self.assertFalse(self.app.assets.errors, self.app.assets.errors)
 

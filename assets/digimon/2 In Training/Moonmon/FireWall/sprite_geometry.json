@@ -1,0 +1,120 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Moonmon_AttackPart1.png": {
+      "source_size": [
+        412,
+        440
+      ],
+      "output_size": [
+        668,
+        696
+      ],
+      "padding": {
+        "left": 128,
+        "top": 128,
+        "right": 128,
+        "bottom": 128
+      },
+      "effect_pixel_unit": 8,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Moonmon_AttackPart2.png": {
+      "source_size": [
+        506,
+        518
+      ],
+      "output_size": [
+        762,
+        774
+      ],
+      "padding": {
+        "left": 128,
+        "top": 128,
+        "right": 128,
+        "bottom": 128
+      },
+      "effect_pixel_unit": 8,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Moonmon_Extra.png": {
+      "source_size": [
+        506,
+        518
+      ],
+      "output_size": [
+        762,
+        774
+      ],
+      "padding": {
+        "left": 128,
+        "top": 128,
+        "right": 128,
+        "bottom": 128
+      },
+      "effect_pixel_unit": 8,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Moonmon_Idle.png": {
+      "source_size": [
+        370,
+        472
+      ],
+      "output_size": [
+        626,
+        728
+      ],
+      "padding": {
+        "left": 128,
+        "top": 128,
+        "right": 128,
+        "bottom": 128
+      },
+      "effect_pixel_unit": 8,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Moonmon_LLegWalk.png": {
+      "source_size": [
+        356,
+        486
+      ],
+      "output_size": [
+        420,
+        550
+      ],
+      "padding": {
+        "left": 32,
+        "top": 32,
+        "right": 32,
+        "bottom": 32
+      },
+      "effect_pixel_unit": 2,
+      "effect_style": "smooth_cyber_glow",
+      "particle_fragment": false
+    },
+    "Moonmon_RLegWalk.png": {
+      "source_size": [
+        356,
+        486
+      ],
+      "output_size": [
+        420,
+        550
+      ],
+      "padding": {
+        "left": 32,
+        "top": 32,
+        "right": 32,
+        "bottom": 32
+      },
+      "effect_pixel_unit": 2,
+      "effect_style": "smooth_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "ArcadiamonInTraining_Idle.png",
+    "walk_left": "ArcadiamonInTraining_LLegWalk.png",
+    "walk_right": "ArcadiamonInTraining_RLegWalk.png",
+    "attack1": "ArcadiamonInTraining_Idle.png",
+    "attack2": "ArcadiamonInTraining_Idle.png"
+  },
+  "animations": {
+    "idle": [
+      "ArcadiamonInTraining_Idle.png"
+    ],
+    "walk": [
+      "ArcadiamonInTraining_Idle.png",
+      "ArcadiamonInTraining_LLegWalk.png",
+      "ArcadiamonInTraining_Idle.png",
+      "ArcadiamonInTraining_RLegWalk.png"
+    ],
+    "attack": [
+      "ArcadiamonInTraining_Idle.png",
+      "ArcadiamonInTraining_Idle.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 0,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied v1.2.0 Shiny PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained."
+}

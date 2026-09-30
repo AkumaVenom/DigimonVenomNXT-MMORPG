@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Dinohyumon_Idle.png": {
+      "source_size": [
+        594,
+        802
+      ],
+      "output_size": [
+        818,
+        1026
+      ],
+      "padding": {
+        "left": 112,
+        "top": 112,
+        "right": 112,
+        "bottom": 112
+      },
+      "effect_pixel_unit": 7,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Dinohyumon_LLegWalk.png": {
+      "source_size": [
+        596,
+        790
+      ],
+      "output_size": [
+        820,
+        1014
+      ],
+      "padding": {
+        "left": 112,
+        "top": 112,
+        "right": 112,
+        "bottom": 112
+      },
+      "effect_pixel_unit": 7,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Dinohyumon_RLegWalk.png": {
+      "source_size": [
+        715,
+        873
+      ],
+      "output_size": [
+        939,
+        1097
+      ],
+      "padding": {
+        "left": 112,
+        "top": 112,
+        "right": 112,
+        "bottom": 112
+      },
+      "effect_pixel_unit": 7,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

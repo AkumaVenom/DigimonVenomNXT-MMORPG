@@ -1,0 +1,82 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Mekanorimon_AttackPart1.png": {
+      "source_size": [
+        586,
+        622
+      ],
+      "output_size": [
+        746,
+        782
+      ],
+      "padding": {
+        "left": 80,
+        "top": 80,
+        "right": 80,
+        "bottom": 80
+      },
+      "effect_pixel_unit": 5,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Mekanorimon_AttackPart2.png": {
+      "source_size": [
+        704,
+        640
+      ],
+      "output_size": [
+        864,
+        800
+      ],
+      "padding": {
+        "left": 80,
+        "top": 80,
+        "right": 80,
+        "bottom": 80
+      },
+      "effect_pixel_unit": 5,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Mekanorimon_Idle.png": {
+      "source_size": [
+        620,
+        630
+      ],
+      "output_size": [
+        780,
+        790
+      ],
+      "padding": {
+        "left": 80,
+        "top": 80,
+        "right": 80,
+        "bottom": 80
+      },
+      "effect_pixel_unit": 5,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Mekanorimon_LLegWalk.png": {
+      "source_size": [
+        640,
+        634
+      ],
+      "output_size": [
+        800,
+        794
+      ],
+      "padding": {
+        "left": 80,
+        "top": 80,
+        "right": 80,
+        "bottom": 80
+      },
+      "effect_pixel_unit": 5,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

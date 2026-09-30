@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Tanemon_Paradox_Idle.png",
+    "walk_left": "Tanemon_Paradox_LLegWalk.png",
+    "walk_right": "Tanemon_Paradox_RLegWalk.png",
+    "attack1": "Tanemon_Paradox_AttackPart1.png",
+    "attack2": "Tanemon_Paradox_AttackPart2.png"
+  },
+  "animations": {
+    "idle": [
+      "Tanemon_Paradox_Idle.png"
+    ],
+    "walk": [
+      "Tanemon_Paradox_Idle.png",
+      "Tanemon_Paradox_LLegWalk.png",
+      "Tanemon_Paradox_Idle.png",
+      "Tanemon_Paradox_RLegWalk.png"
+    ],
+    "attack": [
+      "Tanemon_Paradox_AttackPart1.png",
+      "Tanemon_Paradox_AttackPart2.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 0,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied v1.2.0 Paradox PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained."
+}

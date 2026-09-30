@@ -1,0 +1,27 @@
+{
+  "variant_id": "shiny_exeraserbeta",
+  "display_name": "Shiny EXEraserBeta",
+  "base_species": "EXEraserBeta",
+  "stage": "7 Mega",
+  "status": "ready",
+  "style_profile": "Prismatic Shiny \u2014 Gold Stardust v1",
+  "palette": "Prismatic Orchid",
+  "target_hue_degrees": 167.5,
+  "source_sprite_count": 8,
+  "shiny_sprite_count": 8,
+  "animation_alignment": "Exact source canvas dimensions and sprite positions retained",
+  "effects": "Warm-gold silhouette glow; restrained ivory/gold four-point sparkles; deterministic frame twinkle",
+  "sprites": [
+    "EXEraserBeta_Primary.png",
+    "Frames/EXEraserBeta_Frame_001.png",
+    "Frames/EXEraserBeta_Frame_002.png",
+    "Frames/EXEraserBeta_Frame_003.png",
+    "Frames/EXEraserBeta_Frame_004.png",
+    "Frames/EXEraserBeta_Frame_005.png",
+    "Frames/EXEraserBeta_Frame_006.png",
+    "Frames/EXEraserBeta_Frame_007.png"
+  ],
+  "primary_sprite": "7 Mega/EXEraserBeta/Shiny/EXEraserBeta_Primary.png",
+  "source_primary": "7 Mega/EXEraserBeta/EXEraserBeta_Primary.png",
+  "materializable": true
+}

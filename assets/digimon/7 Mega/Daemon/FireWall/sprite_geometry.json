@@ -1,0 +1,329 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Daemon_Primary.png": {
+      "source_size": [
+        193,
+        167
+      ],
+      "output_size": [
+        225,
+        199
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Daemon_Frame_001.png": {
+      "source_size": [
+        193,
+        167
+      ],
+      "output_size": [
+        225,
+        199
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Daemon_Frame_002.png": {
+      "source_size": [
+        197,
+        167
+      ],
+      "output_size": [
+        229,
+        199
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Daemon_Frame_003.png": {
+      "source_size": [
+        201,
+        169
+      ],
+      "output_size": [
+        233,
+        201
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Daemon_Frame_004.png": {
+      "source_size": [
+        206,
+        178
+      ],
+      "output_size": [
+        238,
+        210
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Daemon_Frame_005.png": {
+      "source_size": [
+        49,
+        47
+      ],
+      "output_size": [
+        81,
+        79
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Daemon_Frame_006.png": {
+      "source_size": [
+        48,
+        47
+      ],
+      "output_size": [
+        80,
+        79
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Daemon_Frame_007.png": {
+      "source_size": [
+        48,
+        46
+      ],
+      "output_size": [
+        80,
+        78
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Daemon_Frame_008.png": {
+      "source_size": [
+        49,
+        46
+      ],
+      "output_size": [
+        81,
+        78
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Daemon_Frame_009.png": {
+      "source_size": [
+        48,
+        46
+      ],
+      "output_size": [
+        80,
+        78
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Daemon_Frame_010.png": {
+      "source_size": [
+        48,
+        46
+      ],
+      "output_size": [
+        80,
+        78
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Daemon_Frame_011.png": {
+      "source_size": [
+        47,
+        48
+      ],
+      "output_size": [
+        79,
+        80
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Daemon_Frame_012.png": {
+      "source_size": [
+        48,
+        46
+      ],
+      "output_size": [
+        80,
+        78
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Daemon_Frame_013.png": {
+      "source_size": [
+        47,
+        49
+      ],
+      "output_size": [
+        79,
+        81
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Daemon_Frame_014.png": {
+      "source_size": [
+        48,
+        47
+      ],
+      "output_size": [
+        80,
+        79
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Daemon_Frame_015.png": {
+      "source_size": [
+        47,
+        48
+      ],
+      "output_size": [
+        79,
+        80
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Daemon_Frame_016.png": {
+      "source_size": [
+        48,
+        49
+      ],
+      "output_size": [
+        80,
+        81
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

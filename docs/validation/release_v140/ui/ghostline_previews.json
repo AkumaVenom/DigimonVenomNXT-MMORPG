@@ -1,0 +1,450 @@
+[
+  {
+    "file": "ghostline_01_campaign_chooser_960x600.png",
+    "resolution": [
+      960,
+      600
+    ],
+    "phase": "01_campaign_chooser",
+    "map_id": "map_001_a",
+    "chapter": null,
+    "revealed": null,
+    "completed": null,
+    "staged_qa_progress": true,
+    "asset_errors": []
+  },
+  {
+    "file": "ghostline_02_hub_journal_960x600.png",
+    "resolution": [
+      960,
+      600
+    ],
+    "phase": "02_hub_journal",
+    "map_id": "xros_175",
+    "chapter": 0,
+    "revealed": false,
+    "completed": false,
+    "staged_qa_progress": true,
+    "asset_errors": []
+  },
+  {
+    "file": "ghostline_03_private_hub_960x600.png",
+    "resolution": [
+      960,
+      600
+    ],
+    "phase": "03_private_hub",
+    "map_id": "xros_175",
+    "chapter": 0,
+    "revealed": false,
+    "completed": false,
+    "staged_qa_progress": true,
+    "asset_errors": []
+  },
+  {
+    "file": "ghostline_04_trusted_contact_960x600.png",
+    "resolution": [
+      960,
+      600
+    ],
+    "phase": "04_trusted_contact",
+    "map_id": "xros_175",
+    "chapter": 0,
+    "revealed": false,
+    "completed": false,
+    "staged_qa_progress": true,
+    "asset_errors": []
+  },
+  {
+    "file": "ghostline_05_sealed_case_file_960x600.png",
+    "resolution": [
+      960,
+      600
+    ],
+    "phase": "05_sealed_case_file",
+    "map_id": "xros_175",
+    "chapter": 0,
+    "revealed": false,
+    "completed": false,
+    "staged_qa_progress": true,
+    "asset_errors": []
+  },
+  {
+    "file": "ghostline_06_locked_final_routes_960x600.png",
+    "resolution": [
+      960,
+      600
+    ],
+    "phase": "06_locked_final_routes",
+    "map_id": "xros_175",
+    "chapter": 0,
+    "revealed": false,
+    "completed": false,
+    "staged_qa_progress": true,
+    "asset_errors": []
+  },
+  {
+    "file": "ghostline_07_sealed_evidence_960x600.png",
+    "resolution": [
+      960,
+      600
+    ],
+    "phase": "07_sealed_evidence",
+    "map_id": "xros_175",
+    "chapter": 0,
+    "revealed": false,
+    "completed": false,
+    "staged_qa_progress": true,
+    "asset_errors": []
+  },
+  {
+    "file": "ghostline_08_first_assignment_dialogue_960x600.png",
+    "resolution": [
+      960,
+      600
+    ],
+    "phase": "08_first_assignment_dialogue",
+    "map_id": "xros_051",
+    "chapter": 1,
+    "revealed": false,
+    "completed": false,
+    "staged_qa_progress": true,
+    "asset_errors": []
+  },
+  {
+    "file": "ghostline_09_reveal_dialogue_960x600.png",
+    "resolution": [
+      960,
+      600
+    ],
+    "phase": "09_reveal_dialogue",
+    "map_id": "xros_182",
+    "chapter": 26,
+    "revealed": true,
+    "completed": false,
+    "staged_qa_progress": true,
+    "asset_errors": []
+  },
+  {
+    "file": "ghostline_10_revealed_case_file_960x600.png",
+    "resolution": [
+      960,
+      600
+    ],
+    "phase": "10_revealed_case_file",
+    "map_id": "xros_182",
+    "chapter": 26,
+    "revealed": true,
+    "completed": false,
+    "staged_qa_progress": true,
+    "asset_errors": []
+  },
+  {
+    "file": "ghostline_11_final_confrontation_960x600.png",
+    "resolution": [
+      960,
+      600
+    ],
+    "phase": "11_final_confrontation",
+    "map_id": "xros_176",
+    "chapter": 30,
+    "revealed": true,
+    "completed": false,
+    "staged_qa_progress": true,
+    "asset_errors": []
+  },
+  {
+    "file": "ghostline_12_final_battle_960x600.png",
+    "resolution": [
+      960,
+      600
+    ],
+    "phase": "12_final_battle",
+    "map_id": "xros_176",
+    "chapter": 30,
+    "revealed": true,
+    "completed": false,
+    "staged_qa_progress": true,
+    "asset_errors": []
+  },
+  {
+    "file": "ghostline_13a_final_victory_960x600.png",
+    "resolution": [
+      960,
+      600
+    ],
+    "phase": "13a_final_victory",
+    "map_id": "xros_176",
+    "chapter": 30,
+    "revealed": true,
+    "completed": true,
+    "staged_qa_progress": true,
+    "asset_errors": []
+  },
+  {
+    "file": "ghostline_13b_secure_epilogue_960x600.png",
+    "resolution": [
+      960,
+      600
+    ],
+    "phase": "13b_secure_epilogue",
+    "map_id": "xros_176",
+    "chapter": 30,
+    "revealed": true,
+    "completed": true,
+    "staged_qa_progress": true,
+    "asset_errors": []
+  },
+  {
+    "file": "ghostline_13_case_complete_960x600.png",
+    "resolution": [
+      960,
+      600
+    ],
+    "phase": "13_case_complete",
+    "map_id": "xros_176",
+    "chapter": 30,
+    "revealed": true,
+    "completed": true,
+    "staged_qa_progress": true,
+    "asset_errors": []
+  },
+  {
+    "file": "ghostline_14_hub_after_completion_960x600.png",
+    "resolution": [
+      960,
+      600
+    ],
+    "phase": "14_hub_after_completion",
+    "map_id": "xros_175",
+    "chapter": 0,
+    "revealed": true,
+    "completed": true,
+    "staged_qa_progress": true,
+    "asset_errors": []
+  },
+  {
+    "file": "ghostline_01_campaign_chooser_1280x800.png",
+    "resolution": [
+      1280,
+      800
+    ],
+    "phase": "01_campaign_chooser",
+    "map_id": "map_001_a",
+    "chapter": null,
+    "revealed": null,
+    "completed": null,
+    "staged_qa_progress": true,
+    "asset_errors": []
+  },
+  {
+    "file": "ghostline_02_hub_journal_1280x800.png",
+    "resolution": [
+      1280,
+      800
+    ],
+    "phase": "02_hub_journal",
+    "map_id": "xros_175",
+    "chapter": 0,
+    "revealed": false,
+    "completed": false,
+    "staged_qa_progress": true,
+    "asset_errors": []
+  },
+  {
+    "file": "ghostline_03_private_hub_1280x800.png",
+    "resolution": [
+      1280,
+      800
+    ],
+    "phase": "03_private_hub",
+    "map_id": "xros_175",
+    "chapter": 0,
+    "revealed": false,
+    "completed": false,
+    "staged_qa_progress": true,
+    "asset_errors": []
+  },
+  {
+    "file": "ghostline_04_trusted_contact_1280x800.png",
+    "resolution": [
+      1280,
+      800
+    ],
+    "phase": "04_trusted_contact",
+    "map_id": "xros_175",
+    "chapter": 0,
+    "revealed": false,
+    "completed": false,
+    "staged_qa_progress": true,
+    "asset_errors": []
+  },
+  {
+    "file": "ghostline_05_sealed_case_file_1280x800.png",
+    "resolution": [
+      1280,
+      800
+    ],
+    "phase": "05_sealed_case_file",
+    "map_id": "xros_175",
+    "chapter": 0,
+    "revealed": false,
+    "completed": false,
+    "staged_qa_progress": true,
+    "asset_errors": []
+  },
+  {
+    "file": "ghostline_06_locked_final_routes_1280x800.png",
+    "resolution": [
+      1280,
+      800
+    ],
+    "phase": "06_locked_final_routes",
+    "map_id": "xros_175",
+    "chapter": 0,
+    "revealed": false,
+    "completed": false,
+    "staged_qa_progress": true,
+    "asset_errors": []
+  },
+  {
+    "file": "ghostline_07_sealed_evidence_1280x800.png",
+    "resolution": [
+      1280,
+      800
+    ],
+    "phase": "07_sealed_evidence",
+    "map_id": "xros_175",
+    "chapter": 0,
+    "revealed": false,
+    "completed": false,
+    "staged_qa_progress": true,
+    "asset_errors": []
+  },
+  {
+    "file": "ghostline_08_first_assignment_dialogue_1280x800.png",
+    "resolution": [
+      1280,
+      800
+    ],
+    "phase": "08_first_assignment_dialogue",
+    "map_id": "xros_051",
+    "chapter": 1,
+    "revealed": false,
+    "completed": false,
+    "staged_qa_progress": true,
+    "asset_errors": []
+  },
+  {
+    "file": "ghostline_09_reveal_dialogue_1280x800.png",
+    "resolution": [
+      1280,
+      800
+    ],
+    "phase": "09_reveal_dialogue",
+    "map_id": "xros_182",
+    "chapter": 26,
+    "revealed": true,
+    "completed": false,
+    "staged_qa_progress": true,
+    "asset_errors": []
+  },
+  {
+    "file": "ghostline_10_revealed_case_file_1280x800.png",
+    "resolution": [
+      1280,
+      800
+    ],
+    "phase": "10_revealed_case_file",
+    "map_id": "xros_182",
+    "chapter": 26,
+    "revealed": true,
+    "completed": false,
+    "staged_qa_progress": true,
+    "asset_errors": []
+  },
+  {
+    "file": "ghostline_11_final_confrontation_1280x800.png",
+    "resolution": [
+      1280,
+      800
+    ],
+    "phase": "11_final_confrontation",
+    "map_id": "xros_176",
+    "chapter": 30,
+    "revealed": true,
+    "completed": false,
+    "staged_qa_progress": true,
+    "asset_errors": []
+  },
+  {
+    "file": "ghostline_12_final_battle_1280x800.png",
+    "resolution": [
+      1280,
+      800
+    ],
+    "phase": "12_final_battle",
+    "map_id": "xros_176",
+    "chapter": 30,
+    "revealed": true,
+    "completed": false,
+    "staged_qa_progress": true,
+    "asset_errors": []
+  },
+  {
+    "file": "ghostline_13a_final_victory_1280x800.png",
+    "resolution": [
+      1280,
+      800
+    ],
+    "phase": "13a_final_victory",
+    "map_id": "xros_176",
+    "chapter": 30,
+    "revealed": true,
+    "completed": true,
+    "staged_qa_progress": true,
+    "asset_errors": []
+  },
+  {
+    "file": "ghostline_13b_secure_epilogue_1280x800.png",
+    "resolution": [
+      1280,
+      800
+    ],
+    "phase": "13b_secure_epilogue",
+    "map_id": "xros_176",
+    "chapter": 30,
+    "revealed": true,
+    "completed": true,
+    "staged_qa_progress": true,
+    "asset_errors": []
+  },
+  {
+    "file": "ghostline_13_case_complete_1280x800.png",
+    "resolution": [
+      1280,
+      800
+    ],
+    "phase": "13_case_complete",
+    "map_id": "xros_176",
+    "chapter": 30,
+    "revealed": true,
+    "completed": true,
+    "staged_qa_progress": true,
+    "asset_errors": []
+  },
+  {
+    "file": "ghostline_14_hub_after_completion_1280x800.png",
+    "resolution": [
+      1280,
+      800
+    ],
+    "phase": "14_hub_after_completion",
+    "map_id": "xros_175",
+    "chapter": 0,
+    "revealed": true,
+    "completed": true,
+    "staged_qa_progress": true,
+    "asset_errors": []
+  }
+]

@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "GoldNumemon_Idle.png",
+    "walk_left": "GoldNumemon_LLegWalk.png",
+    "walk_right": "GoldNumemon_RLegWalk.png",
+    "attack1": "GoldNumemon_Idle.png",
+    "attack2": "GoldNumemon_Idle.png"
+  },
+  "animations": {
+    "idle": [
+      "GoldNumemon_Idle.png"
+    ],
+    "walk": [
+      "GoldNumemon_Idle.png",
+      "GoldNumemon_LLegWalk.png",
+      "GoldNumemon_Idle.png",
+      "GoldNumemon_RLegWalk.png"
+    ],
+    "attack": [
+      "GoldNumemon_Idle.png",
+      "GoldNumemon_Idle.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 0,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied v1.2.0 Shiny PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained."
+}

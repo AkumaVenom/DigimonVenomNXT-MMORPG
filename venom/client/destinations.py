@@ -5,13 +5,15 @@ from collections import OrderedDict
 import pygame
 
 from .render import NativeCanvas, draw
-from .widgets import text, WHITE
+from .widgets import text, WHITE, GOLD
+from .varieties import shiny_map_available, paradox_map_available, firewall_map_available, FIREWALL_ORANGE
 
 
 class WorldScreen:
     THUMBNAIL_BYTES = 12 * 1024 * 1024
     THUMBNAIL_ITEMS = 72
-    REGIONS = (('dawn', 'Digimon Dawn'), ('world_ds', 'Digimon World DS'))
+    REGIONS = (('dawn', 'Digimon Dawn'), ('world_ds', 'Digimon World DS'),
+               ('xros_wars', 'Super Xros Wars'))
     BANDS = ((None, 'All levels'), ((1, 25), 'Lv. 1–25'), ((26, 50), 'Lv. 26–50'),
              ((51, 75), 'Lv. 51–75'), ((76, 99), 'Lv. 76–99'))
 
@@ -30,7 +32,7 @@ class WorldScreen:
     @staticmethod
     def region_id(entry):
         # Earlier Dawn catalogs do not carry regional metadata.
-        return 'world_ds' if entry.get('region_id') == 'world_ds' else 'dawn'
+        return entry.get('region_id') or 'dawn'
 
     @staticmethod
     def levels(entry):
@@ -52,8 +54,8 @@ class WorldScreen:
     def region_entries(self, region=None):
         region = region or self.region
         entries = [entry for entry in self.app.assets.maps.values() if self.region_id(entry) == region]
-        # DS is a deliberate low-to-high journey; existing Dawn ordering stays intact.
-        return sorted(entries, key=lambda entry: (entry.get('level', 1), entry['id'])) if region == 'world_ds' else entries
+        # Expansion regions follow their authored progression; preserve Dawn's order.
+        return sorted(entries, key=lambda entry: (entry.get('level', 1), entry['id'])) if region != 'dawn' else entries
 
     def entries(self):
         query = self.app.ui.values.get('world_search', '').strip().casefold()
@@ -84,6 +86,10 @@ class WorldScreen:
             self.app.audio.cue('tab', now=self.app.now)
 
     def on_open(self):
+        community = getattr(self.app, 'community', None)
+        if (community is not None and not self.app.args.demo
+                and self.app.now-community.received_at.get('activity', -60) >= 30):
+            community.request('activity')
         current = self.app.state.get('map_id')
         if current != self._open_map_id:
             self.show_current(cue=False, remember=False)
@@ -132,6 +138,27 @@ class WorldScreen:
             return
         app.send('travel', map_id=map_id)
 
+    def population(self, entry):
+        """Show only a recent server snapshot; missing maps do not mean zero rivals."""
+        community = getattr(self.app, 'community', None)
+        if community is None or self.app.now-community.received_at.get('activity', -60) > 30:
+            return None
+        for area in community.data.get('activity', {}).get('maps', []):
+            if area.get('id') == entry.get('id'):
+                count = area.get('count')
+                return count if isinstance(count, int) and not isinstance(count, bool) and count >= 0 else None
+        return None
+
+    def rare_label(self, entry):
+        parts = []
+        if firewall_map_available(entry, self.app.assets.species):
+            parts.append('FIREWALL 0.7%')
+        if shiny_map_available(entry, self.app.assets.species):
+            parts.append('SHINY 1%')
+        if paradox_map_available(entry, self.app.assets.species):
+            parts.append('PARADOX 2.5%')
+        return '  ·  '.join(parts)
+
     def thumbnail(self, entry, rect):
         """Fit original map art; bound the cache by native bytes and entry count."""
         app, rect = self.app, pygame.Rect(rect)
@@ -173,14 +200,17 @@ class WorldScreen:
         art, screen = app.presentation, app.screen
         palette = art.colors('maps')
         body = art.shell(rect, 'maps', 'Choose your next adventure.',
-                         'Two worlds to explore. The same partners, scan data and shared tamer community.',
+                         ('FireWall: rarest at 0.7%. Dawn Mastery: 5% → 6% scan on wild wins.' if
+                          app.state.get('permanent_rewards', {}).get('firewall_scan_mastery') else
+                          'Explore all 500 maps. FireWall: rarest at 0.7% · Shiny: 1% · Paradox: 2.5%.'),
                          'VENOM NXT  /  WORLD ATLAS', header_height=128)
         regions = self.available_regions()
         if self.region not in dict(regions) and regions:
             self.select_region(regions[0][0], cue=False)
+        tab_width = min(256, (body.width-316-10*max(0, len(regions)-1))//max(1, len(regions)))
         for index, (region, name) in enumerate(regions):
             count = len(self.region_entries(region))
-            app.ui.button((body.x+index*234, body.y, 224, 34), f'{name}  ·  {count}',
+            app.ui.button((body.x+index*(tab_width+10), body.y, tab_width, 34), f'{name}  ·  {count}',
                           lambda value=region: self.select_region(value),
                           selected=self.region == region, small=True, accent=palette['accent'])
         selected = self.region_entries()
@@ -261,6 +291,12 @@ class WorldScreen:
         image = pygame.Rect(rect.x+9, rect.y+7, rect.width-18, image_height)
         draw.rect(app.screen, (5, 14, 24), image, border_radius=5)
         self.thumbnail(entry, image.inflate(-4, -4))
+        population = self.population(entry)
+        if population is not None:
+            badge = pygame.Rect(image.right-80, image.y+5, 75, 19)
+            draw.rect(app.screen, (5, 14, 24), badge, border_radius=4)
+            text(app.screen, app.assets, f'{population} AI RIVALS', badge.center,
+                 9, p['accent'], True, badge.width-6, center=True)
         text(app.screen, app.assets, entry.get('name', 'Unknown map'),
              (rect.x+11, image.bottom+7), 14, WHITE, True, rect.width-22)
         level = int(entry.get('level', 1))
@@ -282,7 +318,7 @@ class WorldScreen:
              (rect.x+16, rect.y+15), 10, p['accent'], True)
         region_name = dict(self.REGIONS).get(self.region_id(entry), 'Digimon Dawn')
         text(app.screen, app.assets, region_name.upper(), (rect.x+16, rect.y+36), 10, p['muted'], True)
-        image = pygame.Rect(rect.x+14, rect.y+58, rect.width-28, min(132, max(82, rect.height//4)))
+        image = pygame.Rect(rect.x+14, rect.y+58, rect.width-28, min(108, max(70, rect.height//4)))
         draw.rect(app.screen, (5, 14, 24), image, border_radius=7)
         self.thumbnail(entry, image.inflate(-6, -6))
         text(app.screen, app.assets, entry.get('name', 'Unknown map'),
@@ -298,12 +334,22 @@ class WorldScreen:
             for index, species_id in enumerate(ids):
                 species = app.assets.species.get(species_id, {})
                 x = rect.x+16+index*width
-                art.sprite((x+5, y+34, width-10, 60), species_id, now=app.now)
-                text(app.screen, app.assets, species.get('name', species_id), (x+width//2, y+106),
+                art.sprite((x+5, y+34, width-10, 50), species_id, now=app.now)
+                text(app.screen, app.assets, species.get('name', species_id), (x+width//2, y+88),
                      10, WHITE, max_width=width-6, center=True)
         else:
             text(app.screen, app.assets, 'Explore to find new partners.', (rect.x+17, y+42),
                  11, p['muted'], max_width=rect.width-34)
+        rarity = self.rare_label(entry)
+        if rarity:
+            rows = rarity.split('  ·  ')
+            firewall = [row for row in rows if row.startswith('FIREWALL')]
+            other = [row for row in rows if not row.startswith('FIREWALL')]
+            if firewall:
+                text(app.screen, app.assets, firewall[0]+'  ·  RAREST',
+                     (rect.x+17, rect.bottom-130), 10, FIREWALL_ORANGE, True, rect.width-34)
+            text(app.screen, app.assets, '  ·  '.join(other),
+                 (rect.x+17, rect.bottom-130+(19 if firewall else 0)), 10, GOLD, True, rect.width-34)
         # The link returns the atlas to the physical field location without travel.
         app.ui.button((rect.x+16, rect.bottom-79, rect.width-32, 29), 'Show this map in atlas',
                       self.show_current, small=True, accent=p['accent'])
@@ -316,5 +362,7 @@ class WorldScreen:
                           lambda: app.send('digilab', action='return'), disabled=app.action_pending,
                           small=True, accent=p['accent'])
         else:
-            text(app.screen, app.assets, 'SHARED WORLD  /  TAMERS ONLINE',
+            population = self.population(entry)
+            label = f'SHARED WORLD  /  {population} AI RIVALS HERE' if population is not None else 'SHARED WORLD  /  TAMERS ONLINE'
+            text(app.screen, app.assets, label,
                  (rect.x+17, rect.bottom-25), 9, p['muted'], max_width=rect.width-34)

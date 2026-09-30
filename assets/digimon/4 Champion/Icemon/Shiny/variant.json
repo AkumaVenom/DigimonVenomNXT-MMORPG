@@ -1,0 +1,24 @@
+{
+  "variant_id": "shiny_icemon",
+  "display_name": "Shiny Icemon",
+  "base_species": "Icemon",
+  "stage": "4 Champion",
+  "status": "ready",
+  "style_profile": "Prismatic Shiny \u2014 Gold Stardust v1",
+  "palette": "Rose quartz",
+  "target_hue_degrees": 325.0,
+  "source_sprite_count": 5,
+  "shiny_sprite_count": 5,
+  "animation_alignment": "Exact source canvas dimensions and sprite positions retained",
+  "effects": "Warm-gold silhouette glow; restrained ivory/gold four-point sparkles; deterministic frame twinkle",
+  "sprites": [
+    "Icemon_AttackPart1.png",
+    "Icemon_AttackPart2.png",
+    "Icemon_Idle.png",
+    "Icemon_LLegWalk.png",
+    "Icemon_RLegWalk.png"
+  ],
+  "primary_sprite": "4 Champion/Icemon/Shiny/Icemon_Idle.png",
+  "source_primary": "4 Champion/Icemon/Icemon_Idle.png",
+  "materializable": true
+}

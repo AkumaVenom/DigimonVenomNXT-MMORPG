@@ -1,0 +1,25 @@
+{
+  "variant_id": "shiny_lopmon",
+  "display_name": "Shiny Lopmon",
+  "base_species": "Lopmon",
+  "stage": "3 Rookie",
+  "status": "ready",
+  "style_profile": "Prismatic Shiny \u2014 Gold Stardust v1",
+  "palette": "Cerulean",
+  "target_hue_degrees": 197.0,
+  "source_sprite_count": 6,
+  "shiny_sprite_count": 6,
+  "animation_alignment": "Exact source canvas dimensions and sprite positions retained",
+  "effects": "Warm-gold silhouette glow; restrained ivory/gold four-point sparkles; deterministic frame twinkle",
+  "sprites": [
+    "Lopmon_AttackPart1.png",
+    "Lopmon_AttackPart2.png",
+    "Lopmon_Extra.png",
+    "Lopmon_Idle.png",
+    "Lopmon_LLegWalk.png",
+    "Lopmon_RLegWalk.png"
+  ],
+  "primary_sprite": "3 Rookie/Lopmon/Shiny/Lopmon_Idle.png",
+  "source_primary": "3 Rookie/Lopmon/Lopmon_Idle.png",
+  "materializable": true
+}

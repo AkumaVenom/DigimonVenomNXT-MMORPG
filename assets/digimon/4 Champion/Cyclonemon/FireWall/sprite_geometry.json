@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Cyclonemon_Idle.png": {
+      "source_size": [
+        1108,
+        892
+      ],
+      "output_size": [
+        1396,
+        1180
+      ],
+      "padding": {
+        "left": 144,
+        "top": 144,
+        "right": 144,
+        "bottom": 144
+      },
+      "effect_pixel_unit": 9,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Cyclonemon_LLegWalk.png": {
+      "source_size": [
+        1275,
+        995
+      ],
+      "output_size": [
+        1563,
+        1283
+      ],
+      "padding": {
+        "left": 144,
+        "top": 144,
+        "right": 144,
+        "bottom": 144
+      },
+      "effect_pixel_unit": 9,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

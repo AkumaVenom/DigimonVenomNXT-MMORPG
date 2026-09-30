@@ -1,0 +1,120 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Tentomon_AttackPart1.png": {
+      "source_size": [
+        868,
+        844
+      ],
+      "output_size": [
+        1188,
+        1164
+      ],
+      "padding": {
+        "left": 160,
+        "top": 160,
+        "right": 160,
+        "bottom": 160
+      },
+      "effect_pixel_unit": 10,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Tentomon_AttackPart2.png": {
+      "source_size": [
+        724,
+        676
+      ],
+      "output_size": [
+        1044,
+        996
+      ],
+      "padding": {
+        "left": 160,
+        "top": 160,
+        "right": 160,
+        "bottom": 160
+      },
+      "effect_pixel_unit": 10,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Tentomon_Extra.png": {
+      "source_size": [
+        868,
+        844
+      ],
+      "output_size": [
+        1188,
+        1164
+      ],
+      "padding": {
+        "left": 160,
+        "top": 160,
+        "right": 160,
+        "bottom": 160
+      },
+      "effect_pixel_unit": 10,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Tentomon_Idle.png": {
+      "source_size": [
+        744,
+        640
+      ],
+      "output_size": [
+        1064,
+        960
+      ],
+      "padding": {
+        "left": 160,
+        "top": 160,
+        "right": 160,
+        "bottom": 160
+      },
+      "effect_pixel_unit": 10,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Tentomon_LLegWalk.png": {
+      "source_size": [
+        698,
+        680
+      ],
+      "output_size": [
+        1018,
+        1000
+      ],
+      "padding": {
+        "left": 160,
+        "top": 160,
+        "right": 160,
+        "bottom": 160
+      },
+      "effect_pixel_unit": 10,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Tentomon_RLegWalk.png": {
+      "source_size": [
+        698,
+        680
+      ],
+      "output_size": [
+        1018,
+        1000
+      ],
+      "padding": {
+        "left": 160,
+        "top": 160,
+        "right": 160,
+        "bottom": 160
+      },
+      "effect_pixel_unit": 10,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

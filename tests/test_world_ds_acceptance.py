@@ -123,6 +123,8 @@ def test_every_world_ds_map_starts_normal_level_bounded_wild_battles():
         assert battle and battle.get("kind") not in ("story", "season"), area["id"]
         assert 1 <= len(battle["enemies"]) <= 3
         permitted = set().union(*map(set, engine._pools[area["id"]]))
+        permitted.update(engine._shiny_pools[area["id"]])
+        permitted.update(engine._firewall_pools[area["id"]])
         for enemy in battle["enemies"]:
             assert enemy["species_id"] in permitted
             assert area["level_min"] <= enemy["level"] <= area["level_max"]

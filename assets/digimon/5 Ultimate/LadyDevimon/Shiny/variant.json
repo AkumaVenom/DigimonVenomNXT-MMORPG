@@ -1,0 +1,23 @@
+{
+  "variant_id": "shiny_ladydevimon",
+  "display_name": "Shiny LadyDevimon",
+  "base_species": "LadyDevimon",
+  "stage": "5 Ultimate",
+  "status": "ready",
+  "style_profile": "Prismatic Shiny \u2014 Gold Stardust v1",
+  "palette": "Orchid",
+  "target_hue_degrees": 296.0,
+  "source_sprite_count": 4,
+  "shiny_sprite_count": 4,
+  "animation_alignment": "Exact source canvas dimensions and sprite positions retained",
+  "effects": "Warm-gold silhouette glow; restrained ivory/gold four-point sparkles; deterministic frame twinkle",
+  "sprites": [
+    "LadyDevimon_AttackPart1.png",
+    "LadyDevimon_AttackPart2.png",
+    "LadyDevimon_Idle.png",
+    "LadyDevimon_LLegWalk.png"
+  ],
+  "primary_sprite": "5 Ultimate/LadyDevimon/Shiny/LadyDevimon_Idle.png",
+  "source_primary": "5 Ultimate/LadyDevimon/LadyDevimon_Idle.png",
+  "materializable": true
+}

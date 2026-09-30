@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Lekismon_Paradox_Idle.png",
+    "walk_left": "Lekismon_Paradox_LLegWalk.png",
+    "walk_right": "Lekismon_Paradox_RLegWalk.png",
+    "attack1": "Lekismon_Paradox_Idle.png",
+    "attack2": "Lekismon_Paradox_Idle.png"
+  },
+  "animations": {
+    "idle": [
+      "Lekismon_Paradox_Idle.png"
+    ],
+    "walk": [
+      "Lekismon_Paradox_Idle.png",
+      "Lekismon_Paradox_LLegWalk.png",
+      "Lekismon_Paradox_Idle.png",
+      "Lekismon_Paradox_RLegWalk.png"
+    ],
+    "attack": [
+      "Lekismon_Paradox_Idle.png",
+      "Lekismon_Paradox_Idle.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 0,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied v1.2.0 Paradox PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained."
+}

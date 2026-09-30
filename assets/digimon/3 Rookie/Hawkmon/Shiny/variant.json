@@ -1,0 +1,25 @@
+{
+  "variant_id": "shiny_hawkmon",
+  "display_name": "Shiny Hawkmon",
+  "base_species": "Hawkmon",
+  "stage": "3 Rookie",
+  "status": "ready",
+  "style_profile": "Prismatic Shiny \u2014 Gold Stardust v1",
+  "palette": "Orchid",
+  "target_hue_degrees": 294.0,
+  "source_sprite_count": 6,
+  "shiny_sprite_count": 6,
+  "animation_alignment": "Exact source canvas dimensions and sprite positions retained",
+  "effects": "Warm-gold silhouette glow; restrained ivory/gold four-point sparkles; deterministic frame twinkle",
+  "sprites": [
+    "Hawkmon_AttackPart1.png",
+    "Hawkmon_AttackPart2.png",
+    "Hawkmon_Extra.png",
+    "Hawkmon_Idle.png",
+    "Hawkmon_LLegWalk.png",
+    "Hawkmon_RLegWalk.png"
+  ],
+  "primary_sprite": "3 Rookie/Hawkmon/Shiny/Hawkmon_Idle.png",
+  "source_primary": "3 Rookie/Hawkmon/Hawkmon_Idle.png",
+  "materializable": true
+}

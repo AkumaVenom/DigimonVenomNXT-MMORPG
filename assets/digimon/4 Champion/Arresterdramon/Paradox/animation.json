@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Arresterdramon_Paradox_Idle.png",
+    "walk_left": "Arresterdramon_Paradox_LLegWalk.png",
+    "walk_right": "Arresterdramon_Paradox_RLegWalk.png",
+    "attack1": "Arresterdramon_Paradox_Idle.png",
+    "attack2": "Arresterdramon_Paradox_Idle.png"
+  },
+  "animations": {
+    "idle": [
+      "Arresterdramon_Paradox_Idle.png"
+    ],
+    "walk": [
+      "Arresterdramon_Paradox_Idle.png",
+      "Arresterdramon_Paradox_LLegWalk.png",
+      "Arresterdramon_Paradox_Idle.png",
+      "Arresterdramon_Paradox_RLegWalk.png"
+    ],
+    "attack": [
+      "Arresterdramon_Paradox_Idle.png",
+      "Arresterdramon_Paradox_Idle.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 0,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied v1.2.0 Paradox PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained."
+}

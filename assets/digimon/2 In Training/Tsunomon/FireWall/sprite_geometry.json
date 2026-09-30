@@ -1,0 +1,120 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Tsunomon_AttackPart1.png": {
+      "source_size": [
+        636,
+        708
+      ],
+      "output_size": [
+        1180,
+        1252
+      ],
+      "padding": {
+        "left": 272,
+        "top": 272,
+        "right": 272,
+        "bottom": 272
+      },
+      "effect_pixel_unit": 17,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Tsunomon_AttackPart2.png": {
+      "source_size": [
+        720,
+        586
+      ],
+      "output_size": [
+        1264,
+        1130
+      ],
+      "padding": {
+        "left": 272,
+        "top": 272,
+        "right": 272,
+        "bottom": 272
+      },
+      "effect_pixel_unit": 17,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Tsunomon_Extra.png": {
+      "source_size": [
+        636,
+        708
+      ],
+      "output_size": [
+        1180,
+        1252
+      ],
+      "padding": {
+        "left": 272,
+        "top": 272,
+        "right": 272,
+        "bottom": 272
+      },
+      "effect_pixel_unit": 17,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Tsunomon_Idle.png": {
+      "source_size": [
+        780,
+        792
+      ],
+      "output_size": [
+        1324,
+        1336
+      ],
+      "padding": {
+        "left": 272,
+        "top": 272,
+        "right": 272,
+        "bottom": 272
+      },
+      "effect_pixel_unit": 17,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Tsunomon_LLegWalk.png": {
+      "source_size": [
+        532,
+        726
+      ],
+      "output_size": [
+        1076,
+        1270
+      ],
+      "padding": {
+        "left": 272,
+        "top": 272,
+        "right": 272,
+        "bottom": 272
+      },
+      "effect_pixel_unit": 17,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Tsunomon_RLegWalk.png": {
+      "source_size": [
+        532,
+        726
+      ],
+      "output_size": [
+        1076,
+        1270
+      ],
+      "padding": {
+        "left": 272,
+        "top": 272,
+        "right": 272,
+        "bottom": 272
+      },
+      "effect_pixel_unit": 17,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

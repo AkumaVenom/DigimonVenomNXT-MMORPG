@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Frames/Fanglongmon_Frame_001.png",
+    "idle2": "Frames/Fanglongmon_Frame_002.png",
+    "walk_right": "Frames/Fanglongmon_Frame_003.png",
+    "walk_left": "Frames/Fanglongmon_Frame_004.png",
+    "attack1": "Frames/Fanglongmon_Frame_005.png",
+    "attack2": "Frames/Fanglongmon_Frame_006.png"
+  },
+  "animations": {
+    "idle": [
+      "Frames/Fanglongmon_Frame_001.png",
+      "Frames/Fanglongmon_Frame_002.png"
+    ],
+    "walk": [
+      "Frames/Fanglongmon_Frame_001.png",
+      "Frames/Fanglongmon_Frame_003.png",
+      "Frames/Fanglongmon_Frame_002.png",
+      "Frames/Fanglongmon_Frame_003.png"
+    ],
+    "attack": [
+      "Frames/Fanglongmon_Frame_005.png",
+      "Frames/Fanglongmon_Frame_006.png"
+    ]
+  },
+  "mirrored_frames": {
+    "Frames/Fanglongmon_Frame_003.png": "Frames/Fanglongmon_Frame_004.png",
+    "Frames/Fanglongmon_Frame_004.png": "Frames/Fanglongmon_Frame_003.png"
+  },
+  "source_frame_count": 6,
+  "frame_selection": "Six supplied labelled poses: two idle, right/left step, two attack; original PNG bytes preserved",
+  "art_provenance": "User-supplied v1.2.0 Shiny PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained."
+}

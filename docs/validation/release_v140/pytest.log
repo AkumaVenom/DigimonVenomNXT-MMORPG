@@ -1,0 +1,191 @@
+........................................................................ [  2%]
+........................................................................ [  4%]
+........................................................................ [  6%]
+........................................................................ [  9%]
+........................................................................ [ 11%]
+........................................................................ [ 13%]
+........................................................................ [ 16%]
+........................................................................ [ 18%]
+........................................................................ [ 20%]
+........................................................................ [ 23%]
+........................................................................ [ 25%]
+........................................................................ [ 27%]
+........................................................................ [ 29%]
+........................................................................ [ 32%]
+........................................................................ [ 34%]
+........................................................................ [ 36%]
+........................................................................ [ 39%]
+........................................................................ [ 41%]
+........................................................................ [ 43%]
+........................................................................ [ 46%]
+........................................................................ [ 48%]
+........................................................................ [ 50%]
+........................................................................ [ 53%]
+....................................................s................... [ 55%]
+........................................................................ [ 57%]
+.....................................................F.................. [ 59%]
+........sssssssss....................................................... [ 62%]
+........................................................................ [ 64%]
+........................................................................ [ 66%]
+........................................................................ [ 69%]
+........................................................................ [ 71%]
+........................................................................ [ 73%]
+........................................................................ [ 76%]
+........................................................................ [ 78%]
+........................................................................ [ 80%]
+........................................................................ [ 83%]
+........................................................................ [ 85%]
+........................................................................ [ 87%]
+........................................................................ [ 89%]
+........................................................................ [ 92%]
+........................................................................ [ 94%]
+........................................................................ [ 96%]
+........................................................................ [ 99%]
+..........................                                               [100%]
+=================================== FAILURES ===================================
+________ test_windows_build_includes_whole_wizard_and_current_launchers ________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-42/test_windows_build_includes_wh0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f988cf70500>
+
+    def test_windows_build_includes_whole_wizard_and_current_launchers(tmp_path, monkeypatch):
+        root = tmp_path / "Source with spaces"
+        root.mkdir()
+        (root / ".venv-build" / "Scripts").mkdir(parents=True)
+        (root / ".venv-build" / "Scripts" / "python.exe").touch()
+        (root / "tools").mkdir()
+        (root / "data").mkdir()
+        (root / "assets").mkdir()
+        (root / "assets" / "walk.json").write_text("[]")
+        (root / "assets" / "sprite.png").write_bytes(b"example-client-asset")
+        farm_assets = ("ui/digifarm/level.png", "ui/digifarm/digimeat.png",
+                       "audio/original/digifarm_home.ogg")
+        for name in farm_assets:
+            asset = root / "assets" / name
+            asset.parent.mkdir(parents=True, exist_ok=True)
+            asset.write_bytes(b"example-farm-asset")
+        (root / "data" / "catalog.json").write_text(json.dumps({"maps": [{"walkable": "assets/walk.json"}]}))
+        (root / "docs").mkdir()
+        for source in (SOURCE / "docs").glob("*"):
+            if source.is_file():
+                shutil.copy2(source, root / "docs" / source.name)
+        shutil.copytree(SOURCE / "docs" / "validation" / "restart_v0121",
+                        root / "docs" / "validation" / "restart_v0121")
+        shutil.copytree(SOURCE / "docs" / "validation" / "activity_v0122",
+                        root / "docs" / "validation" / "activity_v0122")
+        shutil.copytree(SOURCE / "docs" / "validation" / "population_v0123",
+                        root / "docs" / "validation" / "population_v0123")
+        shutil.copytree(SOURCE / "docs" / "validation" / "release_v100",
+                        root / "docs" / "validation" / "release_v100")
+        shutil.copytree(SOURCE / "docs" / "validation" / "release_v101",
+                        root / "docs" / "validation" / "release_v101")
+        shutil.copytree(SOURCE / "docs" / "validation" / "release_v120",
+                        root / "docs" / "validation" / "release_v120")
+        for name in ("01_SETUP_SERVER.bat", "02_SETUP_MYSQL.bat", "03_SETUP_PUBLIC_HOSTING.bat",
+                     "_RUN_SETUP.bat", "_RUN_MYSQL.bat", "START_WORLD_SERVER_CONSOLE.bat", "START_MYSQL.bat", "STOP_MYSQL.bat",
+                     "MYSQL_STATUS.bat", "STOP_SERVER.bat", "START_SERVER.bat", "PLAY_DIGIMON_VENOM_NXT.bat"):
+            shutil.copy2(SOURCE / name, root / name)
+        for name in ("windows_client.manifest", "windows_client.ico"):
+            (root / "tools" / name).touch()
+    
+        (root / "mysql" / "runtime" / "bin").mkdir(parents=True)
+        (root / "mysql" / "runtime" / "bin" / "mysqld.exe").write_bytes(b"runtime")
+        (root / "mysql" / "data").mkdir()
+        (root / "mysql" / "data" / "private-save.ibd").write_bytes(b"never-package")
+        (root / "mysql" / "credentials.json").write_text("private")
+        from tools import portable_mysql
+        monkeypatch.setattr(portable_mysql, "ensure_runtime", lambda *args, **kwargs: None)
+        commands = []
+    
+        def simulate_tool(command):
+            commands.append(command)
+            if "PyInstaller" in command:
+                name = command[command.index("--name") + 1]
+                output = Path(command[command.index("--distpath") + 1]) / name
+                (output / "_internal").mkdir(parents=True)
+                (output / f"{name}.exe").write_bytes(b"simulated-executable")
+                (output / "_internal" / "dependency.bin").write_bytes(name.encode())
+    
+        monkeypatch.setattr(build, "ROOT", root)
+        monkeypatch.setattr(build, "run", simulate_tool)
+        monkeypatch.setattr(build, "verify_assets", lambda _: {"files": 2, "bytes": 22})
+        monkeypatch.setattr(build.sys, "platform", "win32")
+        monkeypatch.setattr(build.platform, "machine", lambda: "AMD64")
+        monkeypatch.setattr(build.struct, "calcsize", lambda _: 8)
+    
+>       build.build(SimpleNamespace(verify_only=False, offline=True))
+
+tests/test_setup_launchers.py:83: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tools/build.py:210: in build
+    copy_tree(ROOT / "docs" / "validation" / "release_v130",
+tools/build.py:100: in copy_tree
+    shutil.copytree(source, destination, dirs_exist_ok=True, ignore=shutil.ignore_patterns("__pycache__", "*.pyc", ".DS_Store", ".rsync-tmp"))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+src = PosixPath('/tmp/pytest-of-root/pytest-42/test_windows_build_includes_wh0/Source with spaces/docs/validation/release_v130')
+dst = PosixPath('/tmp/pytest-of-root/pytest-42/test_windows_build_includes_wh0/Source with spaces/dist/Windows_Client_x64/docs/validation/release_v130')
+symlinks = False
+ignore = <function ignore_patterns.<locals>._ignore_patterns at 0x7f98814537e0>
+copy_function = <function copy2 at 0x7f98b0a796c0>
+ignore_dangling_symlinks = False, dirs_exist_ok = True
+
+    def copytree(src, dst, symlinks=False, ignore=None, copy_function=copy2,
+                 ignore_dangling_symlinks=False, dirs_exist_ok=False):
+        """Recursively copy a directory tree and return the destination directory.
+    
+        If exception(s) occur, an Error is raised with a list of reasons.
+    
+        If the optional symlinks flag is true, symbolic links in the
+        source tree result in symbolic links in the destination tree; if
+        it is false, the contents of the files pointed to by symbolic
+        links are copied. If the file pointed to by the symlink doesn't
+        exist, an exception will be added in the list of errors raised in
+        an Error exception at the end of the copy process.
+    
+        You can set the optional ignore_dangling_symlinks flag to true if you
+        want to silence this exception. Notice that this has no effect on
+        platforms that don't support os.symlink.
+    
+        The optional ignore argument is a callable. If given, it
+        is called with the `src` parameter, which is the directory
+        being visited by copytree(), and `names` which is the list of
+        `src` contents, as returned by os.listdir():
+    
+            callable(src, names) -> ignored_names
+    
+        Since copytree() is called recursively, the callable will be
+        called once for each directory that is copied. It returns a
+        list of names relative to the `src` directory that should
+        not be copied.
+    
+        The optional copy_function argument is a callable that will be used
+        to copy each file. It will be called with the source path and the
+        destination path as arguments. By default, copy2() is used, but any
+        function that supports the same signature (like copy()) can be used.
+    
+        If dirs_exist_ok is false (the default) and `dst` already exists, a
+        `FileExistsError` is raised. If `dirs_exist_ok` is true, the copying
+        operation will continue if it encounters existing directories, and files
+        within the `dst` tree will be overwritten by corresponding files from the
+        `src` tree.
+        """
+        sys.audit("shutil.copytree", src, dst)
+>       with os.scandir(src) as itr:
+E       FileNotFoundError: [Errno 2] No such file or directory: '/tmp/pytest-of-root/pytest-42/test_windows_build_includes_wh0/Source with spaces/docs/validation/release_v130'
+
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/shutil.py:598: FileNotFoundError
+- generated xml file: /workspace/scratch/c55bcc9d101c/story_release/DigimonVenomNXT/docs/validation/release_v140/pytest.xml -
+=========================== short test summary info ============================
+SKIPPED [1] ../../xros_release/DigimonVenomNXT/tests/test_portable_mysql_live.py:177: Set VENOM_TEST_MYSQL_RUNTIME for opt-in Linux/MySQL validation
+SKIPPED [1] ../../xros_release/DigimonVenomNXT/tests/test_setup_wizard.py:167: Requires a graphical desktop / Xvfb
+SKIPPED [1] ../../xros_release/DigimonVenomNXT/tests/test_setup_wizard.py:145: Requires a graphical desktop / Xvfb
+SKIPPED [1] ../../xros_release/DigimonVenomNXT/tests/test_setup_wizard.py:158: Requires a graphical desktop / Xvfb
+SKIPPED [1] ../../xros_release/DigimonVenomNXT/tests/test_setup_wizard.py:130: Requires a graphical desktop / Xvfb
+SKIPPED [1] ../../xros_release/DigimonVenomNXT/tests/test_setup_wizard.py:105: Requires a graphical desktop / Xvfb
+SKIPPED [1] ../../xros_release/DigimonVenomNXT/tests/test_setup_wizard.py:111: Requires a graphical desktop / Xvfb
+SKIPPED [1] ../../xros_release/DigimonVenomNXT/tests/test_setup_wizard.py:201: Requires a graphical desktop / Xvfb
+SKIPPED [1] ../../xros_release/DigimonVenomNXT/tests/test_setup_wizard.py:183: Requires a graphical desktop / Xvfb
+SKIPPED [1] ../../xros_release/DigimonVenomNXT/tests/test_setup_wizard.py:190: Requires a graphical desktop / Xvfb
+FAILED tests/test_setup_launchers.py::test_windows_build_includes_whole_wizard_and_current_launchers
+1 failed, 3111 passed, 10 skipped in 506.41s (0:08:26)

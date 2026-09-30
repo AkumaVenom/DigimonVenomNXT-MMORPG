@@ -1,0 +1,90 @@
+{
+  "status": "passed",
+  "release": "1.5.0",
+  "counts": {
+    "normal_species": 502,
+    "paradox_species": 502,
+    "shiny_species": 502,
+    "firewall_species": 502,
+    "total_species": 2008,
+    "source_pngs": 7934,
+    "source_files": 9087,
+    "installed_firewall_files": 9440,
+    "animation_sidecars": 502,
+    "generated_animation_sidecars": 353
+  },
+  "original_species_preserved": 1506,
+  "original_species_sha256": "4c270d436304203835d9ce087dec54a53ef81a43a7244508e664d818d20dca14",
+  "all_supplied_files_byte_identical": true,
+  "all_pngs_fully_decoded": true,
+  "all_normal_pose_source_dimensions_matched": true,
+  "all_supplied_animation_sequences_preserved": true,
+  "mirror_mapping_species": [
+    "fanglongmon"
+  ],
+  "geometry": {
+    "output_width_min": 16,
+    "output_width_max": 4765,
+    "output_height_min": 18,
+    "output_height_max": 3508,
+    "padding_min": 4,
+    "padding_max": 272
+  },
+  "focused_tests": {
+    "passed": 1021,
+    "seconds": 49.29,
+    "files": [
+      "tests/test_firewall_assets_v150.py",
+      "tests/test_variety_assets_v120.py"
+    ]
+  },
+  "visual_inspection": [
+    "Agumon idle: transparent canvas, intact silhouette, red-orange aura, circle-slash symbols, pixel sparks."
+  ],
+  "provenance": {
+    "kind": "firewall_v150",
+    "release": "1.5.0",
+    "use": "Complete FireWall variety; every supplied PNG and metadata file preserved byte for byte",
+    "source_tree_sha256": "69c11ad84dafdaa42e4d36e757b7e1f73ba583387401eec6272444ce58adf671",
+    "parts": [
+      {
+        "filename": "FireWall_Digimon_Complete.part1.rar",
+        "size": 26214400,
+        "sha256": "0c626e144cfd99d5cc40792b652b4ef28ac40e0264a49e2c76dd10092bb35934"
+      },
+      {
+        "filename": "FireWall_Digimon_Complete.part2.rar",
+        "size": 26214400,
+        "sha256": "0493c4fdb31a5203be46b08ec167838fe1689111a82a2a5c63d34f5c1bfffced"
+      },
+      {
+        "filename": "FireWall_Digimon_Complete.part3.rar",
+        "size": 26214400,
+        "sha256": "d16436609c27a7d67f8a1ffcc53d67276b34be8bf8afa255332d96c63f7988a4"
+      },
+      {
+        "filename": "FireWall_Digimon_Complete.part4.rar",
+        "size": 26214400,
+        "sha256": "c0597371d518843893954d5f5f1e0de57c1a50ed4b21aedb7e3ed419b31392af"
+      },
+      {
+        "filename": "FireWall_Digimon_Complete.part5.rar",
+        "size": 26214400,
+        "sha256": "74aeff7979e99d61d887dc18f402ec1d53c0d3e5f105d701e801424a85372928"
+      },
+      {
+        "filename": "FireWall_Digimon_Complete.part6.rar",
+        "size": 2050816,
+        "sha256": "a5426d8041a4bca036a907e5d66600688c4eedf427cfde2460c589614d8bcdc1"
+      }
+    ]
+  },
+  "published_firewall_world_habitats": 500,
+  "preexisting_map_fields_preserved": true,
+  "post_habitat_tests": {
+    "passed": 1023,
+    "deselected": 1,
+    "seconds": 26.81,
+    "note": "The unchanged PNG full-decode test passed in the first focused run and was not repeated."
+  }
+}

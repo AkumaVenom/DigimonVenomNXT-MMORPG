@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Bearmon_Idle.png",
+    "walk_left": "Bearmon_LLegWalk.png",
+    "walk_right": "Bearmon_RLegWalk.png",
+    "attack1": "Bearmon_AttackPart1.png",
+    "attack2": "Bearmon_AttackPart2.png"
+  },
+  "animations": {
+    "idle": [
+      "Bearmon_Idle.png"
+    ],
+    "walk": [
+      "Bearmon_Idle.png",
+      "Bearmon_LLegWalk.png",
+      "Bearmon_Idle.png",
+      "Bearmon_RLegWalk.png"
+    ],
+    "attack": [
+      "Bearmon_AttackPart1.png",
+      "Bearmon_AttackPart2.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 0,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied v1.2.0 Shiny PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained."
+}

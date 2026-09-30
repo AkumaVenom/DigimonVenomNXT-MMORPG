@@ -3,6 +3,7 @@ from __future__ import annotations
 import pygame
 import math
 import time
+from .varieties import name_color
 from .render import draw
 from .widgets import text, bar, panel, WHITE, MUTED, CYAN, LIME, GOLD, RED
 from .world import player_title
@@ -81,7 +82,7 @@ class GameHUD:
             sprite=app.assets.sprite(mon['species_id'], (62,height-15), now=app.now)
             if sprite:app.screen.blit(sprite,sprite.get_rect(center=(cell.x+38,cell.centery)))
             x=cell.x+77
-            text(app.screen,app.assets,mon['name'],(x,cell.y+8),14,WHITE,True,cell.width-85)
+            text(app.screen,app.assets,mon['name'],(x,cell.y+8),14,name_color(mon,app.assets.species,WHITE),True,cell.width-85)
             role='LEAD' if index==0 else 'ACTIVE' if index<3 else 'RESERVE'
             text(app.screen,app.assets,f"Lv.{mon['level']}  /  {role}",(x,cell.y+28),9,palette['accent'] if index<3 else MUTED)
             bar(app.screen,pygame.Rect(x,cell.y+46,cell.width-91,5),mon.get('hp',0),mon.get('max_hp',1),LIME)
@@ -257,7 +258,7 @@ class GameHUD:
         sprite=app.assets.sprite(notice['species_id'],(80,80),now=app.now)
         if sprite:app.screen.blit(sprite,sprite.get_rect(center=(rect.x+58,rect.centery)))
         text(app.screen,app.assets,notice['label'],(rect.x+115,rect.y+17),10,palette['accent'],True,rect.width-132)
-        text(app.screen,app.assets,notice['name'],(rect.x+115,rect.y+40),21,WHITE,True,rect.width-132)
+        text(app.screen,app.assets,notice['name'],(rect.x+115,rect.y+40),21,name_color(notice,app.assets.species,WHITE),True,rect.width-132)
         text(app.screen,app.assets,'Partner data synchronized.',(rect.x+115,rect.y+75),11,MUTED,max_width=rect.width-132)
 
     def battle_stage(self, rect):

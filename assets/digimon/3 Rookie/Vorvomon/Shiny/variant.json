@@ -1,0 +1,22 @@
+{
+  "variant_id": "shiny_vorvomon",
+  "display_name": "Shiny Vorvomon",
+  "base_species": "Vorvomon",
+  "stage": "3 Rookie",
+  "status": "ready",
+  "style_profile": "Prismatic Shiny \u2014 Gold Stardust v1",
+  "palette": "Moonlit indigo",
+  "target_hue_degrees": 244.0,
+  "source_sprite_count": 3,
+  "shiny_sprite_count": 3,
+  "animation_alignment": "Exact source canvas dimensions and sprite positions retained",
+  "effects": "Warm-gold silhouette glow; restrained ivory/gold four-point sparkles; deterministic frame twinkle",
+  "sprites": [
+    "Vorvomon_Idle.png",
+    "Vorvomon_LLegWalk.png",
+    "Vorvomon_RLegWalk.png"
+  ],
+  "primary_sprite": "3 Rookie/Vorvomon/Shiny/Vorvomon_Idle.png",
+  "source_primary": "3 Rookie/Vorvomon/Vorvomon_Idle.png",
+  "materializable": true
+}

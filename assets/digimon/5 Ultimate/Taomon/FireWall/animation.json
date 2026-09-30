@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Frames/Taomon_Frame_002.png",
+    "walk_left": "Frames/Taomon_Frame_003.png",
+    "walk_right": "Frames/Taomon_Frame_004.png",
+    "attack1": "Frames/Taomon_Frame_005.png",
+    "attack2": "Frames/Taomon_Frame_006.png",
+    "front": "Taomon_Primary.png"
+  },
+  "animations": {
+    "idle": [
+      "Frames/Taomon_Frame_002.png",
+      "Frames/Taomon_Frame_003.png",
+      "Frames/Taomon_Frame_002.png",
+      "Frames/Taomon_Frame_004.png"
+    ],
+    "walk": [
+      "Frames/Taomon_Frame_002.png",
+      "Frames/Taomon_Frame_003.png",
+      "Frames/Taomon_Frame_002.png",
+      "Frames/Taomon_Frame_004.png"
+    ],
+    "attack": [
+      "Frames/Taomon_Frame_005.png",
+      "Frames/Taomon_Frame_006.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 21,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "FireWall effects applied to supplied source PNGs; original pose, pixel resolution, frame selections and relative references retained. Canvas padding is documented in sprite_geometry.json."
+}

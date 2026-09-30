@@ -1,0 +1,405 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Frames/RookChessmonBlack_Frame_001.png": {
+      "source_size": [
+        102,
+        151
+      ],
+      "output_size": [
+        134,
+        183
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/RookChessmonBlack_Frame_002.png": {
+      "source_size": [
+        100,
+        151
+      ],
+      "output_size": [
+        132,
+        183
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/RookChessmonBlack_Frame_003.png": {
+      "source_size": [
+        104,
+        150
+      ],
+      "output_size": [
+        136,
+        182
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/RookChessmonBlack_Frame_004.png": {
+      "source_size": [
+        120,
+        150
+      ],
+      "output_size": [
+        152,
+        182
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/RookChessmonBlack_Frame_005.png": {
+      "source_size": [
+        94,
+        149
+      ],
+      "output_size": [
+        126,
+        181
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/RookChessmonBlack_Frame_006.png": {
+      "source_size": [
+        28,
+        32
+      ],
+      "output_size": [
+        60,
+        64
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/RookChessmonBlack_Frame_007.png": {
+      "source_size": [
+        31,
+        34
+      ],
+      "output_size": [
+        63,
+        66
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/RookChessmonBlack_Frame_008.png": {
+      "source_size": [
+        36,
+        34
+      ],
+      "output_size": [
+        68,
+        66
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/RookChessmonBlack_Frame_009.png": {
+      "source_size": [
+        36,
+        34
+      ],
+      "output_size": [
+        68,
+        66
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/RookChessmonBlack_Frame_010.png": {
+      "source_size": [
+        31,
+        34
+      ],
+      "output_size": [
+        63,
+        66
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/RookChessmonBlack_Frame_011.png": {
+      "source_size": [
+        28,
+        32
+      ],
+      "output_size": [
+        60,
+        64
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/RookChessmonBlack_Frame_012.png": {
+      "source_size": [
+        34,
+        34
+      ],
+      "output_size": [
+        66,
+        66
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/RookChessmonBlack_Frame_013.png": {
+      "source_size": [
+        30,
+        34
+      ],
+      "output_size": [
+        62,
+        66
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/RookChessmonBlack_Frame_014.png": {
+      "source_size": [
+        25,
+        34
+      ],
+      "output_size": [
+        57,
+        66
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/RookChessmonBlack_Frame_015.png": {
+      "source_size": [
+        25,
+        34
+      ],
+      "output_size": [
+        57,
+        66
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/RookChessmonBlack_Frame_016.png": {
+      "source_size": [
+        30,
+        34
+      ],
+      "output_size": [
+        62,
+        66
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/RookChessmonBlack_Frame_017.png": {
+      "source_size": [
+        34,
+        34
+      ],
+      "output_size": [
+        66,
+        66
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/RookChessmonBlack_Frame_018.png": {
+      "source_size": [
+        36,
+        35
+      ],
+      "output_size": [
+        68,
+        67
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/RookChessmonBlack_Frame_019.png": {
+      "source_size": [
+        31,
+        34
+      ],
+      "output_size": [
+        63,
+        66
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/RookChessmonBlack_Frame_020.png": {
+      "source_size": [
+        35,
+        32
+      ],
+      "output_size": [
+        67,
+        64
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "RookChessmonBlack_Primary.png": {
+      "source_size": [
+        102,
+        151
+      ],
+      "output_size": [
+        134,
+        183
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

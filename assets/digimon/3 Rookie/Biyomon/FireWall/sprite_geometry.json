@@ -1,0 +1,101 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Biyomon_AttackPart1.png": {
+      "source_size": [
+        552,
+        518
+      ],
+      "output_size": [
+        808,
+        774
+      ],
+      "padding": {
+        "left": 128,
+        "top": 128,
+        "right": 128,
+        "bottom": 128
+      },
+      "effect_pixel_unit": 8,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Biyomon_AttackPart2.png": {
+      "source_size": [
+        632,
+        570
+      ],
+      "output_size": [
+        888,
+        826
+      ],
+      "padding": {
+        "left": 128,
+        "top": 128,
+        "right": 128,
+        "bottom": 128
+      },
+      "effect_pixel_unit": 8,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Biyomon_Idle.png": {
+      "source_size": [
+        606,
+        546
+      ],
+      "output_size": [
+        862,
+        802
+      ],
+      "padding": {
+        "left": 128,
+        "top": 128,
+        "right": 128,
+        "bottom": 128
+      },
+      "effect_pixel_unit": 8,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Biyomon_LLegWalk.png": {
+      "source_size": [
+        544,
+        524
+      ],
+      "output_size": [
+        800,
+        780
+      ],
+      "padding": {
+        "left": 128,
+        "top": 128,
+        "right": 128,
+        "bottom": 128
+      },
+      "effect_pixel_unit": 8,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Biyomon_RLegWalk.png": {
+      "source_size": [
+        594,
+        552
+      ],
+      "output_size": [
+        850,
+        808
+      ],
+      "padding": {
+        "left": 128,
+        "top": 128,
+        "right": 128,
+        "bottom": 128
+      },
+      "effect_pixel_unit": 8,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Frames/Volcamon_Frame_001.png",
+    "walk_left": "Frames/Volcamon_Frame_002.png",
+    "walk_right": "Frames/Volcamon_Frame_003.png",
+    "attack1": "Frames/Volcamon_Frame_004.png",
+    "attack2": "Frames/Volcamon_Frame_005.png"
+  },
+  "animations": {
+    "idle": [
+      "Frames/Volcamon_Frame_001.png",
+      "Frames/Volcamon_Frame_002.png",
+      "Frames/Volcamon_Frame_001.png",
+      "Frames/Volcamon_Frame_003.png"
+    ],
+    "walk": [
+      "Frames/Volcamon_Frame_001.png",
+      "Frames/Volcamon_Frame_002.png",
+      "Frames/Volcamon_Frame_001.png",
+      "Frames/Volcamon_Frame_003.png"
+    ],
+    "attack": [
+      "Frames/Volcamon_Frame_004.png",
+      "Frames/Volcamon_Frame_005.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 20,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied v1.2.0 Shiny PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained."
+}

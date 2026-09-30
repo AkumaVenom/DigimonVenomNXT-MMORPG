@@ -1,0 +1,26 @@
+{
+  "status": "passed",
+  "reference_release": "1.3.0",
+  "unchanged": {
+    "campaigns": {
+      "dawn_relay": "36c46ad5a06f17f36d57622747dc307c9a5ac221f4a01e8282b7cb77375c0196",
+      "world_ds_paradox": "698fbbffb7c8c11a6d944da780f0ab7d40d4690467a54511c0963885906602b3"
+    },
+    "public_catalog": {
+      "species": "4c270d436304203835d9ce087dec54a53ef81a43a7244508e664d818d20dca14",
+      "tamers": "a329f3b7acfc15ef81892c05782b3b467f9c3a42b6a58ad6b335df8903cb8beb",
+      "maps": "5b07d091aec64f9a2e37187bd88fdd39f879da67911c16ab098d8c5d7dfc58b2",
+      "audio": "465083983ec6039e96cdab4e6f76b6a28d00472ab669a035701f6e0383e5e839"
+    }
+  },
+  "manifest_comparison": {
+    "all_paths_retained": true,
+    "records": 31739,
+    "unchanged_records": 31737,
+    "changed_records": [
+      "data/catalog.json",
+      "data/mechanics.json"
+    ],
+    "reason": "Release version metadata updated from 1.3.0 to 1.4.0; actual candidate bytes verified separately by build_verify.log."
+  }
+}

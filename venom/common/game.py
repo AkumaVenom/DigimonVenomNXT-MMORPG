@@ -19,6 +19,7 @@ from venom.common.farm import normalize_farm_position
 from venom.common import season as solo_season
 from venom.common import story as story_mode
 from venom.common.economy import CREDITS_PER_RUBY, MAX_CREDITS, normalize_intent, ruby_price
+from venom.version import VERSION
 
 
 class GameError(ValueError):
@@ -78,6 +79,17 @@ def _key(value: str) -> str:
     return re.sub(r"[^a-z0-9]", "", str(value).lower())
 
 
+def variety_of(species: dict) -> str:
+    """Catalog identity, independent of a saved monster's cached display flags."""
+    if species.get("firewall") or species.get("variety") == "firewall":
+        return "firewall"
+    if species.get("shiny") or species.get("variety") == "shiny":
+        return "shiny"
+    if species.get("paradox") or species.get("variety") == "paradox":
+        return "paradox"
+    return "normal"
+
+
 def _integer(payload: dict, key: str, default: int = 0, minimum: int = 0,
              maximum: int = 10**9) -> int:
     value = payload.get(key, default)
@@ -127,25 +139,34 @@ class GameEngine:
             raise GameError("Asset catalog must contain species, maps and tamers. Run asset verification.")
         self._prepare_catalog()
         self.starters = [s["id"] for s in self.species.values()
-                         if s.get("stage") == "rookie" and not s.get("paradox")]
+                         if s.get("stage") == "rookie" and variety_of(s) == "normal"]
         if not self.starters:
-            raise GameError("No non-Paradox Rookie starters were imported.")
+            raise GameError("No regular Rookie starters were imported.")
         self._pools: dict[str, tuple[list[str], list[str]]] = {}
+        self._shiny_pools: dict[str, list[str]] = {}
+        self._firewall_pools: dict[str, list[str]] = {}
         self._prepare_encounter_pools()
 
     def _prepare_catalog(self) -> None:
-        by_name = {_key(s.get("name", s["id"])): s for s in self.species.values() if not s.get("paradox")}
+        by_name = {_key(s.get("name", s["id"])): s for s in self.species.values() if variety_of(s) == "normal"}
         for name, override in self.rules.get("species_overrides", {}).items():
             species = by_name.get(_key(name))
             if species:
                 species.update(override)
                 species["mechanics_provenance"] = "Venom NXT curated type/attribute; original balanced stats"
         for species in self.species.values():
-            if species.get("paradox"):
+            variety = variety_of(species)
+            species.update(variety=variety, shiny=variety == "shiny", paradox=variety == "paradox",
+                           firewall=variety == "firewall")
+            if variety != "normal":
                 base = self.species.get(species.get("base_id", ""))
                 if base:
                     species["type"] = base.get("type", "free")
                     species["attribute"] = base.get("attribute", "neutral")
+                    if variety in ("shiny", "firewall"):
+                        # Cosmetic rarity families retain their normal-form balance.
+                        species["stage"] = base.get("stage", "unknown")
+                        species["base_stats"] = copy.deepcopy(base.get("base_stats", {}))
             species.setdefault("type", "free")
             species.setdefault("attribute", "neutral")
             species["type"] = str(species["type"]).lower()
@@ -160,32 +181,37 @@ class GameEngine:
                     self._add_evolution(a, b, "curated_family")
         tiers: dict[int, list[dict]] = {}
         for species in self.species.values():
-            if not species.get("paradox"):
+            if variety_of(species) == "normal":
                 tiers.setdefault(STAGE_RANK.get(species.get("stage"), 2), []).append(species)
         for group in tiers.values():
             group.sort(key=lambda s: s["id"])
         for species in self.species.values():
             rank = STAGE_RANK.get(species.get("stage"), 2)
-            valid = [x for x in species["evolutions"] if x.get("to") in self.species]
+            valid = [x for x in species["evolutions"] if x.get("to") in self.species
+                     and variety_of(self.species[x["to"]]) == variety_of(species)]
             species["evolutions"] = valid
-            if not valid and rank < 6 and not species.get("paradox"):
+            if not valid and rank < 6 and variety_of(species) == "normal":
                 candidates = tiers.get(rank + 1, [])
                 related = [c for c in candidates if c.get("attribute") == species.get("attribute")]
                 candidates = related or candidates
                 if candidates:
                     n = int.from_bytes(hashlib.sha256(species["id"].encode()).digest()[:4], "big")
                     self._add_evolution(species, candidates[n % len(candidates)], "original_data_splice")
-        # Paradox partners retain their variant throughout the same evolution family.
-        variants = {s.get("base_id"): s for s in self.species.values() if s.get("paradox")}
-        for base_id, variant in variants.items():
-            base = self.species.get(base_id)
-            if not base:
-                continue
-            for route in base.get("evolutions", []):
-                target = variants.get(route.get("to"))
-                if target and not any(r.get("to") == target["id"] for r in variant["evolutions"]):
-                    variant["evolutions"].append({**copy.deepcopy(route), "to": target["id"],
-                                                   "provenance": "original_paradox_route"})
+        # Rare partners stay in their own family, including fallback data-splice
+        # routes. A normal partner can never evolve into a collectible rarity.
+        self._variants = {}
+        for variety in ("paradox", "shiny", "firewall"):
+            variants = {s.get("base_id"): s for s in self.species.values() if variety_of(s) == variety}
+            self._variants[variety] = variants
+            for base_id, variant in variants.items():
+                base = self.species.get(base_id)
+                if not base:
+                    continue
+                for route in base.get("evolutions", []):
+                    target = variants.get(route.get("to"))
+                    if target and not any(r.get("to") == target["id"] for r in variant["evolutions"]):
+                        variant["evolutions"].append({**copy.deepcopy(route), "to": target["id"],
+                                                       "provenance": f"original_{variety}_route"})
         # Reverse routes are recorded separately and preserve the monster's identity/CAM.
         self.devolutions: dict[str, list[dict]] = {}
         for species in self.species.values():
@@ -199,7 +225,14 @@ class GameEngine:
                                   "farm_bonus_per_stat": FARM_BONUS_PER_STAT,
                                   "farm_bonus_total": FARM_BONUS_TOTAL,
                                   "farm_meat_drop_chance": FARM_MEAT_DROP_CHANCE,
-                                  "paradox_encounter_chance": self.rules.get("paradox_encounter_chance", .025)}
+                                  "paradox_encounter_chance": self.rules.get("paradox_encounter_chance", .025),
+                                  "shiny_encounter_chance": self.rules.get("shiny_encounter_chance", .01),
+                                  "firewall_encounter_chance": self.rules.get("firewall_encounter_chance", .007),
+                                  "normal_scan_gain": self.rules.get("normal_scan_gain", 20),
+                                  "paradox_scan_gain": self.rules.get("paradox_scan_gain", 5),
+                                  "shiny_scan_gain": self.rules.get("shiny_scan_gain", 5),
+                                  "firewall_scan_gain": self.rules.get("firewall_scan_gain", 5),
+                                  "rare_encounter_scope": "per_battle"}
 
     def _add_evolution(self, source: dict, target: dict, provenance: str) -> None:
         if any(x.get("to") == target["id"] for x in source["evolutions"]):
@@ -218,14 +251,29 @@ class GameEngine:
     def _prepare_encounter_pools(self) -> None:
         # A new region must not move previously discoverable Dawn species. Keep
         # the original assignment against the original map set, then build the
-        # expansion independently. Neither pool builder consumes gameplay RNG.
+        # expansions independently. Neither pool builder consumes gameplay RNG.
         self._pools.clear()
-        legacy = [m for m in self.maps.values() if m.get("region_id") != "world_ds"]
-        expansion = [m for m in self.maps.values() if m.get("region_id") == "world_ds"]
+        legacy = [m for m in self.maps.values() if (m.get("region_id") or "dawn") == "dawn"]
         if legacy:
             self._prepare_legacy_encounter_pools(legacy)
-        if expansion:
-            self._prepare_world_ds_encounter_pools(expansion)
+        regions: dict[str, list[dict]] = {}
+        for area in self.maps.values():
+            region = area.get("region_id") or "dawn"
+            if region != "dawn":
+                regions.setdefault(region, []).append(area)
+        for region, maps in sorted(regions.items()):
+            self._prepare_region_encounter_pools(maps, region)
+        # Keep the existing habitat tuples stable for old saves and map systems.
+        # Cosmetic rare forms inhabit every map occupied by their regular form.
+        # Separate lists leave every pre-existing normal/Paradox habitat intact.
+        for variety, pools in (("shiny", self._shiny_pools), ("firewall", self._firewall_pools)):
+            pools.clear()
+            variants = self._variants[variety]
+            for area in self.maps.values():
+                normal = self._pools[area["id"]][0]
+                rare = [variants[sid]["id"] for sid in normal if sid in variants]
+                pools[area["id"]] = rare
+                area[f"{variety}_encounters"] = list(rare)
 
     def _prepare_legacy_encounter_pools(self, maps: list[dict]) -> None:
         # Assign every normal species to at least one appropriate area. A compact
@@ -233,7 +281,7 @@ class GameEngine:
         maps = sorted(maps, key=lambda m: (int(m.get("level", 1)), m["id"]))
         pools: dict[str, list[str]] = {m["id"]: [] for m in maps}
         for species in self.species.values():
-            if species.get("paradox"):
+            if variety_of(species) != "normal":
                 continue
             level = STAGE_LEVEL[STAGE_RANK.get(species.get("stage"), 2)]
             candidates = sorted(maps, key=lambda m: abs(int(m.get("level", 1)) - level))
@@ -241,7 +289,7 @@ class GameEngine:
             band = band or candidates[:max(1, len(maps) // 8)]
             n = int.from_bytes(hashlib.sha256(species["id"].encode()).digest()[:4], "big")
             pools[band[n % len(band)]["id"]].append(species["id"])
-        all_normal = [s for s in self.species.values() if not s.get("paradox")]
+        all_normal = [s for s in self.species.values() if variety_of(s) == "normal"]
         paradoxes = [s for s in self.species.values() if s.get("paradox")]
         for area in maps:
             normal = pools[area["id"]]
@@ -268,17 +316,23 @@ class GameEngine:
             area["paradox_encounters"] = list(self._pools[area["id"]][1])
 
     def _prepare_world_ds_encounter_pools(self, maps: list[dict]) -> None:
+        """Compatibility entry point for the original World DS importer/tests."""
+        self._prepare_region_encounter_pools(maps, "world_ds")
+
+    def _prepare_region_encounter_pools(self, maps: list[dict], region_id: str) -> None:
         """Stable, varied encounter habitats for the independent level 1–99 route.
 
         These are Venom NXT encounter placements, not a claim about the original
-        DS game's encounter tables. Each stage spans a suitable progression band;
+        games' encounter tables. Each stage spans a suitable progression band;
         per-map hashes avoid identical late-game fallback pools on every map.
+        A region's namespace and map set never depend on another region, so a
+        new region cannot move an existing habitat or consume gameplay RNG.
         """
         maps = sorted(maps, key=lambda m: (int(m.get("level", 1)), m["id"]))
         bands = {0: (1, 10, 1), 1: (1, 14, 3), 2: (1, 24, 8),
                  3: (12, 40, 22), 4: (28, 59, 38),
                  5: (45, 99, 62), 6: (75, 99, 90)}
-        normal_species = sorted((s for s in self.species.values() if not s.get("paradox")),
+        normal_species = sorted((s for s in self.species.values() if variety_of(s) == "normal"),
                                 key=lambda s: s["id"])
         paradoxes = sorted((s for s in self.species.values() if s.get("paradox")),
                            key=lambda s: s["id"])
@@ -287,7 +341,7 @@ class GameEngine:
             return STAGE_RANK.get(species.get("stage"), 2)
 
         def stable_order(namespace: str, identifier: str) -> bytes:
-            return hashlib.sha256(f"world_ds:{namespace}:{identifier}".encode()).digest()
+            return hashlib.sha256(f"{region_id}:{namespace}:{identifier}".encode()).digest()
 
         def habitat(species: dict) -> list[dict]:
             low, high, preferred = bands[rank(species)]
@@ -365,7 +419,9 @@ class GameEngine:
                    "stage": species.get("stage", "unknown"), "level": level, "xp": 0,
                    "next_xp": xp_required(level), "abi": abi, "cam": cam,
                    "type": species["type"], "attribute": species["attribute"],
-                   "paradox": bool(species.get("paradox")), "history": [],
+                   "paradox": bool(species.get("paradox")), "shiny": bool(species.get("shiny")),
+                   "firewall": bool(species.get("firewall")),
+                   "variety": variety_of(species), "base_id": species.get("base_id", species_id), "history": [],
                    "farm_bonuses": copy.deepcopy(farm_bonuses or {}),
                    **stat, "max_hp": stat["hp"], "max_sp": stat["sp"]}
         monster["skills"] = self._skills(monster)
@@ -387,7 +443,7 @@ class GameEngine:
             raise GameError("Your first partner must be a regular Rookie Digimon.")
         # Expansion ordering or a new level-one map cannot silently change the
         # established home/first field for newly created characters.
-        home_maps = [m for m in self.maps.values() if m.get("region_id") != "world_ds"]
+        home_maps = [m for m in self.maps.values() if (m.get("region_id") or "dawn") == "dawn"]
         area = min(home_maps or self.maps.values(), key=lambda m: (int(m.get("level", 1)), m["id"]))
         x, y = area.get("spawn", [area.get("width", 1024) / 2, area.get("height", 768) / 2])
         state = {"username": str(username), "tamer": tamer, "map_id": area["id"],
@@ -395,7 +451,7 @@ class GameEngine:
                  "party": [self._monster(starter, cam=10)], "storage": [], "scan": {},
                  "inventory": {"hp_s": 5, "hp_m": 0, "hp_l": 0, "sp_s": 3, "sp_m": 0, "sp_l": 0,
                                "digimeat_cam": 3},
-                 "in_lab": False, "in_farm": True, "battle": None, "events": [], "catalog_version": "0.1.0",
+                 "in_lab": False, "in_farm": True, "battle": None, "events": [], "catalog_version": VERSION,
                  "wins": 0, "losses": 0, "shop": copy.deepcopy(SHOP)}
         self._refresh(state)
         self._event(state, "message", text="Welcome home to your private DigiFarm! Explore to collect scan data, "
@@ -431,7 +487,7 @@ class GameEngine:
         if state.get("season"):
             solo_season.update_views(state["season"], state)
         normalize_farm_position(state)
-        if state.get("story"):
+        if state.get("story") or state.get("story_campaigns"):
             story_mode.update_view(self, state)
         state.setdefault("storage", [])
         state["farm"] = {"capacity": FARM_CAPACITY,
@@ -443,6 +499,16 @@ class GameEngine:
             if not monster.get("uid"):
                 monster["uid"] = uuid.uuid4().hex
             monster.setdefault("farm_bonuses", {})
+        # Identity comes from the species ID. Add fields to old saves without
+        # resetting HP, progress, UIDs, scan totals, inventory, or active battles.
+        for monster in state["party"] + state["storage"] + (state.get("battle") or {}).get("enemies", []):
+            species = self.species.get(monster.get("species_id"))
+            if species:
+                variety = variety_of(species)
+                monster.update(variety=variety, shiny=variety == "shiny", paradox=variety == "paradox",
+                               firewall=variety == "firewall",
+                               base_id=species.get("base_id", species["id"]))
+        state["catalog_version"] = VERSION
         state["evolution_options"] = [self.evolution_options(m) for m in state["party"]]
         state["shop"] = copy.deepcopy(SHOP)
         for item in state["shop"].values():
@@ -458,7 +524,8 @@ class GameEngine:
         result = []
         for route in routes:
             target = route.get("to")
-            if target not in self.species or target in seen:
+            if (target not in self.species or target in seen or
+                    variety_of(self.species[target]) != variety_of(self.species[species_id])):
                 continue
             seen.add(target)
             requirements = {k: int(route.get(k, 0)) for k in ("level", "abi", "cam")}
@@ -521,9 +588,8 @@ class GameEngine:
         enemies = [self._monster(self.rng.choice(normal),
                     self.rng.randint(low, high) if explicit_range else
                     max(1, min(99, enemy_level + self.rng.randint(-2, 2)))) for _ in range(count)]
-        if paradox and self.rng.random() < self.rules.get("paradox_encounter_chance", .025):
-            slot = self.rng.randrange(count)
-            enemies[slot] = self._monster(self.rng.choice(paradox), enemies[slot]["level"])
+        self._roll_wild_variety(enemies, paradox, self._shiny_pools.get(area["id"], []),
+                                self._firewall_pools.get(area["id"], []))
         # Solo players can still meet 2/3 enemies; smaller wild HP keeps the opening playable.
         for enemy in enemies:
             enemy["hp"] = enemy["max_hp"] = max(20, int(enemy["max_hp"] * .72))
@@ -537,6 +603,35 @@ class GameEngine:
         names = ", ".join(e["name"] for e in enemies)
         self._event(state, "message", text=f"Wild encounter: {names}!")
         self._advance(state)
+
+    def _roll_wild_variety(self, enemies: list[dict], paradox: list[str], shiny: list[str],
+                           firewall: list[str] | None = None) -> None:
+        """At most one rare replacement per wild battle, never per enemy slot.
+
+        Disjoint intervals retain the full 2.5% Paradox, 1% Shiny and 0.7%
+        FireWall chances in solo and group encounters alike. FireWall follows
+        the existing intervals, so it never steals another variety's roll.
+        Authored NPC fights never call this helper.
+        """
+        if not enemies or not (paradox or shiny or firewall):
+            return
+        paradox_chance = float(self.rules.get("paradox_encounter_chance", .025)) if paradox else 0.0
+        shiny_chance = float(self.rules.get("shiny_encounter_chance", .01)) if shiny else 0.0
+        firewall_chance = float(self.rules.get("firewall_encounter_chance", .007)) if firewall else 0.0
+        roll = self.rng.random()
+        if roll < paradox_chance:
+            pool = paradox
+        elif roll < paradox_chance + shiny_chance:
+            pool = shiny
+        elif roll < paradox_chance + shiny_chance + firewall_chance:
+            pool = firewall
+        else:
+            pool = []
+        if pool:
+            slot = self.rng.randrange(len(enemies))
+            previous = enemies[slot]
+            enemies[slot] = self._monster(self.rng.choice(pool), previous["level"],
+                                          abi=previous.get("abi", 0), cam=previous.get("cam", 0))
 
     def _battle(self, state: dict, payload: dict) -> None:
         battle = state.get("battle")
@@ -671,20 +766,29 @@ class GameEngine:
                     attacker_side=side, attacker_index=attacker_index, attribute=attribute,
                     move=move, combo=combo, defeated=defender["hp"] <= 0)
 
+    @staticmethod
+    def _wild_scan_battle(battle: dict) -> bool:
+        """Only wild encounters and private field training produce scan data."""
+        return battle.get("kind") in (None, "wild") or (
+            battle.get("kind") == "story" and bool(battle.get("story_training")))
+
     def _scan_defeat(self, state: dict, enemy_index: int) -> None:
         battle = state["battle"]
-        if battle.get("kind") == "season" or (battle.get("kind") == "story" and not battle.get("story_training")):
+        if not self._wild_scan_battle(battle):
             return  # Trainer partners are never collectible wild scan data.
         if enemy_index in battle["scanned"]:
             return
         battle["scanned"].append(enemy_index)
         enemy = battle["enemies"][enemy_index]
-        gain = self.rules.get("paradox_scan_gain", 5) if enemy.get("paradox") else self.rules.get("normal_scan_gain", 20)
+        variety = variety_of(self.species[enemy["species_id"]])
+        gain = self.rules.get(f"{variety}_scan_gain", 20 if variety == "normal" else 5)
         # Keep ordinary defeat scans intact; mastery is earned only when the
         # whole wild encounter is won. This pending amount survives reconnects
         # with the battle and disappears naturally on fleeing or defeat.
-        if enemy.get("paradox") and state.get("permanent_rewards", {}).get("paradox_scan_mastery"):
-            pending = battle.setdefault("paradox_mastery_pending", {})
+        if variety in ("paradox", "shiny", "firewall") and state.get("permanent_rewards", {}).get(f"{variety}_scan_mastery"):
+            # Preserve the existing Paradox key so a v1.3.0 battle can resume
+            # without losing or duplicating a pending victory reward.
+            pending = battle.setdefault(f"{variety}_mastery_pending", {})
             sid = enemy["species_id"]
             pending[sid] = round(pending.get(sid, 0) + gain * .20, 6)
         sid = enemy["species_id"]
@@ -694,29 +798,35 @@ class GameEngine:
                     text=f"{enemy['name']}: {state['scan'][sid]}% scan data (+{state['scan'][sid] - old}%).",
                     species_id=sid, total=state["scan"][sid])
 
-    def _award_paradox_mastery(self, state: dict) -> None:
-        """Pay the permanent 20% wild-victory bonus once, without rounding up.
+    def _award_scan_mastery(self, state: dict) -> None:
+        """Pay each independent permanent 20% wild-victory bonus exactly once.
 
         Story guardians, quest tamers and Season opponents never call the scan
         defeat path. Popping pending rewards also makes repeated settlement
         harmless. Fractional custom scan rates retain their exact bonus.
         """
         battle = state.get("battle") or {}
-        pending = battle.pop("paradox_mastery_pending", {})
-        if not state.get("permanent_rewards", {}).get("paradox_scan_mastery"):
-            return
-        for sid, bonus in pending.items():
-            old = state["scan"].get(sid, 0)
-            total = round(min(200, old + bonus), 6)
-            if total == int(total):
-                total = int(total)
-            state["scan"][sid] = total
-            gained = round(total - old, 6)
-            if gained > 0:
-                index = next((i for i, enemy in enumerate(battle.get("enemies", []))
-                              if enemy["species_id"] == sid), 0)
-                self._event(state, "scan", "enemy", index, amount=gained, species_id=sid, total=total,
-                            text=f"Paradox Scan Mastery: {self.species[sid]['name']} +{gained:g}% bonus scan ({total:g}% total).")
+        for variety in ("paradox", "shiny", "firewall"):
+            pending = battle.pop(f"{variety}_mastery_pending", {})
+            if (not self._wild_scan_battle(battle)
+                    or not state.get("permanent_rewards", {}).get(f"{variety}_scan_mastery")):
+                continue
+            for sid, bonus in pending.items():
+                species = self.species.get(sid)
+                if not species or variety_of(species) != variety:
+                    continue
+                old = state["scan"].get(sid, 0)
+                total = round(min(200, old + bonus), 6)
+                if total == int(total):
+                    total = int(total)
+                state["scan"][sid] = total
+                gained = round(total - old, 6)
+                if gained > 0:
+                    index = next((i for i, enemy in enumerate(battle.get("enemies", []))
+                                  if enemy["species_id"] == sid), 0)
+                    label = "FireWall" if variety == "firewall" else variety.title()
+                    self._event(state, "scan", "enemy", index, amount=gained, species_id=sid, total=total,
+                                text=f"{label} Scan Mastery: {species['name']} +{gained:g}% bonus scan ({total:g}% total).")
 
     def _check_end(self, state: dict) -> bool:
         battle = state.get("battle")
@@ -728,14 +838,14 @@ class GameEngine:
             if won or lost:
                 if battle.get("kind") == "story":
                     if won and battle.get("story_training"):
-                        self._award_paradox_mastery(state)
+                        self._award_scan_mastery(state)
                     story_mode.settle(self, state, won)
                 else:
                     self._finish_season_battle(state, won)
                 return True
             return False
         if not any(e["hp"] > 0 for e in battle["enemies"]):
-            self._award_paradox_mastery(state)
+            self._award_scan_mastery(state)
             enemies = battle["enemies"]
             xp = sum(24 + e["level"] * 12 + STAGE_RANK.get(e.get("stage"), 2) * 8 for e in enemies)
             credits = sum(25 + e["level"] * 7 for e in enemies)

@@ -1,0 +1,82 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Ginryumon_AttackPart1.png": {
+      "source_size": [
+        750,
+        750
+      ],
+      "output_size": [
+        974,
+        974
+      ],
+      "padding": {
+        "left": 112,
+        "top": 112,
+        "right": 112,
+        "bottom": 112
+      },
+      "effect_pixel_unit": 7,
+      "effect_style": "smooth_cyber_glow",
+      "particle_fragment": false
+    },
+    "Ginryumon_AttackPart2.png": {
+      "source_size": [
+        750,
+        750
+      ],
+      "output_size": [
+        974,
+        974
+      ],
+      "padding": {
+        "left": 112,
+        "top": 112,
+        "right": 112,
+        "bottom": 112
+      },
+      "effect_pixel_unit": 7,
+      "effect_style": "smooth_cyber_glow",
+      "particle_fragment": false
+    },
+    "Ginryumon_Idle.png": {
+      "source_size": [
+        320,
+        320
+      ],
+      "output_size": [
+        384,
+        384
+      ],
+      "padding": {
+        "left": 32,
+        "top": 32,
+        "right": 32,
+        "bottom": 32
+      },
+      "effect_pixel_unit": 2,
+      "effect_style": "smooth_cyber_glow",
+      "particle_fragment": false
+    },
+    "Ginryumon_LLegWalk.png": {
+      "source_size": [
+        369,
+        357
+      ],
+      "output_size": [
+        433,
+        421
+      ],
+      "padding": {
+        "left": 32,
+        "top": 32,
+        "right": 32,
+        "bottom": 32
+      },
+      "effect_pixel_unit": 2,
+      "effect_style": "smooth_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

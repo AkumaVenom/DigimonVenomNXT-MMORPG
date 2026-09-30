@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "ArcadiamonInTraining_Paradox_Idle.png",
+    "walk_left": "ArcadiamonInTraining_Paradox_LLegWalk.png",
+    "walk_right": "ArcadiamonInTraining_Paradox_RLegWalk.png",
+    "attack1": "ArcadiamonInTraining_Paradox_Idle.png",
+    "attack2": "ArcadiamonInTraining_Paradox_Idle.png"
+  },
+  "animations": {
+    "idle": [
+      "ArcadiamonInTraining_Paradox_Idle.png"
+    ],
+    "walk": [
+      "ArcadiamonInTraining_Paradox_Idle.png",
+      "ArcadiamonInTraining_Paradox_LLegWalk.png",
+      "ArcadiamonInTraining_Paradox_Idle.png",
+      "ArcadiamonInTraining_Paradox_RLegWalk.png"
+    ],
+    "attack": [
+      "ArcadiamonInTraining_Paradox_Idle.png",
+      "ArcadiamonInTraining_Paradox_Idle.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 0,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied v1.2.0 Paradox PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained."
+}

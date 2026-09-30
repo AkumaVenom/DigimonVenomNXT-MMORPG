@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Muchomon_Idle.png",
+    "walk_left": "Muchomon_LLegWalk.png",
+    "walk_right": "Muchomon_RLegWalk.png",
+    "attack1": "Muchomon_AttackPart1.png",
+    "attack2": "Muchomon_AttackPart2.png"
+  },
+  "animations": {
+    "idle": [
+      "Muchomon_Idle.png"
+    ],
+    "walk": [
+      "Muchomon_Idle.png",
+      "Muchomon_LLegWalk.png",
+      "Muchomon_Idle.png",
+      "Muchomon_RLegWalk.png"
+    ],
+    "attack": [
+      "Muchomon_AttackPart1.png",
+      "Muchomon_AttackPart2.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 0,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied v1.2.0 Shiny PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained."
+}

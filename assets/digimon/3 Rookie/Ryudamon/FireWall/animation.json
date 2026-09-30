@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Ryudamon_Idle.png",
+    "walk_left": "Ryudamon_LLegWalk.png",
+    "walk_right": "Ryudamon_RLegWalk.png",
+    "attack1": "Ryudamon_Idle.png",
+    "attack2": "Ryudamon_Idle.png"
+  },
+  "animations": {
+    "idle": [
+      "Ryudamon_Idle.png"
+    ],
+    "walk": [
+      "Ryudamon_Idle.png",
+      "Ryudamon_LLegWalk.png",
+      "Ryudamon_Idle.png",
+      "Ryudamon_RLegWalk.png"
+    ],
+    "attack": [
+      "Ryudamon_Idle.png",
+      "Ryudamon_Idle.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 0,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied FireWall PNG bytes preserved; normal pose selections and mirrors retained. Aura padding is recorded in sprite_geometry.json."
+}

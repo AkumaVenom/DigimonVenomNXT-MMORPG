@@ -1,0 +1,234 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "EXEraserAlpha_Primary.png": {
+      "source_size": [
+        155,
+        158
+      ],
+      "output_size": [
+        187,
+        190
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/EXEraserAlpha_Frame_001.png": {
+      "source_size": [
+        155,
+        158
+      ],
+      "output_size": [
+        187,
+        190
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/EXEraserAlpha_Frame_002.png": {
+      "source_size": [
+        149,
+        150
+      ],
+      "output_size": [
+        181,
+        182
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/EXEraserAlpha_Frame_003.png": {
+      "source_size": [
+        146,
+        137
+      ],
+      "output_size": [
+        178,
+        169
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/EXEraserAlpha_Frame_004.png": {
+      "source_size": [
+        152,
+        154
+      ],
+      "output_size": [
+        184,
+        186
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/EXEraserAlpha_Frame_005.png": {
+      "source_size": [
+        150,
+        142
+      ],
+      "output_size": [
+        182,
+        174
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/EXEraserAlpha_Frame_006.png": {
+      "source_size": [
+        42,
+        46
+      ],
+      "output_size": [
+        74,
+        78
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/EXEraserAlpha_Frame_007.png": {
+      "source_size": [
+        43,
+        46
+      ],
+      "output_size": [
+        75,
+        78
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/EXEraserAlpha_Frame_008.png": {
+      "source_size": [
+        41,
+        42
+      ],
+      "output_size": [
+        73,
+        74
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/EXEraserAlpha_Frame_009.png": {
+      "source_size": [
+        43,
+        48
+      ],
+      "output_size": [
+        75,
+        80
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/EXEraserAlpha_Frame_010.png": {
+      "source_size": [
+        45,
+        48
+      ],
+      "output_size": [
+        77,
+        80
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/EXEraserAlpha_Frame_011.png": {
+      "source_size": [
+        43,
+        44
+      ],
+      "output_size": [
+        75,
+        76
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

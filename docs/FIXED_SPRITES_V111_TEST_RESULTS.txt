@@ -1,0 +1,153 @@
+DIGIMON VENOM NXT - FIXED SPRITES V1.1.1 TEST CAPTURE
+
+
+=== Baseline CRC and SHA-256 validation ===
+{
+  "baseline_volume_count": 29,
+  "baseline_non_audio_non_database_files_crc_verified": 21411,
+  "baseline_manifest_non_audio_files_sha256_verified": 20969,
+  "baseline_manifest_total": 21954,
+  "excluded_audio_manifest_rows": 985,
+  "fixed_archive_files_crc_verified": 69,
+  "errors": [],
+  "extraction_note": "Audio and bundled MySQL binaries are excluded from this patch. Installed libarchive cannot decode at least one RAR7-style compressed audio block; unchanged audio manifest records will be retained from baseline."
+}
+
+
+=== Asset/manifest build ===
+{
+  "counts": {
+    "source_images": 68,
+    "canonical_replacements": 75,
+    "direct_replacements": 68,
+    "pose_aliases": 7,
+    "animation_frames": 59,
+    "primary_images": 12,
+    "labelled_poses": 4,
+    "species": 20,
+    "new_sidecars": 15,
+    "superseded_v110_replacements": 14
+  },
+  "asset_data_files": 99,
+  "manifest_files": 21970,
+  "aliases": [
+    {
+      "path": "assets/digimon/4 Champion/Aquilamon/Aquilamon_Primary.png",
+      "source": "Aquilamon_Frame_001.png",
+      "basis": "baseline_rgba_identity"
+    },
+    {
+      "path": "assets/digimon/5 Ultimate/Knightmon/Knightmon_Primary.png",
+      "source": "Knightmon_Frame_001-transparent.png",
+      "basis": "baseline_rgba_identity"
+    },
+    {
+      "path": "assets/digimon/5 Ultimate/Lilamon/Lilamon_Primary.png",
+      "source": "Lilamon_Frame_001-transparent.png",
+      "basis": "baseline_rgba_identity"
+    },
+    {
+      "path": "assets/digimon/7 Mega/Barbamon/Barbamon_Primary.png",
+      "source": "Barbamon_Frame_002-.png",
+      "basis": "v110_original_byte_identity"
+    },
+    {
+      "path": "assets/digimon/7 Mega/ImperialdramonFighterMode/ImperialdramonFighterMode_Primary.png",
+      "source": "ImperialdramonFighterMode_Frame_001.png",
+      "basis": "baseline_rgba_identity"
+    },
+    {
+      "path": "assets/digimon/7 Mega/Leopardmon/Leopardmon_Primary.png",
+      "source": "Leopardmon_Frame_001-transparent.png",
+      "basis": "baseline_rgba_identity"
+    },
+    {
+      "path": "assets/digimon/7 Mega/Skullknightmon/Frames/Skullknightmon_Frame_001.png",
+      "source": "Skullknightmon_Primary.png",
+      "basis": "v110_original_byte_identity"
+    }
+  ]
+}
+
+
+=== Explicitly scoped sprite verifier ===
+{
+  "status": "verified",
+  "sprite_pack": "1.1.1",
+  "source_images": 68,
+  "canonical_replacements": 75,
+  "direct_replacements": 68,
+  "pose_aliases": 7,
+  "animation_frames": 59,
+  "primary_images": 12,
+  "labelled_poses": 4,
+  "species": 20,
+  "new_sidecars": 15,
+  "superseded_v110_replacements": 14,
+  "scope": "sprites-and-data-only",
+  "full_build_integrity_checked": false,
+  "catalog_species": 1004,
+  "gameplay_unchanged": true,
+  "unaffected_species_unchanged": 984,
+  "retained_v110_replacements": 695,
+  "both_packs_effective_replacements": 770,
+  "manifest_files": 21970,
+  "manifest_files_hashed": 16706,
+  "manifest_sha256": "8e8a518618eee187537098ce7362484490501da6d41da2ff4b63505af700af65"
+}
+
+
+=== Sprite regression suite ===
+........................................................................ [  7%]
+........................................................................ [ 14%]
+........................................................................ [ 22%]
+........................................................................ [ 29%]
+........................................................................ [ 36%]
+........................................................................ [ 44%]
+........................................................................ [ 51%]
+........................................................................ [ 58%]
+........................................................................ [ 66%]
+........................................................................ [ 73%]
+........................................................................ [ 80%]
+........................................................................ [ 88%]
+........................................................................ [ 95%]
+...........................................                              [100%]
+=========================== short test summary info ============================
+SKIPPED [1] tests/test_fixed_sprites_runtime.py:11: pygame-ce is required for real SDL sprite rendering checks
+979 passed, 1 skipped, 2 deselected in 21.20s
+
+
+=== Gameplay regression suite ===
+........................................................................ [ 77%]
+.....................                                                    [100%]
+93 passed in 12.87s
+
+
+=== End-to-end and independent final validation ===
+{
+  "status": "passed",
+  "reapply_from_uploaded_v110_matches_overlay_files": 99,
+  "reapply_twice_byte_idempotent": true,
+  "patched_non_audio_manifest_rows_sha256_verified": 20985,
+  "unchanged_audio_manifest_rows_retained_verbatim": 985,
+  "manifest_rows_total": 21970,
+  "manifest_rows_changed": 82,
+  "manifest_rows_added": 16,
+  "manifest_rows_removed": 0,
+  "all_modified_python_files_compile": true,
+  "runtime_gameplay_code_in_patch": false,
+  "sprite_suite": {
+    "passed": 979,
+    "skipped_modules": 1,
+    "deselected_tests": 2
+  },
+  "gameplay_suite": {
+    "passed": 93
+  },
+  "total_tests_passed": 1072,
+  "not_run": [
+    "Real pygame/SDL rendering (pygame-ce unavailable)",
+    "Windows executable build and native Windows launcher execution",
+    "Full audio-inclusive build manifest checks; 985 unchanged audio records retained from baseline, not claimed to have been independently rehashed"
+  ]
+}

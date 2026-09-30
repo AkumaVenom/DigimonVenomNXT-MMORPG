@@ -1,0 +1,22 @@
+{
+  "variant_id": "shiny_dracomon",
+  "display_name": "Shiny Dracomon",
+  "base_species": "Dracomon",
+  "stage": "3 Rookie",
+  "status": "ready",
+  "style_profile": "Prismatic Shiny \u2014 Gold Stardust v1",
+  "palette": "Moonlit indigo",
+  "target_hue_degrees": 244.0,
+  "source_sprite_count": 3,
+  "shiny_sprite_count": 3,
+  "animation_alignment": "Exact source canvas dimensions and sprite positions retained",
+  "effects": "Warm-gold silhouette glow; restrained ivory/gold four-point sparkles; deterministic frame twinkle",
+  "sprites": [
+    "Dracomon_Idle.png",
+    "Dracomon_LLegWalk.png",
+    "Dracomon_RLegWalk.png"
+  ],
+  "primary_sprite": "3 Rookie/Dracomon/Shiny/Dracomon_Idle.png",
+  "source_primary": "3 Rookie/Dracomon/Dracomon_Idle.png",
+  "materializable": true
+}

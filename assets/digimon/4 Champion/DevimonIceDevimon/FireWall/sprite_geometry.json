@@ -1,0 +1,196 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Devimon_AttackPart1.png": {
+      "source_size": [
+        438,
+        710
+      ],
+      "output_size": [
+        598,
+        870
+      ],
+      "padding": {
+        "left": 80,
+        "top": 80,
+        "right": 80,
+        "bottom": 80
+      },
+      "effect_pixel_unit": 5,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Devimon_AttackPart2.png": {
+      "source_size": [
+        528,
+        658
+      ],
+      "output_size": [
+        688,
+        818
+      ],
+      "padding": {
+        "left": 80,
+        "top": 80,
+        "right": 80,
+        "bottom": 80
+      },
+      "effect_pixel_unit": 5,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Devimon_Idle.png": {
+      "source_size": [
+        422,
+        734
+      ],
+      "output_size": [
+        614,
+        926
+      ],
+      "padding": {
+        "left": 96,
+        "top": 96,
+        "right": 96,
+        "bottom": 96
+      },
+      "effect_pixel_unit": 6,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Devimon_LLegWalk.png": {
+      "source_size": [
+        494,
+        718
+      ],
+      "output_size": [
+        686,
+        910
+      ],
+      "padding": {
+        "left": 96,
+        "top": 96,
+        "right": 96,
+        "bottom": 96
+      },
+      "effect_pixel_unit": 6,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Devimon_RLegWalk.png": {
+      "source_size": [
+        494,
+        718
+      ],
+      "output_size": [
+        686,
+        910
+      ],
+      "padding": {
+        "left": 96,
+        "top": 96,
+        "right": 96,
+        "bottom": 96
+      },
+      "effect_pixel_unit": 6,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "IceDevimon_Attack.png": {
+      "source_size": [
+        436,
+        582
+      ],
+      "output_size": [
+        596,
+        742
+      ],
+      "padding": {
+        "left": 80,
+        "top": 80,
+        "right": 80,
+        "bottom": 80
+      },
+      "effect_pixel_unit": 5,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "IceDevimon_GetHit.png": {
+      "source_size": [
+        328,
+        596
+      ],
+      "output_size": [
+        488,
+        756
+      ],
+      "padding": {
+        "left": 80,
+        "top": 80,
+        "right": 80,
+        "bottom": 80
+      },
+      "effect_pixel_unit": 5,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "IceDevimon_Idle.png": {
+      "source_size": [
+        346,
+        626
+      ],
+      "output_size": [
+        506,
+        786
+      ],
+      "padding": {
+        "left": 80,
+        "top": 80,
+        "right": 80,
+        "bottom": 80
+      },
+      "effect_pixel_unit": 5,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "IceDevimon_LLegWalk.png": {
+      "source_size": [
+        402,
+        616
+      ],
+      "output_size": [
+        562,
+        776
+      ],
+      "padding": {
+        "left": 80,
+        "top": 80,
+        "right": 80,
+        "bottom": 80
+      },
+      "effect_pixel_unit": 5,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "IceDevimon_RLegWalk.png": {
+      "source_size": [
+        360,
+        638
+      ],
+      "output_size": [
+        520,
+        798
+      ],
+      "padding": {
+        "left": 80,
+        "top": 80,
+        "right": 80,
+        "bottom": 80
+      },
+      "effect_pixel_unit": 5,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

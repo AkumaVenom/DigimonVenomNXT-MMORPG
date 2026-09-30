@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Meicoomon_Idle.png": {
+      "source_size": [
+        1026,
+        760
+      ],
+      "output_size": [
+        1250,
+        984
+      ],
+      "padding": {
+        "left": 112,
+        "top": 112,
+        "right": 112,
+        "bottom": 112
+      },
+      "effect_pixel_unit": 7,
+      "effect_style": "smooth_cyber_glow",
+      "particle_fragment": false
+    },
+    "Meicoomon_LLegWalk.png": {
+      "source_size": [
+        1155,
+        844
+      ],
+      "output_size": [
+        1379,
+        1068
+      ],
+      "padding": {
+        "left": 112,
+        "top": 112,
+        "right": 112,
+        "bottom": 112
+      },
+      "effect_pixel_unit": 7,
+      "effect_style": "smooth_cyber_glow",
+      "particle_fragment": false
+    },
+    "Meicoomon_RLegWalk.png": {
+      "source_size": [
+        1155,
+        844
+      ],
+      "output_size": [
+        1379,
+        1068
+      ],
+      "padding": {
+        "left": 112,
+        "top": 112,
+        "right": 112,
+        "bottom": 112
+      },
+      "effect_pixel_unit": 7,
+      "effect_style": "smooth_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

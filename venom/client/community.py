@@ -14,6 +14,7 @@ from datetime import datetime, timezone
 
 import pygame
 
+from .varieties import name_color
 from .render import draw
 from .presentation import Presentation
 from .widgets import BG, PANEL, CARD, LINE, WHITE, MUTED, CYAN, LIME, RED, GOLD, panel, text, wrap, bar
@@ -768,7 +769,7 @@ class CommunityPanel:
             draw.ellipse(app.screen, (18, 39, 53), (card.centerx-33, card.y+56, 66, 12))
             image = app.assets.sprite(mon.get('species_id'), (79, 64), now=app.now)
             if image: app.screen.blit(image, image.get_rect(midbottom=(card.centerx, card.y+67)))
-            text(app.screen, app.assets, mon.get('name', 'Digimon'), (card.centerx, card.y+83), 12, WHITE, True, card.width-12, True)
+            text(app.screen, app.assets, mon.get('name', 'Digimon'), (card.centerx, card.y+83), 12, name_color(mon, app.assets.species, WHITE), True, card.width-12, True)
             text(app.screen, app.assets, f"Lv.{mon.get('level', 1)}  /  {'ACTIVE' if i<3 else 'RESERVE'}", (card.centerx, card.y+104), 9, accent if i<3 else MUTED, center=True)
         stats = profile.get('stats', {})
         pairs = [('Wild wins / losses', f"{number(stats.get('wild_wins'))} / {number(stats.get('wild_losses'))}"),
@@ -793,7 +794,7 @@ class CommunityPanel:
                 ('xp_earned', 'Battle XP'), ('party_swaps', 'Partner swaps'), ('travels', 'Sector changes'), ('heals', 'Healing visits'),
                 ('items_used', 'Items used'), ('purchases', 'Shop purchases'), ('evolutions', 'Digivolutions'), ('devolutions', 'De-digivolutions'),
                 ('rival_wins', 'Rival wins'), ('rival_losses', 'Rival losses'), ('scan_data', 'Scan data earned'), ('walking_distance', 'Distance walked'),
-                ('training_rotations', 'Team changes'), ('teams_trained', 'Teams trained'), ('coverage_visits', 'Veteran visits')]
+                ('training_rotations', 'Team changes'), ('teams_trained', 'Teams trained'), ('coverage_visits', 'Veteran visits'), ('shiny_materialized', 'Shiny created'), ('firewall_materialized', 'FireWall created')]
 
     def draw_activity(self, rect):
         app, data = self.app, self.data.get('activity', {})
@@ -824,8 +825,9 @@ class CommunityPanel:
             text(app.screen, app.assets, number(counters.get(key)), (cell.x+2, cell.y+18), 20 if metric_h>46 else 18,
                  GOLD if 'loss' in key else accent, True, cell.width-4)
             if i<10: draw.line(app.screen, (30, 54, 62), (cell.x, cell.bottom), (cell.right, cell.bottom))
-        self.button((left.x+12, left.bottom-35, left.width-24, 25), 'More counters' if self.stats_page==0 else 'Main counters',
-                    lambda:setattr(self, 'stats_page', 1-self.stats_page))
+        pages = max(1, (len(self.COUNTERS)+11)//12)
+        self.button((left.x+12, left.bottom-35, left.width-24, 25), f'Counters {self.stats_page+1} / {pages}  ·  Next',
+                    lambda:setattr(self, 'stats_page', (self.stats_page+1)%pages))
         main = pygame.Rect(left.right+18, left.y, rect.right-left.right-18, left.height)
         text(app.screen, app.assets, 'RECENT ACTIVITY', main.topleft, 12, accent, True)
         text(app.screen, app.assets, 'LATEST 100 EVENTS', (main.right-143, main.y+3), 9, MUTED, True)
@@ -1000,7 +1002,7 @@ class MatchReplay:
                             sprite = sprite.copy()
                             sprite.set_alpha(65)
                         app.screen.blit(sprite, sprite.get_rect(midbottom=(round(position.x), round(position.y))))
-                    text(app.screen, app.assets, mon.get('name', 'Digimon'), (position.x, position.y-size[1]-20), 13, WHITE, True, 190, True)
+                    text(app.screen, app.assets, mon.get('name', 'Digimon'), (position.x, position.y-size[1]-20), 13, name_color(mon, app.assets.species, WHITE), True, 190, True)
                     text(app.screen, app.assets, f"Lv.{mon.get('level', 1)}", (position.x, position.y-size[1]-5), 10, MUTED, center=True)
                     bar(app.screen, pygame.Rect(position.x-61, position.y+12, 122, 7), mon.get('hp', 0), mon.get('max_hp', 1), LIME if side=='player' else RED)
                     text(app.screen, app.assets, f"{number(mon.get('hp'))} / {number(mon.get('max_hp'))}", (position.x, position.y+27), 10, MUTED, center=True)

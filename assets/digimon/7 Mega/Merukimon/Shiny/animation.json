@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Frames/Merukimon_Frame_001.png",
+    "walk_left": "Frames/Merukimon_Frame_002.png",
+    "walk_right": "Frames/Merukimon_Frame_003.png",
+    "attack1": "Frames/Merukimon_Frame_007.png",
+    "attack2": "Frames/Merukimon_Frame_012.png",
+    "front": "Merukimon_Primary.png"
+  },
+  "animations": {
+    "idle": [
+      "Frames/Merukimon_Frame_001.png",
+      "Frames/Merukimon_Frame_002.png",
+      "Frames/Merukimon_Frame_001.png",
+      "Frames/Merukimon_Frame_003.png"
+    ],
+    "walk": [
+      "Frames/Merukimon_Frame_001.png",
+      "Frames/Merukimon_Frame_002.png",
+      "Frames/Merukimon_Frame_001.png",
+      "Frames/Merukimon_Frame_003.png"
+    ],
+    "attack": [
+      "Frames/Merukimon_Frame_007.png",
+      "Frames/Merukimon_Frame_012.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 18,
+  "frame_selection": "v1.0.1 pose assignments retained; supplied v1.1.0 fixed PNGs replace canonical paths; explicit primary/front portrait when supplied",
+  "art_provenance": "User-supplied v1.2.0 Shiny PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained."
+}

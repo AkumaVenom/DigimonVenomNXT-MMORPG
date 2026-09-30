@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Frames/Shawjamon_Frame_001.png",
+    "walk_left": "Frames/Shawjamon_Frame_002.png",
+    "walk_right": "Frames/Shawjamon_Frame_003.png",
+    "attack1": "Frames/Shawjamon_Frame_004.png",
+    "attack2": "Frames/Shawjamon_Frame_005.png",
+    "front": "Shawjamon_Primary.png"
+  },
+  "animations": {
+    "idle": [
+      "Frames/Shawjamon_Frame_001.png",
+      "Frames/Shawjamon_Frame_002.png",
+      "Frames/Shawjamon_Frame_001.png",
+      "Frames/Shawjamon_Frame_003.png"
+    ],
+    "walk": [
+      "Frames/Shawjamon_Frame_001.png",
+      "Frames/Shawjamon_Frame_002.png",
+      "Frames/Shawjamon_Frame_001.png",
+      "Frames/Shawjamon_Frame_003.png"
+    ],
+    "attack": [
+      "Frames/Shawjamon_Frame_004.png",
+      "Frames/Shawjamon_Frame_005.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 23,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied v1.2.0 Shiny PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained."
+}

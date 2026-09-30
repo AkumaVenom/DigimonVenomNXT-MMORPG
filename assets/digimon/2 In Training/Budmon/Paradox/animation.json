@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Budmon_Paradox_Idle.png",
+    "walk_left": "Budmon_Paradox_LLegWalk.png",
+    "walk_right": "Budmon_Paradox_RLegWalk.png",
+    "attack1": "Budmon_Paradox_AttackPart1.png",
+    "attack2": "Budmon_Paradox_AttackPart2.png"
+  },
+  "animations": {
+    "idle": [
+      "Budmon_Paradox_Idle.png"
+    ],
+    "walk": [
+      "Budmon_Paradox_Idle.png",
+      "Budmon_Paradox_LLegWalk.png",
+      "Budmon_Paradox_Idle.png",
+      "Budmon_Paradox_RLegWalk.png"
+    ],
+    "attack": [
+      "Budmon_Paradox_AttackPart1.png",
+      "Budmon_Paradox_AttackPart2.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 0,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied v1.2.0 Paradox PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained."
+}

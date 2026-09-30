@@ -1,0 +1,22 @@
+{
+  "variant_id": "shiny_arcadiamonchampion",
+  "display_name": "Shiny ArcadiamonChampion",
+  "base_species": "ArcadiamonChampion",
+  "stage": "4 Champion",
+  "status": "ready",
+  "style_profile": "Prismatic Shiny \u2014 Gold Stardust v1",
+  "palette": "Royal sapphire",
+  "target_hue_degrees": 218.0,
+  "source_sprite_count": 3,
+  "shiny_sprite_count": 3,
+  "animation_alignment": "Exact source canvas dimensions and sprite positions retained",
+  "effects": "Warm-gold silhouette glow; restrained ivory/gold four-point sparkles; deterministic frame twinkle",
+  "sprites": [
+    "ArcadiamonChampion_Idle.png",
+    "ArcadiamonChampion_LLegWalk.png",
+    "ArcadiamonChampion_RLegWalk.png"
+  ],
+  "primary_sprite": "4 Champion/ArcadiamonChampion/Shiny/ArcadiamonChampion_Idle.png",
+  "source_primary": "4 Champion/ArcadiamonChampion/ArcadiamonChampion_Idle.png",
+  "materializable": true
+}

@@ -1,0 +1,22 @@
+{
+  "variant_id": "shiny_gumdramon",
+  "display_name": "Shiny GumDramon",
+  "base_species": "GumDramon",
+  "stage": "3 Rookie",
+  "status": "ready",
+  "style_profile": "Prismatic Shiny \u2014 Gold Stardust v1",
+  "palette": "Prismatic Moonlit indigo",
+  "target_hue_degrees": 69.5,
+  "source_sprite_count": 3,
+  "shiny_sprite_count": 3,
+  "animation_alignment": "Exact source canvas dimensions and sprite positions retained",
+  "effects": "Warm-gold silhouette glow; restrained ivory/gold four-point sparkles; deterministic frame twinkle",
+  "sprites": [
+    "GumDramon_Idle.png",
+    "GumDramon_LLegWalk.png",
+    "GumDramon_RLegWalk.png"
+  ],
+  "primary_sprite": "3 Rookie/GumDramon/Shiny/GumDramon_Idle.png",
+  "source_primary": "3 Rookie/GumDramon/GumDramon_Idle.png",
+  "materializable": true
+}

@@ -1,0 +1,4 @@
+Champion Shoutmon has no usable 2D PNG sprite in the supplied archive.
+The source notice identifies a 3D UV texture atlas, not a rendered character sprite.
+No shiny sprite was fabricated for this missing source.
+Rookie Shoutmon has valid source sprites and is included separately.

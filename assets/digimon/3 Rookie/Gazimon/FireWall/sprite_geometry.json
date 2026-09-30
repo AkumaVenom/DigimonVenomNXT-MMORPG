@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Gazimon_Idle.png": {
+      "source_size": [
+        500,
+        688
+      ],
+      "output_size": [
+        660,
+        848
+      ],
+      "padding": {
+        "left": 80,
+        "top": 80,
+        "right": 80,
+        "bottom": 80
+      },
+      "effect_pixel_unit": 5,
+      "effect_style": "smooth_cyber_glow",
+      "particle_fragment": false
+    },
+    "Gazimon_LLegWalk.png": {
+      "source_size": [
+        632,
+        784
+      ],
+      "output_size": [
+        792,
+        944
+      ],
+      "padding": {
+        "left": 80,
+        "top": 80,
+        "right": 80,
+        "bottom": 80
+      },
+      "effect_pixel_unit": 5,
+      "effect_style": "smooth_cyber_glow",
+      "particle_fragment": false
+    },
+    "Gazimon_RLegWalk.png": {
+      "source_size": [
+        632,
+        784
+      ],
+      "output_size": [
+        792,
+        944
+      ],
+      "padding": {
+        "left": 80,
+        "top": 80,
+        "right": 80,
+        "bottom": 80
+      },
+      "effect_pixel_unit": 5,
+      "effect_style": "smooth_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "variant_id": "shiny_jyarimon",
+  "display_name": "Shiny Jyarimon",
+  "base_species": "Jyarimon",
+  "stage": "1 Fresh",
+  "status": "ready",
+  "style_profile": "Prismatic Shiny \u2014 Gold Stardust v1",
+  "palette": "Amethyst",
+  "target_hue_degrees": 270.0,
+  "source_sprite_count": 3,
+  "shiny_sprite_count": 3,
+  "animation_alignment": "Exact source canvas dimensions and sprite positions retained",
+  "effects": "Warm-gold silhouette glow; restrained ivory/gold four-point sparkles; deterministic frame twinkle",
+  "sprites": [
+    "Jyarimon_Idle.png",
+    "Jyarimon_LLegWalk.png",
+    "Jyarimon_RLegWalk.png"
+  ],
+  "primary_sprite": "1 Fresh/Jyarimon/Shiny/Jyarimon_Idle.png",
+  "source_primary": "1 Fresh/Jyarimon/Jyarimon_Idle.png",
+  "materializable": true
+}

@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "preserved_existing_asset_records": 31399,
+  "new_assets": 323,
+  "old_assets_modified": 0,
+  "new_assets_by_folder": {
+    "assets/maps/xros_wars/": 284,
+    "assets/audio/xros_wars/": 39
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "status": "passed",
+  "baseline": "1.4.0",
+  "release": "1.5.0",
+  "original_species_preserved": 1506,
+  "new_firewall_species": 502,
+  "existing_tamers_preserved": 64,
+  "maps_preserved": 500,
+  "only_added_map_field": "firewall_encounters",
+  "firewall_habitats_match_normal_habitats": true,
+  "original_rules_unchanged_except_release_version": true,
+  "new_rules": {
+    "firewall_encounter_chance": 0.007,
+    "firewall_scan_gain": 5
+  },
+  "manifest": {
+    "original_records_retained": 31739,
+    "unchanged_original_records": 31736,
+    "changed_original_records": [
+      "data/catalog.json",
+      "data/mechanics.json",
+      "data/source_assets.json"
+    ],
+    "new_records": 9441,
+    "total": 41180
+  },
+  "audio_metadata_files_unchanged": 4,
+  "asset_verification": "All pre-existing asset manifest records are unchanged; build_verify.log validates the actual candidate file bytes."
+}

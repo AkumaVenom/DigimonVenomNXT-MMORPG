@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Tyrannomon_Paradox_Idle.png",
+    "walk_left": "Tyrannomon_Paradox_LLegWalk.png",
+    "walk_right": "Tyrannomon_Paradox_RLegWalk.png",
+    "attack1": "Tyrannomon_Paradox_AttackPart1.png",
+    "attack2": "Tyrannomon_Paradox_AttackPart2.png"
+  },
+  "animations": {
+    "idle": [
+      "Tyrannomon_Paradox_Idle.png"
+    ],
+    "walk": [
+      "Tyrannomon_Paradox_Idle.png",
+      "Tyrannomon_Paradox_LLegWalk.png",
+      "Tyrannomon_Paradox_Idle.png",
+      "Tyrannomon_Paradox_RLegWalk.png"
+    ],
+    "attack": [
+      "Tyrannomon_Paradox_AttackPart1.png",
+      "Tyrannomon_Paradox_AttackPart2.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 0,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied v1.2.0 Paradox PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained."
+}

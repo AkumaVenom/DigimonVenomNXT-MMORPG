@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Jazardmon_Idle.png": {
+      "source_size": [
+        650,
+        580
+      ],
+      "output_size": [
+        810,
+        740
+      ],
+      "padding": {
+        "left": 80,
+        "top": 80,
+        "right": 80,
+        "bottom": 80
+      },
+      "effect_pixel_unit": 5,
+      "effect_style": "smooth_cyber_glow",
+      "particle_fragment": false
+    },
+    "Jazardmon_LLegWalk.png": {
+      "source_size": [
+        770,
+        652
+      ],
+      "output_size": [
+        930,
+        812
+      ],
+      "padding": {
+        "left": 80,
+        "top": 80,
+        "right": 80,
+        "bottom": 80
+      },
+      "effect_pixel_unit": 5,
+      "effect_style": "smooth_cyber_glow",
+      "particle_fragment": false
+    },
+    "Jazardmon_RLegWalk.png": {
+      "source_size": [
+        770,
+        652
+      ],
+      "output_size": [
+        930,
+        812
+      ],
+      "padding": {
+        "left": 80,
+        "top": 80,
+        "right": 80,
+        "bottom": 80
+      },
+      "effect_pixel_unit": 5,
+      "effect_style": "smooth_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

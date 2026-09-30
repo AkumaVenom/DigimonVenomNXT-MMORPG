@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Dorumon_Idle.png",
+    "walk_left": "Dorumon_LLegWalk.png",
+    "walk_right": "Dorumon_RLegWalk.png",
+    "attack1": "Dorumon_AttackPart1.png",
+    "attack2": "Dorumon_AttackPart2.png"
+  },
+  "animations": {
+    "idle": [
+      "Dorumon_Idle.png"
+    ],
+    "walk": [
+      "Dorumon_Idle.png",
+      "Dorumon_LLegWalk.png",
+      "Dorumon_Idle.png",
+      "Dorumon_RLegWalk.png"
+    ],
+    "attack": [
+      "Dorumon_AttackPart1.png",
+      "Dorumon_AttackPart2.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 0,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied v1.2.0 Shiny PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained."
+}

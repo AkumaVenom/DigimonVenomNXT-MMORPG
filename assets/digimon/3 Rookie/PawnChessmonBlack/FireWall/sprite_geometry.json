@@ -1,0 +1,120 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "PawnChessmonBlack_AttackPart1.png": {
+      "source_size": [
+        390,
+        526
+      ],
+      "output_size": [
+        550,
+        686
+      ],
+      "padding": {
+        "left": 80,
+        "top": 80,
+        "right": 80,
+        "bottom": 80
+      },
+      "effect_pixel_unit": 5,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "PawnChessmonBlack_AttackPart2.png": {
+      "source_size": [
+        296,
+        484
+      ],
+      "output_size": [
+        456,
+        644
+      ],
+      "padding": {
+        "left": 80,
+        "top": 80,
+        "right": 80,
+        "bottom": 80
+      },
+      "effect_pixel_unit": 5,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "PawnChessmonBlack_Extra.png": {
+      "source_size": [
+        296,
+        484
+      ],
+      "output_size": [
+        456,
+        644
+      ],
+      "padding": {
+        "left": 80,
+        "top": 80,
+        "right": 80,
+        "bottom": 80
+      },
+      "effect_pixel_unit": 5,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "PawnChessmonBlack_Idle.png": {
+      "source_size": [
+        368,
+        514
+      ],
+      "output_size": [
+        528,
+        674
+      ],
+      "padding": {
+        "left": 80,
+        "top": 80,
+        "right": 80,
+        "bottom": 80
+      },
+      "effect_pixel_unit": 5,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "PawnChessmonBlack_LLegWalk.png": {
+      "source_size": [
+        388,
+        492
+      ],
+      "output_size": [
+        548,
+        652
+      ],
+      "padding": {
+        "left": 80,
+        "top": 80,
+        "right": 80,
+        "bottom": 80
+      },
+      "effect_pixel_unit": 5,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "PawnChessmonBlack_RLegWalk.png": {
+      "source_size": [
+        388,
+        492
+      ],
+      "output_size": [
+        548,
+        652
+      ],
+      "padding": {
+        "left": 80,
+        "top": 80,
+        "right": 80,
+        "bottom": 80
+      },
+      "effect_pixel_unit": 5,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

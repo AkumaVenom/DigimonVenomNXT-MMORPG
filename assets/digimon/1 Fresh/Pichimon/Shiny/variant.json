@@ -1,0 +1,22 @@
+{
+  "variant_id": "shiny_pichimon",
+  "display_name": "Shiny Pichimon",
+  "base_species": "Pichimon",
+  "stage": "1 Fresh",
+  "status": "ready",
+  "style_profile": "Prismatic Shiny \u2014 Gold Stardust v1",
+  "palette": "Copper rose",
+  "target_hue_degrees": 15.0,
+  "source_sprite_count": 3,
+  "shiny_sprite_count": 3,
+  "animation_alignment": "Exact source canvas dimensions and sprite positions retained",
+  "effects": "Warm-gold silhouette glow; restrained ivory/gold four-point sparkles; deterministic frame twinkle",
+  "sprites": [
+    "Pichimon_Idle.png",
+    "Pichimon_LLegWalk.png",
+    "Pichimon_RLegWalk.png"
+  ],
+  "primary_sprite": "1 Fresh/Pichimon/Shiny/Pichimon_Idle.png",
+  "source_primary": "1 Fresh/Pichimon/Pichimon_Idle.png",
+  "materializable": true
+}

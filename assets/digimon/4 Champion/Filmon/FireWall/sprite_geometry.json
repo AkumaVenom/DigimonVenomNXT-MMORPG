@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Filmon_Idle.png": {
+      "source_size": [
+        660,
+        632
+      ],
+      "output_size": [
+        1012,
+        984
+      ],
+      "padding": {
+        "left": 176,
+        "top": 176,
+        "right": 176,
+        "bottom": 176
+      },
+      "effect_pixel_unit": 11,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Filmon_LLegWalk.png": {
+      "source_size": [
+        786,
+        706
+      ],
+      "output_size": [
+        1138,
+        1058
+      ],
+      "padding": {
+        "left": 176,
+        "top": 176,
+        "right": 176,
+        "bottom": 176
+      },
+      "effect_pixel_unit": 11,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Filmon_RLegWalk.png": {
+      "source_size": [
+        786,
+        706
+      ],
+      "output_size": [
+        1138,
+        1058
+      ],
+      "padding": {
+        "left": 176,
+        "top": 176,
+        "right": 176,
+        "bottom": 176
+      },
+      "effect_pixel_unit": 11,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

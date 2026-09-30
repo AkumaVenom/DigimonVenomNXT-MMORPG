@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Dracmon_Idle.png",
+    "walk_left": "Dracmon_LLegWalk.png",
+    "walk_right": "Dracmon_RLegWalk.png",
+    "attack1": "Dracmon_AttackPart1.png",
+    "attack2": "Dracmon_AttackPart2.png"
+  },
+  "animations": {
+    "idle": [
+      "Dracmon_Idle.png"
+    ],
+    "walk": [
+      "Dracmon_Idle.png",
+      "Dracmon_LLegWalk.png",
+      "Dracmon_Idle.png",
+      "Dracmon_RLegWalk.png"
+    ],
+    "attack": [
+      "Dracmon_AttackPart1.png",
+      "Dracmon_AttackPart2.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 0,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied FireWall PNG bytes preserved; normal pose selections and mirrors retained. Aura padding is recorded in sprite_geometry.json."
+}

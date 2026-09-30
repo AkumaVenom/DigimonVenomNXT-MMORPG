@@ -1,0 +1,134 @@
+{
+  "release": "1.4.0",
+  "baseline": "1.3.0",
+  "campaign": "Super Xros: Ghostline",
+  "campaign_id": "xros_ghostline",
+  "status": "passed",
+  "full_suite": {
+    "passed": 3112,
+    "skipped": 10,
+    "failures": 0,
+    "errors": 0,
+    "seconds": 506.367,
+    "skip_reasons": {
+      "Set VENOM_TEST_MYSQL_RUNTIME for opt-in Linux/MySQL validation": 1,
+      "Requires a graphical desktop / Xvfb": 9
+    },
+    "method": "Complete suite plus targeted recheck after fixing an outdated build-test fixture; passed count is unique test cases. Original reports retained unchanged.",
+    "initial_passed": 3111,
+    "initial_failures": 1,
+    "resolved_by_setup_recheck": [
+      "tests.test_setup_launchers::test_windows_build_includes_whole_wizard_and_current_launchers"
+    ],
+    "recheck_report": "setup_recheck.xml",
+    "fixture_correction": "Include release_v130/release_v140 evidence folders and expect GHOSTLINE_V140.md in the simulated Windows build; no production behavior changed."
+  },
+  "environment": {
+    "platform": "Linux",
+    "python": "3.12.14",
+    "pygame_ce": "2.5.8"
+  },
+  "campaign_scope": {
+    "maps": 31,
+    "safe_hubs": 1,
+    "field_assignments": 30,
+    "quest_tamer_battles": 29,
+    "final_battles": 1,
+    "npcs": 141,
+    "portals": 61,
+    "mara_appearances_including_hub_and_final": 17,
+    "reveal_map": 27,
+    "final_map": 31,
+    "opponent_level_range": [
+      3,
+      99
+    ]
+  },
+  "actual_playthrough": {
+    "all_maps_and_quests": true,
+    "ordinary_battle_and_story_commands": true,
+    "established_owned_party_from_start": true,
+    "progress_or_victory_injection": false,
+    "forward_portals_used": 30,
+    "completion_portal_used": true,
+    "final_loss_recovery_retry_win": true,
+    "sqlite_restart_checkpoints": true,
+    "all_31_maps_checked_for_permanent_nemesis_removal": true,
+    "second_account_independent": true,
+    "live_websocket_private_isolation": true
+  },
+  "scan_reward": {
+    "variety": "shiny",
+    "permanent_multiplier": 1.2,
+    "base_percentage_points": 5,
+    "wild_victory_percentage_points": 6,
+    "shiny_encounter_probability": 0.01,
+    "npc_owned_scan": 0,
+    "paradox_reward_independent": true
+  },
+  "presentation": {
+    "native_preview_pngs": 33,
+    "resolutions": [
+      [
+        960,
+        600
+      ],
+      [
+        1280,
+        800
+      ]
+    ],
+    "actual_completed_playthrough_preview": true,
+    "layout_map_pngs": 31,
+    "layout_contact_sheets": 4,
+    "asset_load_errors": 0
+  },
+  "integrity": {
+    "asset_manifest_records_verified": 31739,
+    "original_asset_files_unchanged": 30512,
+    "original_asset_bytes_unchanged": 841176254,
+    "unchanged_species": 1506,
+    "unchanged_public_maps": 500,
+    "unchanged_audio_metadata_files": 4,
+    "old_campaign_definitions_unchanged": true
+  },
+  "final_prose_review": {
+    "notes": "Two final attribution/recovery-wording corrections were checked after the full-suite process started. Thirteen content tests passed against the final content snapshot; no runtime behavior changed.",
+    "content_tests_passed": 13,
+    "independent_review": "content_review.md"
+  },
+  "changed_or_new_code_sha256": {
+    "tests/test_setup_diagnostics.py": "2c3c774a73dc2b09a8393d848b1564dec015af34f8008de99f75ac0de69a0272",
+    "tests/test_setup_launchers.py": "4a56447b0de150fca98d3c2f892787191a05e42ba7ba61ef650894a0e6c051a2",
+    "tests/test_shiny_mastery_protocol_v140.py": "c7b551256caa7ba2409de51e0c3b10ed4768ccd807fa9ff10126c6482209f59a",
+    "tests/test_shiny_mastery_v140.py": "047d357c2ca5048d9d329152dc1f817fabc9529b086ef9aa3cf18b4cf564e50a",
+    "tests/test_variety_assets_v120.py": "72a1e164e4e4e38058b2d145ca463b4b9bcecd8ebaa725ea794d7111ffc630f0",
+    "tests/test_xros_story_acceptance.py": "ad4bc31a2309d91d97c1baf1b84601b426d753b83a2c3f200c84c82db1f78ba3",
+    "tests/test_xros_story_content.py": "4b629226ac77355ea8fb477dd66ebc98b7081bec8ad52bf6f6627a72da2b1713",
+    "tests/test_xros_story_engine.py": "161880f432a2a075714b55f72877f0a5b679ce437ddf559322c238ca1fd1a58b",
+    "tests/test_xros_story_layout.py": "ee434a1cbccec7baf9d30cbc8cda73beba2a287547f1cf6ac3800b18d2b3567c",
+    "tests/test_xros_story_protocol.py": "2aa96655465f43b4aaddff364b0496a569004827b42a5e400bf7ff8b3437f501",
+    "tests/test_xros_story_ui.py": "ca5021aad39aa74c5e28a564589d9437c9cf48b852175612df877de8606ca751",
+    "tools/build.py": "87cd1df0cf30fd768a43994a486ff01f5222fdc223f0d084b0f280764084014a",
+    "tools/fixed_sprites_v111.py": "c058453992dcb84082d8780183910bee7874fe66f1751ac87a688ff8ebd25913",
+    "tools/preview_ghostline.py": "61764c70409dc11333c48a808173fa762063eb3d8f580e9b014956ad39572c6f",
+    "tools/preview_ghostline_layout.py": "82a0dcc4153c019f5ad82196093c5cabd1751b9348acc1e9bf03052e651c0d3a",
+    "venom/client/app.py": "f103ab025661b7195617e7b785b702e53b40dd20887705f62af0ee018082c2a8",
+    "venom/client/assets.py": "f3bf345680929c58cf2a9a6db790e3a7298aa49b9cd5b72e222d78868b7463b2",
+    "venom/client/destinations.py": "9a0728d02e8c496137404aac273adc5419d65d4dc9431d8f99bb531b1aedc93d",
+    "venom/client/laboratory.py": "c09a85f2a42359a13a481681d87bc47e7789fa83c1d90543e4ec4263703a0c54",
+    "venom/client/story.py": "c3eb5db1bd14b8c90a06a94604252f1e246f37e915ee181aa737dbc7fb4e56fe",
+    "venom/client/world.py": "6bcd296ede5c51f1fed8e89f2520b6f799d6aa18fe8534516b00039e433766c9",
+    "venom/common/game.py": "9399b4e45bde996b90e41102cb8000f089bf3501448142413c35d44b079a12c6",
+    "venom/common/story.py": "206eeec35c50982994c443e432d3ba0a6aa4f8b2cc22f4a81ce7304c16cd3182",
+    "venom/common/xros_story_content.py": "7f01ba0c9ab1c211d1d6ee9a38ab629a89933aa7e974325526782d943683be51",
+    "venom/common/xros_story_layout.py": "44bf74a5d3e968b9a52080f6843644c9b04542b586972b7f8f12da6a5ced366c",
+    "venom/server/main.py": "d4ead730d945cc280c1eaea7e10ec60182a91900a739c2d5a270d96f3192de46",
+    "venom/version.py": "269aaa60f11cb647e9c8f6c43dd74276e62eb08cdc3c55171c7bcc64796caa06"
+  },
+  "target_host_checks": [
+    "Build both Windows applications using BUILD_ALL.bat.",
+    "Native Windows setup dialogs and live production MySQL connection.",
+    "Playback on the destination audio device."
+  ]
+}

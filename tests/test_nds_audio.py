@@ -41,20 +41,25 @@ class AudioDecoderTests(unittest.TestCase):
     def test_all_exported_music_and_effects_decode_and_are_audible(self):
         catalog=json.loads((ROOT/'data/audio_catalog.json').read_text())
         world_ds=json.loads((ROOT/'data/world_ds_audio.json').read_text())
-        dawn_music=[entry for entry in catalog['music'] if entry.get('region_id')!='world_ds']
+        xros=json.loads((ROOT/'data/xros_audio.json').read_text())
+        dawn_music=[entry for entry in catalog['music'] if entry.get('region_id', 'dawn')=='dawn']
         ds_music=[entry for entry in catalog['music'] if entry.get('region_id')=='world_ds']
         self.assertEqual(len(dawn_music),46)
         self.assertEqual(len(ds_music),28)
         self.assertEqual(ds_music,world_ds['music'])
-        self.assertEqual(len({entry['id'] for entry in catalog['music']}),74)
+        xros_music=[entry for entry in catalog['music'] if entry.get('region_id')=='xros_wars']
+        self.assertEqual(len(xros_music),20)
+        self.assertEqual(xros_music,xros['music'])
+        self.assertEqual(len(catalog['music']),94)
+        self.assertEqual(len({entry['id'] for entry in catalog['music']}),94)
         self.assertEqual(len(catalog['effects']),183)
         self.assertEqual(catalog['errors'],[])
         for entry in catalog['music']+catalog['effects']:
             with self.subTest(sequence=entry['id']):
                 data,rate=sf.read(ROOT/entry['path'],dtype='float32')
-                # Existing synthesized Dawn exports retain their 22.05 kHz
-                # format; supplied DS preview recordings retain native 32 kHz.
-                self.assertEqual(rate,32000 if entry.get('region_id')=='world_ds' else 22050)
+                # Each region retains its supplied or established sample rate.
+                expected_rate={'dawn':22050,'world_ds':32000,'xros_wars':44100}[entry.get('region_id','dawn')]
+                self.assertEqual(rate,expected_rate)
                 self.assertGreater(len(data),100)
                 self.assertTrue(np.isfinite(data).all())
                 self.assertGreater(float(np.max(np.abs(data))),.0001)

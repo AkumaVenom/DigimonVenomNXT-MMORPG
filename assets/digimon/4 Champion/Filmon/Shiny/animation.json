@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Filmon_Idle.png",
+    "walk_left": "Filmon_LLegWalk.png",
+    "walk_right": "Filmon_RLegWalk.png",
+    "attack1": "Filmon_Idle.png",
+    "attack2": "Filmon_Idle.png"
+  },
+  "animations": {
+    "idle": [
+      "Filmon_Idle.png"
+    ],
+    "walk": [
+      "Filmon_Idle.png",
+      "Filmon_LLegWalk.png",
+      "Filmon_Idle.png",
+      "Filmon_RLegWalk.png"
+    ],
+    "attack": [
+      "Filmon_Idle.png",
+      "Filmon_Idle.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 0,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied v1.2.0 Shiny PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained."
+}

@@ -1,0 +1,82 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "LadyDevimon_AttackPart1.png": {
+      "source_size": [
+        556,
+        758
+      ],
+      "output_size": [
+        748,
+        950
+      ],
+      "padding": {
+        "left": 96,
+        "top": 96,
+        "right": 96,
+        "bottom": 96
+      },
+      "effect_pixel_unit": 6,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "LadyDevimon_AttackPart2.png": {
+      "source_size": [
+        752,
+        818
+      ],
+      "output_size": [
+        944,
+        1010
+      ],
+      "padding": {
+        "left": 96,
+        "top": 96,
+        "right": 96,
+        "bottom": 96
+      },
+      "effect_pixel_unit": 6,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "LadyDevimon_Idle.png": {
+      "source_size": [
+        542,
+        794
+      ],
+      "output_size": [
+        734,
+        986
+      ],
+      "padding": {
+        "left": 96,
+        "top": 96,
+        "right": 96,
+        "bottom": 96
+      },
+      "effect_pixel_unit": 6,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "LadyDevimon_LLegWalk.png": {
+      "source_size": [
+        526,
+        762
+      ],
+      "output_size": [
+        718,
+        954
+      ],
+      "padding": {
+        "left": 96,
+        "top": 96,
+        "right": 96,
+        "bottom": 96
+      },
+      "effect_pixel_unit": 6,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

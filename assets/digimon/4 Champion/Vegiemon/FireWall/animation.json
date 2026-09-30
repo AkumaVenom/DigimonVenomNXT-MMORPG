@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Vegiemon_Idle.png",
+    "walk_left": "Vegiemon_LLegWalk.png",
+    "walk_right": "Vegiemon_RLegWalk.png",
+    "attack1": "Vegiemon_AttackPart1.png",
+    "attack2": "Vegiemon_AttackPart2.png"
+  },
+  "animations": {
+    "idle": [
+      "Vegiemon_Idle.png"
+    ],
+    "walk": [
+      "Vegiemon_Idle.png",
+      "Vegiemon_LLegWalk.png",
+      "Vegiemon_Idle.png",
+      "Vegiemon_RLegWalk.png"
+    ],
+    "attack": [
+      "Vegiemon_AttackPart1.png",
+      "Vegiemon_AttackPart2.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 0,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied FireWall PNG bytes preserved; normal pose selections and mirrors retained. Aura padding is recorded in sprite_geometry.json."
+}

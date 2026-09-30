@@ -1,0 +1,22 @@
+{
+  "variant_id": "shiny_jazardmon",
+  "display_name": "Shiny Jazardmon",
+  "base_species": "Jazardmon",
+  "stage": "4 Champion",
+  "status": "ready",
+  "style_profile": "Prismatic Shiny \u2014 Gold Stardust v1",
+  "palette": "Copper rose",
+  "target_hue_degrees": 15.0,
+  "source_sprite_count": 3,
+  "shiny_sprite_count": 3,
+  "animation_alignment": "Exact source canvas dimensions and sprite positions retained",
+  "effects": "Warm-gold silhouette glow; restrained ivory/gold four-point sparkles; deterministic frame twinkle",
+  "sprites": [
+    "Jazardmon_Idle.png",
+    "Jazardmon_LLegWalk.png",
+    "Jazardmon_RLegWalk.png"
+  ],
+  "primary_sprite": "4 Champion/Jazardmon/Shiny/Jazardmon_Idle.png",
+  "source_primary": "4 Champion/Jazardmon/Jazardmon_Idle.png",
+  "materializable": true
+}

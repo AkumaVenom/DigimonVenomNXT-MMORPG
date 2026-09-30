@@ -1,0 +1,25 @@
+{
+  "variant_id": "shiny_leomon",
+  "display_name": "Shiny Leomon",
+  "base_species": "Leomon",
+  "stage": "4 Champion",
+  "status": "ready",
+  "style_profile": "Prismatic Shiny \u2014 Gold Stardust v1",
+  "palette": "Cerulean",
+  "target_hue_degrees": 196.0,
+  "source_sprite_count": 6,
+  "shiny_sprite_count": 6,
+  "animation_alignment": "Exact source canvas dimensions and sprite positions retained",
+  "effects": "Warm-gold silhouette glow; restrained ivory/gold four-point sparkles; deterministic frame twinkle",
+  "sprites": [
+    "Leomon_AttackPart1.png",
+    "Leomon_AttackPart2.png",
+    "Leomon_Extra.png",
+    "Leomon_Idle.png",
+    "Leomon_LLegWalk.png",
+    "Leomon_RLegWalk.png"
+  ],
+  "primary_sprite": "4 Champion/Leomon/Shiny/Leomon_Idle.png",
+  "source_primary": "4 Champion/Leomon/Leomon_Idle.png",
+  "materializable": true
+}

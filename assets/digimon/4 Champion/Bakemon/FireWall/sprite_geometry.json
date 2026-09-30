@@ -1,0 +1,101 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Bakemon_AttackPart1.png": {
+      "source_size": [
+        466,
+        428
+      ],
+      "output_size": [
+        722,
+        684
+      ],
+      "padding": {
+        "left": 128,
+        "top": 128,
+        "right": 128,
+        "bottom": 128
+      },
+      "effect_pixel_unit": 8,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Bakemon_AttackPart2.png": {
+      "source_size": [
+        466,
+        428
+      ],
+      "output_size": [
+        722,
+        684
+      ],
+      "padding": {
+        "left": 128,
+        "top": 128,
+        "right": 128,
+        "bottom": 128
+      },
+      "effect_pixel_unit": 8,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Bakemon_Idle.png": {
+      "source_size": [
+        450,
+        424
+      ],
+      "output_size": [
+        706,
+        680
+      ],
+      "padding": {
+        "left": 128,
+        "top": 128,
+        "right": 128,
+        "bottom": 128
+      },
+      "effect_pixel_unit": 8,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Bakemon_LLegWalk.png": {
+      "source_size": [
+        418,
+        402
+      ],
+      "output_size": [
+        674,
+        658
+      ],
+      "padding": {
+        "left": 128,
+        "top": 128,
+        "right": 128,
+        "bottom": 128
+      },
+      "effect_pixel_unit": 8,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Bakemon_RLegWalk.png": {
+      "source_size": [
+        418,
+        402
+      ],
+      "output_size": [
+        674,
+        658
+      ],
+      "padding": {
+        "left": 128,
+        "top": 128,
+        "right": 128,
+        "bottom": 128
+      },
+      "effect_pixel_unit": 8,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

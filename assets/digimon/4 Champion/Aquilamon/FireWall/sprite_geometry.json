@@ -1,0 +1,519 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Aquilamon_Idle.png": {
+      "source_size": [
+        1141,
+        775
+      ],
+      "output_size": [
+        1429,
+        1063
+      ],
+      "padding": {
+        "left": 144,
+        "top": 144,
+        "right": 144,
+        "bottom": 144
+      },
+      "effect_pixel_unit": 9,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Aquilamon_LLegWalk.png": {
+      "source_size": [
+        1392,
+        966
+      ],
+      "output_size": [
+        1680,
+        1254
+      ],
+      "padding": {
+        "left": 144,
+        "top": 144,
+        "right": 144,
+        "bottom": 144
+      },
+      "effect_pixel_unit": 9,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Aquilamon_Primary.png": {
+      "source_size": [
+        103,
+        106
+      ],
+      "output_size": [
+        135,
+        138
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Aquilamon_RLegWalk.png": {
+      "source_size": [
+        1392,
+        966
+      ],
+      "output_size": [
+        1680,
+        1254
+      ],
+      "padding": {
+        "left": 144,
+        "top": 144,
+        "right": 144,
+        "bottom": 144
+      },
+      "effect_pixel_unit": 9,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Aquilamon_Frame_001.png": {
+      "source_size": [
+        103,
+        106
+      ],
+      "output_size": [
+        135,
+        138
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Aquilamon_Frame_002.png": {
+      "source_size": [
+        130,
+        91
+      ],
+      "output_size": [
+        162,
+        123
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Aquilamon_Frame_003.png": {
+      "source_size": [
+        126,
+        68
+      ],
+      "output_size": [
+        158,
+        100
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Aquilamon_Frame_004.png": {
+      "source_size": [
+        33,
+        38
+      ],
+      "output_size": [
+        65,
+        70
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Aquilamon_Frame_005.png": {
+      "source_size": [
+        35,
+        35
+      ],
+      "output_size": [
+        67,
+        67
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Aquilamon_Frame_006.png": {
+      "source_size": [
+        35,
+        33
+      ],
+      "output_size": [
+        67,
+        65
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Aquilamon_Frame_007.png": {
+      "source_size": [
+        103,
+        99
+      ],
+      "output_size": [
+        135,
+        131
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Aquilamon_Frame_008.png": {
+      "source_size": [
+        126,
+        68
+      ],
+      "output_size": [
+        158,
+        100
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Aquilamon_Frame_009.png": {
+      "source_size": [
+        29,
+        37
+      ],
+      "output_size": [
+        61,
+        69
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Aquilamon_Frame_010.png": {
+      "source_size": [
+        30,
+        37
+      ],
+      "output_size": [
+        62,
+        69
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Aquilamon_Frame_011.png": {
+      "source_size": [
+        30,
+        35
+      ],
+      "output_size": [
+        62,
+        67
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Aquilamon_Frame_012.png": {
+      "source_size": [
+        33,
+        38
+      ],
+      "output_size": [
+        65,
+        70
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Aquilamon_Frame_013.png": {
+      "source_size": [
+        35,
+        35
+      ],
+      "output_size": [
+        67,
+        67
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Aquilamon_Frame_014.png": {
+      "source_size": [
+        35,
+        33
+      ],
+      "output_size": [
+        67,
+        65
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Aquilamon_Frame_015.png": {
+      "source_size": [
+        35,
+        42
+      ],
+      "output_size": [
+        67,
+        74
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Aquilamon_Frame_016.png": {
+      "source_size": [
+        36,
+        39
+      ],
+      "output_size": [
+        68,
+        71
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Aquilamon_Frame_017.png": {
+      "source_size": [
+        30,
+        37
+      ],
+      "output_size": [
+        62,
+        69
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Aquilamon_Frame_018.png": {
+      "source_size": [
+        29,
+        37
+      ],
+      "output_size": [
+        61,
+        69
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Aquilamon_Frame_019.png": {
+      "source_size": [
+        31,
+        38
+      ],
+      "output_size": [
+        63,
+        70
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Aquilamon_Frame_020.png": {
+      "source_size": [
+        30,
+        35
+      ],
+      "output_size": [
+        62,
+        67
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Aquilamon_Frame_021.png": {
+      "source_size": [
+        11,
+        12
+      ],
+      "output_size": [
+        19,
+        20
+      ],
+      "padding": {
+        "left": 4,
+        "top": 4,
+        "right": 4,
+        "bottom": 4
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": true
+    },
+    "Frames/Aquilamon_Frame_022.png": {
+      "source_size": [
+        11,
+        12
+      ],
+      "output_size": [
+        19,
+        20
+      ],
+      "padding": {
+        "left": 4,
+        "top": 4,
+        "right": 4,
+        "bottom": 4
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": true
+    },
+    "Frames/Aquilamon_Frame_023.png": {
+      "source_size": [
+        10,
+        12
+      ],
+      "output_size": [
+        18,
+        20
+      ],
+      "padding": {
+        "left": 4,
+        "top": 4,
+        "right": 4,
+        "bottom": 4
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": true
+    }
+  }
+}

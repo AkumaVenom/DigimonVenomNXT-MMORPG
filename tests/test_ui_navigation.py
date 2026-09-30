@@ -142,17 +142,38 @@ class NativeMenuNavigationTests(unittest.TestCase):
 
     def test_activity_filters_counters_and_map_navigation_preserve_controls(self):
         self.render('activity')
-        for label in ('Wild', 'Ranked', 'Progress', 'Travel', 'All'):
-            self.click(label)
-            self.assertEqual(self.app.community.activity_filter, label)
-            self.render()
-        self.click('More counters')
-        self.assertEqual(self.app.community.stats_page, 1)
-        self.render()
-        self.click('Main counters')
+        request = self.patches.enter_context(patch.object(self.app.community, 'request'))
+        before_state = copy.deepcopy(self.app.state)
+        before_data = copy.deepcopy(self.app.community.data)
+        pages = (len(self.app.community.COUNTERS)+11)//12
+        self.assertGreaterEqual(pages, 3)
+        self.assertIn(('firewall_materialized', 'FireWall created'), self.app.community.COUNTERS)
+        for page in range(pages):
+            with self.subTest(page=page):
+                self.assertEqual(self.app.community.stats_page, page)
+                for label in ('Wild', 'Ranked', 'Progress', 'Travel', 'All'):
+                    self.click(label)
+                    self.assertEqual(self.app.community.activity_filter, label)
+                    self.assertEqual(self.app.community.stats_page, page)
+                    self.render()
+                self.click('Map population')
+                self.assertEqual(self.app.community.mode, 'maps')
+                request.assert_called_with('activity')
+                self.render()
+                self.click('Recent activity')
+                self.assertEqual(self.app.community.mode, 'feed')
+                self.assertEqual(self.app.community.stats_page, page)
+                self.assertEqual(self.app.community.activity_filter, 'All')
+                self.render()
+                bounds = self.app.screen.get_rect()
+                for rect, _ in self.app.ui.actions:
+                    self.assertTrue(bounds.contains(rect), (page, rect, bounds))
+                self.click(f'Counters {page+1} / {pages}  ·  Next')
+                self.assertEqual(self.app.community.stats_page, (page+1)%pages)
+                self.render()
         self.assertEqual(self.app.community.stats_page, 0)
-        self.click('Map population')
-        self.assertEqual(self.app.community.mode, 'maps')
+        self.assertEqual(self.app.state, before_state)
+        self.assertEqual(self.app.community.data, before_data)
 
     def test_replay_controls_only_change_playback_and_return_to_hub(self):
         self.render('ranked_replay')

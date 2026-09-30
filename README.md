@@ -1,6 +1,63 @@
 # Digimon Venom NXT
 
-**v1.0.1 — Permanent ABI growth for every partner.**
+**v1.5.0 — FireWall varieties and Dawn Relay Scan Mastery.**
+
+All **502 FireWall Digimon** are integrated with the supplied red-orange aura
+artwork, separate scans, owned partners and variety-preserving evolution.
+Find them in stage-appropriate habitats across **all 500 public world maps**
+at **0.7% per wild battle**. Shiny remains 1% and Paradox remains 2.5%.
+
+Completing **Dawn Relay** grants permanent **+20% FireWall scan gain on eligible
+wild victories**: 5 base points plus 1 victory bonus, totaling **6%**. Existing
+Dawn champions receive the mastery automatically, including when their Dawn
+campaign is saved while another campaign is active. Title defenses remain
+available; mastery persists if the title is later lost.
+
+Extract **every v1.5.0 Source Part ZIP** into the same parent folder, merging
+`DigimonVenomNXT`. Read [docs/FIREWALL_V150.md](docs/FIREWALL_V150.md), run
+**BUILD_ALL.bat on Windows x64**, and deploy both rebuilt applications while
+preserving existing saves and configuration. These downloads contain source
+and assets; Windows executables must be built on Windows.
+
+**Retained v1.4.0 — Super Xros: Ghostline private story campaign.**
+
+Open **Story Mode / F4 → Super Xros: Ghostline** for an original cyber-hacking
+investigation across **31 private maps**: a peaceful service hub and thirty
+quest fields, linked by progression portals. Bring your existing partners at
+their real stats, use the usual DigiLab, DigiFarm and shop, and save your own
+case progress independently of the other two campaigns.
+
+Finish the campaign for permanent **+20% Shiny scan gain on wild victories**:
+the normal 5% becomes 6% when you win. The 1% Shiny encounter chance remains
+unchanged, and the reward is separate from Paradox Scan Mastery.
+
+The campaign and its Shiny mastery remain available alongside Dawn Relay and
+Paradox Chronicle. See [docs/GHOSTLINE_V140.md](docs/GHOSTLINE_V140.md) for its
+story guide; use the v1.5.0 upgrade instructions above for this release.
+
+**Retained v1.3.0 — Super Xros Wars world expansion.**
+
+Explore **96 new maps across 14 zones**, from level 1 to 99, with **20 supplied
+music recordings**. The world now has **500 maps** across Dawn, World DS and
+Super Xros Wars. Open **Worlds → Super Xros Wars** to begin the new route.
+
+All 502 normal Digimon have stage-appropriate habitats in the new region,
+including their Shiny and updated Cyber Paradox varieties. Shiny encounters
+remain **1% per wild battle**, awarding **5% scan progress** per defeated Shiny.
+Persistent rivals explore, battle, recruit and travel across all three regions,
+with population balancing that targets six rivals per map at the 3,000 maximum.
+
+See [docs/SUPER_XROS_WARS_V130.md](docs/SUPER_XROS_WARS_V130.md) for
+the retained public-region guide. Use the v1.5.0 upgrade instructions above
+for this release.
+
+**Retained v1.2.0 — Shiny encounters and Cyber Paradox varieties.**
+
+All 502 Shiny varieties, separate scan records, variety-preserving evolution,
+and the new Cyber Paradox animation artwork remain in place. Read
+[docs/VARIETIES_V120.md](docs/VARIETIES_V120.md) for those retained rules.
+
+**Retained v1.0.1 — Permanent ABI growth for every partner.**
 
 Buy **ABI DigiMeat** in **Shop → ABI growth** for **6,000 credits or 30
 DigiRubies**. Each owned treat adds **+1 permanent ABI**, up to 200, without
@@ -10,7 +67,7 @@ has no de-digivolution, including when it is your only party member. Evolution
 still checks the selected route's level, CAM and stat requirements.
 
 Read [docs/ABI_DIGIMEAT_V101.md](docs/ABI_DIGIMEAT_V101.md) for feeding rules and
-the current upgrade. **Run BUILD_ALL.bat and deploy BOTH rebuilt Windows
+the original v1.0.1 upgrade. For v1.5.0 use the guide above. **Run BUILD_ALL.bat and deploy BOTH rebuilt Windows
 applications**, even if already running v1.0.0. The server owns the new item
 and its permanent effect. Back up the complete stopped server and preserve its
 database, private credentials and configuration. No database reset or fresh
@@ -24,11 +81,11 @@ Stable species identities, ownership, scans and progression carry forward.
 See [docs/RELEASE_V100.md](docs/RELEASE_V100.md) and
 [docs/FANGLONGMON_V100.md](docs/FANGLONGMON_V100.md) for that release's history.
 
-The complete game retains both private story campaigns, DigiLab, DigiFarm,
+The complete game retains all three private story campaigns, DigiLab, DigiFarm,
 DigiRuby shopping and exchange, private Season careers and Ranked Arena. The
 **3,000-rival maximum**, **12-hour Bot Activity window**, startup ownership
 repair and compressed world updates remain in place. Earlier instructions
-below describe their original releases; use the v1.0.1 guide for this update.
+below describe their original releases; use the v1.5.0 guide for this update.
 
 **Retained v0.12.3 — 3,000 persistent tamer rivals.**
 
@@ -39,7 +96,7 @@ retires the extra 2,000 rivals and removes their saved rival state; the retained
 negotiated WebSocket compression while preserving the complete map population
 and update rate. Read [docs/POPULATION_V0123.md](docs/POPULATION_V0123.md) for
 that migration's exact scope and historical measurements. For this release,
-follow the v1.0.1 guide above and update both applications.
+follow the v1.5.0 guide above and update both applications.
 
 **Retained v0.12.2 — Bot Activity shows the latest 12 hours.**
 
@@ -56,7 +113,7 @@ The previous restart repair also remains: **there is no overall startup
 loading deadline**.
 
 Read [docs/BOT_ACTIVITY_V0122.md](docs/BOT_ACTIVITY_V0122.md) for retention details
-and its original upgrade. For the current update use the v1.0.1 guide above.
+and its original upgrade. For the current update use the v1.5.0 guide above.
 The original activity upgrade required both applications for the updated
 display. Preserve `config`, `mysql/data`, private MySQL settings and
 `mysql/runtime`; do not run fresh setup or clear saved progress.
@@ -78,7 +135,7 @@ if another error remains. Existing saves, rivals and rewards are preserved.
 
 Read [docs/RESTART_REPAIR_V0121.md](docs/RESTART_REPAIR_V0121.md) for the original
 repair details and restart checks. That server-only hotfix preserved
-compatibility with v0.12.0 clients. For the current v1.0.1 update, rebuild and
+compatibility with v0.12.0 clients. For the current v1.4.0 update, rebuild and
 deploy both applications using the guide above.
 
 **Retained v0.12.0 — Spend DigiRubies in the shop or exchange them for credits.**
@@ -104,7 +161,7 @@ private MySQL settings, and the existing client/server `config` folders.
 both Windows x64 applications on the intended Windows machine.
 
 The v0.12.0 guide describes the economy feature release and its original
-upgrade. For the current update, follow the v1.0.1 guide above.
+upgrade. For the current update, follow the v1.5.0 guide above.
 
 **Retained v0.11.0 — World DS: Paradox Chronicle, a second private story campaign.**
 
@@ -201,7 +258,7 @@ Read [docs/ADMIN_CONSOLE_V080.md](docs/ADMIN_CONSOLE_V080.md) for the full comma
 reference, console tiers, hidden password prompts, confirmation rules, and exact
 upgrade procedure. Windows executables must be built on Windows x64.
 
-The following v0.7.0 and earlier notes describe retained features. For the current upgrade, use the v1.0.1 guide linked above.
+The following v0.7.0 and earlier notes describe retained features. For the current upgrade, use the v1.5.0 guide linked above.
 
 **Retained Season Mode v0.7.0 — private, persistent tamer careers.**
 

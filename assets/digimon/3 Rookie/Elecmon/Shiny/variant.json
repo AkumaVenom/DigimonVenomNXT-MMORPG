@@ -1,0 +1,22 @@
+{
+  "variant_id": "shiny_elecmon",
+  "display_name": "Shiny Elecmon",
+  "base_species": "Elecmon",
+  "stage": "3 Rookie",
+  "status": "ready",
+  "style_profile": "Prismatic Shiny \u2014 Gold Stardust v1",
+  "palette": "Cerulean",
+  "target_hue_degrees": 196.0,
+  "source_sprite_count": 3,
+  "shiny_sprite_count": 3,
+  "animation_alignment": "Exact source canvas dimensions and sprite positions retained",
+  "effects": "Warm-gold silhouette glow; restrained ivory/gold four-point sparkles; deterministic frame twinkle",
+  "sprites": [
+    "Elecmon_Idle.png",
+    "Elecmon_LLegWalk.png",
+    "Elecmon_RLegWalk.png"
+  ],
+  "primary_sprite": "3 Rookie/Elecmon/Shiny/Elecmon_Idle.png",
+  "source_primary": "3 Rookie/Elecmon/Elecmon_Idle.png",
+  "materializable": true
+}

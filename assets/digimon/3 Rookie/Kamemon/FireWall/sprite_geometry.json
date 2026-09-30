@@ -1,0 +1,101 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Kamemon_AttackPart1.png": {
+      "source_size": [
+        404,
+        516
+      ],
+      "output_size": [
+        660,
+        772
+      ],
+      "padding": {
+        "left": 128,
+        "top": 128,
+        "right": 128,
+        "bottom": 128
+      },
+      "effect_pixel_unit": 8,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Kamemon_AttackPart2.png": {
+      "source_size": [
+        640,
+        540
+      ],
+      "output_size": [
+        896,
+        796
+      ],
+      "padding": {
+        "left": 128,
+        "top": 128,
+        "right": 128,
+        "bottom": 128
+      },
+      "effect_pixel_unit": 8,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Kamemon_Idle.png": {
+      "source_size": [
+        382,
+        516
+      ],
+      "output_size": [
+        638,
+        772
+      ],
+      "padding": {
+        "left": 128,
+        "top": 128,
+        "right": 128,
+        "bottom": 128
+      },
+      "effect_pixel_unit": 8,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Kamemon_LLegWalk.png": {
+      "source_size": [
+        390,
+        542
+      ],
+      "output_size": [
+        646,
+        798
+      ],
+      "padding": {
+        "left": 128,
+        "top": 128,
+        "right": 128,
+        "bottom": 128
+      },
+      "effect_pixel_unit": 8,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Kamemon_RLegWalk.png": {
+      "source_size": [
+        390,
+        542
+      ],
+      "output_size": [
+        646,
+        798
+      ],
+      "padding": {
+        "left": 128,
+        "top": 128,
+        "right": 128,
+        "bottom": 128
+      },
+      "effect_pixel_unit": 8,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

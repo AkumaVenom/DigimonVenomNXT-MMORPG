@@ -1,0 +1,25 @@
+{
+  "variant_id": "shiny_wormmon",
+  "display_name": "Shiny Wormmon",
+  "base_species": "Wormmon",
+  "stage": "3 Rookie",
+  "status": "ready",
+  "style_profile": "Prismatic Shiny \u2014 Gold Stardust v1",
+  "palette": "Moonlit indigo",
+  "target_hue_degrees": 244.0,
+  "source_sprite_count": 6,
+  "shiny_sprite_count": 6,
+  "animation_alignment": "Exact source canvas dimensions and sprite positions retained",
+  "effects": "Warm-gold silhouette glow; restrained ivory/gold four-point sparkles; deterministic frame twinkle",
+  "sprites": [
+    "Wormmon_AttackPart1.png",
+    "Wormmon_AttackPart2.png",
+    "Wormmon_Extra.png",
+    "Wormmon_Idle.png",
+    "Wormmon_LLegWalk.png",
+    "Wormmon_RLegWalk.png"
+  ],
+  "primary_sprite": "3 Rookie/Wormmon/Shiny/Wormmon_Idle.png",
+  "source_primary": "3 Rookie/Wormmon/Wormmon_Idle.png",
+  "materializable": true
+}

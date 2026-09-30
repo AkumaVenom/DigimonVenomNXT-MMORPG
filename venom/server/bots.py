@@ -18,7 +18,7 @@ import time
 import uuid
 from collections import Counter, deque
 
-from venom.common.game import GameError, SHOP, STAGE_RANK, effectiveness
+from venom.common.game import GameError, SHOP, STAGE_RANK, effectiveness, variety_of
 from venom.common.population import DEFAULT_BOTS, MAX_BOTS
 from .activity_window import RollingActivity, WINDOW_SECONDS, EVENT_LIMIT
 from .navigation import Navigation
@@ -30,7 +30,7 @@ STARTUP_BATCH = 100
 STAT_KEYS = (
     "wild_wins", "wild_losses", "wild_started", "ranked_wins", "ranked_losses",
     "ranked_started", "rival_wins", "rival_losses", "scans", "scan_data",
-    "materialized", "paradox_materialized", "level_ups", "xp_earned",
+    "materialized", "paradox_materialized", "shiny_materialized", "firewall_materialized", "level_ups", "xp_earned",
     "evolutions", "devolutions", "heals", "items_used", "purchases",
     "party_swaps", "travels", "walking_distance", "exploration_steps", "errors",
     "training_rotations", "teams_trained", "coverage_visits",
@@ -522,7 +522,7 @@ class BotManager:
         ready = [sid for sid, progress in state["scan"].items() if progress >= 100]
         known = {m["species_id"] for m in state["party"] + state["storage"]}
         # Earned duplicates supply later training rounds too; never mint scan data.
-        ready.sort(key=lambda sid: (sid in known, not self.engine.species[sid].get("paradox"), sid))
+        ready.sort(key=lambda sid: (sid in known, variety_of(self.engine.species[sid]) == "normal", sid))
         for sid in ready[:2]:
             if len(state["storage"]) >= 48:
                 break
@@ -531,6 +531,10 @@ class BotManager:
             self._increment(bot, "materialized")
             if self.engine.species[sid].get("paradox"):
                 self._increment(bot, "paradox_materialized")
+            if self.engine.species[sid].get("shiny"):
+                self._increment(bot, "shiny_materialized")
+            if self.engine.species[sid].get("firewall"):
+                self._increment(bot, "firewall_materialized")
             self._record(bot, "materialize", f"Materialized {self.engine.species[sid]['name']} from {progress}% scan data.",
                          species_id=sid, scan_before=progress)
             known.add(sid)
@@ -539,6 +543,23 @@ class BotManager:
     def _field_level(party):
         # A high-level reserve must not send a fresh field team into lethal maps.
         return min((m["level"] for m in party[:3]), default=1)
+
+    def _coverage_quota(self):
+        """Aim for a fair share of the population on every catalog field.
+
+        Visits remain bounded and capability checks still apply. This is a
+        target for earned teams, never permission to create levels or partners.
+        """
+        return max(1, self.count // max(1, len(self.by_map)))
+
+    def _map_load(self, map_id):
+        """Residents plus reserved arrivals, without counting anyone twice.
+
+        A planned departure remains a resident until travel actually succeeds;
+        restored battles and Lab work must not advertise imaginary vacancies.
+        """
+        arriving = self.coverage_reservations[map_id] - self.by_map[map_id]
+        return len(self.by_map[map_id]) + len(arriving)
 
     def _coverage_guard(self, bot):
         """Retain some capable teams while other residents start fresh cohorts.
@@ -553,9 +574,11 @@ class BotManager:
         level = int(self.engine.maps[state["map_id"]].get("level", 1))
         if level <= 3:
             return False
-        quota = max(1, self.count // max(1, len(self.by_map)) // 4)
+        quota = self._coverage_quota()
         capable = sum(self._field_level(self.bots[ident]["state"]["party"]) + 2 >= level
-                      for ident in self.by_map[state["map_id"]] if ident != bot["id"])
+                      for ident in self.by_map[state["map_id"]] if ident != bot["id"]
+                      and self.bots[ident]["runtime"].get("coverage_target") in (None, state["map_id"]))
+        capable += len(self.coverage_reservations[state["map_id"]] - self.by_map[state["map_id"]])
         return capable < quota
 
     def _observe_training(self, bot):
@@ -698,16 +721,16 @@ class BotManager:
             elif self._coverage_guard(bot) and any(m["level"] + 2 >= sector.get("level", 1) for m in owned):
                 target = sector
             else:
-                quota = max(1, self.count // max(1, len(self.by_map)) // 4)
+                quota = self._coverage_quota()
                 strength = max(m["level"] for m in owned)
                 # Map occupancy is cheap to inspect and applies only to remote
                 # destinations; local protection counts capable field teams.
                 choices = [area for area in self.engine.maps.values()
                            if 3 < area.get("level", 1) <= strength + 2
-                           and len(self.by_map[area["id"]]) + len(self.coverage_reservations[area["id"]]) < quota
+                           and self._map_load(area["id"]) < quota
                            and area.get("level", 1) > self._field_level([by_uid[uid] for uid in desired]) + 2]
                 if choices:
-                    target = min(choices, key=lambda area: (len(self.by_map[area["id"]]) + len(self.coverage_reservations[area["id"]]),
+                    target = min(choices, key=lambda area: (self._map_load(area["id"]),
                                                            -area.get("level", 1), area["id"]))
         if target:
             sector_level = int(target.get("level", 1))
@@ -842,8 +865,18 @@ class BotManager:
             # can visit every eligible map instead of bouncing between a few.
             cursor = self.map_indices.get(runtime.get("route_after_map"), bot["ordinal"] % len(self.map_order))
             target = min(candidates, key=lambda area: (
-                len(self.by_map[area["id"]]) + len(self.coverage_reservations[area["id"]]),
+                self._map_load(area["id"]),
                 (self.map_indices[area["id"]] - cursor - 1) % len(self.map_order)))
+            # A quiet field must not lose its final capable resident merely
+            # because its dwell timer expired while other fields are fuller.
+            # Equal-density visits still rotate normally; safe retreat and a
+            # specific veteran reservation always take priority.
+            if (not easier and not assigned and now >= runtime["leave_at"]
+                    and self.count >= len(self.by_map) * 2
+                    and (self._map_load(target["id"]) > self._map_load(old_map)
+                         or (self._map_load(old_map) == 1 and self._map_load(target["id"]) >= 1))):
+                runtime.update(relocate=False, visited_at=now, leave_at=now + self.dwell_min)
+                return
             self._execute(bot, "travel", {"map_id": target["id"]})
             # Spread arrivals only on a real sector transition. Existing walkers
             # remain on their continuous path; every client sees the same point.

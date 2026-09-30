@@ -1,0 +1,405 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Frames/RedVegiemon_Frame_001.png": {
+      "source_size": [
+        77,
+        71
+      ],
+      "output_size": [
+        109,
+        103
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/RedVegiemon_Frame_002.png": {
+      "source_size": [
+        78,
+        71
+      ],
+      "output_size": [
+        110,
+        103
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/RedVegiemon_Frame_003.png": {
+      "source_size": [
+        79,
+        68
+      ],
+      "output_size": [
+        111,
+        100
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/RedVegiemon_Frame_004.png": {
+      "source_size": [
+        71,
+        96
+      ],
+      "output_size": [
+        103,
+        128
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/RedVegiemon_Frame_005.png": {
+      "source_size": [
+        80,
+        74
+      ],
+      "output_size": [
+        112,
+        106
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/RedVegiemon_Frame_006.png": {
+      "source_size": [
+        27,
+        32
+      ],
+      "output_size": [
+        59,
+        64
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/RedVegiemon_Frame_007.png": {
+      "source_size": [
+        27,
+        32
+      ],
+      "output_size": [
+        59,
+        64
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/RedVegiemon_Frame_008.png": {
+      "source_size": [
+        28,
+        30
+      ],
+      "output_size": [
+        60,
+        62
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/RedVegiemon_Frame_009.png": {
+      "source_size": [
+        28,
+        30
+      ],
+      "output_size": [
+        60,
+        62
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/RedVegiemon_Frame_010.png": {
+      "source_size": [
+        26,
+        32
+      ],
+      "output_size": [
+        58,
+        64
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/RedVegiemon_Frame_011.png": {
+      "source_size": [
+        26,
+        32
+      ],
+      "output_size": [
+        58,
+        64
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/RedVegiemon_Frame_012.png": {
+      "source_size": [
+        27,
+        32
+      ],
+      "output_size": [
+        59,
+        64
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/RedVegiemon_Frame_013.png": {
+      "source_size": [
+        27,
+        32
+      ],
+      "output_size": [
+        59,
+        64
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/RedVegiemon_Frame_014.png": {
+      "source_size": [
+        26,
+        32
+      ],
+      "output_size": [
+        58,
+        64
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/RedVegiemon_Frame_015.png": {
+      "source_size": [
+        26,
+        32
+      ],
+      "output_size": [
+        58,
+        64
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/RedVegiemon_Frame_016.png": {
+      "source_size": [
+        28,
+        31
+      ],
+      "output_size": [
+        60,
+        63
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/RedVegiemon_Frame_017.png": {
+      "source_size": [
+        28,
+        31
+      ],
+      "output_size": [
+        60,
+        63
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/RedVegiemon_Frame_018.png": {
+      "source_size": [
+        28,
+        36
+      ],
+      "output_size": [
+        60,
+        68
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/RedVegiemon_Frame_019.png": {
+      "source_size": [
+        26,
+        30
+      ],
+      "output_size": [
+        58,
+        62
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/RedVegiemon_Frame_020.png": {
+      "source_size": [
+        28,
+        28
+      ],
+      "output_size": [
+        60,
+        60
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "RedVegiemon_Primary.png": {
+      "source_size": [
+        77,
+        71
+      ],
+      "output_size": [
+        109,
+        103
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

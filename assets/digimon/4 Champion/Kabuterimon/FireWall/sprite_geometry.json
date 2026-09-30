@@ -1,0 +1,120 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Kabuterimon_AttackPart1.png": {
+      "source_size": [
+        650,
+        774
+      ],
+      "output_size": [
+        842,
+        966
+      ],
+      "padding": {
+        "left": 96,
+        "top": 96,
+        "right": 96,
+        "bottom": 96
+      },
+      "effect_pixel_unit": 6,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Kabuterimon_AttackPart2.png": {
+      "source_size": [
+        688,
+        722
+      ],
+      "output_size": [
+        880,
+        914
+      ],
+      "padding": {
+        "left": 96,
+        "top": 96,
+        "right": 96,
+        "bottom": 96
+      },
+      "effect_pixel_unit": 6,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Kabuterimon_Extra.png": {
+      "source_size": [
+        688,
+        722
+      ],
+      "output_size": [
+        880,
+        914
+      ],
+      "padding": {
+        "left": 96,
+        "top": 96,
+        "right": 96,
+        "bottom": 96
+      },
+      "effect_pixel_unit": 6,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Kabuterimon_Idle.png": {
+      "source_size": [
+        654,
+        696
+      ],
+      "output_size": [
+        846,
+        888
+      ],
+      "padding": {
+        "left": 96,
+        "top": 96,
+        "right": 96,
+        "bottom": 96
+      },
+      "effect_pixel_unit": 6,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Kabuterimon_LLegWalk.png": {
+      "source_size": [
+        674,
+        770
+      ],
+      "output_size": [
+        866,
+        962
+      ],
+      "padding": {
+        "left": 96,
+        "top": 96,
+        "right": 96,
+        "bottom": 96
+      },
+      "effect_pixel_unit": 6,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Kabuterimon_RLegWalk.png": {
+      "source_size": [
+        674,
+        770
+      ],
+      "output_size": [
+        866,
+        962
+      ],
+      "padding": {
+        "left": 96,
+        "top": 96,
+        "right": 96,
+        "bottom": 96
+      },
+      "effect_pixel_unit": 6,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

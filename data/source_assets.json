@@ -206,5 +206,236 @@
     "filename": "fanglongmon&ParadoxVariety_6_png_frames_each.rar",
     "size": 18622103,
     "sha256": "9af7c226cb1917f38e493091d05adb4b9192b1b968d5d2458ef4e686869f6cae"
+  },
+  {
+    "kind": "fixed_sprites_v110",
+    "filename": "DigimonFixedSpritesFor_v1.1.0.rar",
+    "size": 6475976,
+    "sha256": "0b12d470162c08bade9da98731902ef11d1965e155bcd3773eb5ad2c8a74cf9e",
+    "source_images": 711,
+    "canonical_replacements": 709,
+    "animation_frames": 584,
+    "primary_images": 125,
+    "species": 133,
+    "duplicate_inputs": 2,
+    "record": "data/fixed_sprites_v110.json"
+  },
+  {
+    "kind": "fixed_sprites_v111",
+    "version": "1.1.1",
+    "target": "Uploaded v1.1.0 sprite-patched source (application identity retained)",
+    "source_archive": "FixedSpritesPart2For_v1.1.1(1).rar",
+    "source_archive_sha256": "f3627c6db49bd30aab9faa608c2bb9aad6842d3bb4accfb5715c145dbf70fcb6",
+    "record": "data/fixed_sprites_v111.json",
+    "source_images": 68,
+    "canonical_replacements": 75,
+    "species": 20,
+    "method": "Byte-exact canonical overwrites, proven same-pose copy synchronization, explicit animation sidecars and manifest SHA-256 updates. No redrawing, re-encoding, rescaling, gameplay changes or Paradox substitutions."
+  },
+  {
+    "kind": "varieties_v120",
+    "release": "1.2.0",
+    "use": "Complete Cyber Paradox replacement and new Shiny varieties; supplied PNG bytes unchanged",
+    "source_file_count": 17345,
+    "source_tree_sha256": "1ebe385d0bbce06c9c16280705275d5431255b480302c7c38e5d1e64ec807c71",
+    "parts": [
+      {
+        "filename": "Digimon_Cyber_Paradox&Shiny_Varieties_Sprites.part01.rar",
+        "size": 26214400,
+        "sha256": "d97107599033451a79cd6ea6c04caa773498ca3075a01fb38c92d2a736d2f052"
+      },
+      {
+        "filename": "Digimon_Cyber_Paradox&Shiny_Varieties_Sprites.part02.rar",
+        "size": 26214400,
+        "sha256": "827a70aa43500090436795073c98a6fa03470d2b2e05e37833bcba63ac921d23"
+      },
+      {
+        "filename": "Digimon_Cyber_Paradox&Shiny_Varieties_Sprites.part03.rar",
+        "size": 26214400,
+        "sha256": "dd0f16424f8c1d8c9df6f9ffb83c4adfb0c5abd08b0d3ce8c8c9c7f3f73afcdb"
+      },
+      {
+        "filename": "Digimon_Cyber_Paradox&Shiny_Varieties_Sprites.part04.rar",
+        "size": 26214400,
+        "sha256": "a4c235431b5a983c6950925bf9ebebdbe550316a14e344b925adbe3ce9c9dbfe"
+      },
+      {
+        "filename": "Digimon_Cyber_Paradox&Shiny_Varieties_Sprites.part05.rar",
+        "size": 26214400,
+        "sha256": "77d9a903ce8a663c8a128ba831601963caec2e7ee798612cb873ce91eee9cc20"
+      },
+      {
+        "filename": "Digimon_Cyber_Paradox&Shiny_Varieties_Sprites.part06.rar",
+        "size": 26214400,
+        "sha256": "474e82831243e645f8963bb9189a6e949cbd04194172c9476d3e3c1eeb03a127"
+      },
+      {
+        "filename": "Digimon_Cyber_Paradox&Shiny_Varieties_Sprites.part07.rar",
+        "size": 26214400,
+        "sha256": "b2db6b22761eb4cac38cd69d5d147970c618f3e975ddf6d9b54e4a7faedd833b"
+      },
+      {
+        "filename": "Digimon_Cyber_Paradox&Shiny_Varieties_Sprites.part08.rar",
+        "size": 26214400,
+        "sha256": "8b5ef39f9c27b0cf39bf1be7437c51cf1d8a50a0a3872565fb0271b254182369"
+      },
+      {
+        "filename": "Digimon_Cyber_Paradox&Shiny_Varieties_Sprites.part09.rar",
+        "size": 26214400,
+        "sha256": "1faeebcba47cceb155de76940cc26797561ad5f285cd62590a80fe9216607b29"
+      },
+      {
+        "filename": "Digimon_Cyber_Paradox&Shiny_Varieties_Sprites.part10.rar",
+        "size": 17860082,
+        "sha256": "a464314236c6c271eef245ddf3677d823c43b71fd142d917ca13ec8b17964444"
+      }
+    ]
+  },
+  {
+    "kind": "super_xros_wars_v130",
+    "release": "1.3.0",
+    "parts": [
+      {
+        "filename": "New folder.part01.rar",
+        "size": 26214400,
+        "sha256": "e24e08d81cebd6f9f3c7f1af76f0b8d9ba4d6dddb69f5a3c3c224a67281e7d3a"
+      },
+      {
+        "filename": "New folder.part02.rar",
+        "size": 26214400,
+        "sha256": "ba062ca7d6b8967e82ca53ff41fd4814ef39909f72194d2d7026319efbdf8962"
+      },
+      {
+        "filename": "New folder.part03.rar",
+        "size": 26214400,
+        "sha256": "8970c41ec856479a9d96d533319e830031c1ee3b8ffb9dc617d8cd6a5dedab6a"
+      },
+      {
+        "filename": "New folder.part04.rar",
+        "size": 26214400,
+        "sha256": "bfb2edb80dc17e6b94db5d8e55c4398b67342d711f42dd9ee9810b399aa07b80"
+      },
+      {
+        "filename": "New folder.part05.rar",
+        "size": 26214400,
+        "sha256": "ee7ad0e72b73e5d67bbe6f12ff33d2e24906568ae51356c0129867d38ee5b6e5"
+      },
+      {
+        "filename": "New folder.part06.rar",
+        "size": 26214400,
+        "sha256": "6f5466e412e2189c3432920d55d006f1cc05dd40ae9cb2aa1304f77c8e846d6a"
+      },
+      {
+        "filename": "New folder.part07.rar",
+        "size": 26214400,
+        "sha256": "fd12b6560ecd0e01058d13fc7f1649656c02b5efcfb82386b313488c6f2b4155"
+      },
+      {
+        "filename": "New folder.part08.rar",
+        "size": 26214400,
+        "sha256": "ea9eca185b612bc1eb06e9d270d3fa663fb46de223848fa71a63cb2be19cc2e2"
+      },
+      {
+        "filename": "New folder.part09.rar",
+        "size": 26214400,
+        "sha256": "4e439cc86b53e003a89edc000dffa51c20f1acb42762546fdc1976ffd70da311"
+      },
+      {
+        "filename": "New folder.part10.rar",
+        "size": 26214400,
+        "sha256": "794e078d629a27c7546fcf4fe02f71620ef4fe2f77bad172be7861e7298426b4"
+      },
+      {
+        "filename": "New folder.part11.rar",
+        "size": 26214400,
+        "sha256": "1e374ab658101043dd5b6498da9db6683f492b691526ad5c71d5237818dec4e1"
+      },
+      {
+        "filename": "New folder.part12.rar",
+        "size": 26214400,
+        "sha256": "c561286379fa6dc7dc228096ef9af9ce7be45a75e92d1f43fa5b09c534f7d47e"
+      },
+      {
+        "filename": "New folder.part13.rar",
+        "size": 26214400,
+        "sha256": "62cfa42507c3ba18e46b8a5dd99e172893eabfde8f591666bc9ebf6bd531b7d1"
+      },
+      {
+        "filename": "New folder.part14.rar",
+        "size": 26214400,
+        "sha256": "84a24182dfb47ed43dcd93661258c8b53fa893d031f3a0c552c99e7bb1ea1ae3"
+      },
+      {
+        "filename": "New folder.part15.rar",
+        "size": 26214400,
+        "sha256": "e0aeba1320840decc1e4d7ab9d0654d780a685e38e5b8dc42c8ddad5b8f6c63d"
+      },
+      {
+        "filename": "New folder.part16.rar",
+        "size": 26214400,
+        "sha256": "6e1135d961c28a195664b1c726a1e154559b06ca5c95a37ff06e970ebd62305c"
+      },
+      {
+        "filename": "New folder.part17.rar",
+        "size": 26214400,
+        "sha256": "05041deea9ffefad0db097e01506ce58838f39bdcbd7408c3db4d54d424cd6c5"
+      },
+      {
+        "filename": "New folder.part18.rar",
+        "size": 26214400,
+        "sha256": "f0683a41b7071bf13f7e3318fc1c2b1260b5cf409dd3beeb0eaeef128e3275df"
+      },
+      {
+        "filename": "New folder.part19.rar",
+        "size": 26214400,
+        "sha256": "542901edbb97d64c2baf612a498697ba622104d085f284ddb36412610a41f4de"
+      },
+      {
+        "filename": "New folder.part20.rar",
+        "size": 10771357,
+        "sha256": "67858771e11a3110a927480f612b02be181b7e8655e27cdaddf3d3a5d5b9fef0"
+      }
+    ],
+    "maps_record": "data/xros_maps.json",
+    "audio_record": "data/xros_audio.json",
+    "note": "Supplied Super Xros Wars Blue map/collision exports and available music recordings; authored Venom NXT progression and soundtrack assignments."
+  },
+  {
+    "kind": "firewall_v150",
+    "release": "1.5.0",
+    "use": "Complete FireWall variety; every supplied PNG and metadata file preserved byte for byte",
+    "source_tree_sha256": "69c11ad84dafdaa42e4d36e757b7e1f73ba583387401eec6272444ce58adf671",
+    "parts": [
+      {
+        "filename": "FireWall_Digimon_Complete.part1.rar",
+        "size": 26214400,
+        "sha256": "0c626e144cfd99d5cc40792b652b4ef28ac40e0264a49e2c76dd10092bb35934"
+      },
+      {
+        "filename": "FireWall_Digimon_Complete.part2.rar",
+        "size": 26214400,
+        "sha256": "0493c4fdb31a5203be46b08ec167838fe1689111a82a2a5c63d34f5c1bfffced"
+      },
+      {
+        "filename": "FireWall_Digimon_Complete.part3.rar",
+        "size": 26214400,
+        "sha256": "d16436609c27a7d67f8a1ffcc53d67276b34be8bf8afa255332d96c63f7988a4"
+      },
+      {
+        "filename": "FireWall_Digimon_Complete.part4.rar",
+        "size": 26214400,
+        "sha256": "c0597371d518843893954d5f5f1e0de57c1a50ed4b21aedb7e3ed419b31392af"
+      },
+      {
+        "filename": "FireWall_Digimon_Complete.part5.rar",
+        "size": 26214400,
+        "sha256": "74aeff7979e99d61d887dc18f402ec1d53c0d3e5f105d701e801424a85372928"
+      },
+      {
+        "filename": "FireWall_Digimon_Complete.part6.rar",
+        "size": 2050816,
+        "sha256": "a5426d8041a4bca036a907e5d66600688c4eedf427cfde2460c589614d8bcdc1"
+      }
+    ]
   }
 ]

@@ -1,0 +1,22 @@
+{
+  "variant_id": "shiny_lekismon",
+  "display_name": "Shiny Lekismon",
+  "base_species": "Lekismon",
+  "stage": "4 Champion",
+  "status": "ready",
+  "style_profile": "Prismatic Shiny \u2014 Gold Stardust v1",
+  "palette": "Coral ruby",
+  "target_hue_degrees": 348.0,
+  "source_sprite_count": 3,
+  "shiny_sprite_count": 3,
+  "animation_alignment": "Exact source canvas dimensions and sprite positions retained",
+  "effects": "Warm-gold silhouette glow; restrained ivory/gold four-point sparkles; deterministic frame twinkle",
+  "sprites": [
+    "Lekismon_Idle.png",
+    "Lekismon_LLegWalk.png",
+    "Lekismon_RLegWalk.png"
+  ],
+  "primary_sprite": "4 Champion/Lekismon/Shiny/Lekismon_Idle.png",
+  "source_primary": "4 Champion/Lekismon/Lekismon_Idle.png",
+  "materializable": true
+}

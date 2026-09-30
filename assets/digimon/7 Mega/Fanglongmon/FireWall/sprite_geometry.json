@@ -1,0 +1,177 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Fanglongmon_Idle.png": {
+      "source_size": [
+        320,
+        320
+      ],
+      "output_size": [
+        384,
+        384
+      ],
+      "padding": {
+        "left": 32,
+        "top": 32,
+        "right": 32,
+        "bottom": 32
+      },
+      "effect_pixel_unit": 2,
+      "effect_style": "smooth_cyber_glow",
+      "particle_fragment": false
+    },
+    "Fanglongmon_LLegWalk.png": {
+      "source_size": [
+        298,
+        244
+      ],
+      "output_size": [
+        362,
+        308
+      ],
+      "padding": {
+        "left": 32,
+        "top": 32,
+        "right": 32,
+        "bottom": 32
+      },
+      "effect_pixel_unit": 2,
+      "effect_style": "smooth_cyber_glow",
+      "particle_fragment": false
+    },
+    "Fanglongmon_RLegWalk.png": {
+      "source_size": [
+        298,
+        244
+      ],
+      "output_size": [
+        362,
+        308
+      ],
+      "padding": {
+        "left": 32,
+        "top": 32,
+        "right": 32,
+        "bottom": 32
+      },
+      "effect_pixel_unit": 2,
+      "effect_style": "smooth_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Fanglongmon_Frame_001.png": {
+      "source_size": [
+        1254,
+        1254
+      ],
+      "output_size": [
+        1638,
+        1638
+      ],
+      "padding": {
+        "left": 192,
+        "top": 192,
+        "right": 192,
+        "bottom": 192
+      },
+      "effect_pixel_unit": 12,
+      "effect_style": "smooth_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Fanglongmon_Frame_002.png": {
+      "source_size": [
+        1254,
+        1254
+      ],
+      "output_size": [
+        1638,
+        1638
+      ],
+      "padding": {
+        "left": 192,
+        "top": 192,
+        "right": 192,
+        "bottom": 192
+      },
+      "effect_pixel_unit": 12,
+      "effect_style": "smooth_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Fanglongmon_Frame_003.png": {
+      "source_size": [
+        1254,
+        1254
+      ],
+      "output_size": [
+        1606,
+        1606
+      ],
+      "padding": {
+        "left": 176,
+        "top": 176,
+        "right": 176,
+        "bottom": 176
+      },
+      "effect_pixel_unit": 11,
+      "effect_style": "smooth_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Fanglongmon_Frame_004.png": {
+      "source_size": [
+        1254,
+        1254
+      ],
+      "output_size": [
+        1638,
+        1638
+      ],
+      "padding": {
+        "left": 192,
+        "top": 192,
+        "right": 192,
+        "bottom": 192
+      },
+      "effect_pixel_unit": 12,
+      "effect_style": "smooth_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Fanglongmon_Frame_005.png": {
+      "source_size": [
+        1254,
+        1254
+      ],
+      "output_size": [
+        1606,
+        1606
+      ],
+      "padding": {
+        "left": 176,
+        "top": 176,
+        "right": 176,
+        "bottom": 176
+      },
+      "effect_pixel_unit": 11,
+      "effect_style": "smooth_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/Fanglongmon_Frame_006.png": {
+      "source_size": [
+        1254,
+        1254
+      ],
+      "output_size": [
+        1606,
+        1606
+      ],
+      "padding": {
+        "left": 176,
+        "top": 176,
+        "right": 176,
+        "bottom": 176
+      },
+      "effect_pixel_unit": 11,
+      "effect_style": "smooth_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

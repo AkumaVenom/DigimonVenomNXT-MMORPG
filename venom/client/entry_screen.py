@@ -2,6 +2,7 @@
 from __future__ import annotations
 import math
 import pygame
+from .varieties import normal_rookie
 from .render import draw
 from .widgets import GOLD, LIME, WHITE, text, wrap
 
@@ -133,7 +134,7 @@ class EntryScreen:
         entries = [ident for ident in (app.starter, 'patamon', 'gabumon') if ident in assets.species]
         if len(entries) < 3:
             entries += [s['id'] for s in assets.species.values()
-                        if s.get('stage') == 'rookie' and not s.get('paradox') and s['id'] not in entries][:3-len(entries)]
+                        if normal_rookie(s) and s['id'] not in entries][:3-len(entries)]
         partner_width = min(220, max(148, int(rect.width*.25)))
         companion_width = min(102, max(78, int(rect.width*.115)))
         positions = ((rect.centerx-52, floor+26, (partner_width, round(partner_width*1.09))),
@@ -173,7 +174,7 @@ class EntryScreen:
         app.ui.field((body.x, body.y, body.width-96, 36), 'search',
                      'Search all available appearances…' if kind == 'tamer' else 'Search rookie partners…', size=15)
         query = app.ui.values.get('search', '').lower()
-        entries = list(assets.tamers.values()) if kind == 'tamer' else [s for s in assets.species.values() if s.get('stage') == 'rookie' and not s.get('paradox')]
+        entries = list(assets.tamers.values()) if kind == 'tamer' else [s for s in assets.species.values() if normal_rookie(s)]
         entries = [entry for entry in entries if query in entry['name'].lower()]
         grid = pygame.Rect(body.x, body.y+55, body.width, body.height-98)
         columns = max(4, min(7, (grid.width+12)//172))

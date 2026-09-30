@@ -18,7 +18,8 @@ MAX_CREDITS = 2 ** 53 - 1
 LOCATION_FIELDS = ("map_id", "x", "y", "in_lab", "in_farm", "return_location", "farm_position")
 DAWN_CAMPAIGN = "dawn_relay"
 DS_CAMPAIGN = "world_ds_paradox"
-CAMPAIGN_IDS = (DAWN_CAMPAIGN, DS_CAMPAIGN)
+XROS_CAMPAIGN = "xros_ghostline"
+CAMPAIGN_IDS = (DAWN_CAMPAIGN, DS_CAMPAIGN, XROS_CAMPAIGN)
 
 
 class StoryError(ValueError):
@@ -27,7 +28,14 @@ class StoryError(ValueError):
 
 def content(engine, campaign_id=DAWN_CAMPAIGN):
     if campaign_id not in CAMPAIGN_IDS:
-        raise StoryError("Choose Dawn Relay or World DS: Paradox Chronicle.")
+        raise StoryError("Choose Dawn Relay, World DS: Paradox Chronicle, or Super Xros: Ghostline.")
+    if campaign_id == XROS_CAMPAIGN:
+        from venom.common import xros_story_content
+        cached = getattr(engine, "_xros_story_content", None)
+        if cached is None:
+            cached = xros_story_content.build_content(engine)
+            engine._xros_story_content = cached
+        return cached
     if campaign_id == DS_CAMPAIGN:
         from venom.common import world_ds_story_content
         cached = getattr(engine, "_world_ds_story_content", None)
@@ -52,6 +60,60 @@ def _data(engine, profile):
 
 def _is_ds(profile):
     return _campaign(profile) == DS_CAMPAIGN
+
+
+def _is_xros(profile):
+    return _campaign(profile) == XROS_CAMPAIGN
+
+
+def _is_linear(profile):
+    return _campaign(profile) in (DS_CAMPAIGN, XROS_CAMPAIGN)
+
+
+def _mastery_variety(profile):
+    return "shiny" if _is_xros(profile) else "paradox" if _is_ds(profile) else "firewall"
+
+
+def _badge_name(profile, plural=False):
+    word = "Access Proof" if _is_xros(profile) else "Paradox Crest" if _is_ds(profile) else "DigiBadge"
+    return word + ("s" if plural else "")
+
+
+def _npc_visible(profile, npc):
+    removed_nemesis = _is_xros(profile) and npc.get("character_id") == "mara_vale"
+    if (npc.get("hide_on_campaign_complete") or removed_nemesis) and profile["champion"]["first_victory"]:
+        return False
+    if npc.get("show_requires_reveal") and not profile.get("revealed"):
+        return False
+    if npc.get("hide_on_reveal") and profile.get("revealed"):
+        return False
+    return True
+
+
+def _dialogue_lines(profile, npc, branch):
+    """Resolve authored story consequences without mutating shared NPC content."""
+    for variant in npc.get("dialogue_variants", []):
+        branches = variant.get("branch")
+        if branches and branch not in ([branches] if isinstance(branches, str) else branches):
+            continue
+        if "requires_reveal" in variant and bool(profile.get("revealed")) != variant["requires_reveal"]:
+            continue
+        if "campaign_complete" in variant and bool(profile["champion"]["first_victory"]) != variant["campaign_complete"]:
+            continue
+        if not all(ident in profile["completed"] for ident in variant.get("requires_completed", [])):
+            continue
+        if not all(ident in profile.get("hacked", []) for ident in variant.get("requires_hacked", [])):
+            continue
+        if variant.get("lines"):
+            return list(variant["lines"]), True
+    text = npc.get("dialogue", {})
+    if _is_xros(profile) and profile["champion"]["first_victory"] and text.get("campaign_complete"):
+        return list(text["campaign_complete"]), True
+    if _is_xros(profile) and profile.get("revealed") and branch == "repeat" and text.get("after_reveal"):
+        return list(text["after_reveal"]), True
+    if npc["id"] in profile.get("hacked", []) and branch == "repeat" and text.get("hacked_repeat"):
+        return list(text["hacked_repeat"]), True
+    return list(text.get(branch) or text.get("intro") or ["Your team is ready when you are."]), False
 
 
 def _badges(data):
@@ -95,18 +157,21 @@ def _visible_npcs(profile, data, map_id):
     for npc in data["npcs"].values():
         if npc["id"] == data["champion_id"]:
             npc = _champion_npc(profile, data)
-        if npc["map_id"] == map_id:
+        if npc["map_id"] == map_id and _npc_visible(profile, npc):
             rows.append(npc)
     return rows
 
 
 def _ready(profile, npc):
     return (all(ident in profile["completed"] for ident in npc.get("requires", []))
-            and all(ident in profile.get("quest_accepted", []) for ident in npc.get("requires_accepted", [])))
+            and all(ident in profile.get("quest_accepted", []) for ident in npc.get("requires_accepted", []))
+            and all(ident in profile.get("badges", []) for ident in npc.get("requires_badges", []))
+            and all(ident in profile.get("hacked", []) for ident in npc.get("requires_hacked", []))
+            and ("requires_reveal" not in npc or bool(profile.get("revealed")) == npc["requires_reveal"]))
 
 
 def _status(profile, npc):
-    if npc.get("role") in ("mentor", "healer", "shop", "lab", "farm"):
+    if npc.get("role") in ("mentor", "healer", "shop", "lab", "farm", "intel"):
         return "service"
     if not _ready(profile, npc):
         return "locked"
@@ -126,7 +191,7 @@ def _region_for_map(data, map_id):
 
 
 def _available_region(profile, index, data=None):
-    if _is_ds(profile):
+    if _is_linear(profile):
         # The safe hub and the first field are available immediately. An exact
         # prefix of earned crests, rather than a count, opens each later field.
         if index <= 1:
@@ -136,6 +201,28 @@ def _available_region(profile, index, data=None):
 
 
 def _objective(profile, data, region):
+    if _is_xros(profile):
+        if profile["champion"]["first_victory"]:
+            return "Ghostline closed. Your permanent +20% Shiny scan gain is active on wild battle victories. Revisit the recovered network or return to the world."
+        if region["index"] == 0:
+            return "Prepare at Ghostline's safe hub, speak to your contacts for intel, and use the uplink to begin the investigation. There are no battles here."
+        for ident in region.get("npc_ids", []):
+            npc = data["npcs"].get(ident)
+            if not npc or not _npc_visible(profile, npc) or ident in profile["completed"] or not _ready(profile, npc):
+                continue
+            if npc.get("role") == "quest":
+                status = _status(profile, npc)
+                if status == "ready":
+                    return f"Speak to {npc['name']} to accept {npc.get('quest_title', 'the local assignment')}."
+                if status == "turn_in":
+                    return f"Return to {npc['name']} with your findings to secure this node's Access Proof."
+            elif npc.get("role") == "trainer":
+                return f"Challenge {npc['name']}, inspect the aftermath, then report to your quest contact."
+            elif npc.get("role") == "final":
+                return "All 30 Access Proofs are verified. Confront Mara Vale and shut down the Null Regent's root access."
+        if region.get("badge", {}).get("id") in profile["badges"] and region["index"] + 1 < len(_regions(data)):
+            return f"Access Proof verified. The uplink portal to {_regions(data)[region['index'] + 1]['name']} is ready."
+        return "Follow the local investigation in your journal. Your team, DigiLab, DigiFarm, bag and shop remain available."
     if _is_ds(profile):
         if profile["champion"]["first_victory"]:
             return "Paradox Chronicle complete. Permanent +20% Paradox scan gain is active on wild battle victories. Revisit any field or return to the world."
@@ -188,10 +275,14 @@ def _choices(profile, npc, dialogue):
             choices.append({"id": "accept_quest", "label": "Accept assignment"})
         elif status == "turn_in":
             choices.append({"id": "complete_quest", "label": "Complete assignment"})
-    if role in ("trainer", "warden", "champion", "final") and _ready(profile, npc):
+    already_cleared_once = (_is_xros(profile) and npc.get("repeatable") is False
+                            and npc["id"] in profile["completed"])
+    if role in ("trainer", "warden", "champion", "final") and _ready(profile, npc) and not already_cleared_once and not (
+            _is_xros(profile) and role == "final" and profile["champion"]["first_victory"]):
         label = "Challenge"
         if role == "final":
-            label = "Replay final battle" if profile["champion"]["first_victory"] else f"Summon {npc.get('battle_name', 'final trio')} · Lv. 100"
+            label = ("Confront the Null Regent" if _is_xros(profile) else
+                     "Replay final battle" if profile["champion"]["first_victory"] else f"Summon {npc.get('battle_name', 'final trio')} · Lv. 100")
         elif role == "champion" and profile["champion"]["first_victory"]:
             label = "Reclaim the title" if profile["champion"]["status"] == "reclaim" else "Defend the title"
         elif npc["id"] in profile["completed"]:
@@ -208,11 +299,23 @@ def _choices(profile, npc, dialogue):
 
 
 def update_view(engine, state):
+    # Completion is durable across campaign switching and older serialized views.
+    profiles = list(state.get("story_campaigns", {}).values()) + [state.get("story")]
+    if any(row and _is_xros(row) and row.get("champion", {}).get("first_victory") for row in profiles):
+        state.setdefault("permanent_rewards", {})["shiny_scan_mastery"] = True
+    # The first championship is durable, even when its title was later lost.
+    # Legacy Dawn profiles have no campaign_id and may be parked while another
+    # campaign is active. Repair only the entitlement, never consumed scan data.
+    if any(row and _campaign(row) == DAWN_CAMPAIGN and row.get("champion", {}).get("first_victory") for row in profiles):
+        state.setdefault("permanent_rewards", {})["firewall_scan_mastery"] = True
     profile = state.get("story")
     if not profile or not profile.get("started"):
         return
     profile.setdefault("campaign_id", DAWN_CAMPAIGN)
     profile.setdefault("quest_accepted", [])
+    if _is_xros(profile):
+        profile.setdefault("hacked", [])
+        profile.setdefault("revealed", False)
     data = _data(engine, profile)
     # A jailed character temporarily has in_story=False; never move its itinerary.
     if state.get("in_story") and not state.get("in_lab") and not state.get("in_farm"):
@@ -222,21 +325,32 @@ def update_view(engine, state):
     profile["chapter"] = region["index"]
     badges, chapters = [], []
     for row in _regions(data):
+        hidden_chapter = _is_xros(profile) and not profile.get("revealed") and not _available_region(profile, row["index"], data)
         badge = row.get("badge")
         if badge:
-            badges.append({**copy.deepcopy(badge), "earned": badge["id"] in profile["badges"], "chapter": row["index"]})
-        chapters.append({"index": row["index"], "name": row["name"], "subtitle": row.get("subtitle", ""),
-                         "synopsis": row.get("synopsis", ""), "map_id": row["maps"][0],
+            public_badge = {"id": badge["id"], "name": f"Encrypted Access Proof {row['index']:02}",
+                            "description": "Complete the preceding investigation to decrypt this proof."} if hidden_chapter else copy.deepcopy(badge)
+            badges.append({**public_badge, "earned": badge["id"] in profile["badges"], "chapter": row["index"]})
+        chapters.append({"index": row["index"], "name": f"Encrypted node {row['index'] + 1:02}" if hidden_chapter else row["name"],
+                         "subtitle": "Secure this route to decrypt its case file." if hidden_chapter else row.get("subtitle", ""),
+                         "synopsis": "" if hidden_chapter else row.get("synopsis", ""), "map_id": row["maps"][0],
                          "level": row.get("level_min", 1), "level_min": row.get("level_min", 1),
                          "level_max": row.get("level_max", 5), "unlocked": _available_region(profile, row["index"], data),
-                         "complete": bool(badge and badge["id"] in profile["badges"]),
-                         "maps": [{"id": ident, "name": data["maps"][ident]["name"], "active": ident == location["map_id"],
+                         "complete": bool(badge and badge["id"] in profile["badges"] and
+                                          (not _is_xros(profile) or row["index"] < len(_regions(data)) - 1
+                                           or profile["champion"]["first_victory"])),
+                         "maps": [{"id": ident, "name": "Encrypted destination" if hidden_chapter else data["maps"][ident]["name"], "active": ident == location["map_id"],
                                    "unlocked": _available_region(profile, row["index"], data)} for ident in row["maps"]]})
-    npcs = [{key: copy.deepcopy(npc.get(key)) for key in ("id", "map_id", "name", "tamer_id", "role", "x", "y", "display_species", "display_level", "quest_title")}
-            | {"status": _status(profile, npc), "level": max((partner["level"] for partner in npc.get("team", [])), default=0)}
+    npcs = [{key: copy.deepcopy(npc.get(key)) for key in ("id", "map_id", "name", "tamer_id", "role", "role_label", "x", "y", "display_species", "display_level", "quest_title")}
+            | {"status": _status(profile, npc), "level": max((partner["level"] for partner in npc.get("team", [])), default=0),
+               "hacked": npc["id"] in profile.get("hacked", []) and not profile["champion"]["first_victory"],
+               "was_hacked": npc["id"] in profile.get("hacked", [])}
             for npc in _visible_npcs(profile, data, location["map_id"])]
     dialogue = profile.get("dialogue")
     dialogue_view = None
+    if dialogue and (dialogue.get("npc_id") not in _all_npcs(data) or
+                     not _npc_visible(profile, _all_npcs(data)[dialogue["npc_id"]])):
+        profile["dialogue"] = dialogue = None
     if dialogue:
         npc = _all_npcs(data)[dialogue["npc_id"]]
         page = dialogue["page"]
@@ -244,30 +358,53 @@ def update_view(engine, state):
                          "display_species": npc.get("display_species"), "display_level": npc.get("display_level"),
                          "text": dialogue["lines"][page], "page": page + 1, "pages": len(dialogue["lines"]),
                          "token": dialogue["token"], "choices": _choices(profile, npc, dialogue),
+                         "transmission": bool(dialogue.get("transmission")),
                          "result_only": bool(dialogue.get("result_only")), "result": copy.deepcopy(dialogue.get("result"))}
     objective = _objective(profile, data, region)
-    training_available = not (_is_ds(profile) and region["index"] == 0)
+    training_available = not (_is_linear(profile) and region["index"] == 0)
     if training_available and state.get("party") and max(monster["level"] for monster in state["party"][:3]) < region.get("level_min", 1):
         objective += " Field training and free recovery are available in your Story journal."
     exits = [{**copy.deepcopy(row), "map_id": location["map_id"], "chapter": _region_for_map(data, row["to_map"])["index"],
               "unlocked": _available_region(profile, _region_for_map(data, row["to_map"])["index"], data) and
-              (not row.get("requires_badge") or row["requires_badge"] in profile["badges"])}
+              (not row.get("requires_badge") or row["requires_badge"] in profile["badges"]) and
+              (not row.get("requires_campaign_complete") or profile["champion"]["first_victory"])}
              for row in data["maps"][location["map_id"]].get("exits", [])]
+    if _is_xros(profile) and not profile.get("revealed"):
+        for gate in exits:
+            if not gate["unlocked"]:
+                gate["name"] = gate["label"] = "Encrypted uplink"
+    if _is_xros(profile):
+        for gate in exits:
+            if not gate["unlocked"]:
+                gate["locked_reason"] = ("Close the case by winning the final confrontation." if gate.get("requires_campaign_complete")
+                                         else "Complete the local assignment and verify its Access Proof.")
     final = data["npcs"][data["champion_id"]]
+    expose_final = not _is_xros(profile) or (profile.get("revealed") and not profile["champion"]["first_victory"])
+    champion_view = copy.deepcopy(profile["champion"])
+    if _is_xros(profile) and not profile.get("revealed"):
+        champion_view.update(holder="Unidentified operator", holder_id=None)
+    scan_rewards = state.get("permanent_rewards", {})
     profile["view"] = {"title": data.get("name", "Dawn Relay"), "started": True, "campaign_id": _campaign(profile),
                        "chapter": region["index"], "chapter_name": region["name"], "map_name": data["maps"][location["map_id"]]["name"],
                        "map_id": location["map_id"], "objective": objective, "exits": exits,
                        "synopsis": region.get("synopsis", ""), "badges": badges, "badge_count": len(profile["badges"]),
-                       "badge_total": len(_badges(data)), "badge_name": "Paradox Crest" if _is_ds(profile) else "DigiBadge",
+                       "badge_total": len(_badges(data)), "badge_name": _badge_name(profile),
                        "hub": not training_available, "training_available": training_available,
                        "completed": bool(profile["champion"]["first_victory"]),
-                       "scan_bonus": 20 if state.get("permanent_rewards", {}).get("paradox_scan_mastery") else 0,
-                       "final_npc_id": final["id"], "final_map_id": final["map_id"], "final_name": final["name"],
+                       "scan_bonus": 20 if scan_rewards.get(f"{_mastery_variety(profile)}_scan_mastery") else 0,
+                       "scan_mastery_variety": _mastery_variety(profile),
+                       "firewall_scan_bonus": 20 if scan_rewards.get("firewall_scan_mastery") else 0,
+                       "shiny_scan_bonus": 20 if scan_rewards.get("shiny_scan_mastery") else 0,
+                       "paradox_scan_bonus": 20 if scan_rewards.get("paradox_scan_mastery") else 0,
+                       "revealed": bool(profile.get("revealed")),
+                       "final_npc_id": final["id"] if expose_final else None,
+                       "final_map_id": final["map_id"] if expose_final else None,
+                       "final_name": final["name"] if expose_final else None,
                        "final_team": [{"species_id": partner["species"], "name": engine.species[partner["species"]]["name"],
                                        "level": partner["level"], "stage": engine.species[partner["species"]].get("stage", "")}
-                                      for partner in final.get("team", [])],
+                                      for partner in final.get("team", [])] if expose_final else [],
                        "chapters": chapters, "npcs": npcs, "dialogue": dialogue_view,
-                       "champion": copy.deepcopy(profile["champion"]), "stats": copy.deepcopy(profile["stats"]),
+                       "champion": champion_view, "stats": copy.deepcopy(profile["stats"]),
                        "recent": copy.deepcopy(profile["recent"]), "talk_radius": TALK_RADIUS,
                        "training_level": max(1, region.get("level_min", 1)), "can_return": not state.get("battle"),
                        "shared_partners": True, "shared_rewards": True}
@@ -301,7 +438,7 @@ def _travel(engine, state, data, index, map_id=None):
     if isinstance(index, bool) or not isinstance(index, int) or not 0 <= index < len(_regions(data)):
         raise StoryError("Choose a valid Story chapter.")
     if not _available_region(state["story"], index, data):
-        raise StoryError("Earn the preceding Paradox Crests before entering this chapter." if _is_ds(state["story"]) else "Earn the preceding DigiBadges before entering this chapter.")
+        raise StoryError(f"Earn the preceding {_badge_name(state['story'], plural=True)} before entering this chapter.")
     region = _regions(data)[index]
     map_id = map_id or region["maps"][0]
     if not isinstance(map_id, str) or map_id not in region["maps"]:
@@ -317,13 +454,17 @@ def _new_profile(data, campaign_id):
     first = _regions(data)[0]
     initial = data["maps"][first["maps"][0]]
     boss = data["npcs"][data["champion_id"]]
-    return {"id": uuid.uuid4().hex, "version": 2, "campaign_id": campaign_id, "started": True, "chapter": 0,
+    profile = {"id": uuid.uuid4().hex, "version": 2, "campaign_id": campaign_id, "started": True, "chapter": 0,
             "badges": [], "completed": [], "met": [], "quest_accepted": [], "dialogue": None, "active_battle": None,
             "location": {"map_id": first["maps"][0], "x": float(initial["arrival"][0]), "y": float(initial["arrival"][1])},
             "stats": {"wins": 0, "losses": 0, "training_wins": 0, "training_losses": 0, "credits_earned": 0, "battles": 0},
             "recent": [], "champion": {"holder": boss["name"], "holder_id": boss["id"], "status": "challenger",
                                       "first_victory": False, "reigns": 0, "defenses": 0, "streak": 0,
                                       "best_streak": 0, "matches": 0}}
+    if campaign_id == XROS_CAMPAIGN:
+        profile.update(hacked=[], revealed=False)
+        profile["champion"].update(holder="Unidentified operator", holder_id=None)
+    return profile
 
 
 def handle(engine, state, payload):
@@ -331,7 +472,7 @@ def handle(engine, state, payload):
     if action == "enter":
         requested = payload.get("campaign_id", _campaign(state.get("story") or {}))
         if not isinstance(requested, str) or requested not in CAMPAIGN_IDS:
-            raise StoryError("Choose Dawn Relay or World DS: Paradox Chronicle.")
+            raise StoryError("Choose Dawn Relay, World DS: Paradox Chronicle, or Super Xros: Ghostline.")
         if state.get("in_story"):
             if requested != _campaign(state.get("story") or {}):
                 raise StoryError("Save & Return to World before switching Story campaigns.")
@@ -355,8 +496,9 @@ def handle(engine, state, payload):
         state["story_return_state"] = _snapshot(state)
         state.update(copy.deepcopy(state["story"]["location"]))
         state.update(in_story=True, in_lab=False, in_farm=False)
-        message = (f"Welcome to World DS: Paradox Chronicle. Begin in peaceful {_regions(data)[0]['name']}, restore 17 fields, and earn every Paradox Crest to summon three level 100 Paradox Megas. Your own partners, DigiLab, DigiFarm, bag and shop stay with you."
-                   if requested == DS_CAMPAIGN else "Welcome to Dawn Relay. Bring your own partners, earn eight DigiBadges, and claim a championship that remains yours to defend.")
+        message = ("Welcome to Super Xros: Ghostline. Begin in the safe hub, meet your intel contacts, and investigate the hacked network through 30 connected field assignments. Your own partners keep their real stats; your DigiLab, DigiFarm, bag and shop stay with you." if requested == XROS_CAMPAIGN else
+                   f"Welcome to World DS: Paradox Chronicle. Begin in peaceful {_regions(data)[0]['name']}, restore 17 fields, and earn every Paradox Crest to summon three level 100 Paradox Megas. Your own partners, DigiLab, DigiFarm, bag and shop stay with you."
+                   if requested == DS_CAMPAIGN else "Welcome to Dawn Relay. Bring your own partners, earn eight DigiBadges, and claim a championship that remains yours to defend. Your first championship victory unlocks permanent FireWall Scan Mastery: +20% on FireWall wild victory scans, from 5% to 6%.")
         engine._event(state, "message", text=message)
         return
     if not state.get("in_story") or not state.get("story"):
@@ -386,7 +528,9 @@ def handle(engine, state, payload):
         if not gate or math.hypot(state["x"] - gate["x"], state["y"] - gate["y"]) > TALK_RADIUS:
             raise StoryError("Walk closer to this Story relay gate first.")
         if gate.get("requires_badge") and gate["requires_badge"] not in profile["badges"]:
-            raise StoryError("Earn this field's Paradox Crest to open the next gate." if _is_ds(profile) else "Earn this region's DigiBadge to open the next relay gate.")
+            raise StoryError(f"Earn this field's {_badge_name(profile)} to open the next gate.")
+        if gate.get("requires_campaign_complete") and not profile["champion"]["first_victory"]:
+            raise StoryError("Close the Ghostline case by defeating the final opponent before opening this uplink.")
         region = _region_for_map(data, gate["to_map"])
         _travel(engine, state, data, region["index"], gate["to_map"])
     elif action == "talk":
@@ -398,9 +542,9 @@ def handle(engine, state, payload):
         if npc.get("role") == "mentor" and (npc.get("region_id") in profile["badges"] or (npc.get("region_id") == "citadel" and profile["champion"]["first_victory"])):
             branch = "won"
         text = npc.get("dialogue", {})
-        lines = list(text.get(branch) or text.get("intro") or [f"Welcome to {data.get('name', 'Dawn Relay')}."])
+        lines, contextual = _dialogue_lines(profile, npc, branch)
         if status != "locked" and npc["id"] not in profile.setdefault("met", []):
-            intro = list(text.get("intro", []))
+            intro = [] if contextual else list(text.get("intro", []))
             lines = intro + [line for line in lines if line not in intro]
             profile["met"].append(npc["id"])
         profile["dialogue"] = {"npc_id": npc["id"], "page": 0, "lines": lines, "token": uuid.uuid4().hex}
@@ -410,7 +554,18 @@ def handle(engine, state, payload):
             raise StoryError("This conversation has changed. Speak to the tamer again.")
         if dialogue.get("result_only"):
             npc = _all_npcs(data)[dialogue["npc_id"]]
-            _nearby(state, npc)
+            if not _npc_visible(profile, npc):
+                profile["dialogue"] = None
+                raise StoryError("This conversation has ended. The contact is no longer in the network.")
+            # Only a server-created, completed-finale transmission may speak
+            # remotely. It remains result-only and can never start a battle.
+            epilogue = data.get("epilogue", {})
+            finale_transmission = (_is_xros(profile) and profile["champion"]["first_victory"]
+                                   and dialogue.get("transmission")
+                                   and npc["id"] == epilogue.get("npc_id")
+                                   and dialogue.get("lines") == epilogue.get("lines"))
+            if not finale_transmission:
+                _nearby(state, npc)
         else:
             npc = _npc(state, data, dialogue["npc_id"])
         if action == "challenge" and payload.get("npc_id", npc["id"]) != npc["id"]:
@@ -428,11 +583,19 @@ def handle(engine, state, payload):
             # accepting or turning in the same quest twice impossible.
             profile.setdefault("quest_accepted", []).append(npc["id"])
             profile["dialogue"] = None
-            engine._event(state, "message", text=f"Assignment accepted: {npc.get('quest_title', npc['name'])}. Defeat the marked tamer, then return to report your findings.")
+            instructions = ("Review the local evidence with your contact, then verify the final Access Proof." if _is_xros(profile) and not npc.get("quest_requires")
+                            else "Defeat the marked tamer, then return to report your findings.")
+            engine._event(state, "message", text=f"Assignment accepted: {npc.get('quest_title', npc['name'])}. {instructions}")
         elif choice == "complete_quest":
             before = copy.deepcopy(state["inventory"])
             credits = _grant_reward(engine, state, npc.get("reward", {}), True)
             profile["completed"].append(npc["id"])
+            if _is_xros(profile):
+                if npc.get("reveal_on_complete"):
+                    profile["revealed"] = True
+                    final = data["npcs"][data["champion_id"]]
+                    profile["champion"].update(holder=final["name"], holder_id=final["id"])
+                _earn_badge(engine, state, data, npc.get("badge"))
             profile["stats"]["credits_earned"] += credits
             lines = list(npc.get("dialogue", {}).get("won") or ["Assignment complete. The Paradox guardian is ready to challenge."])
             result = {"opponent": npc["name"], "role": "quest", "won": True, "first_clear": True, "credits": credits,
@@ -440,7 +603,9 @@ def handle(engine, state, payload):
                                 for item, quantity in state["inventory"].items() if quantity > before.get(item, 0)]}
             profile["dialogue"] = {"npc_id": npc["id"], "page": 0, "lines": lines, "token": uuid.uuid4().hex,
                                    "result_only": True, "result": result}
-            engine._event(state, "story_quest", text=f"Assignment complete: {npc.get('quest_title', npc['name'])}. +{credits} credits. Challenge the Paradox guardian when ready.")
+            suffix = ("Access Proof verified. Follow your case file for the next uplink." if _is_xros(profile)
+                      else "Challenge the Paradox guardian when ready.")
+            engine._event(state, "story_quest", text=f"Assignment complete: {npc.get('quest_title', npc['name'])}. +{credits} credits. {suffix}")
         elif choice == "heal":
             profile["dialogue"] = None
             _heal(engine, state)
@@ -467,7 +632,7 @@ def handle(engine, state, payload):
         if state.get("in_lab") or state.get("in_farm"):
             raise StoryError("Return to your Story map before training.")
         region = _region_for_map(data, state["map_id"])
-        if _is_ds(profile) and region["index"] == 0:
+        if _is_linear(profile) and region["index"] == 0:
             raise StoryError(f"{region['name']} is a peaceful hub. Travel to a field to train or battle.")
         pool = [partner["species"] for ident in region["npc_ids"] for partner in data["npcs"][ident].get("team", [])]
         living = [monster for monster in state["party"][:3] if monster["hp"] > 0]
@@ -483,7 +648,7 @@ def handle(engine, state, payload):
             safe_pool = [ident for ident in pool if engine.species[ident].get("type") in (monster.get("type"), "free")]
             ident = monster["species_id"] if level < 10 else engine.rng.choice(safe_pool or [monster["species_id"]])
             team.append({"species": ident, "level": level})
-        _begin(engine, state, {"id": "training", "name": "Paradox Field Training" if _is_ds(profile) else "Relay Field Training", "role": "training", "team": team}, training=True)
+        _begin(engine, state, {"id": "training", "name": "Ghostline Field Training" if _is_xros(profile) else "Paradox Field Training" if _is_ds(profile) else "Relay Field Training", "role": "training", "team": team}, training=True)
     else:
         raise StoryError("Unknown Story Mode action.")
 
@@ -493,20 +658,48 @@ def _begin(engine, state, npc, training=False):
     data = _data(engine, profile)
     if state.get("battle") or profile.get("active_battle"):
         raise StoryError("Finish your current battle before starting another Story challenge.")
-    if _is_ds(profile) and _region_for_map(data, state["map_id"])["index"] == 0:
+    if _is_linear(profile) and _region_for_map(data, state["map_id"])["index"] == 0:
         raise StoryError(f"{_regions(data)[0]['name']} is a peaceful hub. Travel to a field to train or battle.")
     if not training:
+        if not _npc_visible(profile, npc):
+            raise StoryError("This Story opponent is no longer in the network.")
+        if _is_xros(profile) and npc.get("repeatable") is False and npc["id"] in profile["completed"]:
+            raise StoryError("This witness trial is already recorded. Use field training for more practice.")
         if not _ready(profile, npc):
             raise StoryError("Complete this tamer's preceding Story challenges first.")
         if npc.get("role") == "champion" and len(profile["badges"]) < 8:
             raise StoryError("All eight DigiBadges are required for the championship.")
-        if npc.get("role") == "final" and (len(_badges(data)) != 17 or not all(ident in profile["badges"] for ident in _badges(data))):
-            raise StoryError("All 17 different Paradox Crests are required to summon the final three Paradox Megas.")
+        if npc.get("role") == "final":
+            if _is_xros(profile):
+                if profile["champion"]["first_victory"]:
+                    raise StoryError("Ghostline is complete. The Null Regent cannot return or be challenged again.")
+                if len(_badges(data)) != 30 or not all(ident in profile["badges"] for ident in _badges(data)) or not profile.get("revealed"):
+                    raise StoryError("Verify all 30 different Access Proofs and identify the operator before the final confrontation.")
+            elif len(_badges(data)) != 17 or not all(ident in profile["badges"] for ident in _badges(data)):
+                raise StoryError("All 17 different Paradox Crests are required to summon the final three Paradox Megas.")
     active = [index for index, monster in enumerate(state["party"][:3]) if monster["hp"] > 0]
     if not active:
         raise StoryError("Recover your partners before challenging this tamer.")
-    enemies = [engine._monster(partner["species"], partner["level"], abi=min(100, partner["level"] // 2), cam=min(100, partner["level"])) for partner in npc["team"][:3]]
+    enemies = []
+    for partner in npc["team"][:3]:
+        species_id = partner["species"]
+        species = engine.species[species_id]
+        if training and (species.get("shiny") or species.get("firewall")):
+            # Opening practice may mirror an owned partner. Ownership must not
+            # turn that practice into a guaranteed, repeatable rare encounter.
+            species_id = species["base_id"]
+        enemies.append(engine._monster(species_id, partner["level"],
+                                       abi=min(100, partner["level"] // 2), cam=min(100, partner["level"])))
     if training:
+        shiny = [engine._variants["shiny"][enemy["base_id"]]["id"] for enemy in enemies
+                 if enemy["base_id"] in engine._variants["shiny"]]
+        firewall_variants = engine._variants.get("firewall", {})
+        firewall = [firewall_variants[enemy["base_id"]]["id"] for enemy in enemies
+                    if enemy["base_id"] in firewall_variants]
+        # Field practice grants wild scans, so it shares the 1% Shiny and 0.7%
+        # FireWall event roll using the same type-safe practice species.
+        # Preserve the existing type-safe Paradox practice opponents otherwise.
+        engine._roll_wild_variety(enemies, [], list(dict.fromkeys(shiny)), list(dict.fromkeys(firewall)))
         for enemy in enemies:
             enemy["hp"] = enemy["max_hp"] = max(20, int(enemy["hp"] * .60))
     ident = uuid.uuid4().hex
@@ -550,7 +743,7 @@ def _grant_reward(engine, state, reward, first, training=False):
         for item, quantity in reward.get("items", {}).items():
             if item in state.get("shop", {}):
                 state["inventory"][item] = min(999, state["inventory"].get(item, 0) + max(0, int(quantity)))
-        if reward.get("training_level"):
+        if reward.get("training_level") and not _is_xros(state.get("story") or {}):
             _training_xp(engine, state, reward["training_level"])
         partner = reward.get("partner")
         if partner in engine.species:
@@ -566,6 +759,21 @@ def _grant_reward(engine, state, reward, first, training=False):
                 state["scan"][partner] = 200
                 engine._event(state, "message", text=f"Your roster is full. {monster['name']}'s 200% scan data is saved for later materialization.")
     return actual
+
+
+def _earn_badge(engine, state, data, badge):
+    profile = state["story"]
+    if not badge or badge in profile["badges"]:
+        return
+    profile["badges"].append(badge)
+    suffix = "The next chapter is open."
+    if _is_ds(profile) and len(profile["badges"]) == 17:
+        suffix = "All 17 crests are secured. The final three Paradox Megas can now be summoned."
+    elif _is_xros(profile):
+        suffix = ("All 30 proofs are verified. The final confrontation is ready." if len(profile["badges"]) == 30
+                  else "The next uplink is open.")
+    engine._event(state, "story_badge", badge=badge,
+                  text=f"{_badge_name(profile)} {len(profile['badges'])}/{len(_badges(data))} earned! {suffix}")
 
 
 def settle(engine, state, won):
@@ -584,6 +792,8 @@ def settle(engine, state, won):
     npc = None if training else _all_npcs(data).get(binding["npc_id"])
     if not training and not npc:
         raise StoryError("This Story opponent is unavailable. Reconnect before continuing.")
+    if not training and _is_xros(profile) and not _npc_visible(profile, npc):
+        raise StoryError("This Story opponent has already left the network.")
     first = not training and npc["id"] not in profile["completed"]
     role = "training" if training else npc.get("role")
     stats = profile["stats"]
@@ -595,6 +805,7 @@ def settle(engine, state, won):
     party_uids = {monster["uid"] for monster in state["party"]}
     storage_uids = {monster["uid"] for monster in state.get("storage", [])}
     reward = {}
+    mastery_unlocked = False
     rewardable_win = won and not (role == "final" and not first)
     if rewardable_win:
         xp = sum(24 + enemy["level"] * 16 for enemy in battle["enemies"])
@@ -607,18 +818,20 @@ def settle(engine, state, won):
             region = _region_for_map(data, state["map_id"])
             floor = min(99, max(1, region.get("level_min", 1)))
             weakest = min(monster["level"] for monster in state["party"])
-            reward = {"credits": 40 + region["index"] * 70, "training_level": min(floor, weakest + 4), "items": {"hp_s": 1}}
+            reward = {"credits": 40 + region["index"] * 70, "items": {"hp_s": 1}}
+            if not _is_xros(profile):
+                reward["training_level"] = min(floor, weakest + 4)
         else:
             reward = npc.get("reward", {})
         credits = _grant_reward(engine, state, reward, first or role == "champion", training)
         if not training and first:
             profile["completed"].append(npc["id"])
-            badge = npc.get("badge")
-            if badge and badge not in profile["badges"]:
-                profile["badges"].append(badge)
-                badge_name = "Paradox Crest" if _is_ds(profile) else "DigiBadge"
-                suffix = "All 17 crests are secured. The final three Paradox Megas can now be summoned." if _is_ds(profile) and len(profile["badges"]) == 17 else "The next chapter is open."
-                engine._event(state, "story_badge", badge=badge, text=f"{badge_name} {len(profile['badges'])}/{len(_badges(data))} earned! {suffix}")
+            if _is_xros(profile) and npc.get("hacked_after_victory"):
+                hacked = profile.setdefault("hacked", [])
+                if npc["id"] not in hacked:
+                    hacked.append(npc["id"])
+                    engine._event(state, "story_evidence", text=f"{npc['name']}'s terminal changed after the handshake. The incident has been preserved in your case file.")
+            _earn_badge(engine, state, data, npc.get("badge"))
     if role == "final":
         champion = profile["champion"]
         champion["matches"] += 1
@@ -626,13 +839,23 @@ def settle(engine, state, won):
             champion.update(first_victory=True, status="completed", holder=state["username"], holder_id="player")
             if first:
                 champion["reigns"] = 1
-                if not state.setdefault("permanent_rewards", {}).get("paradox_scan_mastery"):
-                    state["permanent_rewards"]["paradox_scan_mastery"] = True
-                    engine._event(state, "story_mastery", text="Paradox Chronicle complete! Permanent Paradox Scan Mastery unlocked: +20% scan gain wherever you win Paradox wild battles.")
+                flag = "shiny_scan_mastery" if _is_xros(profile) else "paradox_scan_mastery"
+                if not state.setdefault("permanent_rewards", {}).get(flag):
+                    state["permanent_rewards"][flag] = True
+                    mastery_unlocked = True
+                    message = ("Ghostline complete! The Null Regent's access has been permanently revoked. Shiny Scan Mastery unlocked: +20% scan gain wherever you win Shiny wild battles."
+                               if _is_xros(profile) else "Paradox Chronicle complete! Permanent Paradox Scan Mastery unlocked: +20% scan gain wherever you win Paradox wild battles.")
+                    engine._event(state, "story_mastery", text=message)
     if role == "champion":
         champion = profile["champion"]
         champion["matches"] += 1
         if won:
+            if not champion["first_victory"] and _campaign(profile) == DAWN_CAMPAIGN:
+                rewards = state.setdefault("permanent_rewards", {})
+                if not rewards.get("firewall_scan_mastery"):
+                    rewards["firewall_scan_mastery"] = True
+                    mastery_unlocked = True
+                    engine._event(state, "story_mastery", text="Dawn Relay championship won! Permanent FireWall Scan Mastery unlocked: +20% scan gain on FireWall wild battle victories (5% to 6%). This reward remains yours even if you later lose the title.")
             if champion["status"] == "defending":
                 champion["defenses"] += 1
                 champion["streak"] += 1
@@ -650,9 +873,11 @@ def settle(engine, state, won):
               "items": [{"id": item, "name": state.get("shop", {}).get(item, {}).get("name", item),
                          "quantity": quantity - inventory_before.get(item, 0)}
                         for item, quantity in state["inventory"].items() if quantity > inventory_before.get(item, 0)]}
-    if role == "final":
-        result["scan_mastery_unlocked"] = bool(first and won)
-        result["replay"] = bool(not first)
+    if role in ("final", "champion"):
+        result["scan_mastery_unlocked"] = bool(first and won) if role == "final" else mastery_unlocked
+        result["scan_mastery_variety"] = _mastery_variety(profile)
+        if role == "final":
+            result["replay"] = bool(not first)
     if won and (first or training) and reward.get("partner"):
         ident = reward["partner"]
         destination = "scan data"
@@ -675,11 +900,18 @@ def settle(engine, state, won):
     engine._event(state, "win" if won else "lose", amount=credits, xp=xp,
                   text=f"Story victory! +{credits} credits. Partners recovered." if won else "Story defeat. Your progress is safe and your partners have recovered. Try again whenever you are ready.")
     if not training:
-        branch = "rematch_won" if _is_ds(profile) and won and not first else "won" if won else "lost"
+        branch = "rematch_won" if _is_linear(profile) and won and not first else "won" if won else "lost"
         lines = npc.get("dialogue", {}).get(branch, npc.get("dialogue", {}).get("won" if won else "lost", []))
-        if lines:
+        if lines and _npc_visible(profile, npc):
             # An outgoing champion can speak after the next challenger appears.
             # Result capabilities never issue another challenge or another reward.
             profile["dialogue"] = {"npc_id": npc["id"], "page": 0, "lines": list(lines),
                                    "token": uuid.uuid4().hex, "result_only": True, "result": copy.deepcopy(result)}
             engine._event(state, "story_result", text=" ".join(lines), won=bool(won), opponent=npc["name"], role=role)
+        elif _is_xros(profile) and role == "final" and first and won:
+            epilogue = data.get("epilogue", {})
+            speaker = data["npcs"].get(epilogue.get("npc_id"))
+            if speaker and _npc_visible(profile, speaker) and epilogue.get("lines"):
+                profile["dialogue"] = {"npc_id": speaker["id"], "page": 0, "lines": list(epilogue["lines"]),
+                                       "token": uuid.uuid4().hex, "result_only": True,
+                                       "transmission": True, "result": copy.deepcopy(result)}

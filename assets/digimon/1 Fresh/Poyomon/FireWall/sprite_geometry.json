@@ -1,0 +1,120 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Poyomon_AttackPart1.png": {
+      "source_size": [
+        594,
+        540
+      ],
+      "output_size": [
+        1138,
+        1084
+      ],
+      "padding": {
+        "left": 272,
+        "top": 272,
+        "right": 272,
+        "bottom": 272
+      },
+      "effect_pixel_unit": 17,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Poyomon_AttackPart2.png": {
+      "source_size": [
+        762,
+        788
+      ],
+      "output_size": [
+        1306,
+        1332
+      ],
+      "padding": {
+        "left": 272,
+        "top": 272,
+        "right": 272,
+        "bottom": 272
+      },
+      "effect_pixel_unit": 17,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Poyomon_Extra.png": {
+      "source_size": [
+        594,
+        540
+      ],
+      "output_size": [
+        1138,
+        1084
+      ],
+      "padding": {
+        "left": 272,
+        "top": 272,
+        "right": 272,
+        "bottom": 272
+      },
+      "effect_pixel_unit": 17,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Poyomon_Idle.png": {
+      "source_size": [
+        632,
+        568
+      ],
+      "output_size": [
+        1176,
+        1112
+      ],
+      "padding": {
+        "left": 272,
+        "top": 272,
+        "right": 272,
+        "bottom": 272
+      },
+      "effect_pixel_unit": 17,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Poyomon_LLegWalk.png": {
+      "source_size": [
+        612,
+        602
+      ],
+      "output_size": [
+        1156,
+        1146
+      ],
+      "padding": {
+        "left": 272,
+        "top": 272,
+        "right": 272,
+        "bottom": 272
+      },
+      "effect_pixel_unit": 17,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Poyomon_RLegWalk.png": {
+      "source_size": [
+        612,
+        602
+      ],
+      "output_size": [
+        1156,
+        1146
+      ],
+      "padding": {
+        "left": 272,
+        "top": 272,
+        "right": 272,
+        "bottom": 272
+      },
+      "effect_pixel_unit": 17,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

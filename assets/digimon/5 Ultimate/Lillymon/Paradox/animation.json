@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Frames/Lillymon_Paradox_Frame_002.png",
+    "walk_left": "Frames/Lillymon_Paradox_Frame_003.png",
+    "walk_right": "Frames/Lillymon_Paradox_Frame_004.png",
+    "attack1": "Frames/Lillymon_Paradox_Frame_002.png",
+    "attack2": "Frames/Lillymon_Paradox_Frame_002.png"
+  },
+  "animations": {
+    "idle": [
+      "Frames/Lillymon_Paradox_Frame_002.png",
+      "Frames/Lillymon_Paradox_Frame_003.png",
+      "Frames/Lillymon_Paradox_Frame_002.png",
+      "Frames/Lillymon_Paradox_Frame_004.png"
+    ],
+    "walk": [
+      "Frames/Lillymon_Paradox_Frame_002.png",
+      "Frames/Lillymon_Paradox_Frame_003.png",
+      "Frames/Lillymon_Paradox_Frame_002.png",
+      "Frames/Lillymon_Paradox_Frame_004.png"
+    ],
+    "attack": [
+      "Frames/Lillymon_Paradox_Frame_002.png",
+      "Frames/Lillymon_Paradox_Frame_002.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 25,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied v1.2.0 Paradox PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained."
+}

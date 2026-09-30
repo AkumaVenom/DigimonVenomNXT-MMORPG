@@ -1,0 +1,25 @@
+{
+  "variant_id": "shiny_minomon",
+  "display_name": "Shiny Minomon",
+  "base_species": "Minomon",
+  "stage": "2 In Training",
+  "status": "ready",
+  "style_profile": "Prismatic Shiny \u2014 Gold Stardust v1",
+  "palette": "Copper rose",
+  "target_hue_degrees": 15.0,
+  "source_sprite_count": 6,
+  "shiny_sprite_count": 6,
+  "animation_alignment": "Exact source canvas dimensions and sprite positions retained",
+  "effects": "Warm-gold silhouette glow; restrained ivory/gold four-point sparkles; deterministic frame twinkle",
+  "sprites": [
+    "Minomon_AttackPart1.png",
+    "Minomon_AttackPart2.png",
+    "Minomon_Extra.png",
+    "Minomon_Idle.png",
+    "Minomon_LLegWalk.png",
+    "Minomon_RLegWalk.png"
+  ],
+  "primary_sprite": "2 In Training/Minomon/Shiny/Minomon_Idle.png",
+  "source_primary": "2 In Training/Minomon/Minomon_Idle.png",
+  "materializable": true
+}

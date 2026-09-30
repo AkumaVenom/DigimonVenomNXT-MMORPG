@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Armadillomon_Idle.png",
+    "walk_left": "Armadillomon_LLegWalk.png",
+    "walk_right": "Armadillomon_RLegWalk.png",
+    "attack1": "Armadillomon_Attack.png",
+    "attack2": "Armadillomon_Attack.png"
+  },
+  "animations": {
+    "idle": [
+      "Armadillomon_Idle.png"
+    ],
+    "walk": [
+      "Armadillomon_Idle.png",
+      "Armadillomon_LLegWalk.png",
+      "Armadillomon_Idle.png",
+      "Armadillomon_RLegWalk.png"
+    ],
+    "attack": [
+      "Armadillomon_Attack.png",
+      "Armadillomon_Attack.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 0,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied v1.2.0 Shiny PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained."
+}

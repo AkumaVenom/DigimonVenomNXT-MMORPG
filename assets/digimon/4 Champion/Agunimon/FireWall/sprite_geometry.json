@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Agunimon_Idle.png": {
+      "source_size": [
+        250,
+        299
+      ],
+      "output_size": [
+        282,
+        331
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "smooth_cyber_glow",
+      "particle_fragment": false
+    },
+    "Agunimon_LLegWalk.png": {
+      "source_size": [
+        363,
+        353
+      ],
+      "output_size": [
+        395,
+        385
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "smooth_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

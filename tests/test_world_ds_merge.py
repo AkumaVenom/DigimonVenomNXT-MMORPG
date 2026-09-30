@@ -19,14 +19,18 @@ def test_regional_merge_is_idempotent_and_keeps_existing_species_tamers_and_scen
     assert once['tamers'] == original['tamers']
     assert once['audio']['scene_tracks'] == original['audio']['scene_tracks']
     assert once['audio']['event_sounds'] == original['audio']['event_sounds']
-    assert len(once['maps']) == len({m['id'] for m in once['maps']}) == 404
+    assert len(once['maps']) == len({m['id'] for m in once['maps']}) == len(original['maps'])
+    for region, count in (('dawn', 254), ('world_ds', 150)):
+        assert sum(m.get('region_id', 'dawn') == region for m in once['maps']) == count
+    assert [m for m in once['maps'] if m.get('region_id') == 'xros_wars'] == [
+        m for m in original['maps'] if m.get('region_id') == 'xros_wars']
     assert len(once['tamers']) == 64  # Characters.rar deliberately remains unused.
 
 
 def test_merging_into_unmarked_dawn_only_catalog_keeps_original_map_data():
     original = json.loads((ROOT / 'data/catalog.json').read_text(encoding='utf-8'))
     legacy = copy.deepcopy(original)
-    legacy['maps'] = [m for m in legacy['maps'] if m.get('region_id') != 'world_ds']
+    legacy['maps'] = [m for m in legacy['maps'] if m.get('region_id', 'dawn') == 'dawn']
     for row in legacy['maps']:
         row.pop('region_id', None)
     before = copy.deepcopy(legacy['maps'])

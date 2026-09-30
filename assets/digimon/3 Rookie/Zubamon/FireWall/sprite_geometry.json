@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Zubamon_Idle.png": {
+      "source_size": [
+        820,
+        820
+      ],
+      "output_size": [
+        1012,
+        1012
+      ],
+      "padding": {
+        "left": 96,
+        "top": 96,
+        "right": 96,
+        "bottom": 96
+      },
+      "effect_pixel_unit": 6,
+      "effect_style": "smooth_cyber_glow",
+      "particle_fragment": false
+    },
+    "Zubamon_LLegWalk.png": {
+      "source_size": [
+        999,
+        917
+      ],
+      "output_size": [
+        1191,
+        1109
+      ],
+      "padding": {
+        "left": 96,
+        "top": 96,
+        "right": 96,
+        "bottom": 96
+      },
+      "effect_pixel_unit": 6,
+      "effect_style": "smooth_cyber_glow",
+      "particle_fragment": false
+    },
+    "Zubamon_RLegWalk.png": {
+      "source_size": [
+        999,
+        917
+      ],
+      "output_size": [
+        1191,
+        1109
+      ],
+      "padding": {
+        "left": 96,
+        "top": 96,
+        "right": 96,
+        "bottom": 96
+      },
+      "effect_pixel_unit": 6,
+      "effect_style": "smooth_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

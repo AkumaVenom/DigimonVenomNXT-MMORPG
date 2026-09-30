@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Conomon_Idle.png": {
+      "source_size": [
+        320,
+        320
+      ],
+      "output_size": [
+        352,
+        352
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "smooth_cyber_glow",
+      "particle_fragment": false
+    },
+    "Conomon_LLegWalk.png": {
+      "source_size": [
+        379,
+        370
+      ],
+      "output_size": [
+        411,
+        402
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "smooth_cyber_glow",
+      "particle_fragment": false
+    },
+    "Conomon_RLegWalk.png": {
+      "source_size": [
+        379,
+        370
+      ],
+      "output_size": [
+        411,
+        402
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "smooth_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

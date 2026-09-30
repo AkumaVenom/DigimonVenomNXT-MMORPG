@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Vorvomon_Idle.png",
+    "walk_left": "Vorvomon_LLegWalk.png",
+    "walk_right": "Vorvomon_RLegWalk.png",
+    "attack1": "Vorvomon_Idle.png",
+    "attack2": "Vorvomon_Idle.png"
+  },
+  "animations": {
+    "idle": [
+      "Vorvomon_Idle.png"
+    ],
+    "walk": [
+      "Vorvomon_Idle.png",
+      "Vorvomon_LLegWalk.png",
+      "Vorvomon_Idle.png",
+      "Vorvomon_RLegWalk.png"
+    ],
+    "attack": [
+      "Vorvomon_Idle.png",
+      "Vorvomon_Idle.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 0,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied v1.2.0 Shiny PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained."
+}

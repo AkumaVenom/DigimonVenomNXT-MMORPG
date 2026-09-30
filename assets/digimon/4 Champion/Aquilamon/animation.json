@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Frames/Aquilamon_Frame_001.png",
+    "walk_left": "Frames/Aquilamon_Frame_002.png",
+    "walk_right": "Frames/Aquilamon_Frame_003.png",
+    "attack1": "Frames/Aquilamon_Frame_007.png",
+    "attack2": "Frames/Aquilamon_Frame_008.png",
+    "front": "Aquilamon_Primary.png"
+  },
+  "animations": {
+    "idle": [
+      "Frames/Aquilamon_Frame_001.png",
+      "Frames/Aquilamon_Frame_002.png",
+      "Frames/Aquilamon_Frame_001.png",
+      "Frames/Aquilamon_Frame_003.png"
+    ],
+    "walk": [
+      "Frames/Aquilamon_Frame_001.png",
+      "Frames/Aquilamon_Frame_002.png",
+      "Frames/Aquilamon_Frame_001.png",
+      "Frames/Aquilamon_Frame_003.png"
+    ],
+    "attack": [
+      "Frames/Aquilamon_Frame_007.png",
+      "Frames/Aquilamon_Frame_008.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 23,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied original sprite artwork; existing pose assignments retained. FixedSpritesPart2 v1.1.1: supplied RGBA PNG bytes preserved; documented same-pose copies synchronized; see data/fixed_sprites_v111.json."
+}

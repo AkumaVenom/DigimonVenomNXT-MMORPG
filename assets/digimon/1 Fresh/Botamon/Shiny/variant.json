@@ -1,0 +1,25 @@
+{
+  "variant_id": "shiny_botamon",
+  "display_name": "Shiny Botamon",
+  "base_species": "Botamon",
+  "stage": "1 Fresh",
+  "status": "ready",
+  "style_profile": "Prismatic Shiny \u2014 Gold Stardust v1",
+  "palette": "Amethyst",
+  "target_hue_degrees": 276.0,
+  "source_sprite_count": 6,
+  "shiny_sprite_count": 6,
+  "animation_alignment": "Exact source canvas dimensions and sprite positions retained",
+  "effects": "Warm-gold silhouette glow; restrained ivory/gold four-point sparkles; deterministic frame twinkle",
+  "sprites": [
+    "Botamon_AttackPart1.png",
+    "Botamon_AttackPart2.png",
+    "Botamon_Extra.png",
+    "Botamon_Idle.png",
+    "Botamon_LLegWalk.png",
+    "Botamon_RLegWalk.png"
+  ],
+  "primary_sprite": "1 Fresh/Botamon/Shiny/Botamon_Idle.png",
+  "source_primary": "1 Fresh/Botamon/Botamon_Idle.png",
+  "materializable": true
+}

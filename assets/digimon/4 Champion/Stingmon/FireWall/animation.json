@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Frames/Stingmon_Frame_002.png",
+    "walk_left": "Frames/Stingmon_Frame_003.png",
+    "walk_right": "Frames/Stingmon_Frame_004.png",
+    "attack1": "Frames/Stingmon_Frame_006.png",
+    "attack2": "Frames/Stingmon_Frame_007.png",
+    "front": "Stingmon_Primary.png"
+  },
+  "animations": {
+    "idle": [
+      "Frames/Stingmon_Frame_002.png",
+      "Frames/Stingmon_Frame_003.png",
+      "Frames/Stingmon_Frame_002.png",
+      "Frames/Stingmon_Frame_004.png"
+    ],
+    "walk": [
+      "Frames/Stingmon_Frame_002.png",
+      "Frames/Stingmon_Frame_003.png",
+      "Frames/Stingmon_Frame_002.png",
+      "Frames/Stingmon_Frame_004.png"
+    ],
+    "attack": [
+      "Frames/Stingmon_Frame_006.png",
+      "Frames/Stingmon_Frame_007.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 21,
+  "frame_selection": "v1.0.1 pose assignments retained; supplied v1.1.0 fixed PNGs replace canonical paths; explicit primary/front portrait when supplied",
+  "art_provenance": "FireWall effects applied to supplied source PNGs; original pose, pixel resolution, frame selections and relative references retained. Canvas padding is documented in sprite_geometry.json."
+}

@@ -46,7 +46,7 @@ class WorldDSClientTests(unittest.TestCase):
     def tab(self, key):
         return f'{dict(self.world.REGIONS)[key]}  ·  {len(self.world.region_entries(key))}'
 
-    def test_two_regions_keep_original_catalog_and_send_only_authoritative_travel(self):
+    def test_original_regions_keep_catalog_and_send_only_authoritative_travel(self):
         before = copy.deepcopy(self.app.state)
         self.render()
         self.assertEqual(len(self.dawn), 254)
@@ -58,7 +58,9 @@ class WorldDSClientTests(unittest.TestCase):
             self.click('Transfer')
             send.assert_called_once_with('travel', map_id=self.ds[0]['id'])
         self.assertEqual(self.app.state, before)
-        self.assertEqual(len({entry['id'] for entry in self.dawn+self.ds}), len(self.app.assets.maps))
+        all_entries = [entry for region, _ in self.world.REGIONS for entry in self.world.region_entries(region)]
+        self.assertEqual(len({entry['id'] for entry in all_entries}), len(self.app.assets.maps))
+        self.assertEqual(len(self.ds), 150)
 
     def test_level_search_page_memory_is_independent_per_region(self):
         self.render(); self.click(self.tab('world_ds')); self.render()
@@ -141,7 +143,7 @@ class WorldDSClientTests(unittest.TestCase):
         for physical in ((960, 600), (1280, 800), (1920, 1080), (3840, 2160)):
             self.app.screen = NativeCanvas(pygame.display.set_mode(physical), effective_ui_scale(physical, 'auto'))
             self.app.ui.screen = self.app.screen
-            for region in ('dawn', 'world_ds'):
+            for region, _ in self.world.REGIONS:
                 self.world.select_region(region); self.render()
                 bounds = self.app.screen.get_rect()
                 for rect, _ in self.app.ui.actions+self.app.ui.fields:

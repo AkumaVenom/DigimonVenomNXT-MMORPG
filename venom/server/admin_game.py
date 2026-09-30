@@ -10,7 +10,7 @@ import copy
 import re
 import uuid
 
-from venom.common.game import FARM_CAPACITY, SHOP, GameError, xp_required
+from venom.common.game import FARM_CAPACITY, SHOP, GameError, variety_of, xp_required
 from venom.server.navigation import Navigation
 
 
@@ -18,7 +18,7 @@ MAX_CREDITS = 2**53 - 1
 READ_ONLY = frozenset({"digimon", "team", "bag", "money", "balance", "digimoninfo"})
 GAME_COMMANDS = READ_ONLY | frozenset({
     "givedigimon", "removedigimon", "heal", "evolve", "devolve", "setlevel", "setexp",
-    "setabi", "setcam", "setfriendshiplevel", "setparadox", "clonedigimon", "giveitem",
+    "setabi", "setcam", "setfriendshiplevel", "setparadox", "setshiny", "setfirewall", "clonedigimon", "giveitem",
     "removeitem", "setitem", "clearinventory", "givemoney", "removemoney", "setmoney",
     "teleportplayer", "spawn",
 })
@@ -104,7 +104,7 @@ class AdminGame:
                 f"Lv {partner['level']} XP {partner.get('xp', 0)}/{xp_required(partner['level'])} | "
                 f"ABI {partner.get('abi', 0)} CAM {partner.get('cam', 0)} | "
                 f"HP {partner['hp']}/{partner['max_hp']} SP {partner['sp']}/{partner['max_sp']}" +
-                (" | PARADOX" if partner.get("paradox") else ""))
+                (" | FIREWALL" if partner.get("firewall") else " | SHINY" if partner.get("shiny") else " | PARADOX" if partner.get("paradox") else ""))
 
     def species_info(self, args):
         species = self._species(" ".join(args))
@@ -112,7 +112,9 @@ class AdminGame:
         devolutions = [r["to"] for r in self.engine.devolutions.get(species["id"], [])]
         return (f"{species['name']} [{species['id']}] | {species.get('stage', 'unknown')} | "
                 f"{species.get('type', 'free')} / {species.get('attribute', 'neutral')} | "
-                f"Paradox: {'yes' if species.get('paradox') else 'no'}\n"
+                f"Paradox: {'yes' if species.get('paradox') else 'no'} | "
+                f"Shiny: {'yes' if species.get('shiny') else 'no'} | "
+                f"FireWall: {'yes' if species.get('firewall') else 'no'}\n"
                 f"Level 1 stats: {self.engine.stats_for(species, 1)}\n"
                 f"Evolve: {', '.join(evolutions) or 'none'}\n"
                 f"Devolve: {', '.join(devolutions) or 'none'}")
@@ -201,12 +203,42 @@ class AdminGame:
                                       partner.get("farm_bonuses"))
         partner.update(name=species["name"], stage=species.get("stage", "unknown"),
                        type=species["type"], attribute=species["attribute"],
-                       paradox=bool(species.get("paradox")), max_hp=stats["hp"], max_sp=stats["sp"],
+                       paradox=bool(species.get("paradox")), shiny=bool(species.get("shiny")),
+                       firewall=bool(species.get("firewall")),
+                       variety=variety_of(species),
+                       max_hp=stats["hp"], max_sp=stats["sp"],
                        hp=0 if defeated else max(1, stats["hp"] - hp_deficit),
                        sp=max(0, stats["sp"] - sp_deficit), next_xp=xp_required(partner["level"]))
         partner.update({key: stats[key] for key in ("atk", "def", "int", "spd")})
         partner["skills"] = self.engine._skills(partner)
         partner.pop("guard", None)
+
+    def _set_variety(self, partner, variety, value):
+        """Select a real catalog counterpart; never paint a flag onto a base form."""
+        if value.casefold() not in {"true", "false"}:
+            raise GameError(f"{variety.title()} status must be true or false.")
+        enabled = value.casefold() == "true"
+        current = self.engine.species[partner["species_id"]]
+        if enabled == bool(current.get(variety)):
+            return
+        base_id = current.get("base_id", current["id"])
+        base = self.engine.species.get(base_id)
+        if not base or variety_of(base) != "normal":
+            raise GameError("This species does not have a supported regular form.")
+        if enabled:
+            choices = [species["id"] for species in self.engine.species.values()
+                       if species.get(variety) and species.get("base_id") == base_id
+                       and variety_of(species) == variety
+                       and not any(species.get(other) for other in ("paradox", "shiny", "firewall")
+                                   if other != variety)]
+            if len(choices) != 1:
+                raise GameError(f"This species does not have one supported {variety.title()} variant.")
+            target = choices[0]
+        else:
+            target = base_id
+        previous = partner["species_id"]
+        partner["species_id"] = target
+        partner["history"] = list(dict.fromkeys(partner.get("history", []) + [previous]))[-50:]
 
     def _evolution_selection(self, state, args, down):
         if not args:
@@ -271,29 +303,14 @@ class AdminGame:
             partner.update(evolved)
             partner.pop("guard", None)
             return f"{source}:{index + 1} changed to {partner['name']}; Lv 1, ABI {partner['abi']}, CAM retained."
-        setters = {"setlevel", "setexp", "setabi", "setcam", "setfriendshiplevel", "setparadox"}
+        setters = {"setlevel", "setexp", "setabi", "setcam", "setfriendshiplevel", "setparadox", "setshiny", "setfirewall"}
         if command in setters:
             if len(args) < 2:
                 raise GameError("Specify a Digimon selector followed by the new value.")
             source, index, partner = self._owned(state, " ".join(args[:-1]))
             value = args[-1]
-            if command == "setparadox":
-                if value.casefold() not in {"true", "false"}:
-                    raise GameError("Paradox status must be true or false.")
-                enabled = value.casefold() == "true"
-                species = self.engine.species[partner["species_id"]]
-                if enabled != bool(species.get("paradox")):
-                    if enabled:
-                        choices = [s["id"] for s in self.engine.species.values()
-                                   if s.get("paradox") and s.get("base_id") == species["id"]]
-                        if len(choices) != 1:
-                            raise GameError("This species does not have one supported Paradox variant.")
-                        partner["species_id"] = choices[0]
-                    else:
-                        base = species.get("base_id")
-                        if base not in self.engine.species or self.engine.species[base].get("paradox"):
-                            raise GameError("This Paradox species does not have a supported regular form.")
-                        partner["species_id"] = base
+            if command in {"setparadox", "setshiny", "setfirewall"}:
+                self._set_variety(partner, command[3:], value)
             else:
                 field = {"setlevel": "level", "setexp": "xp", "setabi": "abi", "setcam": "cam",
                          "setfriendshiplevel": "cam"}[command]

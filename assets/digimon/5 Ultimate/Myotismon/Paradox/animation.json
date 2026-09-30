@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Frames/Myotismon_Paradox_Frame_002.png",
+    "walk_left": "Frames/Myotismon_Paradox_Frame_003.png",
+    "walk_right": "Frames/Myotismon_Paradox_Frame_004.png",
+    "attack1": "Frames/Myotismon_Paradox_Frame_009.png",
+    "attack2": "Frames/Myotismon_Paradox_Frame_010.png"
+  },
+  "animations": {
+    "idle": [
+      "Frames/Myotismon_Paradox_Frame_002.png",
+      "Frames/Myotismon_Paradox_Frame_003.png",
+      "Frames/Myotismon_Paradox_Frame_002.png",
+      "Frames/Myotismon_Paradox_Frame_004.png"
+    ],
+    "walk": [
+      "Frames/Myotismon_Paradox_Frame_002.png",
+      "Frames/Myotismon_Paradox_Frame_003.png",
+      "Frames/Myotismon_Paradox_Frame_002.png",
+      "Frames/Myotismon_Paradox_Frame_004.png"
+    ],
+    "attack": [
+      "Frames/Myotismon_Paradox_Frame_009.png",
+      "Frames/Myotismon_Paradox_Frame_010.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 22,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied v1.2.0 Paradox PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained."
+}

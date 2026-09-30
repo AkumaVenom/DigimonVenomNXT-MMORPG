@@ -3,7 +3,7 @@
 No network fetches or guessed sprites. Existing assets can regenerate catalog/manifest.
 """
 from __future__ import annotations
-import argparse, hashlib, json, re, struct, zipfile, sys
+import argparse, copy, hashlib, json, re, struct, zipfile, sys
 from pathlib import Path
 from PIL import Image, ImageOps
 ROOT=Path(__file__).resolve().parents[1]
@@ -103,13 +103,33 @@ def animation_override(directory,root=ROOT):
   resolved=(directory/path).resolve()
   if not resolved.is_relative_to(directory.resolve()) or not resolved.is_file():raise ValueError(f'Missing or unsafe animation frame: {path}')
   return resolved.relative_to(root.resolve()).as_posix()
- return {'sprites':{key:asset(path) for key,path in data['sprites'].items()},
+ result={'sprites':{key:asset(path) for key,path in data['sprites'].items()},
          'animations':{key:[asset(path) for path in paths] for key,paths in data['animations'].items()},
          'mirrored_frames':{asset(path):asset(mirror) for path,mirror in data.get('mirrored_frames',{}).items()},
          'source_frame_count':data['source_frame_count'],
          'frame_selection':data['frame_selection'],
          'art_provenance':data['art_provenance']}
+ geometry_path=directory/'sprite_geometry.json'
+ if geometry_path.is_file():
+  geometry=json.loads(geometry_path.read_text(encoding='utf-8'))
+  if geometry.get('version')!=1 or geometry.get('coordinate_space')!='pixels':raise ValueError(f'Unsupported sprite geometry: {geometry_path}')
+  paths=set(result['sprites'].values())|{p for seq in result['animations'].values() for p in seq}|set(result['mirrored_frames'])|set(result['mirrored_frames'].values())
+  result['sprite_geometry']={path:{key:geometry['files'][Path(path).relative_to(directory.resolve().relative_to(root.resolve())).as_posix()][key] for key in ('source_size','output_size','padding')} for path in sorted(paths)}
+ return result
 def species_catalog():
+ # A v1.2.0 installation has explicit pose mappings for both rare varieties.
+ # Preserve the installed roster, IDs and mechanics when rebuilding art routes;
+ # the pre-release heuristic must never drop Shiny or restore old Paradox poses.
+ if (ROOT/'data/varieties_v120.json').is_file():
+  records=copy.deepcopy(json.loads((ROOT/'data/catalog.json').read_text(encoding='utf-8'))['species'])
+  for entry in records:
+   idle=ROOT/entry['sprites']['idle'];parts=Path(entry['sprites']['idle']).parts
+   directory=ROOT.joinpath(*parts[:5 if entry.get('paradox') or entry.get('shiny') or entry.get('firewall') else 4])
+   entry.update(animation_override(directory))
+   paths=list(entry['sprites'].values())+[p for seq in entry['animations'].values() for p in seq]
+   paths+=list(entry.get('mirrored_frames',{}))+list(entry.get('mirrored_frames',{}).values())
+   if any(not (ROOT/p).is_file() for p in paths):raise ValueError(f'Missing installed variety sprite: {entry["id"]}')
+  return records
  records=[];seen=set()
  for stage_dir in sorted((ROOT/'assets/digimon').iterdir()):
   if not stage_dir.is_dir():continue
@@ -162,7 +182,7 @@ def map_catalog():
 def manifest():
  files=[]
  for p in sorted((ROOT/'assets').rglob('*')):
-  if p.is_file():files.append({'path':relative(p),'size':p.stat().st_size,'sha256':digest(p)})
+  if p.is_file() and not any(part.startswith('.rsync-tmp') for part in p.parts):files.append({'path':relative(p),'size':p.stat().st_size,'sha256':digest(p)})
  for p in sorted((ROOT/'data').glob('*.json')):
   if p.name!='asset_manifest.json':files.append({'path':relative(p),'size':p.stat().st_size,'sha256':digest(p)})
  result={'version':1,'files':files};save_json(ROOT/'data/asset_manifest.json',result);return result
@@ -171,6 +191,8 @@ def main():
  p=argparse.ArgumentParser(description=__doc__);p.add_argument('--sprites',type=Path);p.add_argument('--maps',type=Path);p.add_argument('--rom',type=Path);p.add_argument('--manifest-only',action='store_true');p.add_argument('--verify-images',action='store_true');p.add_argument('--extract-media',action='store_true',help='With --rom, also regenerate authentic audio, effects and collision masks');args=p.parse_args()
  if args.manifest_only:
   print(f'Hashed {len(manifest()["files"])} files');return
+ if (ROOT/'data/varieties_v120.json').is_file() and args.sprites:
+  p.error('v1.2.0 varieties are installed. Use tools/import_varieties_v120.py for sprite packs; the legacy ZIP importer would replace current art.')
  if args.sprites:import_zip(args.sprites)
  if args.maps:import_maps(args.maps)
  if args.rom:
@@ -183,15 +205,28 @@ def main():
    extract_audio(args.rom,ROOT);extract_effects(args.rom,ROOT);extract_collision(args.rom,ROOT)
  elif args.extract_media:p.error('--extract-media requires --rom')
  tamers_path=ROOT/'data/tamers_catalog.json';audio_path=ROOT/'data/audio_catalog.json'
- catalog={'version':'0.1.0','species':species_catalog(),'tamers':json.loads(tamers_path.read_text(encoding='utf-8')) if tamers_path.exists() else [],'maps':map_catalog(),'audio':json.loads(audio_path.read_text(encoding='utf-8')) if audio_path.exists() else {'music':[],'effects':[]},'mechanics_note':'Cyber Sleuth-inspired rules with curated type/attribute mappings where available; remaining species and all Paradox variants use explicitly provisional fan balancing.'}
+ installed_v120=(ROOT/'data/varieties_v120.json').is_file()
+ if installed_v120:
+  catalog=json.loads((ROOT/'data/catalog.json').read_text(encoding='utf-8'))
+  catalog['species']=species_catalog()
+  if args.rom:catalog['tamers']=json.loads(tamers_path.read_text(encoding='utf-8'))
+  if args.extract_media:catalog['audio']=json.loads(audio_path.read_text(encoding='utf-8'))
+ else:
+  catalog={'version':'0.1.0','species':species_catalog(),'tamers':json.loads(tamers_path.read_text(encoding='utf-8')) if tamers_path.exists() else [],'maps':map_catalog(),'audio':json.loads(audio_path.read_text(encoding='utf-8')) if audio_path.exists() else {'music':[],'effects':[]},'mechanics_note':'Cyber Sleuth-inspired rules with curated type/attribute mappings where available; remaining species and all Paradox variants use explicitly provisional fan balancing.'}
  effects_path=ROOT/'data/effects_catalog.json'
  if effects_path.exists():catalog['battle_effects']=json.loads(effects_path.read_text(encoding='utf-8')).get('effects',[])
- if (ROOT/'data/world_ds_maps.json').is_file():
+ if not installed_v120 and (ROOT/'data/world_ds_maps.json').is_file():
   sys.path.insert(0,str(ROOT))
   from tools.merge_world_ds import merge_catalog
   catalog=merge_catalog(catalog,ROOT)
+ if (ROOT/'data/xros_maps.json').is_file():
+  sys.path.insert(0,str(ROOT))
+  from tools.merge_xros import merge_catalog as merge_xros
+  catalog=merge_xros(catalog,ROOT)
+  from venom.version import VERSION
+  catalog['version']=VERSION
  save_json(ROOT/'data/catalog.json',catalog)
- if (ROOT/'venom/common/game.py').exists() and catalog['tamers']:
+ if (not installed_v120 or (ROOT/'data/xros_maps.json').is_file()) and (ROOT/'venom/common/game.py').exists() and catalog['tamers']:
   sys.path.insert(0,str(ROOT))
   from venom.common.game import GameEngine
   catalog=GameEngine(ROOT,seed=0).catalog

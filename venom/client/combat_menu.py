@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import pygame
 
+from .varieties import name_color
 from .render import draw
 from .widgets import text, bar, WHITE, CYAN, LIME, RED, MUTED
 
@@ -156,7 +157,7 @@ class CombatMenu:
         text(app.screen, app.assets, 'CURRENT ACTOR', (rect.x+16, rect.y+14), 10, p['accent'], True)
         art.sprite((rect.x+18, rect.y+43, 87, 89), actor.get('species_id'), now=app.now)
         text(app.screen, app.assets, actor.get('name', 'Partner'), (rect.x+114, rect.y+47), 17,
-             WHITE, True, rect.width-130)
+             name_color(actor, app.assets.species, WHITE), True, rect.width-130)
         text(app.screen, app.assets, f"Lv.{actor.get('level', 1)}  ·  Slot {battle.get('actor', 0)+1}",
              (rect.x+114, rect.y+76), 11, p['muted'], max_width=rect.width-130)
         text(app.screen, app.assets, f"SP {actor.get('sp', 0)} / {actor.get('max_sp', 0)}",
@@ -174,7 +175,7 @@ class CombatMenu:
             art.card(card, 'skills', selected=index == app.target and alive)
             art.sprite((card.x+8, card.y+7, 43, card.height-14), enemy.get('species_id'), now=app.now)
             text(app.screen, app.assets, enemy.get('name', 'Enemy'), (card.x+58, card.y+9),
-                 13, WHITE if alive else MUTED, True, card.width-69)
+                 13, name_color(enemy, app.assets.species, WHITE) if alive else MUTED, True, card.width-69)
             text(app.screen, app.assets, 'TARGETED' if index == app.target and alive else 'DEFEATED' if not alive else f"Lv.{enemy.get('level', 1)}",
                  (card.x+58, card.y+30), 9, p['accent'] if alive else MUTED, max_width=card.width-69)
             bar(app.screen, pygame.Rect(card.x+58, card.bottom-10, card.width-70, 4),
@@ -227,7 +228,7 @@ class CombatMenu:
             art.card(card, 'battle', selected=app.selected_party == index)
             art.sprite((card.x+6, card.y+5, 43, card.height-11), mon.get('species_id'), now=app.now)
             text(app.screen, app.assets, f"{index+1}  {mon.get('name', 'Partner')}", (card.x+57, card.y+7),
-                 12, WHITE, True, card.width-69)
+                 12, name_color(mon, app.assets.species, WHITE), True, card.width-69)
             text(app.screen, app.assets, f"HP {mon.get('hp', 0)}/{mon.get('max_hp', 0)}  ·  SP {mon.get('sp', 0)}/{mon.get('max_sp', 0)}",
                  (card.x+57, card.y+28), 9, p['muted'], max_width=card.width-69)
             bar(app.screen, pygame.Rect(card.x+57, card.bottom-8, card.width-70, 3),

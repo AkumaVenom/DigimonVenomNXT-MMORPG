@@ -1,0 +1,24 @@
+{
+  "variant_id": "firewall_koromon",
+  "display_name": "FireWall Koromon",
+  "base_species": "Koromon",
+  "stage": "2 In Training",
+  "status": "ready",
+  "materializable": true,
+  "primary_sprite": "2 In Training/Koromon/FireWall/Koromon_Idle.png",
+  "source_primary": "2 In Training/Koromon/Koromon_Idle.png",
+  "source_sprite_count": 6,
+  "firewall_sprite_count": 6,
+  "style_profile": "FireWall Ember Circuit v1",
+  "style_features": [
+    "red-orange silhouette aura",
+    "warm ember palette with preserved dark outlines",
+    "circle-slash firewall sigils",
+    "angular cyber circuits",
+    "golden pixel sparks",
+    "transparent background"
+  ],
+  "animation_alignment": "Original pixels and pose preserved at native resolution; added margins recorded in sprite_geometry.json. Subtract padding.left/top to retain original draw origin.",
+  "geometry_manifest": "sprite_geometry.json",
+  "animation_manifest": null
+}

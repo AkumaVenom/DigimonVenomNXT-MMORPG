@@ -1,0 +1,24 @@
+{
+  "variant_id": "shiny_biyomon",
+  "display_name": "Shiny Biyomon",
+  "base_species": "Biyomon",
+  "stage": "3 Rookie",
+  "status": "ready",
+  "style_profile": "Prismatic Shiny \u2014 Gold Stardust v1",
+  "palette": "Glacier mint",
+  "target_hue_degrees": 171.0,
+  "source_sprite_count": 5,
+  "shiny_sprite_count": 5,
+  "animation_alignment": "Exact source canvas dimensions and sprite positions retained",
+  "effects": "Warm-gold silhouette glow; restrained ivory/gold four-point sparkles; deterministic frame twinkle",
+  "sprites": [
+    "Biyomon_AttackPart1.png",
+    "Biyomon_AttackPart2.png",
+    "Biyomon_Idle.png",
+    "Biyomon_LLegWalk.png",
+    "Biyomon_RLegWalk.png"
+  ],
+  "primary_sprite": "3 Rookie/Biyomon/Shiny/Biyomon_Idle.png",
+  "source_primary": "3 Rookie/Biyomon/Biyomon_Idle.png",
+  "materializable": true
+}

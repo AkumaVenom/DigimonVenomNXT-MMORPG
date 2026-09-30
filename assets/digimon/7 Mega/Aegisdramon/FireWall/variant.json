@@ -1,0 +1,24 @@
+{
+  "variant_id": "firewall_aegisdramon",
+  "display_name": "FireWall Aegisdramon",
+  "base_species": "Aegisdramon",
+  "stage": "7 Mega",
+  "status": "ready",
+  "materializable": true,
+  "primary_sprite": "7 Mega/Aegisdramon/FireWall/Aegisdramon_Primary.png",
+  "source_primary": "7 Mega/Aegisdramon/Aegisdramon_Primary.png",
+  "source_sprite_count": 20,
+  "firewall_sprite_count": 20,
+  "style_profile": "FireWall Ember Circuit v1",
+  "style_features": [
+    "red-orange silhouette aura",
+    "warm ember palette with preserved dark outlines",
+    "circle-slash firewall sigils",
+    "angular cyber circuits",
+    "golden pixel sparks",
+    "transparent background"
+  ],
+  "animation_alignment": "Original pixels and pose preserved at native resolution; added margins recorded in sprite_geometry.json. Subtract padding.left/top to retain original draw origin.",
+  "geometry_manifest": "sprite_geometry.json",
+  "animation_manifest": "animation.json"
+}

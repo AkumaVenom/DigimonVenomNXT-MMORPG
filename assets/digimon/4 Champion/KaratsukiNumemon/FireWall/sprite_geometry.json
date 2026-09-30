@@ -1,0 +1,405 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Frames/KaratsukiNumemon_Frame_001.png": {
+      "source_size": [
+        64,
+        64
+      ],
+      "output_size": [
+        96,
+        96
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/KaratsukiNumemon_Frame_002.png": {
+      "source_size": [
+        67,
+        65
+      ],
+      "output_size": [
+        99,
+        97
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/KaratsukiNumemon_Frame_003.png": {
+      "source_size": [
+        67,
+        65
+      ],
+      "output_size": [
+        99,
+        97
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/KaratsukiNumemon_Frame_004.png": {
+      "source_size": [
+        53,
+        73
+      ],
+      "output_size": [
+        85,
+        105
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/KaratsukiNumemon_Frame_005.png": {
+      "source_size": [
+        77,
+        62
+      ],
+      "output_size": [
+        109,
+        94
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/KaratsukiNumemon_Frame_006.png": {
+      "source_size": [
+        25,
+        27
+      ],
+      "output_size": [
+        57,
+        59
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/KaratsukiNumemon_Frame_007.png": {
+      "source_size": [
+        25,
+        27
+      ],
+      "output_size": [
+        57,
+        59
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/KaratsukiNumemon_Frame_008.png": {
+      "source_size": [
+        26,
+        28
+      ],
+      "output_size": [
+        58,
+        60
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/KaratsukiNumemon_Frame_009.png": {
+      "source_size": [
+        26,
+        28
+      ],
+      "output_size": [
+        58,
+        60
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/KaratsukiNumemon_Frame_010.png": {
+      "source_size": [
+        28,
+        27
+      ],
+      "output_size": [
+        60,
+        59
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/KaratsukiNumemon_Frame_011.png": {
+      "source_size": [
+        28,
+        27
+      ],
+      "output_size": [
+        60,
+        59
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/KaratsukiNumemon_Frame_012.png": {
+      "source_size": [
+        26,
+        26
+      ],
+      "output_size": [
+        58,
+        58
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/KaratsukiNumemon_Frame_013.png": {
+      "source_size": [
+        26,
+        26
+      ],
+      "output_size": [
+        58,
+        58
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/KaratsukiNumemon_Frame_014.png": {
+      "source_size": [
+        26,
+        27
+      ],
+      "output_size": [
+        58,
+        59
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/KaratsukiNumemon_Frame_015.png": {
+      "source_size": [
+        26,
+        27
+      ],
+      "output_size": [
+        58,
+        59
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/KaratsukiNumemon_Frame_016.png": {
+      "source_size": [
+        28,
+        27
+      ],
+      "output_size": [
+        60,
+        59
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/KaratsukiNumemon_Frame_017.png": {
+      "source_size": [
+        28,
+        27
+      ],
+      "output_size": [
+        60,
+        59
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/KaratsukiNumemon_Frame_018.png": {
+      "source_size": [
+        26,
+        26
+      ],
+      "output_size": [
+        58,
+        58
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/KaratsukiNumemon_Frame_019.png": {
+      "source_size": [
+        27,
+        26
+      ],
+      "output_size": [
+        59,
+        58
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Frames/KaratsukiNumemon_Frame_020.png": {
+      "source_size": [
+        26,
+        25
+      ],
+      "output_size": [
+        58,
+        57
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "KaratsukiNumemon_Primary.png": {
+      "source_size": [
+        64,
+        64
+      ],
+      "output_size": [
+        96,
+        96
+      ],
+      "padding": {
+        "left": 16,
+        "top": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "effect_pixel_unit": 1,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

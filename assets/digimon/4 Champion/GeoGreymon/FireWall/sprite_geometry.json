@@ -1,0 +1,101 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "GeoGreymon_AttackPart1.png": {
+      "source_size": [
+        558,
+        676
+      ],
+      "output_size": [
+        718,
+        836
+      ],
+      "padding": {
+        "left": 80,
+        "top": 80,
+        "right": 80,
+        "bottom": 80
+      },
+      "effect_pixel_unit": 5,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "GeoGreymon_AttackPart2.png": {
+      "source_size": [
+        564,
+        666
+      ],
+      "output_size": [
+        724,
+        826
+      ],
+      "padding": {
+        "left": 80,
+        "top": 80,
+        "right": 80,
+        "bottom": 80
+      },
+      "effect_pixel_unit": 5,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "GeoGreymon_Idle.png": {
+      "source_size": [
+        460,
+        618
+      ],
+      "output_size": [
+        620,
+        778
+      ],
+      "padding": {
+        "left": 80,
+        "top": 80,
+        "right": 80,
+        "bottom": 80
+      },
+      "effect_pixel_unit": 5,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "GeoGreymon_LLegWalk.png": {
+      "source_size": [
+        612,
+        642
+      ],
+      "output_size": [
+        772,
+        802
+      ],
+      "padding": {
+        "left": 80,
+        "top": 80,
+        "right": 80,
+        "bottom": 80
+      },
+      "effect_pixel_unit": 5,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "GeoGreymon_RLegWalk.png": {
+      "source_size": [
+        612,
+        642
+      ],
+      "output_size": [
+        772,
+        802
+      ],
+      "padding": {
+        "left": 80,
+        "top": 80,
+        "right": 80,
+        "bottom": 80
+      },
+      "effect_pixel_unit": 5,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

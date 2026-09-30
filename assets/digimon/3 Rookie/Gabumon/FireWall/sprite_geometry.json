@@ -1,0 +1,120 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Gabumon_AttackPart1.png": {
+      "source_size": [
+        764,
+        820
+      ],
+      "output_size": [
+        1084,
+        1140
+      ],
+      "padding": {
+        "left": 160,
+        "top": 160,
+        "right": 160,
+        "bottom": 160
+      },
+      "effect_pixel_unit": 10,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Gabumon_AttackPart2.png": {
+      "source_size": [
+        1090,
+        798
+      ],
+      "output_size": [
+        1410,
+        1118
+      ],
+      "padding": {
+        "left": 160,
+        "top": 160,
+        "right": 160,
+        "bottom": 160
+      },
+      "effect_pixel_unit": 10,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Gabumon_Extra.png": {
+      "source_size": [
+        1090,
+        798
+      ],
+      "output_size": [
+        1410,
+        1118
+      ],
+      "padding": {
+        "left": 160,
+        "top": 160,
+        "right": 160,
+        "bottom": 160
+      },
+      "effect_pixel_unit": 10,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Gabumon_Idle.png": {
+      "source_size": [
+        722,
+        810
+      ],
+      "output_size": [
+        1042,
+        1130
+      ],
+      "padding": {
+        "left": 160,
+        "top": 160,
+        "right": 160,
+        "bottom": 160
+      },
+      "effect_pixel_unit": 10,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Gabumon_LLegWalk.png": {
+      "source_size": [
+        684,
+        822
+      ],
+      "output_size": [
+        1004,
+        1142
+      ],
+      "padding": {
+        "left": 160,
+        "top": 160,
+        "right": 160,
+        "bottom": 160
+      },
+      "effect_pixel_unit": 10,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Gabumon_RLegWalk.png": {
+      "source_size": [
+        684,
+        822
+      ],
+      "output_size": [
+        1004,
+        1142
+      ],
+      "padding": {
+        "left": 160,
+        "top": 160,
+        "right": 160,
+        "bottom": 160
+      },
+      "effect_pixel_unit": 10,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

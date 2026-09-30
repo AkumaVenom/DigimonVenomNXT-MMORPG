@@ -1,0 +1,120 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Hagurumon_AttackPart1.png": {
+      "source_size": [
+        834,
+        518
+      ],
+      "output_size": [
+        1154,
+        838
+      ],
+      "padding": {
+        "left": 160,
+        "top": 160,
+        "right": 160,
+        "bottom": 160
+      },
+      "effect_pixel_unit": 10,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Hagurumon_AttackPart2.png": {
+      "source_size": [
+        866,
+        550
+      ],
+      "output_size": [
+        1186,
+        870
+      ],
+      "padding": {
+        "left": 160,
+        "top": 160,
+        "right": 160,
+        "bottom": 160
+      },
+      "effect_pixel_unit": 10,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Hagurumon_Extra.png": {
+      "source_size": [
+        866,
+        550
+      ],
+      "output_size": [
+        1186,
+        870
+      ],
+      "padding": {
+        "left": 160,
+        "top": 160,
+        "right": 160,
+        "bottom": 160
+      },
+      "effect_pixel_unit": 10,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Hagurumon_Idle.png": {
+      "source_size": [
+        754,
+        490
+      ],
+      "output_size": [
+        1074,
+        810
+      ],
+      "padding": {
+        "left": 160,
+        "top": 160,
+        "right": 160,
+        "bottom": 160
+      },
+      "effect_pixel_unit": 10,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Hagurumon_LLegWalk.png": {
+      "source_size": [
+        742,
+        480
+      ],
+      "output_size": [
+        1062,
+        800
+      ],
+      "padding": {
+        "left": 160,
+        "top": 160,
+        "right": 160,
+        "bottom": 160
+      },
+      "effect_pixel_unit": 10,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Hagurumon_RLegWalk.png": {
+      "source_size": [
+        742,
+        480
+      ],
+      "output_size": [
+        1062,
+        800
+      ],
+      "padding": {
+        "left": 160,
+        "top": 160,
+        "right": 160,
+        "bottom": 160
+      },
+      "effect_pixel_unit": 10,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

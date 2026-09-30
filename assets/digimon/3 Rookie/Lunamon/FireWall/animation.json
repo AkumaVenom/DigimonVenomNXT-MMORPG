@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Lunamon_Idle.png",
+    "walk_left": "Lunamon_LLegWalk.png",
+    "walk_right": "Lunamon_RLegWalk.png",
+    "attack1": "Lunamon_AttackPart1.png",
+    "attack2": "Lunamon_AttackPart2.png"
+  },
+  "animations": {
+    "idle": [
+      "Lunamon_Idle.png"
+    ],
+    "walk": [
+      "Lunamon_Idle.png",
+      "Lunamon_LLegWalk.png",
+      "Lunamon_Idle.png",
+      "Lunamon_RLegWalk.png"
+    ],
+    "attack": [
+      "Lunamon_AttackPart1.png",
+      "Lunamon_AttackPart2.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 0,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied FireWall PNG bytes preserved; normal pose selections and mirrors retained. Aura padding is recorded in sprite_geometry.json."
+}

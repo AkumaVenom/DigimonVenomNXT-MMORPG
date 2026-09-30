@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Frames/Sangloupmon_Frame_002.png",
+    "walk_left": "Frames/Sangloupmon_Frame_003.png",
+    "walk_right": "Frames/Sangloupmon_Frame_004.png",
+    "attack1": "Frames/Sangloupmon_Frame_010.png",
+    "attack2": "Frames/Sangloupmon_Frame_011.png",
+    "front": "Sangloupmon_Primary.png"
+  },
+  "animations": {
+    "idle": [
+      "Frames/Sangloupmon_Frame_002.png",
+      "Frames/Sangloupmon_Frame_003.png",
+      "Frames/Sangloupmon_Frame_002.png",
+      "Frames/Sangloupmon_Frame_004.png"
+    ],
+    "walk": [
+      "Frames/Sangloupmon_Frame_002.png",
+      "Frames/Sangloupmon_Frame_003.png",
+      "Frames/Sangloupmon_Frame_002.png",
+      "Frames/Sangloupmon_Frame_004.png"
+    ],
+    "attack": [
+      "Frames/Sangloupmon_Frame_010.png",
+      "Frames/Sangloupmon_Frame_011.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 20,
+  "frame_selection": "v1.0.1 pose assignments retained; supplied v1.1.0 fixed PNGs replace canonical paths; explicit primary/front portrait when supplied",
+  "art_provenance": "User-supplied DigimonFixedSpritesFor_v1.1.0.rar; v1.0.1 source overlay; selected PNG bytes preserved exactly"
+}

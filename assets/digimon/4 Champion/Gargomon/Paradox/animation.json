@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Gargomon_Paradox_Idle.png",
+    "walk_left": "Gargomon_Paradox_LLegWalk.png",
+    "walk_right": "Gargomon_Paradox_RLegWalk.png",
+    "attack1": "Gargomon_Paradox_Idle.png",
+    "attack2": "Gargomon_Paradox_Idle.png"
+  },
+  "animations": {
+    "idle": [
+      "Gargomon_Paradox_Idle.png"
+    ],
+    "walk": [
+      "Gargomon_Paradox_Idle.png",
+      "Gargomon_Paradox_LLegWalk.png",
+      "Gargomon_Paradox_Idle.png",
+      "Gargomon_Paradox_RLegWalk.png"
+    ],
+    "attack": [
+      "Gargomon_Paradox_Idle.png",
+      "Gargomon_Paradox_Idle.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 0,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied v1.2.0 Paradox PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained."
+}

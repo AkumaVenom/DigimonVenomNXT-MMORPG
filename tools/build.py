@@ -83,7 +83,7 @@ def verify_assets(root: Path = ROOT) -> dict:
     else:
         problems.append("Missing data/catalog.json")
     for path in (root / "assets").rglob("*"):
-        if path.is_file() and path.relative_to(root).as_posix() not in listed:
+        if path.is_file() and ".rsync-tmp" not in path.parts and path.relative_to(root).as_posix() not in listed:
             problems.append(f"Unverified asset: {path.relative_to(root).as_posix()}")
     if problems:
         raise RuntimeError("Asset verification failed:\n" + "\n".join(problems[:40]) + (f"\n... {len(problems) - 40} additional errors" if len(problems) > 40 else ""))
@@ -97,7 +97,7 @@ def run(args: list[str], cwd: Path = ROOT):
 
 
 def copy_tree(source: Path, destination: Path):
-    shutil.copytree(source, destination, dirs_exist_ok=True, ignore=shutil.ignore_patterns("__pycache__", "*.pyc", ".DS_Store"))
+    shutil.copytree(source, destination, dirs_exist_ok=True, ignore=shutil.ignore_patterns("__pycache__", "*.pyc", ".DS_Store", ".rsync-tmp"))
 
 
 def archive(folder: Path, output: Path):
@@ -186,7 +186,7 @@ def build(args) -> None:
                      "RIVALS_BENCHMARK.md", "RIVALS_BENCHMARK.json",
                      "RIVAL_FIX_VALIDATION.json", "RIVAL_TRAINING_VALIDATION.json",
                      "ADMIN_CONSOLE_V080.md", "STORY_MODE_V090.md", "WORLD_DS_V0100.md", "WORLD_DS_STORY_V0110.md", "DIGIRUBY_ECONOMY_V0120.md", "RESTART_REPAIR_V0121.md", "BOT_ACTIVITY_V0122.md", "POPULATION_V0123.md", "RELEASE_V100.md", "FANGLONGMON_V100.md",
-                     "ABI_DIGIMEAT_V101.md", "WORLD_DS_STORY_VALIDATION_V0110.json"):
+                     "ABI_DIGIMEAT_V101.md", "VARIETIES_V120.md", "SUPER_XROS_WARS_V130.md", "XROS_MAPS_V130.md", "GHOSTLINE_V140.md", "GHOSTLINE_MAP_LAYOUT.md", "FIREWALL_V150.md", "WORLD_DS_STORY_VALIDATION_V0110.json"):
             shutil.copy2(ROOT / "docs" / name, destination / "docs" / name)
         copy_tree(ROOT / "docs" / "validation" / "restart_v0121",
                   destination / "docs" / "validation" / "restart_v0121")
@@ -203,6 +203,21 @@ def build(args) -> None:
                  "UI2_UPGRADE.md", "UI2_VALIDATION.json", "UI2_PERFORMANCE.json"):
         if (ROOT / "docs" / name).is_file():
             shutil.copy2(ROOT / "docs" / name, client / "docs" / name)
+    copy_tree(ROOT / "docs" / "validation" / "release_v120",
+              client / "docs" / "validation" / "release_v120")
+    copy_tree(ROOT / "docs" / "validation" / "release_v120",
+              server / "docs" / "validation" / "release_v120")
+    copy_tree(ROOT / "docs" / "validation" / "release_v130",
+              client / "docs" / "validation" / "release_v130")
+    copy_tree(ROOT / "docs" / "validation" / "release_v130",
+              server / "docs" / "validation" / "release_v130")
+    copy_tree(ROOT / "docs" / "validation" / "release_v140",
+              client / "docs" / "validation" / "release_v140")
+    copy_tree(ROOT / "docs" / "validation" / "release_v140",
+              server / "docs" / "validation" / "release_v140")
+    for destination in (client, server):
+        copy_tree(ROOT / "docs" / "validation" / "release_v150",
+                  destination / "docs" / "validation" / "release_v150")
     copy_tree(ROOT / "assets", client / "assets")
     # Only map collision data is needed by the authoritative world server.
     catalog = json.loads((ROOT / "data/catalog.json").read_text(encoding="utf-8"))
@@ -241,29 +256,29 @@ def build(args) -> None:
     (client / "READ_ME_FIRST.txt").write_text(
         f"DIGIMON VENOM NXT {BUILD_VERSION} - CLIENT\n\n"
         "Start the game: PLAY_DIGIMON_VENOM_NXT.bat\n"
-        f"Connect to the v{BUILD_VERSION} server. Rebuild and deploy BOTH the client and server for v1.0.1 ABI DigiMeat and its server rules.\n"
+        f"Connect to the v{BUILD_VERSION} server. Rebuild and deploy BOTH the client and server for v1.5.0 FireWall varieties and permanent Dawn Relay scan mastery.\n"
         "Existing installation: copy your existing client config folder into this complete new client folder.\n"
-        "New in v1.0.1: ABI DigiMeat adds +1 permanent ABI for 6,000 credits or 30 DigiRubies.\n"
+        "New in v1.5.0: all 502 FireWall Digimon appear at 0.7% across the 500 public maps. Dawn Relay completion grants permanent +20% FireWall scan gain on wild victories (5% to 6%). Existing Dawn champions receive the reward automatically.\n"
         "Shop / B: pay with credits or DigiRubies for every capsule and DigiMeat.\n"
         "Ranked Arena / R: DigiRuby Exchange gives 100 credits per DigiRuby.\n"
         "Attack is free at 0 SP. The redundant Struggle option has been removed.\n"
         "Bot Activity / O: activity counters cover the latest 12 hours; the feed keeps the latest 100 events in that window.\n"
-        "See docs/ABI_DIGIMEAT_V101.md; preserve existing server saves and credentials.\n"
+        "See docs/FIREWALL_V150.md; preserve existing server saves and credentials.\n"
         "Keep its client.json and trusted server-ca.pem. Your saved display preferences remain in Local AppData.\n"
         "New installation: extract the host's Public_Player_Connection_Kit.zip INTO this folder, merging config.\n"
         "Built clients need no Python installation or manual Windows certificate trust.\n"
         "DigiFarm / F2: use the top-left home button. Click a farm Digimon to inspect and feed it.\n"
-        "Worlds: shared Dawn or World DS maps. Story F4: choose Dawn Relay or Paradox Chronicle.\n"
+        "Worlds: shared Dawn, World DS and Super Xros Wars maps. Story F4: choose Dawn Relay, Paradox Chronicle or Super Xros: Ghostline.\n"
         "Season F3 remains a separate private career. Each story keeps its own progress.\n"
         "R: Ranked Arena. V: Rivals Hub. O: Bot Activity. Click a map rival to inspect them.\n"
         "F10: display/audio settings. F11: fullscreen/windowed.\n"
-        "Upgrade steps: docs/ABI_DIGIMEAT_V101.md. Interface history: docs/UI2_UPGRADE.md. Game rules: docs/RIVALS_AND_RANKED.md.\n",
+        "Upgrade steps: docs/FIREWALL_V150.md. Interface history: docs/UI2_UPGRADE.md. Game rules: docs/RIVALS_AND_RANKED.md.\n",
         encoding="utf-8")
     (server / "READ_ME_FIRST.txt").write_text(
         f"DIGIMON VENOM NXT {BUILD_VERSION} - PORTABLE DEDICATED SERVER\n\n"
         "UPGRADING AN EXISTING SERVER\n"
-        "Read docs/ABI_DIGIMEAT_V101.md first. Stop and back up the complete existing server.\n"
-        "Rebuild and deploy BOTH the client and server for v1.0.1 ABI DigiMeat and its server rules.\n"
+        "Read docs/FIREWALL_V150.md first. Stop and back up the complete existing server.\n"
+        "Rebuild and deploy BOTH the client and server for v1.5.0 FireWall varieties and permanent Dawn Relay scan mastery.\n"
         "Saved-world loading still has no overall startup deadline.\n"
         "Preserve mysql/data, mysql credentials, config and mysql/runtime.\n"
         "Do not run a fresh database setup or replace your saves for this upgrade.\n\n"
@@ -294,7 +309,7 @@ def build(args) -> None:
         (directory / "build-info.json").write_text(json.dumps(metadata, indent=2) + "\n", encoding="utf-8")
     for directory in (client, server):
         archive(directory, output / f"{directory.name}.zip")
-    print(f"\nBuild complete. Digimon Venom NXT v{BUILD_VERSION} packages:\n  dist/Windows_Client_x64.zip\n  dist/Windows_Server_x64.zip\nRebuild and deploy BOTH the client and server for v1.0.1 ABI DigiMeat and its server rules. Preserve the database, credentials, config and MySQL runtime.\nUpgrade steps: docs/ABI_DIGIMEAT_V101.md. For a NEW server only: follow PORTABLE_SERVER_README.md.", flush=True)
+    print(f"\nBuild complete. Digimon Venom NXT v{BUILD_VERSION} packages:\n  dist/Windows_Client_x64.zip\n  dist/Windows_Server_x64.zip\nRebuild and deploy BOTH the client and server for v1.5.0 FireWall varieties and permanent Dawn Relay scan mastery. Preserve the database, credentials, config and MySQL runtime.\nUpgrade steps: docs/FIREWALL_V150.md. For a NEW server only: follow PORTABLE_SERVER_README.md.", flush=True)
 
 
 def main(argv=None):

@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Veemon_Paradox_Idle.png",
+    "walk_left": "Veemon_Paradox_LLegWalk.png",
+    "walk_right": "Veemon_Paradox_RLegWalk.png",
+    "attack1": "Veemon_Paradox_AttackPart1.png",
+    "attack2": "Veemon_Paradox_AttackPart2.png"
+  },
+  "animations": {
+    "idle": [
+      "Veemon_Paradox_Idle.png"
+    ],
+    "walk": [
+      "Veemon_Paradox_Idle.png",
+      "Veemon_Paradox_LLegWalk.png",
+      "Veemon_Paradox_Idle.png",
+      "Veemon_Paradox_RLegWalk.png"
+    ],
+    "attack": [
+      "Veemon_Paradox_AttackPart1.png",
+      "Veemon_Paradox_AttackPart2.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 0,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied v1.2.0 Paradox PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained."
+}

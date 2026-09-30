@@ -10,14 +10,34 @@
   "source_primary": "5 Ultimate/Shakkoumon/Shakkoumon_Primary.png",
   "source_sprite_count": 21,
   "paradox_sprite_count": 21,
-  "style_profile": "Cyber Paradox Corruption v1",
+  "style_profile": "Cyber Paradox — Fanglongmon reference",
   "style_features": [
-    "violet/black data infection",
-    "cyan/magenta chromatic ghosts",
-    "digital displacement",
-    "angular data-void fractures",
-    "circuit cracks",
-    "transparent neon aura"
+    "original colors and shading retained with lifted highlights",
+    "cyan inner aura and violet outer aura",
+    "cyan and magenta contour splitting",
+    "navy angular glitch bands with diagonal hatching",
+    "stable effects coordinated per species",
+    "source poses, dimensions and pixel placement retained",
+    "transparent PNG output"
   ],
-  "animation_alignment": "exact source canvas dimensions preserved"
+  "animation_alignment": "exact source canvas dimensions and source pixel placement preserved",
+  "transformed_sprite_count": 21,
+  "primary_alias_count": 0,
+  "effect_boundary_policy": "effects remain within each original source canvas; no added padding or changed frame origin",
+  "art_provenance": "Scripted restyling of the user-supplied digimon.rar PNGs, guided by the supplied Fanglongmon Paradox reference; source poses and animation sequencing retained.",
+  "source_archive": "digimon.rar",
+  "style_reference": "Fanglongmon_Paradox_Frame_001(1).png",
+  "primary_is_alias": false,
+  "primary_alias_of": null,
+  "canvas_dimensions": {
+    "119x155": 2,
+    "123x156": 1,
+    "122x157": 1,
+    "140x157": 1,
+    "141x143": 1,
+    "34x42": 13,
+    "34x40": 1,
+    "34x39": 1
+  },
+  "animation_manifest": null
 }

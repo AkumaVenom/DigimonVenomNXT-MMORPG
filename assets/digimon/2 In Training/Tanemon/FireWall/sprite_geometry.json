@@ -1,0 +1,120 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Tanemon_AttackPart1.png": {
+      "source_size": [
+        622,
+        604
+      ],
+      "output_size": [
+        1166,
+        1148
+      ],
+      "padding": {
+        "left": 272,
+        "top": 272,
+        "right": 272,
+        "bottom": 272
+      },
+      "effect_pixel_unit": 17,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Tanemon_AttackPart2.png": {
+      "source_size": [
+        618,
+        700
+      ],
+      "output_size": [
+        1162,
+        1244
+      ],
+      "padding": {
+        "left": 272,
+        "top": 272,
+        "right": 272,
+        "bottom": 272
+      },
+      "effect_pixel_unit": 17,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Tanemon_Extra.png": {
+      "source_size": [
+        604,
+        728
+      ],
+      "output_size": [
+        1148,
+        1272
+      ],
+      "padding": {
+        "left": 272,
+        "top": 272,
+        "right": 272,
+        "bottom": 272
+      },
+      "effect_pixel_unit": 17,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Tanemon_Idle.png": {
+      "source_size": [
+        604,
+        728
+      ],
+      "output_size": [
+        1148,
+        1272
+      ],
+      "padding": {
+        "left": 272,
+        "top": 272,
+        "right": 272,
+        "bottom": 272
+      },
+      "effect_pixel_unit": 17,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Tanemon_LLegWalk.png": {
+      "source_size": [
+        650,
+        674
+      ],
+      "output_size": [
+        1194,
+        1218
+      ],
+      "padding": {
+        "left": 272,
+        "top": 272,
+        "right": 272,
+        "bottom": 272
+      },
+      "effect_pixel_unit": 17,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Tanemon_RLegWalk.png": {
+      "source_size": [
+        650,
+        674
+      ],
+      "output_size": [
+        1194,
+        1218
+      ],
+      "padding": {
+        "left": 272,
+        "top": 272,
+        "right": 272,
+        "bottom": 272
+      },
+      "effect_pixel_unit": 17,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

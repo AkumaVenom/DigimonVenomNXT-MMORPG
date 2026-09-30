@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Gargomon_Idle.png",
+    "walk_left": "Gargomon_LLegWalk.png",
+    "walk_right": "Gargomon_RLegWalk.png",
+    "attack1": "Gargomon_Idle.png",
+    "attack2": "Gargomon_Idle.png"
+  },
+  "animations": {
+    "idle": [
+      "Gargomon_Idle.png"
+    ],
+    "walk": [
+      "Gargomon_Idle.png",
+      "Gargomon_LLegWalk.png",
+      "Gargomon_Idle.png",
+      "Gargomon_RLegWalk.png"
+    ],
+    "attack": [
+      "Gargomon_Idle.png",
+      "Gargomon_Idle.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 0,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied v1.2.0 Shiny PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained."
+}

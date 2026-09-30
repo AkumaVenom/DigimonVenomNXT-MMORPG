@@ -1,0 +1,22 @@
+{
+  "variant_id": "shiny_gazimon",
+  "display_name": "Shiny Gazimon",
+  "base_species": "Gazimon",
+  "stage": "3 Rookie",
+  "status": "ready",
+  "style_profile": "Prismatic Shiny \u2014 Gold Stardust v1",
+  "palette": "Glacier mint",
+  "target_hue_degrees": 171.0,
+  "source_sprite_count": 3,
+  "shiny_sprite_count": 3,
+  "animation_alignment": "Exact source canvas dimensions and sprite positions retained",
+  "effects": "Warm-gold silhouette glow; restrained ivory/gold four-point sparkles; deterministic frame twinkle",
+  "sprites": [
+    "Gazimon_Idle.png",
+    "Gazimon_LLegWalk.png",
+    "Gazimon_RLegWalk.png"
+  ],
+  "primary_sprite": "3 Rookie/Gazimon/Shiny/Gazimon_Idle.png",
+  "source_primary": "3 Rookie/Gazimon/Gazimon_Idle.png",
+  "materializable": true
+}

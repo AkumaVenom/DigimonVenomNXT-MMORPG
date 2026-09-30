@@ -1,0 +1,24 @@
+{
+  "variant_id": "shiny_kamemon",
+  "display_name": "Shiny Kamemon",
+  "base_species": "Kamemon",
+  "stage": "3 Rookie",
+  "status": "ready",
+  "style_profile": "Prismatic Shiny \u2014 Gold Stardust v1",
+  "palette": "Orchid",
+  "target_hue_degrees": 294.0,
+  "source_sprite_count": 5,
+  "shiny_sprite_count": 5,
+  "animation_alignment": "Exact source canvas dimensions and sprite positions retained",
+  "effects": "Warm-gold silhouette glow; restrained ivory/gold four-point sparkles; deterministic frame twinkle",
+  "sprites": [
+    "Kamemon_AttackPart1.png",
+    "Kamemon_AttackPart2.png",
+    "Kamemon_Idle.png",
+    "Kamemon_LLegWalk.png",
+    "Kamemon_RLegWalk.png"
+  ],
+  "primary_sprite": "3 Rookie/Kamemon/Shiny/Kamemon_Idle.png",
+  "source_primary": "3 Rookie/Kamemon/Kamemon_Idle.png",
+  "materializable": true
+}

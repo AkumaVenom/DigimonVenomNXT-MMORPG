@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "SistermonBlancAwakened_Idle.png": {
+      "source_size": [
+        3585,
+        2916
+      ],
+      "output_size": [
+        4001,
+        3332
+      ],
+      "padding": {
+        "left": 208,
+        "top": 208,
+        "right": 208,
+        "bottom": 208
+      },
+      "effect_pixel_unit": 13,
+      "effect_style": "smooth_cyber_glow",
+      "particle_fragment": false
+    },
+    "SistermonBlancAwakened_LLegWalk.png": {
+      "source_size": [
+        4349,
+        3092
+      ],
+      "output_size": [
+        4765,
+        3508
+      ],
+      "padding": {
+        "left": 208,
+        "top": 208,
+        "right": 208,
+        "bottom": 208
+      },
+      "effect_pixel_unit": 13,
+      "effect_style": "smooth_cyber_glow",
+      "particle_fragment": false
+    },
+    "SistermonBlancAwakened_RLegWalk.png": {
+      "source_size": [
+        4349,
+        3092
+      ],
+      "output_size": [
+        4765,
+        3508
+      ],
+      "padding": {
+        "left": 208,
+        "top": 208,
+        "right": 208,
+        "bottom": 208
+      },
+      "effect_pixel_unit": 13,
+      "effect_style": "smooth_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

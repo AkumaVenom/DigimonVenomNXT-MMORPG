@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Hackmon_Idle.png",
+    "walk_left": "Hackmon_LLegWalk.png",
+    "walk_right": "Hackmon_RLegWalk.png",
+    "attack1": "Hackmon_Idle.png",
+    "attack2": "Hackmon_Idle.png"
+  },
+  "animations": {
+    "idle": [
+      "Hackmon_Idle.png"
+    ],
+    "walk": [
+      "Hackmon_Idle.png",
+      "Hackmon_LLegWalk.png",
+      "Hackmon_Idle.png",
+      "Hackmon_RLegWalk.png"
+    ],
+    "attack": [
+      "Hackmon_Idle.png",
+      "Hackmon_Idle.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 0,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied v1.2.0 Shiny PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained."
+}

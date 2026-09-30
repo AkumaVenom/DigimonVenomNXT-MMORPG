@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Palmon_Paradox_Idle.png",
+    "walk_left": "Palmon_Paradox_LLegWalk.png",
+    "walk_right": "Palmon_Paradox_RLegWalk.png",
+    "attack1": "Palmon_Paradox_AttackPart1.png",
+    "attack2": "Palmon_Paradox_AttackPart2.png",
+    "front": "Palmon_Paradox_Idle.png"
+  },
+  "animations": {
+    "idle": [
+      "Palmon_Paradox_Idle.png"
+    ],
+    "walk": [
+      "Palmon_Paradox_Idle.png",
+      "Palmon_Paradox_LLegWalk.png",
+      "Palmon_Paradox_Idle.png",
+      "Palmon_Paradox_RLegWalk.png"
+    ],
+    "attack": [
+      "Palmon_Paradox_AttackPart1.png",
+      "Palmon_Paradox_AttackPart2.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 0,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied v1.2.0 Paradox PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained.",
+  "source_art_provenance": "User-supplied original sprite artwork; existing pose assignments retained. FixedSpritesPart2 v1.1.1: supplied RGBA PNG bytes preserved; documented same-pose copies synchronized; see data/fixed_sprites_v111.json.",
+  "source_frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "paradox_style_profile": "Cyber Paradox — Fanglongmon reference"
+}

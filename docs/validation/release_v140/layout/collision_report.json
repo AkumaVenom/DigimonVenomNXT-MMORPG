@@ -1,0 +1,2954 @@
+{
+  "campaign": "Ghostline",
+  "maps": [
+    {
+      "chapter": 1,
+      "map_id": "xros_175",
+      "public_name": "Xros Core 01",
+      "art_sha256": "a51d5b0ee635ff718be7f2e7ae2e0203e5aaf86a5046a56c1d9b8bf87506ce25",
+      "mask_sha256": "0935cd18e75f218945df53702dfbbf58ca64e11f8bb1c3343978d4e501a3614c",
+      "arrival": [
+        752,
+        488
+      ],
+      "minimum_spacing": 112.0,
+      "slots": [
+        {
+          "index": 0,
+          "name": "Arrival",
+          "point": [
+            752,
+            488
+          ],
+          "route_length": 0
+        },
+        {
+          "index": 1,
+          "name": "Quest / guide",
+          "point": [
+            752,
+            600
+          ],
+          "route_length": 112
+        },
+        {
+          "index": 2,
+          "name": "Medic",
+          "point": [
+            944,
+            488
+          ],
+          "route_length": 192
+        },
+        {
+          "index": 3,
+          "name": "Shop",
+          "point": [
+            480,
+            488
+          ],
+          "route_length": 272
+        },
+        {
+          "index": 4,
+          "name": "Tamer / lab",
+          "point": [
+            944,
+            696
+          ],
+          "route_length": 400
+        },
+        {
+          "index": 5,
+          "name": "Boss / farm",
+          "point": [
+            1248,
+            536
+          ],
+          "route_length": 544
+        },
+        {
+          "index": 6,
+          "name": "Return portal",
+          "point": [
+            768,
+            216
+          ],
+          "route_length": 480
+        },
+        {
+          "index": 7,
+          "name": "Intel / archive",
+          "point": [
+            608,
+            328
+          ],
+          "route_length": 304
+        },
+        {
+          "index": 8,
+          "name": "Forward portal",
+          "point": [
+            224,
+            712
+          ],
+          "route_length": 752
+        }
+      ]
+    },
+    {
+      "chapter": 2,
+      "map_id": "xros_051",
+      "public_name": "Crimson Causeway 01",
+      "art_sha256": "9e5b520a673a646d6edf23c8f7a294590c3af85fe3787662f612e4ce4321d016",
+      "mask_sha256": "4143843a0272097792e18d7b9162d6b99683edf03b86e70274b51d0b987f6619",
+      "arrival": [
+        800,
+        497
+      ],
+      "minimum_spacing": 113.137,
+      "slots": [
+        {
+          "index": 0,
+          "name": "Arrival",
+          "point": [
+            800,
+            497
+          ],
+          "route_length": 0
+        },
+        {
+          "index": 1,
+          "name": "Quest / guide",
+          "point": [
+            736,
+            593
+          ],
+          "route_length": 160
+        },
+        {
+          "index": 2,
+          "name": "Medic",
+          "point": [
+            944,
+            433
+          ],
+          "route_length": 208
+        },
+        {
+          "index": 3,
+          "name": "Shop",
+          "point": [
+            608,
+            417
+          ],
+          "route_length": 272
+        },
+        {
+          "index": 4,
+          "name": "Tamer / lab",
+          "point": [
+            480,
+            577
+          ],
+          "route_length": 400
+        },
+        {
+          "index": 5,
+          "name": "Boss / farm",
+          "point": [
+            1168,
+            321
+          ],
+          "route_length": 544
+        },
+        {
+          "index": 6,
+          "name": "Return portal",
+          "point": [
+            960,
+            689
+          ],
+          "route_length": 480
+        },
+        {
+          "index": 7,
+          "name": "Intel / archive",
+          "point": [
+            928,
+            321
+          ],
+          "route_length": 304
+        },
+        {
+          "index": 8,
+          "name": "Forward portal",
+          "point": [
+            256,
+            705
+          ],
+          "route_length": 752
+        }
+      ]
+    },
+    {
+      "chapter": 3,
+      "map_id": "xros_052",
+      "public_name": "Crimson Causeway 02",
+      "art_sha256": "ce7f24b5c619491210c9c10e0b7b3e96c1c05d8b5fbb76e055152cd3ed3b7057",
+      "mask_sha256": "705d5fb963ddcee2efc3b7107b8d1e0afbb5454d05191d54e5816007fbbd261f",
+      "arrival": [
+        772,
+        509
+      ],
+      "minimum_spacing": 144.0,
+      "slots": [
+        {
+          "index": 0,
+          "name": "Arrival",
+          "point": [
+            772,
+            509
+          ],
+          "route_length": 0
+        },
+        {
+          "index": 1,
+          "name": "Quest / guide",
+          "point": [
+            916,
+            509
+          ],
+          "route_length": 144
+        },
+        {
+          "index": 2,
+          "name": "Medic",
+          "point": [
+            628,
+            461
+          ],
+          "route_length": 192
+        },
+        {
+          "index": 3,
+          "name": "Shop",
+          "point": [
+            756,
+            317
+          ],
+          "route_length": 272
+        },
+        {
+          "index": 4,
+          "name": "Tamer / lab",
+          "point": [
+            1124,
+            461
+          ],
+          "route_length": 400
+        },
+        {
+          "index": 5,
+          "name": "Boss / farm",
+          "point": [
+            1156,
+            669
+          ],
+          "route_length": 544
+        },
+        {
+          "index": 6,
+          "name": "Return portal",
+          "point": [
+            388,
+            509
+          ],
+          "route_length": 480
+        },
+        {
+          "index": 7,
+          "name": "Intel / archive",
+          "point": [
+            836,
+            685
+          ],
+          "route_length": 304
+        },
+        {
+          "index": 8,
+          "name": "Forward portal",
+          "point": [
+            164,
+            557
+          ],
+          "route_length": 752
+        }
+      ]
+    },
+    {
+      "chapter": 4,
+      "map_id": "xros_054",
+      "public_name": "Crimson Causeway 03",
+      "art_sha256": "537a60cce841888bcb1eb91d12d8e18fe69506252ff7522e39095909a4b62748",
+      "mask_sha256": "d823ae2019764036e196bdb539b09b23a609f1ed213fd1bf6e37af0778ef3e71",
+      "arrival": [
+        816,
+        515
+      ],
+      "minimum_spacing": 112.0,
+      "slots": [
+        {
+          "index": 0,
+          "name": "Arrival",
+          "point": [
+            816,
+            515
+          ],
+          "route_length": 0
+        },
+        {
+          "index": 1,
+          "name": "Quest / guide",
+          "point": [
+            816,
+            403
+          ],
+          "route_length": 112
+        },
+        {
+          "index": 2,
+          "name": "Medic",
+          "point": [
+            656,
+            483
+          ],
+          "route_length": 192
+        },
+        {
+          "index": 3,
+          "name": "Shop",
+          "point": [
+            1040,
+            499
+          ],
+          "route_length": 272
+        },
+        {
+          "index": 4,
+          "name": "Tamer / lab",
+          "point": [
+            1008,
+            307
+          ],
+          "route_length": 400
+        },
+        {
+          "index": 5,
+          "name": "Boss / farm",
+          "point": [
+            432,
+            611
+          ],
+          "route_length": 544
+        },
+        {
+          "index": 6,
+          "name": "Return portal",
+          "point": [
+            624,
+            707
+          ],
+          "route_length": 480
+        },
+        {
+          "index": 7,
+          "name": "Intel / archive",
+          "point": [
+            672,
+            355
+          ],
+          "route_length": 304
+        },
+        {
+          "index": 8,
+          "name": "Forward portal",
+          "point": [
+            848,
+            755
+          ],
+          "route_length": 752
+        }
+      ]
+    },
+    {
+      "chapter": 5,
+      "map_id": "xros_126",
+      "public_name": "Neon Bastion 01",
+      "art_sha256": "3f2d0f3136f62817798b37f271963e7557dcfb4238585d3f80e03d71de612f0b",
+      "mask_sha256": "1296a96588d14762c9c5f1604c099b06e58bc9fa4b513c95ecb2bdafa4fa6bcb",
+      "arrival": [
+        944,
+        320
+      ],
+      "minimum_spacing": 113.137,
+      "slots": [
+        {
+          "index": 0,
+          "name": "Arrival",
+          "point": [
+            944,
+            320
+          ],
+          "route_length": 0
+        },
+        {
+          "index": 1,
+          "name": "Quest / guide",
+          "point": [
+            1024,
+            400
+          ],
+          "route_length": 160
+        },
+        {
+          "index": 2,
+          "name": "Medic",
+          "point": [
+            800,
+            272
+          ],
+          "route_length": 192
+        },
+        {
+          "index": 3,
+          "name": "Shop",
+          "point": [
+            1200,
+            352
+          ],
+          "route_length": 288
+        },
+        {
+          "index": 4,
+          "name": "Tamer / lab",
+          "point": [
+            608,
+            256
+          ],
+          "route_length": 400
+        },
+        {
+          "index": 5,
+          "name": "Boss / farm",
+          "point": [
+            1376,
+            272
+          ],
+          "route_length": 544
+        },
+        {
+          "index": 6,
+          "name": "Return portal",
+          "point": [
+            512,
+            336
+          ],
+          "route_length": 576
+        },
+        {
+          "index": 7,
+          "name": "Intel / archive",
+          "point": [
+            720,
+            192
+          ],
+          "route_length": 352
+        },
+        {
+          "index": 8,
+          "name": "Forward portal",
+          "point": [
+            1584,
+            304
+          ],
+          "route_length": 752
+        }
+      ]
+    },
+    {
+      "chapter": 6,
+      "map_id": "xros_127",
+      "public_name": "Neon Bastion 02",
+      "art_sha256": "37b290c11e65e59eb82641c9d83a1c1a88d24cf5d951a2f4f59814f690d518c4",
+      "mask_sha256": "21f3e38806797aa33ecb8b516b463ebb870bdc92ddef9772710be5275c381d6e",
+      "arrival": [
+        936,
+        271
+      ],
+      "minimum_spacing": 101.193,
+      "slots": [
+        {
+          "index": 0,
+          "name": "Arrival",
+          "point": [
+            936,
+            271
+          ],
+          "route_length": 0
+        },
+        {
+          "index": 1,
+          "name": "Quest / guide",
+          "point": [
+            1080,
+            271
+          ],
+          "route_length": 144
+        },
+        {
+          "index": 2,
+          "name": "Medic",
+          "point": [
+            776,
+            271
+          ],
+          "route_length": 192
+        },
+        {
+          "index": 3,
+          "name": "Shop",
+          "point": [
+            1240,
+            287
+          ],
+          "route_length": 320
+        },
+        {
+          "index": 4,
+          "name": "Tamer / lab",
+          "point": [
+            584,
+            287
+          ],
+          "route_length": 400
+        },
+        {
+          "index": 5,
+          "name": "Boss / farm",
+          "point": [
+            1368,
+            383
+          ],
+          "route_length": 544
+        },
+        {
+          "index": 6,
+          "name": "Return portal",
+          "point": [
+            648,
+            383
+          ],
+          "route_length": 432
+        },
+        {
+          "index": 7,
+          "name": "Intel / archive",
+          "point": [
+            1048,
+            159
+          ],
+          "route_length": 224
+        },
+        {
+          "index": 8,
+          "name": "Forward portal",
+          "point": [
+            488,
+            255
+          ],
+          "route_length": 528
+        }
+      ]
+    },
+    {
+      "chapter": 7,
+      "map_id": "xros_128",
+      "public_name": "Neon Bastion 03",
+      "art_sha256": "aaf352e848235f05aa5c7b152d94d14cb8df57552a774cb1b79c6394cf50b3bd",
+      "mask_sha256": "bcde4b57e12480c1323b20cd579777fbed19fa8d9f26294e1578e494a86571bf",
+      "arrival": [
+        728,
+        468
+      ],
+      "minimum_spacing": 124.964,
+      "slots": [
+        {
+          "index": 0,
+          "name": "Arrival",
+          "point": [
+            728,
+            468
+          ],
+          "route_length": 0
+        },
+        {
+          "index": 1,
+          "name": "Quest / guide",
+          "point": [
+            584,
+            468
+          ],
+          "route_length": 144
+        },
+        {
+          "index": 2,
+          "name": "Medic",
+          "point": [
+            888,
+            500
+          ],
+          "route_length": 192
+        },
+        {
+          "index": 3,
+          "name": "Shop",
+          "point": [
+            584,
+            596
+          ],
+          "route_length": 272
+        },
+        {
+          "index": 4,
+          "name": "Tamer / lab",
+          "point": [
+            392,
+            436
+          ],
+          "route_length": 400
+        },
+        {
+          "index": 5,
+          "name": "Boss / farm",
+          "point": [
+            1160,
+            484
+          ],
+          "route_length": 544
+        },
+        {
+          "index": 6,
+          "name": "Return portal",
+          "point": [
+            984,
+            580
+          ],
+          "route_length": 368
+        },
+        {
+          "index": 7,
+          "name": "Intel / archive",
+          "point": [
+            488,
+            356
+          ],
+          "route_length": 352
+        },
+        {
+          "index": 8,
+          "name": "Forward portal",
+          "point": [
+            264,
+            500
+          ],
+          "route_length": 592
+        }
+      ]
+    },
+    {
+      "chapter": 8,
+      "map_id": "xros_129",
+      "public_name": "Neon Bastion 04",
+      "art_sha256": "5a8c0082e4eea77888676f71a2794baa634863c066106cc757120d593782c7e8",
+      "mask_sha256": "8aff579b3a50f3d4fd59c461582b1fa424da54afe7a5f97b6799afbb2e39db37",
+      "arrival": [
+        1172,
+        549
+      ],
+      "minimum_spacing": 112.0,
+      "slots": [
+        {
+          "index": 0,
+          "name": "Arrival",
+          "point": [
+            1172,
+            549
+          ],
+          "route_length": 0
+        },
+        {
+          "index": 1,
+          "name": "Quest / guide",
+          "point": [
+            1172,
+            437
+          ],
+          "route_length": 112
+        },
+        {
+          "index": 2,
+          "name": "Medic",
+          "point": [
+            996,
+            533
+          ],
+          "route_length": 192
+        },
+        {
+          "index": 3,
+          "name": "Shop",
+          "point": [
+            1380,
+            469
+          ],
+          "route_length": 288
+        },
+        {
+          "index": 4,
+          "name": "Tamer / lab",
+          "point": [
+            852,
+            597
+          ],
+          "route_length": 400
+        },
+        {
+          "index": 5,
+          "name": "Boss / farm",
+          "point": [
+            1588,
+            421
+          ],
+          "route_length": 544
+        },
+        {
+          "index": 6,
+          "name": "Return portal",
+          "point": [
+            868,
+            709
+          ],
+          "route_length": 496
+        },
+        {
+          "index": 7,
+          "name": "Intel / archive",
+          "point": [
+            1428,
+            357
+          ],
+          "route_length": 448
+        },
+        {
+          "index": 8,
+          "name": "Forward portal",
+          "point": [
+            596,
+            693
+          ],
+          "route_length": 752
+        }
+      ]
+    },
+    {
+      "chapter": 9,
+      "map_id": "xros_130",
+      "public_name": "Neon Bastion 05",
+      "art_sha256": "e1aa5dc810e4e91682af287bdd944631695fe7add20d7c7f3edebd63e4bee5e9",
+      "mask_sha256": "3b5b85a0761857080a59dbeb778559bdc47501debe196f9e6c084cfb0797c960",
+      "arrival": [
+        756,
+        351
+      ],
+      "minimum_spacing": 115.378,
+      "slots": [
+        {
+          "index": 0,
+          "name": "Arrival",
+          "point": [
+            756,
+            351
+          ],
+          "route_length": 0
+        },
+        {
+          "index": 1,
+          "name": "Quest / guide",
+          "point": [
+            612,
+            351
+          ],
+          "route_length": 144
+        },
+        {
+          "index": 2,
+          "name": "Medic",
+          "point": [
+            692,
+            479
+          ],
+          "route_length": 192
+        },
+        {
+          "index": 3,
+          "name": "Shop",
+          "point": [
+            964,
+            287
+          ],
+          "route_length": 272
+        },
+        {
+          "index": 4,
+          "name": "Tamer / lab",
+          "point": [
+            420,
+            415
+          ],
+          "route_length": 400
+        },
+        {
+          "index": 5,
+          "name": "Boss / farm",
+          "point": [
+            1188,
+            303
+          ],
+          "route_length": 544
+        },
+        {
+          "index": 6,
+          "name": "Return portal",
+          "point": [
+            516,
+            591
+          ],
+          "route_length": 480
+        },
+        {
+          "index": 7,
+          "name": "Intel / archive",
+          "point": [
+            900,
+            191
+          ],
+          "route_length": 304
+        },
+        {
+          "index": 8,
+          "name": "Forward portal",
+          "point": [
+            228,
+            511
+          ],
+          "route_length": 688
+        }
+      ]
+    },
+    {
+      "chapter": 10,
+      "map_id": "xros_097",
+      "public_name": "Duskmire Keep 02",
+      "art_sha256": "60f25371e57dfabb98ea21f1226a3f56598629ca90a831fa930c446ec591dc42",
+      "mask_sha256": "b8ecf746bfd8e4f156c63440719fc6e1c073c51b7a7453375e7576ad3adce1b7",
+      "arrival": [
+        720,
+        520
+      ],
+      "minimum_spacing": 112.0,
+      "slots": [
+        {
+          "index": 0,
+          "name": "Arrival",
+          "point": [
+            720,
+            520
+          ],
+          "route_length": 0
+        },
+        {
+          "index": 1,
+          "name": "Quest / guide",
+          "point": [
+            720,
+            632
+          ],
+          "route_length": 112
+        },
+        {
+          "index": 2,
+          "name": "Medic",
+          "point": [
+            560,
+            520
+          ],
+          "route_length": 192
+        },
+        {
+          "index": 3,
+          "name": "Shop",
+          "point": [
+            640,
+            408
+          ],
+          "route_length": 288
+        },
+        {
+          "index": 4,
+          "name": "Tamer / lab",
+          "point": [
+            528,
+            728
+          ],
+          "route_length": 400
+        },
+        {
+          "index": 5,
+          "name": "Boss / farm",
+          "point": [
+            256,
+            536
+          ],
+          "route_length": 544
+        },
+        {
+          "index": 6,
+          "name": "Return portal",
+          "point": [
+            912,
+            776
+          ],
+          "route_length": 480
+        },
+        {
+          "index": 7,
+          "name": "Intel / archive",
+          "point": [
+            752,
+            760
+          ],
+          "route_length": 304
+        },
+        {
+          "index": 8,
+          "name": "Forward portal",
+          "point": [
+            784,
+            248
+          ],
+          "route_length": 752
+        }
+      ]
+    },
+    {
+      "chapter": 11,
+      "map_id": "xros_098",
+      "public_name": "Duskmire Keep 03",
+      "art_sha256": "9db244b3a3f4ff105935e321e52a9f8520e7c830e9047200b5c3c17dde3adaa5",
+      "mask_sha256": "fcb7058a351b791bc2cde157ffb1b5bb67a7bbbe2f979ae2e1996438b04c2f1f",
+      "arrival": [
+        688,
+        556
+      ],
+      "minimum_spacing": 113.137,
+      "slots": [
+        {
+          "index": 0,
+          "name": "Arrival",
+          "point": [
+            688,
+            556
+          ],
+          "route_length": 0
+        },
+        {
+          "index": 1,
+          "name": "Quest / guide",
+          "point": [
+            832,
+            572
+          ],
+          "route_length": 160
+        },
+        {
+          "index": 2,
+          "name": "Medic",
+          "point": [
+            736,
+            700
+          ],
+          "route_length": 192
+        },
+        {
+          "index": 3,
+          "name": "Shop",
+          "point": [
+            976,
+            572
+          ],
+          "route_length": 304
+        },
+        {
+          "index": 4,
+          "name": "Tamer / lab",
+          "point": [
+            544,
+            716
+          ],
+          "route_length": 400
+        },
+        {
+          "index": 5,
+          "name": "Boss / farm",
+          "point": [
+            1200,
+            588
+          ],
+          "route_length": 544
+        },
+        {
+          "index": 6,
+          "name": "Return portal",
+          "point": [
+            1120,
+            668
+          ],
+          "route_length": 544
+        },
+        {
+          "index": 7,
+          "name": "Intel / archive",
+          "point": [
+            400,
+            700
+          ],
+          "route_length": 528
+        },
+        {
+          "index": 8,
+          "name": "Forward portal",
+          "point": [
+            496,
+            540
+          ],
+          "route_length": 752
+        }
+      ]
+    },
+    {
+      "chapter": 12,
+      "map_id": "xros_100",
+      "public_name": "Duskmire Keep 04",
+      "art_sha256": "f1fced735ee68d8d754606a2306e9a7c26701b6de9bc4309dd106cf45e5a3b23",
+      "mask_sha256": "3546e669186f6d7a142d040f42962e525195f19cbc2480e97f9baa3d5adeda3e",
+      "arrival": [
+        804,
+        600
+      ],
+      "minimum_spacing": 113.137,
+      "slots": [
+        {
+          "index": 0,
+          "name": "Arrival",
+          "point": [
+            804,
+            600
+          ],
+          "route_length": 0
+        },
+        {
+          "index": 1,
+          "name": "Quest / guide",
+          "point": [
+            868,
+            696
+          ],
+          "route_length": 160
+        },
+        {
+          "index": 2,
+          "name": "Medic",
+          "point": [
+            1028,
+            696
+          ],
+          "route_length": 320
+        },
+        {
+          "index": 3,
+          "name": "Shop",
+          "point": [
+            788,
+            776
+          ],
+          "route_length": 320
+        },
+        {
+          "index": 4,
+          "name": "Tamer / lab",
+          "point": [
+            1172,
+            680
+          ],
+          "route_length": 480
+        },
+        {
+          "index": 5,
+          "name": "Boss / farm",
+          "point": [
+            580,
+            792
+          ],
+          "route_length": 544
+        },
+        {
+          "index": 6,
+          "name": "Return portal",
+          "point": [
+            1204,
+            568
+          ],
+          "route_length": 624
+        },
+        {
+          "index": 7,
+          "name": "Intel / archive",
+          "point": [
+            724,
+            872
+          ],
+          "route_length": 480
+        },
+        {
+          "index": 8,
+          "name": "Forward portal",
+          "point": [
+            1396,
+            728
+          ],
+          "route_length": 752
+        }
+      ]
+    },
+    {
+      "chapter": 13,
+      "map_id": "xros_133",
+      "public_name": "Duskmire Keep 05",
+      "art_sha256": "f399468f114aafe518166c4bf574b5e22faeca28e975a69b7249e27f6783bbed",
+      "mask_sha256": "e2fa5df99bb0ac7f35d2b53cf29ad0357f6cb364950760e186944db7b006f583",
+      "arrival": [
+        784,
+        558
+      ],
+      "minimum_spacing": 113.137,
+      "slots": [
+        {
+          "index": 0,
+          "name": "Arrival",
+          "point": [
+            784,
+            558
+          ],
+          "route_length": 0
+        },
+        {
+          "index": 1,
+          "name": "Quest / guide",
+          "point": [
+            768,
+            670
+          ],
+          "route_length": 128
+        },
+        {
+          "index": 2,
+          "name": "Medic",
+          "point": [
+            592,
+            558
+          ],
+          "route_length": 192
+        },
+        {
+          "index": 3,
+          "name": "Shop",
+          "point": [
+            960,
+            622
+          ],
+          "route_length": 272
+        },
+        {
+          "index": 4,
+          "name": "Tamer / lab",
+          "point": [
+            704,
+            366
+          ],
+          "route_length": 400
+        },
+        {
+          "index": 5,
+          "name": "Boss / farm",
+          "point": [
+            272,
+            590
+          ],
+          "route_length": 544
+        },
+        {
+          "index": 6,
+          "name": "Return portal",
+          "point": [
+            416,
+            446
+          ],
+          "route_length": 480
+        },
+        {
+          "index": 7,
+          "name": "Intel / archive",
+          "point": [
+            704,
+            782
+          ],
+          "route_length": 304
+        },
+        {
+          "index": 8,
+          "name": "Forward portal",
+          "point": [
+            240,
+            350
+          ],
+          "route_length": 752
+        }
+      ]
+    },
+    {
+      "chapter": 14,
+      "map_id": "xros_134",
+      "public_name": "Duskmire Keep 06",
+      "art_sha256": "8353be22defe6affa1c62dc8a5f4484dad2128e589dcc674c21dd2d9aca3457d",
+      "mask_sha256": "78ed848af0c7ccc4af5e42780628f731d1c9811bb14c3a5d25521347f17de73a",
+      "arrival": [
+        704,
+        520
+      ],
+      "minimum_spacing": 121.852,
+      "slots": [
+        {
+          "index": 0,
+          "name": "Arrival",
+          "point": [
+            704,
+            520
+          ],
+          "route_length": 0
+        },
+        {
+          "index": 1,
+          "name": "Quest / guide",
+          "point": [
+            848,
+            536
+          ],
+          "route_length": 160
+        },
+        {
+          "index": 2,
+          "name": "Medic",
+          "point": [
+            592,
+            600
+          ],
+          "route_length": 192
+        },
+        {
+          "index": 3,
+          "name": "Shop",
+          "point": [
+            432,
+            632
+          ],
+          "route_length": 384
+        },
+        {
+          "index": 4,
+          "name": "Tamer / lab",
+          "point": [
+            1024,
+            600
+          ],
+          "route_length": 400
+        },
+        {
+          "index": 5,
+          "name": "Boss / farm",
+          "point": [
+            992,
+            776
+          ],
+          "route_length": 544
+        },
+        {
+          "index": 6,
+          "name": "Return portal",
+          "point": [
+            288,
+            632
+          ],
+          "route_length": 528
+        },
+        {
+          "index": 7,
+          "name": "Intel / archive",
+          "point": [
+            480,
+            744
+          ],
+          "route_length": 448
+        },
+        {
+          "index": 8,
+          "name": "Forward portal",
+          "point": [
+            1296,
+            584
+          ],
+          "route_length": 752
+        }
+      ]
+    },
+    {
+      "chapter": 15,
+      "map_id": "xros_152",
+      "public_name": "Overdrive Circuit 01",
+      "art_sha256": "28cd025e84dfd5628114324f244c7930eec30d4244898da8330e8a9b1273e571",
+      "mask_sha256": "c585d96160e00f77138c320b27be04131992ab9300ba95a0ac2b2e882a0e3101",
+      "arrival": [
+        796,
+        425
+      ],
+      "minimum_spacing": 112.0,
+      "slots": [
+        {
+          "index": 0,
+          "name": "Arrival",
+          "point": [
+            796,
+            425
+          ],
+          "route_length": 0
+        },
+        {
+          "index": 1,
+          "name": "Quest / guide",
+          "point": [
+            796,
+            313
+          ],
+          "route_length": 112
+        },
+        {
+          "index": 2,
+          "name": "Medic",
+          "point": [
+            636,
+            393
+          ],
+          "route_length": 192
+        },
+        {
+          "index": 3,
+          "name": "Shop",
+          "point": [
+            1004,
+            457
+          ],
+          "route_length": 272
+        },
+        {
+          "index": 4,
+          "name": "Tamer / lab",
+          "point": [
+            972,
+            201
+          ],
+          "route_length": 400
+        },
+        {
+          "index": 5,
+          "name": "Boss / farm",
+          "point": [
+            1244,
+            489
+          ],
+          "route_length": 544
+        },
+        {
+          "index": 6,
+          "name": "Return portal",
+          "point": [
+            396,
+            441
+          ],
+          "route_length": 480
+        },
+        {
+          "index": 7,
+          "name": "Intel / archive",
+          "point": [
+            652,
+            265
+          ],
+          "route_length": 304
+        },
+        {
+          "index": 8,
+          "name": "Forward portal",
+          "point": [
+            572,
+            633
+          ],
+          "route_length": 752
+        }
+      ]
+    },
+    {
+      "chapter": 16,
+      "map_id": "xros_153",
+      "public_name": "Overdrive Circuit 02",
+      "art_sha256": "840d33ba98e01128bff00183c6de83b552fd996939825d648cc8ee8bd922615c",
+      "mask_sha256": "204cef18b63ad24bdb843c58d92944e08ee1ce5232c59904201a616249263960",
+      "arrival": [
+        620,
+        782
+      ],
+      "minimum_spacing": 113.137,
+      "slots": [
+        {
+          "index": 0,
+          "name": "Arrival",
+          "point": [
+            620,
+            782
+          ],
+          "route_length": 0
+        },
+        {
+          "index": 1,
+          "name": "Quest / guide",
+          "point": [
+            764,
+            782
+          ],
+          "route_length": 144
+        },
+        {
+          "index": 2,
+          "name": "Medic",
+          "point": [
+            604,
+            894
+          ],
+          "route_length": 224
+        },
+        {
+          "index": 3,
+          "name": "Shop",
+          "point": [
+            828,
+            686
+          ],
+          "route_length": 304
+        },
+        {
+          "index": 4,
+          "name": "Tamer / lab",
+          "point": [
+            428,
+            798
+          ],
+          "route_length": 400
+        },
+        {
+          "index": 5,
+          "name": "Boss / farm",
+          "point": [
+            316,
+            718
+          ],
+          "route_length": 592
+        },
+        {
+          "index": 6,
+          "name": "Return portal",
+          "point": [
+            348,
+            606
+          ],
+          "route_length": 800
+        },
+        {
+          "index": 7,
+          "name": "Intel / archive",
+          "point": [
+            940,
+            718
+          ],
+          "route_length": 384
+        },
+        {
+          "index": 8,
+          "name": "Forward portal",
+          "point": [
+            188,
+            686
+          ],
+          "route_length": 752
+        }
+      ]
+    },
+    {
+      "chapter": 17,
+      "map_id": "xros_154",
+      "public_name": "Overdrive Circuit 03",
+      "art_sha256": "088653a06b82c6f889ee1a030cdfeedc23c82698990135afc131eb86d9b077c4",
+      "mask_sha256": "2d85150bd7622590af2d831de56cb462e47c0d6d1115e2fd97ca2c1961142425",
+      "arrival": [
+        816,
+        664
+      ],
+      "minimum_spacing": 112.0,
+      "slots": [
+        {
+          "index": 0,
+          "name": "Arrival",
+          "point": [
+            816,
+            664
+          ],
+          "route_length": 0
+        },
+        {
+          "index": 1,
+          "name": "Quest / guide",
+          "point": [
+            880,
+            568
+          ],
+          "route_length": 160
+        },
+        {
+          "index": 2,
+          "name": "Medic",
+          "point": [
+            976,
+            696
+          ],
+          "route_length": 192
+        },
+        {
+          "index": 3,
+          "name": "Shop",
+          "point": [
+            976,
+            808
+          ],
+          "route_length": 336
+        },
+        {
+          "index": 4,
+          "name": "Tamer / lab",
+          "point": [
+            1152,
+            728
+          ],
+          "route_length": 400
+        },
+        {
+          "index": 5,
+          "name": "Boss / farm",
+          "point": [
+            816,
+            856
+          ],
+          "route_length": 544
+        },
+        {
+          "index": 6,
+          "name": "Return portal",
+          "point": [
+            1248,
+            536
+          ],
+          "route_length": 624
+        },
+        {
+          "index": 7,
+          "name": "Intel / archive",
+          "point": [
+            1168,
+            616
+          ],
+          "route_length": 464
+        },
+        {
+          "index": 8,
+          "name": "Forward portal",
+          "point": [
+            624,
+            840
+          ],
+          "route_length": 752
+        }
+      ]
+    },
+    {
+      "chapter": 18,
+      "map_id": "xros_155",
+      "public_name": "Overdrive Circuit 04",
+      "art_sha256": "c6248d953fa7062044f36d184751c651d224a3636d3a2fea6356686affa9853f",
+      "mask_sha256": "6c3c8382ff06a556064eb0a202c051a82b4e6d8577e56ccd4d7fb6deb8a6c99a",
+      "arrival": [
+        684,
+        369
+      ],
+      "minimum_spacing": 116.482,
+      "slots": [
+        {
+          "index": 0,
+          "name": "Arrival",
+          "point": [
+            684,
+            369
+          ],
+          "route_length": 0
+        },
+        {
+          "index": 1,
+          "name": "Quest / guide",
+          "point": [
+            828,
+            369
+          ],
+          "route_length": 144
+        },
+        {
+          "index": 2,
+          "name": "Medic",
+          "point": [
+            796,
+            481
+          ],
+          "route_length": 224
+        },
+        {
+          "index": 3,
+          "name": "Shop",
+          "point": [
+            972,
+            369
+          ],
+          "route_length": 288
+        },
+        {
+          "index": 4,
+          "name": "Tamer / lab",
+          "point": [
+            652,
+            529
+          ],
+          "route_length": 416
+        },
+        {
+          "index": 5,
+          "name": "Boss / farm",
+          "point": [
+            1148,
+            289
+          ],
+          "route_length": 544
+        },
+        {
+          "index": 6,
+          "name": "Return portal",
+          "point": [
+            1116,
+            177
+          ],
+          "route_length": 624
+        },
+        {
+          "index": 7,
+          "name": "Intel / archive",
+          "point": [
+            508,
+            561
+          ],
+          "route_length": 592
+        },
+        {
+          "index": 8,
+          "name": "Forward portal",
+          "point": [
+            364,
+            577
+          ],
+          "route_length": 752
+        }
+      ]
+    },
+    {
+      "chapter": 19,
+      "map_id": "xros_156",
+      "public_name": "Overdrive Circuit 05",
+      "art_sha256": "3e3b52cd8f532c28912b022f597ca61b9edf090ffd09d6e70b3e53e515f28368",
+      "mask_sha256": "f73ed8f107a53ff4612da403b7face8aab89806d1f5b05c638eeb4d583166997",
+      "arrival": [
+        668,
+        598
+      ],
+      "minimum_spacing": 113.137,
+      "slots": [
+        {
+          "index": 0,
+          "name": "Arrival",
+          "point": [
+            668,
+            598
+          ],
+          "route_length": 0
+        },
+        {
+          "index": 1,
+          "name": "Quest / guide",
+          "point": [
+            684,
+            710
+          ],
+          "route_length": 128
+        },
+        {
+          "index": 2,
+          "name": "Medic",
+          "point": [
+            540,
+            678
+          ],
+          "route_length": 208
+        },
+        {
+          "index": 3,
+          "name": "Shop",
+          "point": [
+            828,
+            758
+          ],
+          "route_length": 320
+        },
+        {
+          "index": 4,
+          "name": "Tamer / lab",
+          "point": [
+            460,
+            790
+          ],
+          "route_length": 400
+        },
+        {
+          "index": 5,
+          "name": "Boss / farm",
+          "point": [
+            972,
+            838
+          ],
+          "route_length": 544
+        },
+        {
+          "index": 6,
+          "name": "Return portal",
+          "point": [
+            492,
+            902
+          ],
+          "route_length": 576
+        },
+        {
+          "index": 7,
+          "name": "Intel / archive",
+          "point": [
+            316,
+            806
+          ],
+          "route_length": 560
+        },
+        {
+          "index": 8,
+          "name": "Forward portal",
+          "point": [
+            1116,
+            902
+          ],
+          "route_length": 752
+        }
+      ]
+    },
+    {
+      "chapter": 20,
+      "map_id": "xros_157",
+      "public_name": "Overdrive Circuit 06",
+      "art_sha256": "9ea87aaec8bbc30f85bd76651d2e0ce9f2ccf41da8bf363379c10e248cafc23c",
+      "mask_sha256": "1980c1d138dbb1924ceb8a91ecaca4bd9a924da7dd2c2333e434a3fd2397d71d",
+      "arrival": [
+        668,
+        436
+      ],
+      "minimum_spacing": 113.137,
+      "slots": [
+        {
+          "index": 0,
+          "name": "Arrival",
+          "point": [
+            668,
+            436
+          ],
+          "route_length": 0
+        },
+        {
+          "index": 1,
+          "name": "Quest / guide",
+          "point": [
+            636,
+            324
+          ],
+          "route_length": 144
+        },
+        {
+          "index": 2,
+          "name": "Medic",
+          "point": [
+            524,
+            484
+          ],
+          "route_length": 192
+        },
+        {
+          "index": 3,
+          "name": "Shop",
+          "point": [
+            652,
+            196
+          ],
+          "route_length": 288
+        },
+        {
+          "index": 4,
+          "name": "Tamer / lab",
+          "point": [
+            444,
+            260
+          ],
+          "route_length": 400
+        },
+        {
+          "index": 5,
+          "name": "Boss / farm",
+          "point": [
+            300,
+            612
+          ],
+          "route_length": 544
+        },
+        {
+          "index": 6,
+          "name": "Return portal",
+          "point": [
+            396,
+            388
+          ],
+          "route_length": 480
+        },
+        {
+          "index": 7,
+          "name": "Intel / archive",
+          "point": [
+            508,
+            596
+          ],
+          "route_length": 320
+        },
+        {
+          "index": 8,
+          "name": "Forward portal",
+          "point": [
+            684,
+            628
+          ],
+          "route_length": 752
+        }
+      ]
+    },
+    {
+      "chapter": 21,
+      "map_id": "xros_160",
+      "public_name": "Overdrive Circuit 07",
+      "art_sha256": "07f02fd8f4f3aaee5b794a0457a8413cb872074c49b1b7f25a1e6f46d9a4b8a7",
+      "mask_sha256": "e7e15d425c185dc8d95cf6cfad5f2d5e3c9584a534d3eaec9d7e806972a05d20",
+      "arrival": [
+        800,
+        488
+      ],
+      "minimum_spacing": 113.137,
+      "slots": [
+        {
+          "index": 0,
+          "name": "Arrival",
+          "point": [
+            800,
+            488
+          ],
+          "route_length": 0
+        },
+        {
+          "index": 1,
+          "name": "Quest / guide",
+          "point": [
+            880,
+            568
+          ],
+          "route_length": 160
+        },
+        {
+          "index": 2,
+          "name": "Medic",
+          "point": [
+            720,
+            568
+          ],
+          "route_length": 160
+        },
+        {
+          "index": 3,
+          "name": "Shop",
+          "point": [
+            1024,
+            632
+          ],
+          "route_length": 368
+        },
+        {
+          "index": 4,
+          "name": "Tamer / lab",
+          "point": [
+            1168,
+            648
+          ],
+          "route_length": 528
+        },
+        {
+          "index": 5,
+          "name": "Boss / farm",
+          "point": [
+            944,
+            728
+          ],
+          "route_length": 544
+        },
+        {
+          "index": 6,
+          "name": "Return portal",
+          "point": [
+            896,
+            840
+          ],
+          "route_length": 704
+        },
+        {
+          "index": 7,
+          "name": "Intel / archive",
+          "point": [
+            1264,
+            568
+          ],
+          "route_length": 704
+        },
+        {
+          "index": 8,
+          "name": "Forward portal",
+          "point": [
+            784,
+            760
+          ],
+          "route_length": 768
+        }
+      ]
+    },
+    {
+      "chapter": 22,
+      "map_id": "xros_163",
+      "public_name": "Overdrive Circuit 08",
+      "art_sha256": "17c931ed3e0e031f19060ae7ad3866a70031d9578572e6490f91b3622284df12",
+      "mask_sha256": "0fc8f73373eae5daf841ed49207d58b4b28dc602fa624185c3c64b5418bd6cad",
+      "arrival": [
+        784,
+        494
+      ],
+      "minimum_spacing": 144.0,
+      "slots": [
+        {
+          "index": 0,
+          "name": "Arrival",
+          "point": [
+            784,
+            494
+          ],
+          "route_length": 0
+        },
+        {
+          "index": 1,
+          "name": "Quest / guide",
+          "point": [
+            640,
+            494
+          ],
+          "route_length": 144
+        },
+        {
+          "index": 2,
+          "name": "Medic",
+          "point": [
+            736,
+            350
+          ],
+          "route_length": 192
+        },
+        {
+          "index": 3,
+          "name": "Shop",
+          "point": [
+            992,
+            558
+          ],
+          "route_length": 272
+        },
+        {
+          "index": 4,
+          "name": "Tamer / lab",
+          "point": [
+            416,
+            462
+          ],
+          "route_length": 400
+        },
+        {
+          "index": 5,
+          "name": "Boss / farm",
+          "point": [
+            1072,
+            334
+          ],
+          "route_length": 544
+        },
+        {
+          "index": 6,
+          "name": "Return portal",
+          "point": [
+            512,
+            286
+          ],
+          "route_length": 480
+        },
+        {
+          "index": 7,
+          "name": "Intel / archive",
+          "point": [
+            848,
+            702
+          ],
+          "route_length": 304
+        },
+        {
+          "index": 8,
+          "name": "Forward portal",
+          "point": [
+            128,
+            526
+          ],
+          "route_length": 752
+        }
+      ]
+    },
+    {
+      "chapter": 23,
+      "map_id": "xros_164",
+      "public_name": "Overdrive Circuit 09",
+      "art_sha256": "b14a2b2bc9f1e1b7e3fcde03770b7339c594e6f1a6b1b545c1cc8b3db5f8f223",
+      "mask_sha256": "40392a2ffab76b4344674587a8df242e1b89f491fa0af8ed616dab3dcabfa1ab",
+      "arrival": [
+        720,
+        558
+      ],
+      "minimum_spacing": 115.378,
+      "slots": [
+        {
+          "index": 0,
+          "name": "Arrival",
+          "point": [
+            720,
+            558
+          ],
+          "route_length": 0
+        },
+        {
+          "index": 1,
+          "name": "Quest / guide",
+          "point": [
+            576,
+            558
+          ],
+          "route_length": 144
+        },
+        {
+          "index": 2,
+          "name": "Medic",
+          "point": [
+            688,
+            686
+          ],
+          "route_length": 192
+        },
+        {
+          "index": 3,
+          "name": "Shop",
+          "point": [
+            432,
+            558
+          ],
+          "route_length": 288
+        },
+        {
+          "index": 4,
+          "name": "Tamer / lab",
+          "point": [
+            816,
+            766
+          ],
+          "route_length": 400
+        },
+        {
+          "index": 5,
+          "name": "Boss / farm",
+          "point": [
+            256,
+            478
+          ],
+          "route_length": 544
+        },
+        {
+          "index": 6,
+          "name": "Return portal",
+          "point": [
+            368,
+            702
+          ],
+          "route_length": 496
+        },
+        {
+          "index": 7,
+          "name": "Intel / archive",
+          "point": [
+            512,
+            654
+          ],
+          "route_length": 304
+        },
+        {
+          "index": 8,
+          "name": "Forward portal",
+          "point": [
+            112,
+            670
+          ],
+          "route_length": 752
+        }
+      ]
+    },
+    {
+      "chapter": 24,
+      "map_id": "xros_165",
+      "public_name": "Overdrive Circuit 10",
+      "art_sha256": "cc3a225723b3684edba72e3eb1f055c132cdac04f5e6cef4fc50bf4f7726ce3a",
+      "mask_sha256": "07ad3e1fca5ad6c9151aa9f884f83c0e8628d904a9dcd5d0f8a243cfd66d79ea",
+      "arrival": [
+        892,
+        586
+      ],
+      "minimum_spacing": 113.137,
+      "slots": [
+        {
+          "index": 0,
+          "name": "Arrival",
+          "point": [
+            892,
+            586
+          ],
+          "route_length": 0
+        },
+        {
+          "index": 1,
+          "name": "Quest / guide",
+          "point": [
+            828,
+            682
+          ],
+          "route_length": 160
+        },
+        {
+          "index": 2,
+          "name": "Medic",
+          "point": [
+            1004,
+            506
+          ],
+          "route_length": 192
+        },
+        {
+          "index": 3,
+          "name": "Shop",
+          "point": [
+            684,
+            682
+          ],
+          "route_length": 304
+        },
+        {
+          "index": 4,
+          "name": "Tamer / lab",
+          "point": [
+            972,
+            778
+          ],
+          "route_length": 400
+        },
+        {
+          "index": 5,
+          "name": "Boss / farm",
+          "point": [
+            1292,
+            442
+          ],
+          "route_length": 544
+        },
+        {
+          "index": 6,
+          "name": "Return portal",
+          "point": [
+            524,
+            698
+          ],
+          "route_length": 480
+        },
+        {
+          "index": 7,
+          "name": "Intel / archive",
+          "point": [
+            1020,
+            394
+          ],
+          "route_length": 320
+        },
+        {
+          "index": 8,
+          "name": "Forward portal",
+          "point": [
+            1180,
+            634
+          ],
+          "route_length": 752
+        }
+      ]
+    },
+    {
+      "chapter": 25,
+      "map_id": "xros_161",
+      "public_name": "Crimson Causeway 04",
+      "art_sha256": "1a72589efa93d4bf1e31cf6d3bfa2252f484faf6ee5a481027a8333a6b45b804",
+      "mask_sha256": "d823ae2019764036e196bdb539b09b23a609f1ed213fd1bf6e37af0778ef3e71",
+      "arrival": [
+        816,
+        515
+      ],
+      "minimum_spacing": 112.0,
+      "slots": [
+        {
+          "index": 0,
+          "name": "Arrival",
+          "point": [
+            816,
+            515
+          ],
+          "route_length": 0
+        },
+        {
+          "index": 1,
+          "name": "Quest / guide",
+          "point": [
+            816,
+            403
+          ],
+          "route_length": 112
+        },
+        {
+          "index": 2,
+          "name": "Medic",
+          "point": [
+            656,
+            483
+          ],
+          "route_length": 192
+        },
+        {
+          "index": 3,
+          "name": "Shop",
+          "point": [
+            1040,
+            499
+          ],
+          "route_length": 272
+        },
+        {
+          "index": 4,
+          "name": "Tamer / lab",
+          "point": [
+            1008,
+            307
+          ],
+          "route_length": 400
+        },
+        {
+          "index": 5,
+          "name": "Boss / farm",
+          "point": [
+            432,
+            611
+          ],
+          "route_length": 544
+        },
+        {
+          "index": 6,
+          "name": "Return portal",
+          "point": [
+            624,
+            707
+          ],
+          "route_length": 480
+        },
+        {
+          "index": 7,
+          "name": "Intel / archive",
+          "point": [
+            672,
+            355
+          ],
+          "route_length": 304
+        },
+        {
+          "index": 8,
+          "name": "Forward portal",
+          "point": [
+            848,
+            755
+          ],
+          "route_length": 752
+        }
+      ]
+    },
+    {
+      "chapter": 26,
+      "map_id": "xros_180",
+      "public_name": "Crimson Causeway 05",
+      "art_sha256": "4858a29b4970c914d8c8f40191c8d1c44fcc787a0fe0f3398fdc804a097f8d48",
+      "mask_sha256": "11fec199789d8b52207ccff3fd31cfd1ed1300c4f4994df3c26e92f2bcd3fd12",
+      "arrival": [
+        864,
+        512
+      ],
+      "minimum_spacing": 128.0,
+      "slots": [
+        {
+          "index": 0,
+          "name": "Arrival",
+          "point": [
+            864,
+            512
+          ],
+          "route_length": 0
+        },
+        {
+          "index": 1,
+          "name": "Quest / guide",
+          "point": [
+            864,
+            384
+          ],
+          "route_length": 128
+        },
+        {
+          "index": 2,
+          "name": "Medic",
+          "point": [
+            1040,
+            528
+          ],
+          "route_length": 192
+        },
+        {
+          "index": 3,
+          "name": "Shop",
+          "point": [
+            608,
+            496
+          ],
+          "route_length": 272
+        },
+        {
+          "index": 4,
+          "name": "Tamer / lab",
+          "point": [
+            768,
+            688
+          ],
+          "route_length": 400
+        },
+        {
+          "index": 5,
+          "name": "Boss / farm",
+          "point": [
+            1328,
+            464
+          ],
+          "route_length": 544
+        },
+        {
+          "index": 6,
+          "name": "Return portal",
+          "point": [
+            1200,
+            656
+          ],
+          "route_length": 480
+        },
+        {
+          "index": 7,
+          "name": "Intel / archive",
+          "point": [
+            704,
+            368
+          ],
+          "route_length": 304
+        },
+        {
+          "index": 8,
+          "name": "Forward portal",
+          "point": [
+            576,
+            848
+          ],
+          "route_length": 752
+        }
+      ]
+    },
+    {
+      "chapter": 27,
+      "map_id": "xros_182",
+      "public_name": "Crimson Causeway 06",
+      "art_sha256": "adc156e81479478babee9d9e2dc675ea80cc714a635dcd2bda10fe52df8b97d1",
+      "mask_sha256": "99d499a80ac68e1b9e79097476c3d6c9a7aef6e6d431931fee2eea29cf758054",
+      "arrival": [
+        730,
+        534
+      ],
+      "minimum_spacing": 112.0,
+      "slots": [
+        {
+          "index": 0,
+          "name": "Arrival",
+          "point": [
+            730,
+            534
+          ],
+          "route_length": 0
+        },
+        {
+          "index": 1,
+          "name": "Quest / guide",
+          "point": [
+            874,
+            534
+          ],
+          "route_length": 144
+        },
+        {
+          "index": 2,
+          "name": "Medic",
+          "point": [
+            730,
+            646
+          ],
+          "route_length": 208
+        },
+        {
+          "index": 3,
+          "name": "Shop",
+          "point": [
+            698,
+            374
+          ],
+          "route_length": 288
+        },
+        {
+          "index": 4,
+          "name": "Tamer / lab",
+          "point": [
+            1066,
+            470
+          ],
+          "route_length": 400
+        },
+        {
+          "index": 5,
+          "name": "Boss / farm",
+          "point": [
+            1162,
+            646
+          ],
+          "route_length": 544
+        },
+        {
+          "index": 6,
+          "name": "Return portal",
+          "point": [
+            458,
+            646
+          ],
+          "route_length": 480
+        },
+        {
+          "index": 7,
+          "name": "Intel / archive",
+          "point": [
+            602,
+            454
+          ],
+          "route_length": 336
+        },
+        {
+          "index": 8,
+          "name": "Forward portal",
+          "point": [
+            1370,
+            646
+          ],
+          "route_length": 752
+        }
+      ]
+    },
+    {
+      "chapter": 28,
+      "map_id": "xros_188",
+      "public_name": "Crimson Causeway 07",
+      "art_sha256": "880ad1617a0958114a214f1f8c25a1fc9513ec5525a8754324b3b7787d826cea",
+      "mask_sha256": "f32fcfcbb561c6d459048723a76095a54876d05adad49bad812ad405dfce450b",
+      "arrival": [
+        816,
+        496
+      ],
+      "minimum_spacing": 112.0,
+      "slots": [
+        {
+          "index": 0,
+          "name": "Arrival",
+          "point": [
+            816,
+            496
+          ],
+          "route_length": 0
+        },
+        {
+          "index": 1,
+          "name": "Quest / guide",
+          "point": [
+            960,
+            496
+          ],
+          "route_length": 144
+        },
+        {
+          "index": 2,
+          "name": "Medic",
+          "point": [
+            768,
+            608
+          ],
+          "route_length": 192
+        },
+        {
+          "index": 3,
+          "name": "Shop",
+          "point": [
+            1104,
+            512
+          ],
+          "route_length": 304
+        },
+        {
+          "index": 4,
+          "name": "Tamer / lab",
+          "point": [
+            576,
+            624
+          ],
+          "route_length": 400
+        },
+        {
+          "index": 5,
+          "name": "Boss / farm",
+          "point": [
+            960,
+            768
+          ],
+          "route_length": 544
+        },
+        {
+          "index": 6,
+          "name": "Return portal",
+          "point": [
+            1200,
+            400
+          ],
+          "route_length": 480
+        },
+        {
+          "index": 7,
+          "name": "Intel / archive",
+          "point": [
+            768,
+            720
+          ],
+          "route_length": 304
+        },
+        {
+          "index": 8,
+          "name": "Forward portal",
+          "point": [
+            256,
+            560
+          ],
+          "route_length": 752
+        }
+      ]
+    },
+    {
+      "chapter": 29,
+      "map_id": "xros_119",
+      "public_name": "Cinderfront Caldera 06",
+      "art_sha256": "c507b5fe201ccdd25c8c919d9dfbea3bc271185e302d01d746fdfaa1990378ec",
+      "mask_sha256": "d4f49c316e1ae94824da7c993e76dc83aef151b34d490d9f1620b9b1624eca37",
+      "arrival": [
+        512,
+        616
+      ],
+      "minimum_spacing": 97.324,
+      "slots": [
+        {
+          "index": 0,
+          "name": "Arrival",
+          "point": [
+            512,
+            616
+          ],
+          "route_length": 0
+        },
+        {
+          "index": 1,
+          "name": "Quest / guide",
+          "point": [
+            512,
+            504
+          ],
+          "route_length": 112
+        },
+        {
+          "index": 2,
+          "name": "Medic",
+          "point": [
+            352,
+            616
+          ],
+          "route_length": 192
+        },
+        {
+          "index": 3,
+          "name": "Shop",
+          "point": [
+            752,
+            568
+          ],
+          "route_length": 288
+        },
+        {
+          "index": 4,
+          "name": "Tamer / lab",
+          "point": [
+            192,
+            664
+          ],
+          "route_length": 400
+        },
+        {
+          "index": 5,
+          "name": "Boss / farm",
+          "point": [
+            368,
+            504
+          ],
+          "route_length": 256
+        },
+        {
+          "index": 6,
+          "name": "Return portal",
+          "point": [
+            912,
+            568
+          ],
+          "route_length": 480
+        },
+        {
+          "index": 7,
+          "name": "Intel / archive",
+          "point": [
+            352,
+            728
+          ],
+          "route_length": 304
+        },
+        {
+          "index": 8,
+          "name": "Forward portal",
+          "point": [
+            256,
+            744
+          ],
+          "route_length": 416
+        }
+      ]
+    },
+    {
+      "chapter": 30,
+      "map_id": "xros_177",
+      "public_name": "Xros Core 03",
+      "art_sha256": "e8968f6eb5fa025d02e32a8d96a3c27249f135857aceb9a0ad66016589183d4d",
+      "mask_sha256": "e7a8689b3d65d7049e3cc9e55a53ab29b78439de63b91ab96133f80ff5c60085",
+      "arrival": [
+        736,
+        392
+      ],
+      "minimum_spacing": 112.0,
+      "slots": [
+        {
+          "index": 0,
+          "name": "Arrival",
+          "point": [
+            736,
+            392
+          ],
+          "route_length": 0
+        },
+        {
+          "index": 1,
+          "name": "Quest / guide",
+          "point": [
+            736,
+            504
+          ],
+          "route_length": 112
+        },
+        {
+          "index": 2,
+          "name": "Medic",
+          "point": [
+            928,
+            392
+          ],
+          "route_length": 192
+        },
+        {
+          "index": 3,
+          "name": "Shop",
+          "point": [
+            464,
+            392
+          ],
+          "route_length": 272
+        },
+        {
+          "index": 4,
+          "name": "Tamer / lab",
+          "point": [
+            976,
+            552
+          ],
+          "route_length": 400
+        },
+        {
+          "index": 5,
+          "name": "Boss / farm",
+          "point": [
+            1088,
+            200
+          ],
+          "route_length": 544
+        },
+        {
+          "index": 6,
+          "name": "Return portal",
+          "point": [
+            400,
+            248
+          ],
+          "route_length": 480
+        },
+        {
+          "index": 7,
+          "name": "Intel / archive",
+          "point": [
+            544,
+            504
+          ],
+          "route_length": 304
+        },
+        {
+          "index": 8,
+          "name": "Forward portal",
+          "point": [
+            1248,
+            632
+          ],
+          "route_length": 752
+        }
+      ]
+    },
+    {
+      "chapter": 31,
+      "map_id": "xros_176",
+      "public_name": "Xros Core 02",
+      "art_sha256": "44a1a5071337106dbeac564a7893ce79432bd0fbca651bbcc82eb1f38ddcb337",
+      "mask_sha256": "8dc6c9901747ad35436d0d72671fdadb4650ed6e9c7d7de522e830310ec1cd78",
+      "arrival": [
+        648,
+        594
+      ],
+      "minimum_spacing": 113.137,
+      "slots": [
+        {
+          "index": 0,
+          "name": "Arrival",
+          "point": [
+            648,
+            594
+          ],
+          "route_length": 0
+        },
+        {
+          "index": 1,
+          "name": "Quest / guide",
+          "point": [
+            696,
+            706
+          ],
+          "route_length": 160
+        },
+        {
+          "index": 2,
+          "name": "Medic",
+          "point": [
+            504,
+            546
+          ],
+          "route_length": 192
+        },
+        {
+          "index": 3,
+          "name": "Shop",
+          "point": [
+            872,
+            658
+          ],
+          "route_length": 288
+        },
+        {
+          "index": 4,
+          "name": "Tamer / lab",
+          "point": [
+            360,
+            482
+          ],
+          "route_length": 400
+        },
+        {
+          "index": 5,
+          "name": "Boss / farm",
+          "point": [
+            1032,
+            562
+          ],
+          "route_length": 544
+        },
+        {
+          "index": 6,
+          "name": "Return portal",
+          "point": [
+            136,
+            418
+          ],
+          "route_length": 688
+        },
+        {
+          "index": 7,
+          "name": "Intel / archive",
+          "point": [
+            280,
+            402
+          ],
+          "route_length": 560
+        },
+        {
+          "index": 8,
+          "name": "Forward portal",
+          "point": [
+            408,
+            306
+          ],
+          "route_length": 752
+        }
+      ]
+    }
+  ],
+  "map_count": 31,
+  "slot_count": 279,
+  "collision_method": "Navigation.trace on 16-unit cardinal lattice",
+  "geometry_modified": false
+}

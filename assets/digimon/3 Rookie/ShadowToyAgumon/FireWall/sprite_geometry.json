@@ -1,0 +1,120 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "ShadowToyAgumon_AttackPart1.png": {
+      "source_size": [
+        452,
+        480
+      ],
+      "output_size": [
+        740,
+        768
+      ],
+      "padding": {
+        "left": 144,
+        "top": 144,
+        "right": 144,
+        "bottom": 144
+      },
+      "effect_pixel_unit": 9,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "ShadowToyAgumon_AttackPart2.png": {
+      "source_size": [
+        450,
+        532
+      ],
+      "output_size": [
+        738,
+        820
+      ],
+      "padding": {
+        "left": 144,
+        "top": 144,
+        "right": 144,
+        "bottom": 144
+      },
+      "effect_pixel_unit": 9,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "ShadowToyAgumon_Extra.png": {
+      "source_size": [
+        450,
+        532
+      ],
+      "output_size": [
+        738,
+        820
+      ],
+      "padding": {
+        "left": 144,
+        "top": 144,
+        "right": 144,
+        "bottom": 144
+      },
+      "effect_pixel_unit": 9,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "ShadowToyAgumon_Idle.png": {
+      "source_size": [
+        484,
+        504
+      ],
+      "output_size": [
+        772,
+        792
+      ],
+      "padding": {
+        "left": 144,
+        "top": 144,
+        "right": 144,
+        "bottom": 144
+      },
+      "effect_pixel_unit": 9,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "ShadowToyAgumon_LLegWalk.png": {
+      "source_size": [
+        472,
+        522
+      ],
+      "output_size": [
+        760,
+        810
+      ],
+      "padding": {
+        "left": 144,
+        "top": 144,
+        "right": 144,
+        "bottom": 144
+      },
+      "effect_pixel_unit": 9,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "ShadowToyAgumon_RLegWalk.png": {
+      "source_size": [
+        472,
+        522
+      ],
+      "output_size": [
+        760,
+        810
+      ],
+      "padding": {
+        "left": 144,
+        "top": 144,
+        "right": 144,
+        "bottom": 144
+      },
+      "effect_pixel_unit": 9,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

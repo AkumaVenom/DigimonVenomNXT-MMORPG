@@ -1,0 +1,120 @@
+{
+  "version": 1,
+  "coordinate_space": "pixels",
+  "files": {
+    "Chicchimon_AttackPart1.png": {
+      "source_size": [
+        510,
+        496
+      ],
+      "output_size": [
+        766,
+        752
+      ],
+      "padding": {
+        "left": 128,
+        "top": 128,
+        "right": 128,
+        "bottom": 128
+      },
+      "effect_pixel_unit": 8,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Chicchimon_AttackPart2.png": {
+      "source_size": [
+        560,
+        548
+      ],
+      "output_size": [
+        816,
+        804
+      ],
+      "padding": {
+        "left": 128,
+        "top": 128,
+        "right": 128,
+        "bottom": 128
+      },
+      "effect_pixel_unit": 8,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Chicchimon_Extra.png": {
+      "source_size": [
+        510,
+        496
+      ],
+      "output_size": [
+        766,
+        752
+      ],
+      "padding": {
+        "left": 128,
+        "top": 128,
+        "right": 128,
+        "bottom": 128
+      },
+      "effect_pixel_unit": 8,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Chicchimon_Idle.png": {
+      "source_size": [
+        504,
+        478
+      ],
+      "output_size": [
+        760,
+        734
+      ],
+      "padding": {
+        "left": 128,
+        "top": 128,
+        "right": 128,
+        "bottom": 128
+      },
+      "effect_pixel_unit": 8,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Chicchimon_LLegWalk.png": {
+      "source_size": [
+        496,
+        462
+      ],
+      "output_size": [
+        752,
+        718
+      ],
+      "padding": {
+        "left": 128,
+        "top": 128,
+        "right": 128,
+        "bottom": 128
+      },
+      "effect_pixel_unit": 8,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    },
+    "Chicchimon_RLegWalk.png": {
+      "source_size": [
+        474,
+        464
+      ],
+      "output_size": [
+        730,
+        720
+      ],
+      "padding": {
+        "left": 128,
+        "top": 128,
+        "right": 128,
+        "bottom": 128
+      },
+      "effect_pixel_unit": 8,
+      "effect_style": "pixel_cyber_glow",
+      "particle_fragment": false
+    }
+  }
+}

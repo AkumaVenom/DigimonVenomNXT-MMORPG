@@ -1,0 +1,22 @@
+{
+  "variant_id": "shiny_arcadiamonintraining",
+  "display_name": "Shiny ArcadiamonInTraining",
+  "base_species": "ArcadiamonInTraining",
+  "stage": "2 In Training",
+  "status": "ready",
+  "style_profile": "Prismatic Shiny \u2014 Gold Stardust v1",
+  "palette": "Cerulean",
+  "target_hue_degrees": 196.0,
+  "source_sprite_count": 3,
+  "shiny_sprite_count": 3,
+  "animation_alignment": "Exact source canvas dimensions and sprite positions retained",
+  "effects": "Warm-gold silhouette glow; restrained ivory/gold four-point sparkles; deterministic frame twinkle",
+  "sprites": [
+    "ArcadiamonInTraining_Idle.png",
+    "ArcadiamonInTraining_LLegWalk.png",
+    "ArcadiamonInTraining_RLegWalk.png"
+  ],
+  "primary_sprite": "2 In Training/ArcadiamonInTraining/Shiny/ArcadiamonInTraining_Idle.png",
+  "source_primary": "2 In Training/ArcadiamonInTraining/ArcadiamonInTraining_Idle.png",
+  "materializable": true
+}

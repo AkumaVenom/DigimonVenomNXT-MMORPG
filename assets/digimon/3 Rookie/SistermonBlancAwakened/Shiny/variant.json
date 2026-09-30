@@ -1,0 +1,22 @@
+{
+  "variant_id": "shiny_sistermonblancawakened",
+  "display_name": "Shiny SistermonBlancAwakened",
+  "base_species": "SistermonBlancAwakened",
+  "stage": "3 Rookie",
+  "status": "ready",
+  "style_profile": "Prismatic Shiny \u2014 Gold Stardust v1",
+  "palette": "Rose quartz",
+  "target_hue_degrees": 324.0,
+  "source_sprite_count": 3,
+  "shiny_sprite_count": 3,
+  "animation_alignment": "Exact source canvas dimensions and sprite positions retained",
+  "effects": "Warm-gold silhouette glow; restrained ivory/gold four-point sparkles; deterministic frame twinkle",
+  "sprites": [
+    "SistermonBlancAwakened_Idle.png",
+    "SistermonBlancAwakened_LLegWalk.png",
+    "SistermonBlancAwakened_RLegWalk.png"
+  ],
+  "primary_sprite": "3 Rookie/SistermonBlancAwakened/Shiny/SistermonBlancAwakened_Idle.png",
+  "source_primary": "3 Rookie/SistermonBlancAwakened/SistermonBlancAwakened_Idle.png",
+  "materializable": true
+}

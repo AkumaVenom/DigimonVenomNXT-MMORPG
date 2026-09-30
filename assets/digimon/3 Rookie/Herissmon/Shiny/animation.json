@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Herissmon_Idle.png",
+    "walk_left": "Herissmon_LLegWalk.png",
+    "walk_right": "Herissmon_RLegWalk.png",
+    "attack1": "Herissmon_Idle.png",
+    "attack2": "Herissmon_Idle.png"
+  },
+  "animations": {
+    "idle": [
+      "Herissmon_Idle.png"
+    ],
+    "walk": [
+      "Herissmon_Idle.png",
+      "Herissmon_LLegWalk.png",
+      "Herissmon_Idle.png",
+      "Herissmon_RLegWalk.png"
+    ],
+    "attack": [
+      "Herissmon_Idle.png",
+      "Herissmon_Idle.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 0,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied v1.2.0 Shiny PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained."
+}

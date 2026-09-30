@@ -13,6 +13,7 @@ import pytest
 from tools.preview_battle_targets import CASES, audit_render, target_fixture, use_display
 from tools.preview_ui_screens import make_app
 from venom.client.widgets import GOLD, MUTED, RED
+from venom.client.varieties import FIREWALL_ORANGE
 
 
 @pytest.fixture(scope='module')
@@ -37,21 +38,28 @@ def assert_complete_layout(app, report):
                for i in range(len(enemies))]
     labels = [[] for _ in enemies]
     metadata = [[] for _ in enemies]
-    seen_enemy = False
+    enemy_bottom = max(card.bottom for card in cards)
     for row in report['text']:
         color = tuple(row['color'])
-        if seen_enemy and color == (231, 241, 249) and row['bold'] and row['size'] in (14, 15):
-            break  # The following metadata belongs to the player's party.
-        seen_enemy = seen_enemy or color == RED
-        if color != RED and color != MUTED:
-            continue
         rect = pygame.Rect(row['rect'])
+        # Rare names use their variety color on either team. Identify the enemy label band
+        # geometrically, keeping the actual native bounds checks below strict.
+        # A clipped/overflowing name still fails the complete-name assertion.
+        if rect.centery >= enemy_bottom:
+            continue
+        is_name = row['bold'] and row['size'] in (14, 15) and color in (RED, GOLD, FIREWALL_ORANGE)
+        is_metadata = not row['bold'] and row['size'] == 11 and color == MUTED
+        if not (is_name or is_metadata):
+            continue
         index = min(range(len(centers)), key=lambda i: abs(rect.centerx-centers[i]))
-        (labels if color == RED else metadata)[index].append(row)
+        (labels if is_name else metadata)[index].append(row)
     for index, (mon, card) in enumerate(zip(enemies, cards)):
         assert view.contains(card), (view, card)
         assert all(not card.colliderect(other) for other in cards[index+1:]), cards
         assert squashed(''.join(row['rendered'] for row in labels[index])) == squashed(mon['name'])
+        species = app.assets.species[mon['species_id']]
+        expected_color = FIREWALL_ORANGE if species.get('firewall') else GOLD if species.get('shiny') else RED
+        assert all(tuple(row['color']) == expected_color for row in labels[index])
         expected = f"Lv.{mon['level']} · {mon['type']} / {mon['attribute']}"
         assert squashed(''.join(row['rendered'] for row in metadata[index])) == squashed(expected)
         previous = None
@@ -94,10 +102,13 @@ def test_long_unspaced_species_token_wraps_without_losing_characters(app):
     report = audit_render(app)
     assert_complete_layout(app, report)
     longest = app.state['battle']['enemies'][0]['name']
-    assert longest == 'Paradox ImperialdramonDragonModeBlack'
+    assert longest == 'FireWall ImperialdramonDragonModeBlack'
     # Checking the real native output makes a future word-only wrap regression
     # fail even when a layout helper reports that its rectangle fits.
-    names = [row for row in report['text'] if tuple(row['color']) == RED]
+    enemy_bottom = max(pygame.Rect(value).bottom for value in report['targets'])
+    names = [row for row in report['text']
+             if tuple(row['color']) in (RED, GOLD, FIREWALL_ORANGE) and row['bold'] and row['size'] in (14, 15)
+             and pygame.Rect(row['rect']).centery < enemy_bottom]
     assert len(names) > 3
     assert any(row['rendered'] in longest and 'Imperialdramon' in row['rendered'] for row in names)
 
@@ -158,7 +169,7 @@ def test_lunges_recoils_and_effects_use_card_anchors_with_swapped_active_slots(a
 
     def fixed_text(report):
         return [(row['rendered'], row['rect'], row['glyphs']) for row in report['text']
-                if (tuple(row['color']) == RED or tuple(row['color']) == MUTED and row['size'] == 11
+                if (tuple(row['color']) in (RED, GOLD, FIREWALL_ORANGE) or tuple(row['color']) == MUTED and row['size'] == 11
                     or row['rendered'] == 'TARGET')]
     assert fixed_text(during) == fixed_text(before)
     assert len(sprite_positions) == 6

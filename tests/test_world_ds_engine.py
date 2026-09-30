@@ -17,7 +17,7 @@ def expansion_root(tmp_path_factory):
     """Production species with a small, independently authored expansion route."""
     root = tmp_path_factory.mktemp("world_ds_engine")
     catalog = json.loads((ROOT / "data/catalog.json").read_text())
-    catalog["maps"] = [m for m in catalog["maps"] if m.get("region_id") != "world_ds"]
+    catalog["maps"] = [m for m in catalog["maps"] if (m.get("region_id") or "dawn") == "dawn"]
     for index, level in enumerate((1, 4, 8, 14, 18, 22, 30, 36, 45, 54, 62, 74, 80, 90, 97)):
         for section in (0, 1):
             ident = f"world_ds_{index * 2 + section:03d}"
@@ -52,7 +52,7 @@ def battle_to_completion(engine, state):
 def test_expansion_preserves_exact_dawn_habitats_and_original_home(game):
     engine, state = game
     old = {ident: pool for ident, pool in engine._pools.items()
-           if engine.maps[ident].get("region_id") != "world_ds"}
+           if (engine.maps[ident].get("region_id") or "dawn") == "dawn"}
     encoded = json.dumps(old, sort_keys=True, separators=(",", ":")).encode()
     assert len(old) == 254
     assert hashlib.sha256(encoded).hexdigest() == DAWN_POOLS_SHA256
@@ -66,11 +66,15 @@ def test_ds_pools_are_complete_stage_appropriate_and_varied_at_endgame(game, exp
     engine, _ = game
     areas = [m for m in engine.maps.values() if m.get("region_id") == "world_ds"]
     available = {sid for m in areas for group in engine._pools[m["id"]] for sid in group}
+    available.update(sid for m in areas for sid in engine._shiny_pools[m["id"]])
+    available.update(sid for m in areas for sid in engine._firewall_pools[m["id"]])
     assert available == set(engine.species)
     for area in areas:
         normal, rare = engine._pools[area["id"]]
         assert len(normal) >= 12 and rare
-        assert not any(engine.species[sid].get("paradox") for sid in normal)
+        assert not any(engine.species[sid].get("variety") != "normal" for sid in normal)
+        assert all(engine.species[sid].get("shiny") for sid in engine._shiny_pools[area["id"]])
+        assert all(engine.species[sid].get("firewall") for sid in engine._firewall_pools[area["id"]])
         assert all(engine.species[sid].get("paradox") for sid in rare)
         ranks = {STAGE_RANK[engine.species[sid]["stage"]] for sid in normal}
         if area["level"] < 12:

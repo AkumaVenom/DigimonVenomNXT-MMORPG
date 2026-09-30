@@ -1,0 +1,2 @@
+The supplied c045_c0.png is a 1024x1024 UV texture atlas for a 3D Shoutmon model, not a rendered 2D sprite sheet.
+It cannot be correctly isolated into a Shoutmon silhouette without a rendered sprite/model view.

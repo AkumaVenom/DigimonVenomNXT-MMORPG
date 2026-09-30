@@ -1,0 +1,25 @@
+{
+  "variant_id": "shiny_monodramon",
+  "display_name": "Shiny Monodramon",
+  "base_species": "Monodramon",
+  "stage": "3 Rookie",
+  "status": "ready",
+  "style_profile": "Prismatic Shiny \u2014 Gold Stardust v1",
+  "palette": "Jade",
+  "target_hue_degrees": 146.0,
+  "source_sprite_count": 6,
+  "shiny_sprite_count": 6,
+  "animation_alignment": "Exact source canvas dimensions and sprite positions retained",
+  "effects": "Warm-gold silhouette glow; restrained ivory/gold four-point sparkles; deterministic frame twinkle",
+  "sprites": [
+    "Monodramon_AttackPart1.png",
+    "Monodramon_AttackPart2.png",
+    "Monodramon_Extra.png",
+    "Monodramon_Idle.png",
+    "Monodramon_LLegWalk.png",
+    "Monodramon_RLegWalk.png"
+  ],
+  "primary_sprite": "3 Rookie/Monodramon/Shiny/Monodramon_Idle.png",
+  "source_primary": "3 Rookie/Monodramon/Monodramon_Idle.png",
+  "materializable": true
+}

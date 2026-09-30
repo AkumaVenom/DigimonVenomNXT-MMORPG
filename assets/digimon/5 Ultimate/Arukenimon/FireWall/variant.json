@@ -1,0 +1,24 @@
+{
+  "variant_id": "firewall_arukenimon",
+  "display_name": "FireWall Arukenimon",
+  "base_species": "Arukenimon",
+  "stage": "5 Ultimate",
+  "status": "ready",
+  "materializable": true,
+  "primary_sprite": "5 Ultimate/Arukenimon/FireWall/Arukenimon_Primary.png",
+  "source_primary": "5 Ultimate/Arukenimon/Arukenimon_Primary.png",
+  "source_sprite_count": 20,
+  "firewall_sprite_count": 20,
+  "style_profile": "FireWall Ember Circuit v1",
+  "style_features": [
+    "red-orange silhouette aura",
+    "warm ember palette with preserved dark outlines",
+    "circle-slash firewall sigils",
+    "angular cyber circuits",
+    "golden pixel sparks",
+    "transparent background"
+  ],
+  "animation_alignment": "Original pixels and pose preserved at native resolution; added margins recorded in sprite_geometry.json. Subtract padding.left/top to retain original draw origin.",
+  "geometry_manifest": "sprite_geometry.json",
+  "animation_manifest": "animation.json"
+}

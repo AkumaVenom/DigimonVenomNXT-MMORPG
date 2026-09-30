@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "sprites": {
+    "idle": "Frames/LucemonChaosMode_Paradox_Frame_013.png",
+    "walk_left": "Frames/LucemonChaosMode_Paradox_Frame_014.png",
+    "walk_right": "Frames/LucemonChaosMode_Paradox_Frame_015.png",
+    "attack1": "Frames/LucemonChaosMode_Paradox_Frame_016.png",
+    "attack2": "Frames/LucemonChaosMode_Paradox_Frame_017.png",
+    "front": "LucemonChaosMode_Paradox_Primary.png"
+  },
+  "animations": {
+    "idle": [
+      "Frames/LucemonChaosMode_Paradox_Frame_013.png",
+      "Frames/LucemonChaosMode_Paradox_Frame_014.png",
+      "Frames/LucemonChaosMode_Paradox_Frame_013.png",
+      "Frames/LucemonChaosMode_Paradox_Frame_015.png"
+    ],
+    "walk": [
+      "Frames/LucemonChaosMode_Paradox_Frame_013.png",
+      "Frames/LucemonChaosMode_Paradox_Frame_014.png",
+      "Frames/LucemonChaosMode_Paradox_Frame_013.png",
+      "Frames/LucemonChaosMode_Paradox_Frame_015.png"
+    ],
+    "attack": [
+      "Frames/LucemonChaosMode_Paradox_Frame_016.png",
+      "Frames/LucemonChaosMode_Paradox_Frame_017.png"
+    ]
+  },
+  "mirrored_frames": {},
+  "source_frame_count": 17,
+  "frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "art_provenance": "User-supplied v1.2.0 Paradox PNG bytes preserved. Existing normal pose sequences and repaired-frame/mirror assignments retained.",
+  "source_art_provenance": "User-supplied original sprite artwork; existing pose assignments retained. FixedSpritesPart2 v1.1.1: supplied RGBA PNG bytes preserved; documented same-pose copies synchronized; see data/fixed_sprites_v111.json.",
+  "source_frame_selection": "combat-sized source poses; sheet credits and miniature overworld components excluded",
+  "paradox_style_profile": "Cyber Paradox — Fanglongmon reference"
+}
