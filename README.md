@@ -1,356 +1,199 @@
-# Digimon Venom NXT
-
-**v1.5.0 — FireWall varieties and Dawn Relay Scan Mastery.**
-
-All **502 FireWall Digimon** are integrated with the supplied red-orange aura
-artwork, separate scans, owned partners and variety-preserving evolution.
-Find them in stage-appropriate habitats across **all 500 public world maps**
-at **0.7% per wild battle**. Shiny remains 1% and Paradox remains 2.5%.
-
-Completing **Dawn Relay** grants permanent **+20% FireWall scan gain on eligible
-wild victories**: 5 base points plus 1 victory bonus, totaling **6%**. Existing
-Dawn champions receive the mastery automatically, including when their Dawn
-campaign is saved while another campaign is active. Title defenses remain
-available; mastery persists if the title is later lost.
-
-Extract **every v1.5.0 Source Part ZIP** into the same parent folder, merging
-`DigimonVenomNXT`. Read [docs/FIREWALL_V150.md](docs/FIREWALL_V150.md), run
-**BUILD_ALL.bat on Windows x64**, and deploy both rebuilt applications while
-preserving existing saves and configuration. These downloads contain source
-and assets; Windows executables must be built on Windows.
-
-**Retained v1.4.0 — Super Xros: Ghostline private story campaign.**
-
-Open **Story Mode / F4 → Super Xros: Ghostline** for an original cyber-hacking
-investigation across **31 private maps**: a peaceful service hub and thirty
-quest fields, linked by progression portals. Bring your existing partners at
-their real stats, use the usual DigiLab, DigiFarm and shop, and save your own
-case progress independently of the other two campaigns.
-
-Finish the campaign for permanent **+20% Shiny scan gain on wild victories**:
-the normal 5% becomes 6% when you win. The 1% Shiny encounter chance remains
-unchanged, and the reward is separate from Paradox Scan Mastery.
-
-The campaign and its Shiny mastery remain available alongside Dawn Relay and
-Paradox Chronicle. See [docs/GHOSTLINE_V140.md](docs/GHOSTLINE_V140.md) for its
-story guide; use the v1.5.0 upgrade instructions above for this release.
-
-**Retained v1.3.0 — Super Xros Wars world expansion.**
-
-Explore **96 new maps across 14 zones**, from level 1 to 99, with **20 supplied
-music recordings**. The world now has **500 maps** across Dawn, World DS and
-Super Xros Wars. Open **Worlds → Super Xros Wars** to begin the new route.
-
-All 502 normal Digimon have stage-appropriate habitats in the new region,
-including their Shiny and updated Cyber Paradox varieties. Shiny encounters
-remain **1% per wild battle**, awarding **5% scan progress** per defeated Shiny.
-Persistent rivals explore, battle, recruit and travel across all three regions,
-with population balancing that targets six rivals per map at the 3,000 maximum.
-
-See [docs/SUPER_XROS_WARS_V130.md](docs/SUPER_XROS_WARS_V130.md) for
-the retained public-region guide. Use the v1.5.0 upgrade instructions above
-for this release.
-
-**Retained v1.2.0 — Shiny encounters and Cyber Paradox varieties.**
-
-All 502 Shiny varieties, separate scan records, variety-preserving evolution,
-and the new Cyber Paradox animation artwork remain in place. Read
-[docs/VARIETIES_V120.md](docs/VARIETIES_V120.md) for those retained rules.
-
-**Retained v1.0.1 — Permanent ABI growth for every partner.**
-
-Buy **ABI DigiMeat** in **Shop → ABI growth** for **6,000 credits or 30
-DigiRubies**. Each owned treat adds **+1 permanent ABI**, up to 200, without
-resetting level. Feed a selected party member at the DigiLab or DigiFarm, or
-feed a stored farm resident. This provides an ABI path even when the species
-has no de-digivolution, including when it is your only party member. Evolution
-still checks the selected route's level, CAM and stat requirements.
-
-Read [docs/ABI_DIGIMEAT_V101.md](docs/ABI_DIGIMEAT_V101.md) for feeding rules and
-the original v1.0.1 upgrade. For v1.5.0 use the guide above. **Run BUILD_ALL.bat and deploy BOTH rebuilt Windows
-applications**, even if already running v1.0.0. The server owns the new item
-and its permanent effect. Back up the complete stopped server and preserve its
-database, private credentials and configuration. No database reset or fresh
-setup is required. These downloads contain source, not prebuilt executables.
-
-**Retained v1.0.0 — Cyber-blue battles and Fanglongmon artwork.**
-
-The blue cyber-grid arena, corrected target highlights, full wrapped combatant
-names and supplied Fanglongmon/Paradox Fanglongmon animation remain in place.
-Stable species identities, ownership, scans and progression carry forward.
-See [docs/RELEASE_V100.md](docs/RELEASE_V100.md) and
-[docs/FANGLONGMON_V100.md](docs/FANGLONGMON_V100.md) for that release's history.
-
-The complete game retains all three private story campaigns, DigiLab, DigiFarm,
-DigiRuby shopping and exchange, private Season careers and Ranked Arena. The
-**3,000-rival maximum**, **12-hour Bot Activity window**, startup ownership
-repair and compressed world updates remain in place. Earlier instructions
-below describe their original releases; use the v1.5.0 guide for this update.
-
-**Retained v0.12.3 — 3,000 persistent tamer rivals.**
-
-The default and maximum rival population is **3,000**, down from 5,000.
-Existing settings above 3,000 are capped automatically. The startup migration
-retires the extra 2,000 rivals and removes their saved rival state; the retained
-3,000 and all human players keep their earned game progress. World updates use
-negotiated WebSocket compression while preserving the complete map population
-and update rate. Read [docs/POPULATION_V0123.md](docs/POPULATION_V0123.md) for
-that migration's exact scope and historical measurements. For this release,
-follow the v1.5.0 guide above and update both applications.
-
-**Retained v0.12.2 — Bot Activity shows the latest 12 hours.**
-
-Open **Bot Activity / O** for global activity counters covering the most recent
-**12 hours** and the latest **100 events within that window**. Old activity
-display data and persistence receipts expire automatically. Counter storage
-uses compact minute totals; the oldest partial minute is excluded so counts
-never include activity older than 12 hours.
-
-The first upgrade starts new timestamped global tracking because the previous
-lifetime totals have no timestamps. **Earned partners, XP, scans, currencies,
-story progress, individual rival careers and ranked rewards are preserved.**
-The previous restart repair also remains: **there is no overall startup
-loading deadline**.
-
-Read [docs/BOT_ACTIVITY_V0122.md](docs/BOT_ACTIVITY_V0122.md) for retention details
-and its original upgrade. For the current update use the v1.5.0 guide above.
-The original activity upgrade required both applications for the updated
-display. Preserve `config`, `mysql/data`, private MySQL settings and
-`mysql/runtime`; do not run fresh setup or clear saved progress.
-
-The notes below retain earlier features and their original release context.
-Use the v1.0.1 guide above for the current upgrade.
-
-**Retained v0.12.1 — Persistent-rival startup and restart hotfix.**
-
-The server now keeps its rival ownership lease renewed while restoring saved
-ranked/rival state and loads saved rivals incrementally. **There is no overall
-startup loading deadline.** A large saved population can finish restoring without
-losing its lease merely because startup takes longer than 90 seconds.
-
-This fixes a source failure path consistent with a long pause at “Starting
-ranked seasons and persistent tamer rivals...”. The affected installation's final
-error was not supplied, so the guide also explains which log excerpt to provide
-if another error remains. Existing saves, rivals and rewards are preserved.
-
-Read [docs/RESTART_REPAIR_V0121.md](docs/RESTART_REPAIR_V0121.md) for the original
-repair details and restart checks. That server-only hotfix preserved
-compatibility with v0.12.0 clients. For the current v1.4.0 update, rebuild and
-deploy both applications using the guide above.
-
-**Retained v0.12.0 — Spend DigiRubies in the shop or exchange them for credits.**
-
-Open **Shop / B** and choose **Credits** or **DigiRubies** to buy any capsule or
-DigiMeat. All 19 shop items support both currencies, with clearly displayed
-prices. Open **Ranked Arena / R → DigiRuby Exchange** to convert earned
-DigiRubies into credits at **1 DigiRuby = 100 credits**. The exchange is one-way;
-review the amount before confirming.
-
-The redundant Struggle option has been removed. **Attack remains free at 0 SP**,
-so every partner can still act when its SP runs out. Existing partners, items,
-credits, DigiRuby balances, both story campaigns and Season progress carry on.
-
-Read [docs/DIGIRUBY_ECONOMY_V0120.md](docs/DIGIRUBY_ECONOMY_V0120.md) for the full
-price table, shop and exchange controls, and safe upgrade instructions.
-
-**Upgrade from v0.11.0: rebuild BOTH Windows applications with BUILD_ALL.bat.**
-Use the full v0.12.0 source or apply the source patch to a copy of the complete
-v0.11.0 baseline. Stop and back up the server first; preserve `mysql/data`,
-private MySQL settings, and the existing client/server `config` folders.
-**Do not run fresh database setup.** This is a source release. Build and check
-both Windows x64 applications on the intended Windows machine.
-
-The v0.12.0 guide describes the economy feature release and its original
-upgrade. For the current update, follow the v1.5.0 guide above.
-
-**Retained v0.11.0 — World DS: Paradox Chronicle, a second private story campaign.**
-
-Open **Story Mode / F4** and choose **World DS: Paradox Chronicle**. Begin at a
-peaceful service hub, then journey through 17 supplied Digimon World DS field
-maps. Meet local quest characters, complete their stories, challenge authored
-NPC tamers and defeat a different Paradox guardian in each area. Earn all
-**17 Paradox Crests** to summon the final team of **three level-100 Paradox
-Megas**. Opponents rise from around level 10 through the campaign.
-
-Your first final victory permanently increases scan earned from winning wild
-Paradox battles by **20%: the normal 5% becomes 6% per defeated Paradox**.
-The benefit does not stack, and the existing 200% scan cap still applies.
-Bring your existing partners and use the normal live battle controls, DigiLab,
-DigiFarm, inventory and shop. Dawn Relay keeps its own progress, badges and
-championship; the new story's NPCs belong to its private campaign.
-
-Read [docs/WORLD_DS_STORY_V0110.md](docs/WORLD_DS_STORY_V0110.md) for the player
-guide, progression, reward rules and upgrade procedure.
-
-**Upgrade from v0.10.0: rebuild BOTH Windows applications with BUILD_ALL.bat.**
-Use the full v0.11.0 source or apply its source patch to a copy of the complete
-v0.10.0 World DS baseline. Stop and back up the existing server first. Preserve
-`mysql/data`, private MySQL files and the complete server/client `config`
-folders. **Do not run fresh database setup.** This is a source release;
-Windows x64 executables must be built and checked on Windows.
-
-The sections below preserve earlier release notes and their original upgrade
-procedures. Use the v1.0.1 guide above for the current update.
-
-**Retained World DS region v0.10.0 — shared maps, encounters and music.**
-
-Open **Worlds** and choose **Digimon World DS** to explore 150 additional field
-maps alongside the original 254 Dawn sectors. Wild encounters progress from level
-1 to 99, using your existing team, live battle controls, scan collection, DigiLab
-and DigiFarm. The same saved AI tamer population roams, trains, battles and travels
-across both regions. New DS map music accompanies the journey.
-
-Your private Story Mode, Season careers, Ranked Arena and host-only admin console
-remain available. The v0.10.0 region used the existing character artwork.
-Read [docs/WORLD_DS_V0100.md](docs/WORLD_DS_V0100.md) for the new atlas, imported
-content, rival behavior and exact upgrade procedure.
-
-**Upgrade from v0.9.0: rebuild BOTH Windows applications with BUILD_ALL.bat.**
-Use the update on a copy of the complete v0.9.0 source, or the full v0.10.0 source.
-Back up the stopped server and preserve its database and private configuration;
-do not run fresh database setup. This is a source release, not prebuilt EXEs.
-
-The v0.10.0 guide below documents the shared region and its historical upgrade.
-
-**Retained Story Mode v0.9.0 — Dawn Relay, a private adventure with your own Digimon.**
-
-Enter **Story Mode** from the top-left navigation or press **F4**. Explore 18
-supplied Dawn maps, speak to authored NPC tamers, earn all eight DigiBadges and
-challenge the Dawn Champion. Opponents progress from early levels to level 100.
-After winning the championship, keep defending it; after a defeat, win it back.
-Every fight uses the normal live battle controls. NPC tamer matches cannot be
-fled; Field Training remains a normal wild encounter.
-
-Bring your existing party at its actual strength. Your Digimon, DigiLab,
-DigiFarm, inventory and credits stay connected to the main game. Only the story
-journey, NPC progress, badges and championship belong to your private instance.
-Story rewards and partner growth remain yours when you return to the MMO.
-Season careers, shared rivals, Ranked Arena and the local admin console remain.
-
-**Upgrade from v0.8.0: rebuild both client and world server with BUILD_ALL.bat.**
-Apply the source update to a copy of the v0.8.0 Local Admin source, or use the
-complete v0.9.0 source. Back up the stopped server and preserve its database and
-configuration. Do not run fresh database setup. Read
-[docs/STORY_MODE_V090.md](docs/STORY_MODE_V090.md) for controls, progression,
-shared-system behavior and the exact upgrade procedure. This is a source release;
-Windows x64 executables must be built on Windows.
-
-The release notes below describe retained features and historical upgrades.
-
-**Retained Local Admin Console v0.8.0 — host-only administration and player titles.**
-
-Type `/help` in the existing **START_WORLD_SERVER_CONSOLE.bat** window on the
-server PC. Manage Digimon, items, credits, live encounters, moderation, accounts,
-saves and server restarts through permission-checked local commands. Broadcasts
-and warnings appear as trusted native notices, and persistent cosmetic titles
-appear above player usernames. Players cannot execute these commands in chat.
-Your v0.7.0 private Season careers, DigiFarm, shared rivals and Ranked Arena are
-retained.
-
-**Upgrade from v0.7.0: rebuild and update both client and world server with
-BUILD_ALL.bat.** Apply the source patch to a copy of the v0.7.0 Season Mode source,
-or use the complete v0.8.0 source. Stop and back up the existing server first;
-retain its configuration and `mysql/data` when replacing application files.
-Do not run fresh database setup. Administration tables are added automatically.
-Existing configurations enable the local console at OWNER by default.
-
-Read [docs/ADMIN_CONSOLE_V080.md](docs/ADMIN_CONSOLE_V080.md) for the full command
-reference, console tiers, hidden password prompts, confirmation rules, and exact
-upgrade procedure. Windows executables must be built on Windows x64.
-
-The following v0.7.0 and earlier notes describe retained features. For the current upgrade, use the v1.5.0 guide linked above.
-
-**Retained Season Mode v0.7.0 — private, persistent tamer careers.**
-
-Enter **Season Mode** from the top-left navigation. Review your fictional week's
-match card, play your own scheduled Digimon battle with the normal controls,
-reveal the rest of the league results, and continue directly to the next week.
-Your private roster, rivalries, championship and career records carry forward
-through an open-ended Gregorian calendar. Nothing advances while you are away.
-Fleeing is disabled in league matches; logging out preserves the active turn.
-The shared world, DigiFarm, persistent rivals and Ranked Arena remain available.
-
-The v0.7.0 release built on the supplied v0.6.2 High Ping Disconnect Fix source
-and added private career archives without resetting existing character saves.
-Read [docs/SEASON_MODE_V070.md](docs/SEASON_MODE_V070.md) for Season controls,
-rules and save behavior. Its upgrade section is historical; use the v1.0.1
-release guide for the current update.
-
-The following DigiFarm and earlier-release notes describe retained features.
-For the current update, use the v1.0.1 release guide above.
-
-**Retained DigiFarm — native Windows x64 client and dedicated world server.**
-
-Your tamer now has a private DigiFarm home using the supplied island artwork,
-with up to 100 stored Digimon, gentle wandering, click-to-manage feeding and
-its own original soundtrack. Walk the island as your selected tamer with your
-lead partner following, and use the normal 1×–8× camera controls. Optional
-Friendship DigiMeat raises CAM; six kinds
-of training DigiMeat permanently improve HP, SP, ATK, DEF, INT or SPD. Shop
-purchases and occasional PvE victory drops use authoritative server rules.
-The existing native UI, rivals, arena and FPS improvements are retained.
-
-This is a **source release**. Rebuild **both the client and world server** on
-Windows x64 with `BUILD_ALL.bat`. Existing portable-server saves are retained;
-do not reset the database or run fresh setup for an upgrade. Follow
-[docs/DIGIFARM_V060.md](docs/DIGIFARM_V060.md) for the feature rules, controls,
-prices and exact update procedure. Previous UI-only upgrade instructions are
-historical and do not apply to v0.6.0.
-
-This corrected **v0.6.0** release includes DigiFarm walking and camera zoom.
-Owners of the earlier v0.6.0 release must also rebuild both applications. The
-replacement patch applies over either the supplied UI2 source or that previous
-v0.6.0 source. Farm position and zoom are saved separately from their field
-counterparts; home stays private and free of wild encounters.
-
-## Retained baseline features
-
-**Rival walking and repeat team training.** Rivals start their walking time when
-scheduled work actually begins, follow continuous collision-checked patrols, and
-arrive at spaced safe positions when changing sectors. Training rounds keep earned
-partners in storage, field younger teams, and bring experienced rivals back to
-quieter eligible maps. Veteran visits to underfilled higher-level sectors are
-limited, followed by a dedicated stretch of normal team training. Arrival
-reservations spread those assignments between sectors. Ranked battles,
-collection, healing and travel continue.
-
-**Fresh portable database setup.** This release includes its own **MySQL Community
-Server 8.4.11 for Windows x64** under `mysql/runtime`. MySQL runs as a separate
-process; every production database file and save stays in `mysql/data` inside the
-server folder. It uses `127.0.0.1:3307` and needs no XAMPP, installed database
-service, external database, or existing administrator password.
-
-This is the **complete source package**, including the game assets and Windows
-MySQL engine. For a new installation, build the Windows applications first, then
-use the generated server folder for play. A new server setup starts with fresh
-accounts and progress; it does not import an older installation. Existing
-portable-baseline players should follow the current Bot Activity guide to
-update both applications while keeping their accounts and progress.
-
-For day-to-day use, run **START_MYSQL.bat**, then
-**START_WORLD_SERVER_CONSOLE.bat**. When you want to back up or move the server,
-run **STOP_SERVER.bat**, wait for confirmed shutdown, then ZIP the complete server
-folder. Extract that ZIP on another compatible Windows x64 PC and run the same
-launchers to continue. **Never ZIP a running database.**
-
-Read [PORTABLE_SERVER_README.md](PORTABLE_SERVER_README.md) for the short operating
-guide and [docs/SETUP.md](docs/SETUP.md) for the full build and setup procedure.
-
-A playable multiplayer foundation built around the supplied Digimon v7 / Paradox artwork and x2 Dawn maps. The desktop client uses pygame-ce / SDL; the authoritative Python world server owns movement, combat, scanning, inventory and persistent character saves. There are no browser pages or page-refresh movement.
-
-This is an alpha release, not a finished commercial-scale MMO or a data-exact reconstruction of Cyber Sleuth. Its imported artwork, native tamer movement and collision masks come from the supplied files. Numerical balance, moves, progression and many evolution routes are original Venom NXT rules. Read `docs/MECHANICS.md` and `docs/RELEASE_STATUS.md` for the precise boundaries.
-
-## Persistent rivals and Battle Park in v0.2.0
-
-The dedicated server now runs a default population of **3,000 persistent AI tamers**. They walk through the shared maps, fight wild Digimon, earn levels and scan data, materialize partners, care for their parties, travel, and compete in ranked battles. Click a rival in the field, press **V** for the Rivals Hub, **R** for Ranked Arena, or **O** for Bot Activity.
-
-Battle Park adds automatic weekly seasons, current and career records, top-100 ladders and season archives, promotion battles, and DigiRuby rewards. Its points, rewards, stamina and three-active-partner battles are published NXT rules. The mode adapts documented ReArise features; it is not an exact recreation of every ReArise rule. See `docs/RIVALS_AND_RANKED.md` for the complete rules and `docs/REARISE_RULES_RESEARCH.md` for the recovered official references.
-
-## High-DPI display and camera
-
-The client now renders text and interface shapes at native display resolution, supports Windows high DPI and borderless fullscreen (**F11 / Alt + Enter**), and provides saved display/audio preferences (**Settings / F10**). World zoom ranges from a complete-level **1×** view to a close-up **8×**, with plus/minus buttons, keyboard and mouse-wheel controls. Artwork uses crisp nearest-neighbor sampling; its original resolution remains unchanged.
-
-The display improvements from v0.1.1 are retained. `docs/DISPLAY_UPGRADE.md` describes their settings and historical client-only release. Historical gameplay upgrade guides do not describe this fresh portable database setup.
+# DIGIMON VENOM NXT MMO
+
+### Your partner. Your journey. Your next evolution.
+
+Explore a connected Digital World, build a team of your favourite Digimon, and follow your own path from your first Rookie to your toughest challenge. Hunt rare varieties, take on private story campaigns, grow your partners at the DigiFarm, or test your lineup in the Ranked Arena.
+
+**3 world regions · 500 public maps · 4 Digimon varieties · 3 private campaigns & Much More**
+
+<img width="2753" height="1657" alt="1" src="https://github.com/user-attachments/assets/e8537eaf-d885-4aa1-a351-4390573f9575" />
+<img width="2687" height="1540" alt="2" src="https://github.com/user-attachments/assets/5e99111e-7722-4b4c-ba32-4097631bcfa5" />
+<img width="2706" height="1556" alt="3" src="https://github.com/user-attachments/assets/5bb5f44a-d5b5-40d2-a633-d3840fa1fd2a" />
+<img width="2685" height="1646" alt="4" src="https://github.com/user-attachments/assets/3a4c2e41-27c6-451e-8ebf-d5790bd23eff" />
+<img width="2705" height="1641" alt="5" src="https://github.com/user-attachments/assets/81ff9c16-97b1-4aa1-9477-df2b036ee046" />
+<img width="2669" height="1563" alt="6" src="https://github.com/user-attachments/assets/e5852685-9c71-4213-903f-01dbf68acea1" />
+<img width="3815" height="2140" alt="3 - Super Xros Region With Tamer Bots" src="https://github.com/user-attachments/assets/802c5998-b1d3-452b-94da-46e83b4b7785" />
+<img width="3815" height="2030" alt="2 - DigiWold DS With Tamer Bots" src="https://github.com/user-attachments/assets/1b67d818-2bb3-4de3-a614-63e7a7b99991" />
+<img width="3819" height="2023" alt="1 - Story Mode Ghostline" src="https://github.com/user-attachments/assets/ac9d5826-e705-4352-a67b-743ad0319467" />
+<img width="3814" height="2025" alt="4 - Battle Screen" src="https://github.com/user-attachments/assets/d1987c59-fbfb-4fcc-a09a-17e643518ab2" />
+<img width="3810" height="2029" alt="7 - Ranked Battle Arena" src="https://github.com/user-attachments/assets/35c8d953-bf2f-4fc2-9256-a5cff2a17e52" />
+<img width="3817" height="2025" alt="6 - Season Mode" src="https://github.com/user-attachments/assets/ebce8547-15f5-4e93-b129-6b13bab87983" />
+<img width="3815" height="2039" alt="8 - Bot Activity Stats Screen" src="https://github.com/user-attachments/assets/d7d89c35-7e46-4a92-895d-f1cb635fc186" />
+<img width="3817" height="2032" alt="9 - DigiEvolution Lab" src="https://github.com/user-attachments/assets/93aff774-c67c-42be-967c-07cbd462dadf" />
+<img width="3813" height="2029" alt="ParadoxVisualUpgrade" src="https://github.com/user-attachments/assets/2eba8ae6-ddb2-496e-9b13-a8c093ee47fc" />
+<img width="3809" height="2018" alt="12 - Shiny Variety Digimon Update" src="https://github.com/user-attachments/assets/1252557a-d8bf-4e74-b159-02f5cad58a6a" />
+<img width="3807" height="2013" alt="12 - FireWall Variety Digimon Update" src="https://github.com/user-attachments/assets/f69793e8-e7b9-4b7e-9dbf-47fcef07a2f9" />
+
+---
+
+## 🎮 Welcome to Venom NXT
+
+Digimon Venom NXT is a fan-made Digimon MMO with a dedicated Windows client and a cyber-themed world built around collecting, training and adventure.
+
+- **Build your party:** bring six partners and field three at a time.
+- **Grow your collection:** discover 502 normal Digimon entries, each with Paradox, Shiny and FireWall counterparts — **2,008 catalog entries** across all four varieties.
+- **Make your tamer your own:** choose from 64 appearances.
+- **Explore shared worlds:** discover wild habitats, local chat, regional music and roaming AI tamer rivals.
+- **Play through your own stories:** take your current team into three separately saved private campaigns.
+- **Choose your next goal:** finish a collection, pursue a championship, investigate Ghostline or climb the Ranked ladder.
+
+## 🌐 Three regions. 500 maps.
+
+| Region | Public maps | Your next destination |
+| --- | ---: | --- |
+| Dawn | 254 | Explore the Dawn region and train for your next challenge. |
+| World DS | 150 | Discover more habitats and expand your collection. |
+| Super Xros Wars | 96 | Enter a world of cyber strongholds, mechanical zones and late-game challenges. |
+
+**Super Xros Wars** spans 14 zones with level 1–99 progression. Early habitats feature Fresh, In-Training and Rookie Digimon, leading into tougher Champion, Ultimate and Mega encounters, with Ultra forms in the highest fields.
+
+Its regional soundtrack includes **20 recordings: 17 for exploration and three for combat**. Travel between beginner fields and advanced zones as your team grows. The 500-map total refers to the shared public world; each story campaign has its own private progression.
+
+## ✨ Four varieties to discover
+
+Normal, **Cyber Paradox**, **Shiny** and **FireWall** Digimon each have their own identity in your collection. The rare varieties have separate scan records, distinctive artwork and evolution routes that preserve their variety through both digivolution and de-digivolution.
+
+| Rare variety | Chance per eligible wild battle | Base scan gain |
+| --- | ---: | ---: |
+| Paradox | 2.5% | 5% |
+| Shiny | 1% | 5% |
+| FireWall | 0.7% | 5% |
+
+**Cyber Paradox** features the updated alternate artwork. **Shiny** brings golden counterparts to the hunt. **FireWall**, introduced in v1.5.0, is the rarest variety, with striking red-orange cyber auras.
+
+Rare forms appear in their normal counterparts’ matching wild habitats throughout the public regions. FireWall encounters are available across all 500 maps wherever the corresponding normal Digimon lives. Each eligible wild battle can contain **at most one rare opponent**.
+
+Shiny and FireWall partners keep their normal counterparts’ base stats, so you can choose the look you love without treating rarity as a guaranteed power increase.
+
+### Scan it. Materialize it. Make it your partner.
+
+Defeat wild Digimon to build scan data. Reach **100% scan for a species and variety** to materialize that partner in the DigiLab; scan data caps at 200%. Your new partner can join your party, DigiFarm, campaigns, Season career or Ranked team.
+
+Defeating a rare wild Digimon gives five scan points. With the matching campaign mastery, an eligible wild battle victory gives **six points instead**. Those points are displayed as **5% → 6% scan progress**.
+
+## 📖 Three private story campaigns
+
+Your story belongs to your tamer. Bring your existing party at its **real levels and stats**, with your DigiLab, DigiFarm, shops, inventory and currencies still available. Each campaign keeps its own saved progress, so you can pursue different stories with the team you have built.
+
+### Dawn Relay — earn your championship
+
+Explore **18 maps**, restore the relay and collect **eight DigiBadges** before challenging the level-100 Dawn Champion. Claim the title, defend it against challengers and fight to reclaim it if you fall.
+
+**Permanent reward: FireWall Scan Mastery.** Your first championship unlocks the reward. Previous Dawn champions receive it automatically, and losing your title later does not remove it.
+
+### Paradox Chronicle — answer the guardians’ challenge
+
+Begin at a safe service hub and venture into **17 quest fields**, making **18 maps** in total. Defeat Paradox guardians, gather **17 Paradox Crests** and summon three level-100 Paradox Megas for the final challenge.
+
+**Permanent reward: Paradox Scan Mastery.**
+
+### Super Xros: Ghostline — trace the breach
+
+Hacked tamers. Missing logs. A trail of evidence that never quite adds up.
+
+Enter an original cyber-hacking mystery across **31 maps: the Backchannel safe hub and 30 quest fields**. Prepare at the hub, question your contacts, follow their intel and take on marked NPC tamer challenges as you investigate the compromised network.
+
+Complete each field’s assignment to unlock the connected progression portal, revisit unlocked locations and follow the case to its final confrontation in map 31.
+
+**Permanent reward: Shiny Scan Mastery.** The investigation is best experienced without spoilers.
+
+### Permanent scan rewards, explained
+
+| Complete this campaign | Improve scans for | Eligible wild victory |
+| --- | --- | ---: |
+| Dawn Relay | FireWall | 5% → 6% |
+| Paradox Chronicle | Paradox | 5% → 6% |
+| Super Xros: Ghostline | Shiny | 5% → 6% |
+
+Each mastery gives a **20% increase to the matching scan reward**: five becomes six. It stays with your character when you switch campaigns. Mastery does not raise encounter odds, stack with itself or grant scan data from NPC-owned opponents.
+
+## 🏆 Two ways to compete
+
+### Season Mode — your private career
+
+Build a career around persistent rivals, rivalries, championships and match records. Follow your fictional week’s match card, play your scheduled battle with normal battle controls, reveal the league results and move forward when you are ready.
+
+The calendar advances at your pace. **Nothing advances while you are away**, and logging out saves your active turn. Open Season Mode from the client’s top-left navigation.
+
+### Ranked Arena — a shared weekly ladder
+
+Set your team and compete in **automatic battles against saved defender lineups**. Put your three active partners to the test, chase promotion and build both current-season and career records.
+
+- Weekly seasons follow **UTC** and keep archived results.
+- Compete on the **top-100 ladders**.
+- Earn **DigiRubies** through grade and placement rewards.
+- Spend DigiRubies in the shop, or exchange **one DigiRuby for 100 credits**.
+
+Press **R** to open Ranked Arena.
+
+## 🏝️ Give your partners a home
+
+Your private **DigiFarm** is a place to spend time with the team you have collected. Walk the island with your leader following beside you, manage up to **100 residents** and adjust the saved zoom from **1× to 8×**.
+
+Build CAM with treats and train permanent stats with DigiMeat. Evolution routes use level, CAM and stat requirements, giving you clear goals for each partner’s growth.
+
+**ABI DigiMeat** adds **+1 permanent ABI**, up to 200, without resetting the partner’s level. Feed it at the DigiLab or DigiFarm, including to partners without a de-digivolution route. It costs **6,000 credits or 30 DigiRubies**.
+
+Need to get back into the field? **DigiLab healing is free**, the shop stocks HP/SP capsules, and your basic Attack always costs zero SP.
+
+## 🤖 Rivals with journeys of their own
+
+The world supports **up to 3,000 persistent AI tamer rivals**. They patrol maps, battle wild Digimon, earn scans, recruit partners, train, evolve, shop and travel between all three regions, including Super Xros.
+
+These are AI-controlled tamers with their own saved progress. Follow their activity with **O**, or open the Rivals Hub with **V**.
+
+## 🚀 Start your adventure
+
+1. **Download the complete Windows x64 client** using the download link above.
+2. **Extract the entire archive** before playing.
+3. If needed, apply the server’s supplied **connection kit** using its instructions.
+4. Launch the game, choose **Register**, create your tamer and begin with a Rookie partner.
+5. Explore the public worlds, press **F4** to choose a story campaign, or start a Season career.
+
+**A good first goal:** learn your partner’s moves, visit the DigiLab, check its evolution requirements and start building scan data in suitable early-level fields. Keep HP/SP supplies handy as you push into tougher maps.
+
+### Handy shortcuts
+
+| Key | Opens or changes |
+| --- | --- |
+| F4 | Story Mode |
+| R | Ranked Arena |
+| B | Shop |
+| V | Rivals Hub |
+| O | Bot Activity |
+| F10 | Settings |
+| F11 | Fullscreen |
+
+## Returning tamer? Here is what changed
+
+| Version | Major additions |
+| --- | --- |
+| v1.2.0 | Shiny Digimon with 1% encounters, refreshed Cyber Paradox artwork, separate variety scan records and variety-preserving evolution. |
+| v1.3.0 | Super Xros Wars: 96 maps, 14 zones, regional music and roaming rivals, bringing the shared world to 500 maps. |
+| v1.4.0 | Super Xros: Ghostline, the third private campaign, with 31 maps and permanent Shiny Scan Mastery. |
+| v1.5.0 | All 502 FireWall counterparts, 0.7% encounters and permanent FireWall Scan Mastery from Dawn Relay. |
+
+## Quick answers for new tamers
+
+**Can I play in a browser?**  
+The game runs in its dedicated Windows x64 client. The website provides game information and access to the client download.
+
+**Does Story Mode make me start a new team?**  
+You bring your existing partners at their actual strength. Your campaigns save separately, while your team and supporting systems remain available.
+
+**Do rare forms need separate scans?**  
+Yes. Each species and variety has its own scan record. Collect the matching data to materialize the form you want.
+
+**Does a mastery make rare Digimon more common?**  
+It improves the matching scan reward from 5% to 6% on eligible wild victories. Encounter odds stay the same.
+
+**Are Season Mode and Ranked Arena the same thing?**  
+Season Mode is your private career with battles you control and a calendar you advance. Ranked Arena uses automatic battles and shared weekly seasons.
+
+**Choose your partner. Find your next rare encounter. Make the Digital World your own.**
+
+*Digimon Venom NXT is a fan-made project. Digimon belongs to its respective rights holders.*
+
 
 ## First installation on Windows
 
@@ -385,62 +228,3 @@ TLS keys. Keep them private; share the client and player connection kit only.
 For internet hosting, allow and forward the **game** TCP port, normally **8765**.
 MySQL stays local on **3307** and must not be forwarded. Hosting setup cannot
 configure your router, ISP or DNS.
-
-## Local development
-
-For an optional source-development game without the production MySQL database, run `START_LOCAL_DEV.bat`, then `PLAY_LOCAL_DEV.bat`. This explicitly uses a localhost server and a separate development SQLite save. It is not the production database. `START_LOCAL_DEV.bat` installs the source runtime dependencies on first use.
-
-On any supported development OS:
-
-```sh
-python -m pip install -r requirements.txt
-python -m venom.server.main --dev
-# In another terminal:
-python -m venom.client.main --dev
-```
-
-Public play uses TLS and MySQL. The public server refuses the development database/plaintext configuration.
-
-## What is included
-
-- 1,004 Digimon entries: 502 normal and 502 Paradox records, including alternate artwork sets supplied under different stages. Every entry belongs to an encounter pool.
-- 64 selectable original Dawn/Dusk/guest tamer appearances, each with eight directional movement animations decoded from the ROM.
-- 254 map backgrounds and 97 foreground overlays, using the supplied x2 images. All 254 traversable maps use original ROM pixel collision data.
-- One Rookie starter, up to six party partners, a three-partner active battle team, 100-resident private DigiFarm storage, leader selection and an overworld follower.
-- A walkable DigiFarm with your selected animated tamer and lead follower, shared client/server shoreline collision, independent saved position and 1×–8× zoom, click-to-manage residents, gentle wandering, optional CAM treats, six permanent stat-training meat families and unique original home music.
-- One to three wild enemies, speed-based turns, physical and elemental skills, SP, a free basic Attack, item use, movement effects, particles, 96 decoded original battle-effect sequences, and floating damage/effectiveness text.
-- Defeated-enemy scan data, DigiLab materialization at 100% or more, a 200% scan cap, evolution/de-evolution requirements, levels, ABI and CAM.
-- A 2.5% chance for an encounter to include a Paradox; Paradox defeats award less scan data than normal defeats.
-- Free DigiLab healing and return to the saved world position; a shop with HP/SP capsules and DigiMeat, each purchasable with credits or DigiRubies.
-- Shared world presence, map-local chat, account authentication, durable progression, per-pixel movement validation and rate limits.
-- 3,000 persistent AI rivals by default and at most, initially distributed evenly across the maps, with authentic walking frames, continuous server-owned patrols, spaced sector arrivals, real combat/collection progression, repeat team training, party storage, density-aware travel and clickable profiles.
-- Ranked auto battles against saved defender teams, weekly UTC seasons, season and career wins/losses, top-100 current/career/archive ladders, earned-grade and placement rewards in a persistent DigiRuby wallet, and a DigiRuby-to-credit exchange.
-- Nearby friendly rival invitations, an accept/decline hub, head-to-head history, and a bot activity screen with cumulative counters and the latest 100 population events.
-- Original-ROM sequence/sample audio rendered into 46 music tracks and 183 sound effects. The renderer approximates some NDS synthesis behavior; it is not a hardware-perfect emulator.
-- Windows build, a native setup wizard, bundled portable MySQL with readiness checks, graceful shutdown for manual whole-folder ZIP backups, local/public TLS connection kits, content verification and automated tests.
-
-## Source layout
-
-| Location | Purpose |
-|---|---|
-| `venom/client/` | Native desktop presentation, input, animation, audio and networking |
-| `venom/server/` | Authoritative world networking, accounts, persistent rivals, navigation, ranking and database persistence |
-| `venom/common/game.py` | Combat, progression, scanning, evolution, items and party rules |
-| `data/` | Catalog, original balance rules, provenance and content hashes |
-| `assets/` | Supplied artwork and extracted runtime content |
-| `tools/` | Reproducible import/extraction, verification, build, setup and portable database utilities |
-| `mysql/` | Bundled Windows database engine, its provenance and prerequisites; runtime saves and private credentials are created here during setup |
-| `tests/` | Gameplay, collision, persistence, network and setup checks |
-| `docs/` | Setup, controls, mechanics, extraction notes and release status |
-
-The preimported runtime assets are included. The three original uploads are not required to build this package; retain your originals if you want to reproduce the extraction.
-
-## Verification
-
-```sh
-python tools/build.py --verify-only
-python -m pip install -r requirements-dev.txt
-python -m pytest -q
-```
-
-Windows executables must be built on Windows. Linux verification does not establish that a Windows binary has been built or tested. See [docs/PORTABLE_MYSQL_VALIDATION.md](docs/PORTABLE_MYSQL_VALIDATION.md) for the new database checks and [docs/PORTABLE_MYSQL.md](docs/PORTABLE_MYSQL.md) for implementation boundaries. A successful build on the target Windows host remains necessary.
